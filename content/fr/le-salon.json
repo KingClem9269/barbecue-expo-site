@@ -1,0 +1,577 @@
+{
+  "name": "le-salon",
+  "created_at": "2026-01-06T22:15:53.969Z",
+  "published_at": "2026-02-13T13:43:05.849Z",
+  "updated_at": "2026-02-13T13:43:05.876Z",
+  "id": 131269238945813,
+  "uuid": "665d735f-d8e7-4081-ba95-3ffa01c35775",
+  "content": {
+    "_uid": "5ffa6fb2-4870-424a-9bcf-2d20d1cbdff4",
+    "body": [
+      {
+        "_uid": "9a650b01-6c16-4329-a97d-5433587cc9da",
+        "color": "tertiary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "771fb5d1-f50d-4614-ba69-49a0f3aec10b",
+        "color": "tertiary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "fafb7804-93e2-4906-b45a-dafb801a7cba",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "487af849-70d0-4b7d-86ce-1575fca1f16f",
+            "content": [
+              {
+                "_uid": "fd28453b-62f8-46ec-8e9a-f61884ede57f",
+                "content": [
+                  {
+                    "gap": "0",
+                    "_uid": "40301a8a-731e-4e67-8d81-6253ae9ec62a",
+                    "content": [
+                      {
+                        "_uid": "0f1b3452-6c50-45a5-b2a7-b32142d7110d",
+                        "color": "primary",
+                        "content": "Barbecue Expo, c’est la rencontre entre une passion et une industrie.",
+                        "heading": "hero",
+                        "component": "headline",
+                        "textAlign": ""
+                      }
+                    ],
+                    "component": "Grid",
+                    "nColsLarge": "1",
+                    "nColsMedium": "1",
+                    "nColsMobile": "1",
+                    "nColsDesktop": "1"
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": ""
+              },
+              {
+                "_uid": "e8fd69e6-27fe-44bf-b975-d1f3ef2a6e49",
+                "content": [
+                  {
+                    "_uid": "ad802fec-4268-4e73-8be0-8bbaf0d70252",
+                    "color": "",
+                    "content": "Aujourd’hui, Barbecue Expo est devenu un flagship event pour de nombreuses références du marché. Les marques phares y dévoilent leurs nouveautés, donnent le ton de la saison et rencontrent une communauté ultra engagée. Mais le salon est aussi le terrain d’expression des nouveaux entrants et des innovations qui bousculent les codes : accessoires et équipements plus performants, combustibles nouvelle génération, sauces et épices créatives, produits d’épicerie fine, cuisines outdoor premium et aménagements d’extérieur… tout ce qui fait évoluer le barbecue et en fait un univers de découverte.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "paddingDesktop": "",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": ""
+              },
+              {
+                "_uid": "e7c516af-9ea5-402e-a783-4cc5dfba08b2",
+                "content": [
+                  {
+                    "_uid": "3b650467-dd11-4f53-8257-34eea6e0598e",
+                    "color": "",
+                    "content": "Côté professionnel, c’est un rendez-vous incontournable pour sourcer, comparer, identifier les tendances, rencontrer les décideurs, développer des partenariats et créer des opportunités commerciales concrètes. Et grâce à une internationalisation de plus en plus forte, avec des exposants et des invités venus du monde entier, Barbecue Expo est devenu un véritable melting pot de la culture BBQ : styles, techniques, recettes et influences se croisent dans une ambiance fédératrice, conviviale… et résolument spectaculaire.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                }
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "2"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "f15496cc-793f-4983-8fad-0af27b864dbb",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "d6669792-7f71-4183-968d-971c1421aafb",
+            "content": [
+              {
+                "_uid": "0331b69f-ce2f-43ba-a707-6be9539500e4",
+                "color": "primary",
+                "content": "Quelques chiffres",
+                "heading": "",
+                "component": "headline"
+              },
+              {
+                "_uid": "a9e859c5-f753-4388-a84b-2f005be926fd",
+                "color": "",
+                "content": "Depuis 2020, BBQ Expo c'est ...",
+                "component": "paragraph"
+              },
+              {
+                "gap": "4",
+                "_uid": "4992d802-a737-4f36-b981-b59fa7fbf3ac",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "6dedbb82-9cad-44ad-9f63-96bdd28626e0",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "a1b9d835-6882-457e-91c3-0d1467598cd9",
+                        "icon": "users-round",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "c380516d-e47f-4fab-b6bf-87cb287f15a4",
+                        "color": "primary",
+                        "content": "+80 000 visiteurs",
+                        "heading": "h2",
+                        "component": "headline",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "5d598af4-1c4f-4c3f-9304-3831c9f7e810",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "c4f68f6e-5e93-4dc1-9d6b-a63872ec824c",
+                        "icon": "beef",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "d54a58e3-8f06-452d-832e-4ff3c4f02bbf",
+                        "color": "primary",
+                        "content": "450 Exposants",
+                        "heading": "h2",
+                        "component": "headline",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "e748597b-b161-42f6-ac28-9778244529a7",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "4b78134b-0d0c-447a-880b-450c3812ef24",
+                        "icon": "earth",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "48c31766-2ece-4d81-8ffa-582247534798",
+                        "color": "primary",
+                        "content": "25 Pays représentés",
+                        "heading": "h2",
+                        "component": "headline",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "dc317465-bccf-4f92-9969-fd8e1460e127",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "cc75b95c-0b42-47b5-a082-66b5f619dfb8",
+                        "icon": "chef-hat",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "7311c47e-edb2-4bbf-8226-267737ffd31d",
+                        "color": "primary",
+                        "content": "70 pitmasters & chefs sur scène.",
+                        "heading": "h2",
+                        "component": "headline",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "4",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "213f743d-0294-491e-a92a-43495f39c6f2",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "f2137990-2a49-4a27-8ec0-f8be54bc2f18",
+            "content": [
+              {
+                "_uid": "fcdf2bce-b8f3-43f4-b9a0-f46c7bcf8fa6",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "3a2116ce-90f3-4683-ab9e-2b915d9f9a19",
+                    "wrap": "wrap",
+                    "align": "start",
+                    "content": [
+                      {
+                        "_uid": "156549e5-f112-4c07-98d4-c20b153b76eb",
+                        "color": "primary",
+                        "content": "Un parcours clair, pensé pour tous les profils.",
+                        "heading": "h2",
+                        "component": "headline"
+                      },
+                      {
+                        "_uid": "36ef73d3-d22b-4c81-822a-d053579b41ca",
+                        "color": "",
+                        "content": "Que vous soyez là pour flâner, tester, acheter… ou signer des deals, le plan vous guide à travers les grands univers du salon : BBQ & matériel, accessoires & équipements, combustibles (charbon, bois, pellets…), sauces & épices, cuisines et aménagement d’extérieur, ainsi qu’une sélection d’épicerie fine.",
+                        "component": "paragraph"
+                      },
+                      {
+                        "_uid": "e9b9c44b-b7f7-47a2-a0ed-b37d15f098da",
+                        "color": "",
+                        "content": "De quoi organiser votre visite facilement : découverte et shopping côté passionnés, sourcing et comparaison côté professionnels.",
+                        "component": "paragraph"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex"
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "paddingDesktop": "",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": ""
+              },
+              {
+                "_uid": "8d1f6ebc-1235-4fc7-9347-567cc0c5e741",
+                "content": [
+                  {
+                    "_uid": "f66db699-3521-4bb8-8eaa-9eb81ff1d896",
+                    "media": {
+                      "id": 136068800787238,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/27866dc7c3_planbbq_hd.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": ""
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "full",
+                "colSpanMobile": "1",
+                "paddingMobile": "",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "1",
+                "paddingDesktop": "",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": ""
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "2",
+            "nColsMedium": "2",
+            "nColsMobile": "1",
+            "nColsDesktop": "2"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "53cb934e-7d4e-4a1d-85b6-081c97aa9cd4",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "c38a0aba-1a2c-4266-84a6-4fb24e53faa9",
+            "wrap": "no-wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "9f7973f8-9b65-4890-9858-9b9f793a8d34",
+                "color": "primary",
+                "content": "Le Programme",
+                "heading": "",
+                "component": "headline"
+              },
+              {
+                "_uid": "83518457-e46f-4d7d-8ee6-52b09c92dd5d",
+                "color": "primary",
+                "content": "Démos, battles, masterclass, rencontres avec chefs et pitmasters : chaque jour, des temps forts pour le public… et des contenus à forte valeur ajoutée pour les pros (tendances, nouveaux produits, usages, techniques).",
+                "component": "paragraph"
+              },
+              {
+                "gap": "4",
+                "_uid": "e5f5537b-d3f8-4ba6-8da0-e602ae2c1392",
+                "content": [
+                  {
+                    "_uid": "ae3c8a11-167f-4268-aa08-c3ac5a5d9dee",
+                    "date": "",
+                    "link": "",
+                    "media": {
+                      "id": 127985827284017,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/57b85e1ca3_still_video_hero.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Nos exposants",
+                    "subtitle": "",
+                    "component": "EventCard"
+                  },
+                  {
+                    "_uid": "d9989c9f-ceb9-42c4-9740-88b9e78f46e8",
+                    "date": "",
+                    "href": {
+                      "id": "",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": ""
+                    },
+                    "link": "",
+                    "media": {
+                      "id": 133284673212506,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/0a29d56b67_home-mosaique-cookingshows.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Cooking Shows",
+                    "subtitle": "",
+                    "component": "EventCard"
+                  },
+                  {
+                    "_uid": "d0886a70-2434-40ca-9478-d14a0a7d9f95",
+                    "date": "",
+                    "href": {
+                      "id": "",
+                      "url": "",
+                      "linktype": "url",
+                      "fieldtype": "multilink",
+                      "cached_url": ""
+                    },
+                    "media": {
+                      "id": 133284673245276,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/fb1b945ea4_homepage-animations.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Masterclasses",
+                    "subtitle": "",
+                    "component": "EventCard"
+                  },
+                  {
+                    "_uid": "b00c0e0b-f949-4616-9d09-aa5690065c61",
+                    "date": "",
+                    "link": "",
+                    "media": {
+                      "id": 127988235076668,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/17f0c16339_photo_home.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "BBQ Street Food",
+                    "subtitle": "",
+                    "component": "EventCard"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "2",
+                "nColsMobile": "2"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "row"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "le-salon",
+  "full_slug": "le-salon",
+  "sort_by_date": null,
+  "position": -20,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "452d488d-daff-4841-aa83-fc2524f77b24",
+  "first_published_at": "2026-01-06T22:19:33.533Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

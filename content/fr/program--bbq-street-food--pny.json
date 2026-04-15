@@ -1,0 +1,54 @@
+{
+  "name": "PNY",
+  "created_at": "2026-03-16T15:54:45.382Z",
+  "published_at": "2026-03-16T16:31:57.096Z",
+  "updated_at": "2026-03-16T16:31:57.110Z",
+  "id": 155594282546144,
+  "uuid": "c1388b92-7ec8-47f2-8a7b-9bb35d504e49",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Nous sommes des pros du steak haché. En 12 ans, nous avons développé un savoir-faire unique.  Nos cheddars proviennent d’une petite exploitation du Somerset en Angleterre et sont affinés de 6 à 18 mois. Les petits pains sont cuits chaque matin et la recette a nécessité plus de 50 tests. Nous nous fournissons dès que c’est possible et dès que cela a du sens directement chez les producteurs.  Il n’y a pas un ingrédient qui rentre chez PNY sans avoir été soumis aux palais de Graffi. Enfin, nous sommes en recherche perpétuelle de recettes, d’ingrédients,  de techniques et de rencontres qui nous permettent de devenir petit à petit encore meilleurs.   Redorer l’image du burger, voilà notre humble vocation. En savoir plus",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151350594296276,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cd7f51d556_quentintourbez-pny-juicylucy01-01971.webp",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "PNY",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Les Pros du Steak haché"
+  },
+  "slug": "pny",
+  "full_slug": "program/bbq-street-food/pny",
+  "sort_by_date": null,
+  "position": -120,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "cbe69eae-e499-4f63-9ecb-5e9acf72176c",
+  "first_published_at": "2026-03-16T16:31:26.197Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

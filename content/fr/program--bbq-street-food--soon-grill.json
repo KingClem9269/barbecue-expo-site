@@ -1,0 +1,54 @@
+{
+  "name": "Soon Grill",
+  "created_at": "2026-03-16T15:54:56.716Z",
+  "published_at": "2026-03-16T16:24:52.102Z",
+  "updated_at": "2026-03-16T16:24:52.119Z",
+  "id": 155594328970238,
+  "uuid": "86720432-881c-4525-95c3-0a95be38f5c9",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Pour la première fois au Barbecue Expo, Soon Grill vient représenter l’excellence du barbecue asiatique. Référence incontournable du barbecue coréen à Paris, avec plusieurs restaurants réputés dans la capitale, l’enseigne est connue pour la précision de ses marinades, la qualité de ses viandes et sa maîtrise du grill à table. Sur le terrain du Barbecue Expo, Soon Grill vient partager ce savoir-faire unique et montrer comment la culture coréenne du feu s’inscrit pleinement dans l’univers du barbecue. Une rencontre entre tradition asiatique, cuisson au grill et passion de la braise, pour découvrir une autre facette du barbecue venu d’Asie. ",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151348498790790,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/605dc56a79_image-15.png",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Soon Grill",
+    "country": "kr",
+    "component": "page-street-food",
+    "shortdescription": ""
+  },
+  "slug": "soon-grill",
+  "full_slug": "program/bbq-street-food/soon-grill",
+  "sort_by_date": null,
+  "position": -160,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "07a6801c-9901-4907-83b4-741f9e604e8b",
+  "first_published_at": "2026-03-16T16:24:37.874Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

@@ -1,0 +1,753 @@
+{
+  "name": "HOME",
+  "created_at": "2026-03-04T18:01:25.313Z",
+  "published_at": "2026-03-25T14:20:48.759Z",
+  "updated_at": "2026-03-25T14:20:48.777Z",
+  "id": 151378679078587,
+  "uuid": "025e13aa-32a2-4545-89fb-cc5d68b6da32",
+  "content": {
+    "_uid": "e0cc2955-f6f0-4ea7-8a65-cab0d2da663c",
+    "body": [
+      {
+        "_uid": "0d636e7a-fbd8-432c-881c-896468c6d504",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "0e77c574-9a12-492f-993a-9d606a169591",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "0",
+            "_uid": "9a800f05-3a53-43f1-85f6-5c5881422638",
+            "content": [
+              {
+                "gap": "4",
+                "_uid": "80398c7a-7240-4235-a987-ed254685c40c",
+                "wrap": "wrap",
+                "align": "start",
+                "content": [
+                  {
+                    "_uid": "6edb13aa-ffb7-4e71-977f-7d8c0cd8b04a",
+                    "color": "secondary",
+                    "content": "Taste, compare, enjoy: BBQ Street Food in festival mode.",
+                    "heading": "",
+                    "component": "headline",
+                    "textAlign": ""
+                  },
+                  {
+                    "_uid": "20ddff96-cf76-4574-9339-0b4ed9fc6fa2",
+                    "color": "secondary",
+                    "content": "Dedicated stands for barbecue in all its forms: meat, poultry, fish, veggie, sauces, sides... all cooked live over fire.",
+                    "component": "paragraph"
+                  },
+                  {
+                    "_uid": "8e43d27c-adba-4851-b9b0-5024e5d9dd08",
+                    "color": "secondary",
+                    "content": "For the public: a world tour of BBQ flavors. For the pros: a direct reading of what works (formats, prices, recipes, presentation, flow, equipment).",
+                    "component": "paragraph"
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "898a5636-9d5c-4bd1-a81e-8f7d3bb8d848",
+                    "content": [],
+                    "component": "Grid",
+                    "nColsLarge": "4",
+                    "nColsMedium": "2",
+                    "nColsMobile": "1"
+                  }
+                ],
+                "justify": "start",
+                "component": "Flex",
+                "direction": "",
+                "gapDesktop": ""
+              },
+              {
+                "_uid": "e140e463-d92d-4c7b-bde4-7f33a4a542a0",
+                "content": [
+                  {
+                    "_uid": "e71a368b-e118-4ddb-b657-1a3a70d689ee",
+                    "media": {
+                      "id": 133284673220699,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/b11331f094__j7i1238-min.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media"
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "paddingMobile": "4",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "paddingDesktop": "4",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "2",
+            "nColsMedium": "2",
+            "nColsMobile": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "3dbd15b9-5f3a-4583-9381-e40572411c9d",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "a49214a9-023a-416d-a832-dd48d42d40fd",
+            "wrap": "wrap",
+            "align": "center",
+            "content": [
+              {
+                "_uid": "caa3e245-df4b-4a4d-ae1b-e9e101816241",
+                "media": {
+                  "id": 158754114596585,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/bdab8afb63_ofyr-x-barbecue-expo-2026.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "component": "media",
+                "objectFit": "cover",
+                "customClass": ""
+              }
+            ],
+            "justify": "center",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "b247d802-0b0a-44e0-84fc-b841c83c42c8",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "96f469d4-93dd-4b20-9d19-410afe0f46ea",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "7201c8cd-6a8a-499b-bac9-fccb1ab150f8",
+                "color": "primary",
+                "content": "Our Exhibitors",
+                "heading": "h2",
+                "component": "headline",
+                "textAlign": "start"
+              },
+              {
+                "gap": "4",
+                "_uid": "b65a3888-47ba-4d75-84d6-dbbd8dea6fbd",
+                "content": [
+                  {
+                    "_uid": "7b148722-5b64-48e8-924d-9259d6db9a2c",
+                    "link": [
+                      {
+                        "_uid": "f0f7bab4-d85b-4dd0-948f-a98c76d06529",
+                        "icon": "",
+                        "path": "melt",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 136486947273589,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/1b72183fdb_melt-salon-bbq38020.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Melt",
+                    "country": "us",
+                    "component": "BbqCard",
+                    "paragraph": "The Authentic Taste of Texas Barbecue in Paris",
+                    "linkedPage": {
+                      "id": "1e7f6e94-a3e2-413c-89ad-90700b1641f3",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/test",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "b0f2abb2-f957-41a3-b3e5-ea4781867a61",
+                    "link": [
+                      {
+                        "_uid": "11fb4046-d884-43cc-8870-deb85f60e3ce",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 136488083901363,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/e88b832c97_b22c72bd-bd4f-499f-bdaa-e86ca27d64e4.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "A Feu lent",
+                    "country": "ar",
+                    "component": "BbqCard",
+                    "paragraph": "Asado argentin",
+                    "linkedPage": {
+                      "id": "14b0a5de-bdad-4ed7-a75e-3c5781c0c2c6",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/a-feu-lent",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "8af4bf90-fcd9-481c-9c94-f1ff781d6b15",
+                    "link": [
+                      {
+                        "_uid": "c11f03fc-a244-4ac0-84d0-8c1b3f9adbe8",
+                        "icon": "",
+                        "path": "/le-boukane",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 136488466787279,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/3572fda09c_le-boukane.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {
+                        "size": "1303x890"
+                      },
+                      "is_external_url": false
+                    },
+                    "title": "Le Boukané",
+                    "country": "fr",
+                    "component": "BbqCard",
+                    "paragraph": "Authentic Caribbean flavours",
+                    "linkedPage": {
+                      "id": "7766cf26-afa3-4b67-8794-fc25a43005b1",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/le-boukane",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "e86651db-b5e2-4baa-af22-51df3ba36ad0",
+                    "link": [
+                      {
+                        "_uid": "09f0be50-5af1-4b7b-be11-aec1b7c39fac",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 136489892199477,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/82a793fc75_photo_1711378025992.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "H.O.M Steakhouse",
+                    "country": "fr",
+                    "component": "BbqCard",
+                    "paragraph": "Grilled and Low-and-Slow Smoked Meats",
+                    "linkedPage": {
+                      "id": "4e85e714-fb67-48b9-9ec8-1512c6c207d9",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/h-o-m-steakhouse",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "cdeef0d1-8a7e-4f7b-b997-5ff0c2ba2521",
+                    "link": [
+                      {
+                        "_uid": "b112d005-7b54-415f-84be-13215247ffb7",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 136490197396552,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/72d794ea49_1-photo-des-chefs.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Le Cochon Voyageur",
+                    "country": "fr",
+                    "component": "BbqCard",
+                    "paragraph": " Specialists in Pork Shank and Slow-Smoked Pork",
+                    "linkedPage": {
+                      "id": "728f0e50-abf9-44dd-8980-fc6764192bea",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/le-cochon-voyageur",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "4595d79e-73d3-4981-9c4d-34296fb5abfe",
+                    "link": [
+                      {
+                        "_uid": "9a783440-8f88-4598-9462-db7d13a07038",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 136490815016059,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/2fdde243b9_p1050484-1.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Nicky’s BBQ",
+                    "country": "us",
+                    "component": "BbqCard",
+                    "paragraph": " Texas BBQ–Inspired Food Truck",
+                    "linkedPage": {
+                      "id": "b9346885-279b-4efe-bf46-987e9d11e1e5",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/nicky-s-bbq",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "395f2a95-b8a0-4903-9b6a-d8016dd92654",
+                    "link": [
+                      {
+                        "_uid": "f2c997e4-bbfc-4ab3-b418-a16661cccbd5",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151343222343627,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/9d713cc3c3_img_35a39b5a9f80-1.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Marché Noir",
+                    "country": "us",
+                    "component": "BbqCard",
+                    "paragraph": "Artisans of live-fire cooking",
+                    "linkedPage": {
+                      "id": "e9ac6e40-57fc-4425-86db-dbe643cdde5b",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/marche-noir",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "af91b3e0-6dd4-42f4-8340-63e102d7495f",
+                    "link": [
+                      {
+                        "_uid": "f41c4a97-538d-4c70-aa05-701ccf9e566a",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151346515380483,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/3b340a019d_brasero.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "L'Atelier du Braséro",
+                    "country": "fr",
+                    "component": "BbqCard",
+                    "paragraph": "Plancha Grill Specialists",
+                    "linkedPage": {
+                      "id": "1c4f27a1-bca4-40c0-8389-bf73fff266ad",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/atelier-du-brasero",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "3a3bb2d3-000a-4a9a-a64f-53af4f3a98b8",
+                    "link": [
+                      {
+                        "_uid": "ab36067e-364a-4002-87c9-69dcb00388a1",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151346934466840,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/92e248625e_4829a452-95a7-40b1-91af-0eedd7d8ddeb.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Au Feu le Saumon",
+                    "country": "fr",
+                    "component": "BbqCard",
+                    "paragraph": "Flame-cooked salmon fillets on cedar planks",
+                    "linkedPage": {
+                      "id": "32cee9d7-c54b-4e45-aecd-d00591d07d72",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/au-feu-le-saumon",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "b455d711-d00f-484c-8761-42c2d749f827",
+                    "link": [
+                      {
+                        "_uid": "de772898-6d30-491f-8df0-32213b2d0f5d",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151347339934009,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/bb579017a3_tatianagregoire-3-141_edited.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Chango",
+                    "country": "ar",
+                    "component": "BbqCard",
+                    "paragraph": "Culinary experiences fully dedicated to Argentina live-fire cooking",
+                    "linkedPage": {
+                      "id": "a71275b5-4a6b-4806-8c3f-36bbc1f90512",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/chango",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "6b078bde-f78f-4bef-9fcb-fdf91cd508a7",
+                    "link": [
+                      {
+                        "_uid": "0066364f-bd99-44d4-8652-624fc11fbe5b",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151347995851110,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/1830944ab1_salome_rateau-033.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Selva",
+                    "country": "pu",
+                    "component": "BbqCard",
+                    "paragraph": "Bistronomic cuisine inspired by Peruvian and Colombian flavors",
+                    "linkedPage": {
+                      "id": "820e78d4-52fd-4373-8d44-0d784b5a6964",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/selva",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "8d08193e-4984-4685-bb53-d47a6115d06b",
+                    "link": [
+                      {
+                        "_uid": "f9894434-4b67-4a63-aafa-f16ec46ad0f4",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151348498790790,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/605dc56a79_image-15.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Soon Grill",
+                    "country": "kr",
+                    "component": "BbqCard",
+                    "paragraph": "The excellence of Asian barbecue",
+                    "linkedPage": {
+                      "id": "86720432-881c-4525-95c3-0a95be38f5c9",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/soon-grill",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "010b4df7-1776-4e10-88c2-5857203924c7",
+                    "link": [
+                      {
+                        "_uid": "572956d6-2913-48b0-a842-69d43360bf66",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151349226334635,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/2f6b64df76_img-20250429-wa0013.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "Villa Marthe",
+                    "country": "fr",
+                    "component": "BbqCard",
+                    "paragraph": "The Big Red Smoker of Villa Marthe",
+                    "linkedPage": {
+                      "id": "c1f454fe-8ffe-465c-bd18-67f1b8ca4bda",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/villa-marthe",
+                      "prep": true
+                    }
+                  },
+                  {
+                    "_uid": "11440e8a-bbd8-4c0f-afd3-d5e6cea2de00",
+                    "link": [
+                      {
+                        "_uid": "7cabfca1-ace5-49a1-9985-124b17578b2e",
+                        "icon": "",
+                        "path": "/a",
+                        "label": "En savoir plus",
+                        "style": "outline-light",
+                        "component": "link"
+                      }
+                    ],
+                    "media": {
+                      "id": 151350594296276,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/cd7f51d556_quentintourbez-pny-juicylucy01-01971.webp",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "title": "PNY",
+                    "country": "us",
+                    "component": "BbqCard",
+                    "paragraph": "Les boss du steak haché",
+                    "linkedPage": {
+                      "id": "c1388b92-7ec8-47f2-8a7b-9bb35d504e49",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "/en/program/bbq-street-food/pny",
+                      "prep": true
+                    }
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "col",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "bbq-street-food",
+  "full_slug": "en/program/bbq-street-food/",
+  "sort_by_date": null,
+  "position": -220,
+  "tag_list": [],
+  "is_startpage": true,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "a50ca80c-6ed8-45b9-aa77-6a77ec76e241",
+  "first_published_at": "2026-03-04T18:02:04.419Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

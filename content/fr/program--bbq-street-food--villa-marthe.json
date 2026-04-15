@@ -1,0 +1,54 @@
+{
+  "name": "Villa Marthe",
+  "created_at": "2026-03-16T15:55:04.384Z",
+  "published_at": "2026-03-16T16:23:30.683Z",
+  "updated_at": "2026-03-16T16:23:30.695Z",
+  "id": 155594360378388,
+  "uuid": "c1f454fe-8ffe-465c-bd18-67f1b8ca4bda",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Installée dans une maison de caractère au cœur du port animé de La Cotinière, Villa Marthe est un restaurant sur l'île d’Oléron ouvert pendant la période estivale et des participations à des évènements culturels et sportifs sur notre territoire.  Depuis 10 ans, nous cuisinons avec passion dans notre BBQ smoker dans notre restaurant. Ce type de BBQ permet de faire de la cuisson lente basse température au feu de bois.  Nous proposons de la viande d'origine française, cuite pendant plusieurs heures à basse température et ensuite fumée et nappée au BBQ smoker. Ce savoir-faire donne à la viande une texture fondante, un goût intense et délicieusement fumée.  Nos spécialités : les ribs ( notre best-seller) ainsi que les burgers à l'effiloché de porc (pulled pork), accompagné de pomme de terre grenailles de l'île de Ré, sélectionnées pour leur qualité, leur goût et l'approche locale.   Villa Marthe, c'est également une conserverie à l'année, où nous fabriquons des tartinables de poisson, de charcuterie et des délicieuses crèmes desserts. Ces dernières sont fabriquées avec du lait fermier provenant d'une ferme située à 40km de notre atelier et avec les matières premières simples : des graines de vanilles, du chocolat noir Valrhona, des grains de café..  Notre philosophie : de la simplicité mais de grande qualité !",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151349226334635,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/2f6b64df76_img-20250429-wa0013.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Villa Marthe",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": ""
+  },
+  "slug": "villa-marthe",
+  "full_slug": "program/bbq-street-food/villa-marthe",
+  "sort_by_date": null,
+  "position": -170,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "896cdf1c-89e7-4ab5-90d1-a62f7e902936",
+  "first_published_at": "2026-03-16T16:23:11.810Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

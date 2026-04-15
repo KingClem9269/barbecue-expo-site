@@ -1,0 +1,2114 @@
+{
+  "name": "pourquoi-exposer",
+  "created_at": "2026-01-26T13:56:31.930Z",
+  "published_at": "2026-02-13T17:39:00.617Z",
+  "updated_at": "2026-02-13T17:39:00.644Z",
+  "id": 138224402174688,
+  "uuid": "4be42efc-9cbb-4790-bb74-54b7de91d2d7",
+  "content": {
+    "_uid": "d9a6938d-00ab-415b-9972-2e9bac259bc8",
+    "body": [
+      {
+        "_uid": "f30d6a2b-e6e0-4754-8c2a-e46fa351e2d4",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "6181651d-10bc-4b66-a4f3-57845dad5c78",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "7d199636-2ce4-4413-9e8d-470c886a0bf2",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "7fcb8b13-0327-4ac8-89ac-5d2254ca5354",
+            "content": [
+              {
+                "gap": "4",
+                "_uid": "8086f3f5-511d-4ed0-bd62-d76f87c54da0",
+                "wrap": "wrap",
+                "align": "start",
+                "content": [
+                  {
+                    "_uid": "d6ac2d30-c9bb-487a-80f6-35212ae7f629",
+                    "color": "secondary",
+                    "content": "Why exhibit at Barbecue Expo?",
+                    "heading": "h1",
+                    "component": "headline",
+                    "textAlign": ""
+                  },
+                  {
+                    "_uid": "b381738b-0f6d-467e-b308-8120471f6b44",
+                    "color": "secondary",
+                    "content": "The leading trade show in Europe to develop your sales, your network, and your reputation in the world of barbecue and outdoor cooking.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  },
+                  {
+                    "_uid": "1ccef1e3-e26a-4cb9-a630-0ef70fd24e89",
+                    "color": "secondary",
+                    "content": "Barbecue Expo is the meeting point between global supply and European buyers. A format designed to generate qualified leads, encourage product testing in real conditions, and accelerate your business opportunities.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  },
+                  {
+                    "gap": "0",
+                    "_uid": "0f588080-dfb5-4086-b902-0edd9766990f",
+                    "content": [
+                      {
+                        "_uid": "3a6dfe20-d6c9-4901-b1d4-434d0631954a",
+                        "content": [
+                          {
+                            "gap": "4",
+                            "_uid": "bc4410b1-ee74-40d4-95c5-1cad39cf98a6",
+                            "wrap": "wrap",
+                            "align": "start",
+                            "content": [
+                              {
+                                "_uid": "c2e179af-1b35-4501-b111-cf1dff548956",
+                                "icon": "arrow-right",
+                                "path": "/",
+                                "label": "Book a booth",
+                                "style": "filled-light",
+                                "component": "link",
+                                "fullWidth": true
+                              },
+                              {
+                                "_uid": "e65d3da4-0405-45cf-956d-79ada0a87b27",
+                                "icon": "arrow-right",
+                                "path": "/",
+                                "label": "Download the exhibitor brochure.",
+                                "style": "outline-light",
+                                "component": "link",
+                                "fullWidth": true
+                              }
+                            ],
+                            "justify": "start",
+                            "component": "Flex",
+                            "direction": "col",
+                            "gapDesktop": ""
+                          }
+                        ],
+                        "component": "Container",
+                        "customWidth": "",
+                        "customHeight": "128px",
+                        "colSpanMobile": "",
+                        "paddingMobile": "0",
+                        "rowSpanMobile": "",
+                        "colSpanDesktop": "",
+                        "paddingDesktop": "0",
+                        "rowSpanDesktop": "",
+                        "backgroundColor": "",
+                        "backgroundMedia": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "paddingDesktopLarge": ""
+                      }
+                    ],
+                    "component": "Grid",
+                    "nColsLarge": "1",
+                    "nColsMedium": "1",
+                    "nColsMobile": "1"
+                  }
+                ],
+                "justify": "start",
+                "component": "Flex",
+                "direction": "",
+                "gapDesktop": ""
+              },
+              {
+                "_uid": "3d02823c-a9b3-441b-b676-4a036242e052",
+                "content": [
+                  {
+                    "_uid": "5ff1e642-631b-4c08-82df-cf1680a343b5",
+                    "media": {
+                      "id": 133284673220699,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/b11331f094__j7i1238-min.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": ""
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "paddingMobile": "0",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "1",
+                "paddingDesktop": "0",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": "0"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "2",
+            "nColsMedium": "2",
+            "nColsMobile": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "4b72afc0-0776-4d25-a6f5-b50141052ab9",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "93629a25-8ce0-47bc-bd7f-fcd2cb0fd7c3",
+            "content": [
+              {
+                "_uid": "f1a254ed-928c-41df-8183-41a7237aaa66",
+                "color": "primary",
+                "content": "Key figures",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "fa267a93-960b-41d7-9e0a-2ee491ccc37f",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "a16a3949-efcb-46b7-9b9d-a9a994bb11ea",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "4c402230-00db-478d-899e-128cb5cc8fae",
+                        "icon": "house",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "f85259dd-1179-4833-8255-2ff97a3e7bdf",
+                        "color": "primary",
+                        "content": "20,000 m2",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "1c483965-0e8d-4917-8481-6bfb6cf80ed8",
+                        "color": "primary",
+                        "content": "indoor + outdoor exhibition",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "41c8256e-3c07-43a8-982c-0b206f2709d8",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "80232b3c-d03f-43ef-9bc1-c2b641573b88",
+                        "icon": "loader",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "ef67cd23-b10c-44f5-a7a6-e7214a796749",
+                        "color": "primary",
+                        "content": "250 brands",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "41351c78-b98f-4b03-be66-66a724fa7886",
+                        "color": "primary",
+                        "content": "exponents",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "1490c6cf-45a7-4e12-b09a-ba8cbff79242",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "e2b223ab-3166-4c9d-aa55-d4f02154f810",
+                        "icon": "users-round",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "df7d6c6e-ef47-4dc9-b3d5-d7b696829ef0",
+                        "color": "primary",
+                        "content": "25,000 visitors",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "066ca96d-3443-412a-af0e-9f0dc9196a2e",
+                        "color": "primary",
+                        "content": "don't 5,000 pro",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "f2a0fe51-c73d-42d8-bc49-49bcfd567da0",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "3576546b-6287-4a08-bb76-e4abbb5ee505",
+                        "icon": "earth",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "8ecdbc16-3c4a-44df-b53c-edd7db26eca3",
+                        "color": "primary",
+                        "content": "Buyers from 9 countries",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "ec550bbc-30e6-4264-887c-079660d98c66",
+                        "color": "primary",
+                        "content": "represented",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "00d31485-f090-43a8-8fd2-ff42c6cdc26b",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "2d44125b-627b-4229-9fc0-d038422e86bd",
+                        "icon": "chef-hat",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "9521ba10-d93e-4403-94a0-42e328fb9c97",
+                        "color": "primary",
+                        "content": "Demos & Tests",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "7b62b255-f08b-424e-bd54-17266baf230a",
+                        "color": "primary",
+                        "content": "Live demos & product tests.",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "c360d95f-271c-489d-aa2d-5b219772d72a",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "f83cc7c7-a66c-45a9-b186-3810136f51bd",
+                        "icon": "handshake",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "7a6940a5-8528-43e1-b5e7-f348897bd1b9",
+                        "color": "primary",
+                        "content": "B2B platform & active matchmaking",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "56ad42ae-4445-4e1f-aff2-79cb50d4d5d1",
+                        "color": "primary",
+                        "content": "Professional training and content",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "4",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "4d0c9f4b-ae1b-43ec-8d37-a8c5e9aee0e8",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "92dcd3b2-b7c0-485c-af9a-612aac6be7ac",
+            "content": [
+              {
+                "_uid": "d0bf66a3-448c-4cd6-8fdb-d71736dd5e85",
+                "color": "primary",
+                "content": "What you earn in 3 days at the fair",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "02668d42-9474-40dd-ba2a-bb207a94f08f",
+                "content": [
+                  {
+                    "_uid": "90ce78d5-8a33-4717-962e-1d331e250e3c",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "401464d2-5756-4b51-8ac1-37385ea14986",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "b1a7f3c7-7d9d-4cb1-ae4f-fa5253445a85",
+                            "icon": "messages-square",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "49c04f6f-868c-4e56-9387-8805694ce478",
+                            "color": "primary",
+                            "content": "Generate qualified leads",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "28803187-023f-41e9-bf54-c69b30ab096d",
+                            "color": "primary",
+                            "content": "Meet truly active buyers: retailers, distributors, importers, HORECA, developers.",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "b2268b34-270b-46df-ad80-613105e0976e",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "be0821eb-084e-4cc3-99c7-b25400a23294",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "ed8fe6f4-bb2a-4130-b6ec-910af6855892",
+                            "icon": "chevrons-up",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "6973bca2-64b3-43a8-9076-096f4718725d",
+                            "color": "primary",
+                            "content": "Sell faster",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "e0e0af41-7e5b-4ab5-a736-8c1e53c1c8e2",
+                            "color": "primary",
+                            "content": "Product tests, live demonstrations, and direct exchanges shorten the decision-making cycle.",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "feb541b5-13ea-4be4-9692-f42c00f2d54b",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "f1f9b70e-1941-471c-980a-31639cabb4ee",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "f1bee24a-dde4-4e22-84ca-25c8436149f2",
+                            "icon": "loader",
+                            "color": "secondary",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "1503ba19-7f8f-4113-b90f-f07eedbc0535",
+                            "color": "secondary",
+                            "content": "Launch your new products.",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "201f026e-13b7-425a-bf16-da68c913c023",
+                            "color": "secondary",
+                            "content": "Present your innovations at the key moment of the BBQ season (April = strategic moment).",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "primary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "ecd5ba62-f295-4225-8bc2-fd6f5542a478",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "bba65017-b5c6-4718-bb73-086e15204736",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "1ff6bbf8-f10c-4a2b-9fcf-f7277711b1c6",
+                            "icon": "earth",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "a43dff94-8dc8-4fe3-8098-ead56469d639",
+                            "color": "primary",
+                            "content": "Accelerate your international development",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "4aa8e3fd-3106-41d1-ba92-4b45d199e772",
+                            "color": "primary",
+                            "content": "Meet European players and identify local partners or distributors.",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "56a8b72c-845f-4801-b019-5adf29839363",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "05f8f478-59e9-48da-aa39-bbca975fef9a",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "83ee840c-01c9-4ba3-8b24-b87327bf74ba",
+                            "icon": "megaphone",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "47f28aa3-22f8-48c9-8907-544c5abbcaad",
+                            "color": "primary",
+                            "content": "Strengthen your brand image",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "70c885c1-56ad-4a9c-ab6a-805b6e1233b0",
+                            "color": "primary",
+                            "content": "Associate your brand with the leading event in the industry in Europe.",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "5",
+                "nColsMedium": "3",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "8fa8c5ec-1e54-43f1-9850-b7fb92ef88b4",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "d4f3b7e1-e203-4702-83f9-5fe4abc1213e",
+            "content": [
+              {
+                "_uid": "1558ba71-799b-462a-bbcc-8db4e24b9cfe",
+                "color": "primary",
+                "content": "Who is the exhibition aimed at?",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "d43bb3f0-600d-4f17-89c6-d660df927eb1",
+                "content": [
+                  {
+                    "_uid": "077525c1-4f64-47c0-b00e-3a33aa953fbf",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "2cd0735e-7b1c-4af2-9918-7385b5ed479e",
+                        "color": "primary",
+                        "content": "Manufacturers & BBQ brands",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "ff78cf79-adcc-4e60-b3d6-63bab07ec7a9",
+                        "color": "primary",
+                        "content": "Promises",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b71204df-5746-453c-97d7-ccee064cd9b8",
+                        "color": "primary",
+                        "content": "Deploy your brand in the European market.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "068052c8-3464-4529-b50c-208a2cf1994c",
+                        "color": "primary",
+                        "content": "Benefits",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "5d43fd74-7a87-44a3-a267-1344dc09f9aa",
+                        "color": "primary",
+                        "content": "• visibility with key buyers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "6eba3ab4-9360-404e-865f-ece712184fab",
+                        "color": "primary",
+                        "content": "• product tests in real conditions",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "de9c57c4-7297-4a02-8091-8b1cd0223783",
+                        "color": "primary",
+                        "content": "• immediate market feedback",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "0db19b34-fb71-4850-a473-5ee03908c497",
+                        "color": "primary",
+                        "content": "Products",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "c565da6e-3950-4ebc-8f34-8b16c6dd7f83",
+                        "color": "primary",
+                        "content": "barbecues, kamados, fire pits, smokers, hybrid grills.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "253d93f4-ec4a-422f-acc1-c9be7eafb551",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "796fa979-514c-41cf-9de4-08fddbe56329",
+                        "color": "primary",
+                        "content": "Brands accessories & equipment",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "a48f5594-281b-4032-aa88-e5e668a0f3bf",
+                        "color": "primary",
+                        "content": "Promises",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "43609108-7433-49b0-8af5-b24b24269569",
+                        "color": "primary",
+                        "content": "Boost your volumes and your distribution.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "74e78d09-ed45-457f-b4f0-0f64329aec87",
+                        "color": "primary",
+                        "content": "Benefits",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "33482fc4-2c8a-4757-b9dc-2987c14ecaff",
+                        "color": "primary",
+                        "content": "• sourcing direct",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "bbc09384-3e40-4d7c-adc7-a2651e606e8f",
+                        "color": "primary",
+                        "content": "• strong appetite for high-margin products",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b6f9218d-ac42-466d-b322-d728c94b9516",
+                        "color": "primary",
+                        "content": "• salon & post-salon orders",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "5fb5548e-55be-487f-bdbd-2b4277b272c6",
+                        "color": "primary",
+                        "content": "Products",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "5c4b8615-4ec7-42b2-98d9-d20c39229e92",
+                        "color": "primary",
+                        "content": "accessories, tools, thermometers, planchas, modules.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "05783b28-cef1-495e-9b4d-c37670218595",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "eb2c712c-e807-40fb-8512-4b384b19bf7f",
+                        "color": "primary",
+                        "content": "Fuels & material innovations",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "1e6091af-5d13-40c1-afc3-33956dcfce3b",
+                        "color": "primary",
+                        "content": "Promises",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "f5d554a0-789b-4805-90c7-d1737d7fb87a",
+                        "color": "primary",
+                        "content": "Convince by proof",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "0842b3eb-9b34-41a6-a20d-b77e2c3b0c72",
+                        "color": "primary",
+                        "content": "Benefits",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "2640d5f0-25dd-4786-8495-b87790544bc0",
+                        "color": "primary",
+                        "content": "• Live demonstrations",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "f7568cc9-38e8-4b66-b212-20444eeca757",
+                        "color": "primary",
+                        "content": "• Product pedagogy",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "f588190c-d640-4e70-b138-efae5918a43b",
+                        "color": "primary",
+                        "content": "• technical differentiation",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "ade37ff9-5bd9-496f-9e13-d457903d83d9",
+                        "color": "primary",
+                        "content": "Products",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "f3b9d440-e975-4832-a907-1581524352cb",
+                        "color": "primary",
+                        "content": "charcoal, pellets, wood, eco solutions",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "d8ec0f97-6ddc-45ac-9e51-f5d48e85fb4d",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "384a079b-160f-4ce8-b0f8-ea0a5cf19225",
+                        "color": "primary",
+                        "content": "Outdoor kitchens & landscaping",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "179618d7-3dee-414d-aae1-26da716c336b",
+                        "color": "primary",
+                        "content": "Promises",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "66c6f01a-6a69-42e5-8f5c-59d76e900a01",
+                        "color": "primary",
+                        "content": "Reach the prescribers and decision-makers.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "c647c215-3130-48dc-9c90-1f07f9e3cc8a",
+                        "color": "primary",
+                        "content": "Benefits",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "7c95a0d2-6dfc-4d14-bbfe-b400d83411bb",
+                        "color": "primary",
+                        "content": "• outdoor kitchen designers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "8464c096-19fb-4484-8650-dec3ba6fba94",
+                        "color": "primary",
+                        "content": "• landscapers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "bad22e35-60c2-4249-af88-5aa53677b32d",
+                        "color": "primary",
+                        "content": "• architects & installers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "265c1df7-ba62-485e-8b9c-2f39d8df925d",
+                        "color": "primary",
+                        "content": "Products",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "1d8871af-d582-4615-8ae3-fc5b78a52923",
+                        "color": "primary",
+                        "content": "outdoor kitchens, modules, design fire pits.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "4cc8cdac-b3dc-4c3b-8645-24e7a8418854",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "2bf5aaac-c2b4-453b-ae9d-bf3e0905b234",
+                        "color": "primary",
+                        "content": "Brands food & BBQ ingredients",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "ea8c49ce-e5fc-40c4-be1d-f87949e05493",
+                        "color": "primary",
+                        "content": "Promises",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "df17f8c6-e9d7-4f81-8db4-bd06773066d9",
+                        "color": "primary",
+                        "content": "Create desire and repurchase.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "cb779660-c3a0-4bef-bc15-12704d6239d0",
+                        "color": "primary",
+                        "content": "Benefits",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "2287d339-0b89-44d5-93a1-23d25da1e7e0",
+                        "color": "primary",
+                        "content": "• Tasting",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "7e56bceb-09e0-43d1-9a9a-0158ba601b8a",
+                        "color": "primary",
+                        "content": "• real-life situation",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "80d01741-82f0-4a19-8445-5542a3cfc443",
+                        "color": "primary",
+                        "content": "• visibility with managers & buyers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "be0bd7d6-b2f5-4135-9781-9885b24b0d40",
+                        "color": "primary",
+                        "content": "Products",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "a4816866-d358-415a-8b01-d45c7c6b7f9b",
+                        "color": "primary",
+                        "content": "sauces, rubs, meats, plant-based alternatives.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "53bf32d7-8d1d-4a32-be58-d077ffed78b1",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "9c3c6436-861c-4638-a6bc-e59bfb78d362",
+                        "color": "primary",
+                        "content": "New entrants & international brands",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "4bfcc40a-6454-4347-83ae-8718999ce007",
+                        "color": "primary",
+                        "content": "Promises",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "defdad0d-25a7-48db-8968-b6d0fe4f8df6",
+                        "color": "primary",
+                        "content": "Enter the European market effectively.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "630ba4c9-b59c-494b-8d77-62115c2fb4c0",
+                        "color": "primary",
+                        "content": "Benefits",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "9aa4f38c-a273-4349-a368-59278091b5cf",
+                        "color": "primary",
+                        "content": "• immediate visibility",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "9093cef5-7b91-4e7d-b4d7-40e9e598604b",
+                        "color": "primary",
+                        "content": "• distributor contacts",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "6528be36-7b56-42b9-9e2c-c20d293d03de",
+                        "color": "primary",
+                        "content": "• benchmark competition",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "654682fe-2287-4c73-b900-e47084cbcc19",
+                        "color": "primary",
+                        "content": "Angle",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "124dbca1-e719-41f1-913e-40d13df2b42f",
+                        "color": "primary",
+                        "content": "Europe = growth relay.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "1",
+                "nColsMobile": "1",
+                "nColsDesktop": "4"
+              },
+              {
+                "_uid": "8b089356-c919-474a-bc59-17a53e852f5f",
+                "icon": "",
+                "path": "/",
+                "label": "I am a brand → exhibiting at Barbecue Expo",
+                "style": "link",
+                "component": "link",
+                "fullWidth": false
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "2e3fc75b-85a3-491f-a294-cc22ed926f85",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "64c6ef0f-0ac3-42ea-a025-470baeb9e685",
+            "content": [
+              {
+                "_uid": "9f871309-c3b4-4240-8da0-be3c93892777",
+                "color": "primary",
+                "content": "An audience of buyers, not just simple visitors.",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "34b2f9c5-677f-4b3c-b3c0-8a343493adae",
+                "content": [
+                  {
+                    "_uid": "357420ee-b649-4d11-ad46-79f179dbb5a1",
+                    "color": "primary",
+                    "content": "Barbecue Expo attracts professionals actively sourcing, renewing product lines, or developing concepts. The majority of visitors come with specific goals: to compare, test, negotiate, and reference.",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  },
+                  {
+                    "gap": "0",
+                    "_uid": "a0e0de77-897b-4535-b2cc-0f07820eec80",
+                    "wrap": "wrap",
+                    "align": "start",
+                    "content": [
+                      {
+                        "_uid": "8e501a70-d6ef-45b3-8461-4cf656aaa468",
+                        "color": "primary",
+                        "content": "Present profiles",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "05bf21e5-e18c-4c29-93f3-34b0c6adbb3b",
+                        "color": "primary",
+                        "content": "- Specialized retailers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "a5706284-350f-49ac-bf9d-5e406e3cbe80",
+                        "color": "primary",
+                        "content": "- GSA / GSB / GSS Buyers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "e6bd1b92-2f0f-447f-bedd-6e0b8fa91f52",
+                        "color": "primary",
+                        "content": "- Distributors and importers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "bdb5d1ed-0add-4e4e-b67e-e11d08e79f97",
+                        "color": "primary",
+                        "content": "- CHR & hospitality",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "4f86c576-db13-450b-afa9-a0aaefd827de",
+                        "color": "primary",
+                        "content": "- Prescribers & planners",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "0",
+                "_uid": "c5ce296b-5387-4d05-b06b-6af778b7a307",
+                "wrap": "wrap",
+                "align": "start",
+                "content": [
+                  {
+                    "_uid": "4f626ddb-f53c-4372-9865-b219350055b3",
+                    "size": "sm",
+                    "color": "secondary",
+                    "logos": [
+                      {
+                        "id": 136471665636991,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/601ceb6719_tf1.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665567358,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/a432333a48_m6.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665706626,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/f56c29df25_tmc.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665460857,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/573c7ca1c5_franceinfo.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665460858,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/a7ee06bae4_franceinter.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665473147,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/36b048c175_bfmtv.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665444472,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/ed8659d918_france1.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      }
+                    ],
+                    "speed": "30s",
+                    "component": "MovingLogos",
+                    "direction": ""
+                  },
+                  {
+                    "_uid": "3d5ec414-7c26-43e9-adf4-f43853fba11c",
+                    "size": "sm",
+                    "color": "",
+                    "logos": [
+                      {
+                        "id": 136471666230916,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/61eb9b9e45_ofrrif.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665747587,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/9dbbfc6258_rlt.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665706626,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/f56c29df25_tmc.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665665665,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/f50110a382_sap.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665546877,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/c96cc6f02f_radiofrance.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665649280,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/6da68da2db_sudradio.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665522300,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/e244e9ccbf_habitat.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665436279,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/a0e33f5345_europe2.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665297014,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/8c90408a64_20min.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      },
+                      {
+                        "id": 136471665473147,
+                        "alt": "",
+                        "name": "",
+                        "focus": "",
+                        "title": "",
+                        "source": "",
+                        "filename": "/content/images/36b048c175_bfmtv.jpeg",
+                        "copyright": "",
+                        "fieldtype": "asset",
+                        "meta_data": {}
+                      }
+                    ],
+                    "speed": "30s",
+                    "component": "MovingLogos",
+                    "direction": "right"
+                  }
+                ],
+                "justify": "start",
+                "component": "Flex",
+                "direction": "col",
+                "gapDesktop": ""
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "780d30c2-1f8b-490c-9894-0cc028a8ee1d",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "94ffb475-f892-4531-acb0-ade21d1e1534",
+            "content": [
+              {
+                "_uid": "c328f0e3-4398-4b48-b463-63ca057012d9",
+                "color": "primary",
+                "content": "B2B Platform & Matchmaking",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "17d072bb-aca2-4f17-8906-887003bc7067",
+                "content": [
+                  {
+                    "_uid": "c160bea4-a55a-4af9-aa3c-a74d5c09e450",
+                    "color": "primary",
+                    "content": "As an exhibitor, you access the B2B platform to:",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  },
+                  {
+                    "gap": "0",
+                    "_uid": "4225f59e-efb2-41fe-8240-87985b1e0edb",
+                    "wrap": "wrap",
+                    "align": "start",
+                    "content": [
+                      {
+                        "_uid": "7bb60200-75ac-477b-b12d-16c77e90fa29",
+                        "color": "primary",
+                        "content": "✔ Present your brand & your products",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "fe7ae768-a36b-40ea-bd88-aa89a0756dd7",
+                        "color": "primary",
+                        "content": "✔ Be visible to targeted buyers",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "50ef84f3-f92f-44c0-b42d-92eae4417896",
+                        "color": "primary",
+                        "content": "✔ Receive appointment requests",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "8867f80f-95d5-4664-bfd5-ad9c238417c3",
+                        "color": "primary",
+                        "content": "✔ Plan your exchanges in advance",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "38d62bba-db00-4af9-9831-e4995dee772e",
+                        "color": "primary",
+                        "content": "✔ Maximize your trade show ROI",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "4",
+                "_uid": "d27bbf1a-9565-4423-93e8-2549bc3f6a24",
+                "content": [
+                  {
+                    "_uid": "7124fcb9-91dd-4910-8f6c-41721b460198",
+                    "icon": "arrow-right",
+                    "path": "/",
+                    "label": "Access the exhibitors' platform",
+                    "style": "filled-dark",
+                    "component": "link",
+                    "fullWidth": false
+                  },
+                  {
+                    "_uid": "4b40119b-4af7-4f4a-8464-6279e9b872ca",
+                    "icon": "arrow-right",
+                    "path": "/",
+                    "label": "Request a demo",
+                    "style": "outline-dark",
+                    "component": "link",
+                    "fullWidth": false
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "767314df-b64f-42e1-b3c3-d41b070ca46e",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "59fc6ee1-9ac6-4a36-a676-dc2ca6881669",
+            "content": [
+              {
+                "_uid": "467cf6ce-b804-4e11-982a-2b16861c51ab",
+                "color": "primary",
+                "content": "Visibility formats that amplify your presence",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "70a07483-ed24-44e4-bce4-ef74775f8ade",
+                "content": [
+                  {
+                    "_uid": "8ad5d3f5-63ac-414b-9cd4-77bfc75e0622",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "750c6e9a-149b-4ada-adbc-7c4b0b2c3899",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "453c30cb-5e15-44b8-a85f-57a9899ad04e",
+                            "icon": "ustensils",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "a09673ab-ed89-41cd-9c54-8ccc6be02e41",
+                            "color": "primary",
+                            "content": "Sponsored cooking shows",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "3a25633b-ee65-4f4e-a199-d873bda22f6c",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "d4e19276-2fe8-41c9-bb2a-60b0ec820643",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "ae7c6ab5-2409-4f3f-ad58-3805437daf27",
+                            "icon": "cooking-pot",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "04987c74-cd35-4532-8df4-f7b1172f859f",
+                            "color": "primary",
+                            "content": "Masterclass & demonstrations",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "ef07f93f-b655-414c-899d-1c3eaafd9ac9",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "98d68658-5371-4c27-9a73-4b0f43b82b3e",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "96d9c825-aa92-4873-b48b-36204adfa140",
+                            "icon": "tv",
+                            "color": "secondary",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "6fe71608-2692-4b86-8532-31a829e0d6da",
+                            "color": "secondary",
+                            "content": "Digital visibility & social media",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "primary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "ec1ef06f-941e-4c10-bdc3-42a79673ff88",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "5f6d7534-5124-4845-bf2e-68b5ac9d1543",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "09648f96-cd8b-4934-9dd8-761f9a74a6fb",
+                            "icon": "mail",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "d8851883-e20f-40ae-bf29-d8a33b4570d6",
+                            "color": "primary",
+                            "content": "Newsletters & editorial content",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "ab9451f3-f24f-415c-ba81-152769bff78f",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "48bc5ecf-57cf-4830-b0c7-fccb7a2d722d",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "6e2cb954-19ca-49a5-932c-a48c26bfeab2",
+                            "icon": "megaphone",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "f531179c-883b-426a-9b9e-bdb2ec7f5ed4",
+                            "color": "primary",
+                            "content": "Branding zones & experiences",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "5",
+                "nColsMedium": "3",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              },
+              {
+                "_uid": "0273fb63-1c74-40f8-b70e-eba35cf76d98",
+                "icon": "arrow-right",
+                "path": "/",
+                "label": "Discover sponsorship opportunities",
+                "style": "link",
+                "component": "link",
+                "fullWidth": false
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "d875861b-9d8b-44e1-b832-faec44739117",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "928bd570-f976-4775-8b00-4fd746cb3d8c",
+            "content": [
+              {
+                "_uid": "27779df1-c4e0-486e-95d8-1703cc43f18b",
+                "color": "black",
+                "content": "Make Barbecue Expo your business accelerator in Europe.",
+                "heading": "hero",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "5dc50d29-e1fc-4265-91a4-188e902d6e62",
+                "content": [
+                  {
+                    "_uid": "45c19936-4f65-4fe3-ab53-ca9cd25cad3e",
+                    "color": "primary",
+                    "content": "Book your booth now and prepare your meetings with key market buyers.",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "a2588adc-3720-4625-993f-f00ff34c1e4f",
+        "component": "HubSpotForm"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "pourquoi-exposer",
+  "full_slug": "en/pourquoi-exposer",
+  "sort_by_date": null,
+  "position": -140,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "0315b61e-4778-46de-8a79-28410ddb2fc0",
+  "first_published_at": "2026-01-26T14:19:13.151Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

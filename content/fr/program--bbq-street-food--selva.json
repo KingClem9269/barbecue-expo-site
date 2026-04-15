@@ -1,0 +1,54 @@
+{
+  "name": "Selva",
+  "created_at": "2026-03-16T15:54:51.110Z",
+  "published_at": "2026-03-16T16:44:40.011Z",
+  "updated_at": "2026-03-16T16:44:40.023Z",
+  "id": 155594306008048,
+  "uuid": "820e78d4-52fd-4373-8d44-0d784b5a6964",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Avec sa cuisine bistronomique d’inspiration péruvienne et colombienne, Selva dynamise le quartier de la Sorbonne depuis 2020.  Avec ce mélange de saveur et d’exotisme, la table fait voyager en Amérique du sud, éveille à la curiosité et surprend au travers d’une nouvelle expérience culinaire dans un cadre soigné et convivial.  Dans cette incroyable Selva (signifiant “jungle ou forêt tropicale”), on retrouve le mélange d’inspirations des 2 fondateurs et amis voyageurs. Hugues Chevallereau et le chef Felipe Camargo œuvrent avec énergie, éthique et convictions  pour redonner ses lettres de noblesse à la cuisine sud- américaine dans un cadre luxuriant.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151347995847013,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/8ad7180587_salome_rateau-85.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Selva",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "Influence Pérou & Bolivie"
+  },
+  "slug": "selva",
+  "full_slug": "program/bbq-street-food/selva",
+  "sort_by_date": null,
+  "position": -140,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "07b919c8-6037-43e2-8294-a24cef7abe1d",
+  "first_published_at": "2026-03-16T16:27:22.527Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

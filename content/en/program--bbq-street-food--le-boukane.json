@@ -1,0 +1,56 @@
+{
+  "name": "Le Boukané",
+  "created_at": "2026-03-16T15:53:56.588Z",
+  "published_at": "2026-03-16T16:14:50.627Z",
+  "updated_at": "2026-03-16T16:14:50.639Z",
+  "id": 155594082685777,
+  "uuid": "7766cf26-afa3-4b67-8794-fc25a43005b1",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Le Boukané is a welcoming Creole restaurant located in Grandcamp-Maisy, Normandy, introducing guests to the authentic flavors of the Caribbean through warm, vibrant, and multicultural cuisine. It is rooted in a family passion for gastronomy, born from the desire to share Creole culinary traditions and the art of boucanage — a slow, smoky cooking technique that gives meat and fish rich, deep aromas.  Whether dining in or taking away, guests can enjoy signature dishes such as smoked chicken, ribs, and a range of Creole specialties, all served in a festive and relaxed atmosphere, often enhanced by DJ sets and tropical cocktails.  A true meeting place for lovers of exotic cuisine, Le Boukané stands out for its warm hospitality and generous cooking, reflecting the spirit of boucanage and Caribbean influences while fitting naturally into Normandy’s local culinary scene.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136488466787279,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/3572fda09c_le-boukane.png",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {
+        "size": "1303x890"
+      },
+      "is_external_url": false
+    },
+    "title": "Le Boukané",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "le BBQ Caribéen"
+  },
+  "slug": "le-boukane",
+  "full_slug": "en/program/bbq-street-food/le-boukane",
+  "sort_by_date": null,
+  "position": -80,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "851575f7-786e-43d1-9a10-ebe5509859b6",
+  "first_published_at": "2026-03-16T16:12:02.274Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

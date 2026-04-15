@@ -1,0 +1,84 @@
+{
+  "name": "exposants",
+  "created_at": "2026-01-09T14:48:07.133Z",
+  "published_at": "2026-03-16T17:29:06.556Z",
+  "updated_at": "2026-03-16T17:29:06.566Z",
+  "id": 132220875583913,
+  "uuid": "cddaf14d-fee8-4e50-90bc-88f9cab913a9",
+  "content": {
+    "_uid": "73431eb8-bc31-4bcf-aba7-caed9055c066",
+    "body": [
+      {
+        "_uid": "4239dece-ea5f-48ce-afbf-30fa8c9b1fe2",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "72ecff62-5a9b-48b4-b85b-f8b6d0bc8918",
+            "wrap": "wrap",
+            "align": "center",
+            "content": [
+              {
+                "_uid": "2326cc1a-e85d-4352-8e96-b954912a852c",
+                "media": {
+                  "id": 155617061790277,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/88b8796265_banniere-grill-o-bois-x-barbecue-expo.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "component": "media",
+                "objectFit": "cover",
+                "customClass": ""
+              }
+            ],
+            "justify": "center",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "cba9572a-9a9f-4b1d-927a-a25c1b5a4120",
+        "anchor": "",
+        "height": "h-full",
+        "content": [
+          {
+            "_uid": "3a8f873f-62d7-4449-816d-c4fd63cd89c6",
+            "component": "ExposantsIFrame"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": ""
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "exposants",
+  "full_slug": "en/exposants",
+  "sort_by_date": null,
+  "position": -40,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "43e5bd28-f060-4f44-bbca-4f5aa006e7d3",
+  "first_published_at": "2026-01-09T15:56:45.915Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

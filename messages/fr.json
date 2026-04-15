@@ -1,0 +1,47 @@
+{
+  "bbq_expo": "BBQ Expo FR",
+  "cookingShowWidget": {
+    "title": "Programme Cooking Shows - Barbecue Expo 2026"
+  },
+  "contact": {
+    "headline": "Contactez-nous",
+    "description": "Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.",
+    "name_label": "Votre nom",
+    "name_placeholder": "Votre nom",
+    "email_label": "Votre email",
+    "email_placeholder": "Votre adresse email",
+    "message_label": "Votre message",
+    "message_placeholder": "Votre message",
+    "button": "Envoyer",
+    "loading": "Envoi en cours...",
+    "success": "Merci ! Votre message a été envoyé. Nous vous répondrons bientôt.",
+    "success_title": "Message envoyé avec succès",
+    "success_description": "Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.",
+    "error_default": "Une erreur s'est produite. Veuillez réessayer.",
+    "error_name_required": "Le nom est requis.",
+    "error_email_required": "L'adresse email est requise.",
+    "error_invalid_email": "Veuillez entrer une adresse email valide.",
+    "error_message_required": "Le message est requis.",
+    "error_unable_to_send": "Impossible d'envoyer le message. Veuillez réessayer plus tard.",
+    "error_unexpected": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "error_service_unconfigured": "Le formulaire de contact n'est pas disponible."
+  },
+  "masterClass": {
+    "learnMore": "En savoir plus"
+  },
+  "newsletter": {
+    "headline": "Restez informé",
+    "description": "Abonnez-vous à notre newsletter pour recevoir nos dernières actualités.",
+    "button": "S'abonner",
+    "placeholder": "Votre adresse email",
+    "loading": "Inscription...",
+    "success": "Merci ! Vous avez été inscrit avec succès.",
+    "error_default": "Une erreur s'est produite. Veuillez réessayer.",
+    "error_email_required": "L'adresse email est requise.",
+    "error_invalid_email": "Veuillez entrer une adresse email valide.",
+    "error_invalid_request": "Requête invalide. Veuillez vérifier votre email.",
+    "error_unable_to_subscribe": "Inscription impossible. Veuillez réessayer plus tard.",
+    "error_unexpected": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "error_service_unconfigured": "Le service newsletter n'est pas disponible."
+  }
+}

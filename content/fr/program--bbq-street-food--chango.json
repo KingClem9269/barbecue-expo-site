@@ -1,0 +1,54 @@
+{
+  "name": "Chango",
+  "created_at": "2026-03-16T15:54:04.729Z",
+  "published_at": "2026-03-16T16:33:16.794Z",
+  "updated_at": "2026-03-16T16:33:16.807Z",
+  "id": 155594116043623,
+  "uuid": "a71275b5-4a6b-4806-8c3f-36bbc1f90512",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Au croisement du feu, de la fête et de la tradition, Chango Événement imagine des expériences culinaires entièrement dédiées à la cuisson à la flamme et à l’Argentine. Spécialiste de l’asado, le barbecue argentin, Chango transforme la cuisine en un véritable spectacle où le brasero devient le cœur vivant d’un espace convivial et immersif. Depuis plusieurs années, Chango cultive à travers toute la France l’art du feu, le sens du partage et l’authenticité de la tradition argentine. Chaque installation est pensée comme une expérience à part entière, où le public assiste à la cuisson lente des viandes autour de grands braseros à ciel ouvert. Le feu, la fumée et les gestes précis des équipes composent une atmosphère chaleureuse, presque théâtrale. La street food proposée s’appuie sur des produits d’exception, notamment la viande Black Angus d’Argentine, et sur des recettes généreuses adaptées aux grands rassemblements. Ce concept a déjà fait ses preuves lors des BBQ Expo 2024 et 2025, ainsi que sur des événements majeurs tels que les Jeux Olympiques de Paris 2024, le DIG TOUR 2024 et les saisons estivales au Ground Control en 2024 et 2025.  Chango Événement crée des lieux chaleureux et vivants, où l’âme de l’Argentine s’exprime pleinement à travers le feu, les saveurs et une énergie sincère, festive et généreuse.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151347339934009,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/bb579017a3_tatianagregoire-3-141_edited.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Chango",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "Asado Argentin"
+  },
+  "slug": "chango",
+  "full_slug": "program/bbq-street-food/chango",
+  "sort_by_date": null,
+  "position": -110,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "00c34c63-471e-48e7-9e33-ed100fcb49c7",
+  "first_published_at": "2026-03-16T16:32:47.627Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

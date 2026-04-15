@@ -1,0 +1,54 @@
+{
+  "name": "Marché Noir",
+  "created_at": "2026-03-16T15:55:13.383Z",
+  "published_at": "2026-03-16T16:26:15.702Z",
+  "updated_at": "2026-03-16T16:26:15.715Z",
+  "id": 155594397238321,
+  "uuid": "e9ac6e40-57fc-4425-86db-dbe643cdde5b",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Marché Noir is barbecue in its most generous, indulgent form — the kind made to be shared with friends, the kind that makes noise, the kind that overflows from the plate while never losing sight of what matters most: great food, quality ingredients, and bold flavor. That is how Marché Noir introduces itself.  Smoke artisans specializing in live-fire and smoked cuisine, they cater for festivals (including Hellfest), weddings, divorces, film shoots, and more. They travel with their giant BBQ smokers to deliver a striking culinary experience built around flame and smoke. The technique may be inspired by North America, but the cuisine is entirely their own.  They work with a strong commitment to offering local, environmentally respectful cuisine, which is why all their meats and vegetables are organic and sourced from local agriculture.  They smoke everything — homemade, delicious, and done right.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151343222425549,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/4fa262e993_img_5155.JPG",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Marché Noir",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Artisans fumistes"
+  },
+  "slug": "marche-noir",
+  "full_slug": "en/program/bbq-street-food/marche-noir",
+  "sort_by_date": null,
+  "position": -150,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "704a324c-b279-4bac-9b43-8913939d5df7",
+  "first_published_at": "2026-03-16T16:26:15.702Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

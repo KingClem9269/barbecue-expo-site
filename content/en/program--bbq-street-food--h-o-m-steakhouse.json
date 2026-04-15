@@ -1,0 +1,54 @@
+{
+  "name": "H.O.M. Steakhouse",
+  "created_at": "2026-03-16T15:54:17.602Z",
+  "published_at": "2026-03-16T16:36:03.077Z",
+  "updated_at": "2026-03-16T16:36:03.090Z",
+  "id": 155594168759179,
+  "uuid": "4e85e714-fb67-48b9-9ec8-1512c6c207d9",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "House of Meats is a catering company founded in 2022, offering a flavorful combination of grilled meats and low-and-slow smoked barbecue.  At BBQ Expo, you will find our best-seller on the menu: a mixed platter featuring two meats — Cajun-spiced pulled pork and Black Angus brisket — served with fresh double-cooked fries and coleslaw for a touch of freshness.  You will also discover our marinated grilled chicken skewers, sure to delight your taste buds.  We look forward to welcoming you at our stand, where you can also discover our new-generation Airstream trailer, bringing an extra touch of style and visual appeal.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136489892199477,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/82a793fc75_photo_1711378025992.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "H.O.M. Steakhouse",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "THE Steakhouse"
+  },
+  "slug": "h-o-m-steakhouse",
+  "full_slug": "en/program/bbq-street-food/h-o-m-steakhouse",
+  "sort_by_date": null,
+  "position": -90,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "33c8f061-3297-47ab-9f1c-e29687ed2764",
+  "first_published_at": "2026-03-16T16:35:54.882Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

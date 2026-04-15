@@ -1,0 +1,56 @@
+{
+  "name": "Le Boukané",
+  "created_at": "2026-03-16T15:53:56.588Z",
+  "published_at": "2026-03-16T16:14:50.627Z",
+  "updated_at": "2026-03-16T16:14:50.639Z",
+  "id": 155594082685777,
+  "uuid": "7766cf26-afa3-4b67-8794-fc25a43005b1",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Le Boukané est un restaurant créole convivial situé à Grandcamp-Maisy, en Normandie, qui fait découvrir au public les saveurs authentiques des Caraïbes à travers une cuisine chaleureuse et métissée. Il est ancré dans une passion familiale pour la gastronomie, née de l’envie de partager des traditions culinaires créoles et des techniques de boucanage – une cuisson lente et fumée qui donne aux viandes et poissons des arômes riches et profonds.  Sur place ou à emporter, la carte propose des plats emblématiques comme le poulet boucané, les ribs et différentes spécialités créoles, le tout dans une ambiance festive et décontractée, souvent accompagnée de DJ sets et cocktails tropicaux.  Lieu de rendez-vous pour les amateurs de cuisine exotiques, Le Boukané se distingue par son accueil chaleureux et sa cuisine généreuse, reflétant l’esprit du boucanage et les influences antillaises, tout en s’inscrivant avec convivialité dans le paysage gastronomique local normand. ",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136488466787279,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/3572fda09c_le-boukane.png",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {
+        "size": "1303x890"
+      },
+      "is_external_url": false
+    },
+    "title": "Le Boukané",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "le BBQ Caribéen"
+  },
+  "slug": "le-boukane",
+  "full_slug": "program/bbq-street-food/le-boukane",
+  "sort_by_date": null,
+  "position": -80,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "851575f7-786e-43d1-9a10-ebe5509859b6",
+  "first_published_at": "2026-03-16T16:12:02.274Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

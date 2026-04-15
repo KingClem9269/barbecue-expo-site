@@ -1,0 +1,105 @@
+{
+  "name": "billetterie",
+  "created_at": "2026-01-08T18:00:07.591Z",
+  "published_at": "2026-04-04T14:41:35.105Z",
+  "updated_at": "2026-04-04T14:41:35.122Z",
+  "id": 131914169011677,
+  "uuid": "72abe1ed-b891-42d6-857b-f8016da559e7",
+  "content": {
+    "_uid": "81658d7f-b250-4d6c-8e80-39af0e67a9f2",
+    "body": [
+      {
+        "_uid": "e7754ec9-0953-40eb-a3b2-85459d52a10a",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "5866a543-5822-4a55-a178-e83a7ef3a2ea",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "2a4efa84-afb3-42df-99c7-ed8da5dc9477",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "gap": "4",
+                "_uid": "34eeaced-9211-432f-9cfa-ff3673a57a8d",
+                "content": [
+                  {
+                    "_uid": "54872679-1afd-47af-aec6-382aec1b9dd5",
+                    "color": "secondary",
+                    "content": "Ticketing for Individuals",
+                    "heading": "h1",
+                    "component": "headline",
+                    "textAlign": "start"
+                  },
+                  {
+                    "_uid": "1b485836-438c-4a07-ad14-06093707142e",
+                    "bold": false,
+                    "color": "secondary",
+                    "content": "In just a few years, the event has established itself as the largest European gathering for barbecue and outdoor cooking: a trade show where attendees come to discover new products, test equipment, meet brands, and learn from the best.",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  },
+                  {
+                    "_uid": "7b240a76-fd2b-44dd-acef-eac97f16216a",
+                    "bold": false,
+                    "color": "secondary",
+                    "content": "ADDITIONAL INFORMATION: Tickets for children under 12 are free and must be collected on site. Pets are not allowed at the show.",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "81c4883b-19a4-4cc0-b40e-48f5abad9bfe",
+        "anchor": "",
+        "height": "h-full",
+        "content": [
+          {
+            "_uid": "bfd78fce-ba18-4ea9-9019-77d989cb0422",
+            "code": "<a title=\"Logiciel billetterie en ligne\"  href=\"https://widget.weezevent.com/ticket/E1400308/?code=69496&locale=fr-FR&width_auto=1&color_primary=fcb900\"  class=\"weezevent-widget-integration\"  data-src=\"https://widget.weezevent.com/ticket/E1400308/?code=69496&locale=fr-FR&width_auto=1&color_primary=fcb900\"   data-id=\"1400308\"  data-resize=\"1\"  data-width_auto=\"1\"  data-noscroll=\"0\"  data-use-container=\"yes\"  data-type=\"neo\"  target=\"_blank\">Billetterie Weezevent</a> <script type=\"text/javascript\" src=\"https://widget.weezevent.com/weez.js\"></script>",
+            "component": "iframe"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": ""
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "particulier",
+  "full_slug": "en/billetterie/particulier",
+  "sort_by_date": null,
+  "position": -30,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 137530642148655,
+  "meta_data": null,
+  "group_id": "58d16b2e-85ca-4104-9c41-e0c286828969",
+  "first_published_at": "2026-01-08T18:07:42.783Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

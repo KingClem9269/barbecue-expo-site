@@ -1,0 +1,47 @@
+{
+  "bbq_expo": "BBQ Expo",
+  "cookingShowWidget": {
+    "title": "Cooking Shows Schedule - Barbecue Expo 2026"
+  },
+  "contact": {
+    "headline": "Contact us",
+    "description": "Send us a message and we'll get back to you as soon as possible.",
+    "name_label": "Your name",
+    "name_placeholder": "Your name",
+    "email_label": "Your email",
+    "email_placeholder": "Your email address",
+    "message_label": "Your message",
+    "message_placeholder": "Your message",
+    "button": "Send",
+    "loading": "Sending...",
+    "success": "Thank you! Your message has been sent. We'll get back to you soon.",
+    "success_title": "Message sent successfully",
+    "success_description": "Your message has been correctly sent. We will get back to you as soon as possible.",
+    "error_default": "Something went wrong. Please try again.",
+    "error_name_required": "Name is required.",
+    "error_email_required": "Email is required.",
+    "error_invalid_email": "Please enter a valid email address.",
+    "error_message_required": "Message is required.",
+    "error_unable_to_send": "Unable to send message. Please try again later.",
+    "error_unexpected": "An unexpected error occurred. Please try again.",
+    "error_service_unconfigured": "Contact form is not available."
+  },
+  "masterClass": {
+    "learnMore": "Learn more"
+  },
+  "newsletter": {
+    "headline": "Stay updated",
+    "description": "Subscribe to our newsletter for the latest news and updates.",
+    "button": "Subscribe",
+    "placeholder": "Your email address",
+    "loading": "Subscribing...",
+    "success": "Thank you! You've been subscribed successfully.",
+    "error_default": "Something went wrong. Please try again.",
+    "error_email_required": "Email is required.",
+    "error_invalid_email": "Please enter a valid email address.",
+    "error_invalid_request": "Invalid request. Please check your email.",
+    "error_unable_to_subscribe": "Unable to subscribe. Please try again later.",
+    "error_unexpected": "An unexpected error occurred. Please try again.",
+    "error_service_unconfigured": "Newsletter service is not available."
+  }
+}

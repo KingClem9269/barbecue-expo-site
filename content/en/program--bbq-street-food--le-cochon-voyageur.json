@@ -1,0 +1,54 @@
+{
+  "name": "Le Cochon Voyageur",
+  "created_at": "2026-03-16T15:54:26.773Z",
+  "published_at": "2026-03-16T16:35:03.956Z",
+  "updated_at": "2026-03-16T16:35:03.968Z",
+  "id": 155594206327721,
+  "uuid": "728f0e50-abf9-44dd-8980-fc6764192bea",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Le Cochon Voyageur is above all a human and artisanal adventure born from the meeting of Franck and Olivier. Metalworkers by trade and passionate about fire, they combined their expertise to create an extraordinary catering concept, where mastery of metal meets the art of barbecue.  From this partnership came a truly unique world: spectacular cooking machines, entirely designed and built by their own hands, unlike anything you will see elsewhere. These one-of-a-kind creations are made to elevate wood-fire cooking and deliver an experience that is as visually impressive as it is delicious.  Recognized specialists in cooking pork shank and pork, they work with precision, patience, and deep respect for the product, achieving long, controlled, and intensely flavorful cooking.  Le Cochon Voyageur is the meeting point of fire, iron, and indulgence, serving an authentic and spectacular cuisine.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136490263542866,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/21804e4f01_2-photo-machine-officiel.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Le Cochon Voyageur",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": "Le Jarret comme jamais ! "
+  },
+  "slug": "le-cochon-voyageur",
+  "full_slug": "en/program/bbq-street-food/le-cochon-voyageur",
+  "sort_by_date": null,
+  "position": -100,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "2adf079e-1f2f-434f-9e5e-a57fd5d866e8",
+  "first_published_at": "2026-03-16T16:33:58.493Z",
+  "release_id": null,
+  "lang": "en",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}
