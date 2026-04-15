@@ -10,6 +10,7 @@ import { DesktopNav } from "@/components/nav/DesktopNav";
 import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ClientRegistryInit } from "@/lib/ClientRegistry";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -64,13 +65,12 @@ export default async function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <ClientRegistryInit />
           <NextIntlClientProvider locale={locale}>
             <div className="w-full relative">
               {siteSettings?.content?.header_menu && (
                 <DesktopNav
                   menuItems={siteSettings.content.header_menu}
-                  city={siteSettings.content.city || "Paris, France"}
-                  date={siteSettings.content.date}
                   tickets={siteSettings.content.tickets}
                   tickets_slug={siteSettings.content.tickets_slug}
                   tickets_b2c_label={siteSettings.content.tickets_b2c_label}

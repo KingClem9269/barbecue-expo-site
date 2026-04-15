@@ -1,0 +1,54 @@
+{
+  "name": "PNY",
+  "created_at": "2026-03-16T15:54:45.382Z",
+  "published_at": "2026-03-16T16:31:57.096Z",
+  "updated_at": "2026-03-16T16:31:57.110Z",
+  "id": 155594282546144,
+  "uuid": "c1388b92-7ec8-47f2-8a7b-9bb35d504e49",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Somos profissionais do hambúrguer. Em 12 anos, desenvolvemos um saber-fazer único.  Os nossos cheddars provêm de uma pequena exploração do Somerset em Inglaterra e são afinados de 6 a 18 meses. Os pãezinhos são cozidos todas as manhãs e a receita necessitou de mais de 50 testes. Abastecemo-nos sempre que possível e sempre que faz sentido diretamente junto dos produtores.  Não há um ingrediente que entre no PNY sem ter sido submetido ao paladar de Graffi. Por fim, estamos em busca perpétua de receitas, ingredientes, técnicas e encontros que nos permitam tornar-nos cada vez melhores.   Reabilitar a imagem do burger, eis a nossa humilde vocação. Saber mais",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151350594296276,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cd7f51d556_quentintourbez-pny-juicylucy01-01971.webp",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "PNY",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Os Profissionais do Hambúrguer"
+  },
+  "slug": "pny",
+  "full_slug": "program/bbq-street-food/pny",
+  "sort_by_date": null,
+  "position": -120,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "cbe69eae-e499-4f63-9ecb-5e9acf72176c",
+  "first_published_at": "2026-03-16T16:31:26.197Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

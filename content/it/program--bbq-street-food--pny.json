@@ -1,0 +1,54 @@
+{
+  "name": "PNY",
+  "created_at": "2026-03-16T15:54:45.382Z",
+  "published_at": "2026-03-16T16:31:57.096Z",
+  "updated_at": "2026-03-16T16:31:57.110Z",
+  "id": 155594282546144,
+  "uuid": "c1388b92-7ec8-47f2-8a7b-9bb35d504e49",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Siamo dei professionisti dello steak burger. In 12 anni, abbiamo sviluppato un sapere unico.  I nostri cheddar provengono da una piccola azienda agricola del Somerset in Inghilterra e sono stagionati da 6 a 18 mesi. I panini sono cotti ogni mattina e la ricetta ha richiesto più di 50 test. Ci riforniamo appena possibile e quando ha senso direttamente dai produttori.  Non c’è un ingrediente che entra da PNY senza essere stato sottoposto ai palati di Graffi. Infine, siamo alla ricerca perpetua di ricette, ingredienti, tecniche e incontri che ci permettano di diventare passo dopo passo ancora migliori.   Ridare lustro all’immagine del burger, ecco la nostra umile vocazione. Scopri di più",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151350594296276,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cd7f51d556_quentintourbez-pny-juicylucy01-01971.webp",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "PNY",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Les Pros du Steak haché"
+  },
+  "slug": "pny",
+  "full_slug": "program/bbq-street-food/pny",
+  "sort_by_date": null,
+  "position": -120,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "cbe69eae-e499-4f63-9ecb-5e9acf72176c",
+  "first_published_at": "2026-03-16T16:31:26.197Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

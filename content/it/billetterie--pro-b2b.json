@@ -1,0 +1,96 @@
+{
+  "name": "billetterie-pro",
+  "created_at": "2026-01-12T17:13:51.259Z",
+  "published_at": "2026-02-13T13:24:08.522Z",
+  "updated_at": "2026-02-13T13:24:08.537Z",
+  "id": 133318374740695,
+  "uuid": "e8dcda57-0443-4c5c-80d4-f240487b7abc",
+  "content": {
+    "_uid": "970ed52c-6a94-4e3a-a6a6-cdba671224e4",
+    "body": [
+      {
+        "_uid": "e669f704-45b5-4f23-9d0f-ae86af114783",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "2b535a55-b6d8-4834-9f7a-3a0db53a72f1",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "f40ce9d7-6938-4ddc-aa39-880d81cfd2d9",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "gap": "4",
+                "_uid": "62e26441-8dc4-49e3-aa8e-b80799de3a5f",
+                "content": [
+                  {
+                    "_uid": "1a3ee49e-415a-4153-872b-42569a093c00",
+                    "color": "secondary",
+                    "content": "Biglietteria Pro & B2B",
+                    "heading": "h1",
+                    "component": "headline",
+                    "textAlign": "start"
+                  },
+                  {
+                    "_uid": "9f0b1cef-9373-44b2-9205-287b45b69219",
+                    "bold": false,
+                    "color": "secondary",
+                    "content": "In pochi anni, l’evento si è imposto come il più grande appuntamento europeo del barbecue e dell’outdoor cooking: un salone dove si vengono a scoprire le novità, testare le attrezzature, incontrare i marchi e imparare dai migliori.",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "5aa1a327-60ab-43a3-8269-392c6bd668ef",
+        "anchor": "",
+        "height": "h-full",
+        "content": [
+          {
+            "_uid": "db5b20aa-7a01-4c80-8c24-498914e88d31",
+            "component": "ImaginaBilleterieIframe"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": ""
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "pro-b2b",
+  "full_slug": "billetterie/pro-b2b",
+  "sort_by_date": null,
+  "position": -80,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 137530642148655,
+  "meta_data": null,
+  "group_id": "f5613d9f-e0ff-4dc6-825c-e8e8747a3393",
+  "first_published_at": "2026-01-13T09:28:48.842Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

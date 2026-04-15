@@ -1,0 +1,54 @@
+{
+  "name": "Nicky's BBQ",
+  "created_at": "2026-03-16T15:54:38.879Z",
+  "published_at": "2026-03-16T16:30:16.950Z",
+  "updated_at": "2026-03-16T16:30:16.964Z",
+  "id": 155594255909836,
+  "uuid": "b9346885-279b-4efe-bf46-987e9d11e1e5",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Food Truck mit dem Thema texanisches Barbecue, aber auch Gerätehersteller made in Reims – alle unsere Produkte sind frisch und mit Liebe über mehrere Stunden zubereitet. Wir legen größten Wert darauf, mit Qualitätslieferanten und erstklassigen Produkten zu arbeiten, um Ihren Gaumen zu verwöhnen. Ob Rind, Schwein oder Hähnchen, es ist für jeden Geschmack etwas dabei, sogar für Vielesser, die nur Fleisch wollen. Wir arbeiten mit einem 6 Meter langen Offset Smoker, um Sie so schnell wie möglich zu bedienen. ",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136490815036540,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cabba322fb_p1050471-1.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Nicky's BBQ",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "Texanisches BBQ"
+  },
+  "slug": "nicky-s-bbq",
+  "full_slug": "program/bbq-street-food/nicky-s-bbq",
+  "sort_by_date": null,
+  "position": -130,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "3c1f3dbe-16a4-4b85-bd5a-6066b7162441",
+  "first_published_at": "2026-03-16T16:29:03.575Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

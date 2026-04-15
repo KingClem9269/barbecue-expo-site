@@ -1,0 +1,2159 @@
+{
+  "name": "pourquoi-visiter",
+  "created_at": "2026-01-20T16:11:19.234Z",
+  "published_at": "2026-02-13T13:14:30.628Z",
+  "updated_at": "2026-02-13T13:14:30.652Z",
+  "id": 136134161379024,
+  "uuid": "c404e0e9-6e1d-4fd2-8865-b542ba29f56c",
+  "content": {
+    "_uid": "00d6d3ba-4f74-4ad1-8c31-c86c3e0fe0c2",
+    "body": [
+      {
+        "_uid": "2866f1bd-6147-45b7-b7b7-2336130f5ae2",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "b6a7d71e-4732-4a2e-8756-64281c6271d4",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "e0203cdf-0c25-4574-9b5a-59a46657eb42",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "66f089e3-313b-4bef-a6c8-a739b278120a",
+            "content": [
+              {
+                "gap": "4",
+                "_uid": "2ace5090-7d71-4b5a-be5d-1c11adb0abf4",
+                "wrap": "wrap",
+                "align": "start",
+                "content": [
+                  {
+                    "_uid": "75a0de17-dc6a-4976-835c-f63eabe6d85b",
+                    "color": "secondary",
+                    "content": "Warum Barbecue Expo besuchen?",
+                    "heading": "h1",
+                    "component": "headline",
+                    "textAlign": ""
+                  },
+                  {
+                    "_uid": "9fc2d9a8-814e-4930-bc40-ce5e9f9bb499",
+                    "color": "secondary",
+                    "content": "Der Referenztermin in Europa für Fachbesucher und die Barbecue- & Outdoor-Cooking-Branche.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  },
+                  {
+                    "_uid": "b5073fa1-e41a-437e-8376-2d10f714568c",
+                    "color": "secondary",
+                    "content": "Internationales Sourcing, Innovationen, Live-Vorführungen, Schulungen und Networking: Barbecue Expo bringt führende Marken und Newcomer zusammen, in einem Format, das Ihre Kaufentscheidungen beschleunigt.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  },
+                  {
+                    "gap": "0",
+                    "_uid": "1260a936-ff57-42d7-af64-acc778dad928",
+                    "content": [
+                      {
+                        "_uid": "e99aa586-9204-441f-8398-3e4c8e9f20a0",
+                        "content": [
+                          {
+                            "gap": "4",
+                            "_uid": "9a6f7ded-3cb9-4ca3-b1c7-2b9f30032c28",
+                            "wrap": "wrap",
+                            "align": "start",
+                            "content": [
+                              {
+                                "_uid": "8348fe7e-6876-4cf4-bf41-0c3f7c56200f",
+                                "icon": "arrow-right",
+                                "path": "/",
+                                "label": "Mein Pro-Badge holen",
+                                "style": "filled-light",
+                                "component": "link",
+                                "fullWidth": true
+                              },
+                              {
+                                "_uid": "37331156-1848-436e-9bd8-67040a153d3f",
+                                "icon": "arrow-right",
+                                "path": "/",
+                                "label": "Zur Matchmaking-Plattform",
+                                "style": "outline-light",
+                                "component": "link",
+                                "fullWidth": true
+                              }
+                            ],
+                            "justify": "start",
+                            "component": "Flex",
+                            "direction": "col",
+                            "gapDesktop": ""
+                          }
+                        ],
+                        "component": "Container",
+                        "customWidth": "",
+                        "customHeight": "128px",
+                        "colSpanMobile": "",
+                        "paddingMobile": "0",
+                        "rowSpanMobile": "",
+                        "colSpanDesktop": "",
+                        "paddingDesktop": "0",
+                        "rowSpanDesktop": "",
+                        "backgroundColor": "",
+                        "backgroundMedia": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "paddingDesktopLarge": ""
+                      }
+                    ],
+                    "component": "Grid",
+                    "nColsLarge": "1",
+                    "nColsMedium": "1",
+                    "nColsMobile": "1"
+                  }
+                ],
+                "justify": "start",
+                "component": "Flex",
+                "direction": "",
+                "gapDesktop": ""
+              },
+              {
+                "_uid": "15e81fc9-952e-4613-b87a-47199e42ab09",
+                "content": [
+                  {
+                    "_uid": "bc917b7c-d669-43ee-8cf7-657245b19089",
+                    "media": {
+                      "id": 133284673220699,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/b11331f094__j7i1238-min.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media"
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "paddingMobile": "0",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "1",
+                "paddingDesktop": "0",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "filename": null,
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "paddingDesktopLarge": "0"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "2",
+            "nColsMedium": "2",
+            "nColsMobile": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "a216ac4c-7961-4c4b-9d52-4dec02619904",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "399ee670-5eef-4951-af9e-382e152aade6",
+            "content": [
+              {
+                "_uid": "09b86807-785d-4f9c-9c56-a40b8744042a",
+                "color": "primary",
+                "content": "Schlüsselzahlen",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "6a6c37aa-0270-4e52-bfea-5f973fb21755",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "6e6049d8-2416-4707-903b-5495cdb60ab9",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "7e68efef-1c0e-4e7d-8dc6-d5841a834e16",
+                        "icon": "house",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "4d04ad84-cd67-4c72-aa18-41d9f3123607",
+                        "color": "primary",
+                        "content": "20 000 m2",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "3269d622-c171-4cf1-aaae-1c880f6a42f2",
+                        "color": "primary",
+                        "content": "Ausstellungsfläche indoor + outdoor",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "7bea21ab-c360-4e49-864a-d7f8215c77b3",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "3f2f8b46-ebaa-4cf7-b9a8-574bfe71edcd",
+                        "icon": "loader",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "d97b0e4c-6344-4f7a-82ba-b9b115f8d5ba",
+                        "color": "primary",
+                        "content": "250 Marken",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "82468673-0917-43e0-9cec-dfdddf18aba9",
+                        "color": "primary",
+                        "content": "als Aussteller",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "fd067d60-6090-4a19-bccd-b7f269304a85",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "79604b76-e354-4c18-ace8-656d88c4786f",
+                        "icon": "users-round",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "a9a094cd-a0a4-400c-a686-ef980ead706a",
+                        "color": "primary",
+                        "content": "5.000 Fachbesucher",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "ee769c29-d297-408a-9a0e-f6b5bbea7d49",
+                        "color": "primary",
+                        "content": "Besucher",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "158f4513-c7d0-4feb-8e5d-24acfba6d038",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "f71c264a-57ce-4ee3-b11e-77d41745428c",
+                        "icon": "earth",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "3db4fea3-7e86-4801-af10-be7be193ae3c",
+                        "color": "primary",
+                        "content": "25 Länder",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "11688be9-b75f-4c46-9e4a-48d7791a9fac",
+                        "color": "primary",
+                        "content": "vertreten",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "1c2161c7-a706-4c17-845d-6d74a85c8640",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "90497103-1797-4564-bdbf-cb27363daf09",
+                        "icon": "cooking-pot",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "8cdfd9a0-2305-461f-b8ed-dec961ca7b65",
+                        "color": "primary",
+                        "content": "Demos & Tests",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "dc91fa87-3d2d-4327-a9f2-227f16798ade",
+                        "color": "primary",
+                        "content": "Demos & Live-Produkttests.",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "decbb2fa-fb36-4d3e-a20f-c2e553c0ff24",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "f8a18483-bd56-4682-a6a0-ec5d43e7fa14",
+                        "icon": "chef-hat",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "c88c076f-a46d-408d-88d8-e7a0a1eecc78",
+                        "color": "primary",
+                        "content": "Masterclasses / Konferenzen",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "68e60cdf-900f-4954-8282-818612a719b0",
+                        "color": "primary",
+                        "content": "Schulungen und Profi-Inhalte",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "4",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "a8e949ed-fde8-456e-a1c8-7fac69269c41",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "e05cbcb5-f161-434e-85ee-2cc2e3c89523",
+            "content": [
+              {
+                "_uid": "3297df94-09cd-4770-8d1a-fa793a83f2f0",
+                "color": "primary",
+                "content": "Die Vorteile der Messe",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "4ec3ad36-e9b4-424e-899d-ce677f101ec8",
+                "content": [
+                  {
+                    "_uid": "8f00c777-0a86-4637-adea-3dc09e548a39",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "216e1d2d-0069-4570-988e-1566a9f32867",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "b6b73bda-7667-4e0b-989d-16dfaba4ee58",
+                            "icon": "chevrons-up",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "790efcbc-8c4d-48e1-bb62-37c6a7c6ee56",
+                            "color": "primary",
+                            "content": "Schneller sourcen",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "d4c44731-03e1-4398-bb2f-ad018a31d28a",
+                            "color": "primary",
+                            "content": "Vergleichen Sie Dutzende Angebote an einem Ort",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "6346662d-0804-4751-b9fa-62924c0b576f",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "b81f2b9f-ae21-47a5-8cea-9fc46cc9d269",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "e237a104-64fb-413e-87a1-bfc0fea1c7f8",
+                            "icon": "swatch-book",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "f52f1c6e-4d43-452d-8c8c-425bf4adde2c",
+                            "color": "primary",
+                            "content": "Sehen & Testen",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "00ce67d6-3429-4b7b-8ed5-e99a911fd4f0",
+                            "color": "primary",
+                            "content": "Produkte, Brennstoffe, Zubehör, Outdoor Kitchen, etc.",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "0683102b-116b-4230-8fbd-0a78250a3630",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "3ab68a69-d6bd-44c8-84d6-c6cbbb902b48",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "3a159046-a1d9-4a06-973c-d68df8212210",
+                            "icon": "star",
+                            "color": "secondary",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "e8f8f53f-8d2b-4ef1-85cd-6c9f420d680c",
+                            "color": "secondary",
+                            "content": "Trends erkennen",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "561055bf-170e-45e1-bd60-4aac5b37cb73",
+                            "color": "secondary",
+                            "content": "Hybridgeräte, Kamado, Öko-Brennstoffe, Made in France, Miniaturisierung...",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "primary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "559405ee-26a5-4abc-b924-4833e5c9c913",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "ea89fabe-77a7-48d3-8c7a-3767dd69e8cb",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "c5203f0d-c4a3-495f-984d-12bee3983285",
+                            "icon": "handshake",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "1adf5852-559b-4848-93c1-de99d02535ab",
+                            "color": "primary",
+                            "content": "Die richtigen Kontakte treffen",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "a3ce8822-cdd3-4a34-bda4-379c2be80fc9",
+                            "color": "primary",
+                            "content": "Entscheider, Hersteller, Händler",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "5b0b5aa3-7e81-4be7-a64d-34778112008a",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "289f1d90-1e26-48ac-99a4-97bc8db18b53",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "ca128193-0eec-44a5-bcd2-f71ea75fe488",
+                            "icon": "messages-square",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "4492a5a4-300e-43f6-80e9-5e43258352ee",
+                            "color": "primary",
+                            "content": "Ihre Geschäfte beschleunigen",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "0a17cb89-2a53-4f9a-837d-1340bb616998",
+                            "color": "primary",
+                            "content": "über die B2B-Plattform + Termine vor Ort",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "5",
+                "nColsMedium": "3",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              },
+              {
+                "_uid": "7f3a2e1e-206e-4f4b-9ef2-9e88916af303",
+                "icon": "arrow-right",
+                "path": "/",
+                "label": "Entdecken Sie die Aussteller",
+                "style": "link",
+                "component": "link",
+                "fullWidth": false
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "877ab096-96dc-49ed-be30-8a9bf5ba2642",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "7e5401e1-3045-4afc-9cf1-230078be3901",
+            "content": [
+              {
+                "_uid": "79de0125-8828-407e-a690-823b8dda8a99",
+                "color": "primary",
+                "content": "An wen richtet sich die Messe?",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "e8eb79f7-acbb-4086-8907-99e801e39bb5",
+                "content": [
+                  {
+                    "_uid": "0ceef7ac-e403-4849-8ec8-a3ab0ff3af98",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "91553242-c387-49cb-9ad7-a5b5c4e59c1f",
+                        "color": "primary",
+                        "content": "Händler & BBQ-Fachgeschäfte",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "3deb6e72-f643-45fa-a5d0-b9795974f945",
+                        "color": "primary",
+                        "content": "Versprechen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "0eee97ed-90ce-43a9-aa75-94dc879e5802",
+                        "color": "primary",
+                        "content": "Erweitern und differenzieren Sie Ihr Sortiment",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "bf268006-29c0-4a44-b907-e2b0f0f2b203",
+                        "color": "primary",
+                        "content": "Vorteile",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b1f59c0b-d657-4958-80f4-438224ff523d",
+                        "color": "primary",
+                        "content": "Neuheiten, Newcomer, wettbewerbsfähige Produkte, margenstarkes Zubehör, Vorführungen für besseren Verkauf.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "9017178e-3d64-4d31-9f95-2c8ab5b49fcd",
+                        "color": "primary",
+                        "content": "Beispiele",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "663a4354-fb4b-47a4-9298-ea63f56bbcc5",
+                        "color": "primary",
+                        "content": "kamados, braseros, fumoirs, combustibles, accessoires premium, outdoor kitchens.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "f57b607f-5b0d-4078-b30a-9d2bb1e981d7",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "5338790e-f51b-44f7-9e27-3b7070885054",
+                        "color": "primary",
+                        "content": "Einkäufer Großfläche / Baumärkte / Gartencenter",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "ce94ae3e-c211-4bda-8b49-95b49240d759",
+                        "color": "primary",
+                        "content": "Versprechen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "65bedc71-d2eb-40b4-b745-f504db7ee1d2",
+                        "color": "primary",
+                        "content": "Vergleichen Sie das weltweite Angebot und sichern Sie Ihre Wettbewerbsfähigkeit.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "a3a54bf5-4909-4c28-9ba2-af268eec661e",
+                        "color": "primary",
+                        "content": "Vorteile",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "14375ba1-2bea-4e1e-b9f3-8a50281685f8",
+                        "color": "primary",
+                        "content": "Lieferanten-Benchmark, aufkommende Trends, Qualitäts-/Preisalternativen, Innovationen mit hohem Potenzial, Erkennung von Bestsellern.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "4b130f28-a214-4795-a7e8-6f692e05617d",
+                        "color": "primary",
+                        “content”: “Mehrwert-Perspektive”,
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "5d584170-f6da-49b3-b0a6-c4004008a712",
+                        "color": "primary",
+                        "content": "Entdecken Sie internationale Marken, die den Markt herausfordern können.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "f82ca76a-32bf-4a29-9add-dee1fd936f35",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "334a09d7-2a00-4d7d-a460-2cb550dff890",
+                        "color": "primary",
+                        "content": "Distributoren / Importeure / Exporteure",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "2c96c0d9-15fb-45e5-b374-697b527daa32",
+                        "color": "primary",
+                        "content": "Versprechen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "36f2d3b1-8bc3-4d18-9adb-b1ecfc99beef",
+                        "color": "primary",
+                        "content": "Der Hub, um Marken für den Vertrieb in Frankreich und Europa zu entdecken.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "024397a2-bc75-46ef-b1e4-9dd3ab74e7b2",
+                        "color": "primary",
+                        "content": "Vorteile",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "a0c53e78-c4a7-4328-8e73-e01bc5721eba",
+                        "color": "primary",
+                        "content": "Direktkontakte mit Herstellern aus USA / Lateinamerika / Osteuropa, Exklusivmöglichkeiten, Verhandlungen vor Ort, langfristige Partnerschaften",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "d9dd0202-9b10-4464-8646-73ccd917ce60",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "f743825c-980d-461a-857b-154bdf9b9b88",
+                        "color": "primary",
+                        "content": "Gastronomie & Hotellerie-Einkäufer",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "023df570-1ce5-4bf9-869c-02f4f301adec",
+                        "color": "primary",
+                        "content": "Versprechen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "fcebfd9a-9978-431a-bc46-f897a62ff942",
+                        "color": "primary",
+                        “content”: “Integrieren Sie den Trend \”Kochen am Feuer\” in Ihre Konzepte.”,
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "59a918b9-17e0-4db7-ace5-ae816acfceb1",
+                        "color": "primary",
+                        "content": "Vorteile",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "47db7c3e-96fc-4fef-9958-de899c2d934a",
+                        "color": "primary",
+                        "content": "Profiküchen-Ausstattung (Kamado, Glutöfen, Räucherofen, Brasero), Inspirationen, Lieferantentreffen, Trends (offenes Feuer, Rauch, Geselligkeit).",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "6df64802-6be7-41a8-9f0b-6285ad279f1f",
+                        "color": "primary",
+                        "content": "Augenzwinkern",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "e26601f7-ca47-459e-925a-403e752ae962",
+                        "color": "primary",
+                        "content": "Konzepte Räucherfleisch, Smokehouse, Brasero, Premium-Grill.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "ad2f04d5-7955-4b8a-a895-9db4e6c2e02a",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "e0f28f85-e058-406e-807a-b24e32e49f61",
+                        "color": "primary",
+                        "content": "Außengestaltung (Landschaftsgestalter, Outdoor-Küchenplaner, Architekten, Installateure...)",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "47f9293b-4462-4ea7-a376-24949681f98a",
+                        "color": "primary",
+                        "content": "Versprechen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b7ed731d-4d38-41e1-9d01-394104e852aa",
+                        "color": "primary",
+                        "content": "Fügen Sie hochwertige Ergänzungsprodukte zu Ihren Projekten hinzu.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "5068bf76-8ee1-4f5a-b7e1-459d31f7533c",
+                        "color": "primary",
+                        "content": "Vorteile",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "d99dc017-2b3f-4887-895a-43687a6c0f21",
+                        "color": "primary",
+                        "content": "Outdoor-Küchen, Module, Design-Braseros, Premium-Lösungen, Marken für Ihr Angebot, Gestaltungsideen.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "7e8286b7-388a-4fbf-8889-fa3df70c8c8c",
+                        "color": "primary",
+                        "content": "Beispiele",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b3e50aac-c052-4b04-a048-b4db9733b387",
+                        "color": "primary",
+                        "content": "kamados, braseros, fumoirs, combustibles, accessoires premium, outdoor kitchens.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  },
+                  {
+                    "_uid": "e2922556-41d2-4c35-98f1-d9d77403546c",
+                    "color": "white",
+                    "component": "AccordionCard",
+                    "contentShown": [
+                      {
+                        "_uid": "18887273-0204-40a9-abcf-c9478594a754",
+                        "color": "primary",
+                        "content": "Medien & Content-Creator",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "contentHidden": [
+                      {
+                        "_uid": "9db990d1-c15d-4789-80e0-e760db455218",
+                        "color": "primary",
+                        "content": "Versprechen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b65e2ce2-64bf-470d-9387-a1801d7bc94a",
+                        "color": "primary",
+                        "content": "Der Ort, um Saisontrends einzufangen und Inhalte zu produzieren.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "0730c3de-e6af-4abc-9046-0ca667b1e99e",
+                        "color": "primary",
+                        "content": "Vorteile",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "4d0afd58-f2b4-4c23-94e9-3c057022e938",
+                        "color": "primary",
+                        “content”: “ Innovationen, Best-of der Marken, Interviews, Neuheiten, Zugang zu Demos, Inhalte \”April = BBQ-Start\”.”,
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "b7965085-ac15-4536-af70-a7b17f5653e8",
+                        "color": "primary",
+                        "content": "Themenideen",
+                        "heading": "h4",
+                        "component": "headline",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "e6f8f4a8-5c10-4fdc-89b9-8ea1fc2b97e0",
+                        "color": "primary",
+                        "content": "Hybrid, Made in France, Öko-Brennstoffe, Kamado, Zubehör, Mini-BBQ.",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ]
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "1",
+                "nColsMobile": "1",
+                "nColsDesktop": "4"
+              },
+              {
+                "_uid": "d17cda42-a9eb-43bf-b7f1-e46a242db692",
+                "icon": "arrow-right",
+                "path": "/",
+                "label": "Ich bin ein Profi — Mein Badge holen",
+                "style": "link",
+                "component": "link",
+                "fullWidth": false
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "44625bdb-0924-45f7-b046-9c58867e66e0",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "69c28acc-cad3-44e0-b05f-f17120046d27",
+            "content": [
+              {
+                "_uid": "651bfee5-b3d4-4f37-877c-7e2979b24b4e",
+                "color": "primary",
+                "content": "Führende Marken und neue Marktteilnehmer",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "345ea6ff-7c7f-46ac-86c9-d51912c1c5e3",
+                "content": [
+                  {
+                    "_uid": "25a975bc-6384-4330-a8fc-33fd12645450",
+                    "content": [
+                      {
+                        "_uid": "64a9e84a-5f24-40da-8512-8a63869132f9",
+                        "media": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": 133287426232562,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7eedf4f2a3_jimbeam_logo_primary_rgb_2022.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "0184917b-3c2f-43a6-a103-b00007fe45f1",
+                    "content": [
+                      {
+                        "_uid": "c396a3a4-c7a1-4fbe-96f1-d72d2b254361",
+                        "media": {
+                          "id": 133287426220270,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/8dbe912df5_logo-weber-svg-1.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "63464e6e-6014-4bbc-8fc0-0b8d32b462c4",
+                    "content": [
+                      {
+                        "_uid": "a01830ce-39b6-44cb-96b6-4d2c18f64ab8",
+                        "media": {
+                          "id": 133287426228464,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a40f67d911_ninja.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "0b4f30c8-e814-421a-be4b-898b2be02e9e",
+                    "content": [
+                      {
+                        "_uid": "bd6f4728-7302-44d8-9e3c-6be1cdf082d4",
+                        "media": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": 133287426232562,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7eedf4f2a3_jimbeam_logo_primary_rgb_2022.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "6fe71bcd-9916-45ad-944a-f631c033397e",
+                    "content": [
+                      {
+                        "_uid": "2cafb673-655b-4a16-b93a-50a076e40583",
+                        "media": {
+                          "id": 133287426220270,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/8dbe912df5_logo-weber-svg-1.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "262c85b0-f0e8-43a2-b787-490f7c036ff7",
+                    "content": [
+                      {
+                        "_uid": "37f9870a-b0d0-40e0-9e06-2ed2e967f664",
+                        "media": {
+                          "id": 133287426228464,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a40f67d911_ninja.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "12c21065-b0a5-485c-a252-dd8a050aaf27",
+                    "content": [
+                      {
+                        "_uid": "8169a485-58e9-42ff-be23-4d759a5c8246",
+                        "media": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": 133287426232562,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7eedf4f2a3_jimbeam_logo_primary_rgb_2022.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "c3fb1d95-fbea-437e-9b77-5c9342649b04",
+                    "content": [
+                      {
+                        "_uid": "66f06e7a-7ae5-4b39-bbb1-e450bf477f63",
+                        "media": {
+                          "id": 133287426220270,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/8dbe912df5_logo-weber-svg-1.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "ab29d412-624f-4c8a-b8f7-3cda50302ec7",
+                    "content": [
+                      {
+                        "_uid": "5455248c-e882-4808-be22-fa7ee44fe941",
+                        "media": {
+                          "id": 133287426228464,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a40f67d911_ninja.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "8a47b05a-70b4-4f88-b788-f3727b4dce04",
+                    "content": [
+                      {
+                        "_uid": "deb96926-df8c-45c1-b3fa-c4ee79df3b7b",
+                        "media": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": 133287426232562,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7eedf4f2a3_jimbeam_logo_primary_rgb_2022.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "05788678-9571-45b9-a4c2-f932d215fd3c",
+                    "content": [
+                      {
+                        "_uid": "ce00cad1-b57a-46fb-a52d-4734089fc621",
+                        "media": {
+                          "id": 133287426220270,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/8dbe912df5_logo-weber-svg-1.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "ea08712b-d4c0-48cf-aec3-11debc52d3c0",
+                    "content": [
+                      {
+                        "_uid": "0fbd0424-d9ba-43e2-8d78-2f741a7ffc81",
+                        "media": {
+                          "id": 133287426228464,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a40f67d911_ninja.png",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "12",
+                "nColsMedium": "10",
+                "nColsMobile": "6",
+                "nColsDesktop": "4"
+              },
+              {
+                "_uid": "26e7a0d6-6f93-4cd6-8439-2f958ff2a34c",
+                "color": "primary",
+                "content": "+ 250 marques",
+                "heading": "h3",
+                "component": "headline",
+                "textAlign": "center"
+              },
+              {
+                "_uid": "234bacc2-2f77-460c-a9c0-8f32df68bb1b",
+                "icon": "arrow-right",
+                "path": "/",
+                "label": "Vollständige Ausstellerliste ansehen",
+                "style": "link",
+                "component": "link",
+                "fullWidth": false
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "186cbc85-d549-4727-9b5e-450166551f6d",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "3c0e65a3-6f7f-4420-9b3d-25d1a687d907",
+            "content": [
+              {
+                "_uid": "84edf4e1-3ee7-455f-86c5-24b26600bd37",
+                "color": "primary",
+                "content": "Plateforme B2B & Matchmaking",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "1072f3f8-5b7f-4970-931d-fa82b08272d3",
+                "content": [
+                  {
+                    "_uid": "cb30d5df-7067-4248-b2b6-e4673e3e4f56",
+                    "color": "primary",
+                    "content": "Greifen Sie auf die Matchmaking-Plattform zu und profitieren Sie von zahlreichen Vorteilen",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  },
+                  {
+                    "gap": "0",
+                    "_uid": "7c80db66-9e06-4057-80ce-ca67fadfa248",
+                    "wrap": "wrap",
+                    "align": "start",
+                    "content": [
+                      {
+                        "_uid": "8ab0dee4-0592-4e55-8809-0e71945e1092",
+                        "color": "primary",
+                        "content": "✔ Ausstellerliste einsehen",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "48c5c11f-3113-40fb-bae8-b118ec9b460a",
+                        "color": "primary",
+                        "content": "✔ Filterung nach Kategorie",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "59d7b4cd-df93-4871-9b35-97ff33fc64a7",
+                        "color": "primary",
+                        "content": "✔ Vorab mit anderen Ausstellern austauschen",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "46644b30-7340-405c-8c6e-0376c023cb1a",
+                        "color": "primary",
+                        "content": "✔ Katalog & Produktbilder",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      },
+                      {
+                        "_uid": "cb0f3362-cbca-4c2f-a8d7-a66f93f0f94d",
+                        "color": "primary",
+                        "content": "✔ Angebotsanfrage / Terminvereinbarung",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "0",
+                "_uid": "4ea1507f-980b-4e86-8a53-cc4e58daf6ec",
+                "content": [
+                  {
+                    "_uid": "13e21ea8-bd29-4e45-85f3-1d38dfb1f7f5",
+                    "content": [],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "092b19e3-f73f-45e7-9e38-743f34767df5",
+                    "icon": "arrow-right",
+                    "path": "/",
+                    "label": "Zur B2B-Plattform",
+                    "style": "filled-dark",
+                    "component": "link",
+                    "fullWidth": false
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "3245d933-bee0-47d6-9f9b-86d375aaa1ed",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "c8220cca-4c87-4f50-b72d-8bfeeada741f",
+            "content": [
+              {
+                "_uid": "c8a29922-6410-4b3d-a891-e3cd25d6734d",
+                "color": "black",
+                "content": "Verpassen Sie nicht den professionellen BBQ-Treffpunkt in Europa",
+                "heading": "hero",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "767a5d2e-b863-4a4a-b593-55dcf665679c",
+                "content": [
+                  {
+                    "_uid": "bef86b71-8bba-4e38-a0e8-e861a0ec6a76",
+                    "color": "primary",
+                    "content": "Holen Sie sich jetzt Ihr Badge und bereiten Sie Ihre Termine im Voraus vor",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "0efc8f12-57f8-4132-91a4-f1a0a36cd99a",
+                    "wrap": "wrap",
+                    "align": "start",
+                    "content": [
+                      {
+                        "_uid": "1e3acafb-64f6-426f-80e5-06f78b196764",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Mein Profi-Badge holen",
+                        "style": "filled-light",
+                        "component": "link",
+                        "fullWidth": true
+                      },
+                      {
+                        "_uid": "040c812c-1246-44df-972f-a5c66a4eaf4e",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Aussteller ansehen",
+                        "style": "outline-dark",
+                        "component": "link",
+                        "fullWidth": true
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "c62bb9d7-fe52-4110-9d65-fc2c44b2cd78",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "8d3fdef6-12f6-411b-b807-9604230ca93f",
+            "content": [
+              {
+                "_uid": "72cc5e8d-58a1-4305-ba27-3cc93672c9ac",
+                "color": "primary",
+                "content": "Schlüsselzahlen",
+                "heading": "",
+                "component": "headline",
+                "textAlign": "center"
+              },
+              {
+                "gap": "4",
+                "_uid": "4db6e4f3-d95d-4912-ae75-92ab4e18091c",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "e405fce7-312c-4781-8eb0-bfcff0213dfe",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "e265d331-5b00-4cfa-8d78-83be9c81fd1f",
+                        "icon": "house",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "9561d138-65fa-4bad-8b11-1e26e73e869d",
+                        "color": "primary",
+                        "content": "20 000 m2",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "d45a1270-7aa8-41bd-80da-ca36c08ac6d2",
+                        "color": "primary",
+                        "content": "Ausstellungsfläche indoor + outdoor",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "8129d827-b415-406c-b361-b70e139b20aa",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "5ecb6f76-3fff-4d55-9a92-273c83472362",
+                        "icon": "loader",
+                        "color": "",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "42043e80-5fec-4f0c-8ac7-8bc928701495",
+                        "color": "primary",
+                        "content": "250 Marken",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "cbe31397-3dbf-46b0-bca6-f508cdf1b1d9",
+                        "color": "primary",
+                        "content": "als Aussteller",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "gap": "4",
+                    "_uid": "74bdf0dd-bb00-4894-a455-1b5eaa73568b",
+                    "wrap": "wrap",
+                    "align": "center",
+                    "content": [
+                      {
+                        "_uid": "24cc99fa-4045-445e-aaea-dfcee59f9ade",
+                        "icon": "earth",
+                        "component": "Icon"
+                      },
+                      {
+                        "_uid": "7a553bc4-c213-4e23-9479-e2bc900f3c91",
+                        "color": "primary",
+                        "content": "5.000 Fachbesucher",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": "center"
+                      },
+                      {
+                        "_uid": "602b1296-85fb-45d6-a914-f317a6f4c43f",
+                        "color": "primary",
+                        "content": "Besucher",
+                        "component": "paragraph",
+                        "textAlign": "center"
+                      }
+                    ],
+                    "justify": "start",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "3",
+                "nColsMedium": "3",
+                "nColsMobile": "1",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "pourquoi-visiter",
+  "full_slug": "pourquoi-visiter",
+  "sort_by_date": null,
+  "position": -100,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "7a39ae14-c7fb-41a3-87aa-351610d0fa6c",
+  "first_published_at": "2026-01-20T16:43:48.527Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

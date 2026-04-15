@@ -1,0 +1,54 @@
+{
+  "name": "Atelier du Braséro",
+  "created_at": "2026-03-16T15:53:29.928Z",
+  "published_at": "2026-03-16T16:43:27.300Z",
+  "updated_at": "2026-03-16T16:43:27.310Z",
+  "id": 155593973481690,
+  "uuid": "1c4f27a1-bca4-40c0-8389-bf73fff266ad",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "L’Atelier du Brasero kommt zur Barbecue Expo, um sein Know-how rund um das Kochen am Braséro zu teilen, wofür es im Süden Frankreichs zur Referenz geworden ist. Das in Nizza ansässige Team hat sich auf die Kunst des Feuerkochens spezialisiert und verbindet dabei Flammenschauspiel, Qualitätsprodukte und Kochbeherrschung. Mit einer soliden Erfahrung als Braséro-Caterer und bei kulinarischen Holzfeuer-Events kommt L’Atelier du Brasero zur Barbecue Expo, um den ganzen Reichtum dieser lebendigen und geselligen Küche zu zeigen, bei der die Glut zum Herzstück des Spektakels und des Teilens wird. ",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151346515380483,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/3b340a019d_brasero.png",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Atelier du Braséro",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": ""
+  },
+  "slug": "atelier-du-brasero",
+  "full_slug": "program/bbq-street-food/atelier-du-brasero",
+  "sort_by_date": null,
+  "position": -70,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "a51791cd-483d-4da6-9d2f-b6e04f7ec09a",
+  "first_published_at": "2026-03-16T16:36:54.079Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

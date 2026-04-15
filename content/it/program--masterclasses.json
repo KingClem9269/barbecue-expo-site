@@ -1,0 +1,565 @@
+{
+  "name": "masterclasses",
+  "created_at": "2026-01-20T12:01:10.095Z",
+  "published_at": "2026-04-03T17:25:27.994Z",
+  "updated_at": "2026-04-03T17:25:28.008Z",
+  "id": 136072683938539,
+  "uuid": "92971c49-505f-4f2b-9c11-c13448811f02",
+  "content": {
+    "_uid": "622f2a6c-da18-4093-9348-d49e516d194f",
+    "body": [
+      {
+        "_uid": "d90b5d3c-dd9a-4cdd-a148-01d9a6af0730",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "c51c68cd-f31a-4930-beb9-58e543e77973",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "ac519f7b-ade9-494a-b59d-56d2bafda81c",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "gap": "0",
+                "_uid": "2ff3d68b-dafa-48e4-a786-0fa15e4ba9cc",
+                "content": [
+                  {
+                    "_uid": "82ee3b08-12cb-4347-83b9-d73a6a2eb3d9",
+                    "color": "secondary",
+                    "content": "Masterclass: Imparare dai migliori. Progredire in modo accelerato.",
+                    "heading": "h1",
+                    "component": "headline",
+                    "textAlign": "start"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "4",
+                "_uid": "3d8ad1a7-c844-4cff-83c1-d4fd2fcb6478",
+                "content": [
+                  {
+                    "_uid": "879c09a7-02db-4103-97e5-eb1840e01402",
+                    "color": "secondary",
+                    "content": "Le masterclass sono corsi pratici tenuti da esperti: affumicatura, low & slow, padronanza delle braci, cotture dirette/indirette, reverse sear, scelta dei legni, condimenti, gestione dell'attrezzatura... e tutti i consigli che fanno la differenza.",
+                    "component": "paragraph",
+                    "textAlign": ""
+                  },
+                  {
+                    "_uid": "02251123-21b1-43b3-a006-6ac1a832a0c7",
+                    "color": "secondary",
+                    "content": "Per gli appassionati: consigli concreti, metodi affidabili, risposte alle vostre domande. Per i professionisti: tecniche riproducibili, standard di qualità, idee di ricette e nuovi prodotti da integrare.",
+                    "component": "paragraph"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "7b58056d-97c5-4ce8-b120-31b85ee008de",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "846134bb-76a6-4f2f-9bb1-46ec3cce440a",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "bece0429-33ce-4054-8992-1eff43f72144",
+                "color": "primary",
+                "content": "Scoprite le nostre masterclass",
+                "heading": "h2",
+                "component": "headline",
+                "textAlign": "start"
+              },
+              {
+                "gap": "4",
+                "_uid": "c7664eda-53fb-444c-9fd8-bac1fc837261",
+                "content": [
+                  {
+                    "btn": [
+                      {
+                        "_uid": "34596629-f44f-4a9f-bebc-f4fe13c1a425",
+                        "icon": "arrow-right",
+                        "path": "https://my.weezevent.com/masterclass-barbecue-chef-carlos?_gl=1*10uc46t*_gcl_au*MTM2MTA1MDAwMy4xNzYzNzMzMjU0LjYwNDI1MDM1MC4xNzcwODE5MjEzLjE3NzA4MTkyMTM.*_ga*OTU0MDc2MDQ4LjE3NzAxMzYwOTU.*_ga_39H9VBFX7G*czE3N",
+                        "label": "Prenoto",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "092a7f22-f02f-4e06-8a6b-118e25ac2cc9",
+                    "days": "Chef Carlos vous transmet un secret de chef qui se transmet de génération en génération : une sauce vivante, à réalimenter indéfiniment - comme un levain - qui sublimera toutes vos viandes. Vous l'apprenez, vous la préparez, vous la ramenez chez vous. Et pour la tester ? Chaque participant cuisine sa propre pièce de viande. On nappe, on grille, on déguste. Un vrai repas, autour du feu.\"",
+                    "media": {
+                      "id": 144622731360098,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/1daada9ba9_chef-carlos-bear-france.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "100€",
+                    "chefName": "Chef Carlos Bear",
+                    "duration": "2h",
+                    "component": "MasterClassCard",
+                    "coverMedia": {
+                      "id": 144622731360098,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/1daada9ba9_chef-carlos-bear-france.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "modalParagraph": ""
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "40330533-2bb9-490c-b034-0c061fb4c770",
+                        "icon": "arrow-right",
+                        "path": "https://my.weezevent.com/masterclass-barbecue-chef-carlos?_gl=1*10uc46t*_gcl_au*MTM2MTA1MDAwMy4xNzYzNzMzMjU0LjYwNDI1MDM1MC4xNzcwODE5MjEzLjE3NzA4MTkyMTM.*_ga*OTU0MDc2MDQ4LjE3NzAxMzYwOTU.*_ga_39H9VBFX7G*czE3N",
+                        "label": "Prenoto",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "735d2ba0-13de-4dc3-b3fc-99577ef6e827",
+                    "days": "Découvrez comment construire un menu complet au barbecue, de l’entrée au dessert, en maîtrisant trois techniques clés : fumage, saumurage et injection. Une masterclass gourmande et technique pour apprendre à développer les saveurs, gagner en précision et repousser les limites du BBQ.",
+                    "media": {
+                      "id": 144633023154350,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7b23d242a4_stephane-nowo-masterclass-barbecue-expo.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "100€",
+                    "chefName": "Stéphane Barbecue",
+                    "duration": "2h",
+                    "component": "MasterClassCard",
+                    "coverMedia": {
+                      "id": 144633023154350,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7b23d242a4_stephane-nowo-masterclass-barbecue-expo.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "modalParagraph": ""
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "25386e50-fe68-4152-a0db-94098e126e42",
+                        "icon": "arrow-right",
+                        "path": "https://my.weezevent.com/masterclass-barbecue-chef-carlos?_gl=1*10uc46t*_gcl_au*MTM2MTA1MDAwMy4xNzYzNzMzMjU0LjYwNDI1MDM1MC4xNzcwODE5MjEzLjE3NzA4MTkyMTM.*_ga*OTU0MDc2MDQ4LjE3NzAxMzYwOTU.*_ga_39H9VBFX7G*czE3N",
+                        "label": "Prenoto",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "8abae5d5-565d-48c0-a089-8fa1a6558c50",
+                    "days": "Référence incontestée dans l'univers du barbecue à granules, Robert Michel maîtrise les Traeger mieux que quiconque. Le Vendredi 10 avril à 14h30 Rougail Saucisses \"Océan Indien\" puis Samedi 11 Avril à 14h3: Biryani d'agneau \"Région du Kerala\" ",
+                    "media": {
+                      "id": 161509500564931,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/644a2b9ce7_photo-robert-michel.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "50€",
+                    "chefName": "Robert Michel x Traeger",
+                    "duration": "1h30",
+                    "component": "MasterClassCard",
+                    "coverMedia": {
+                      "id": 161509500564931,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/644a2b9ce7_photo-robert-michel.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "modalParagraph": ""
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "577e9e2b-7984-438b-8e5e-c9af4882dc52",
+                        "icon": "arrow-right",
+                        "path": "https://my.weezevent.com/masterclass-barbecue-chef-carlos?_gl=1*10uc46t*_gcl_au*MTM2MTA1MDAwMy4xNzYzNzMzMjU0LjYwNDI1MDM1MC4xNzcwODE5MjEzLjE3NzA4MTkyMTM.*_ga*OTU0MDc2MDQ4LjE3NzAxMzYwOTU.*_ga_39H9VBFX7G*czE3N",
+                        "label": "Prenoto",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "13c83e4c-93a1-40e9-bdc0-0d772d890582",
+                    "days": "Elis Bond vous ouvre les portes d'une technique ancestrale née dans les îles : le boucanné. Fumaison lente, épices créoles, feu maîtrisé.",
+                    "media": {
+                      "id": 161971688329453,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/29f07c0f0f_elis-bond-x-barbecue-expo.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "50€",
+                    "chefName": "Elis Bond (TopChef 13)",
+                    "duration": "1h30",
+                    "component": "MasterClassCard",
+                    "coverMedia": {
+                      "id": 161971688329453,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/29f07c0f0f_elis-bond-x-barbecue-expo.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "modalParagraph": "Elis Bond vous ouvre les portes d'une technique ancestrale née dans les îles : le boucanné. Fumaison lente, épices créoles, feu maîtrisé"
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "3c28f6be-e909-42d4-8191-a803d874f01e",
+                        "icon": "arrow-right",
+                        "path": "https://my.weezevent.com/masterclass-barbecue-chef-carlos?_gl=1*10uc46t*_gcl_au*MTM2MTA1MDAwMy4xNzYzNzMzMjU0LjYwNDI1MDM1MC4xNzcwODE5MjEzLjE3NzA4MTkyMTM.*_ga*OTU0MDc2MDQ4LjE3NzAxMzYwOTU.*_ga_39H9VBFX7G*czE3N",
+                        "label": "Prenoto",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "48c869a9-4cf8-483d-9eea-767e2c12489d",
+                    "days": "Samedi 11 Avril de 16h30 à 18h : Cuisinier autant que passionné de feu, Julien Serri — surnommé le \"Cuisïolo\" — est une figure incontournable de la gastronomie artisanale. Défenseur des beaux produits et des gestes vrais, il vous guide sur le Traeger Woodridge pour une masterclass où technique et plaisir ne font qu'un.",
+                    "media": {
+                      "id": 161984619214075,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/b2ad2d46dc_julien-serri-x-barbecue-expo.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "50€",
+                    "chefName": "Julien Serri ",
+                    "duration": "1h30",
+                    "component": "MasterClassCard",
+                    "coverMedia": {
+                      "id": 161984619214075,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/b2ad2d46dc_julien-serri-x-barbecue-expo.png",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "modalParagraph": "Cuisinier autant que passionné de feu, Julien Serri — surnommé le \"Cuisïolo\" — est une figure incontournable de la gastronomie artisanale. Défenseur des beaux produits et des gestes vrais, il vous guide sur le Traeger Woodridge pour une masterclass où technique et plaisir ne font qu'un."
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "3",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "4",
+                "_uid": "073154da-f561-40aa-8ba2-4c1f97550348",
+                "content": [
+                  {
+                    "_uid": "cf7f8b19-ea4b-467d-b83f-812e81944b20",
+                    "color": "primary",
+                    "content": "In partnership con",
+                    "component": "paragraph"
+                  },
+                  {
+                    "_uid": "7fbc0a45-498b-413b-aba7-a2b3a2c2c93c",
+                    "content": [
+                      {
+                        "_uid": "0e4626d5-c4d8-4f37-ba46-4669392d0d0a",
+                        "size": "sm",
+                        "color": "",
+                        "logos": [
+                          {
+                            "id": 144603288481829,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/7a5907deca_napoleoin.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 144640994052475,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/5f89d0eb58_hela-barbecue-expo.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 144639839611236,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/a4c952e2e3_drip_ez_logo_high_res_2.webp",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 133287426265332,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/e4ba531c1d_logo-bbq-mag1.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 144639699822940,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/296dd5ce6c_zip-logo-home-page3-1-1.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 155546699168644,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/5d6ff7508f_logo-eno-barbecue-expo-paris.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          }
+                        ],
+                        "speed": "40s",
+                        "component": "MovingLogos",
+                        "direction": ""
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "3",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "4",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "col",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "1f99ae68-8621-43ef-b57a-80806fd1055e",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "dba20b95-a799-4482-8313-70e753c53fae",
+            "wrap": "wrap",
+            "align": "center",
+            "content": [
+              {
+                "_uid": "ecbde2f0-9738-4324-9fd9-679508fac8d1",
+                "media": {
+                  "id": 158748188007270,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/82cb865a91_zip-fire-x-barbecue-expo.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "component": "media",
+                "objectFit": "cover",
+                "customClass": ""
+              }
+            ],
+            "justify": "center",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "7c28a3a2-f1f1-4f7a-a782-651c838ab518",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "6011f380-1c45-4afb-8b6c-9684fd28e257",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "4213ac80-e522-43ae-b98b-d60c247ca98b",
+                "color": "primary",
+                "content": "Perfezionati con i nostri marchi",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "f9fec4f4-5a6e-4304-ae83-b8db70cac861",
+                "content": [],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "3",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "masterclasses",
+  "full_slug": "program/masterclasses",
+  "sort_by_date": null,
+  "position": -20,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 135504957300885,
+  "meta_data": null,
+  "group_id": "bf403087-e966-4775-91f2-c158f12f9ff5",
+  "first_published_at": "2026-01-20T14:50:57.323Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

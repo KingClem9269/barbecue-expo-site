@@ -1,0 +1,900 @@
+{
+  "name": "Infos Pratiques",
+  "created_at": "2026-01-10T15:35:41.696Z",
+  "published_at": "2026-03-16T18:21:21.178Z",
+  "updated_at": "2026-03-16T18:21:21.192Z",
+  "id": 132586462269599,
+  "uuid": "0ac81fec-7091-466d-9404-6bbc797eef8f",
+  "content": {
+    "_uid": "9652e70a-fe57-46f9-9461-aefe7242b8f5",
+    "body": [
+      {
+        "_uid": "5a7b0f6c-5897-4880-a90c-4f05386d253d",
+        "content": [
+          {
+            "_uid": "b4c89ae2-3e9d-46d9-8f97-be2946e28322",
+            "color": "white",
+            "content": "Información Práctica",
+            "heading": "hero",
+            "component": "headline"
+          }
+        ],
+        "component": "PageHero",
+        "darkOverlay": true,
+        "backgroundMedia": {
+          "id": 133284673257566,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "/content/images/8d7632a252_home-mosaique-programme.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        }
+      },
+      {
+        "_uid": "46324a8e-aa38-44fb-9077-bf98977f02ae",
+        "anchor": "dates",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "33e45489-7837-4308-82f3-626a2a0809ef",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "e316ea76-ee9c-4aad-a910-e89006cdc50d",
+                "color": "primary",
+                "content": "Toda la información práctica (fechas, horarios, acceso) está disponible a continuación para organizar su visita.",
+                "component": "paragraph"
+              },
+              {
+                "_uid": "52e8e5d1-8fb7-46a3-b246-7d6befbd12c2",
+                "color": "primary",
+                "content": "Fechas y Horarios",
+                "heading": "h2",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "9c14796a-e551-49bf-ad57-faf8bcdcb982",
+                "content": [
+                  {
+                    "_uid": "85eb24ec-f0f2-40c7-8f5f-e96c4c1927d3",
+                    "content": [
+                      {
+                        "_uid": "0e68e641-e406-410d-ae71-6e4198863ef5",
+                        "color": "primary",
+                        "content": "Viernes 10 de abril",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": ""
+                      },
+                      {
+                        "_uid": "589fa7f6-79f4-4bf6-ba6d-00dfefb5f04b",
+                        "color": "primary",
+                        "content": "de 9h30 a 19h",
+                        "component": "paragraph",
+                        "textAlign": ""
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "2fb325ad-b0ee-4a56-bd07-a5a77947cb4f",
+                    "content": [
+                      {
+                        "_uid": "7106b98a-0a10-411c-a870-a6dfc7819128",
+                        "color": "primary",
+                        "content": "Sábado 11 de abril",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": ""
+                      },
+                      {
+                        "_uid": "9c5deff1-d2f0-4cf1-868a-91894ed451a5",
+                        "color": "primary",
+                        "content": "de 9h30 a 19h",
+                        "component": "paragraph"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "b1bd6453-fdd2-40de-946a-49bebf44c685",
+                    "content": [
+                      {
+                        "_uid": "e7285a46-c141-45c8-a910-4366c493f251",
+                        "color": "primary",
+                        "content": "Domingo 12 de abril",
+                        "heading": "h3",
+                        "component": "headline",
+                        "textAlign": ""
+                      },
+                      {
+                        "_uid": "f526ba24-23f8-4f26-97d9-a559ded5019f",
+                        "color": "primary",
+                        "content": "de 9h30 a 18h",
+                        "component": "paragraph"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "3",
+                "nColsMedium": "3",
+                "nColsMobile": "3"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "col",
+            "gapDesktop": "8"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": ""
+      },
+      {
+        "_uid": "1d5191f1-e682-42c3-b92c-7d6a1f8777a2",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "2ef2877c-5bff-46a9-a516-3a9f7decbd45",
+            "wrap": "wrap",
+            "align": "center",
+            "content": [
+              {
+                "_uid": "7460402e-568e-46a8-a6a2-0fa57eac5abf",
+                "media": {
+                  "id": 155617061823046,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/bd52fed04f_banniere-ember-x-barbecue-expo.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "component": "media",
+                "objectFit": "cover",
+                "customClass": ""
+              }
+            ],
+            "justify": "center",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "0ba57dc3-9cc1-48f4-9881-97328d54d144",
+        "anchor": "adresse",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "7935e67a-f9f2-4daa-bb98-2279c0c0965c",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "02ca170f-163f-4cee-a4bd-ed537efd6e9f",
+                "color": "primary",
+                "content": "Dirección del evento",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "4ff2b13d-14d9-47fa-a9f7-0cc4abbe8f26",
+                "content": [
+                  {
+                    "_uid": "3f92bfe1-e124-4600-8772-37b4616ed896",
+                    "content": [
+                      {
+                        "_uid": "da93df64-5061-466e-91a5-594df0d9b9ad",
+                        "color": "primary",
+                        "content": "Parc Floral de Paris",
+                        "component": "paragraph"
+                      },
+                      {
+                        "_uid": "c24fd71f-3013-47d9-b449-5775a412dd76",
+                        "color": "primary",
+                        "content": "26 Route du Champ de Manœuvre",
+                        "component": "paragraph"
+                      },
+                      {
+                        "_uid": "a3508c28-4796-47bb-a228-3b92c08dd71c",
+                        "color": "primary",
+                        "content": "75012 Paris, France",
+                        "component": "paragraph",
+                        "textAlign": ""
+                      },
+                      {
+                        "_uid": "e8aa70d4-1277-47ad-bd43-8c11eef0de7f",
+                        "bold": true,
+                        "color": "primary",
+                        "content": "Dos entradas: Pyramides & Château/Nymphéa",
+                        "component": "paragraph",
+                        "textAlign": "start"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "465b85c8-f16a-4037-93a5-d337fd6e1e03",
+                    "content": [
+                      {
+                        "_uid": "8bf5b0c3-5f0b-47ac-93a3-ddd968e2fd64",
+                        "component": "GoogleMapsMap"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "303b0d7d-e051-44e2-9226-bd0a87658c5d",
+        "anchor": "acces",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "f2de5e1d-58d5-46f5-ad7f-a7dcad5e5d25",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "6d47ac21-669e-4576-b51a-7735b46ef59d",
+                "color": "primary",
+                "content": "¿Cómo llegar a Barbecue Expo?",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "_uid": "9e1d2b60-81b3-442a-8398-52d4e52b28d0",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "15a219ee-c59b-41cc-84c1-bb2324c6bd4f",
+                    "content": [
+                      {
+                        "_uid": "55630759-71a8-45c1-860c-3bfddeb33380",
+                        "content": [
+                          {
+                            "_uid": "82609004-6c76-4ce7-94d0-bb702a3bb6c2",
+                            "color": "primary",
+                            "content": "Métro & Bus",
+                            "heading": "h4",
+                            "component": "headline"
+                          },
+                          {
+                            "_uid": "cf96dfae-beba-434d-9219-72e1a2616b8e",
+                            "color": "primary",
+                            "content": "Ⓜ️ Métro 1 : Station \"Chateau de Vincennes\"",
+                            "component": "paragraph"
+                          },
+                          {
+                            "_uid": "2bb28370-f6bd-4e60-9627-06c7ccdfa5ec",
+                            "color": "primary",
+                            "content": "Ⓜ️ RER A : Station \"Vincennes\"",
+                            "component": "paragraph"
+                          },
+                          {
+                            "_uid": "dc59070c-6aff-4d22-bd4d-0c28d806cb80",
+                            "color": "primary",
+                            "content": "🚌 Bus 112 : Station \"Stade Léo Lagrange\"",
+                            "component": "paragraph"
+                          },
+                          {
+                            "_uid": "e2e654d8-45a0-453b-8f74-8263fecdb0ee",
+                            "color": "primary",
+                            "content": "Station Vélib'",
+                            "component": "paragraph"
+                          }
+                        ],
+                        "component": "Container",
+                        "customWidth": "",
+                        "customHeight": "",
+                        "colSpanMobile": "",
+                        "paddingMobile": "0",
+                        "rowSpanMobile": "",
+                        "colSpanDesktop": "",
+                        "paddingDesktop": "0",
+                        "rowSpanDesktop": "",
+                        "backgroundColor": "",
+                        "backgroundMedia": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "paddingDesktopLarge": ""
+                      },
+                      {
+                        "_uid": "dcd87fd2-1dec-4a53-b657-0941ec093e74",
+                        "content": [
+                          {
+                            "_uid": "443c600b-dae0-406d-8c95-0d735c74c580",
+                            "color": "primary",
+                            "content": "Situación y localización",
+                            "heading": "h4",
+                            "component": "headline"
+                          },
+                          {
+                            "_uid": "b34854e2-9ca1-4d94-9a68-beb41307dfca",
+                            "color": "primary",
+                            "content": "🕥 A 5 minutos de la circunvalación (Porte Dorée, Vincennes o Charenton)",
+                            "component": "paragraph"
+                          },
+                          {
+                            "_uid": "c7919bce-9f84-4307-9020-53c60938024d",
+                            "color": "primary",
+                            "content": "🕥  A 5 minutos de la Autopista A4: Salida Joinville",
+                            "component": "paragraph"
+                          },
+                          {
+                            "_uid": "3a0bfd91-9d1a-4a70-9dad-e69d729ca659",
+                            "color": "primary",
+                            "content": "🕥  A 30 minutos de los aeropuertos Roissy-Charles de Gaulle y Orly",
+                            "component": "paragraph"
+                          }
+                        ],
+                        "component": "Container",
+                        "customWidth": "",
+                        "customHeight": "",
+                        "colSpanMobile": "",
+                        "paddingMobile": "0",
+                        "rowSpanMobile": "",
+                        "colSpanDesktop": "",
+                        "paddingDesktop": "0",
+                        "rowSpanDesktop": "",
+                        "backgroundColor": "",
+                        "backgroundMedia": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "paddingDesktopLarge": ""
+                      },
+                      {
+                        "_uid": "51d6b7a2-1db9-469d-8d9f-fe047298e8ac",
+                        "content": [
+                          {
+                            "_uid": "bca97dc0-eac1-4a9b-8b49-aa62c3f88c27",
+                            "color": "primary",
+                            "content": "Parking",
+                            "heading": "h4",
+                            "component": "headline"
+                          },
+                          {
+                            "_uid": "5c6fe914-a511-4b9c-97da-8339964d691d",
+                            "color": "primary",
+                            "content": "🚗 Aparcamiento público de 500 plazas (de pago)",
+                            "component": "paragraph"
+                          }
+                        ],
+                        "component": "Container",
+                        "customWidth": "",
+                        "customHeight": "",
+                        "colSpanMobile": "",
+                        "paddingMobile": "0",
+                        "rowSpanMobile": "",
+                        "colSpanDesktop": "",
+                        "paddingDesktop": "0",
+                        "rowSpanDesktop": "",
+                        "backgroundColor": "",
+                        "backgroundMedia": {
+                          "id": null,
+                          "alt": null,
+                          "name": "",
+                          "focus": null,
+                          "title": null,
+                          "source": null,
+                          "filename": "",
+                          "copyright": null,
+                          "fieldtype": "asset",
+                          "meta_data": {}
+                        },
+                        "paddingDesktopLarge": ""
+                      }
+                    ],
+                    "component": "Grid",
+                    "nColsLarge": "3",
+                    "nColsMedium": "2",
+                    "nColsMobile": "1"
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "paddingMobile": "0",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "paddingDesktop": "0",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "source": null,
+                  "filename": "",
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {}
+                },
+                "paddingDesktopLarge": ""
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "37110c60-310f-4a3a-98c5-5fcf07d8b522",
+        "anchor": "hebergement",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "8446e043-6ce7-436b-85aa-e1f9ec47ea9a",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "01d190f2-b07f-43d4-97c6-40df4aa717f3",
+                "color": "primary",
+                "content": "Alojamientos",
+                "heading": "",
+                "component": "headline"
+              },
+              {
+                "_uid": "6a54c27b-96b1-48bf-999d-fde935ae2ae5",
+                "icon": "arrow-external-link",
+                "path": "https://platform.revolugo.com/hotels?wid=salon-du-barbecue-2026](https://platform.revolugo.com/hotels?wid=salon-du-barbecue-2026",
+                "label": "Ver alojamientos",
+                "style": "filled-dark",
+                "component": "link"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": ""
+      },
+      {
+        "_uid": "13d492f9-6a4f-463a-afa1-707c26a337ee",
+        "component": "RevolugoWidget"
+      },
+      {
+        "_uid": "6819972b-d4ea-42b5-bc4b-e8c97359e018",
+        "anchor": "faq",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "bf25d984-9c6a-42fe-8bc0-afd824a63054",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "6c09b2ce-c102-46db-bd97-c0ee113251b2",
+                "color": "primary",
+                "content": "FAQ",
+                "heading": "h2",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "_uid": "351fdbe3-0dc5-4022-9732-e49b706150d8",
+                "content": [
+                  {
+                    "gap": "4",
+                    "_uid": "f732f362-e21e-496f-b2f8-abbf68dc9159",
+                    "content": [
+                      {
+                        "_uid": "90e781f0-aa2f-460e-bf74-f4dd98ee1d16",
+                        "color": "white",
+                        "component": "AccordionCard",
+                        "contentShown": [
+                          {
+                            "_uid": "12c645c0-1009-40af-9b3a-eae3ca01d757",
+                            "color": "primary",
+                            "content": "¿Qué es el Salón del Barbecue?",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "start"
+                          }
+                        ],
+                        "contentHidden": [
+                          {
+                            "_uid": "f43177ee-b9ab-4489-887f-5b4614785915",
+                            "bold": false,
+                            "color": "primary",
+                            "content": "El Salón del Barbecue es un evento dedicado al universo de la barbacoa: materiales, combustibles, accesorios, técnicas de cocción, recetas, degustaciones y demostraciones. El evento existe desde 2022 y 2026 marcará la 5a edición.",
+                            "component": "paragraph",
+                            "textAlign": "start"
+                          }
+                        ]
+                      },
+                      {
+                        "_uid": "6b05ebab-3eab-4360-a32e-3514d306ca87",
+                        "color": "white",
+                        "component": "AccordionCard",
+                        "contentShown": [
+                          {
+                            "_uid": "cd59153d-60a7-49d8-95c0-7f873afca094",
+                            "color": "primary",
+                            "content": "¿Cuáles son las fechas y horarios del salón?",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "start"
+                          }
+                        ],
+                        "contentHidden": [
+                          {
+                            "_uid": "5f997e9b-5a75-4254-a5a7-97199fb9014d",
+                            "bold": false,
+                            "color": "primary",
+                            "content": "El salón se celebra en París del viernes 10 al domingo 12 de abril: Viernes: 9h30 – 19h Sábado: 9h30 – 19h Domingo: 9h30 – 18h",
+                            "component": "paragraph",
+                            "textAlign": "start"
+                          }
+                        ]
+                      },
+                      {
+                        "_uid": "c8a106d6-454c-43b6-b7cc-0e415b1a3cf7",
+                        "color": "white",
+                        "component": "AccordionCard",
+                        "contentShown": [
+                          {
+                            "_uid": "912a977b-5a0c-4f5e-848b-90d146eae35b",
+                            "color": "primary",
+                            "content": "¿Dónde se celebra el evento?",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "start"
+                          }
+                        ],
+                        "contentHidden": [
+                          {
+                            "_uid": "88a68900-6986-49eb-ab53-96b44471464c",
+                            "bold": false,
+                            "color": "primary",
+                            "content": "El salón tiene lugar en París, en el Parc Floral de Paris (distrito 12), Hall de la Pinède. Dirección: 26 route du Champ de Manœuvre, 75012 París.",
+                            "component": "paragraph",
+                            "textAlign": "start"
+                          }
+                        ]
+                      },
+                      {
+                        "_uid": "4b0253b8-eb5d-486f-aa95-b56872469893",
+                        "color": "white",
+                        "component": "AccordionCard",
+                        "contentShown": [
+                          {
+                            "_uid": "6cd54a22-db4c-46fc-8f3c-ffdbadebe23b",
+                            "color": "primary",
+                            "content": "¿Hay aparcamiento en el recinto?",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "start"
+                          }
+                        ],
+                        "contentHidden": [
+                          {
+                            "_uid": "b641d279-36a2-4948-a304-3608d22d19b6",
+                            "bold": false,
+                            "color": "primary",
+                            "content": "Sí. Hay un aparcamiento público enfrente. También hay numerosas opciones de estacionamiento en Vincennes. Se podrán proponer aparcamientos adicionales: se anunciarán en las redes sociales — ¡estén atentos!",
+                            "component": "paragraph",
+                            "textAlign": "start"
+                          }
+                        ]
+                      },
+                      {
+                        "_uid": "eb825af5-6c20-4d47-8138-431f9ac10869",
+                        "color": "white",
+                        "component": "AccordionCard",
+                        "contentShown": [
+                          {
+                            "_uid": "5f5b6459-e64e-448f-a7e8-c357f054c25f",
+                            "color": "primary",
+                            "content": "¿Es accesible el salón para personas con movilidad reducida (PMR)?",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "start"
+                          }
+                        ],
+                        "contentHidden": [
+                          {
+                            "_uid": "282b899f-ef05-4663-b2a6-ed585fd24721",
+                            "bold": false,
+                            "color": "primary",
+                            "content": "Sí, el salón es accesible para personas con movilidad reducida. Una tarifa específica PMR está disponible en el recinto.",
+                            "component": "paragraph",
+                            "textAlign": "start"
+                          }
+                        ]
+                      },
+                      {
+                        "_uid": "ea861c5a-c3b6-4b73-bd7e-cb23befb5e68",
+                        "color": "white",
+                        "component": "AccordionCard",
+                        "contentShown": [
+                          {
+                            "_uid": "c06ce999-0faf-4da2-9367-e4bfd5a0ffee",
+                            "color": "primary",
+                            "content": "¿Es necesario comprar la entrada con antelación?",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "start"
+                          }
+                        ],
+                        "contentHidden": [
+                          {
+                            "_uid": "31f1dff8-8450-4544-9ccd-dbe705d405d9",
+                            "bold": false,
+                            "color": "primary",
+                            "content": "Sí, es preferible: la compra en línea permite beneficiarse de la tarifa de preventa y ahorrar tiempo. También habrá taquilla en el recinto, a la tarifa de taquilla.",
+                            "component": "paragraph",
+                            "textAlign": "start"
+                          }
+                        ]
+                      }
+                    ],
+                    "component": "Grid",
+                    "nColsLarge": "2",
+                    "nColsMedium": "2",
+                    "nColsMobile": "1"
+                  }
+                ],
+                "component": "Container",
+                "customWidth": "",
+                "customHeight": "",
+                "colSpanMobile": "",
+                "paddingMobile": "0",
+                "rowSpanMobile": "",
+                "colSpanDesktop": "",
+                "paddingDesktop": "0",
+                "rowSpanDesktop": "",
+                "backgroundColor": "",
+                "backgroundMedia": {
+                  "id": null,
+                  "alt": null,
+                  "name": "",
+                  "focus": null,
+                  "title": null,
+                  "source": null,
+                  "filename": "",
+                  "copyright": null,
+                  "fieldtype": "asset",
+                  "meta_data": {}
+                },
+                "paddingDesktopLarge": ""
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "eed6c3c5-d287-408c-b59f-b1b6103ba2cf",
+        "anchor": "contact",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "f91e91b3-4fcd-4558-ac85-c88e51d32bc9",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "16633b9f-79ec-4c1c-b7dd-1853dfceb8c0",
+                "component": "ContactForm"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "infos-pratiques",
+  "full_slug": "infos-pratiques",
+  "sort_by_date": null,
+  "position": -60,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "4d5f9d34-43b2-466d-b2ce-74061d72194a",
+  "first_published_at": "2026-01-10T15:36:00.375Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Marché Noir",
+  "created_at": "2026-03-16T15:55:13.383Z",
+  "published_at": "2026-03-16T16:26:15.702Z",
+  "updated_at": "2026-03-16T16:26:15.715Z",
+  "id": 155594397238321,
+  "uuid": "e9ac6e40-57fc-4425-86db-dbe643cdde5b",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Marché Noir é o Barbecue ao estilo grande banquete. Aquele que se partilha entre amigos. Aquele que faz barulho. Aquele que transborda do prato sem nunca perder de vista o bom, a qualidade, o sabor. É assim que o Marché Noir se apresenta a si.  Artesãos fumistas especializados em cozinha ao fogo e ao fumo. Festivais (Hellfest), casamentos, divórcios, filmagens etc… Deslocamo-nos com os nossos smokers BBQ gigantes para oferecer uma cozinha surpreendente em torno da chama e do fumo. Uma técnica do outro lado do Atlântico mas uma cozinha bem nossa!  Trabalhamos com a convicção de propor uma cozinha local e respeitadora do ambiente, por isso todas as nossas carnes e legumes são biológicos e provenientes de agricultura local.  FUMAMOS TUDO, DO BOM, DA CASA!",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151343222425549,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/4fa262e993_img_5155.JPG",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Marché Noir",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Artesãos fumistas"
+  },
+  "slug": "marche-noir",
+  "full_slug": "program/bbq-street-food/marche-noir",
+  "sort_by_date": null,
+  "position": -150,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "704a324c-b279-4bac-9b43-8913939d5df7",
+  "first_published_at": "2026-03-16T16:26:15.702Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

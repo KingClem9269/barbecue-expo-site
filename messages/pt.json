@@ -1,0 +1,47 @@
+{
+  "bbq_expo": "BBQ Expo",
+  "cookingShowWidget": {
+    "title": "Programa de Cooking Shows - Barbecue Expo 2026"
+  },
+  "contact": {
+    "headline": "Contacte-nos",
+    "description": "Envie-nos uma mensagem e responderemos o mais brevemente possível.",
+    "name_label": "O seu nome",
+    "name_placeholder": "O seu nome",
+    "email_label": "O seu e-mail",
+    "email_placeholder": "O seu endereço de e-mail",
+    "message_label": "A sua mensagem",
+    "message_placeholder": "A sua mensagem",
+    "button": "Enviar",
+    "loading": "A enviar...",
+    "success": "Obrigado! A sua mensagem foi enviada. Responderemos em breve.",
+    "success_title": "Mensagem enviada com sucesso",
+    "success_description": "A sua mensagem foi enviada com sucesso. Responderemos o mais brevemente possível.",
+    "error_default": "Algo correu mal. Por favor, tente novamente.",
+    "error_name_required": "O nome é obrigatório.",
+    "error_email_required": "O e-mail é obrigatório.",
+    "error_invalid_email": "Por favor, introduza um endereço de e-mail válido.",
+    "error_message_required": "A mensagem é obrigatória.",
+    "error_unable_to_send": "Não foi possível enviar a mensagem. Por favor, tente mais tarde.",
+    "error_unexpected": "Ocorreu um erro inesperado. Por favor, tente novamente.",
+    "error_service_unconfigured": "O formulário de contacto não está disponível."
+  },
+  "masterClass": {
+    "learnMore": "Saber mais"
+  },
+  "newsletter": {
+    "headline": "Mantenha-se informado",
+    "description": "Subscreva a nossa newsletter para receber as últimas notícias.",
+    "button": "Subscrever",
+    "placeholder": "O seu endereço de e-mail",
+    "loading": "A subscrever...",
+    "success": "Obrigado! Subscreveu com sucesso.",
+    "error_default": "Algo correu mal. Por favor, tente novamente.",
+    "error_email_required": "O e-mail é obrigatório.",
+    "error_invalid_email": "Por favor, introduza um endereço de e-mail válido.",
+    "error_invalid_request": "Pedido inválido. Por favor, verifique o seu e-mail.",
+    "error_unable_to_subscribe": "Não foi possível subscrever. Por favor, tente mais tarde.",
+    "error_unexpected": "Ocorreu um erro inesperado. Por favor, tente novamente.",
+    "error_service_unconfigured": "O serviço de newsletter não está disponível."
+  }
+}

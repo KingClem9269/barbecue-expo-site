@@ -1,0 +1,54 @@
+{
+  "name": "H.O.M. Steakhouse",
+  "created_at": "2026-03-16T15:54:17.602Z",
+  "published_at": "2026-03-16T16:36:03.077Z",
+  "updated_at": "2026-03-16T16:36:03.090Z",
+  "id": 155594168759179,
+  "uuid": "4e85e714-fb67-48b9-9ec8-1512c6c207d9",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "House Of Meats\" é uma empresa de restauração criada em 2022. Propõe-lhe um mix entre grelhados de carnes e carnes fumadas a baixas temperaturas. Na feira do BBQ, encontrará no menu o nosso best seller: um prato misto de 2 carnes de porco desfiado com especiarias cajun e o nosso brisket Black Angus acompanhado de batatas fritas frescas de dupla cozedura e salada coleslaw para o lado refrescante. Encontrará também os nossos espetinhos de frango marinado grelhado para o prazer do seu paladar. Será um prazer recebê-lo no nosso stand e descobrir também a nossa caravana Airstreams de nova geração pelo lado estético.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136489892199477,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/82a793fc75_photo_1711378025992.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "H.O.M. Steakhouse",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "THE Steakhouse"
+  },
+  "slug": "h-o-m-steakhouse",
+  "full_slug": "program/bbq-street-food/h-o-m-steakhouse",
+  "sort_by_date": null,
+  "position": -90,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "33c8f061-3297-47ab-9f1c-e29687ed2764",
+  "first_published_at": "2026-03-16T16:35:54.882Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

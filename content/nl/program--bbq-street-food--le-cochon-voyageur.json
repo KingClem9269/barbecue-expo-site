@@ -1,0 +1,54 @@
+{
+  "name": "Le Cochon Voyageur",
+  "created_at": "2026-03-16T15:54:26.773Z",
+  "published_at": "2026-03-16T16:35:03.956Z",
+  "updated_at": "2026-03-16T16:35:03.968Z",
+  "id": 155594206327721,
+  "uuid": "728f0e50-abf9-44dd-8980-fc6764192bea",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Le Cochon Voyageur is bovenal een menselijk en ambachtelijk avontuur, geboren uit de ontmoeting van Franck en Olivier. Smeden van beroep en gepassioneerd door vuur, hebben zij hun vakmanschap verenigd om een buitengewone traiteur te cre\u00ebren, waar de beheersing van metaal de kunst van de barbecue ontmoet. Uit deze alliantie is een uniek universum ontstaan: spectaculaire kookmachines, volledig door hen ontworpen en vervaardigd, die u nergens anders zult zien. Unieke stukken, bedacht om het koken op houtvuur te sublimeren en zowel een visuele als culinaire ervaring te bieden. Als erkende specialisten in het bereiden van schenkels en varkensvlees, bewerken zij het vlees met precisie, geduld en respect voor het product, voor langdurige, beheerste en diep smaakvolle bereidingen. Le Cochon Voyageur is de ontmoeting van vuur, ijzer en lekkernij, ten dienste van een authentieke en spectaculaire keuken.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136490263542866,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/21804e4f01_2-photo-machine-officiel.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Le Cochon Voyageur",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": "De schenkel als nooit tevoren!"
+  },
+  "slug": "le-cochon-voyageur",
+  "full_slug": "program/bbq-street-food/le-cochon-voyageur",
+  "sort_by_date": null,
+  "position": -100,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "2adf079e-1f2f-434f-9e5e-a57fd5d866e8",
+  "first_published_at": "2026-03-16T16:33:58.493Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

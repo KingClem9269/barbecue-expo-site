@@ -1,0 +1,339 @@
+{
+  "name": "config",
+  "created_at": "2025-12-26T15:51:38.087Z",
+  "published_at": "2026-02-13T15:24:18.202Z",
+  "updated_at": "2026-02-13T15:24:18.214Z",
+  "id": 127281963516085,
+  "uuid": "99000def-a14c-463f-980a-b2cd8db26fff",
+  "content": {
+    "_uid": "8f4e7906-9ba6-4f21-a592-6c1b560f9a11",
+    "city": "París, Francia",
+    "date": "10, 11 y 12 de abril de 2026",
+    "email": "info@barbecue-expo.fr",
+    "phone": "09 83 90 16 15",
+    "address": "Rte de la Pyramide, 75012 París, Francia",
+    "tickets": "Entradas",
+    "component": "global_config",
+    "footer_menu": [
+      {
+        "_uid": "9e644b2b-5f38-4b3b-ad89-055104190390",
+        "link": "/",
+        "label": "Información",
+        "submenu": [
+          {
+            "_uid": "2da07065-a0fb-41b9-a7a7-0de0df32762e",
+            "link": "",
+            "label": "Editorial",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "9b61d154-6be6-40c7-afcd-406d074ec268",
+            "link": "",
+            "label": "Aviso Legal",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "fe3ca776-8168-45e6-a2e6-aa4ddb90a74a",
+            "link": "",
+            "label": "Política de privacidad",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "230ec9f3-aba3-4698-a1bb-987a2dd81ed2",
+            "link": "",
+            "label": "CGV",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "b345f7f4-9d31-42c4-ad48-39239eff6be9",
+        "link": "/",
+        "label": "El Salón",
+        "submenu": [
+          {
+            "_uid": "d74f3476-7c7c-46d1-828e-01f4b1525c3b",
+            "link": "",
+            "label": "Evento",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "f4c42fe4-a412-4b7e-bf38-0be6ee4746b5",
+            "link": "",
+            "label": "Colaboradores",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "1df479ed-cdfe-4f3a-97d6-0590a9a05342",
+            "link": "",
+            "label": "Expositores",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "1fc4b99e-8aba-4239-9d7a-a10e7294c7a5",
+            "link": "",
+            "label": "Animaciones",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "817c3aba-b972-4a79-b8c3-b106102d206b",
+        "link": "/",
+        "label": "Pro",
+        "submenu": [
+          {
+            "_uid": "a11b1557-b147-499d-958c-5d52155edbd4",
+            "link": "",
+            "label": "Exponer en el Salón",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "c3b4225f-300e-4830-8334-bd257666180f",
+            "link": "",
+            "label": "Ser Colaborador",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "12d819ac-fb64-4a7c-b2b6-d56d3911bb8e",
+            "link": "",
+            "label": "Fechas y Horarios",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "d0377df6-a7f1-496a-8189-4c86327222f8",
+        "link": "/",
+        "label": "Prensa",
+        "submenu": [
+          {
+            "_uid": "d2824258-fc96-495d-af81-ff417cfcecc7",
+            "link": "",
+            "label": "Acreditación de Prensa",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "9df6bb35-d2a2-4006-a32b-674b6589ee9e",
+            "link": "",
+            "label": "Contáctenos",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      }
+    ],
+    "header_menu": [
+      {
+        "_uid": "0d0951a2-59f7-4e9b-9429-fd32858ed327",
+        "link": "/le-salon",
+        "label": "El Salón",
+        "submenu": [
+          {
+            "_uid": "dcbcc80f-0ead-4372-8e7d-7823f5a50995",
+            "link": "/le-salon",
+            "label": "Editorial",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "cee35874-500b-4a27-98ac-ea93eb2581dd",
+            "link": "/exposants",
+            "label": "Lista de Expositores",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "67b09b4f-f571-4833-89c8-09c614a31233",
+            "link": "/gallery-press",
+            "label": "Galería y Prensa",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "e6f395ae-5abd-4201-8478-ed23d620d8bc",
+        "link": "/exposants",
+        "label": "Expositores",
+        "submenu": [
+          {
+            "_uid": "934b9e9d-0a35-4b38-a6db-a3f3469db10e",
+            "link": "/pourquoi-exposer",
+            "label": "¿Por qué exponer?",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "f4d39e85-7819-479c-85dc-05dd6d2d6784",
+            "link": "/exposants",
+            "label": "Nuestros expositores",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "8d04953b-338e-4d15-aca7-2dccf48520d1",
+            "link": "/devenez-exposants",
+            "label": "Conviértase en expositor",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "537fd6fa-8444-4c0e-b781-950f9dbaffba",
+            "link": "https://app.imagina.com/barbecue-expo/",
+            "label": "Espacio Pro & B2B",
+            "submenu": [],
+            "external": true,
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "acb3f78a-f8c4-4cbb-b5e9-a5d45f7defe1",
+        "link": "",
+        "label": "Programa",
+        "submenu": [
+          {
+            "_uid": "187bb926-1cb9-461c-83c9-635056dd504e",
+            "link": "/program/cooking-shows",
+            "label": "Chefs & Cooking Shows",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "e6067628-e9f1-4365-8add-554b213d4be7",
+            "link": "/program/masterclasses",
+            "label": "Masterclasses",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "dc753550-df9d-468d-a10a-97d08bbaca9a",
+            "link": "/program/bbq-street-food",
+            "label": "BBQ Street Food",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "5bcb8f2c-ed53-4a09-850e-f9e59e73572c",
+        "link": "/infos-pratiques#date",
+        "label": "Información Práctica",
+        "submenu": [
+          {
+            "_uid": "f1abe2d6-4291-4093-976a-29f3d577136d",
+            "link": "/infos-pratiques",
+            "label": "Fechas y Horarios",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "4fea3ad6-3544-46a7-b6c7-48db7d411025",
+            "link": "/infos-pratiques#acces",
+            "label": "Acceso",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "b0297365-284a-4c01-bfcf-881f3242774e",
+            "link": "/infos-pratiques#hebergement",
+            "label": "Alojamiento",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "c3cd6880-33a1-4411-9f3e-983901af11dc",
+            "link": "/infos-pratiques#contact",
+            "label": "Contacto",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "04bb8ea8-3729-4bbe-a6b3-a46cf499d00a",
+            "link": "/infos-pratiques#faq",
+            "label": "FAQ",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      },
+      {
+        "_uid": "eee5a96e-a985-4ce2-81bf-696313a60189",
+        "link": "",
+        "label": "Visitar",
+        "submenu": [
+          {
+            "_uid": "e28db9d0-320f-407f-9e40-9c688585da36",
+            "link": "/pourquoi-visiter",
+            "label": "¿Por qué visitar?",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "e641f4a2-ceff-4ab7-9592-2c6e2ad68786",
+            "link": "/exposants",
+            "label": "Lista de expositores",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "8ba808b1-8667-4502-a4c8-ea8fc9435f81",
+            "link": "/espace-pro-b2b",
+            "label": "Badge Pro",
+            "submenu": [],
+            "component": "menu-item"
+          }
+        ],
+        "component": "menu-item"
+      }
+    ],
+    "tickets_slug": "/billetterie/particulier",
+    "link_location": "https://www.parcfloraldeparis.com/fr",
+    "tickets_b2b_slug": "/billetterie/pro-b2b",
+    "tickets_b2c_slug": "/billetterie/particulier",
+    "tickets_b2b_label": "Entradas Pro",
+    "tickets_b2c_label": "Entradas",
+    "tickets_press_slug": "/billetterie/presse",
+    "label_link_location": "Parc Floral de Paris",
+    "tickets_press_label": "Prensa"
+  },
+  "slug": "config",
+  "full_slug": "config",
+  "sort_by_date": null,
+  "position": 0,
+  "tag_list": [
+    "global"
+  ],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "c25adf2d-6703-4532-8656-4da8b5ca1206",
+  "first_published_at": "2025-12-26T16:07:46.874Z",
+  "release_id": null,
+  "lang": "default",
+  "path": "/",
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

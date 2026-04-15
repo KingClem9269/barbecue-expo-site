@@ -1,0 +1,54 @@
+{
+  "name": "melt",
+  "created_at": "2026-03-05T13:21:59.689Z",
+  "published_at": "2026-03-10T12:02:32.511Z",
+  "updated_at": "2026-03-10T12:02:32.537Z",
+  "id": 151663901491236,
+  "uuid": "1e7f6e94-a3e2-413c-89ad-90700b1641f3",
+  "content": {
+    "_uid": "c1182a0d-9076-45ff-9a72-eddd28130d19",
+    "body": [
+      {
+        "_uid": "cd5af169-24d9-4412-8e44-dd2611519610",
+        "bold": false,
+        "color": "white",
+        "content": "Bij MELT vieren we gerookt vlees met passie. Ge\u00efnspireerd door de Texaanse barbecuetraditie is onze missie eenvoudig: u een onvergetelijke ervaring bieden rond mals vlees, urenlang langzaam gerookt en royaal geserveerd. Smeltende brisket, smaakvolle pulled pork, huisgemaakte pastrami, lekkere broodjes of deelborden \u2014 elke hap is een eerbetoon aan de echte smaken van het Amerikaanse smokehouse. Of het nu in onze gezellige restaurants is, om mee te nemen, met bezorging of bij uw evenementen, MELT is de referentie voor BBQ in Parijs en in Europa.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136486947273589,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/1b72183fdb_melt-salon-bbq38020.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Melt",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "De authentieke smaak van Barbecue in Parijs."
+  },
+  "slug": "melt",
+  "full_slug": "program/bbq-street-food/melt",
+  "sort_by_date": null,
+  "position": -30,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "7c42d8d7-370c-4e87-a984-1ad055e9dab1",
+  "first_published_at": "2026-03-05T13:23:17.141Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

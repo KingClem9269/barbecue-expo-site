@@ -1,0 +1,54 @@
+{
+  "name": "Le Cochon Voyageur",
+  "created_at": "2026-03-16T15:54:26.773Z",
+  "published_at": "2026-03-16T16:35:03.956Z",
+  "updated_at": "2026-03-16T16:35:03.968Z",
+  "id": 155594206327721,
+  "uuid": "728f0e50-abf9-44dd-8980-fc6764192bea",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Le Cochon Voyageur è prima di tutto un’avventura umana e artigianale nata dall’incontro tra Franck e Olivier. Fabbri di mestiere e appassionati di fuoco, hanno unito le loro competenze per creare un catering fuori dal comune, dove la padronanza del metallo incontra l’arte del barbecue. Da questa alleanza è nato un universo unico: macchine da cottura spettacolari, interamente progettate e fabbricate da loro, che non vedrete da nessun’altra parte. Pezzi unici, pensati per esaltare la cottura a legna e offrire un’esperienza visiva quanto gustativa. Specialisti riconosciuti della cottura dello stinco e del maiale, lavorano la carne con precisione, pazienza e rispetto del prodotto, per cotture lunghe, controllate e profondamente saporite. Le Cochon Voyageur è l’incontro tra fuoco, ferro e golosità, al servizio di una cucina autentica e spettacolare. ",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136490263542866,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/21804e4f01_2-photo-machine-officiel.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Le Cochon Voyageur",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": "Le Jarret comme jamais ! "
+  },
+  "slug": "le-cochon-voyageur",
+  "full_slug": "program/bbq-street-food/le-cochon-voyageur",
+  "sort_by_date": null,
+  "position": -100,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "2adf079e-1f2f-434f-9e5e-a57fd5d866e8",
+  "first_published_at": "2026-03-16T16:33:58.493Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

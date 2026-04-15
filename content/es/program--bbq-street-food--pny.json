@@ -1,0 +1,54 @@
+{
+  "name": "PNY",
+  "created_at": "2026-03-16T15:54:45.382Z",
+  "published_at": "2026-03-16T16:31:57.096Z",
+  "updated_at": "2026-03-16T16:31:57.110Z",
+  "id": 155594282546144,
+  "uuid": "c1388b92-7ec8-47f2-8a7b-9bb35d504e49",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Somos profesionales del steak picado. En 12 años, hemos desarrollado un saber hacer único. Nuestros cheddars provienen de una pequeña explotación de Somerset en Inglaterra y se maduran de 6 a 18 meses. Los panecillos se hornean cada mañana y la receta ha requerido más de 50 pruebas. Nos abastecemos siempre que es posible y tiene sentido directamente con los productores. No hay un ingrediente que entre en PNY sin haber sido sometido al paladar de Graffi. Por último, estamos en búsqueda perpetua de recetas, ingredientes, técnicas y encuentros que nos permitan mejorar poco a poco. Restaurar la imagen de la hamburguesa, esa es nuestra humilde vocación. Saber más",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151350594296276,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cd7f51d556_quentintourbez-pny-juicylucy01-01971.webp",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "PNY",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Los Pros del Steak picado"
+  },
+  "slug": "pny",
+  "full_slug": "program/bbq-street-food/pny",
+  "sort_by_date": null,
+  "position": -120,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "cbe69eae-e499-4f63-9ecb-5e9acf72176c",
+  "first_published_at": "2026-03-16T16:31:26.197Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

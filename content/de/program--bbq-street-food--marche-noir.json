@@ -1,0 +1,54 @@
+{
+  "name": "Marché Noir",
+  "created_at": "2026-03-16T15:55:13.383Z",
+  "published_at": "2026-03-16T16:26:15.702Z",
+  "updated_at": "2026-03-16T16:26:15.715Z",
+  "id": 155594397238321,
+  "uuid": "e9ac6e40-57fc-4425-86db-dbe643cdde5b",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Marché Noir ist Barbecue nach Art des großen Schmauses. Einer, den man mit Freunden teilt. Der Lärm macht. Der über den Tellerrand hinausgeht, ohne jemals das Gute, die Qualität und den Geschmack aus den Augen zu verlieren. So präsentiert sich Marché Noir. Handwerkliche Räuchermeister, spezialisiert auf Feuer- und Rauchküche. Festivals (Hellfest), Hochzeiten, Scheidungen, Dreharbeiten usw. Wir reisen mit unseren riesigen BBQ-Smokern, um eine erstaunliche Küche rund um Flamme und Rauch zu bieten. Eine transatlantische Technik, aber eine Küche ganz unsere eigene! Wir arbeiten mit der Überzeugung, eine lokale und umweltfreundliche Küche anzubieten, deshalb sind all unser Fleisch und Gemüse Bio aus lokaler Landwirtschaft. WIR RÄUCHERN ALLES, NUR GUTES, NUR HAUSGEMACHTES!",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151343222425549,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/4fa262e993_img_5155.JPG",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Marché Noir",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Handwerkliche Räuchermeister"
+  },
+  "slug": "marche-noir",
+  "full_slug": "program/bbq-street-food/marche-noir",
+  "sort_by_date": null,
+  "position": -150,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "704a324c-b279-4bac-9b43-8913939d5df7",
+  "first_published_at": "2026-03-16T16:26:15.702Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

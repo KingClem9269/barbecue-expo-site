@@ -1,0 +1,666 @@
+{
+  "name": "programme",
+  "created_at": "2026-01-09T17:49:01.462Z",
+  "published_at": "2026-02-13T12:00:18.941Z",
+  "updated_at": "2026-02-13T12:00:18.955Z",
+  "id": 132265334925646,
+  "uuid": "540f2edb-7533-406e-9cbf-c3fc0bdad375",
+  "content": {
+    "_uid": "3c46b871-2f07-4481-9c19-7f2c1455f541",
+    "body": [
+      {
+        "_uid": "67a283eb-8218-4f55-b7b8-304865f30d7e",
+        "content": [
+          {
+            "_uid": "40ece0a2-5810-4220-a73a-a1296d454796",
+            "color": "white",
+            "content": "O Programa",
+            "heading": "hero",
+            "component": "headline"
+          }
+        ],
+        "component": "PageHero",
+        "darkOverlay": false,
+        "backgroundMedia": {
+          "id": 127988235076668,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "/content/images/17f0c16339_photo_home.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        }
+      },
+      {
+        "_uid": "f7ec5497-43ac-4c8e-a580-0f2bdb4aee48",
+        "chefs": [
+          {
+            "_uid": "d065bc16-c20f-4d02-94a2-924dc8d007e3",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "David W. Olson",
+            "media": {
+              "id": 131911147277848,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "345k Followers",
+            "country": "us",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "c259caf8-77a8-4dfd-a385-146be81acb91",
+            "link": {
+              "id": "",
+              "url": "https://www.instagram.com/the_barbecue_dude_official/",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "https://www.instagram.com/the_barbecue_dude_official/"
+            },
+            "name": "The Barbecue Dude",
+            "media": {
+              "id": 131911147249174,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/9c60fdfdd8_bbq_dude.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "271k Followers",
+            "country": "de",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "e8981f27-97a3-4562-b2b3-f5e0096e96dd",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Danielle Diva Q Bennett",
+            "media": {
+              "id": 131911147335195,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/b4a2ab8324_danielle-diva-q-bennett.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "111K Followers",
+            "country": "ca",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "07d29c1e-90d3-4a31-b04b-af4c06b34290",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Le Barbecue de Rafa",
+            "media": {
+              "id": 131911147261463,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/5b095a6b8c_le-barbecue-de-rafa.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "200k Followers",
+            "country": "fr",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "61dc3beb-fc55-41a6-a881-98bcba3b3ef2",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Eric Gephart",
+            "media": {
+              "id": 131911147236884,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/296325ca92_eric-gephart.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "26k Followers",
+            "country": "us",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "911d9f9c-2565-4d3d-a44e-0d9e96df63f7",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Chef Carlos Bear",
+            "media": {
+              "id": 131911147392540,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/4e826cf3e7_carlos-bear.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "25k Followers",
+            "country": "fr",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "1e8ad0a7-58e5-47e3-b47e-ec391ef0f41f",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Stefanos Koukas",
+            "media": {
+              "id": 131911147302425,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/1f0fe761aa_stefanos-koukas.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "50k Followers",
+            "country": "gr",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "fdf7a5fc-d947-4016-ab25-528c8b62ae5b",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Genevieve Taylor",
+            "media": {
+              "id": 131911147220499,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/220aee8798_genevieve-taylor.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "50k Followers",
+            "country": "gb",
+            "component": "chef-card"
+          },
+          {
+            "_uid": "4ee13a53-1cd9-4abb-8ab3-363690388938",
+            "link": {
+              "id": "",
+              "url": "/slug",
+              "linktype": "url",
+              "fieldtype": "multilink",
+              "cached_url": "/slug"
+            },
+            "name": "Camillo Tomanek",
+            "media": {
+              "id": 131911147310618,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/03d1a93764_camillo-tomanek.jpeg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "stand": "510k Followers",
+            "country": "de",
+            "component": "chef-card"
+          }
+        ],
+        "content": [
+          {
+            "_uid": "b8cd308e-ef0a-43ff-9829-f510b5d636d7",
+            "color": "primary",
+            "content": "O Cooking Show: onde o barbecue se vê... e se compreende.",
+            "heading": "",
+            "component": "headline"
+          },
+          {
+            "_uid": "83d0ca54-acb3-40a1-a2f1-0e2bc6409965",
+            "color": "",
+            "content": "Em palco, chefs e pitmasters encadeiam as demonstrações: receitas assinatura, cozedura ao fogo, fumagem, molhos, cortes, gestão de temperaturas, timing, empratamento.",
+            "component": "paragraph"
+          },
+          {
+            "_uid": "ebb3d35a-9f6d-4cb5-87fe-4b88d77610c3",
+            "color": "",
+            "content": "Para os apaixonados: gestos, métodos, ideias para reproduzir facilmente. Para os profissionais: uma montra de tendências (produtos, utilizações, formatos, storytelling) e um espaço de encontro com quem faz a influência do BBQ hoje.",
+            "component": "paragraph"
+          }
+        ],
+        "headline": "Chefs x Pitmaster",
+        "component": "chefs-and-pitmasters",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      },
+      {
+        "_uid": "72aede7d-3554-4024-86ca-9ad1b27e0c76",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "bd7696b1-c8ad-4b57-b709-76c008459f5a",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "31fc4fb8-9d22-4e60-8e9c-9a29fbd21fc1",
+                "color": "primary",
+                "content": "Masterclasses: Aprender com os melhores. Progredir de forma acelerada.",
+                "heading": "",
+                "component": "headline"
+              },
+              {
+                "gap": "4",
+                "_uid": "0f0c3c0b-a5e9-4ca0-ae7d-fb6240b4109e",
+                "content": [
+                  {
+                    "_uid": "645abdca-6964-4268-acec-3a8cc796713b",
+                    "color": "primary",
+                    "content": "As masterclasses são cursos práticos animados por especialistas: fumagem, low & slow, domínio das brasas, cozeduras diretas/indiretas, reverse sear, escolha de madeiras, temperos, gestão do material... e todas as dicas que fazem a diferença.",
+                    "component": "paragraph"
+                  },
+                  {
+                    "_uid": "943986f3-4577-4769-89f9-59b184c1b3d9",
+                    "color": "primary",
+                    "content": "Para os apaixonados: conselhos concretos, métodos fiáveis, respostas às suas perguntas. Para os profissionais: técnicas reprodutíveis, padrões de qualidade, ideias de receitas e novos produtos a integrar.",
+                    "component": "paragraph"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "2",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "4",
+                "_uid": "ec465995-5e6a-4503-b0da-200ff2e10e69",
+                "content": [
+                  {
+                    "btn": [
+                      {
+                        "_uid": "85725eaf-bc29-4f0c-a2bd-544430e028fe",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Reservar",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "2e73e8c8-dce8-4d62-adbb-75b7a3c7e7cf",
+                    "days": "Sexta-feira, Sábado, Domingo",
+                    "media": {
+                      "id": 131911147277848,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "150€",
+                    "chefName": "Les frères Lagarde",
+                    "duration": "Duração: 2h",
+                    "component": "MasterClassCard"
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "13b39943-b9ec-49aa-bcf9-3c0fca60bf64",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Reservar",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "66b8eac3-4ac1-43ff-9425-ef506dcf0ace",
+                    "days": "Sexta-feira, Sábado, Domingo",
+                    "media": {
+                      "id": 131911147277848,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "150€",
+                    "chefName": "Les frères Lagarde",
+                    "duration": "Duração: 2h",
+                    "component": "MasterClassCard"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": ""
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      },
+      {
+        "_uid": "d511c53a-595f-4712-aa4b-8fe111ca3355",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "809fc8bd-dca4-43e1-83da-55a99fea835f",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "4437b571-1592-4b6a-a1ae-9d4209ff1d51",
+                "color": "primary",
+                "content": "As masterclasses dos expositores: o concreto, diretamente pelas marcas.",
+                "heading": "",
+                "component": "headline"
+              },
+              {
+                "_uid": "0cc67b8e-b228-4425-b6c0-bdd9baa67ce9",
+                "color": "primary",
+                "content": "Os nossos expositores partilham as suas inovações, as suas melhores configurações e as suas demonstrações de produtos para o ajudar a escolher, comparar e dominar o melhor do BBQ e outdoor cooking.",
+                "component": "paragraph"
+              },
+              {
+                "gap": "4",
+                "_uid": "641cc155-88c4-48eb-a1cd-58f3db765d4f",
+                "content": [
+                  {
+                    "btn": [
+                      {
+                        "_uid": "35d269f3-2a98-4bd9-8146-45e09089e219",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Reservar",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "fe3619e1-a8ac-4f89-9085-94daafb1acf0",
+                    "days": "Sexta-feira, Sábado, Domingo",
+                    "media": {
+                      "id": 131911147277848,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "150€",
+                    "chefName": "Les frères Lagarde",
+                    "duration": "Duração: 2h",
+                    "component": "MasterClassCard"
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "48a03160-0744-44bc-919d-b12833bf924f",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Reservar",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "90ce9b99-18f6-4ca4-b7af-c5d723dd75b1",
+                    "days": "Sexta-feira, Sábado, Domingo",
+                    "media": {
+                      "id": 131911147277848,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "150€",
+                    "chefName": "Les frères Lagarde",
+                    "duration": "Duração: 2h",
+                    "component": "MasterClassCard"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": ""
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "tertiary"
+      },
+      {
+        "_uid": "6839705c-e87c-411a-b8c2-ea66056d45cb",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "86503fcc-20c1-4d02-b18e-cfb779afe8dd",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "811b7b71-bee3-4033-bbfe-316438387936",
+                "color": "primary",
+                "content": "Provar, comparar, curtir: a BBQ Street Food em modo festival.",
+                "heading": "",
+                "component": "headline"
+              },
+              {
+                "_uid": "83d73534-4a45-4445-9bec-f1c1312148b7",
+                "color": "primary",
+                "content": "Stands dedicados ao barbecue em todas as suas formas: carne, aves, peixe, veggie, molhos, acompanhamentos... tudo cozinhado ao vivo, ao fogo.",
+                "component": "paragraph"
+              },
+              {
+                "_uid": "968c8d52-36bf-489b-9f2f-c0f45ef1c9bf",
+                "color": "primary",
+                "content": "Para o público: uma volta ao mundo dos sabores BBQ. Para os profissionais: uma leitura direta do que funciona (formatos, preços, receitas, apresentação, fluxo, equipamentos).",
+                "component": "paragraph"
+              },
+              {
+                "gap": "4",
+                "_uid": "3a0d7693-bee8-4b06-a381-e1443604f4ac",
+                "content": [
+                  {
+                    "btn": [
+                      {
+                        "_uid": "4796ebfc-16da-4147-a44d-6a92330be557",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Reservar",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "b0ea08d2-5d0c-4b5c-874a-5ea9e8b04979",
+                    "days": "Sexta-feira, Sábado, Domingo",
+                    "media": {
+                      "id": 131911147277848,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "150€",
+                    "chefName": "Les frères Lagarde",
+                    "duration": "Duração: 2h",
+                    "component": "MasterClassCard"
+                  },
+                  {
+                    "btn": [
+                      {
+                        "_uid": "b016792d-3667-4d47-8525-624f72bb22b2",
+                        "icon": "arrow-right",
+                        "path": "/",
+                        "label": "Reservar",
+                        "style": "filled-dark",
+                        "component": "link"
+                      }
+                    ],
+                    "_uid": "5af9b5d6-2b14-4690-8c88-3ad3ed681727",
+                    "days": "Sexta-feira, Sábado, Domingo",
+                    "media": {
+                      "id": 131911147277848,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/420805f26c_david-w-olson.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "price": "150€",
+                    "chefName": "Les frères Lagarde",
+                    "duration": "Duração: 2h",
+                    "component": "MasterClassCard"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "2",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": ""
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "programme",
+  "full_slug": "programme",
+  "sort_by_date": null,
+  "position": -50,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "40bcfda3-634a-4dd2-910a-f222101bbd71",
+  "first_published_at": "2026-01-10T15:35:24.252Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Au Feu le Saumon",
+  "created_at": "2026-03-16T15:53:47.560Z",
+  "published_at": "2026-03-16T16:21:43.737Z",
+  "updated_at": "2026-03-16T16:21:43.750Z",
+  "id": 155594045707066,
+  "uuid": "32cee9d7-c54b-4e45-aecd-d00591d07d72",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Con base en Bélgica, me he especializado desde hace unos quince años en cocina de eventos a fuego de leña, inspirándome en mis experiencias a lo largo de los festivales. Propongo una cocina centrada en productos de calidad, esencialmente cocinados a la llama: salmón a la llama, camemberts a la parrilla, pizzas al fuego de leña, tataki de atún a la plancha, etc. Para el salmón, practicamos una cocción lenta con pequeñas llamas, para que desarrolle un ligero sabor ahumado manteniéndose jugoso. Luego se sirve en un sándwich gourmet, acompañado de salsas caseras. Descubrí esta técnica de cocción hace unos diez años en Alemania, y desde entonces, propongo este producto en festivales de Bélgica, Francia y Alemania, siempre con la misma exigencia de sabor y calidad. ¡Es bonito y además está bueno!",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 155594612419682,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/7a9eebd7f0_4829a452-95a7-40b1-91af-0eedd7d8ddeb.jpeg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Au Feu le Saumon",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": "El salmón en todo su esplendor"
+  },
+  "slug": "au-feu-le-saumon",
+  "full_slug": "program/bbq-street-food/au-feu-le-saumon",
+  "sort_by_date": null,
+  "position": -180,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "3695db69-b2d6-4e03-92b0-ec313687df27",
+  "first_published_at": "2026-03-16T16:11:24.306Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

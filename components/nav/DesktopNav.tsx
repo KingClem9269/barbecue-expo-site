@@ -9,11 +9,11 @@ import { NavLogo } from "./NavLogo";
 import { MobileTicketButton } from "./MobileTicketButton";
 import { DesktopTicketButton } from "./DesktopTicketButton";
 import { Link } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export function DesktopNav({
   menuItems,
-  city,
-  date,
   tickets,
   tickets_slug,
   tickets_b2c_label,
@@ -24,8 +24,6 @@ export function DesktopNav({
   tickets_press_slug,
 }: {
   menuItems: MenuItemBlok[];
-  city: string;
-  date: string;
   tickets: string;
   tickets_slug: string;
   tickets_b2c_label: string;
@@ -35,6 +33,7 @@ export function DesktopNav({
   tickets_press_label: string;
   tickets_press_slug: string;
 }) {
+  const locale = useLocale();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -77,13 +76,12 @@ export function DesktopNav({
           onClick={toggleMobileMenu}
         />
         <div className="flex items-center justify-between w-full">
-          <ul className="flex flex-wrap items-center gap-2 list-none m-0 p-0 text-white font-bold">
-            <li className="hidden lg:block">
-              <Link href="/">
-                <NavLogo color="white" className="w-42 h-12" />
-              </Link>
-            </li>
-
+          <li className="hidden lg:block list-none shrink-0">
+            <Link href="/">
+              <NavLogo color="white" className="w-42 h-12" />
+            </Link>
+          </li>
+          <ul className="hidden lg:flex flex-wrap items-center justify-center gap-2 list-none m-0 p-0 text-white font-bold flex-1">
             {menuItems.map((item) => {
               const menuItem = item as MenuItemBlok;
               const hasSubmenu =
@@ -98,9 +96,8 @@ export function DesktopNav({
               return <NavMenuItem key={item._uid} menuItem={menuItem} />;
             })}
           </ul>
-          <div className="text-xs md:text-base border border-white/10 bg-black/40 backdrop-blur-md text-white rounded-full p-2 px-4 lg:border-none lg:bg-transparent lg:rounded-none lg:backdrop-blur-none">
-            {city} | {date}
-          </div>
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <LocaleSwitcher currentLocale={locale} />
           <DesktopTicketButton
             tickets={tickets}
             tickets_slug={tickets_slug}
@@ -111,6 +108,7 @@ export function DesktopNav({
             tickets_press_label={tickets_press_label}
             tickets_press_slug={tickets_press_slug}
           />
+          </div>
         </div>
       </nav>
       <MobileTicketButton

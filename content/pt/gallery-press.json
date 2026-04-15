@@ -1,0 +1,1222 @@
+{
+  "name": "gallery-press",
+  "created_at": "2026-01-21T14:43:44.781Z",
+  "published_at": "2026-02-13T17:35:18.735Z",
+  "updated_at": "2026-02-13T17:35:18.752Z",
+  "id": 136466533530804,
+  "uuid": "10636224-6cdc-41d5-aba6-f94b386e95f6",
+  "content": {
+    "_uid": "11abf25a-f258-4fa0-903c-9939dd606620",
+    "body": [
+      {
+        "_uid": "40f8faf7-a75c-42e1-bf8a-e4923243bbba",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "cd059010-a6fe-4f36-a373-f39e6d5cb5f5",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "a5dce6b6-4ff7-4588-8b9b-26202db58d2b",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "7ef3284e-4cb0-448a-b6bb-bd4c475811fc",
+            "content": [
+              {
+                "_uid": "7eaca6f9-3d7a-4dd3-9f79-170814d2b4b3",
+                "color": "primary",
+                "content": "O retorno da imprensa",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "_uid": "3da2fd61-f899-4f00-a45a-f3483a869467",
+                "color": "primary",
+                "content": "Com mais de 500 milhões de contactos gerados em 2025 graças a um plano de comunicação multicanal (publicidade urbana, imprensa, redes sociais, influência, meios de comunicação TV), a Barbecue Expo desenvolve uma das campanhas mais poderosas do setor food & lifestyle em França. A partir de 2026, esta dinâmica ultrapassa fronteiras: uma estratégia de media europeia está a ser implementada, para acompanhar a internacionalização da feira e reforçar a visibilidade das marcas parceiras nos mercados-chave do barbecue.",
+                "component": "paragraph"
+              },
+              {
+                "gap": "4",
+                "_uid": "52d25b70-1cd7-41d3-a245-afbd152a47ec",
+                "content": [
+                  {
+                    "_uid": "4070588d-4fb6-45e6-a51b-ea557e6e97ef",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "d8e75382-24c0-4ce5-9e39-59fe38de618d",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "d6f69470-60d8-4217-845e-84dc784d8e32",
+                            "icon": "users-round",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "94d917f0-be96-46b3-a8aa-3202c5dd6e4f",
+                            "color": "primary",
+                            "content": "Publicidade exterior",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "d9dd3af3-fbb2-46e1-8d81-bae22bd25158",
+                            "color": "primary",
+                            "content": "3500 cartazes publicitários em França",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "fa99c812-3b7e-4b9a-9cc3-491c0abf5a7e",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "a8e53eda-d1fc-4fea-a3eb-3293e30274f1",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "2f8eafc2-810a-46f9-a552-f640af81277d",
+                            "icon": "users-round",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "6bd8ff07-718c-4780-a8aa-de32503e2c27",
+                            "color": "primary",
+                            "content": "Redes Sociais",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "44cea130-56e7-4405-8d50-c2ed405dd8a8",
+                            "color": "primary",
+                            "content": "134 000 seguidores acumulados",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "b55ac416-a475-4ff6-8635-9abedd4ecaee",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "b82f97df-4e19-4395-8c52-3a5805978373",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "5e3cc158-dd75-4ac0-9272-005a59711a9d",
+                            "icon": "users-round",
+                            "color": "secondary",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "5bb9acb0-5283-4eea-9f35-e1fca79b69bd",
+                            "color": "secondary",
+                            "content": "Presença mediática",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "9a7a7ede-103a-4fcf-a7fe-258b418a6de4",
+                            "color": "secondary",
+                            "content": "Numerosos meios de comunicação franceses e europeus",
+                            "component": "paragraph",
+                            "textAlign": "center"
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "primary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "5",
+                "nColsMedium": "3",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          },
+          {
+            "_uid": "fd1e2439-619d-453b-9aa7-50290d326e61",
+            "color": "secondary",
+            "component": "PageHeroMini"
+          },
+          {
+            "gap": "8",
+            "_uid": "27b41ee2-f78b-4870-87a9-87603b5d00a5",
+            "content": [
+              {
+                "_uid": "1233332d-9f08-4602-979a-273de699329b",
+                "color": "primary",
+                "content": "Presença mediática",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "4",
+                "_uid": "a0ad4f75-05c3-4576-aa30-df764ce64faf",
+                "content": [
+                  {
+                    "_uid": "c501223a-69df-4530-802f-eb424348d482",
+                    "content": [
+                      {
+                        "_uid": "0bc857f9-1328-407d-9d6f-23e031035870",
+                        "media": {
+                          "id": 136471665636991,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/601ceb6719_tf1.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "4d46f558-594d-4a06-896c-7b5853208dbe",
+                    "content": [
+                      {
+                        "_uid": "c78d3a68-5c51-49b2-a1c0-b68696d5cebf",
+                        "media": {
+                          "id": 136471665567358,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a432333a48_m6.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "c28be850-c879-49fe-b303-7d784bc6aed2",
+                    "content": [
+                      {
+                        "_uid": "8c4e2de6-a3ee-43b4-9bb5-1f01f442f3a6",
+                        "media": {
+                          "id": 136471665473147,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/36b048c175_bfmtv.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "7c688543-ce8a-4205-b023-2cc65ec95e06",
+                    "content": [
+                      {
+                        "_uid": "5b9510c1-6eac-406e-aff4-dfb1f8290f0c",
+                        "media": {
+                          "id": 136471665747587,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/9dbbfc6258_rlt.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "19d9c3e7-b1f2-4922-b816-d2a42f49d335",
+                    "content": [
+                      {
+                        "_uid": "b33c8fd6-181a-4c4a-9e66-4f69317ab7ec",
+                        "media": {
+                          "id": 136471665706626,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/f56c29df25_tmc.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "4705964c-f78f-4f66-90d3-7b3caf281bb5",
+                    "content": [
+                      {
+                        "_uid": "3679d6e1-5aec-401e-9853-ca3e45dfc818",
+                        "media": {
+                          "id": 136471665665665,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/f50110a382_sap.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "1b3e9f1c-42f1-42c8-862c-0094d1b17ed3",
+                    "content": [
+                      {
+                        "_uid": "0f0c7585-5909-47bb-9030-1a69db76baca",
+                        "media": {
+                          "id": 136471665546877,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/c96cc6f02f_radiofrance.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "03d3e465-f76b-4540-af76-c909f862f156",
+                    "content": [
+                      {
+                        "_uid": "4f48871c-5e14-44d0-af35-b04d9db2f950",
+                        "media": {
+                          "id": 136471665522300,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/e244e9ccbf_habitat.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "6b4d37d8-1536-44d0-979f-fa604e1a187b",
+                    "content": [
+                      {
+                        "_uid": "50a62871-83cf-4cf3-a812-aafa233951e9",
+                        "media": {
+                          "id": 136471665460857,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/573c7ca1c5_franceinfo.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "426eada4-8708-40d6-9f81-543bcd9588d2",
+                    "content": [
+                      {
+                        "_uid": "e1ee1365-80a3-42c4-92da-8459c47d9821",
+                        "media": {
+                          "id": 136471665460858,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a7ee06bae4_franceinter.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "9d6d4a5a-0719-4c2e-85d1-87c11c9ea52f",
+                    "content": [
+                      {
+                        "_uid": "0616773f-1731-403d-9091-4b4da857c17a",
+                        "media": {
+                          "id": 136471665444472,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/ed8659d918_france1.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "6e78f252-5bfc-4147-bafa-5e110277bd91",
+                    "content": [
+                      {
+                        "_uid": "e140d397-c754-4821-b740-79cf29d74aab",
+                        "media": {
+                          "id": 136471665436279,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/a0e33f5345_europe2.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  },
+                  {
+                    "_uid": "7c62c28f-6325-4019-8fa7-0c6014b88ec2",
+                    "content": [
+                      {
+                        "_uid": "075f0248-57ef-4566-b19b-d0f5894c3ae3",
+                        "media": {
+                          "id": 136471665297014,
+                          "alt": "",
+                          "name": "",
+                          "focus": "",
+                          "title": "",
+                          "source": "",
+                          "filename": "/content/images/8c90408a64_20min.jpeg",
+                          "copyright": "",
+                          "fieldtype": "asset",
+                          "meta_data": {},
+                          "is_external_url": false
+                        },
+                        "component": "media",
+                        "objectFit": "contain"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "filename": null,
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "paddingDesktopLarge": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "16",
+                "nColsMedium": "16",
+                "nColsMobile": "12",
+                "nColsDesktop": "4"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      },
+      {
+        "_uid": "dc06e9c6-427a-4f7e-ba72-469164745ef3",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "8",
+            "_uid": "efab68f7-e82f-4a94-8695-c22be408042f",
+            "content": [
+              {
+                "_uid": "929fbe06-9f0c-4382-97c0-ac658f5d59ea",
+                "color": "tertiary",
+                "content": "Gallerie Photo",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "",
+                "_uid": "c9ccd683-1c69-48d2-90a1-3044040b95bc",
+                "content": [
+                  {
+                    "_uid": "8e5a0904-d5e4-4fe0-8e77-6c9e90a473d8",
+                    "media": {
+                      "id": 133284673257566,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/8d7632a252_home-mosaique-programme.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "6e295209-e1c2-413a-89f7-4b95b945818f",
+                    "media": {
+                      "id": 131911147249174,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/9c60fdfdd8_bbq_dude.jpeg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "3bbbed2c-f2c4-4f9a-b2d3-6acd82bd4bfd",
+                    "media": {
+                      "id": 144647754332721,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/db8367b04d_533a9671.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "b114e9bf-f1ab-4640-a956-26265bf68c03",
+                    "media": {
+                      "id": 144647753628206,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/5c6539f2ad_dsc_3216.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "006444c7-49d0-4dad-8972-b49b623190d3",
+                    "media": {
+                      "id": 144647753202216,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/66815f8fe2_dsc_1924.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "2b2eee0d-2c3d-4de5-882f-f053a0ee0ffc",
+                    "media": {
+                      "id": 144647753296425,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/6803dcf8c4_533a7467.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "a960747e-c237-4d77-8e41-8f06e442432f",
+                    "media": {
+                      "id": 144647753628206,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/5c6539f2ad_dsc_3216.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "694f2603-e57f-448e-a67f-3141dc48910d",
+                    "media": {
+                      "id": 144647752985125,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/cf776ae192_dsc_3040.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "9294b078-1046-46a4-a8b4-5000d5f4527b",
+                    "media": {
+                      "id": 144647753075239,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/d04cc0b032_dsc_2078.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "0c562e16-a9ed-4763-8df9-ce52e0e25b42",
+                    "media": {
+                      "id": 144647753583146,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/b771331cea_dsc_2048.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "f9a1f043-bdb7-4a34-aaf4-bd48b7c6cd77",
+                    "media": {
+                      "id": 127988235076668,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/17f0c16339_photo_home.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "d3072744-80c1-4563-afef-0edb9cb80eb3",
+                    "media": {
+                      "id": 127988235076668,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/17f0c16339_photo_home.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "1dd900c8-2662-4d45-85c6-61340e6a5311",
+                    "media": {
+                      "id": 144647753804336,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/7627689738_dsc_3213.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "51bc92ad-b1cb-4385-9436-2e195d947fa8",
+                    "media": {
+                      "id": 127988235076668,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/17f0c16339_photo_home.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  },
+                  {
+                    "_uid": "bbcd8cd5-4a16-4ac9-8a59-e7d486d4c0fa",
+                    "media": {
+                      "id": 144647753599531,
+                      "alt": "",
+                      "name": "",
+                      "focus": "",
+                      "title": "",
+                      "source": "",
+                      "filename": "/content/images/3045d58ff5_dsc_1913.jpg",
+                      "copyright": "",
+                      "fieldtype": "asset",
+                      "meta_data": {},
+                      "is_external_url": false
+                    },
+                    "component": "media",
+                    "objectFit": "cover",
+                    "customClass": ""
+                  }
+                ],
+                "component": "MasonryGrid",
+                "nColsLarge": "4",
+                "nColsMedium": "3",
+                "nColsMobile": "1"
+              }
+            ],
+            "component": "Grid",
+            "nColsLarge": "1",
+            "nColsMedium": "1",
+            "nColsMobile": "1",
+            "nColsDesktop": "1"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "white"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "gallery-press",
+  "full_slug": "gallery-press",
+  "sort_by_date": null,
+  "position": -110,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "3553744a-2f3d-41a7-9c2c-78f1efcf735c",
+  "first_published_at": "2026-01-21T15:06:07.047Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

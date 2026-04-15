@@ -1,0 +1,57 @@
+{
+  "name": "Espace-pro-b2b",
+  "created_at": "2026-01-10T15:36:14.560Z",
+  "published_at": "2026-02-13T12:00:16.598Z",
+  "updated_at": "2026-02-13T12:00:16.609Z",
+  "id": 132586596904469,
+  "uuid": "94cd7913-0dba-499c-8bac-bcac3b23a162",
+  "content": {
+    "_uid": "c4d0d94c-36ad-4e90-aecf-600607081b46",
+    "body": [
+      {
+        "_uid": "b23e80af-9080-47c6-aa00-cc781b153bb9",
+        "content": [
+          {
+            "_uid": "2369a5ee-b445-425c-b542-3aca7a0dd868",
+            "color": "white",
+            "content": "Espace Pro & B2B",
+            "heading": "hero",
+            "component": "headline"
+          }
+        ],
+        "component": "PageHero",
+        "darkOverlay": false,
+        "backgroundMedia": {
+          "id": 127988235076668,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "/content/images/17f0c16339_photo_home.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        }
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "espace-pro-b2b",
+  "full_slug": "espace-pro-b2b",
+  "sort_by_date": null,
+  "position": -70,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "66e9b19f-5516-459e-8bd8-51a1464a83cb",
+  "first_published_at": "2026-01-10T15:36:34.031Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

@@ -1,0 +1,47 @@
+{
+  "bbq_expo": "BBQ Expo",
+  "cookingShowWidget": {
+    "title": "Programa de Cooking Shows - Barbecue Expo 2026"
+  },
+  "contact": {
+    "headline": "Contáctenos",
+    "description": "Envíenos un mensaje y le responderemos lo antes posible.",
+    "name_label": "Su nombre",
+    "name_placeholder": "Su nombre",
+    "email_label": "Su correo electrónico",
+    "email_placeholder": "Su dirección de correo electrónico",
+    "message_label": "Su mensaje",
+    "message_placeholder": "Su mensaje",
+    "button": "Enviar",
+    "loading": "Enviando...",
+    "success": "¡Gracias! Su mensaje ha sido enviado. Le responderemos pronto.",
+    "success_title": "Mensaje enviado con éxito",
+    "success_description": "Su mensaje ha sido enviado correctamente. Le responderemos lo antes posible.",
+    "error_default": "Algo salió mal. Por favor, inténtelo de nuevo.",
+    "error_name_required": "El nombre es obligatorio.",
+    "error_email_required": "El correo electrónico es obligatorio.",
+    "error_invalid_email": "Por favor, introduzca una dirección de correo electrónico válida.",
+    "error_message_required": "El mensaje es obligatorio.",
+    "error_unable_to_send": "No se pudo enviar el mensaje. Por favor, inténtelo más tarde.",
+    "error_unexpected": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo.",
+    "error_service_unconfigured": "El formulario de contacto no está disponible."
+  },
+  "masterClass": {
+    "learnMore": "Más información"
+  },
+  "newsletter": {
+    "headline": "Manténgase informado",
+    "description": "Suscríbase a nuestro boletín para recibir las últimas noticias.",
+    "button": "Suscribirse",
+    "placeholder": "Su dirección de correo electrónico",
+    "loading": "Suscribiendo...",
+    "success": "¡Gracias! Se ha suscrito correctamente.",
+    "error_default": "Algo salió mal. Por favor, inténtelo de nuevo.",
+    "error_email_required": "El correo electrónico es obligatorio.",
+    "error_invalid_email": "Por favor, introduzca una dirección de correo electrónico válida.",
+    "error_invalid_request": "Solicitud no válida. Por favor, verifique su correo electrónico.",
+    "error_unable_to_subscribe": "No se pudo suscribir. Por favor, inténtelo más tarde.",
+    "error_unexpected": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo.",
+    "error_service_unconfigured": "El servicio de boletín no está disponible."
+  }
+}

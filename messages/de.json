@@ -1,0 +1,47 @@
+{
+  "bbq_expo": "BBQ Expo",
+  "cookingShowWidget": {
+    "title": "Cooking Shows Programm - Barbecue Expo 2026"
+  },
+  "contact": {
+    "headline": "Kontaktieren Sie uns",
+    "description": "Senden Sie uns eine Nachricht und wir melden uns so schnell wie möglich bei Ihnen.",
+    "name_label": "Ihr Name",
+    "name_placeholder": "Ihr Name",
+    "email_label": "Ihre E-Mail",
+    "email_placeholder": "Ihre E-Mail-Adresse",
+    "message_label": "Ihre Nachricht",
+    "message_placeholder": "Ihre Nachricht",
+    "button": "Senden",
+    "loading": "Wird gesendet...",
+    "success": "Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns bald bei Ihnen.",
+    "success_title": "Nachricht erfolgreich gesendet",
+    "success_description": "Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "error_default": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "error_name_required": "Name ist erforderlich.",
+    "error_email_required": "E-Mail ist erforderlich.",
+    "error_invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "error_message_required": "Nachricht ist erforderlich.",
+    "error_unable_to_send": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+    "error_unexpected": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "error_service_unconfigured": "Das Kontaktformular ist nicht verfügbar."
+  },
+  "masterClass": {
+    "learnMore": "Mehr erfahren"
+  },
+  "newsletter": {
+    "headline": "Bleiben Sie informiert",
+    "description": "Abonnieren Sie unseren Newsletter für die neuesten Nachrichten und Updates.",
+    "button": "Abonnieren",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "loading": "Anmeldung...",
+    "success": "Vielen Dank! Sie haben sich erfolgreich angemeldet.",
+    "error_default": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "error_email_required": "E-Mail ist erforderlich.",
+    "error_invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "error_invalid_request": "Ungültige Anfrage. Bitte überprüfen Sie Ihre E-Mail.",
+    "error_unable_to_subscribe": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+    "error_unexpected": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "error_service_unconfigured": "Der Newsletter-Service ist nicht verfügbar."
+  }
+}

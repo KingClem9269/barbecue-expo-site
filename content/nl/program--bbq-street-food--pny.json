@@ -1,0 +1,54 @@
+{
+  "name": "PNY",
+  "created_at": "2026-03-16T15:54:45.382Z",
+  "published_at": "2026-03-16T16:31:57.096Z",
+  "updated_at": "2026-03-16T16:31:57.110Z",
+  "id": 155594282546144,
+  "uuid": "c1388b92-7ec8-47f2-8a7b-9bb35d504e49",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Wij zijn professionals in gehakte biefstuk. In 12 jaar hebben we een uniek vakmanschap ontwikkeld. Onze cheddars komen van een klein bedrijf in Somerset, Engeland, en zijn 6 tot 18 maanden gerijpt. De broodjes worden elke ochtend gebakken en het recept vergde meer dan 50 tests. We betrekken onze ingredi\u00ebnten waar mogelijk en waar het zinvol is rechtstreeks van de producenten. Er komt geen enkel ingredi\u00ebnt bij PNY binnen zonder dat het aan het gehemelte van Graffi is voorgelegd. Tot slot zijn we voortdurend op zoek naar recepten, ingredi\u00ebnten, technieken en ontmoetingen die ons in staat stellen om geleidelijk nog beter te worden. Het imago van de burger oppoetsen, dat is onze bescheiden roeping. Meer weten",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151350594296276,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cd7f51d556_quentintourbez-pny-juicylucy01-01971.webp",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "PNY",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "De Pros van de Gehakte Biefstuk"
+  },
+  "slug": "pny",
+  "full_slug": "program/bbq-street-food/pny",
+  "sort_by_date": null,
+  "position": -120,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "cbe69eae-e499-4f63-9ecb-5e9acf72176c",
+  "first_published_at": "2026-03-16T16:31:26.197Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

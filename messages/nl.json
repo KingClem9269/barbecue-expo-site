@@ -1,0 +1,47 @@
+{
+  "bbq_expo": "BBQ Expo",
+  "cookingShowWidget": {
+    "title": "Cooking Shows Programma - Barbecue Expo 2026"
+  },
+  "contact": {
+    "headline": "Neem contact met ons op",
+    "description": "Stuur ons een bericht en we nemen zo snel mogelijk contact met u op.",
+    "name_label": "Uw naam",
+    "name_placeholder": "Uw naam",
+    "email_label": "Uw e-mail",
+    "email_placeholder": "Uw e-mailadres",
+    "message_label": "Uw bericht",
+    "message_placeholder": "Uw bericht",
+    "button": "Verzenden",
+    "loading": "Verzenden...",
+    "success": "Bedankt! Uw bericht is verzonden. We nemen snel contact met u op.",
+    "success_title": "Bericht succesvol verzonden",
+    "success_description": "Uw bericht is succesvol verzonden. We nemen zo snel mogelijk contact met u op.",
+    "error_default": "Er is iets misgegaan. Probeer het opnieuw.",
+    "error_name_required": "Naam is vereist.",
+    "error_email_required": "E-mail is vereist.",
+    "error_invalid_email": "Voer een geldig e-mailadres in.",
+    "error_message_required": "Bericht is vereist.",
+    "error_unable_to_send": "Kan bericht niet verzenden. Probeer het later opnieuw.",
+    "error_unexpected": "Er is een onverwachte fout opgetreden. Probeer het opnieuw.",
+    "error_service_unconfigured": "Het contactformulier is niet beschikbaar."
+  },
+  "masterClass": {
+    "learnMore": "Meer informatie"
+  },
+  "newsletter": {
+    "headline": "Blijf op de hoogte",
+    "description": "Abonneer u op onze nieuwsbrief voor het laatste nieuws en updates.",
+    "button": "Abonneren",
+    "placeholder": "Uw e-mailadres",
+    "loading": "Abonneren...",
+    "success": "Bedankt! U bent succesvol geabonneerd.",
+    "error_default": "Er is iets misgegaan. Probeer het opnieuw.",
+    "error_email_required": "E-mail is vereist.",
+    "error_invalid_email": "Voer een geldig e-mailadres in.",
+    "error_invalid_request": "Ongeldige aanvraag. Controleer uw e-mail.",
+    "error_unable_to_subscribe": "Kan niet abonneren. Probeer het later opnieuw.",
+    "error_unexpected": "Er is een onverwachte fout opgetreden. Probeer het opnieuw.",
+    "error_service_unconfigured": "De nieuwsbriefservice is niet beschikbaar."
+  }
+}

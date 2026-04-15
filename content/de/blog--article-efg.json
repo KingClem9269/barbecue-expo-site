@@ -1,0 +1,82 @@
+{
+  "name": "article-efg",
+  "created_at": "2025-12-27T07:38:45.030Z",
+  "published_at": "2026-02-13T12:00:26.061Z",
+  "updated_at": "2026-02-13T12:00:26.073Z",
+  "id": 127514726557433,
+  "uuid": "1adf5e67-2df4-4e63-a1cc-07383bbbe78e",
+  "content": {
+    "_uid": "17cedf01-9857-411d-aa91-e787e8906624",
+    "body": [
+      {
+        "_uid": "3ad803f9-5e20-465f-bcca-4dc14a808d90",
+        "content": [
+          {
+            "_uid": "84e4d66d-a01e-409d-8a97-cb0c77e489ec",
+            "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            "component": "paragraph"
+          },
+          {
+            "_uid": "a607f627-e6a1-442e-87c3-33ed7e674343",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+            "component": "paragraph"
+          },
+          {
+            "_uid": "a2501534-63fe-4fff-a559-9d5c139d492c",
+            "content": "Lorem Ipsum",
+            "component": "headline"
+          },
+          {
+            "_uid": "2f971546-3181-40e7-a1e1-c2a59a9483b4",
+            "media": {
+              "id": 127985827284017,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "/content/images/57b85e1ca3_still_video_hero.png",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "component": "media"
+          }
+        ],
+        "headline": "Halloumi vege",
+        "component": "article-content",
+        "preview_image": {
+          "id": 127985827284017,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "/content/images/57b85e1ca3_still_video_hero.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        }
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "article-efg",
+  "full_slug": "blog/article-efg",
+  "sort_by_date": null,
+  "position": -20,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 127509469124264,
+  "meta_data": null,
+  "group_id": "bac688cc-bd39-4793-ad95-ceb4fa212212",
+  "first_published_at": "2025-12-29T07:35:32.965Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

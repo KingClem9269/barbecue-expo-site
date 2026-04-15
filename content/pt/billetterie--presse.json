@@ -1,0 +1,296 @@
+{
+  "name": "billetterie-presse",
+  "created_at": "2026-01-24T14:53:00.209Z",
+  "published_at": "2026-03-12T10:00:32.022Z",
+  "updated_at": "2026-03-12T10:00:32.036Z",
+  "id": 137530491759918,
+  "uuid": "e4cb4ff7-c095-46fa-afd6-70e836880b15",
+  "content": {
+    "_uid": "81658d7f-b250-4d6c-8e80-39af0e67a9f2",
+    "body": [
+      {
+        "_uid": "67a542ed-0e9b-4afc-a420-949d97494aa5",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "c58e4f29-97ea-4752-9681-d951aa838055",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "1aafa232-9431-400d-bae0-9851e49faf6d",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "gap": "4",
+                "_uid": "df74008d-53b2-4f10-9735-36e516feb5c6",
+                "content": [
+                  {
+                    "_uid": "54179791-e3e1-4bb2-8db2-dd04fe4ab79f",
+                    "color": "secondary",
+                    "content": "Bilheteira Imprensa",
+                    "heading": "h1",
+                    "component": "headline",
+                    "textAlign": "start"
+                  },
+                  {
+                    "_uid": "57ae902e-a193-4090-a3d6-8568a738be60",
+                    "bold": false,
+                    "color": "secondary",
+                    "content": "Em poucos anos, o evento impôs-se como o maior encontro europeu do barbecue e do outdoor cooking: uma feira onde se vem descobrir novidades, testar material, conhecer as marcas e aprender com os melhores.",
+                    "component": "paragraph",
+                    "textAlign": "start"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "1",
+                "nColsMedium": "1",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "4",
+                "_uid": "82a65909-a9fd-437e-ab58-8650743281e6",
+                "content": [
+                  {
+                    "_uid": "36519c01-e7f7-46d5-afd1-d7489dc716ef",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "6053f812-8ac3-425b-b6b6-d640c89e30d7",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "0f95f178-0a52-4fdf-94d7-7d166e7048cd",
+                            "icon": "download",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "eb0da7c0-5ae4-4086-a412-0aa1872a07af",
+                            "color": "primary",
+                            "content": "Comunicado de imprensa",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "55f88125-f68a-4ab0-8aa8-92fc4c2dee10",
+                            "icon": "",
+                            "path": "https://drive.google.com/file/d/1dT39WqhPv_mvU-nFOSuI4Q9vhMGLKqwO/view?usp=sharing",
+                            "label": "Descarregar",
+                            "style": "filled-dark",
+                            "component": "link",
+                            "fullWidth": false
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "white",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "09f51c93-2f7b-4c53-a519-1ea59a4f26aa",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "a634a740-c7b8-47f7-963e-251c2d756214",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "a56af24f-a535-4dad-946b-8befdb831934",
+                            "icon": "download",
+                            "color": "",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "4777de38-1ce0-4b08-b4fb-b9983b5c7257",
+                            "color": "primary",
+                            "content": "Kit Média",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "f22fcdff-a8f1-435b-a4e5-1e53ce42c421",
+                            "icon": "",
+                            "path": "https://drive.google.com/drive/folders/1BuRZb_7cM8LVBO9qlAH18kQV_kouBRdJ?usp=drive_link",
+                            "label": "Descarregar",
+                            "style": "filled-dark",
+                            "component": "link",
+                            "fullWidth": false
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "tertiary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  },
+                  {
+                    "_uid": "b69b6c63-2917-4a6f-9006-fe3ab2c642cb",
+                    "content": [
+                      {
+                        "gap": "0",
+                        "_uid": "6c736454-342e-4980-be0f-9f2764974680",
+                        "wrap": "wrap",
+                        "align": "center",
+                        "content": [
+                          {
+                            "_uid": "bbfcfa2e-bdda-4cdc-8e5b-db3be7e4b08d",
+                            "icon": "download",
+                            "color": "primary",
+                            "component": "Icon"
+                          },
+                          {
+                            "_uid": "d64dc077-6274-440c-ad57-64f7e2377136",
+                            "color": "primary",
+                            "content": "Dossier de imprensa",
+                            "heading": "h3",
+                            "component": "headline",
+                            "textAlign": "center"
+                          },
+                          {
+                            "_uid": "d1f1f64b-cbd1-47b2-b24d-227037799122",
+                            "icon": "",
+                            "path": "https://drive.google.com/file/d/18rYjiNskrNSqkNkMC798cb_ImLe6Rm8c/view?usp=sharing",
+                            "label": "Descarregar",
+                            "style": "filled-dark",
+                            "component": "link",
+                            "fullWidth": false
+                          }
+                        ],
+                        "justify": "center",
+                        "component": "Flex",
+                        "direction": "col",
+                        "gapDesktop": "4"
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "h-[264px]",
+                    "colSpanMobile": "",
+                    "paddingMobile": "4",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "",
+                    "paddingDesktop": "4",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "secondary",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": "8"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "3",
+                "nColsMedium": "3",
+                "nColsMobile": "2",
+                "nColsDesktop": "4"
+              }
+            ],
+            "justify": "start",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "16"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "81c4883b-19a4-4cc0-b40e-48f5abad9bfe",
+        "anchor": "",
+        "height": "h-full",
+        "content": [
+          {
+            "_uid": "582e5cc8-96a6-47e0-a835-7b3d13cb7da7",
+            "component": "PressWeezeventFrame"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": ""
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "presse",
+  "full_slug": "billetterie/presse",
+  "sort_by_date": null,
+  "position": -30,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 137530642148655,
+  "meta_data": null,
+  "group_id": "c53383fa-9164-4b66-87ce-0a76208268c2",
+  "first_published_at": "2026-01-24T15:31:43.954Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

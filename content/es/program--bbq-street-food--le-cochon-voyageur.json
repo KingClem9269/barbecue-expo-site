@@ -1,0 +1,54 @@
+{
+  "name": "Le Cochon Voyageur",
+  "created_at": "2026-03-16T15:54:26.773Z",
+  "published_at": "2026-03-16T16:35:03.956Z",
+  "updated_at": "2026-03-16T16:35:03.968Z",
+  "id": 155594206327721,
+  "uuid": "728f0e50-abf9-44dd-8980-fc6764192bea",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Le Cochon Voyageur es ante todo una aventura humana y artesanal nacida del encuentro entre Franck y Olivier. Herreros de profesión y apasionados del fuego, unieron sus conocimientos para crear un servicio de catering fuera de lo común, donde el dominio del metal se encuentra con el arte de la barbacoa. De esta alianza nació un universo único: máquinas de cocción espectaculares, enteramente concebidas y fabricadas por ellos mismos, que no verá en ningún otro lugar. Piezas únicas, pensadas para sublimar la cocción a fuego de leña y ofrecer una experiencia visual tanto como gustativa. Especialistas reconocidos en la cocción del codillo y del cerdo, trabajan la carne con precisión, paciencia y respeto por el producto, para cocciones largas, controladas y profundamente sabrosas. Le Cochon Voyageur es el encuentro del fuego, el hierro y la gastronomía, al servicio de una cocina auténtica y espectacular.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136490263542866,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/21804e4f01_2-photo-machine-officiel.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Le Cochon Voyageur",
+    "country": "fr",
+    "component": "page-street-food",
+    "shortdescription": "¡El codillo como nunca!"
+  },
+  "slug": "le-cochon-voyageur",
+  "full_slug": "program/bbq-street-food/le-cochon-voyageur",
+  "sort_by_date": null,
+  "position": -100,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "2adf079e-1f2f-434f-9e5e-a57fd5d866e8",
+  "first_published_at": "2026-03-16T16:33:58.493Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

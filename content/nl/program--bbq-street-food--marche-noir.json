@@ -1,0 +1,54 @@
+{
+  "name": "March\u00e9 Noir",
+  "created_at": "2026-03-16T15:55:13.383Z",
+  "published_at": "2026-03-16T16:26:15.702Z",
+  "updated_at": "2026-03-16T16:26:15.715Z",
+  "id": 155594397238321,
+  "uuid": "e9ac6e40-57fc-4425-86db-dbe643cdde5b",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "March\u00e9 Noir is Barbecue op de manier van het grote feestmaal. Het soort dat je deelt met vrienden. Dat lawaai maakt. Dat van het bord valt zonder ooit de kwaliteit, de smaak uit het oog te verliezen. Zo stelt March\u00e9 Noir zich aan u voor. Ambachtelijke rookmeesters gespecialiseerd in het koken op vuur en met rook. Festivals (Hellfest), bruiloften, scheidingen, filmopnames enz... Wij verplaatsen ons met onze gigantische BBQ-smokers om een verrassende keuken rond vlam en rook te bieden. Een techniek van overzee, maar een keuken die helemaal van ons is! Wij werken met de overtuiging om een lokale en milieuvriendelijke keuken aan te bieden, daarom zijn al ons vlees en onze groenten biologisch en afkomstig van lokale landbouw. WIJ ROKEN ALLES, GOED, HUISGEMAAKT!",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 151343222425549,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/4fa262e993_img_5155.JPG",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "March\u00e9 Noir",
+    "country": "us",
+    "component": "page-street-food",
+    "shortdescription": "Ambachtelijke rookmeesters"
+  },
+  "slug": "marche-noir",
+  "full_slug": "program/bbq-street-food/marche-noir",
+  "sort_by_date": null,
+  "position": -150,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "704a324c-b279-4bac-9b43-8913939d5df7",
+  "first_published_at": "2026-03-16T16:26:15.702Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

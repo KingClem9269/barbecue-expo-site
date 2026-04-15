@@ -1,0 +1,54 @@
+{
+  "name": "A Feu Lent",
+  "created_at": "2026-03-05T15:01:52.974Z",
+  "published_at": "2026-03-16T15:51:17.945Z",
+  "updated_at": "2026-03-16T15:51:17.959Z",
+  "id": 151688449990641,
+  "uuid": "14b0a5de-bdad-4ed7-a75e-3c5781c0c2c6",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Wenn Sie bereit sind für eine kulinarische Reise in die argentinische Pampa, dann lassen Sie sich von der Magie des argentinischen Know-hows mitreißen. Als mobiler Barbecue-Caterer ist es eine echte Reise nach Argentinien – die Feuertechnik und die Beherrschung des Barbecue lassen Sie den ursprünglichen Geschmack der Lebensmittel neu entdecken.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136488083901363,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/e88b832c97_b22c72bd-bd4f-499f-bdaa-e86ca27d64e4.jpeg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "A Feu Lent",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "Argentinisches Asado"
+  },
+  "slug": "a-feu-lent",
+  "full_slug": "program/bbq-street-food/a-feu-lent",
+  "sort_by_date": null,
+  "position": -190,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "fc36ab81-6943-4a2a-8b5f-bbc5d232f474",
+  "first_published_at": "2026-03-05T15:03:46.214Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

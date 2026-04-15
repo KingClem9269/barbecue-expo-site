@@ -1,0 +1,44 @@
+{
+  "name": "devenez-exposants",
+  "created_at": "2026-01-21T15:21:02.049Z",
+  "published_at": "2026-01-21T15:24:54.737Z",
+  "updated_at": "2026-01-21T15:24:54.752Z",
+  "id": 136475697384511,
+  "uuid": "a6a147bc-1e13-4a99-9518-51b67ca06739",
+  "content": {
+    "_uid": "131205b1-1157-4ae3-99e5-b11dacf89b6b",
+    "body": [
+      {
+        "_uid": "f8c8fa05-bab7-4328-8722-11f7931eafb7",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "f3be6369-5935-49ac-bc48-13d25fd36f44",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "00b6ccd5-8b70-43e6-983a-829a8f2e1f3c",
+        "component": "HubSpotForm"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "devenez-exposants",
+  "full_slug": "devenez-exposants",
+  "sort_by_date": null,
+  "position": -120,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": null,
+  "meta_data": null,
+  "group_id": "96ff112e-bc70-429e-a817-e65206c57916",
+  "first_published_at": "2026-01-21T15:23:44.278Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

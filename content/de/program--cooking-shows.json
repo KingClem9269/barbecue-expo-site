@@ -1,0 +1,657 @@
+{
+  "name": "cooking-shows",
+  "created_at": "2026-01-18T21:31:20.160Z",
+  "published_at": "2026-03-16T17:37:51.609Z",
+  "updated_at": "2026-03-16T17:37:51.630Z",
+  "id": 135505019560086,
+  "uuid": "7f2b260c-2c21-4e56-80da-b020d218775d",
+  "content": {
+    "_uid": "0e18cc01-5c47-4ddf-8878-67f41d12a40c",
+    "body": [
+      {
+        "_uid": "0eb560c9-9b4f-400b-bf20-0369cde7b7cf",
+        "color": "primary",
+        "component": "PageHeroMini"
+      },
+      {
+        "_uid": "e6cdc34c-5a3b-4949-8b39-38e69a05eab9",
+        "anchor": "",
+        "height": "h-full",
+        "content": [
+          {
+            "_uid": "6a46fcf7-f2f9-48f8-9c82-9336cb3f1746",
+            "chefs": [
+              {
+                "_uid": "2577b954-e833-4c8d-a28b-efe2e30d98d4",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/livefirerepublic/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/livefirerepublic/"
+                },
+                "name": "David W. Olson",
+                "media": {
+                  "id": 144622807332709,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/80d1f4b7b1_david-w-olson-live-fire-republic-usa.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "345k Followers",
+                "country": "us",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "12b2288b-3678-427e-9b6c-14432e7f5a5d",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/the_barbecue_dude_official/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/the_barbecue_dude_official/"
+                },
+                "name": "The Barbecue Dude",
+                "media": {
+                  "id": 144623244978042,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/93d4ba5137_tim-oliver-schnettler-the-barbecue-dude-allemagne.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "271k Followers",
+                "country": "de",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "7b130969-aa45-4df1-83a5-5dcda7fdeb68",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/divaqbbq/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/divaqbbq/"
+                },
+                "name": "Danielle Diva Q Bennett",
+                "media": {
+                  "id": 131911147335195,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/b4a2ab8324_danielle-diva-q-bennett.jpeg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "111K Followers",
+                "country": "us",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "1c9abe3b-b384-4246-9036-03d1e1e02836",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/lebarbecuederafa/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/lebarbecuederafa/"
+                },
+                "name": "Le Barbecue de Rafa",
+                "media": {
+                  "id": 144623032002417,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/74cfd72379_raphael-guillot-le-barbecue-de-rafa-france.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "200k Followers",
+                "country": "fr",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "450988bc-ad02-4a88-9505-8f10400f7fbf",
+                "link": {
+                  "id": "",
+                  "url": "/slug",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "/slug"
+                },
+                "name": "Eric Gephart",
+                "media": {
+                  "id": 131911147236884,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/296325ca92_eric-gephart.jpeg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "26k Followers",
+                "country": "us",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "c6771820-493f-4316-8172-f9519974831a",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/le_chefcarlos/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/le_chefcarlos/"
+                },
+                "name": "Chef Carlos Bear",
+                "media": {
+                  "id": 144622731360098,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/1daada9ba9_chef-carlos-bear-france.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "25k Followers",
+                "country": "fr",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "862cc45d-fbc0-48b3-aaeb-ef68589ea5a6",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/viewsncues/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/viewsncues/"
+                },
+                "name": "Stefanos Koukas",
+                "media": {
+                  "id": 131911147302425,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/1f0fe761aa_stefanos-koukas.jpeg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "50k Followers",
+                "country": "gr",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "ac41e0a2-6b44-4444-b618-b749fe6b475f",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/genevieveeats/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/genevieveeats/"
+                },
+                "name": "Genevieve Taylor",
+                "media": {
+                  "id": 144623127213939,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/dc0e6f60ef_genevive-taylor-genevive-eats-uk.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "50k Followers",
+                "country": "gb",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "fb6d2660-13bd-427b-b317-c04367d4bdc7",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/doncaruso_bbq/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/doncaruso_bbq/"
+                },
+                "name": "Camillo Tomanek",
+                "media": {
+                  "id": 144622929315690,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/edf56dd762_camillo-tomanek-don-caruso-allemagne.webp",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "510k Followers",
+                "country": "de",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "b617a0d9-5fcd-4d5c-87ee-33e8322d26e5",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/maennergrillen/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/maennergrillen/"
+                },
+                "name": "Nigel \"Mannergrillen\"",
+                "media": {
+                  "id": 144623153702773,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/4233bb4bba_nigel-bauert-mannergrillen-allemagne.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "86k Followers",
+                "country": "de",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "52c3e1cb-7ac5-4b6a-9021-0d567a2be7cd",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/bees_and_bbq_drievorden/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/bees_and_bbq_drievorden/"
+                },
+                "name": "Philipp \"Bees & BBQ Drievorden\"",
+                "media": {
+                  "id": 144623195957110,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/cb600c02f4_philipp-jackering-heeke-bees-and-bbq-drievorden-allemagne.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "370k Followers",
+                "country": "de",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "e41d5eaf-3219-447f-9652-3381ce895f08",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/bees_and_bbq_drievorden/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/bees_and_bbq_drievorden/"
+                },
+                "name": "Laure \"Blondie Camp BBQ\"",
+                "media": {
+                  "id": 144623110768498,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/59ba0c19fd_blondie-bbq.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "15k Followers",
+                "country": "fr",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "4044ed82-5c7e-420a-b56f-4802d577771b",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/djbbq/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/djbbq/"
+                },
+                "name": "Christian \"DJ BBQ\" Stevenson",
+                "media": {
+                  "id": 144623007549294,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/45291ed272_christian-stevenson-dj-bbq-uk.JPG",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "85k Followers",
+                "country": "gb",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "10a0507b-7ca6-49c3-a163-efb8817a6777",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/lesfrereslagarde/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/lesfrereslagarde/"
+                },
+                "name": "Les Frères Lagarde",
+                "media": {
+                  "id": 144622865835880,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/198c1df89e_capture-d-ecran-2026-02-04-a-16-29-46.png",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "66k Followers",
+                "country": "fr",
+                "component": "chef-card"
+              },
+              {
+                "_uid": "29c86b68-080a-4a8a-8cce-083366cb0fab",
+                "link": {
+                  "id": "",
+                  "url": "https://www.instagram.com/stephanebarbecue/",
+                  "linktype": "url",
+                  "fieldtype": "multilink",
+                  "cached_url": "https://www.instagram.com/stephanebarbecue/"
+                },
+                "name": "Stéphane \"Barbecue\" Nowowiejski ",
+                "media": {
+                  "id": 144622777882468,
+                  "alt": "",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "/content/images/c1a5158b5f_stephane-nowowiejski.jpeg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "stand": "130k Followers",
+                "country": "fr",
+                "component": "chef-card"
+              }
+            ],
+            "content": [
+              {
+                "_uid": "fd414877-fea6-4540-b45d-5a6510219e62",
+                "color": "secondary",
+                "content": "Die bekanntesten Pitmasters. Die intensivste Show.",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "_uid": "200a67d5-d9bf-4151-a4c4-32d377092b31",
+                "color": "secondary",
+                "content": "Pitmasters aus der ganzen Welt (USA, Kanada, UK, Deutschland...) kommen, um ihr Know-how weiterzugeben und die Temperatur steigen zu lassen: Live-Vorführungen mit ikonischen Fleischstücken, Battles und Feuer-Challenges, Masterclass und Techniken (Räuchern, Low & Slow, Reverse Sear, Glutbeherrschung...).\nFür das Publikum: Spektakel, praktische Tipps, Begegnungen, Verkostungen. Für Profis: Methoden, Trends, Praxiseinblicke und sofort verwertbare Inhalte.\n",
+                "component": "paragraph"
+              },
+              {
+                "_uid": "21ec912a-899b-4e87-aa1a-8fb4652fc287",
+                "icon": "arrow-right",
+                "path": "/",
+                "label": "Programm ansehen",
+                "style": "outline-light",
+                "component": "link"
+              }
+            ],
+            "headline": "Chefs x Pitmaster",
+            "component": "chefs-and-pitmasters",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+          }
+        ],
+        "padding": false,
+        "component": "Section",
+        "backgroundColor": "primary"
+      },
+      {
+        "_uid": "5b9da691-5247-45cd-8243-b4be378beff2",
+        "height": "h-full",
+        "content": [
+          {
+            "gap": "4",
+            "_uid": "860ad63e-e4a9-4d83-a44a-518ccc17c3f7",
+            "wrap": "wrap",
+            "align": "start",
+            "content": [
+              {
+                "_uid": "3ff131ec-4f84-44dc-98c1-c6f9a7d458a5",
+                "color": "primary",
+                "content": "Das Programm der Cooking Shows",
+                "heading": "",
+                "component": "headline",
+                "textAlign": ""
+              },
+              {
+                "gap": "0",
+                "_uid": "4356a0c2-cc31-46ca-9b9c-6d32508e9305",
+                "content": [
+                  {
+                    "gap": "0",
+                    "_uid": "0f529628-7f2b-4050-9cb2-bbac3c4d7e7a",
+                    "wrap": "wrap",
+                    "align": "start",
+                    "content": [
+                      {
+                        "_uid": "8a82c130-a6d4-43ef-8241-a143204fd3db",
+                        "color": "primary",
+                        "content": "In Partnerschaft mit",
+                        "component": "paragraph"
+                      }
+                    ],
+                    "justify": "center",
+                    "component": "Flex",
+                    "direction": "col",
+                    "gapDesktop": ""
+                  },
+                  {
+                    "_uid": "b62eaca2-b935-45e6-b50d-743d385ad5fc",
+                    "content": [
+                      {
+                        "_uid": "4e873cb1-caa9-4959-a6a3-f6f705ce60ef",
+                        "size": "sm",
+                        "color": "white",
+                        "logos": [
+                          {
+                            "id": 133287426265332,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "index": 0,
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/e4ba531c1d_logo-bbq-mag1.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 144607012815264,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/613704e958_drip_ez_logo_high_res_2.webp",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {
+                              "alt": "",
+                              "title": "",
+                              "source": "",
+                              "copyright": ""
+                            }
+                          },
+                          {
+                            "id": 144606432743789,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/832b947710_hestia-by-ember.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 144607043875238,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/2816d84e3c_grillobois.png",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          },
+                          {
+                            "id": 155547789458377,
+                            "alt": "",
+                            "name": "",
+                            "focus": "",
+                            "title": "",
+                            "source": "",
+                            "filename": "/content/images/d61d1dc18d_monolith-at-barbecue-expo-paris.avif",
+                            "copyright": "",
+                            "fieldtype": "asset",
+                            "meta_data": {}
+                          }
+                        ],
+                        "speed": "40s",
+                        "component": "MovingLogos",
+                        "direction": ""
+                      }
+                    ],
+                    "component": "Container",
+                    "customWidth": "",
+                    "customHeight": "",
+                    "colSpanMobile": "",
+                    "paddingMobile": "0",
+                    "rowSpanMobile": "",
+                    "colSpanDesktop": "3",
+                    "paddingDesktop": "0",
+                    "rowSpanDesktop": "",
+                    "backgroundColor": "",
+                    "backgroundMedia": {
+                      "id": null,
+                      "alt": null,
+                      "name": "",
+                      "focus": null,
+                      "title": null,
+                      "source": null,
+                      "filename": "",
+                      "copyright": null,
+                      "fieldtype": "asset",
+                      "meta_data": {}
+                    },
+                    "paddingDesktopLarge": ""
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "4",
+                "nColsMedium": "4",
+                "nColsMobile": "1"
+              },
+              {
+                "gap": "4",
+                "_uid": "ff1b9fb6-090a-4cd0-8f11-b30fec13f4ae",
+                "content": [
+                  {
+                    "_uid": "9efd7871-2dbc-4062-935f-9bd5b4d284a4",
+                    "component": "CookingShowWidget"
+                  }
+                ],
+                "component": "Grid",
+                "nColsLarge": "1",
+                "nColsMedium": "1",
+                "nColsMobile": "1"
+              }
+            ],
+            "justify": "center",
+            "component": "Flex",
+            "direction": "",
+            "gapDesktop": "8"
+          }
+        ],
+        "padding": true,
+        "component": "Section",
+        "backgroundColor": "secondary"
+      }
+    ],
+    "component": "page"
+  },
+  "slug": "cooking-shows",
+  "full_slug": "program/cooking-shows",
+  "sort_by_date": null,
+  "position": 0,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 135504957300885,
+  "meta_data": null,
+  "group_id": "2d045f1f-276b-482d-b6e7-a3305946189d",
+  "first_published_at": "2026-01-20T12:14:58.991Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

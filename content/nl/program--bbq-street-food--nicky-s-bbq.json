@@ -1,0 +1,54 @@
+{
+  "name": "Nicky's BBQ",
+  "created_at": "2026-03-16T15:54:38.879Z",
+  "published_at": "2026-03-16T16:30:16.950Z",
+  "updated_at": "2026-03-16T16:30:16.964Z",
+  "id": 155594255909836,
+  "uuid": "b9346885-279b-4efe-bf46-987e9d11e1e5",
+  "content": {
+    "_uid": "c6a1300d-356e-4b1b-ac35-44d003794536",
+    "body": [
+      {
+        "_uid": "3687773a-d213-40a3-83ca-64dd4793672f",
+        "bold": false,
+        "color": "white",
+        "content": "Foodtruck met als thema Texaanse barbecue, maar ook fabrikant van materiaal made in Reims. Al onze producten zijn vers en met liefde gedurende meerdere uren bereid. Wij hechten er eer aan om te werken met leveranciers en kwaliteitsproducten om uw smaakpapillen te verwennen. Of het nu rund, varken of kip is, er is voor ieder wat wils, zelfs voor de grote eters die alleen maar vlees willen. Wij werken met een offset smoker van 6 meter lang om u zo snel mogelijk te bedienen.",
+        "component": "paragraph",
+        "textAlign": "start"
+      }
+    ],
+    "media": {
+      "id": 136490815036540,
+      "alt": "",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "source": "",
+      "filename": "/content/images/cabba322fb_p1050471-1.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {},
+      "is_external_url": false
+    },
+    "title": "Nicky's BBQ",
+    "country": "ar",
+    "component": "page-street-food",
+    "shortdescription": "Texaanse BBQ"
+  },
+  "slug": "nicky-s-bbq",
+  "full_slug": "program/bbq-street-food/nicky-s-bbq",
+  "sort_by_date": null,
+  "position": -130,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 151378627796648,
+  "meta_data": null,
+  "group_id": "3c1f3dbe-16a4-4b85-bd5a-6066b7162441",
+  "first_published_at": "2026-03-16T16:29:03.575Z",
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}
