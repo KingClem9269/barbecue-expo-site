@@ -12,7 +12,7 @@ export default function Media({ blok }: { blok: MediaBlok }) {
   const objectFit = blok.objectFit || "cover";
   return (
     <div
-      className={`h-full w-full overflow-hidden max-h-[640px] ${blok.customClass || ""}`}
+      className={`h-full w-full overflow-hidden max-h-[640px] max-w-[70%] mx-auto ${blok.customClass || ""}`}
     >
       {blok.media?.filename ? (
         <Image
