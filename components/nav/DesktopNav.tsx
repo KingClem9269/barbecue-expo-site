@@ -77,7 +77,7 @@ export function DesktopNav({
         />
         <div className="flex items-center justify-between w-full">
           <li className="hidden lg:block list-none shrink-0">
-            <Link href="/">
+            <Link href="/" aria-label="Barbecue Expo 2026 — Homepage">
               <NavLogo color="white" className="w-42 h-12" />
             </Link>
           </li>

@@ -83,6 +83,7 @@ export const MobileNav = ({
           <Link
             href="/"
             onClick={onClose}
+            aria-label="Barbecue Expo 2026 — Homepage"
             className="focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded"
           >
             <NavLogo color="white" className="w-32 h-10" />
