@@ -48,6 +48,8 @@ import Manifesto from "@/components/homepage/Manifesto";
 import PathFork from "@/components/homepage/PathFork";
 import FinalCTA from "@/components/homepage/FinalCTA";
 import SectionBreak from "@/components/homepage/SectionBreak";
+import GrillArenaTeaser from "@/components/homepage/GrillArenaTeaser";
+import AwardsTeaser from "@/components/homepage/AwardsTeaser";
 
 // Register all components at module load time.
 // This runs once when StoryRenderer is first imported.
@@ -105,6 +107,9 @@ registerComponents({
   "final-cta": FinalCTA,
   // Sprint 6
   "section-break": SectionBreak,
+  // Sprint 8 — signature differentiators
+  "grill-arena-teaser": GrillArenaTeaser,
+  "awards-teaser": AwardsTeaser,
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -51,6 +51,8 @@ import Manifesto from "@/components/homepage/Manifesto";
 import PathFork from "@/components/homepage/PathFork";
 import FinalCTA from "@/components/homepage/FinalCTA";
 import SectionBreak from "@/components/homepage/SectionBreak";
+import GrillArenaTeaser from "@/components/homepage/GrillArenaTeaser";
+import AwardsTeaser from "@/components/homepage/AwardsTeaser";
 
 const clientComponents = {
   page: Page,
@@ -104,6 +106,9 @@ const clientComponents = {
   "final-cta": FinalCTA,
   // Sprint 6
   "section-break": SectionBreak,
+  // Sprint 8 — signature differentiators
+  "grill-arena-teaser": GrillArenaTeaser,
+  "awards-teaser": AwardsTeaser,
 };
 
 // Register on module load (runs once when client bundle initializes)

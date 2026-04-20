@@ -48,6 +48,10 @@
         "component": "path-fork"
       },
       {
+        "_uid": "grill-arena-teaser-1",
+        "component": "grill-arena-teaser"
+      },
+      {
         "_uid": "709e23cb-6a41-4a67-9945-50c2f614cad1",
         "height": "h-full",
         "content": [
@@ -1505,6 +1509,10 @@
         "padding": true,
         "component": "Section",
         "backgroundColor": "primary"
+      },
+      {
+        "_uid": "awards-teaser-1",
+        "component": "awards-teaser"
       },
       {
         "_uid": "final-cta-1",

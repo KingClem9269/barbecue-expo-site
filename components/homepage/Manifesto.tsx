@@ -38,74 +38,74 @@ interface ManifestoBlok {
 
 const DEFAULTS: Record<string, ManifestoBlok> = {
   fr: {
-    eyebrow: "Le rendez-vous européen",
+    eyebrow: "Édition 2026 — les chiffres",
     stats: [
-      { value: 12000, suffix: "+", label: "Visiteurs attendus" },
-      { value: 80, suffix: "+", label: "Exposants internationaux" },
-      { value: 3, suffix: "", label: "Jours d'immersion" },
+      { value: 25896, suffix: "", label: "Visiteurs en 2026" },
+      { value: 250, suffix: "", label: "Marques internationales" },
+      { value: 25, suffix: "", label: "Nationalités représentées" },
     ],
     punchline:
-      "Trois jours pour célébrer la braise, le bois et le feu — réunis pour la première fois au cœur de l'Europe.",
+      "Le seul salon européen où les prescripteurs BBQ et les marques internationales se rencontrent pendant trois jours.",
   },
   en: {
-    eyebrow: "The European gathering",
+    eyebrow: "2026 edition — key figures",
     stats: [
-      { value: 12000, suffix: "+", label: "Expected visitors" },
-      { value: 80, suffix: "+", label: "International exhibitors" },
-      { value: 3, suffix: "", label: "Days of immersion" },
+      { value: 25896, suffix: "", label: "Visitors in 2026" },
+      { value: 250, suffix: "", label: "International brands" },
+      { value: 25, suffix: "", label: "Nationalities represented" },
     ],
     punchline:
-      "Three days to celebrate ember, wood and fire — gathered for the first time in the heart of Europe.",
+      "The only European show where BBQ tastemakers and international brands meet for three days.",
   },
   es: {
-    eyebrow: "La cita europea",
+    eyebrow: "Edición 2026 — las cifras",
     stats: [
-      { value: 12000, suffix: "+", label: "Visitantes esperados" },
-      { value: 80, suffix: "+", label: "Expositores internacionales" },
-      { value: 3, suffix: "", label: "Días de inmersión" },
+      { value: 25896, suffix: "", label: "Visitantes en 2026" },
+      { value: 250, suffix: "", label: "Marcas internacionales" },
+      { value: 25, suffix: "", label: "Nacionalidades representadas" },
     ],
     punchline:
-      "Tres días para celebrar la brasa, la madera y el fuego — reunidos por primera vez en el corazón de Europa.",
+      "La única feria europea donde los prescriptores BBQ y las marcas internacionales se encuentran durante tres días.",
   },
   de: {
-    eyebrow: "Das europäische Treffen",
+    eyebrow: "Ausgabe 2026 — die Zahlen",
     stats: [
-      { value: 12000, suffix: "+", label: "Erwartete Besucher" },
-      { value: 80, suffix: "+", label: "Internationale Aussteller" },
-      { value: 3, suffix: "", label: "Tage des Eintauchens" },
+      { value: 25896, suffix: "", label: "Besucher 2026" },
+      { value: 250, suffix: "", label: "Internationale Marken" },
+      { value: 25, suffix: "", label: "Vertretene Nationalitäten" },
     ],
     punchline:
-      "Drei Tage, um Glut, Holz und Feuer zu feiern — zum ersten Mal im Herzen Europas vereint.",
+      "Die einzige europäische Messe, auf der BBQ-Trendsetter und internationale Marken drei Tage lang zusammentreffen.",
   },
   nl: {
-    eyebrow: "De Europese ontmoeting",
+    eyebrow: "Editie 2026 — de cijfers",
     stats: [
-      { value: 12000, suffix: "+", label: "Verwachte bezoekers" },
-      { value: 80, suffix: "+", label: "Internationale exposanten" },
-      { value: 3, suffix: "", label: "Dagen onderdompeling" },
+      { value: 25896, suffix: "", label: "Bezoekers in 2026" },
+      { value: 250, suffix: "", label: "Internationale merken" },
+      { value: 25, suffix: "", label: "Vertegenwoordigde nationaliteiten" },
     ],
     punchline:
-      "Drie dagen om gloed, hout en vuur te vieren — voor het eerst samen in het hart van Europa.",
+      "De enige Europese beurs waar BBQ-toonaangevers en internationale merken elkaar drie dagen lang ontmoeten.",
   },
   pt: {
-    eyebrow: "O encontro europeu",
+    eyebrow: "Edição 2026 — os números",
     stats: [
-      { value: 12000, suffix: "+", label: "Visitantes esperados" },
-      { value: 80, suffix: "+", label: "Expositores internacionais" },
-      { value: 3, suffix: "", label: "Dias de imersão" },
+      { value: 25896, suffix: "", label: "Visitantes em 2026" },
+      { value: 250, suffix: "", label: "Marcas internacionais" },
+      { value: 25, suffix: "", label: "Nacionalidades representadas" },
     ],
     punchline:
-      "Três dias para celebrar a brasa, a madeira e o fogo — reunidos pela primeira vez no coração da Europa.",
+      "A única feira europeia onde os prescritores BBQ e as marcas internacionais se encontram durante três dias.",
   },
   it: {
-    eyebrow: "L'appuntamento europeo",
+    eyebrow: "Edizione 2026 — i numeri",
     stats: [
-      { value: 12000, suffix: "+", label: "Visitatori attesi" },
-      { value: 80, suffix: "+", label: "Espositori internazionali" },
-      { value: 3, suffix: "", label: "Giorni di immersione" },
+      { value: 25896, suffix: "", label: "Visitatori nel 2026" },
+      { value: 250, suffix: "", label: "Marchi internazionali" },
+      { value: 25, suffix: "", label: "Nazionalità rappresentate" },
     ],
     punchline:
-      "Tre giorni per celebrare la brace, il legno e il fuoco — riuniti per la prima volta nel cuore dell'Europa.",
+      "L'unica fiera europea dove i prescrittori BBQ e i marchi internazionali si incontrano per tre giorni.",
   },
 };
 
