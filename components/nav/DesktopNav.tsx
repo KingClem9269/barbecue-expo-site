@@ -11,6 +11,7 @@ import { DesktopTicketButton } from "./DesktopTicketButton";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { AudienceToggle } from "./AudienceToggle";
 
 export function DesktopNav({
   menuItems,
@@ -97,6 +98,7 @@ export function DesktopNav({
             })}
           </ul>
           <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <AudienceToggle />
             <LocaleSwitcher currentLocale={locale} />
           <DesktopTicketButton
             tickets={tickets}
