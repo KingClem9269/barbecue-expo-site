@@ -49,6 +49,7 @@ import ContactForm from "@/components/widget/ContactForm";
 import { PageStreetFood } from "@/components/pages/PageStreetFood";
 import Manifesto from "@/components/homepage/Manifesto";
 import PathFork from "@/components/homepage/PathFork";
+import FinalCTA from "@/components/homepage/FinalCTA";
 
 const clientComponents = {
   page: Page,
@@ -98,6 +99,8 @@ const clientComponents = {
   // Sprint 2 — homepage components
   manifesto: Manifesto,
   "path-fork": PathFork,
+  // Sprint 3
+  "final-cta": FinalCTA,
 };
 
 // Register on module load (runs once when client bundle initializes)

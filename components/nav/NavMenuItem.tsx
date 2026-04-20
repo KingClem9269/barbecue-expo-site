@@ -16,9 +16,11 @@ export const NavMenuItem = ({
       <MenuItemLink
         href={href}
         isExternal={isExternal}
-        className="inline-flex items-center justify-center px-4 py-2"
+        className="nav-item relative inline-flex items-center justify-center px-4 py-2 text-sm tracking-wide transition-colors duration-200 hover:text-gold-500 focus:outline-none focus-visible:text-gold-500"
       >
-        {menuItem.label}
+        <span className="nav-item-label relative">
+          {menuItem.label}
+        </span>
       </MenuItemLink>
     </li>
   );

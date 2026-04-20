@@ -18,10 +18,10 @@ export const NavMenuWithSubmenu = ({
       <MenuItemLink
         href={href}
         isExternal={isExternal}
-        className="inline-flex items-center justify-center px-4 py-2 cursor-pointer"
+        className="nav-item relative inline-flex items-center justify-center px-4 py-2 cursor-pointer text-sm tracking-wide transition-colors duration-200 group-hover:text-gold-500 focus:outline-none focus-visible:text-gold-500"
       >
-        {menuItem.label}
-        <ChevronDownIcon className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+        <span className="nav-item-label relative">{menuItem.label}</span>
+        <ChevronDownIcon className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
       </MenuItemLink>
       {menuItem.submenu && <NavSubmenu submenu={menuItem.submenu} />}
     </li>

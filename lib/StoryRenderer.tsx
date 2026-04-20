@@ -46,6 +46,7 @@ import PressWeezeventFrame from "@/components/widget/PressWeezeventFrame";
 import { PageStreetFood } from "@/components/pages/PageStreetFood";
 import Manifesto from "@/components/homepage/Manifesto";
 import PathFork from "@/components/homepage/PathFork";
+import FinalCTA from "@/components/homepage/FinalCTA";
 
 // Register all components at module load time.
 // This runs once when StoryRenderer is first imported.
@@ -99,6 +100,8 @@ registerComponents({
   // Sprint 2 — homepage components
   manifesto: Manifesto,
   "path-fork": PathFork,
+  // Sprint 3
+  "final-cta": FinalCTA,
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
