@@ -97,14 +97,15 @@ export function HeroVideo({ blok }: { blok: any }) {
       className="relative w-full h-[100dvh] min-h-[640px] overflow-hidden bg-ink-950"
       aria-label="Barbecue Expo 2026 hero"
     >
-      {/* Background video */}
+      {/* Background video — preload metadata only; poster shown while loading */}
       <video
         src="https://dicfw56ddakrzcwg.public.blob.vercel-storage.com/teaserbbqexpo"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster={blok.media?.filename || undefined}
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
       />

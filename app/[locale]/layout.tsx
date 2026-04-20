@@ -13,6 +13,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { ClientRegistryInit } from "@/lib/ClientRegistry";
 import EmberCursor from "@/components/signature/EmberCursor";
 import PageTransition from "@/components/signature/PageTransition";
+import SkipLink from "@/components/a11y/SkipLink";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -53,6 +54,14 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Preload the branded display font to prevent FOIT on first paint */}
+        <link
+          rel="preload"
+          href="/SansPlomb-98.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -68,10 +77,11 @@ export default async function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ClientRegistryInit />
-          <EmberCursor />
-          <PageTransition />
           <NextIntlClientProvider locale={locale}>
-            <div className="w-full relative">
+            <SkipLink />
+            <EmberCursor />
+            <PageTransition />
+            <main id="main" className="w-full relative">
               {siteSettings?.content?.header_menu && (
                 <DesktopNav
                   menuItems={siteSettings.content.header_menu}
@@ -86,7 +96,7 @@ export default async function RootLayout({
                 />
               )}
               {children}
-            </div>
+            </main>
             <Newsletter />
             <Footer data={siteSettings?.content} locale={locale} />
           </NextIntlClientProvider>
