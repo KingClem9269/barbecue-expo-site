@@ -11,6 +11,8 @@ import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ClientRegistryInit } from "@/lib/ClientRegistry";
+import EmberCursor from "@/components/signature/EmberCursor";
+import PageTransition from "@/components/signature/PageTransition";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -66,6 +68,8 @@ export default async function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ClientRegistryInit />
+          <EmberCursor />
+          <PageTransition />
           <NextIntlClientProvider locale={locale}>
             <div className="w-full relative">
               {siteSettings?.content?.header_menu && (
