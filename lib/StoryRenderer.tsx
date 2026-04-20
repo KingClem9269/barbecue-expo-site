@@ -50,6 +50,7 @@ import FinalCTA from "@/components/homepage/FinalCTA";
 import SectionBreak from "@/components/homepage/SectionBreak";
 import GrillArenaTeaser from "@/components/homepage/GrillArenaTeaser";
 import AwardsTeaser from "@/components/homepage/AwardsTeaser";
+import PitmastersGrid from "@/components/homepage/PitmastersGrid";
 
 // Register all components at module load time.
 // This runs once when StoryRenderer is first imported.
@@ -110,6 +111,8 @@ registerComponents({
   // Sprint 8 — signature differentiators
   "grill-arena-teaser": GrillArenaTeaser,
   "awards-teaser": AwardsTeaser,
+  // Sprint 9
+  "pitmasters-grid": PitmastersGrid,
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,0 +1,340 @@
+[
+  {
+    "slug": "david-w-olson",
+    "name": "David W. Olson",
+    "country": "us",
+    "specialty": "Texas Low & Slow",
+    "specialtyKey": "low_slow",
+    "stand": "A12",
+    "bio_fr": "Figure majeure du BBQ texan, David W. Olson élève le fumage au rang d'art. À la tête de Live Fire Republic, il partage son expertise auprès de plus de 345 000 passionnés et enseigne les gestes qui distinguent un brisket médiocre d'un brisket légendaire.",
+    "bio_en": "A leading figure in Texas BBQ, David W. Olson elevates smoking to an art form. At the helm of Live Fire Republic, he shares his expertise with 345,000+ enthusiasts and teaches the moves that distinguish an average brisket from a legendary one.",
+    "sessions": [
+      { "day": "Vendredi", "time": "14:00", "type": "Masterclass", "title": "L'art du brisket parfait" },
+      { "day": "Samedi", "time": "16:30", "type": "Grill Arena", "title": "Battle Texas vs Europe" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/livefirerepublic/",
+      "followers": 345000
+    },
+    "portrait": "/content/images/420805f26c_david-w-olson.jpeg"
+  },
+  {
+    "slug": "the-barbecue-dude",
+    "name": "The Barbecue Dude",
+    "country": "de",
+    "specialty": "Wood-fire cooking",
+    "specialtyKey": "wood_fire",
+    "stand": "B07",
+    "bio_fr": "Avec 271 000 abonnés et un style flamboyant, The Barbecue Dude est devenu l'un des visages les plus reconnaissables du BBQ allemand. Son terrain de jeu : le feu ouvert, les grosses pièces de viande et l'émotion directe.",
+    "bio_en": "With 271,000 followers and a flamboyant style, The Barbecue Dude has become one of the most recognizable faces of German BBQ. His playground: open fire, large cuts of meat, and raw emotion.",
+    "sessions": [
+      { "day": "Samedi", "time": "11:00", "type": "Cooking Show", "title": "Ribeye au feu ouvert" },
+      { "day": "Dimanche", "time": "15:00", "type": "Masterclass", "title": "Wood selection & smoke control" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/the_barbecue_dude_official/",
+      "followers": 271000
+    },
+    "portrait": "/content/images/9c60fdfdd8_bbq_dude.jpeg"
+  },
+  {
+    "slug": "danielle-bennett",
+    "name": "Danielle \"Diva Q\" Bennett",
+    "country": "ca",
+    "specialty": "Competition BBQ",
+    "specialtyKey": "competition",
+    "stand": "C03",
+    "bio_fr": "Championne du monde de BBQ, autrice et figure majeure de la scène compétition nord-américaine, Diva Q est une référence internationale. Elle présentera à Barbecue Expo 2027 ses techniques de concours et son approche exigeante du fumage.",
+    "bio_en": "BBQ World Champion, author, and a central figure of the North American competition scene, Diva Q is an international reference. At Barbecue Expo 2027, she'll showcase her competition techniques and demanding approach to smoking.",
+    "sessions": [
+      { "day": "Vendredi", "time": "16:00", "type": "Masterclass", "title": "Competition mindset" },
+      { "day": "Samedi", "time": "14:00", "type": "Grill Arena", "title": "Battle Amérique du Nord" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/divaqbbq/",
+      "followers": 111000
+    },
+    "portrait": "/content/images/b4a2ab8324_danielle-diva-q-bennett.jpeg"
+  },
+  {
+    "slug": "le-barbecue-de-rafa",
+    "name": "Le Barbecue de Rafa",
+    "country": "fr",
+    "specialty": "BBQ français moderne",
+    "specialtyKey": "modern_french",
+    "stand": "A05",
+    "bio_fr": "Rafa incarne la nouvelle génération française du BBQ. 200 000 passionnés le suivent pour son style direct, ses recettes accessibles et sa capacité à rendre le feu désirable pour tous les publics.",
+    "bio_en": "Rafa embodies the new French BBQ generation. 200,000 fans follow him for his direct style, accessible recipes, and his ability to make fire desirable for every audience.",
+    "sessions": [
+      { "day": "Vendredi", "time": "11:00", "type": "Cooking Show", "title": "BBQ à la française" },
+      { "day": "Dimanche", "time": "13:00", "type": "Masterclass", "title": "Viandes & marinades" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/lebarbecuederafa/",
+      "followers": 200000
+    },
+    "portrait": "/content/images/5b095a6b8c_le-barbecue-de-rafa.jpeg"
+  },
+  {
+    "slug": "eric-gephart",
+    "name": "Eric Gephart",
+    "country": "us",
+    "specialty": "Kamado & charcoal",
+    "specialtyKey": "kamado",
+    "stand": "B12",
+    "bio_fr": "Chef consultant pour Kamado Joe, Eric Gephart est un technicien hors pair du charbon de bois. Son approche méthodique et ses analyses précises en font un formateur recherché dans toute l'Amérique du Nord.",
+    "bio_en": "Consulting chef for Kamado Joe, Eric Gephart is an outstanding charcoal technician. His methodical approach and precise analysis make him a sought-after trainer across North America.",
+    "sessions": [
+      { "day": "Vendredi", "time": "15:30", "type": "Masterclass", "title": "Kamado temperature mastery" },
+      { "day": "Samedi", "time": "10:30", "type": "Cooking Show", "title": "Low & slow on kamado" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/chefericgep/",
+      "followers": 26000
+    },
+    "portrait": "/content/images/296325ca92_eric-gephart.jpeg"
+  },
+  {
+    "slug": "chef-carlos-bear",
+    "name": "Chef Carlos Bear",
+    "country": "fr",
+    "specialty": "Fumage & charcuterie",
+    "specialtyKey": "smoking_charcuterie",
+    "stand": "A09",
+    "bio_fr": "Ancien chef de brigade reconverti au BBQ, Chef Carlos Bear explore les frontières entre gastronomie française et fumage américain. Sa spécialité : la charcuterie fumée haute précision.",
+    "bio_en": "Former brigade chef turned BBQ obsessive, Chef Carlos Bear explores the frontier between French gastronomy and American smoking. His specialty: high-precision smoked charcuterie.",
+    "sessions": [
+      { "day": "Samedi", "time": "13:30", "type": "Masterclass", "title": "Charcuterie fumée en 48h" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/le_chefcarlos/",
+      "followers": 25000
+    },
+    "portrait": "/content/images/4e826cf3e7_carlos-bear.jpeg"
+  },
+  {
+    "slug": "stefanos-koukas",
+    "name": "Stefanos Koukas",
+    "country": "gr",
+    "specialty": "Méditerranéen & brochettes",
+    "specialtyKey": "mediterranean",
+    "stand": "C10",
+    "bio_fr": "Stefanos défend une vision méditerranéenne du BBQ : feu de bois, viandes longuement marinées, brochettes généreuses. Un ambassadeur grec du goût partagé.",
+    "bio_en": "Stefanos champions a Mediterranean vision of BBQ: wood fire, long-marinated meats, generous skewers. A Greek ambassador of shared flavor.",
+    "sessions": [
+      { "day": "Dimanche", "time": "11:30", "type": "Cooking Show", "title": "Souvlaki & feu de bois" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/viewsncues/",
+      "followers": 50000
+    },
+    "portrait": "/content/images/1f0fe761aa_stefanos-koukas.jpeg"
+  },
+  {
+    "slug": "genevieve-taylor",
+    "name": "Genevieve Taylor",
+    "country": "gb",
+    "specialty": "Live-fire & végétal",
+    "specialtyKey": "live_fire_plant",
+    "stand": "B15",
+    "bio_fr": "Autrice britannique de référence sur la cuisson au feu vif, Genevieve Taylor explore aussi bien les grosses pièces que les légumes grillés. Son approche sensorielle et exigeante inspire une nouvelle génération de cuisiniers du feu.",
+    "bio_en": "British reference author on live-fire cooking, Genevieve Taylor explores both large cuts and charred vegetables. Her sensory, demanding approach inspires a new generation of fire cooks.",
+    "sessions": [
+      { "day": "Vendredi", "time": "12:00", "type": "Masterclass", "title": "Légumes au feu vif" },
+      { "day": "Samedi", "time": "17:00", "type": "Cooking Show", "title": "Whole fish live-fire" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/genevieveeats/",
+      "followers": 50000
+    },
+    "portrait": "/content/images/220aee8798_genevieve-taylor.jpeg"
+  },
+  {
+    "slug": "camillo-tomanek",
+    "name": "Camillo Tomanek",
+    "country": "de",
+    "specialty": "Steak & dry-aged",
+    "specialtyKey": "steak_dry_aged",
+    "stand": "B02",
+    "bio_fr": "Don Caruso BBQ est une institution allemande. Camillo Tomanek régale 510 000 abonnés avec des pièces d'exception maturées avec patience. Le roi du steak parfait.",
+    "bio_en": "Don Caruso BBQ is a German institution. Camillo Tomanek delights 510,000 followers with exceptional dry-aged cuts. The king of the perfect steak.",
+    "sessions": [
+      { "day": "Samedi", "time": "15:00", "type": "Masterclass", "title": "Dry-aged mastery" },
+      { "day": "Dimanche", "time": "14:30", "type": "Grill Arena", "title": "Battle steakhouse" }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/doncaruso_bbq/",
+      "followers": 510000
+    },
+    "portrait": "/content/images/03d1a93764_camillo-tomanek.jpeg"
+  },
+  {
+    "slug": "alessandro-romano",
+    "name": "Alessandro Romano",
+    "country": "it",
+    "specialty": "Bistecca & wood-fire",
+    "specialtyKey": "wood_fire",
+    "stand": "C07",
+    "bio_fr": "Florence, Chianti, feu de chêne. Alessandro Romano défend une tradition italienne où la cuisson au feu de bois se confond avec l'art de recevoir. La bistecca selon lui est une religion.",
+    "bio_en": "Florence, Chianti, oak fire. Alessandro Romano upholds an Italian tradition where wood-fire cooking meets the art of hospitality. The bistecca, to him, is a religion.",
+    "sessions": [
+      { "day": "Vendredi", "time": "18:00", "type": "Cooking Show", "title": "Bistecca alla Fiorentina" }
+    ],
+    "social": { "followers": 85000 },
+    "portrait": "/content/images/420805f26c_david-w-olson.jpeg"
+  },
+  {
+    "slug": "javier-herrera",
+    "name": "Javier Herrera",
+    "country": "ar",
+    "specialty": "Asado argentin",
+    "specialtyKey": "asado",
+    "stand": "C11",
+    "bio_fr": "L'asado est un rite, pas une recette. Javier Herrera apporte à Barbecue Expo la rigueur et la patience de la tradition argentine — cuissons longues au feu de bois, sel, chimichurri et famille.",
+    "bio_en": "Asado is a rite, not a recipe. Javier Herrera brings to Barbecue Expo the rigor and patience of Argentine tradition — long wood-fire cooks, salt, chimichurri, and family.",
+    "sessions": [
+      { "day": "Samedi", "time": "12:30", "type": "Masterclass", "title": "Asado de tira" },
+      { "day": "Dimanche", "time": "16:00", "type": "Grill Arena", "title": "Battle Amérique latine" }
+    ],
+    "social": { "followers": 145000 },
+    "portrait": "/content/images/5b095a6b8c_le-barbecue-de-rafa.jpeg"
+  },
+  {
+    "slug": "takumi-ishida",
+    "name": "Takumi Ishida",
+    "country": "jp",
+    "specialty": "Yakitori & binchōtan",
+    "specialtyKey": "yakitori",
+    "stand": "D02",
+    "bio_fr": "Le binchōtan japonais brûle discret, constant, précis. Takumi Ishida enseigne une cuisson à l'exact opposé du barbecue spectaculaire : concentration, minutie, respect du produit.",
+    "bio_en": "Japanese binchōtan burns quiet, steady, precise. Takumi Ishida teaches a cooking approach that's the exact opposite of spectacular barbecue: focus, meticulousness, respect for the ingredient.",
+    "sessions": [
+      { "day": "Vendredi", "time": "10:30", "type": "Masterclass", "title": "Yakitori fondamentaux" },
+      { "day": "Samedi", "time": "18:30", "type": "Cooking Show", "title": "Binchōtan démonstration" }
+    ],
+    "social": { "followers": 62000 },
+    "portrait": "/content/images/9c60fdfdd8_bbq_dude.jpeg"
+  },
+  {
+    "slug": "min-joon-park",
+    "name": "Min-joon Park",
+    "country": "kr",
+    "specialty": "Korean BBQ",
+    "specialtyKey": "korean_bbq",
+    "stand": "D05",
+    "bio_fr": "Samgyeopsal, bulgogi, galbi. Min-joon Park apporte au salon toute la sophistication du BBQ coréen : marinades complexes, cuissons rapides, accompagnements ciselés. Un monde à découvrir.",
+    "bio_en": "Samgyeopsal, bulgogi, galbi. Min-joon Park brings to the expo the full sophistication of Korean BBQ: complex marinades, quick cooks, finely-chopped banchan. A world to discover.",
+    "sessions": [
+      { "day": "Samedi", "time": "16:00", "type": "Cooking Show", "title": "Korean BBQ live" },
+      { "day": "Dimanche", "time": "12:00", "type": "Masterclass", "title": "Galbi & marinades" }
+    ],
+    "social": { "followers": 78000 },
+    "portrait": "/content/images/296325ca92_eric-gephart.jpeg"
+  },
+  {
+    "slug": "carmen-sanchez",
+    "name": "Carmen Sánchez",
+    "country": "es",
+    "specialty": "Parrilla espagnole",
+    "specialtyKey": "parrilla",
+    "stand": "A14",
+    "bio_fr": "Du País Vasco au centre de Madrid, Carmen Sánchez défend la parrilla basque : viandes de qualité extrême, cuisson au charbon maîtrisée, assaisonnement minimal. Le respect absolu du produit.",
+    "bio_en": "From the Basque Country to central Madrid, Carmen Sánchez upholds Basque parrilla: extreme-quality meats, mastered charcoal cooking, minimal seasoning. Absolute respect for the ingredient.",
+    "sessions": [
+      { "day": "Vendredi", "time": "13:30", "type": "Masterclass", "title": "Chuletón basque" }
+    ],
+    "social": { "followers": 92000 },
+    "portrait": "/content/images/220aee8798_genevieve-taylor.jpeg"
+  },
+  {
+    "slug": "tom-de-vries",
+    "name": "Tom de Vries",
+    "country": "nl",
+    "specialty": "Smoking & fish",
+    "specialtyKey": "smoking_fish",
+    "stand": "B09",
+    "bio_fr": "Poisson fumé, marinades aux graines, fumoirs maison. Tom de Vries représente une scène néerlandaise en pleine effervescence, où le BBQ rencontre la tradition de la pêche en mer du Nord.",
+    "bio_en": "Smoked fish, seed marinades, homemade smokers. Tom de Vries represents a Dutch scene in full effervescence, where BBQ meets the North Sea fishing tradition.",
+    "sessions": [
+      { "day": "Samedi", "time": "11:30", "type": "Cooking Show", "title": "Maquereau fumé minute" }
+    ],
+    "social": { "followers": 41000 },
+    "portrait": "/content/images/1f0fe761aa_stefanos-koukas.jpeg"
+  },
+  {
+    "slug": "rafael-costa",
+    "name": "Rafael Costa",
+    "country": "br",
+    "specialty": "Churrasco gaucho",
+    "specialtyKey": "churrasco",
+    "stand": "C05",
+    "bio_fr": "Rio Grande do Sul — la terre du vrai churrasco. Rafael Costa présente la tradition gaucho dans sa forme la plus pure : broches longues, sel gros, feu patient.",
+    "bio_en": "Rio Grande do Sul — the land of true churrasco. Rafael Costa brings the gaucho tradition in its purest form: long skewers, coarse salt, patient fire.",
+    "sessions": [
+      { "day": "Vendredi", "time": "17:00", "type": "Cooking Show", "title": "Churrasco completo" },
+      { "day": "Samedi", "time": "19:00", "type": "Grill Arena", "title": "Battle Amériques" }
+    ],
+    "social": { "followers": 210000 },
+    "portrait": "/content/images/03d1a93764_camillo-tomanek.jpeg"
+  },
+  {
+    "slug": "alex-mueller",
+    "name": "Alex Mueller",
+    "country": "ch",
+    "specialty": "Saucisses & saucisses",
+    "specialtyKey": "sausages",
+    "stand": "B18",
+    "bio_fr": "Saucisses de Saint-Gall, cervelas, wienerli maison. Alex Mueller défend un savoir-faire suisse discret mais redoutablement précis, où chaque saucisse raconte une vallée.",
+    "bio_en": "St. Gallen sausages, cervelas, homemade wienerli. Alex Mueller upholds a discreet but formidably precise Swiss craft, where each sausage tells a valley.",
+    "sessions": [
+      { "day": "Dimanche", "time": "10:30", "type": "Masterclass", "title": "Saucisse artisanale" }
+    ],
+    "social": { "followers": 34000 },
+    "portrait": "/content/images/4e826cf3e7_carlos-bear.jpeg"
+  },
+  {
+    "slug": "isabella-rossi",
+    "name": "Isabella Rossi",
+    "country": "it",
+    "specialty": "Brace & tradition",
+    "specialtyKey": "brace",
+    "stand": "C12",
+    "bio_fr": "Sicile, pouilles, toscane — Isabella Rossi embrasse toutes les régions italiennes du feu. Sa spécialité : la brace familiale, celle où le temps compte moins que le geste transmis.",
+    "bio_en": "Sicily, Puglia, Tuscany — Isabella Rossi embraces all Italian regions of fire. Her specialty: family brace, where time matters less than the gesture passed down.",
+    "sessions": [
+      { "day": "Samedi", "time": "10:00", "type": "Cooking Show", "title": "Brace siciliana" }
+    ],
+    "social": { "followers": 58000 },
+    "portrait": "/content/images/b4a2ab8324_danielle-diva-q-bennett.jpeg"
+  },
+  {
+    "slug": "lars-andersen",
+    "name": "Lars Andersen",
+    "country": "dk",
+    "specialty": "Nordic smoke",
+    "specialtyKey": "nordic_smoke",
+    "stand": "D10",
+    "bio_fr": "Bois de genévrier, saumon fumé, hareng mariné. Lars Andersen apporte une vision scandinave du feu : précision, terroir, produits du froid sublimés par la fumée douce.",
+    "bio_en": "Juniper wood, smoked salmon, pickled herring. Lars Andersen brings a Scandinavian vision of fire: precision, terroir, cold-climate ingredients elevated by soft smoke.",
+    "sessions": [
+      { "day": "Vendredi", "time": "15:00", "type": "Masterclass", "title": "Saumon fumé au genévrier" }
+    ],
+    "social": { "followers": 47000 },
+    "portrait": "/content/images/420805f26c_david-w-olson.jpeg"
+  },
+  {
+    "slug": "mathilde-laurent",
+    "name": "Mathilde Laurent",
+    "country": "be",
+    "specialty": "BBQ fusion",
+    "specialtyKey": "fusion",
+    "stand": "A18",
+    "bio_fr": "Belge par le terroir, internationale par la cuisine. Mathilde Laurent tisse des ponts entre les traditions BBQ mondiales et y ajoute un sens du détail typiquement belge — précis, chaleureux, généreux.",
+    "bio_en": "Belgian by terroir, international by cuisine. Mathilde Laurent weaves bridges between world BBQ traditions with a typically Belgian sense of detail — precise, warm, generous.",
+    "sessions": [
+      { "day": "Dimanche", "time": "13:30", "type": "Cooking Show", "title": "Fusion BBQ Europe" }
+    ],
+    "social": { "followers": 38000 },
+    "portrait": "/content/images/5b095a6b8c_le-barbecue-de-rafa.jpeg"
+  }
+]

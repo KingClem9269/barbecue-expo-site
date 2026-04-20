@@ -53,6 +53,7 @@ import FinalCTA from "@/components/homepage/FinalCTA";
 import SectionBreak from "@/components/homepage/SectionBreak";
 import GrillArenaTeaser from "@/components/homepage/GrillArenaTeaser";
 import AwardsTeaser from "@/components/homepage/AwardsTeaser";
+import PitmastersGrid from "@/components/homepage/PitmastersGrid";
 
 const clientComponents = {
   page: Page,
@@ -109,6 +110,8 @@ const clientComponents = {
   // Sprint 8 — signature differentiators
   "grill-arena-teaser": GrillArenaTeaser,
   "awards-teaser": AwardsTeaser,
+  // Sprint 9
+  "pitmasters-grid": PitmastersGrid,
 };
 
 // Register on module load (runs once when client bundle initializes)
