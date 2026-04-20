@@ -50,6 +50,7 @@ import { PageStreetFood } from "@/components/pages/PageStreetFood";
 import Manifesto from "@/components/homepage/Manifesto";
 import PathFork from "@/components/homepage/PathFork";
 import FinalCTA from "@/components/homepage/FinalCTA";
+import SectionBreak from "@/components/homepage/SectionBreak";
 
 const clientComponents = {
   page: Page,
@@ -101,6 +102,8 @@ const clientComponents = {
   "path-fork": PathFork,
   // Sprint 3
   "final-cta": FinalCTA,
+  // Sprint 6
+  "section-break": SectionBreak,
 };
 
 // Register on module load (runs once when client bundle initializes)

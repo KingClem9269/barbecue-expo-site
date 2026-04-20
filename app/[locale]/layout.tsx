@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import "./globals.css";
+import { buildMetadata } from "@/lib/seo";
 
 import { routing } from "@/i18n/routing";
 import { hasLocale } from "next-intl";
@@ -29,14 +29,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Barbecue Expo 2026",
-  description:
-    "LE SALON BBQ N°1 EN EUROPE: Le temps d’un week-end, Barbecue Expo réunit le meilleur du BBQ et de la cuisine outdoor : marques, chefs et pitmasters, nouveautés, démonstrations, dégustations, masterclass et rencontres business.",
-  icons: {
-    icon: "/logo_b_white.svg",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata(locale);
+}
 
 export default async function RootLayout({
   children,
@@ -72,6 +72,20 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
+
+        {/* Brand icons */}
+        <link rel="icon" href="/logo_b_white.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logo_b_only.svg" />
+        <link rel="mask-icon" href="/logo_b_only.svg" color="#F4AD3C" />
+
+        {/* Theme color — drives mobile browser UI tinting */}
+        <meta name="theme-color" content="#0E0E0E" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#F4AD3C" media="(prefers-color-scheme: light)" />
+
+        {/* PWA-lite niceties */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
       </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}

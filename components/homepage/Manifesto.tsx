@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
+import { CharDivider } from "@/components/signature/CharMark";
 
 /**
  * Manifesto Section — editorial big-numbers strip.
@@ -225,14 +226,17 @@ export default function Manifesto({ blok }: { blok: ManifestoBlok }) {
           ))}
         </div>
 
-        {/* Punchline */}
+        {/* Punchline with signature divider above */}
         {data.punchline && (
-          <p
-            className="mt-16 md:mt-24 max-w-3xl text-ink-900 text-xl md:text-2xl lg:text-3xl leading-snug"
-            style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-          >
-            {data.punchline}
-          </p>
+          <div className="mt-16 md:mt-24 max-w-3xl">
+            <CharDivider className="mb-6 md:mb-8 justify-start" />
+            <p
+              className="text-ink-900 text-xl md:text-2xl lg:text-3xl leading-snug"
+              style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+            >
+              {data.punchline}
+            </p>
+          </div>
         )}
       </div>
     </section>

@@ -47,6 +47,7 @@ import { PageStreetFood } from "@/components/pages/PageStreetFood";
 import Manifesto from "@/components/homepage/Manifesto";
 import PathFork from "@/components/homepage/PathFork";
 import FinalCTA from "@/components/homepage/FinalCTA";
+import SectionBreak from "@/components/homepage/SectionBreak";
 
 // Register all components at module load time.
 // This runs once when StoryRenderer is first imported.
@@ -102,6 +103,8 @@ registerComponents({
   "path-fork": PathFork,
   // Sprint 3
   "final-cta": FinalCTA,
+  // Sprint 6
+  "section-break": SectionBreak,
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
