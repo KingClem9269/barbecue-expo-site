@@ -47,6 +47,8 @@ import GoogleMapsMap from "@/components/widget/GoogleMaps";
 import CookingShowWidget from "@/components/widget/CookingShowWidget";
 import ContactForm from "@/components/widget/ContactForm";
 import { PageStreetFood } from "@/components/pages/PageStreetFood";
+import Manifesto from "@/components/homepage/Manifesto";
+import PathFork from "@/components/homepage/PathFork";
 
 const clientComponents = {
   page: Page,
@@ -93,6 +95,9 @@ const clientComponents = {
   CookingShowWidget: CookingShowWidget,
   ContactForm: ContactForm,
   "page-street-food": PageStreetFood,
+  // Sprint 2 — homepage components
+  manifesto: Manifesto,
+  "path-fork": PathFork,
 };
 
 // Register on module load (runs once when client bundle initializes)

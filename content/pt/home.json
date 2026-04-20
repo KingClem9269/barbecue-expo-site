@@ -40,6 +40,14 @@
         }
       },
       {
+        "_uid": "manifesto-1",
+        "component": "manifesto"
+      },
+      {
+        "_uid": "path-fork-1",
+        "component": "path-fork"
+      },
+      {
         "_uid": "709e23cb-6a41-4a67-9945-50c2f614cad1",
         "height": "h-full",
         "content": [

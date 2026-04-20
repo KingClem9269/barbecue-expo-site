@@ -44,6 +44,8 @@ import CookingShowWidget from "@/components/widget/CookingShowWidget";
 import ContactForm from "@/components/widget/ContactForm";
 import PressWeezeventFrame from "@/components/widget/PressWeezeventFrame";
 import { PageStreetFood } from "@/components/pages/PageStreetFood";
+import Manifesto from "@/components/homepage/Manifesto";
+import PathFork from "@/components/homepage/PathFork";
 
 // Register all components at module load time.
 // This runs once when StoryRenderer is first imported.
@@ -94,6 +96,9 @@ registerComponents({
   CookingShowWidget: CookingShowWidget,
   ContactForm: ContactForm,
   "page-street-food": PageStreetFood,
+  // Sprint 2 — homepage components
+  manifesto: Manifesto,
+  "path-fork": PathFork,
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
