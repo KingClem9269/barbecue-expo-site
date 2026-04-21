@@ -5,8 +5,22 @@ import type { MenuItemBlok } from "@/types/storyblok";
 import { X } from "lucide-react";
 import { MobileNavItem } from "./MobileNavItem";
 import { MobileNavSubmenu } from "./MobileNavSubmenu";
+import { MobileProNavItem } from "./MobileProNavItem";
 import { Link } from "@/i18n/navigation";
 import { NavLogo } from "./NavLogo";
+import { useAudience } from "./AudienceContext";
+import { PRO_MENU } from "./proMenu";
+import { useLocale } from "next-intl";
+
+const AUDIENCE_LABELS: Record<string, { b2c: string; pro: string }> = {
+  fr: { b2c: "Grand Public", pro: "Pro" },
+  en: { b2c: "Public", pro: "Pro" },
+  es: { b2c: "Gran Público", pro: "Pro" },
+  de: { b2c: "Allgemein", pro: "Pro" },
+  nl: { b2c: "Publiek", pro: "Pro" },
+  pt: { b2c: "Público", pro: "Pro" },
+  it: { b2c: "Pubblico", pro: "Pro" },
+};
 
 export const MobileNav = ({
   isOpen,
@@ -20,6 +34,9 @@ export const MobileNav = ({
   className?: string;
 }) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const locale = useLocale();
+  const { audience, setAudience } = useAudience();
+  const audienceLabels = AUDIENCE_LABELS[locale] || AUDIENCE_LABELS.fr;
 
   // Lock body scroll while open
   useEffect(() => {
@@ -98,34 +115,85 @@ export const MobileNav = ({
           </button>
         </div>
 
+        {/* Audience toggle on mobile — top of drawer */}
+        <div className="relative px-6 pt-6">
+          <div
+            className="inline-flex items-center gap-1 bg-white/5 border border-white/15 rounded-full p-1 text-[11px] uppercase tracking-widest font-semibold"
+            role="tablist"
+            aria-label="Audience"
+          >
+            <Link
+              href="/visiter"
+              onClick={() => {
+                setAudience("b2c");
+                onClose();
+              }}
+              role="tab"
+              aria-selected={audience === "b2c"}
+              className={`px-3 py-1.5 rounded-full transition-colors ${
+                audience === "b2c"
+                  ? "bg-gold-500 text-ink-950"
+                  : "text-white/80"
+              }`}
+            >
+              {audienceLabels.b2c}
+            </Link>
+            <Link
+              href="/pro"
+              onClick={() => {
+                setAudience("pro");
+                onClose();
+              }}
+              role="tab"
+              aria-selected={audience === "pro"}
+              className={`px-3 py-1.5 rounded-full transition-colors ${
+                audience === "pro"
+                  ? "bg-gold-500 text-ink-950"
+                  : "text-white/80"
+              }`}
+            >
+              {audienceLabels.pro}
+            </Link>
+          </div>
+        </div>
+
         {/* Oversized menu items */}
-        <nav className="relative px-6 py-10 pb-24">
+        <nav className="relative px-6 py-6 pb-24">
           <ul className="list-none m-0 p-0 flex flex-col">
-            {menuItems.map((item, index) => {
-              const menuItem = item as MenuItemBlok;
-              const hasSubmenu =
-                menuItem.submenu && menuItem.submenu.length > 0;
-
-              if (hasSubmenu) {
-                return (
-                  <MobileNavSubmenu
-                    key={item._uid}
-                    menuItem={menuItem}
-                    onLinkClick={onClose}
+            {audience === "pro"
+              ? PRO_MENU.map((item, index) => (
+                  <MobileProNavItem
+                    key={item.key}
+                    item={item}
                     index={index}
+                    onLinkClick={onClose}
                   />
-                );
-              }
+                ))
+              : menuItems.map((item, index) => {
+                  const menuItem = item as MenuItemBlok;
+                  const hasSubmenu =
+                    menuItem.submenu && menuItem.submenu.length > 0;
 
-              return (
-                <MobileNavItem
-                  key={item._uid}
-                  menuItem={menuItem}
-                  onLinkClick={onClose}
-                  index={index}
-                />
-              );
-            })}
+                  if (hasSubmenu) {
+                    return (
+                      <MobileNavSubmenu
+                        key={item._uid}
+                        menuItem={menuItem}
+                        onLinkClick={onClose}
+                        index={index}
+                      />
+                    );
+                  }
+
+                  return (
+                    <MobileNavItem
+                      key={item._uid}
+                      menuItem={menuItem}
+                      onLinkClick={onClose}
+                      index={index}
+                    />
+                  );
+                })}
           </ul>
         </nav>
       </div>

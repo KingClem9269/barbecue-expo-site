@@ -12,6 +12,10 @@ import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { AudienceToggle } from "./AudienceToggle";
+import { useAudience } from "./AudienceContext";
+import { PRO_MENU } from "./proMenu";
+import { ProNavMenuItem } from "./ProNavMenuItem";
+import { ProTicketButton } from "./ProTicketButton";
 
 export function DesktopNav({
   menuItems,
@@ -35,6 +39,7 @@ export function DesktopNav({
   tickets_press_slug: string;
 }) {
   const locale = useLocale();
+  const { audience } = useAudience();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -83,33 +88,41 @@ export function DesktopNav({
             </Link>
           </li>
           <ul className="hidden lg:flex flex-wrap items-center justify-center gap-2 list-none m-0 p-0 text-white font-bold flex-1">
-            {menuItems.map((item) => {
-              const menuItem = item as MenuItemBlok;
-              const hasSubmenu =
-                menuItem.submenu && menuItem.submenu.length > 0;
+            {audience === "pro"
+              ? PRO_MENU.map((item) => (
+                  <ProNavMenuItem key={item.key} item={item} />
+                ))
+              : menuItems.map((item) => {
+                  const menuItem = item as MenuItemBlok;
+                  const hasSubmenu =
+                    menuItem.submenu && menuItem.submenu.length > 0;
 
-              if (hasSubmenu) {
-                return (
-                  <NavMenuWithSubmenu key={item._uid} menuItem={menuItem} />
-                );
-              }
+                  if (hasSubmenu) {
+                    return (
+                      <NavMenuWithSubmenu key={item._uid} menuItem={menuItem} />
+                    );
+                  }
 
-              return <NavMenuItem key={item._uid} menuItem={menuItem} />;
-            })}
+                  return <NavMenuItem key={item._uid} menuItem={menuItem} />;
+                })}
           </ul>
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <AudienceToggle />
             <LocaleSwitcher currentLocale={locale} />
-          <DesktopTicketButton
-            tickets={tickets}
-            tickets_slug={tickets_slug}
-            tickets_b2c_label={tickets_b2c_label}
-            tickets_b2c_slug={tickets_b2c_slug}
-            tickets_b2b_label={tickets_b2b_label}
-            tickets_b2b_slug={tickets_b2b_slug}
-            tickets_press_label={tickets_press_label}
-            tickets_press_slug={tickets_press_slug}
-          />
+            {audience === "pro" ? (
+              <ProTicketButton />
+            ) : (
+              <DesktopTicketButton
+                tickets={tickets}
+                tickets_slug={tickets_slug}
+                tickets_b2c_label={tickets_b2c_label}
+                tickets_b2c_slug={tickets_b2c_slug}
+                tickets_b2b_label={tickets_b2b_label}
+                tickets_b2b_slug={tickets_b2b_slug}
+                tickets_press_label={tickets_press_label}
+                tickets_press_slug={tickets_press_slug}
+              />
+            )}
           </div>
         </div>
       </nav>

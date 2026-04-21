@@ -14,6 +14,7 @@ import { ClientRegistryInit } from "@/lib/ClientRegistry";
 import EmberCursor from "@/components/signature/EmberCursor";
 import PageTransition from "@/components/signature/PageTransition";
 import SkipLink from "@/components/a11y/SkipLink";
+import { AudienceProvider } from "@/components/nav/AudienceContext";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -92,6 +93,7 @@ export default async function RootLayout({
         >
           <ClientRegistryInit />
           <NextIntlClientProvider locale={locale}>
+            <AudienceProvider>
             <SkipLink />
             <EmberCursor />
             <PageTransition />
@@ -113,6 +115,7 @@ export default async function RootLayout({
             </main>
             <Newsletter />
             <Footer data={siteSettings?.content} locale={locale} />
+            </AudienceProvider>
           </NextIntlClientProvider>
         </body>
       <GoogleAnalytics gaId="G-YTGWDLVH99" />
