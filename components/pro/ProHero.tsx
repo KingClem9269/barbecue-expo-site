@@ -1,108 +1,96 @@
 "use client";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ArrowUpRight, Users, TrendingUp, Globe2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 /**
- * ProHero — B2B hero for /pro.
- * Institutional tone, data-driven. Four quick stats + dual CTA (stand + press).
+ * ProHero — humanized editorial hero for /pro.
+ *
+ * Full-bleed photo backdrop, large editorial slogan (not metrics),
+ * one prose paragraph, two CTAs. Numbers are mentioned in flowing
+ * text inside the paragraph rather than dashboard cards.
  */
 
 const UI: Record<
   string,
   {
     eyebrow: string;
-    title: string;
-    subtitle: string;
-    statVisitors: string;
-    statBrands: string;
-    statNationalities: string;
-    statGrowth: string;
+    line1: string;
+    line2_highlight: string;
+    line3: string;
+    paragraph: string;
     ctaStand: string;
     ctaPress: string;
   }
 > = {
   fr: {
     eyebrow: "Pro & B2B · Édition 2027",
-    title: "Le rendez-vous annuel du BBQ européen.",
-    subtitle:
-      "Trois jours, une audience qualifiée, les marques qui comptent. Devenez exposant 2027 ou rejoignez notre programme presse.",
-    statVisitors: "Visiteurs 2026",
-    statBrands: "Marques internationales",
-    statNationalities: "Nationalités représentées",
-    statGrowth: "Objectif 2027",
+    line1: "Le rendez-vous",
+    line2_highlight: "des marques",
+    line3: "BBQ d'Europe.",
+    paragraph:
+      "Trois jours, un seul lieu, une audience choisie. Vingt-cinq mille huit cent quatre-vingt-seize visiteurs en 2026, dont une part décisive de revendeurs, distributeurs et acheteurs. Deux cent cinquante marques venues de quinze pays. Vingt-cinq nationalités dans le public. Pas un salon de plus — le carrefour annuel du métier.",
     ctaStand: "Devenir exposant",
     ctaPress: "Espace presse",
   },
   en: {
     eyebrow: "Pro & B2B · 2027 edition",
-    title: "The annual rendezvous of European BBQ.",
-    subtitle:
-      "Three days, a qualified audience, the brands that matter. Become a 2027 exhibitor or join our press program.",
-    statVisitors: "Visitors in 2026",
-    statBrands: "International brands",
-    statNationalities: "Nationalities represented",
-    statGrowth: "2027 target",
+    line1: "The meeting place",
+    line2_highlight: "of European",
+    line3: "BBQ brands.",
+    paragraph:
+      "Three days, one place, a chosen audience. Twenty-five thousand visitors in 2026, with a decisive share of resellers, distributors and buyers. Two hundred and fifty brands from fifteen countries. Twenty-five nationalities in the audience. Not just another show — the annual industry crossroads.",
     ctaStand: "Become an exhibitor",
     ctaPress: "Press room",
   },
   es: {
     eyebrow: "Pro & B2B · Edición 2027",
-    title: "La cita anual del BBQ europeo.",
-    subtitle:
-      "Tres días, una audiencia cualificada, las marcas que importan. Conviértase en expositor 2027 o únase a nuestro programa de prensa.",
-    statVisitors: "Visitantes 2026",
-    statBrands: "Marcas internacionales",
-    statNationalities: "Nacionalidades representadas",
-    statGrowth: "Objetivo 2027",
+    line1: "El punto de encuentro",
+    line2_highlight: "de las marcas",
+    line3: "BBQ de Europa.",
+    paragraph:
+      "Tres días, un solo lugar, una audiencia elegida. Veinticinco mil visitantes en 2026, con una parte decisiva de revendedores, distribuidores y compradores. Doscientas cincuenta marcas de quince países. Veinticinco nacionalidades en el público.",
     ctaStand: "Ser expositor",
     ctaPress: "Sala de prensa",
   },
   de: {
     eyebrow: "Pro & B2B · Ausgabe 2027",
-    title: "Das jährliche Treffen des europäischen BBQ.",
-    subtitle:
-      "Drei Tage, ein qualifiziertes Publikum, die wichtigsten Marken. Werden Sie Aussteller 2027 oder treten Sie unserem Presseprogramm bei.",
-    statVisitors: "Besucher 2026",
-    statBrands: "Internationale Marken",
-    statNationalities: "Vertretene Nationalitäten",
-    statGrowth: "Ziel 2027",
+    line1: "Der Treffpunkt",
+    line2_highlight: "der europäischen",
+    line3: "BBQ-Marken.",
+    paragraph:
+      "Drei Tage, ein Ort, ein ausgewähltes Publikum. Fünfundzwanzigtausend Besucher 2026, mit einem entscheidenden Anteil von Wiederverkäufern, Distributoren und Einkäufern. Zweihundertfünfzig Marken aus fünfzehn Ländern. Fünfundzwanzig Nationalitäten im Publikum.",
     ctaStand: "Aussteller werden",
     ctaPress: "Pressebereich",
   },
   nl: {
     eyebrow: "Pro & B2B · Editie 2027",
-    title: "De jaarlijkse ontmoeting van de Europese BBQ.",
-    subtitle:
-      "Drie dagen, een gekwalificeerd publiek, de merken die ertoe doen. Word exposant 2027 of sluit u aan bij ons persprogramma.",
-    statVisitors: "Bezoekers 2026",
-    statBrands: "Internationale merken",
-    statNationalities: "Vertegenwoordigde nationaliteiten",
-    statGrowth: "Doel 2027",
+    line1: "Het ontmoetingspunt",
+    line2_highlight: "van Europese",
+    line3: "BBQ-merken.",
+    paragraph:
+      "Drie dagen, één plek, een gekozen publiek. Vijfentwintigduizend bezoekers in 2026, met een doorslaggevend aandeel doorverkopers, distributeurs en kopers. Tweehonderdvijftig merken uit vijftien landen. Vijfentwintig nationaliteiten in het publiek.",
     ctaStand: "Exposant worden",
     ctaPress: "Perszaal",
   },
   pt: {
     eyebrow: "Pro & B2B · Edição 2027",
-    title: "O encontro anual do BBQ europeu.",
-    subtitle:
-      "Três dias, um público qualificado, as marcas que importam. Torne-se expositor 2027 ou junte-se ao nosso programa de imprensa.",
-    statVisitors: "Visitantes 2026",
-    statBrands: "Marcas internacionais",
-    statNationalities: "Nacionalidades representadas",
-    statGrowth: "Meta 2027",
+    line1: "O ponto de encontro",
+    line2_highlight: "das marcas",
+    line3: "BBQ da Europa.",
+    paragraph:
+      "Três dias, um só lugar, uma audiência escolhida. Vinte e cinco mil visitantes em 2026, com uma parte decisiva de revendedores, distribuidores e compradores. Duzentas e cinquenta marcas de quinze países. Vinte e cinco nacionalidades no público.",
     ctaStand: "Ser expositor",
     ctaPress: "Sala de imprensa",
   },
   it: {
     eyebrow: "Pro & B2B · Edizione 2027",
-    title: "L'appuntamento annuale del BBQ europeo.",
-    subtitle:
-      "Tre giorni, un pubblico qualificato, i marchi che contano. Diventa espositore 2027 o unisciti al nostro programma stampa.",
-    statVisitors: "Visitatori 2026",
-    statBrands: "Marchi internazionali",
-    statNationalities: "Nazionalità rappresentate",
-    statGrowth: "Obiettivo 2027",
+    line1: "Il punto d'incontro",
+    line2_highlight: "dei marchi",
+    line3: "BBQ d'Europa.",
+    paragraph:
+      "Tre giorni, un solo luogo, un pubblico scelto. Venticinquemila visitatori nel 2026, con una parte decisiva di rivenditori, distributori e acquirenti. Duecentocinquanta marchi da quindici paesi. Venticinque nazionalità tra il pubblico.",
     ctaStand: "Diventare espositore",
     ctaPress: "Sala stampa",
   },
@@ -114,62 +102,50 @@ export default function ProHero() {
 
   return (
     <section
-      className="relative w-full min-h-[100dvh] overflow-hidden bg-ink-950 pt-24 md:pt-28"
-      aria-label="Professionnels — Barbecue Expo"
+      className="relative w-full min-h-[100dvh] overflow-hidden bg-ink-950"
+      aria-label="Pro — Barbecue Expo"
     >
-      {/* Subtle radial glow, not full video — institutional */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-gradient-radial from-gold-500/20 via-transparent to-transparent blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[700px] h-[700px] rounded-full bg-gradient-radial from-char-800/40 via-transparent to-transparent blur-3xl" />
-      </div>
+      {/* Full-bleed photo background — pig on rotisserie, smoke, fire */}
+      <Image
+        src="/photos-2026/william-plin-jpc-110426-533a3756.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col justify-center min-h-[calc(100dvh-8rem)]">
+      {/* Editorial gradient — strong on left for text legibility */}
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-ink-950/95 via-ink-950/70 to-ink-950/40"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent"
+        aria-hidden="true"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 pb-20 md:pb-28 flex flex-col justify-end min-h-[100dvh]">
         {/* Eyebrow */}
         <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold mb-10 md:mb-14">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
           {ui.eyebrow}
         </div>
 
-        {/* Title + subtitle */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-20">
-          <div className="lg:col-span-8">
-            <h1
-              className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight font-bold"
-              style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-            >
-              {ui.title}
-            </h1>
-          </div>
-          <div className="lg:col-span-4 lg:pt-2">
-            <p className="text-cream-50/85 text-base md:text-lg leading-relaxed">
-              {ui.subtitle}
-            </p>
-          </div>
-        </div>
+        {/* Massive editorial slogan */}
+        <h1
+          className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] tracking-tight font-bold max-w-5xl"
+          style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+        >
+          <span className="block">{ui.line1}</span>
+          <span className="block text-gold-500">{ui.line2_highlight}</span>
+          <span className="block">{ui.line3}</span>
+        </h1>
 
-        {/* Stats dashboard */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          <StatCell
-            icon={<Users className="w-5 h-5 text-gold-500" strokeWidth={2} />}
-            value="25 896"
-            label={ui.statVisitors}
-          />
-          <StatCell
-            icon={<Globe2 className="w-5 h-5 text-gold-500" strokeWidth={2} />}
-            value="250"
-            label={ui.statBrands}
-          />
-          <StatCell
-            icon={<Globe2 className="w-5 h-5 text-gold-500" strokeWidth={2} />}
-            value="25"
-            label={ui.statNationalities}
-          />
-          <StatCell
-            icon={<TrendingUp className="w-5 h-5 text-gold-500" strokeWidth={2} />}
-            value="+30 000"
-            label={ui.statGrowth}
-          />
-        </div>
+        {/* One prose paragraph — numbers in flowing text */}
+        <p className="mt-10 md:mt-14 text-cream-50/90 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl font-light">
+          {ui.paragraph}
+        </p>
 
         {/* CTAs */}
         <div className="mt-10 md:mt-14 flex flex-col sm:flex-row gap-4">
@@ -196,30 +172,5 @@ export default function ProHero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function StatCell({
-  icon,
-  value,
-  label,
-}: {
-  icon: React.ReactNode;
-  value: string;
-  label: string;
-}) {
-  return (
-    <div className="border border-white/15 bg-white/[0.02] rounded-sm p-5 md:p-6 hover:border-gold-500/40 transition-colors">
-      <div className="mb-3">{icon}</div>
-      <div
-        className="text-cream-50 text-3xl md:text-4xl lg:text-5xl leading-none font-bold tabular-nums mb-2"
-        style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-      >
-        {value}
-      </div>
-      <div className="text-cream-50/70 text-xs md:text-sm uppercase tracking-widest font-medium">
-        {label}
-      </div>
-    </div>
   );
 }

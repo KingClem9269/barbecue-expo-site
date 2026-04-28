@@ -1,262 +1,252 @@
 "use client";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Target, Eye, HandshakeIcon, Zap } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 /**
- * ExhibitorBenefits — what a brand gets by becoming an exhibitor.
- * Cream-100 background (contrasts with dark ProHero). 4 benefits in grid.
+ * ExhibitorBenefits — long-form editorial.
+ *
+ * Replaces the previous 4-card grid with alternating photo/text rows.
+ * Each row tells one reason in flowing prose, with an evocative photo.
+ * Warm, slow rhythm, no icons. Acts like the inside spread of a magazine.
  */
+
+interface Block {
+  number: string;
+  title: string;
+  body: string;
+  image: string;
+}
 
 const UI: Record<
   string,
   {
     eyebrow: string;
-    title: string;
-    subtitle: string;
-    benefits: { title: string; body: string }[];
+    headline: string;
+    intro: string;
+    blocks: Block[];
     cta: string;
   }
 > = {
   fr: {
     eyebrow: "Pourquoi exposer",
-    title: "Le bon salon, au bon moment.",
-    subtitle:
-      "Barbecue Expo n'est pas un salon généraliste. C'est le seul événement européen entièrement dédié au BBQ, aux pitmasters, et à la cuisine outdoor.",
-    benefits: [
+    headline: "Quatre raisons d'y être.",
+    intro:
+      "Pas de speech corporate, pas de slides. Voici comment, concrètement, Barbecue Expo travaille pour ses exposants — vu de l'intérieur.",
+    blocks: [
       {
-        title: "Audience hyper qualifiée",
-        body: "25 896 visiteurs dont une large part de pros, prescripteurs, acheteurs. Pas de curieux — des gens qui achètent.",
+        number: "01",
+        title: "Une audience qui sait pourquoi elle vient.",
+        body: "Le visiteur Barbecue Expo n'est pas en balade. Il vient acheter un grill, comparer des charbons, rencontrer une marque qu'il suit depuis trois ans. Plus de la moitié du public est composé de prescripteurs, revendeurs ou pros — un mix rare, qu'on construit avec exigence depuis la première édition.",
+        image: "/photos-2026/bbq-expo-184.jpg",
       },
       {
-        title: "Visibilité presse",
-        body: "Partenaires médias dédiés BBQ et gastronomie. Couverture presse internationale. Awards 2027 pour distinguer les innovations.",
+        number: "02",
+        title: "La presse vous lit, vous regarde, vous cite.",
+        body: "Médias gastronomiques, presse outdoor, blogueurs spécialisés, podcasts métier, presse régionale. Cinq dossiers de presse envoyés par mois pendant six mois. Et, pour la première fois en 2027, les Awards Barbecue Expo : or, argent, bronze sur cinq catégories — pour distinguer les marques que le marché doit suivre.",
+        image: "/photos-2026/bbq-expo-105.jpg",
       },
       {
-        title: "Matchmaking B2B",
-        body: "Programme de rencontres pré-qualifiées avec distributeurs européens. Agenda rendez-vous facilité avant l'événement.",
+        number: "03",
+        title: "Le matchmaking B2B, vraiment.",
+        body: "Avant le salon, vous recevez la liste des acheteurs présents — distributeurs européens, enseignes spécialisées, e-commerçants, GMS, HORECA. Vous demandez vos rendez-vous. Nous bloquons les créneaux. Vous arrivez avec un agenda, pas avec l'espoir de croiser quelqu'un.",
+        image: "/photos-2026/bbq-expo-008.jpg",
       },
       {
-        title: "Lancement de produits",
-        body: "25 nationalités représentées côté public. Un accès immédiat à l'ensemble des marchés européens depuis un seul stand.",
+        number: "04",
+        title: "L'Europe en trois jours.",
+        body: "Quinze pays côté exposants, vingt-cinq nationalités côté visiteurs. Le seul endroit en Europe où votre marque peut, depuis un seul stand, parler à un acheteur belge, à un distributeur allemand, à un e-commerçant espagnol et à un caviste italien. Vous gagnez un trimestre de roadshow.",
+        image: "/photos-2026/bbq-expo-403.jpg",
       },
     ],
-    cta: "Télécharger le dossier exposant",
+    cta: "Demander le dossier exposant",
   },
   en: {
     eyebrow: "Why exhibit",
-    title: "The right show, at the right time.",
-    subtitle:
-      "Barbecue Expo is not a generalist show. It's the only European event entirely dedicated to BBQ, pitmasters, and outdoor cooking.",
-    benefits: [
+    headline: "Four reasons to be there.",
+    intro:
+      "No corporate speech, no slides. Here is how, concretely, Barbecue Expo works for its exhibitors — seen from inside.",
+    blocks: [
       {
-        title: "Hyper-qualified audience",
-        body: "25,896 visitors with a large share of pros, tastemakers, buyers. No casuals — people who buy.",
+        number: "01",
+        title: "An audience that knows why it came.",
+        body: "Our visitor isn't strolling. They come to buy a grill, compare charcoals, meet a brand they've been following for three years. More than half of the audience is made up of tastemakers, resellers and professionals — a rare mix we've been crafting since day one.",
+        image: "/photos-2026/bbq-expo-184.jpg",
       },
       {
-        title: "Press visibility",
-        body: "Dedicated BBQ and food media partners. International press coverage. 2027 Awards to distinguish innovations.",
+        number: "02",
+        title: "The press reads you, watches you, quotes you.",
+        body: "Food media, outdoor press, specialist bloggers, industry podcasts, regional press. Five press releases sent per month for six months. And for the first time in 2027, the Barbecue Expo Awards: gold, silver, bronze across five categories — to distinguish the brands the market should follow.",
+        image: "/photos-2026/bbq-expo-105.jpg",
       },
       {
-        title: "B2B matchmaking",
-        body: "Pre-qualified meeting program with European distributors. Streamlined pre-event booking.",
+        number: "03",
+        title: "B2B matchmaking, for real.",
+        body: "Before the show, you receive the list of buyers attending — European distributors, specialty chains, e-commerce, mass retailers, HORECA. You request your meetings. We lock the slots. You arrive with an agenda, not with the hope of bumping into someone.",
+        image: "/photos-2026/bbq-expo-008.jpg",
       },
       {
-        title: "Product launches",
-        body: "25 nationalities in the audience. Immediate access to all European markets from a single stand.",
+        number: "04",
+        title: "Europe in three days.",
+        body: "Fifteen exhibiting countries, twenty-five visitor nationalities. The only place in Europe where, from a single stand, you can talk to a Belgian buyer, a German distributor, a Spanish e-commerce and an Italian wine seller. You save a quarter of roadshow.",
+        image: "/photos-2026/bbq-expo-403.jpg",
       },
     ],
-    cta: "Download the exhibitor kit",
+    cta: "Request the exhibitor kit",
   },
   es: {
     eyebrow: "Por qué exponer",
-    title: "La feria correcta, en el momento correcto.",
-    subtitle:
-      "Barbecue Expo no es una feria generalista. Es el único evento europeo dedicado al BBQ, a los pitmasters y a la cocina al aire libre.",
-    benefits: [
-      {
-        title: "Audiencia hiper cualificada",
-        body: "25.896 visitantes, una gran parte profesionales, prescriptores, compradores. Nada de curiosos — gente que compra.",
-      },
-      {
-        title: "Visibilidad de prensa",
-        body: "Socios mediáticos dedicados al BBQ y la gastronomía. Cobertura de prensa internacional. Premios 2027 para distinguir las innovaciones.",
-      },
-      {
-        title: "Matchmaking B2B",
-        body: "Programa de reuniones pre-cualificadas con distribuidores europeos. Agenda pre-evento simplificada.",
-      },
-      {
-        title: "Lanzamientos de producto",
-        body: "25 nacionalidades representadas. Acceso inmediato a todos los mercados europeos desde un único stand.",
-      },
+    headline: "Cuatro razones para estar.",
+    intro:
+      "Sin discurso corporativo, sin diapositivas. Así es como, concretamente, Barbecue Expo trabaja para sus expositores — visto desde dentro.",
+    blocks: [
+      { number: "01", title: "Una audiencia que sabe por qué viene.", body: "Nuestro visitante no pasea. Viene a comprar un grill, comparar carbones, conocer una marca que sigue desde hace años. Más de la mitad del público son prescriptores, revendedores o profesionales.", image: "/photos-2026/bbq-expo-184.jpg" },
+      { number: "02", title: "La prensa le lee, le mira, le cita.", body: "Medios gastronómicos, prensa outdoor, blogueros especializados, podcasts profesionales. Y por primera vez en 2027, los Premios Barbecue Expo: oro, plata, bronce sobre cinco categorías.", image: "/photos-2026/bbq-expo-105.jpg" },
+      { number: "03", title: "El matchmaking B2B, de verdad.", body: "Antes del salón, recibe la lista de compradores presentes — distribuidores europeos, cadenas especializadas, e-commerce, gran distribución, HORECA. Pide sus citas. Bloqueamos las franjas. Llega con una agenda.", image: "/photos-2026/bbq-expo-008.jpg" },
+      { number: "04", title: "Europa en tres días.", body: "Quince países expositores, veinticinco nacionalidades de visitantes. El único lugar de Europa donde, desde un solo stand, puede hablar con un comprador belga, un distribuidor alemán, un e-commerce español y un sumiller italiano.", image: "/photos-2026/bbq-expo-403.jpg" },
     ],
-    cta: "Descargar el dossier expositor",
+    cta: "Pedir el dossier de expositor",
   },
   de: {
     eyebrow: "Warum ausstellen",
-    title: "Die richtige Messe, zur richtigen Zeit.",
-    subtitle:
-      "Barbecue Expo ist keine Generalisten-Messe. Es ist die einzige europäische Veranstaltung, die sich vollständig dem BBQ, den Pitmastern und dem Outdoor-Kochen widmet.",
-    benefits: [
-      {
-        title: "Hochqualifiziertes Publikum",
-        body: "25.896 Besucher, davon ein großer Anteil Profis, Meinungsbildner, Einkäufer. Keine Schaulustigen — Menschen, die kaufen.",
-      },
-      {
-        title: "Pressearbeit",
-        body: "Dedizierte Medienpartner für BBQ und Gastronomie. Internationale Pressearbeit. Awards 2027 zur Auszeichnung von Innovationen.",
-      },
-      {
-        title: "B2B-Matchmaking",
-        body: "Vorqualifiziertes Meeting-Programm mit europäischen Distributoren. Vereinfachte Terminplanung vor dem Event.",
-      },
-      {
-        title: "Produkt-Launches",
-        body: "25 vertretene Nationalitäten. Unmittelbarer Zugang zu allen europäischen Märkten von einem einzigen Stand aus.",
-      },
+    headline: "Vier Gründe, dabei zu sein.",
+    intro:
+      "Keine Konzern-Reden, keine Folien. So arbeitet Barbecue Expo konkret für seine Aussteller — von innen gesehen.",
+    blocks: [
+      { number: "01", title: "Ein Publikum, das weiß, warum es kommt.", body: "Unser Besucher schlendert nicht. Er kommt, um einen Grill zu kaufen, Holzkohle zu vergleichen, eine Marke zu treffen, der er seit drei Jahren folgt. Mehr als die Hälfte des Publikums sind Meinungsführer, Wiederverkäufer oder Profis.", image: "/photos-2026/bbq-expo-184.jpg" },
+      { number: "02", title: "Die Presse liest, beobachtet und zitiert Sie.", body: "Gastronomie-Medien, Outdoor-Presse, Fach-Blogger, Branchen-Podcasts. Und 2027 zum ersten Mal die Barbecue Expo Awards: Gold, Silber, Bronze in fünf Kategorien.", image: "/photos-2026/bbq-expo-105.jpg" },
+      { number: "03", title: "B2B-Matchmaking, wirklich.", body: "Vor der Messe erhalten Sie die Liste der anwesenden Einkäufer — europäische Distributoren, Fachketten, E-Commerce, Großhandel, HORECA. Sie fordern Ihre Termine an. Wir blockieren die Slots. Sie kommen mit einer Agenda, nicht mit Hoffnung.", image: "/photos-2026/bbq-expo-008.jpg" },
+      { number: "04", title: "Europa in drei Tagen.", body: "Fünfzehn ausstellende Länder, fünfundzwanzig Besucher-Nationalitäten. Der einzige Ort in Europa, an dem Sie von einem einzigen Stand aus mit einem belgischen Käufer, einem deutschen Distributor, einem spanischen E-Händler und einem italienischen Weinhändler sprechen können.", image: "/photos-2026/bbq-expo-403.jpg" },
     ],
-    cta: "Ausstellerunterlagen herunterladen",
+    cta: "Ausstellerunterlagen anfordern",
   },
   nl: {
     eyebrow: "Waarom exposeren",
-    title: "De juiste beurs, op het juiste moment.",
-    subtitle:
-      "Barbecue Expo is geen generalistische beurs. Het is het enige Europese evenement volledig gewijd aan BBQ, pitmasters en buitenkoken.",
-    benefits: [
-      {
-        title: "Hypergekwalificeerd publiek",
-        body: "25.896 bezoekers, waarvan een groot deel pros, toonaangevers, kopers. Geen nieuwsgierigen — mensen die kopen.",
-      },
-      {
-        title: "Persaandacht",
-        body: "Speciale BBQ- en gastronomie-mediapartners. Internationale perskaart. 2027 Awards om innovaties te onderscheiden.",
-      },
-      {
-        title: "B2B-matchmaking",
-        body: "Vooraf gekwalificeerd meetingprogramma met Europese distributeurs. Gestroomlijnde planning voor het event.",
-      },
-      {
-        title: "Productlanceringen",
-        body: "25 nationaliteiten vertegenwoordigd. Directe toegang tot alle Europese markten vanaf één stand.",
-      },
+    headline: "Vier redenen om erbij te zijn.",
+    intro:
+      "Geen corporate speech, geen slides. Zo werkt Barbecue Expo concreet voor zijn exposanten — van binnenuit gezien.",
+    blocks: [
+      { number: "01", title: "Een publiek dat weet waarom het komt.", body: "Onze bezoeker wandelt niet rond. Hij komt om een grill te kopen, houtskool te vergelijken, een merk te ontmoeten dat hij al drie jaar volgt. Meer dan de helft bestaat uit toonaangevers, doorverkopers of professionals.", image: "/photos-2026/bbq-expo-184.jpg" },
+      { number: "02", title: "De pers leest u, kijkt naar u, citeert u.", body: "Gastronomische media, outdoor-pers, gespecialiseerde bloggers, vak-podcasts. En in 2027 voor het eerst de Barbecue Expo Awards: goud, zilver, brons in vijf categorieën.", image: "/photos-2026/bbq-expo-105.jpg" },
+      { number: "03", title: "B2B-matchmaking, echt.", body: "Vóór de beurs ontvangt u de lijst met aanwezige kopers — Europese distributeurs, gespecialiseerde ketens, e-commerce, retail, HORECA. U vraagt uw afspraken aan. Wij blokkeren de slots. U komt met een agenda.", image: "/photos-2026/bbq-expo-008.jpg" },
+      { number: "04", title: "Europa in drie dagen.", body: "Vijftien deelnemende landen, vijfentwintig bezoekersnationaliteiten. De enige plek in Europa waar u vanaf één stand kunt praten met een Belgische koper, een Duitse distributeur, een Spaanse e-commerce en een Italiaanse wijnhandelaar.", image: "/photos-2026/bbq-expo-403.jpg" },
     ],
-    cta: "Exposant-dossier downloaden",
+    cta: "Exposant-dossier aanvragen",
   },
   pt: {
     eyebrow: "Porquê expor",
-    title: "A feira certa, no momento certo.",
-    subtitle:
-      "Barbecue Expo não é uma feira generalista. É o único evento europeu totalmente dedicado ao BBQ, aos pitmasters e à cozinha ao ar livre.",
-    benefits: [
-      {
-        title: "Audiência hiper qualificada",
-        body: "25.896 visitantes com uma grande parcela de profissionais, prescritores, compradores. Nada de curiosos — pessoas que compram.",
-      },
-      {
-        title: "Visibilidade na imprensa",
-        body: "Parceiros de media dedicados ao BBQ e à gastronomia. Cobertura de imprensa internacional. Prémios 2027 para distinguir as inovações.",
-      },
-      {
-        title: "Matchmaking B2B",
-        body: "Programa de reuniões pré-qualificadas com distribuidores europeus. Agendamento pré-evento simplificado.",
-      },
-      {
-        title: "Lançamentos de produto",
-        body: "25 nacionalidades representadas. Acesso imediato a todos os mercados europeus a partir de um único stand.",
-      },
+    headline: "Quatro razões para estar.",
+    intro:
+      "Sem discurso corporativo, sem slides. É assim que, concretamente, Barbecue Expo trabalha para os seus expositores — visto de dentro.",
+    blocks: [
+      { number: "01", title: "Um público que sabe porque vem.", body: "O nosso visitante não passeia. Vem comprar uma grelha, comparar carvões, conhecer uma marca que segue há três anos. Mais de metade do público são prescritores, revendedores ou profissionais.", image: "/photos-2026/bbq-expo-184.jpg" },
+      { number: "02", title: "A imprensa lê-o, observa-o, cita-o.", body: "Media gastronómicos, imprensa outdoor, bloggers especializados, podcasts profissionais. E pela primeira vez em 2027, os Prémios Barbecue Expo: ouro, prata, bronze em cinco categorias.", image: "/photos-2026/bbq-expo-105.jpg" },
+      { number: "03", title: "Matchmaking B2B, a sério.", body: "Antes da feira, recebe a lista de compradores presentes — distribuidores europeus, cadeias especializadas, e-commerce, retalho, HORECA. Pede as suas reuniões. Bloqueamos os slots. Chega com uma agenda.", image: "/photos-2026/bbq-expo-008.jpg" },
+      { number: "04", title: "A Europa em três dias.", body: "Quinze países expositores, vinte e cinco nacionalidades de visitantes. O único lugar na Europa onde, a partir de um só stand, pode falar com um comprador belga, um distribuidor alemão, um e-commerce espanhol e um comerciante italiano.", image: "/photos-2026/bbq-expo-403.jpg" },
     ],
-    cta: "Descarregar o dossier expositor",
+    cta: "Pedir o dossier expositor",
   },
   it: {
     eyebrow: "Perché esporre",
-    title: "La fiera giusta, al momento giusto.",
-    subtitle:
-      "Barbecue Expo non è una fiera generalista. È l'unico evento europeo interamente dedicato al BBQ, ai pitmaster e alla cucina outdoor.",
-    benefits: [
-      {
-        title: "Pubblico iper qualificato",
-        body: "25.896 visitatori, in gran parte professionisti, prescrittori, acquirenti. Niente curiosi — persone che acquistano.",
-      },
-      {
-        title: "Visibilità stampa",
-        body: "Partner media dedicati al BBQ e alla gastronomia. Copertura stampa internazionale. Premi 2027 per distinguere le innovazioni.",
-      },
-      {
-        title: "Matchmaking B2B",
-        body: "Programma di incontri pre-qualificati con distributori europei. Pianificazione pre-evento semplificata.",
-      },
-      {
-        title: "Lanci di prodotto",
-        body: "25 nazionalità rappresentate. Accesso immediato a tutti i mercati europei da un unico stand.",
-      },
+    headline: "Quattro ragioni per esserci.",
+    intro:
+      "Niente discorsi corporate, niente slide. Ecco come, concretamente, Barbecue Expo lavora per i suoi espositori — visto dall'interno.",
+    blocks: [
+      { number: "01", title: "Un pubblico che sa perché viene.", body: "Il nostro visitatore non passeggia. Viene per comprare un grill, confrontare carboni, incontrare un marchio che segue da tre anni. Più della metà del pubblico è composto da prescrittori, rivenditori o professionisti.", image: "/photos-2026/bbq-expo-184.jpg" },
+      { number: "02", title: "La stampa ti legge, ti osserva, ti cita.", body: "Media gastronomici, stampa outdoor, blogger specializzati, podcast di settore. E per la prima volta nel 2027, i Premi Barbecue Expo: oro, argento, bronzo su cinque categorie.", image: "/photos-2026/bbq-expo-105.jpg" },
+      { number: "03", title: "Matchmaking B2B, sul serio.", body: "Prima della fiera, ricevi la lista degli acquirenti presenti — distributori europei, catene specializzate, e-commerce, GDO, HORECA. Richiedi i tuoi appuntamenti. Blocchiamo gli slot. Arrivi con un'agenda.", image: "/photos-2026/bbq-expo-008.jpg" },
+      { number: "04", title: "L'Europa in tre giorni.", body: "Quindici paesi espositori, venticinque nazionalità di visitatori. L'unico posto in Europa dove, da un solo stand, puoi parlare con un acquirente belga, un distributore tedesco, un e-commerce spagnolo e un sommelier italiano.", image: "/photos-2026/bbq-expo-403.jpg" },
     ],
-    cta: "Scaricare il dossier espositore",
+    cta: "Richiedere il dossier espositore",
   },
 };
-
-const ICONS = [Target, Eye, HandshakeIcon, Zap];
 
 export default function ExhibitorBenefits() {
   const locale = useLocale();
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-cream-100 py-24 md:py-32 lg:py-40" aria-label="Why exhibit">
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8 md:mb-12">
+    <section className="relative w-full bg-cream-50" aria-label="Why exhibit">
+      {/* Top intro */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-12 md:pb-20">
+        <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
           {ui.eyebrow}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-12 md:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end">
           <div className="lg:col-span-8">
             <h2
               className="text-ink-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
-              {ui.title}
+              {ui.headline}
             </h2>
           </div>
-          <div className="lg:col-span-4 lg:pt-3">
+          <div className="lg:col-span-4">
             <p className="text-ink-600 text-base md:text-lg leading-relaxed">
-              {ui.subtitle}
+              {ui.intro}
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {ui.benefits.map((b, i) => {
-            const Icon = ICONS[i % ICONS.length];
-            return (
-              <div
-                key={i}
-                className="border border-ink-900/15 bg-cream-50 rounded-sm p-6 md:p-8 hover:border-gold-500/50 transition-colors"
-              >
-                <div className="mb-5">
-                  <Icon className="w-6 h-6 text-gold-600" strokeWidth={2} />
+      {/* Editorial blocks — alternating layout */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-32 space-y-20 md:space-y-32">
+        {ui.blocks.map((b, i) => {
+          const reverse = i % 2 === 1;
+          return (
+            <div
+              key={b.number}
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${
+                reverse ? "lg:[&>*:first-child]:order-2" : ""
+              }`}
+            >
+              {/* Photo */}
+              <div className="lg:col-span-7 relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src={b.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover"
+                />
+              </div>
+              {/* Text */}
+              <div className="lg:col-span-5">
+                <div
+                  className="text-gold-600 text-sm md:text-base font-bold tabular-nums mb-4"
+                  style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+                >
+                  — {b.number}
                 </div>
                 <h3
-                  className="text-ink-900 text-2xl md:text-3xl leading-tight font-bold mb-3"
+                  className="text-ink-900 text-3xl md:text-4xl lg:text-5xl leading-tight font-bold mb-6"
                   style={{ fontFamily: "SansPlomb-98, sans-serif" }}
                 >
                   {b.title}
                 </h3>
-                <p className="text-ink-600 text-base leading-relaxed">{b.body}</p>
+                <p className="text-ink-600 text-base md:text-lg leading-relaxed">
+                  {b.body}
+                </p>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
+      </div>
 
-        <div className="mt-12 md:mt-16">
+      {/* CTA */}
+      <div className="bg-cream-100 py-16 md:py-20 border-t border-ink-900/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Link
             href="/devenez-exposants"
-            className="group inline-flex items-center gap-3 text-ink-900 hover:text-gold-700 text-sm md:text-base font-semibold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded"
+            className="group inline-flex items-center gap-4 text-ink-900 hover:text-gold-700 text-base md:text-lg font-bold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded"
           >
             <span>{ui.cta}</span>
-            <span
-              aria-hidden="true"
-              className="inline-block w-10 h-px bg-gold-600 origin-left transition-transform duration-300 group-hover:scale-x-[1.6]"
+            <ArrowUpRight
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              strokeWidth={2}
             />
           </Link>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { CharDivider } from "@/components/signature/CharMark";
 
@@ -226,18 +227,31 @@ export default function Manifesto({ blok }: { blok: ManifestoBlok }) {
           ))}
         </div>
 
-        {/* Punchline with signature divider above */}
-        {data.punchline && (
-          <div className="mt-16 md:mt-24 max-w-3xl">
-            <CharDivider className="mb-6 md:mb-8 justify-start" />
-            <p
-              className="text-ink-900 text-xl md:text-2xl lg:text-3xl leading-snug"
-              style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-            >
-              {data.punchline}
-            </p>
+        {/* Editorial photo strip — humanizes the dashboard feel */}
+        <div className="mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+          <div className="lg:col-span-7 relative aspect-[4/3] lg:aspect-[16/10] overflow-hidden rounded-sm">
+            <Image
+              src="/photos-2026/bbq-expo-403.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-cover"
+            />
           </div>
-        )}
+
+          {/* Punchline alongside */}
+          {data.punchline && (
+            <div className="lg:col-span-5">
+              <CharDivider className="mb-6 md:mb-8 justify-start" />
+              <p
+                className="text-ink-900 text-xl md:text-2xl lg:text-3xl leading-snug"
+                style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+              >
+                {data.punchline}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
