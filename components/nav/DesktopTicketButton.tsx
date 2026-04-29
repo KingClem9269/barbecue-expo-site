@@ -1,60 +1,38 @@
 import { Link } from "@/i18n/navigation";
-import { ChevronDownIcon } from "../icons";
 
+/**
+ * DesktopTicketButton — Grand Public ticket CTA in the desktop nav.
+ *
+ * Same solid gold visual as ProTicketButton (consistent design across both
+ * audiences). Links to the unified /billetterie page that already shows
+ * the 5-tier comparison; no dropdown needed anymore.
+ *
+ * Props remain compatible with the legacy CMS data structure (Storyblok
+ * exported tickets / tickets_slug) so existing pages don't break.
+ */
 export function DesktopTicketButton({
   tickets,
   tickets_slug,
-  tickets_b2c_label,
-  tickets_b2c_slug,
-  tickets_b2b_label,
-  tickets_b2b_slug,
-  tickets_press_label,
-  tickets_press_slug,
 }: {
   tickets: string;
   tickets_slug?: string;
-  tickets_b2c_label: string;
-  tickets_b2c_slug: string;
-  tickets_b2b_label: string;
-  tickets_b2b_slug: string;
-  tickets_press_label: string;
-  tickets_press_slug: string;
+  tickets_b2c_label?: string;
+  tickets_b2c_slug?: string;
+  tickets_b2b_label?: string;
+  tickets_b2b_slug?: string;
+  tickets_press_label?: string;
+  tickets_press_slug?: string;
 }) {
+  // Default to /billetterie if Storyblok hasn't filled the slug
+  const href = tickets_slug && tickets_slug !== "" ? tickets_slug : "/billetterie";
+  const label = tickets || "Billetterie";
+
   return (
-    <div className="relative hidden md:block group">
-      <Link href={tickets_slug || ""}>
-        <div className="inline-flex items-center justify-center p-2 px-4 font-bold border border-white/10 bg-black/40 backdrop-blur-md lg:border-white text-white rounded-full lg:rounded-none cursor-pointer">
-          {tickets}
-          <ChevronDownIcon className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
-        </div>
-      </Link>
-      <div className="absolute top-full right-0 pt-1 w-[128px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity text-black">
-        <div className="p-2 bg-white">
-          <ul className="grid gap-2">
-            <li>
-              <Link href={tickets_b2c_slug || ""} className="block px-3 py-2">
-                <div className="text-sm leading-none font-medium">
-                  {tickets_b2c_label}
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href={tickets_b2b_slug || ""} className="block px-3 py-2">
-                <div className="text-sm leading-none font-medium">
-                  {tickets_b2b_label}
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href={tickets_press_slug || ""} className="block px-3 py-2">
-                <div className="text-sm leading-none font-medium">
-                  {tickets_press_label}
-                </div>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Link
+      href={href}
+      className="hidden lg:inline-flex items-center justify-center px-4 py-2 text-sm font-bold uppercase tracking-widest border-2 border-gold-500 bg-gold-500 text-ink-950 hover:bg-gold-300 hover:border-gold-300 transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+    >
+      {label}
+    </Link>
   );
 }
