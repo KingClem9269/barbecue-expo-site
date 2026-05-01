@@ -54,6 +54,9 @@ import SectionBreak from "@/components/homepage/SectionBreak";
 import GrillArenaTeaser from "@/components/homepage/GrillArenaTeaser";
 import AwardsTeaser from "@/components/homepage/AwardsTeaser";
 import PitmastersGrid from "@/components/homepage/PitmastersGrid";
+import FloorPlanTeaser from "@/components/homepage/FloorPlanTeaser";
+import PartnersStrip from "@/components/homepage/PartnersStrip";
+import LatestStories from "@/components/homepage/LatestStories";
 
 const clientComponents = {
   page: Page,
@@ -112,6 +115,10 @@ const clientComponents = {
   "awards-teaser": AwardsTeaser,
   // Sprint 9
   "pitmasters-grid": PitmastersGrid,
+  // Sprint 18 — homepage cleanup
+  "floor-plan-teaser": FloorPlanTeaser,
+  "partners-strip": PartnersStrip,
+  "latest-stories": LatestStories,
 };
 
 // Register on module load (runs once when client bundle initializes)
