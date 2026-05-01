@@ -40,7 +40,7 @@ const UI: Record<
       },
       {
         title: "Zone Exposants",
-        body: "250 marques internationales. Testez le matériel en conditions réelles. Achat direct possible.",
+        body: "200+ marques internationales. Testez le matériel en conditions réelles. Achat direct possible.",
       },
     ],
   },
@@ -68,7 +68,7 @@ const UI: Record<
       },
       {
         title: "Exhibitor Zone",
-        body: "250 international brands. Test the gear in real conditions. Direct purchase possible.",
+        body: "200+ international brands. Test the gear in real conditions. Direct purchase possible.",
       },
     ],
   },
@@ -82,7 +82,7 @@ const UI: Record<
       { title: "Cooking Shows", body: "Demos en gran escena. Técnicas, gestos, recetas firma — por los mejores." },
       { title: "Masterclasses", body: "12 sesiones de 20 plazas. Inmersión íntima con un pitmaster. Reserve temprano." },
       { title: "Street Food", body: "14 puestos de comida callejera seleccionados. Lo mejor del BBQ street food en un solo lugar." },
-      { title: "Zona Expositores", body: "250 marcas internacionales. Pruebe el material en condiciones reales. Compra directa posible." },
+      { title: "Zona Expositores", body: "200+ marcas internacionales. Pruebe el material en condiciones reales. Compra directa posible." },
     ],
   },
   de: {
@@ -95,7 +95,7 @@ const UI: Record<
       { title: "Cooking Shows", body: "Demos auf der großen Bühne. Techniken, Handgriffe, Signature-Rezepte — von den Besten." },
       { title: "Masterclasses", body: "12 Sessions mit je 20 Plätzen. Intime Immersion mit einem Pitmaster. Früh buchen." },
       { title: "Street Food", body: "14 ausgewählte Street-Food-Stände. Das beste BBQ-Street-Food in Paris, an einem Ort." },
-      { title: "Aussteller-Zone", body: "250 internationale Marken. Testen Sie die Ausrüstung unter realen Bedingungen." },
+      { title: "Aussteller-Zone", body: "200+ internationale Marken. Testen Sie die Ausrüstung unter realen Bedingungen." },
     ],
   },
   nl: {
@@ -108,7 +108,7 @@ const UI: Record<
       { title: "Cooking Shows", body: "Demonstraties op het hoofdpodium. Technieken, gebaren, signature-recepten — van de besten." },
       { title: "Masterclasses", body: "12 sessies met 20 plaatsen. Intieme onderdompeling met een pitmaster. Boek vroeg." },
       { title: "Street Food", body: "14 geselecteerde street food-kraampjes. De beste BBQ-street-food van Parijs op één plek." },
-      { title: "Exposantenzone", body: "250 internationale merken. Test het materiaal onder echte omstandigheden. Directe aankoop mogelijk." },
+      { title: "Exposantenzone", body: "200+ internationale merken. Test het materiaal onder echte omstandigheden. Directe aankoop mogelijk." },
     ],
   },
   pt: {
@@ -121,7 +121,7 @@ const UI: Record<
       { title: "Cooking Shows", body: "Demos em grande palco. Técnicas, gestos, receitas assinatura — pelos melhores." },
       { title: "Masterclasses", body: "12 sessões com 20 lugares cada. Imersão íntima com um pitmaster. Reserve cedo." },
       { title: "Street Food", body: "14 bancas selecionadas. A melhor street food BBQ de Paris num só lugar." },
-      { title: "Zona Expositores", body: "250 marcas internacionais. Teste o material em condições reais. Compra direta possível." },
+      { title: "Zona Expositores", body: "200+ marcas internacionais. Teste o material em condições reais. Compra direta possível." },
     ],
   },
   it: {
@@ -134,7 +134,7 @@ const UI: Record<
       { title: "Cooking Shows", body: "Demo sul grande palco. Tecniche, gesti, ricette signature — dai migliori." },
       { title: "Masterclasses", body: "12 sessioni da 20 posti. Immersione intima con un pitmaster. Prenotate presto." },
       { title: "Street Food", body: "14 bancarelle selezionate. Il meglio del BBQ street food di Parigi in un solo posto." },
-      { title: "Zona Espositori", body: "250 marchi internazionali. Testate il materiale in condizioni reali. Acquisto diretto possibile." },
+      { title: "Zona Espositori", body: "200+ marchi internazionali. Testate il materiale in condizioni reali. Acquisto diretto possibile." },
     ],
   },
 };

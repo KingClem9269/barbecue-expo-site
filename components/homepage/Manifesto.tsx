@@ -41,8 +41,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   fr: {
     eyebrow: "Édition 2026 — les chiffres",
     stats: [
-      { value: 25896, suffix: "", label: "Visiteurs en 2026" },
-      { value: 250, suffix: "", label: "Marques internationales" },
+      { value: 25800, suffix: "", label: "Visiteurs en 2026" },
+      { value: 200, suffix: "+", label: "Marques internationales" },
       { value: 25, suffix: "", label: "Nationalités représentées" },
     ],
     punchline:
@@ -51,8 +51,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   en: {
     eyebrow: "2026 edition — key figures",
     stats: [
-      { value: 25896, suffix: "", label: "Visitors in 2026" },
-      { value: 250, suffix: "", label: "International brands" },
+      { value: 25800, suffix: "", label: "Visitors in 2026" },
+      { value: 200, suffix: "+", label: "International brands" },
       { value: 25, suffix: "", label: "Nationalities represented" },
     ],
     punchline:
@@ -61,8 +61,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   es: {
     eyebrow: "Edición 2026 — las cifras",
     stats: [
-      { value: 25896, suffix: "", label: "Visitantes en 2026" },
-      { value: 250, suffix: "", label: "Marcas internacionales" },
+      { value: 25800, suffix: "", label: "Visitantes en 2026" },
+      { value: 200, suffix: "+", label: "Marcas internacionales" },
       { value: 25, suffix: "", label: "Nacionalidades representadas" },
     ],
     punchline:
@@ -71,8 +71,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   de: {
     eyebrow: "Ausgabe 2026 — die Zahlen",
     stats: [
-      { value: 25896, suffix: "", label: "Besucher 2026" },
-      { value: 250, suffix: "", label: "Internationale Marken" },
+      { value: 25800, suffix: "", label: "Besucher 2026" },
+      { value: 200, suffix: "+", label: "Internationale Marken" },
       { value: 25, suffix: "", label: "Vertretene Nationalitäten" },
     ],
     punchline:
@@ -81,8 +81,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   nl: {
     eyebrow: "Editie 2026 — de cijfers",
     stats: [
-      { value: 25896, suffix: "", label: "Bezoekers in 2026" },
-      { value: 250, suffix: "", label: "Internationale merken" },
+      { value: 25800, suffix: "", label: "Bezoekers in 2026" },
+      { value: 200, suffix: "+", label: "Internationale merken" },
       { value: 25, suffix: "", label: "Vertegenwoordigde nationaliteiten" },
     ],
     punchline:
@@ -91,8 +91,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   pt: {
     eyebrow: "Edição 2026 — os números",
     stats: [
-      { value: 25896, suffix: "", label: "Visitantes em 2026" },
-      { value: 250, suffix: "", label: "Marcas internacionais" },
+      { value: 25800, suffix: "", label: "Visitantes em 2026" },
+      { value: 200, suffix: "+", label: "Marcas internacionais" },
       { value: 25, suffix: "", label: "Nacionalidades representadas" },
     ],
     punchline:
@@ -101,8 +101,8 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   it: {
     eyebrow: "Edizione 2026 — i numeri",
     stats: [
-      { value: 25896, suffix: "", label: "Visitatori nel 2026" },
-      { value: 250, suffix: "", label: "Marchi internazionali" },
+      { value: 25800, suffix: "", label: "Visitatori nel 2026" },
+      { value: 200, suffix: "+", label: "Marchi internazionali" },
       { value: 25, suffix: "", label: "Nazionalità rappresentate" },
     ],
     punchline:

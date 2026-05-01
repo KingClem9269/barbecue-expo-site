@@ -20,7 +20,7 @@ const SLOGAN: Record<
     highlight: "connaisseurs",
     line3: "BBQ.",
     subtitle:
-      "20 pitmasters. 12 masterclasses. 250 marques. Un week-end au cœur de l'Europe pour tester, apprendre, déguster. Pour celles et ceux qui n'en sont pas à leur premier feu.",
+      "20 pitmasters. 12 masterclasses. 200+ marques. Un week-end au cœur de l'Europe pour tester, apprendre, déguster. Pour celles et ceux qui n'en sont pas à leur premier feu.",
     cta: "Réserver ma place",
   },
   en: {
@@ -30,7 +30,7 @@ const SLOGAN: Record<
     highlight: "tastemakers.",
     line3: "",
     subtitle:
-      "20 pitmasters. 12 masterclasses. 250 brands. A weekend in the heart of Europe to test, learn, taste. For those who aren't at their first fire.",
+      "20 pitmasters. 12 masterclasses. 200+ brands. A weekend in the heart of Europe to test, learn, taste. For those who aren't at their first fire.",
     cta: "Book my ticket",
   },
   es: {
@@ -40,7 +40,7 @@ const SLOGAN: Record<
     highlight: "conocedores",
     line3: "BBQ.",
     subtitle:
-      "20 pitmasters. 12 masterclasses. 250 marcas. Un fin de semana en el corazón de Europa para probar, aprender, degustar. Para los que no están en su primer fuego.",
+      "20 pitmasters. 12 masterclasses. 200+ marcas. Un fin de semana en el corazón de Europa para probar, aprender, degustar. Para los que no están en su primer fuego.",
     cta: "Reservar mi entrada",
   },
   de: {
@@ -50,7 +50,7 @@ const SLOGAN: Record<
     highlight: "Kenner.",
     line3: "",
     subtitle:
-      "20 Pitmaster. 12 Masterclasses. 250 Marken. Ein Wochenende im Herzen Europas zum Testen, Lernen, Genießen. Für alle, die nicht bei ihrem ersten Feuer sind.",
+      "20 Pitmaster. 12 Masterclasses. 200+ Marken. Ein Wochenende im Herzen Europas zum Testen, Lernen, Genießen. Für alle, die nicht bei ihrem ersten Feuer sind.",
     cta: "Ticket buchen",
   },
   nl: {
@@ -60,7 +60,7 @@ const SLOGAN: Record<
     highlight: "kenners.",
     line3: "",
     subtitle:
-      "20 pitmasters. 12 masterclasses. 250 merken. Een weekend in het hart van Europa om te testen, leren, proeven. Voor wie niet aan hun eerste vuur toe is.",
+      "20 pitmasters. 12 masterclasses. 200+ merken. Een weekend in het hart van Europa om te testen, leren, proeven. Voor wie niet aan hun eerste vuur toe is.",
     cta: "Mijn ticket boeken",
   },
   pt: {
@@ -70,7 +70,7 @@ const SLOGAN: Record<
     highlight: "conhecedores",
     line3: "BBQ.",
     subtitle:
-      "20 pitmasters. 12 masterclasses. 250 marcas. Um fim de semana no coração da Europa para testar, aprender, degustar. Para quem não está no seu primeiro fogo.",
+      "20 pitmasters. 12 masterclasses. 200+ marcas. Um fim de semana no coração da Europa para testar, aprender, degustar. Para quem não está no seu primeiro fogo.",
     cta: "Reservar o meu bilhete",
   },
   it: {
@@ -80,7 +80,7 @@ const SLOGAN: Record<
     highlight: "conoscitori",
     line3: "BBQ.",
     subtitle:
-      "20 pitmaster. 12 masterclass. 250 marchi. Un fine settimana nel cuore dell'Europa per provare, imparare, degustare. Per chi non è al primo fuoco.",
+      "20 pitmaster. 12 masterclass. 200+ marchi. Un fine settimana nel cuore dell'Europa per provare, imparare, degustare. Per chi non è al primo fuoco.",
     cta: "Prenota il mio biglietto",
   },
 };

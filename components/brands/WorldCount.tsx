@@ -24,49 +24,49 @@ const UI: Record<
     eyebrow: "Provenance des marques",
     title: "15 pays. 4 continents. Un seul salon.",
     subtitle:
-      "Les 250 marques présentes viennent de 15 pays différents. Ajoutez à cela les 25 nationalités représentées côté visiteurs — Barbecue Expo est le carrefour européen du BBQ international.",
+      "Les 200+ marques présentes viennent de 15 pays différents. Ajoutez à cela les 25 nationalités représentées côté visiteurs — Barbecue Expo est le carrefour européen du BBQ international.",
     brandsCount: "marques",
   },
   en: {
     eyebrow: "Brand origins",
     title: "15 countries. 4 continents. One show.",
     subtitle:
-      "The 250 brands present come from 15 different countries. Add to that the 25 nationalities in the audience — Barbecue Expo is the European crossroads of international BBQ.",
+      "The 200+ brands present come from 15 different countries. Add to that the 25 nationalities in the audience — Barbecue Expo is the European crossroads of international BBQ.",
     brandsCount: "brands",
   },
   es: {
     eyebrow: "Origen de las marcas",
     title: "15 países. 4 continentes. Una sola feria.",
     subtitle:
-      "Las 250 marcas presentes provienen de 15 países diferentes. Añádale las 25 nacionalidades entre los visitantes.",
+      "Las 200+ marcas presentes provienen de 15 países diferentes. Añádale las 25 nacionalidades entre los visitantes.",
     brandsCount: "marcas",
   },
   de: {
     eyebrow: "Herkunft der Marken",
     title: "15 Länder. 4 Kontinente. Eine Messe.",
     subtitle:
-      "Die 250 anwesenden Marken kommen aus 15 verschiedenen Ländern. Dazu kommen 25 vertretene Nationalitäten im Publikum.",
+      "Die 200+ anwesenden Marken kommen aus 15 verschiedenen Ländern. Dazu kommen 25 vertretene Nationalitäten im Publikum.",
     brandsCount: "Marken",
   },
   nl: {
     eyebrow: "Herkomst van merken",
     title: "15 landen. 4 continenten. Eén beurs.",
     subtitle:
-      "De 250 aanwezige merken komen uit 15 verschillende landen. Daarbij komen nog 25 nationaliteiten in het publiek.",
+      "De 200+ aanwezige merken komen uit 15 verschillende landen. Daarbij komen nog 25 nationaliteiten in het publiek.",
     brandsCount: "merken",
   },
   pt: {
     eyebrow: "Origem das marcas",
     title: "15 países. 4 continentes. Uma só feira.",
     subtitle:
-      "As 250 marcas presentes vêm de 15 países diferentes. Acrescente as 25 nacionalidades entre os visitantes.",
+      "As 200+ marcas presentes vêm de 15 países diferentes. Acrescente as 25 nacionalidades entre os visitantes.",
     brandsCount: "marcas",
   },
   it: {
     eyebrow: "Origine dei marchi",
     title: "15 paesi. 4 continenti. Una sola fiera.",
     subtitle:
-      "I 250 marchi presenti provengono da 15 paesi diversi. Aggiungete le 25 nazionalità rappresentate dal pubblico.",
+      "I 200+ marchi presenti provengono da 15 paesi diversi. Aggiungete le 25 nazionalità rappresentate dal pubblico.",
     brandsCount: "marchi",
   },
 };

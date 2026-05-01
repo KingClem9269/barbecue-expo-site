@@ -30,7 +30,7 @@ const UI: Record<
     line2_highlight: "des marques",
     line3: "BBQ d'Europe.",
     paragraph:
-      "Trois jours, un seul lieu, une audience choisie. Vingt-cinq mille huit cent quatre-vingt-seize visiteurs en 2026, dont une part décisive de revendeurs, distributeurs et acheteurs. Deux cent cinquante marques venues de quinze pays. Vingt-cinq nationalités dans le public. Pas un salon de plus — le carrefour annuel du métier.",
+      "Trois jours, un seul lieu, une audience choisie. Plus de vingt-cinq mille huit cents visiteurs en 2026, dont une part décisive de revendeurs, distributeurs et acheteurs. Plus de deux cents marques venues de quinze pays. Vingt-cinq nationalités dans le public. Pas un salon de plus — le carrefour annuel du métier.",
     ctaStand: "Devenir exposant",
     ctaPress: "Espace presse",
   },
@@ -40,7 +40,7 @@ const UI: Record<
     line2_highlight: "of European",
     line3: "BBQ brands.",
     paragraph:
-      "Three days, one place, a chosen audience. Twenty-five thousand visitors in 2026, with a decisive share of resellers, distributors and buyers. Two hundred and fifty brands from fifteen countries. Twenty-five nationalities in the audience. Not just another show — the annual industry crossroads.",
+      "Three days, one place, a chosen audience. Over twenty-five thousand eight hundred visitors in 2026, with a decisive share of resellers, distributors and buyers. More than two hundred brands from fifteen countries. Twenty-five nationalities in the audience. Not just another show — the annual industry crossroads.",
     ctaStand: "Become an exhibitor",
     ctaPress: "Press room",
   },
@@ -50,7 +50,7 @@ const UI: Record<
     line2_highlight: "de las marcas",
     line3: "BBQ de Europa.",
     paragraph:
-      "Tres días, un solo lugar, una audiencia elegida. Veinticinco mil visitantes en 2026, con una parte decisiva de revendedores, distribuidores y compradores. Doscientas cincuenta marcas de quince países. Veinticinco nacionalidades en el público.",
+      "Tres días, un solo lugar, una audiencia elegida. Más de veinticinco mil ochocientos visitantes en 2026, con una parte decisiva de revendedores, distribuidores y compradores. Más de doscientas marcas de quince países. Veinticinco nacionalidades en el público.",
     ctaStand: "Ser expositor",
     ctaPress: "Sala de prensa",
   },
@@ -60,7 +60,7 @@ const UI: Record<
     line2_highlight: "der europäischen",
     line3: "BBQ-Marken.",
     paragraph:
-      "Drei Tage, ein Ort, ein ausgewähltes Publikum. Fünfundzwanzigtausend Besucher 2026, mit einem entscheidenden Anteil von Wiederverkäufern, Distributoren und Einkäufern. Zweihundertfünfzig Marken aus fünfzehn Ländern. Fünfundzwanzig Nationalitäten im Publikum.",
+      "Drei Tage, ein Ort, ein ausgewähltes Publikum. Über fünfundzwanzigtausendachthundert Besucher 2026, mit einem entscheidenden Anteil von Wiederverkäufern, Distributoren und Einkäufern. Mehr als zweihundert Marken aus fünfzehn Ländern. Fünfundzwanzig Nationalitäten im Publikum.",
     ctaStand: "Aussteller werden",
     ctaPress: "Pressebereich",
   },
@@ -70,7 +70,7 @@ const UI: Record<
     line2_highlight: "van Europese",
     line3: "BBQ-merken.",
     paragraph:
-      "Drie dagen, één plek, een gekozen publiek. Vijfentwintigduizend bezoekers in 2026, met een doorslaggevend aandeel doorverkopers, distributeurs en kopers. Tweehonderdvijftig merken uit vijftien landen. Vijfentwintig nationaliteiten in het publiek.",
+      "Drie dagen, één plek, een gekozen publiek. Meer dan vijfentwintigduizendachthonderd bezoekers in 2026, met een doorslaggevend aandeel doorverkopers, distributeurs en kopers. Meer dan tweehonderd merken uit vijftien landen. Vijfentwintig nationaliteiten in het publiek.",
     ctaStand: "Exposant worden",
     ctaPress: "Perszaal",
   },
@@ -80,7 +80,7 @@ const UI: Record<
     line2_highlight: "das marcas",
     line3: "BBQ da Europa.",
     paragraph:
-      "Três dias, um só lugar, uma audiência escolhida. Vinte e cinco mil visitantes em 2026, com uma parte decisiva de revendedores, distribuidores e compradores. Duzentas e cinquenta marcas de quinze países. Vinte e cinco nacionalidades no público.",
+      "Três dias, um só lugar, uma audiência escolhida. Mais de vinte e cinco mil e oitocentos visitantes em 2026, com uma parte decisiva de revendedores, distribuidores e compradores. Mais de duzentas marcas de quinze países. Vinte e cinco nacionalidades no público.",
     ctaStand: "Ser expositor",
     ctaPress: "Sala de imprensa",
   },
@@ -90,7 +90,7 @@ const UI: Record<
     line2_highlight: "dei marchi",
     line3: "BBQ d'Europa.",
     paragraph:
-      "Tre giorni, un solo luogo, un pubblico scelto. Venticinquemila visitatori nel 2026, con una parte decisiva di rivenditori, distributori e acquirenti. Duecentocinquanta marchi da quindici paesi. Venticinque nazionalità tra il pubblico.",
+      "Tre giorni, un solo luogo, un pubblico scelto. Oltre venticinquemilaottocento visitatori nel 2026, con una parte decisiva di rivenditori, distributori e acquirenti. Più di duecento marchi da quindici paesi. Venticinque nazionalità tra il pubblico.",
     ctaStand: "Diventare espositore",
     ctaPress: "Sala stampa",
   },

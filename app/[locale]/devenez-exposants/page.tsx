@@ -30,7 +30,7 @@ const UI: Record<
     eyebrow: "Devenir exposant · Édition 2027",
     heroTitle: "Réservez votre place à l'Expo.",
     heroParagraph:
-      "250 marques exposeront en 2027. Le bon stand, la bonne place dans le salon, le bon dispositif média — c'est ce qu'on vous aide à construire. Trois packs pré-définis, ou un projet sur mesure via le configurateur.",
+      "200+ marques exposeront en 2027. Le bon stand, la bonne place dans le salon, le bon dispositif média — c'est ce qu'on vous aide à construire. Trois packs pré-définis, ou un projet sur mesure via le configurateur.",
     packsEyebrow: "Packs 2027",
     packsTitle: "Trois formules. Tout est inclus.",
     packsIntro:
@@ -101,7 +101,7 @@ const UI: Record<
     eyebrow: "Become an exhibitor · 2027 edition",
     heroTitle: "Reserve your place at the show.",
     heroParagraph:
-      "250 brands will exhibit in 2027. The right stand, the right floor placement, the right media setup — that's what we help you build. Three predefined packs, or a custom project via the configurator.",
+      "200+ brands will exhibit in 2027. The right stand, the right floor placement, the right media setup — that's what we help you build. Three predefined packs, or a custom project via the configurator.",
     packsEyebrow: "2027 packs",
     packsTitle: "Three formulas. Everything included.",
     packsIntro:

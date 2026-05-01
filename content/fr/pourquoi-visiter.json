@@ -252,7 +252,7 @@
                       {
                         "_uid": "d97b0e4c-6344-4f7a-82ba-b9b115f8d5ba",
                         "color": "primary",
-                        "content": "250 marques",
+                        "content": "200+ marques",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": "center"
@@ -1761,7 +1761,7 @@
               {
                 "_uid": "26e7a0d6-6f93-4cd6-8439-2f958ff2a34c",
                 "color": "primary",
-                "content": "+ 250 marques",
+                "content": "+ 200+ marques",
                 "heading": "h3",
                 "component": "headline",
                 "textAlign": "center"
@@ -2068,7 +2068,7 @@
                       {
                         "_uid": "42043e80-5fec-4f0c-8ac7-8bc928701495",
                         "color": "primary",
-                        "content": "250 marques",
+                        "content": "200+ marques",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": "center"
