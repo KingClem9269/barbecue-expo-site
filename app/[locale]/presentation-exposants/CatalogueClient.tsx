@@ -584,69 +584,72 @@ function ProTypesSelector() {
   const { t } = useT();
   const [active, setActive] = useState(PRO_TYPES[0].key);
   const cur = PRO_TYPES.find((p) => p.key === active) ?? PRO_TYPES[0];
+
+  // Toutes les enseignes, dédoublonnées (une par logo).
+  const allBrands = useMemo(() => {
+    const seen = new Set<string>();
+    const out: { name: string; src: string; dark?: boolean; cover?: boolean; cat: string }[] = [];
+    for (const p of PRO_TYPES) {
+      if (!p.brands) continue;
+      for (const b of p.brands) {
+        if (seen.has(b.src)) continue;
+        seen.add(b.src);
+        out.push({ ...b, cat: p.key });
+      }
+    }
+    return out;
+  }, []);
+
+  // La catégorie active d'abord, le reste ensuite.
+  const ordered = useMemo(() => {
+    const act = allBrands.filter((b) => b.cat === active);
+    const rest = allBrands.filter((b) => b.cat !== active);
+    return [...act, ...rest];
+  }, [allBrands, active]);
+
   return (
-    <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
-      {/* Liste cliquable */}
-      <div className="lg:col-span-5 flex flex-col gap-2">
+    <div>
+      {/* Onglets — types de professionnels, en haut sur une ligne */}
+      <div className="flex flex-wrap gap-2 mb-5">
         {PRO_TYPES.map((p) => (
           <button
             key={p.key}
             type="button"
             onClick={() => setActive(p.key)}
-            className={`text-left rounded-sm px-5 py-4 transition-colors border ${
+            aria-pressed={active === p.key}
+            className={`rounded-full px-4 py-2.5 text-sm font-bold leading-tight transition-colors border ${
               active === p.key
                 ? "bg-ink-950 border-ink-950 text-cream-50"
                 : "bg-cream-100 border-ink-900/10 text-ink-800 hover:border-gold-500/50"
             }`}
+            style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
-            <span className="font-bold leading-tight block" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(p.title)}</span>
+            {t(p.title)}
           </button>
         ))}
       </div>
-      {/* Panneau enseignes */}
-      <div className="lg:col-span-7">
-        <div className="bg-cream-100 border border-ink-900/10 rounded-sm p-6 md:p-8 h-full">
-          <p className="text-ink-600 text-base md:text-lg leading-relaxed mb-6">{t(cur.desc)}</p>
-          <div className="text-ink-500 text-xs uppercase tracking-widest mb-4">{t("Enseignes correspondantes")}</div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-            {cur.brands ? (
-              <>
-                {cur.brands.map((b) =>
-                  b.cover ? (
-                    <div key={b.src} className="relative aspect-[5/3] rounded-sm overflow-hidden bg-ink-900 border border-ink-900/10">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={b.src} alt={b.name} className="absolute inset-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" aria-hidden="true" />
-                      <span className="absolute bottom-1.5 left-2 right-2 text-cream-50 text-xs font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{b.name}</span>
-                    </div>
-                  ) : (
-                    <div key={b.src} className={`aspect-[5/3] rounded-sm border flex items-center justify-center p-2 overflow-hidden ${b.dark ? "bg-ink-900 border-ink-900" : "bg-white border-ink-900/10"}`}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={b.src} alt={b.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                  )
-                )}
-                {cur.blurredFill
-                  ? Array.from({ length: cur.blurredFill }).map((_, i) => {
-                      const b = cur.brands![i % cur.brands!.length];
-                      return (
-                        <div key={`blur-${i}`} className="aspect-[5/3] rounded-sm bg-white border border-ink-900/10 flex items-center justify-center p-2 overflow-hidden" aria-hidden="true">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={b.src} alt="" className="max-h-full max-w-full object-contain blur-[7px] grayscale opacity-50 select-none" draggable={false} />
-                        </div>
-                      );
-                    })
-                  : null}
-              </>
-            ) : (
-              Array.from({ length: cur.logos }).map((_, i) => (
-                <div key={i} className="aspect-[5/3] rounded-sm bg-cream-50 border border-dashed border-ink-900/20 flex items-center justify-center text-ink-300 text-[10px] uppercase tracking-widest">
-                  Logo
-                </div>
-              ))
-            )}
-          </div>
-        </div>
+
+      {/* Description de la catégorie active */}
+      <p className="text-ink-600 text-base md:text-lg leading-relaxed mb-6 max-w-3xl">{t(cur.desc)}</p>
+
+      {/* Toutes les enseignes — la catégorie active en premier (liseré doré) */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+        {ordered.map((b) => {
+          const on = b.cat === active;
+          return b.cover ? (
+            <div key={b.src} className={`relative aspect-[5/3] rounded-sm overflow-hidden bg-ink-900 border transition-all ${on ? "border-gold-500 ring-2 ring-gold-500" : "border-ink-900/10"}`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={b.src} alt={b.name} className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" aria-hidden="true" />
+              <span className="absolute bottom-1.5 left-2 right-2 text-cream-50 text-xs font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{b.name}</span>
+            </div>
+          ) : (
+            <div key={b.src} className={`aspect-[5/3] rounded-sm border flex items-center justify-center p-2 overflow-hidden transition-all ${b.dark ? "bg-ink-900 border-ink-900" : "bg-white border-ink-900/10"} ${on ? "ring-2 ring-gold-500 border-gold-500" : ""}`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={b.src} alt={b.name} className="max-h-full max-w-full object-contain" />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
