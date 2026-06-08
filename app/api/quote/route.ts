@@ -1,17 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * Demande de devis exposant.
+ * Demande de devis exposant → CRM Pylot.
  *
- * STUB — pour l'instant, valide la charge utile et la journalise.
- * TODO (CRM) :
- *   1. Rechercher le contact par email dans le CRM.
- *   2. Si trouvé → créer une transaction + un devis et l'envoyer.
- *      Sinon → créer la fiche contact, puis transaction + devis.
- *   Brancher ici (HubSpot / Brevo / Pipedrive…) avec la clé en variable
- *   d'environnement, comme app/api/newsletter/route.ts.
+ * Relaie la demande vers l'edge function CRM qui crée le contact + la
+ * transaction + le devis et envoie l'email (avec lien de signature).
+ * Appel côté serveur uniquement : la clé n'est jamais exposée au navigateur.
  */
 
+const CRM_ENDPOINT = "https://picdlgrtgaavqywehfil.supabase.co/functions/v1/quote-requests";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Contact = {
@@ -21,35 +18,56 @@ type Contact = {
 };
 
 export async function POST(request: NextRequest) {
+  const apiKey = process.env.CRM_QUOTE_API_KEY;
+  if (!apiKey) {
+    console.error("[quote] CRM_QUOTE_API_KEY manquante");
+    return NextResponse.json({ ok: false, errorCode: "service_unconfigured" }, { status: 500 });
+  }
+
   try {
     const body = await request.json();
     const contact: Contact = body?.contact ?? {};
     const estimate = body?.estimate ?? {};
 
-    // Validation des champs obligatoires
-    const required: (keyof Contact)[] = ["firstName", "lastName", "email", "phone", "company", "address1", "postalCode", "city", "countryIso"];
-    const missing = required.filter((k) => !contact[k] || String(contact[k]).trim() === "");
-    if (missing.length > 0) {
-      return NextResponse.json({ errorCode: "missing_fields", fields: missing }, { status: 400 });
+    // Champs obligatoires côté CRM : firstName, lastName, email.
+    if (!contact.firstName?.trim() || !contact.lastName?.trim() || !contact.email?.trim()) {
+      return NextResponse.json({ ok: false, errorCode: "missing_fields" }, { status: 400 });
     }
     if (!EMAIL_RE.test(String(contact.email).trim())) {
-      return NextResponse.json({ errorCode: "invalid_email" }, { status: 400 });
+      return NextResponse.json({ ok: false, errorCode: "invalid_email" }, { status: 400 });
     }
 
-    // STUB : journalisation en attendant le branchement CRM.
-    console.info("[quote] nouvelle demande de devis", {
-      email: contact.email,
-      company: contact.company,
-      total: estimate?.total,
-      hasQuote: estimate?.hasQuote,
-      lineCount: Array.isArray(estimate?.lines) ? estimate.lines.length : 0,
+    const res = await fetch(CRM_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+      },
+      body: JSON.stringify({ contact, estimate }),
     });
 
-    // TODO : créer contact + transaction + devis dans le CRM ici.
+    const data = await res.json().catch(() => ({}));
 
-    return NextResponse.json({ success: true });
+    if (!res.ok || !data?.ok) {
+      console.error("[quote] erreur CRM:", res.status, data?.error ?? data);
+      return NextResponse.json(
+        { ok: false, errorCode: data?.error ? "crm_error" : "crm_unreachable", message: data?.error },
+        { status: res.status >= 400 ? res.status : 502 },
+      );
+    }
+
+    // Succès : on remonte le n° de devis et le lien de signature au front.
+    return NextResponse.json({
+      ok: true,
+      success: true,
+      quoteNumber: data.quoteNumber,
+      signingUrl: data.signingUrl,
+      total: data.total,
+      currency: data.currency,
+      emailSent: data.emailSent,
+    });
   } catch (error) {
     console.error("[quote] erreur:", error);
-    return NextResponse.json({ errorCode: "unexpected_error" }, { status: 500 });
+    return NextResponse.json({ ok: false, errorCode: "unexpected_error" }, { status: 500 });
   }
 }

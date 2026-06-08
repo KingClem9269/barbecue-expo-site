@@ -8,7 +8,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { X as XIcon, ChevronDown, Search, Check, Loader2, MailCheck } from "lucide-react";
+import { X as XIcon, ChevronDown, Search, Check, Loader2, MailCheck, ExternalLink } from "lucide-react";
 import { getCountries, countryByIso } from "./countries";
 import { fmtEUR, type DerivedLine } from "./Estimator";
 
@@ -141,6 +141,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [result, setResult] = useState<{ quoteNumber?: string; signingUrl?: string }>({});
   const [serverError, setServerError] = useState<string>("");
 
   useEffect(() => {
@@ -217,10 +218,11 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.errorCode || "unexpected_error");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.message || data?.errorCode || "unexpected_error");
       }
+      setResult({ quoteNumber: data.quoteNumber, signingUrl: data.signingUrl });
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -249,11 +251,18 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
             <div className="w-14 h-14 rounded-full bg-gold-500/20 text-gold-600 flex items-center justify-center mx-auto mb-5">
               <MailCheck className="w-7 h-7" />
             </div>
-            <h3 className="text-ink-900 text-xl font-bold mb-2" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Demande envoyée !</h3>
+            <h3 className="text-ink-900 text-xl font-bold mb-2" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Devis envoyé !</h3>
             <p className="text-ink-600 text-sm max-w-md mx-auto">
-              Merci {form.firstName}. Votre devis est en cours de préparation et vous sera envoyé à <span className="font-semibold text-ink-900">{form.email}</span>. Notre équipe revient vers vous rapidement.
+              Merci {form.firstName}. Votre devis{result.quoteNumber ? <> <span className="font-semibold text-ink-900">n° {result.quoteNumber}</span></> : ""} vient d&apos;être envoyé à <span className="font-semibold text-ink-900">{form.email}</span>. Vérifiez votre boîte de réception (et vos spams).
             </p>
-            <button type="button" onClick={onClose} className="mt-7 inline-flex bg-ink-950 text-cream-50 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-ink-900">Fermer</button>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+              {result.signingUrl && (
+                <a href={result.signingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gold-500 text-ink-950 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gold-300">
+                  Voir &amp; signer mon devis <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+              <button type="button" onClick={onClose} className="inline-flex bg-ink-950 text-cream-50 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-ink-900">Fermer</button>
+            </div>
           </div>
         ) : (
           <form onSubmit={submit} className="px-5 md:px-7 py-5 max-h-[70vh] overflow-y-auto">
