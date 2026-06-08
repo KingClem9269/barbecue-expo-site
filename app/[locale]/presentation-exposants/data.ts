@@ -512,7 +512,7 @@ export const PARTNER_FEATURE_GROUPS: {
     rows: [
       { label: "Logo sur l'affiche officielle", platinium: true, gold: true, silver: true },
       { label: "Présentation dans le dossier presse", platinium: true, gold: true, silver: true },
-      { label: "Pub dans Barbecue Mag (20k tirages)", platinium: "2 double-pages", gold: "1 pleine page", silver: "1 pleine page" },
+      { label: "Pub dans Barbecue Mag (20k tirages)", platinium: "1 double-page pub + 1 double-page rédactionnel", gold: "1 pleine page", silver: "1 pleine page" },
       { label: "Flyers / goodies à l'entrée (5000 ex)", platinium: "Goodies distribués", gold: "Libre-service", silver: "Libre-service" },
       { label: "Logo sur le plan visiteur", platinium: true, gold: true, silver: true },
       { label: "Oriflammes à l'entrée du salon", platinium: "4", gold: "2", silver: "1" },
