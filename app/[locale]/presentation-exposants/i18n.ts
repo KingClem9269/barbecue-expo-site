@@ -32,6 +32,8 @@ export const EN: Record<string, string> = {
 
   // ——— Hero / sticky nav ———
   "Exposer": "Exhibit",
+  "Présentation": "Overview",
+  "Catalogue exposant": "Exhibitor catalogue",
   "Sommaire": "Contents",
   "Exposer · Édition 2027": "Exhibit · 2027 edition",
   "Présentation du salon & catalogue exposant.": "Show overview & exhibitor catalogue.",

@@ -10,7 +10,7 @@ import ExperienceZones from "@/components/visitor/ExperienceZones";
 import VisitorMap from "./VisitorMap";
 import pitmastersData from "@/content/pitmasters/index.json";
 import {
-  PRESENTATION_NAV, CATALOGUE_NAV, STAND_SURFACE, STAND_RANGES, OUTDOOR, STAND_OPTIONS, type StandOption,
+  STAND_SURFACE, STAND_RANGES, OUTDOOR, STAND_OPTIONS, type StandOption,
   PARTNER_TIERS, PARTNER_FEATURE_GROUPS, COMM_STAND, COMM_PLACE_PACKS, VITROPHANIE,
   BRANDING, COMM_DIGITAL, COMM_DIGITAL_GLOBAL, SPONSORING, BARBECUE_MAG, PHOTO,
   VISITOR_PROVENANCE, MAP_LEGEND, PRO_TYPES, PRODUCT_CATEGORIES,
@@ -1037,44 +1037,30 @@ function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
 
 function StickyNav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   const { t } = useT();
-  const groups = [
-    { title: "Présentation", items: PRESENTATION_NAV },
-    { title: "Catalogue exposant", items: CATALOGUE_NAV },
+  const navItems = [
+    { id: "expo", label: "Présentation" },
+    { id: "stand", label: "Catalogue exposant" },
   ];
-  const [open, setOpen] = useState(false);
   return (
     <div className="sticky top-0 z-50 bg-ink-950/90 backdrop-blur border-b border-cream-50/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center gap-4">
-        <span className="text-cream-50 font-bold text-sm uppercase tracking-widest shrink-0" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center gap-3 sm:gap-4">
+        <span className="hidden sm:block text-cream-50 font-bold text-sm uppercase tracking-widest shrink-0" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
           {t("Exposer")}
         </span>
-        <nav className="hidden lg:flex items-center gap-1 overflow-x-auto">
-          {groups.flatMap((g) => g.items).map((it) => (
-            <a key={it.id} href={`#${it.id}`} className="px-3 py-1.5 rounded-full text-cream-50/70 hover:text-gold-500 hover:bg-cream-50/5 text-xs uppercase tracking-widest whitespace-nowrap transition-colors">
+        <nav className="flex items-center gap-1 sm:gap-2 overflow-x-auto">
+          {navItems.map((it) => (
+            <a key={it.id} href={`#${it.id}`} className="px-3 py-1.5 rounded-full text-cream-50/80 hover:text-gold-500 hover:bg-cream-50/5 text-xs uppercase tracking-widest whitespace-nowrap transition-colors">
               {t(it.label)}
             </a>
           ))}
         </nav>
-        <button type="button" onClick={() => setOpen(!open)} className="lg:hidden ml-auto text-cream-50 text-xs uppercase tracking-widest border border-cream-50/20 rounded-full px-3 py-1.5">
-          {t("Sommaire")}
-        </button>
-        <div className="hidden lg:flex items-center gap-3 ml-auto shrink-0">
-          <LangToggle lang={lang} setLang={setLang} />
-          <a href="#partenaires" className="inline-flex bg-gold-500 text-ink-950 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+        <div className="flex items-center gap-3 ml-auto shrink-0">
+          <a href="#partenaires" className="hidden md:inline-flex bg-gold-500 text-ink-950 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap">
             {t("Devenir partenaire")}
           </a>
+          <LangToggle lang={lang} setLang={setLang} />
         </div>
-        <div className="lg:hidden"><LangToggle lang={lang} setLang={setLang} /></div>
       </div>
-      {open && (
-        <div className="lg:hidden border-t border-cream-50/10 px-6 py-4 grid grid-cols-2 gap-x-4 gap-y-2">
-          {groups.flatMap((g) => g.items).map((it) => (
-            <a key={it.id} href={`#${it.id}`} onClick={() => setOpen(false)} className="text-cream-50/80 hover:text-gold-500 text-sm py-1">
-              {t(it.label)}
-            </a>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
