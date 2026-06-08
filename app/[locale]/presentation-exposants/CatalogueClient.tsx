@@ -742,6 +742,7 @@ function PlanViewer({ src }: { src: string }) {
 
 /* Sélecteur de posts Instagram par catégorie */
 function SocialPostsTabs() {
+  const { t } = useT();
   const [active, setActive] = useState(SOCIAL_POSTS[0].category);
   const group = SOCIAL_POSTS.find((g) => g.category === active) ?? SOCIAL_POSTS[0];
   return (
@@ -758,7 +759,7 @@ function SocialPostsTabs() {
                 : "border border-cream-50/20 text-cream-50/70 hover:border-gold-500/50 hover:text-cream-50"
             }`}
           >
-            {g.category}
+            {t(g.category)}
           </button>
         ))}
       </div>
@@ -1138,16 +1139,11 @@ export default function CatalogueClient() {
           {/* Texte + métriques */}
           <div>
             <p className="text-ink-600 text-lg leading-relaxed mb-8">
-              Depuis 2020, Barbecue Expo réunit chaque année les passionnés et les professionnels
-              de la cuisson au feu. En quelques éditions, l'événement s'est imposé comme le plus grand
-              salon européen dédié au barbecue et à la cuisine en plein air — porté par un écosystème
-              unique : <span className="font-semibold text-ink-900">le salon</span>, des <span className="font-semibold text-ink-900">festivals</span>,
-              le <span className="font-semibold text-ink-900">magazine</span> (Barbecue Mag &amp; Smoked Magazine),
-              des <span className="font-semibold text-ink-900">championnats</span>, et bien plus encore.
+              {t("Depuis 2020, Barbecue Expo réunit chaque année les passionnés et les professionnels de la cuisson au feu. En quelques éditions, l'événement s'est imposé comme le plus grand salon européen dédié au barbecue et à la cuisine en plein air — porté par un écosystème unique : le salon, des festivals, le magazine (Barbecue Mag & Smoked Magazine), des championnats, et bien plus encore.")}
             </p>
 
             <div className="text-gold-700 text-sm uppercase tracking-widest font-semibold mb-5">
-              Depuis 2020, Barbecue Expo c'est…
+              {t("Depuis 2020, Barbecue Expo c'est…")}
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {[
@@ -1158,7 +1154,7 @@ export default function CatalogueClient() {
               ].map(([v, l]) => (
                 <div key={l}>
                   <div className="text-ink-900 text-3xl md:text-4xl font-bold leading-none" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{v}</div>
-                  <div className="mt-1 text-ink-500 text-xs uppercase tracking-widest">{l}</div>
+                  <div className="mt-1 text-ink-500 text-xs uppercase tracking-widest">{t(l)}</div>
                 </div>
               ))}
             </div>
@@ -1173,7 +1169,7 @@ export default function CatalogueClient() {
 
       <Sec id="salon" eyebrow="Partie 2" title="Le salon 2027" dark>
         <p className="text-cream-50/75 text-base md:text-lg max-w-2xl mb-10">
-          L'édition à venir, plus grande et plus internationale que jamais. Le salon 2027, c'est…
+          {t("L'édition à venir, plus grande et plus internationale que jamais. Le salon 2027, c'est…")}
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14 md:mb-20">
           {[
@@ -1184,13 +1180,13 @@ export default function CatalogueClient() {
           ].map(([v, l]) => (
             <div key={l}>
               <div className="text-gold-500 text-4xl md:text-5xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{v}</div>
-              <div className="mt-1 text-cream-50/70 text-sm uppercase tracking-widest">{l}</div>
+              <div className="mt-1 text-cream-50/70 text-sm uppercase tracking-widest">{t(l)}</div>
             </div>
           ))}
         </div>
         {/* Galerie photo — slider défilant */}
         <div className="mb-14 md:mb-20">
-          <div className="text-cream-50/70 text-xs uppercase tracking-widest mb-5">En images</div>
+          <div className="text-cream-50/70 text-xs uppercase tracking-widest mb-5">{t("En images")}</div>
           <div className="-mx-6 md:-mx-12">
             <PhotoMarquee />
           </div>
@@ -1239,7 +1235,7 @@ export default function CatalogueClient() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-8">
           <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold">
             <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
-            Les marques présentes
+            {t("Les marques présentes")}
           </div>
         </div>
         <BrandLogoMarquee />
@@ -1251,7 +1247,7 @@ export default function CatalogueClient() {
           <div className="lg:col-span-8">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-3 text-ink-700 text-sm md:text-base font-semibold mb-4">
               <MapPin className="w-5 h-5 text-gold-600" strokeWidth={2} />
-              Lieu de l'événement : <span className="italic font-normal">Parc Floral de Paris</span>
+              {t("Lieu de l'événement :")} <span className="italic font-normal">Parc Floral de Paris</span>
               <VenueMapButton />
             </div>
             <div className="rounded-sm bg-white border border-ink-900/10 p-3 md:p-4 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)]">
@@ -1261,13 +1257,13 @@ export default function CatalogueClient() {
               {MAP_LEGEND.map((l) => (
                 <span key={l.label} className="inline-flex items-center gap-2 text-ink-600 text-xs">
                   <span className="inline-block w-4 h-3 rounded-sm" style={{ backgroundColor: l.color }} />
-                  {l.label}
+                  {t(l.label)}
                 </span>
               ))}
             </div>
           </div>
           <div className="lg:col-span-4">
-            <div className="text-ink-500 text-xs uppercase tracking-widest mb-4">Provenance des visiteurs</div>
+            <div className="text-ink-500 text-xs uppercase tracking-widest mb-4">{t("Provenance des visiteurs")}</div>
             <ul className="divide-y divide-ink-900/10 border-y border-ink-900/10">
               {VISITOR_PROVENANCE.map((c) => (
                 <li key={c.name} className="flex items-center justify-between gap-3 py-3">
@@ -1277,7 +1273,7 @@ export default function CatalogueClient() {
                     ) : (
                       <Globe className="w-5 h-5 text-ink-400 shrink-0" strokeWidth={1.5} />
                     )}
-                    <span className="text-ink-800 text-sm md:text-base truncate">{c.name}</span>
+                    <span className="text-ink-800 text-sm md:text-base truncate">{t(c.name)}</span>
                   </span>
                   <span className="text-ink-900 font-bold tabular-nums" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{c.pct}</span>
                 </li>
@@ -1305,8 +1301,8 @@ export default function CatalogueClient() {
         <div className="flex flex-wrap gap-x-10 gap-y-3 mb-10">
           {[["500 M+", "contacts générés"], ["TV · Radio · Presse", "couverture nationale"]].map(([v, l]) => (
             <div key={l}>
-              <div className="text-gold-500 text-2xl md:text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{v}</div>
-              <div className="text-cream-50/60 text-xs uppercase tracking-widest mt-1">{l}</div>
+              <div className="text-gold-500 text-2xl md:text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(v)}</div>
+              <div className="text-cream-50/60 text-xs uppercase tracking-widest mt-1">{t(l)}</div>
             </div>
           ))}
         </div>
@@ -1395,7 +1391,7 @@ export default function CatalogueClient() {
         </div>
 
         {/* Exemples de posts */}
-        <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-6">Exemples de posts</div>
+        <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-6">{t("Exemples de posts")}</div>
         <SocialPostsTabs />
       </Sec>
 
@@ -1403,7 +1399,7 @@ export default function CatalogueClient() {
 
       <div className="bg-gold-500 py-6 text-center">
         <span className="text-ink-950 text-sm md:text-base font-bold uppercase tracking-[0.3em]" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
-          Catalogue exposant 2027
+          {t("Catalogue exposant 2027")}
         </span>
       </div>
 
@@ -1540,11 +1536,11 @@ export default function CatalogueClient() {
             <thead>
               <tr>
                 <th className="text-left p-4"></th>
-                {PARTNER_TIERS.map((t) => (
-                  <th key={t.key} className={`p-4 text-center align-bottom ${t.highlight ? "bg-gold-500/10 rounded-t-sm" : ""}`}>
-                    <div className={`text-xl font-bold ${t.highlight ? "text-gold-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t.name}</div>
-                    <div className="text-ink-600 text-sm mt-1">{t.price}</div>
-                    <PartnerHeaderChoose tierKey={t.key} />
+                {PARTNER_TIERS.map((tier) => (
+                  <th key={tier.key} className={`p-4 text-center align-bottom ${tier.highlight ? "bg-gold-500/10 rounded-t-sm" : ""}`}>
+                    <div className={`text-xl font-bold ${tier.highlight ? "text-gold-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(tier.name)}</div>
+                    <div className="text-ink-600 text-sm mt-1">{tier.price}</div>
+                    <PartnerHeaderChoose tierKey={tier.key} />
                   </th>
                 ))}
               </tr>
@@ -1554,24 +1550,24 @@ export default function CatalogueClient() {
                 <Fragment key={group.category}>
                   <tr>
                     <td colSpan={1 + PARTNER_TIERS.length} className="pt-8 pb-3 px-4">
-                      <span className="text-gold-600 text-xs font-bold uppercase tracking-widest">{group.category}</span>
+                      <span className="text-gold-600 text-xs font-bold uppercase tracking-widest">{t(group.category)}</span>
                     </td>
                   </tr>
                   {group.rows.map((row, i) => (
                     <tr key={i} className="border-t border-ink-900/10">
                       <td className="p-4 text-ink-900 text-sm">
                         <span className="inline-flex items-center gap-1.5">
-                          {row.label}
-                          {row.preview && <DispositifPreview src={row.preview} label={row.label} />}
+                          {t(row.label)}
+                          {row.preview && <DispositifPreview src={row.preview} label={t(row.label)} />}
                         </span>
                       </td>
                       {(["platinium", "gold", "silver"] as const).map((k) => {
                         const v = row[k];
                         return (
-                          <td key={k} className={`p-4 text-center ${PARTNER_TIERS.find(t => t.key === k)?.highlight ? "bg-gold-500/[0.08]" : ""}`}>
+                          <td key={k} className={`p-4 text-center ${PARTNER_TIERS.find((pt) => pt.key === k)?.highlight ? "bg-gold-500/[0.08]" : ""}`}>
                             {v === true ? <Check className="w-5 h-5 text-gold-600 mx-auto" strokeWidth={2.5} />
                               : v === false ? <XIcon className="w-4 h-4 text-ink-900/20 mx-auto" />
-                              : <span className="text-ink-900 text-sm font-semibold">{v}</span>}
+                              : <span className="text-ink-900 text-sm font-semibold">{t(v)}</span>}
                           </td>
                         );
                       })}
@@ -1606,7 +1602,7 @@ export default function CatalogueClient() {
               <div className="text-gold-500 font-bold mb-4">{p.price}</div>
               <ul className="space-y-2">
                 {p.includes.map((inc, j) => (
-                  <li key={j} className="flex items-start gap-2 text-cream-50/75 text-sm"><Check className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" />{inc}</li>
+                  <li key={j} className="flex items-start gap-2 text-cream-50/75 text-sm"><Check className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" />{t(inc)}</li>
                 ))}
               </ul>
               <PlaceChoose packKey={p.name} />
@@ -1638,17 +1634,17 @@ export default function CatalogueClient() {
 
       {/* 8. Comm digitale */}
       <Sec id="comm-digital" eyebrow="Communication" title="Communication digitale" dark>
-        <p className="text-cream-50/70 text-sm md:text-base max-w-2xl mb-8 -mt-4">Trois packs pensés selon le moment : <span className="text-cream-50">avant</span> pour attirer, <span className="text-cream-50">pendant</span> pour capter, <span className="text-cream-50">après</span> pour relancer.</p>
+        <p className="text-cream-50/70 text-sm md:text-base max-w-2xl mb-8 -mt-4">{t("Trois packs pensés selon le moment : avant pour attirer, pendant pour capter, après pour relancer.")}</p>
         <div className="grid sm:grid-cols-3 gap-6">
           {COMM_DIGITAL.map((p) => (
             <div key={p.name} className={`relative rounded-sm p-6 border flex flex-col ${p.popular ? "border-gold-500/60 bg-gold-500/10" : "border-cream-50/15 bg-cream-50/[0.03]"}`}>
-              {p.popular && <span className="absolute -top-3 left-6 bg-gold-500 text-ink-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Le plus visible</span>}
+              {p.popular && <span className="absolute -top-3 left-6 bg-gold-500 text-ink-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">{t("Le plus visible")}</span>}
               <h3 className="text-cream-50 text-xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(p.name)}</h3>
               <div className="text-gold-500 font-bold mb-2">{p.price}</div>
-              <p className="text-cream-50/70 text-sm mb-5">{p.desc}</p>
+              <p className="text-cream-50/70 text-sm mb-5">{t(p.desc)}</p>
               <ul className="space-y-2.5 mb-5">
                 {p.includes.map((inc, j) => (
-                  <li key={j} className="flex items-start gap-2 text-cream-50/85 text-sm"><Check className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" strokeWidth={2.5} />{inc}</li>
+                  <li key={j} className="flex items-start gap-2 text-cream-50/85 text-sm"><Check className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" strokeWidth={2.5} />{t(inc)}</li>
                 ))}
               </ul>
               <div className="mt-auto">
@@ -1664,22 +1660,22 @@ export default function CatalogueClient() {
             <div className="lg:flex-1">
               <div className="flex items-center gap-3 flex-wrap">
                 <h3 className="text-cream-50 text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(COMM_DIGITAL_GLOBAL.name)}</h3>
-                <span className="bg-gold-500 text-ink-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Les 3 packs réunis</span>
+                <span className="bg-gold-500 text-ink-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">{t("Les 3 packs réunis")}</span>
               </div>
-              <p className="text-cream-50/70 text-sm mt-2 max-w-2xl">{COMM_DIGITAL_GLOBAL.desc}</p>
+              <p className="text-cream-50/70 text-sm mt-2 max-w-2xl">{t(COMM_DIGITAL_GLOBAL.desc)}</p>
             </div>
             <div className="lg:text-right shrink-0">
               <div className="text-gold-500 text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{COMM_DIGITAL_GLOBAL.price}</div>
-              <div className="text-cream-50/60 text-xs mt-1">{COMM_DIGITAL_GLOBAL.saving}</div>
+              <div className="text-cream-50/60 text-xs mt-1">{t(COMM_DIGITAL_GLOBAL.saving)}</div>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-6 border-t border-cream-50/15 pt-6">
             {COMM_DIGITAL_GLOBAL.phases.map((ph) => (
               <div key={ph.title}>
-                <div className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-3">{ph.title}</div>
+                <div className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-3">{t(ph.title)}</div>
                 <ul className="space-y-2">
                   {ph.items.map((it, j) => (
-                    <li key={j} className="flex items-start gap-2 text-cream-50/85 text-sm"><Check className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" strokeWidth={2.5} />{it}</li>
+                    <li key={j} className="flex items-start gap-2 text-cream-50/85 text-sm"><Check className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" strokeWidth={2.5} />{t(it)}</li>
                   ))}
                 </ul>
               </div>
@@ -1716,12 +1712,12 @@ export default function CatalogueClient() {
       <Sec id="barbecue-mag" eyebrow="Communication print" title={BARBECUE_MAG.title} dark>
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <p className="text-cream-50/80 mb-6">{BARBECUE_MAG.desc}</p>
+            <p className="text-cream-50/80 mb-6">{t(BARBECUE_MAG.desc)}</p>
             <div className="grid grid-cols-3 gap-6 mb-8">
               {BARBECUE_MAG.stats.map((s, i) => (
                 <div key={i}>
-                  <div className="text-gold-500 text-2xl md:text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{s.value}</div>
-                  <div className="text-cream-50/60 text-xs uppercase tracking-widest mt-1">{s.label}</div>
+                  <div className="text-gold-500 text-2xl md:text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(s.value)}</div>
+                  <div className="text-cream-50/60 text-xs uppercase tracking-widest mt-1">{t(s.label)}</div>
                 </div>
               ))}
             </div>
@@ -1738,7 +1734,7 @@ export default function CatalogueClient() {
             </div>
           </div>
           <div>
-            <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">Tarifs encarts</div>
+            <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">{t("Tarifs encarts")}</div>
             <table className="w-full">
               <thead>
                 <tr className="text-cream-50/50 text-xs uppercase tracking-widest">
@@ -1751,7 +1747,7 @@ export default function CatalogueClient() {
                 ))}
               </tbody>
             </table>
-            <p className="mt-3 text-cream-50/40 text-[11px] leading-relaxed">Publirédactionnel : 2 pages éditoriales rédigées par nos soins, en option sur n'importe quel format (+ 700 € HT).</p>
+            <p className="mt-3 text-cream-50/40 text-[11px] leading-relaxed">{t("Publirédactionnel : 2 pages éditoriales rédigées par nos soins, en option sur n'importe quel format (+ 700 € HT).")}</p>
           </div>
         </div>
       </Sec>
@@ -1759,9 +1755,9 @@ export default function CatalogueClient() {
       {/* CTA */}
       <section className="bg-ink-950 py-20 text-center border-t border-cream-50/10">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-cream-50 text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>En 2027, toutes les flammes mènent à Paris.</h2>
+          <h2 className="text-cream-50 text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("En 2027, toutes les flammes mènent à Paris.")}</h2>
           <a href="/devenez-exposants" className="group inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-300 text-ink-950 px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors">
-            Réserver mon stand <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" strokeWidth={2.5} />
+            {t("Réserver mon stand")} <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" strokeWidth={2.5} />
           </a>
         </div>
       </section>
