@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
+import YouTubeHeroBackground from "@/components/YouTubeHeroBackground";
 import { useGSAP } from "@gsap/react";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -26,6 +27,16 @@ const SCROLL_LABEL: Record<string, string> = {
   it: "Scopri",
 };
 
+const DATE_LINE: Record<string, string> = {
+  fr: "12 · 13 · 14 Mars 2027",
+  en: "12 · 13 · 14 March 2027",
+  es: "12 · 13 · 14 Marzo 2027",
+  de: "12 · 13 · 14 März 2027",
+  nl: "12 · 13 · 14 Maart 2027",
+  pt: "12 · 13 · 14 Março 2027",
+  it: "12 · 13 · 14 Marzo 2027",
+};
+
 export function HeroVideo({ blok }: { blok: any }) {
   gsap.registerPlugin(useGSAP);
 
@@ -34,6 +45,7 @@ export function HeroVideo({ blok }: { blok: any }) {
   const locale = useLocale();
   const slogan = SLOGANS[locale] || SLOGANS.fr;
   const scrollLabel = SCROLL_LABEL[locale] || SCROLL_LABEL.fr;
+  const dateLine = DATE_LINE[locale] || DATE_LINE.fr;
 
   useGSAP(
     () => {
@@ -95,20 +107,10 @@ export function HeroVideo({ blok }: { blok: any }) {
     <section
       ref={containerRef}
       className="relative w-full h-[100dvh] min-h-[640px] overflow-hidden bg-ink-950"
-      aria-label="Barbecue Expo 2026 hero"
+      aria-label="Barbecue Expo 2027 hero"
     >
-      {/* Background video — preload metadata only; poster shown while loading */}
-      <video
-        src="https://dicfw56ddakrzcwg.public.blob.vercel-storage.com/teaserbbqexpo"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={blok.media?.filename || undefined}
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden="true"
-      />
+      {/* Background — YouTube video (muted, looped 0:00→0:44) */}
+      <YouTubeHeroBackground poster={blok.media_background?.filename || undefined} />
 
       {/* Cinematic gradient — darker at top and bottom for text legibility */}
       <div
@@ -154,15 +156,20 @@ export function HeroVideo({ blok }: { blok: any }) {
             {slogan.line3}
           </span>
         </h1>
-      </div>
 
-      {/* Date + location — bottom left, discreet */}
-      <div className="absolute bottom-8 left-6 md:left-12 z-10 text-cream-50 text-xs md:text-sm tracking-widest uppercase font-medium">
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-8 h-px bg-gold-500"></span>
-          <span>10 · 11 · 12 Avril 2026</span>
+        {/* Date + location — under the title, prominent */}
+        <div className="slogan-reveal mt-8 md:mt-12 flex flex-col items-center gap-3" style={{ animationDelay: "0.85s" }}>
+          <div className="flex items-center gap-3 md:gap-4 text-cream-50">
+            <span className="inline-block w-8 md:w-12 h-px bg-gold-500" aria-hidden="true" />
+            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
+              {dateLine}
+            </span>
+            <span className="inline-block w-8 md:w-12 h-px bg-gold-500" aria-hidden="true" />
+          </div>
+          <div className="text-cream-50/85 text-base sm:text-lg md:text-xl tracking-widest uppercase font-medium">
+            Parc Floral de Paris
+          </div>
         </div>
-        <div className="mt-1 opacity-70">Parc Floral de Paris</div>
       </div>
 
       {/* Scroll cue — bottom right */}

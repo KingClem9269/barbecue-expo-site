@@ -146,7 +146,9 @@ export default function MatchmakingHero() {
             />
           </Link>
           <a
-            href="#"
+            href="https://app.imagina.com/barbecue-expo/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-4 border border-cream-50/30 hover:border-gold-500 text-cream-50 hover:text-gold-500 px-6 sm:px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-sm sm:text-base transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
           >
             <span>{ui.ctaSecondary}</span>

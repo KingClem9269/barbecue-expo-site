@@ -156,7 +156,7 @@ export default function AwardsCategories() {
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-ink-950 py-24 md:py-32 overflow-hidden" aria-label="Award categories">
+    <section className="relative w-full bg-ink-950 py-14 md:py-20 overflow-hidden" aria-label="Award categories">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-30">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-radial from-gold-500/15 via-transparent to-transparent blur-3xl" />
       </div>

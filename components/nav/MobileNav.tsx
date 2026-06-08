@@ -123,7 +123,7 @@ export const MobileNav = ({
             aria-label="Audience"
           >
             <Link
-              href="/visiter"
+              href="/"
               onClick={() => {
                 setAudience("b2c");
                 onClose();
@@ -170,7 +170,11 @@ export const MobileNav = ({
                   />
                 ))
               : menuItems.map((item, index) => {
-                  const menuItem = item as MenuItemBlok;
+                  const raw = item as MenuItemBlok;
+                  // En mode Grand Public, on masque « Espace Pro & B2B » du sous-menu.
+                  const menuItem: MenuItemBlok = raw.submenu
+                    ? { ...raw, submenu: raw.submenu.filter((s) => !/b2b/i.test(s.label || "")) }
+                    : raw;
                   const hasSubmenu =
                     menuItem.submenu && menuItem.submenu.length > 0;
 

@@ -70,7 +70,7 @@
                       {
                         "_uid": "0e68e641-e406-410d-ae71-6e4198863ef5",
                         "color": "primary",
-                        "content": "Vendredi 10 avril",
+                        "content": "Vendredi 12 mars",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -113,7 +113,7 @@
                       {
                         "_uid": "7106b98a-0a10-411c-a870-a6dfc7819128",
                         "color": "primary",
-                        "content": "Samedi 11 avril",
+                        "content": "Samedi 13 mars",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -155,7 +155,7 @@
                       {
                         "_uid": "e7285a46-c141-45c8-a910-4366c493f251",
                         "color": "primary",
-                        "content": "Dimanche 12 avril",
+                        "content": "Dimanche 14 mars",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -704,7 +704,7 @@
                             "_uid": "5f997e9b-5a75-4254-a5a7-97199fb9014d",
                             "bold": false,
                             "color": "primary",
-                            "content": "Le salon se déroule à Paris du vendredi 10 au dimanche 12 avril :  Vendredi : 9h30 – 19h Samedi : 9h30 – 19h Dimanche : 9h30 – 18h",
+                            "content": "Le salon se déroule à Paris du vendredi 10 au dimanche 14 mars :  Vendredi : 9h30 – 19h Samedi : 9h30 – 19h Dimanche : 9h30 – 18h",
                             "component": "paragraph",
                             "textAlign": "start"
                           }

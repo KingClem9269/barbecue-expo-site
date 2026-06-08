@@ -6,7 +6,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   fr: {
     eyebrow: "Pour le grand public · Édition 2027",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Cinq raisons", line2_highlight: "d'être", line3: "à Paris en avril." },
+    heroTitle: { line1: "Cinq raisons", line2_highlight: "d'être", line3: "à Paris en mars." },
     heroSubtitle:
       "On ne vient pas à Barbecue Expo par hasard. On y vient parce qu'on n'en est pas à son premier feu, parce qu'on cherche le bon kamado, parce qu'on veut goûter, comparer, apprendre. Voici ce qu'on y trouve.",
     reasons: [
@@ -49,7 +49,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   en: {
     eyebrow: "For the public · 2027 edition",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Five reasons", line2_highlight: "to be", line3: "in Paris this April." },
+    heroTitle: { line1: "Five reasons", line2_highlight: "to be", line3: "in Paris this March." },
     heroSubtitle:
       "Nobody comes to Barbecue Expo by accident. They come because they aren't at their first fire, because they're looking for the right kamado, because they want to taste, compare, learn. Here is what's there.",
     reasons: [
@@ -66,7 +66,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   es: {
     eyebrow: "Para el público · Edición 2027",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Cinco razones", line2_highlight: "para estar", line3: "en París en abril." },
+    heroTitle: { line1: "Cinco razones", line2_highlight: "para estar", line3: "en París en marzo." },
     heroSubtitle: "Nadie viene a Barbecue Expo por azar. Se viene porque no se está en el primer fuego, porque se busca el kamado adecuado, porque se quiere probar, comparar, aprender.",
     reasons: [
       { number: "01", title: "Ver 200+ marcas en tres días.", body: "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg y 195 más. El único lugar de Europa donde se puede comparar todo, pedir consejos técnicos a los diseñadores, probar antes de comprar.", image: "/photos-2026/bbq-expo-184.jpg" },
@@ -82,7 +82,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   de: {
     eyebrow: "Für das Publikum · Ausgabe 2027",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Fünf Gründe,", line2_highlight: "im April", line3: "in Paris zu sein." },
+    heroTitle: { line1: "Fünf Gründe,", line2_highlight: "im März", line3: "in Paris zu sein." },
     heroSubtitle: "Niemand kommt zufällig zu Barbecue Expo. Man kommt, weil man nicht beim ersten Feuer ist, weil man den richtigen Kamado sucht, weil man probieren, vergleichen, lernen will.",
     reasons: [
       { number: "01", title: "200+ Marken in drei Tagen sehen.", body: "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg und 195 weitere. Der einzige Ort in Europa, an dem Sie alles vergleichen, technische Fragen an die Designer stellen und vor dem Kauf testen können.", image: "/photos-2026/bbq-expo-184.jpg" },
@@ -98,7 +98,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   nl: {
     eyebrow: "Voor het publiek · Editie 2027",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Vijf redenen", line2_highlight: "om in april", line3: "in Parijs te zijn." },
+    heroTitle: { line1: "Vijf redenen", line2_highlight: "om in maart", line3: "in Parijs te zijn." },
     heroSubtitle: "Niemand komt toevallig naar Barbecue Expo. Je komt omdat je niet aan je eerste vuur toe bent, omdat je de juiste kamado zoekt, omdat je wilt proeven, vergelijken, leren.",
     reasons: [
       { number: "01", title: "200+ merken in drie dagen zien.", body: "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg en 195 anderen. De enige plek in Europa waar u alles naast elkaar kunt vergelijken, ontwerpers technische vragen kunt stellen, kunt testen voor u koopt.", image: "/photos-2026/bbq-expo-184.jpg" },
@@ -114,7 +114,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   pt: {
     eyebrow: "Para o público · Edição 2027",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Cinco razões", line2_highlight: "para estar", line3: "em Paris em abril." },
+    heroTitle: { line1: "Cinco razões", line2_highlight: "para estar", line3: "em Paris em março." },
     heroSubtitle: "Ninguém vem a Barbecue Expo por acaso. Vem-se porque não se está no primeiro fogo, porque se procura o kamado certo, porque se quer provar, comparar, aprender.",
     reasons: [
       { number: "01", title: "Ver 200+ marcas em três dias.", body: "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg e 195 outras. O único lugar na Europa onde se pode comparar lado a lado, fazer perguntas técnicas aos designers, testar antes de comprar.", image: "/photos-2026/bbq-expo-184.jpg" },
@@ -130,7 +130,7 @@ const CONTENT: Record<string, Parameters<typeof EditorialManifesto>[0]> = {
   it: {
     eyebrow: "Per il pubblico · Edizione 2027",
     heroImage: "/photos-2026/bbq-expo-403.jpg",
-    heroTitle: { line1: "Cinque motivi", line2_highlight: "per essere", line3: "a Parigi in aprile." },
+    heroTitle: { line1: "Cinque motivi", line2_highlight: "per essere", line3: "a Parigi in marzo." },
     heroSubtitle: "Nessuno viene a Barbecue Expo per caso. Si viene perché non si è al primo fuoco, perché si cerca il kamado giusto, perché si vuole assaggiare, confrontare, imparare.",
     reasons: [
       { number: "01", title: "Vedere 200+ marchi in tre giorni.", body: "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg e altri 195. L'unico posto in Europa dove si può confrontare tutto, fare domande tecniche ai progettisti, provare prima di comprare.", image: "/photos-2026/bbq-expo-184.jpg" },

@@ -18,6 +18,7 @@ const UI: Record<
     paragraph1: string;
     paragraph2: string;
     cta: string;
+    comingSoon: string;
     secondary: string;
   }
 > = {
@@ -29,6 +30,7 @@ const UI: Record<
     paragraph2:
       "Plan haute définition téléchargeable. Les zones sont signalées sur place par des totems lisibles à 30 mètres. Personne ne se perd à Barbecue Expo.",
     cta: "Voir le plan complet",
+    comingSoon: "Bientôt disponible",
     secondary: "Infos pratiques d'accès",
   },
   en: {
@@ -39,6 +41,7 @@ const UI: Record<
     paragraph2:
       "High-definition plan downloadable. Zones on-site are marked with totems readable from 30 meters away. Nobody gets lost at Barbecue Expo.",
     cta: "See full floor plan",
+    comingSoon: "Coming soon",
     secondary: "Practical access info",
   },
   es: {
@@ -49,6 +52,7 @@ const UI: Record<
     paragraph2:
       "Plano de alta definición descargable. Las zonas están señalizadas in situ con tótems legibles a 30 metros. Nadie se pierde en Barbecue Expo.",
     cta: "Ver el plano completo",
+    comingSoon: "Próximamente",
     secondary: "Información práctica de acceso",
   },
   de: {
@@ -59,6 +63,7 @@ const UI: Record<
     paragraph2:
       "Hochauflösender Plan zum Download. Zonen vor Ort mit Stelen, lesbar aus 30 Metern. Niemand verirrt sich bei Barbecue Expo.",
     cta: "Vollständigen Plan ansehen",
+    comingSoon: "Bald verfügbar",
     secondary: "Praktische Anfahrt",
   },
   nl: {
@@ -69,6 +74,7 @@ const UI: Record<
     paragraph2:
       "HD-plattegrond te downloaden. Zones ter plaatse aangegeven met totems leesbaar op 30 meter. Niemand raakt verdwaald op Barbecue Expo.",
     cta: "Volledige plattegrond",
+    comingSoon: "Binnenkort beschikbaar",
     secondary: "Praktische toegang",
   },
   pt: {
@@ -79,6 +85,7 @@ const UI: Record<
     paragraph2:
       "Plano de alta definição descarregável. As zonas estão sinalizadas no local com totens legíveis a 30 metros. Ninguém se perde em Barbecue Expo.",
     cta: "Ver plano completo",
+    comingSoon: "Em breve",
     secondary: "Informações práticas de acesso",
   },
   it: {
@@ -89,6 +96,7 @@ const UI: Record<
     paragraph2:
       "Piantina ad alta definizione scaricabile. Le zone sono segnalate sul posto con totem leggibili a 30 metri. Nessuno si perde a Barbecue Expo.",
     cta: "Vedi la piantina completa",
+    comingSoon: "Presto disponibile",
     secondary: "Info pratiche di accesso",
   },
 };
@@ -99,7 +107,7 @@ export default function FloorPlanTeaser() {
 
   return (
     <section
-      className="relative w-full bg-cream-100 py-24 md:py-32"
+      className="relative w-full bg-cream-100 py-14 md:py-20"
       aria-label="Plan du salon"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -121,17 +129,19 @@ export default function FloorPlanTeaser() {
           <p className="text-ink-600 text-base md:text-lg leading-relaxed mb-10">
             {ui.paragraph2}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/programme"
-              className="group inline-flex items-center gap-3 bg-ink-950 hover:bg-char-800 text-cream-50 px-6 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
-            >
-              <span>{ui.cta}</span>
-              <ArrowUpRight
-                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                strokeWidth={2.5}
-              />
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 sm:items-start">
+            <div className="flex flex-col gap-2">
+              <span
+                aria-disabled="true"
+                className="inline-flex items-center gap-3 bg-ink-950/60 text-cream-50/70 px-6 py-4 rounded-sm font-bold uppercase tracking-widest text-sm cursor-not-allowed select-none"
+              >
+                <span>{ui.cta}</span>
+                <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
+              </span>
+              <span className="text-ink-500 text-xs uppercase tracking-widest font-semibold pl-1">
+                {ui.comingSoon}
+              </span>
+            </div>
             <Link
               href="/infos-pratiques"
               className="group inline-flex items-center gap-3 border border-ink-900/30 hover:border-gold-500 text-ink-900 hover:text-gold-700 px-6 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
@@ -141,14 +151,14 @@ export default function FloorPlanTeaser() {
           </div>
         </div>
 
-        {/* Floor plan image */}
-        <div className="lg:col-span-7 relative aspect-[16/10] bg-cream-50 rounded-sm overflow-hidden border border-ink-900/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.3)]">
+        {/* Floor plan image — detoured, no white box */}
+        <div className="lg:col-span-7 relative aspect-[16/10]">
           <Image
             src="/content/images/27866dc7c3_planbbq_hd.png"
             alt="Plan du salon Barbecue Expo 2027"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-contain p-6"
+            className="object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.15)]"
           />
         </div>
       </div>

@@ -70,7 +70,7 @@
                       {
                         "_uid": "0e68e641-e406-410d-ae71-6e4198863ef5",
                         "color": "primary",
-                        "content": "Venerdì 10 aprile",
+                        "content": "Venerdì 12 marzo",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -113,7 +113,7 @@
                       {
                         "_uid": "7106b98a-0a10-411c-a870-a6dfc7819128",
                         "color": "primary",
-                        "content": "Sabato 11 aprile",
+                        "content": "Sabato 13 marzo",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -155,7 +155,7 @@
                       {
                         "_uid": "e7285a46-c141-45c8-a910-4366c493f251",
                         "color": "primary",
-                        "content": "Domenica 12 aprile",
+                        "content": "Domenica 14 marzo",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -704,7 +704,7 @@
                             "_uid": "5f997e9b-5a75-4254-a5a7-97199fb9014d",
                             "bold": false,
                             "color": "primary",
-                            "content": "La fiera si svolge a Parigi da venerdì 10 a domenica 12 aprile: Venerdì: 9:30 – 19:00 Sabato: 9:30 – 19:00 Domenica: 9:30 – 18:00",
+                            "content": "La fiera si svolge a Parigi da venerdì 10 a domenica 14 marzo: Venerdì: 9:30 – 19:00 Sabato: 9:30 – 19:00 Domenica: 9:30 – 18:00",
                             "component": "paragraph",
                             "textAlign": "start"
                           }

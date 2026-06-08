@@ -23,7 +23,7 @@ const META: Record<Locale, LocaleMeta> = {
   fr: {
     title: "Barbecue Expo 2026 — Le rendez-vous européen du BBQ",
     description:
-      "Le salon n°1 du BBQ en Europe — 10, 11 et 12 avril 2026 au Parc Floral de Paris. Masterclasses, cooking shows, pitmasters internationaux, exposants et expériences autour du feu.",
+      "Le salon n°1 du BBQ en Europe — 12, 13 et 14 mars 2027 au Parc Floral de Paris. Masterclasses, cooking shows, pitmasters internationaux, exposants et expériences autour du feu.",
     keywords: [
       "barbecue",
       "BBQ",
@@ -33,7 +33,7 @@ const META: Record<Locale, LocaleMeta> = {
       "cuisson extérieure",
       "fumage",
       "outdoor cooking",
-      "avril 2026",
+      "mars 2027",
     ],
   },
   en: {
@@ -55,7 +55,7 @@ const META: Record<Locale, LocaleMeta> = {
     title: "Barbecue Expo 2026 — La cita europea del BBQ",
     description:
       "La feria N.º 1 del BBQ en Europa — 10, 11 y 12 de abril de 2026 en el Parc Floral de París. Masterclasses, cooking shows, pitmasters internacionales, expositores.",
-    keywords: ["barbacoa", "BBQ", "feria", "París", "pitmaster", "cocina exterior", "abril 2026"],
+    keywords: ["barbacoa", "BBQ", "feria", "París", "pitmaster", "cocina exterior", "marzo 2027"],
   },
   de: {
     title: "Barbecue Expo 2026 — Das europäische BBQ-Treffen",
@@ -75,7 +75,7 @@ const META: Record<Locale, LocaleMeta> = {
   nl: {
     title: "Barbecue Expo 2026 — De Europese BBQ-ontmoeting",
     description:
-      "De nummer 1 BBQ-beurs van Europa — 10, 11 en 12 april 2026 in het Parc Floral de Paris. Masterclasses, cooking shows, internationale pitmasters, exposanten.",
+      "De nummer 1 BBQ-beurs van Europa — 12, 13 en 14 maart 2027 in het Parc Floral de Paris. Masterclasses, cooking shows, internationale pitmasters, exposanten.",
     keywords: [
       "barbecue",
       "BBQ",
@@ -84,7 +84,7 @@ const META: Record<Locale, LocaleMeta> = {
       "pitmaster",
       "buitenkoken",
       "roken",
-      "april 2026",
+      "maart 2027",
     ],
   },
   pt: {
@@ -98,13 +98,13 @@ const META: Record<Locale, LocaleMeta> = {
       "Paris",
       "pitmaster",
       "cozinha ao ar livre",
-      "abril 2026",
+      "marzo 2027",
     ],
   },
   it: {
     title: "Barbecue Expo 2026 — L'appuntamento europeo del BBQ",
     description:
-      "La fiera N.1 del BBQ in Europa — 10, 11 e 12 aprile 2026 al Parc Floral di Parigi. Masterclass, cooking show, pitmaster internazionali, espositori.",
+      "La fiera N.1 del BBQ in Europa — 12, 13 e 14 marzo 2027 al Parc Floral di Parigi. Masterclass, cooking show, pitmaster internazionali, espositori.",
     keywords: [
       "barbecue",
       "BBQ",
@@ -113,7 +113,7 @@ const META: Record<Locale, LocaleMeta> = {
       "pitmaster",
       "cottura outdoor",
       "affumicatura",
-      "aprile 2026",
+      "marzo 2027",
     ],
   },
 };

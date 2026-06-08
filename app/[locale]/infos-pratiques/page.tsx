@@ -8,12 +8,12 @@ const FR = {
   eyebrow: "Édition 2027",
   heroTitle: "Tout pour préparer votre venue.",
   heroParagraph:
-    "Trois jours au Parc Floral de Paris, du vendredi 10 au dimanche 12 avril 2027. Voici comment y arriver, à quelle heure, où dormir, où se garer, et tout ce qui aide à passer un bon week-end.",
+    "Trois jours au Parc Floral de Paris, du vendredi 12 au dimanche 14 mars 2027. Voici comment y arriver, à quelle heure, où dormir, où se garer, et tout ce qui aide à passer un bon week-end.",
   daysTitle: "Horaires d'ouverture",
   days: [
-    { day: "Vendredi 10 avril", hours: "10h00 — 22h00", note: "Soirée Grill Arena · Round of 16" },
-    { day: "Samedi 11 avril", hours: "10h00 — 22h00", note: "Soirée Grill Arena · Quarts & demi-finales" },
-    { day: "Dimanche 12 avril", hours: "10h00 — 19h00", note: "Finale Grill Arena en après-midi" },
+    { day: "Vendredi 12 mars", hours: "9h30 — 19h00", note: "Soirée Grill Arena · Round of 16" },
+    { day: "Samedi 13 mars", hours: "9h30 — 19h00", note: "Soirée Grill Arena · Quarts & demi-finales" },
+    { day: "Dimanche 14 mars", hours: "9h30 — 18h00", note: "Finale Grill Arena en après-midi" },
   ],
   accessTitle: "Comment venir.",
   accessIntro: "Le Parc Floral est au bout de la ligne 1 du métro parisien. Tous les modes sont prévus, y compris en autonomie réduite.",
@@ -52,11 +52,15 @@ const FR = {
   faq: [
     {
       q: "Y a-t-il des restaurants sur place ?",
-      a: "Oui. 14 restaurateurs de street food BBQ sélectionnés sont présents tout au long du salon, ainsi qu'une zone de restauration assise et un food truck café. Tous les régimes sont pris en compte (végétarien, sans gluten).",
+      a: "Oui. 16 restaurateurs de street food BBQ sélectionnés sont présents tout au long du salon, ainsi qu'une zone de restauration assise et un food truck café. Tous les régimes sont pris en compte (végétarien, sans gluten).",
     },
     {
       q: "Puis-je venir avec mes enfants ?",
       a: "Oui. L'entrée est gratuite jusqu'à 12 ans accompagné d'un adulte. Une zone d'animation famille est prévue le samedi et dimanche après-midi.",
+    },
+    {
+      q: "Puis-je venir avec mon animal de compagnie ?",
+      a: "Non. Les animaux de compagnie ne sont pas admis sur le salon. Seuls les chiens guides et d'assistance sont acceptés.",
     },
     {
       q: "Peut-on acheter du matériel directement sur les stands ?",
@@ -145,7 +149,7 @@ export default async function InfosPratiquesPage() {
       </section>
 
       {/* Hours */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
           <Clock className="w-4 h-4 text-gold-500" strokeWidth={2} />
           {ui.daysTitle}
@@ -172,7 +176,7 @@ export default async function InfosPratiquesPage() {
       </section>
 
       {/* Access modes */}
-      <section className="bg-ink-950 py-24 md:py-32">
+      <section className="bg-ink-950 py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
             <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
@@ -212,7 +216,7 @@ export default async function InfosPratiquesPage() {
       </section>
 
       {/* Hotels */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
         <div className="lg:col-span-5 relative aspect-[4/3] rounded-sm overflow-hidden">
           <Image
             src="/photos-2026/bbq-expo-073.jpg"
@@ -243,7 +247,7 @@ export default async function InfosPratiquesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream-100 py-24 md:py-32">
+      <section className="bg-cream-100 py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2
             className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-12"

@@ -27,11 +27,9 @@ export default function PitmastersList({
   pitmasters,
   countryNames,
   labels,
-  specialtyNames,
   days,
 }: PitmastersListProps) {
   const [country, setCountry] = useState<string>("all");
-  const [specialty, setSpecialty] = useState<string>("all");
   const [day, setDay] = useState<string>("all");
 
   const countries = useMemo(
@@ -42,26 +40,19 @@ export default function PitmastersList({
     [pitmasters, countryNames],
   );
 
-  const specialties = useMemo(
-    () => Array.from(new Set(pitmasters.map((p) => p.specialtyKey))).sort(),
-    [pitmasters],
-  );
-
   const filtered = useMemo(() => {
     return pitmasters.filter((p) => {
       if (country !== "all" && p.country !== country) return false;
-      if (specialty !== "all" && p.specialtyKey !== specialty) return false;
       if (day !== "all") {
         const hasDay = (p.sessions || []).some((s) => s.day === day);
         if (!hasDay) return false;
       }
       return true;
     });
-  }, [pitmasters, country, specialty, day]);
+  }, [pitmasters, country, day]);
 
   const resetAll = () => {
     setCountry("all");
-    setSpecialty("all");
     setDay("all");
   };
 
@@ -82,18 +73,6 @@ export default function PitmastersList({
           ]}
         />
         <FilterSelect
-          label={labels.specialty}
-          value={specialty}
-          onChange={setSpecialty}
-          options={[
-            { value: "all", label: labels.all },
-            ...specialties.map((s) => ({
-              value: s,
-              label: specialtyNames[s] || s,
-            })),
-          ]}
-        />
-        <FilterSelect
           label={labels.day}
           value={day}
           onChange={setDay}
@@ -102,7 +81,7 @@ export default function PitmastersList({
             ...days.map((d) => ({ value: d, label: d })),
           ]}
         />
-        {(country !== "all" || specialty !== "all" || day !== "all") && (
+        {(country !== "all" || day !== "all") && (
           <button
             type="button"
             onClick={resetAll}
@@ -130,7 +109,6 @@ export default function PitmastersList({
               key={p.slug}
               p={p}
               countryName={countryNames[p.country] || p.country.toUpperCase()}
-              specialtyName={specialtyNames[p.specialtyKey] || p.specialty}
             />
           ))}
         </div>
@@ -175,11 +153,9 @@ function FilterSelect({
 function PitmasterCard({
   p,
   countryName,
-  specialtyName,
 }: {
   p: Pitmaster;
   countryName: string;
-  specialtyName: string;
 }) {
   return (
     <Link
@@ -230,9 +206,6 @@ function PitmasterCard({
             strokeWidth={2}
           />
         </div>
-        <span className="text-[11px] md:text-xs text-gold-500 font-semibold uppercase tracking-widest truncate">
-          {specialtyName}
-        </span>
       </div>
     </Link>
   );

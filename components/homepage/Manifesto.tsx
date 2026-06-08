@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { CharDivider } from "@/components/signature/CharMark";
+import BrandLogoMarquee from "@/components/BrandLogoMarquee";
 
 /**
  * Manifesto Section — editorial big-numbers strip.
@@ -43,7 +44,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Visiteurs en 2026" },
       { value: 200, suffix: "+", label: "Marques internationales" },
-      { value: 25, suffix: "", label: "Nationalités représentées" },
+      { value: 16, suffix: "", label: "Nationalités représentées" },
     ],
     punchline:
       "Le seul salon européen où les prescripteurs BBQ et les marques internationales se rencontrent pendant trois jours.",
@@ -53,7 +54,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Visitors in 2026" },
       { value: 200, suffix: "+", label: "International brands" },
-      { value: 25, suffix: "", label: "Nationalities represented" },
+      { value: 16, suffix: "", label: "Nationalities represented" },
     ],
     punchline:
       "The only European show where BBQ tastemakers and international brands meet for three days.",
@@ -63,7 +64,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Visitantes en 2026" },
       { value: 200, suffix: "+", label: "Marcas internacionales" },
-      { value: 25, suffix: "", label: "Nacionalidades representadas" },
+      { value: 16, suffix: "", label: "Nacionalidades representadas" },
     ],
     punchline:
       "La única feria europea donde los prescriptores BBQ y las marcas internacionales se encuentran durante tres días.",
@@ -73,7 +74,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Besucher 2026" },
       { value: 200, suffix: "+", label: "Internationale Marken" },
-      { value: 25, suffix: "", label: "Vertretene Nationalitäten" },
+      { value: 16, suffix: "", label: "Vertretene Nationalitäten" },
     ],
     punchline:
       "Die einzige europäische Messe, auf der BBQ-Trendsetter und internationale Marken drei Tage lang zusammentreffen.",
@@ -83,7 +84,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Bezoekers in 2026" },
       { value: 200, suffix: "+", label: "Internationale merken" },
-      { value: 25, suffix: "", label: "Vertegenwoordigde nationaliteiten" },
+      { value: 16, suffix: "", label: "Vertegenwoordigde nationaliteiten" },
     ],
     punchline:
       "De enige Europese beurs waar BBQ-toonaangevers en internationale merken elkaar drie dagen lang ontmoeten.",
@@ -93,7 +94,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Visitantes em 2026" },
       { value: 200, suffix: "+", label: "Marcas internacionais" },
-      { value: 25, suffix: "", label: "Nacionalidades representadas" },
+      { value: 16, suffix: "", label: "Nacionalidades representadas" },
     ],
     punchline:
       "A única feira europeia onde os prescritores BBQ e as marcas internacionais se encontram durante três dias.",
@@ -103,7 +104,7 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
     stats: [
       { value: 25800, suffix: "", label: "Visitatori nel 2026" },
       { value: 200, suffix: "+", label: "Marchi internazionali" },
-      { value: 25, suffix: "", label: "Nazionalità rappresentate" },
+      { value: 16, suffix: "", label: "Nazionalità rappresentate" },
     ],
     punchline:
       "L'unica fiera europea dove i prescrittori BBQ e i marchi internazionali si incontrano per tre giorni.",
@@ -209,26 +210,26 @@ export default function Manifesto({ blok }: { blok: ManifestoBlok }) {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-cream-100 py-20 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full bg-cream-100 py-14 md:py-20 lg:py-24 overflow-hidden"
       aria-label="Chiffres clés du salon"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Eyebrow */}
         {data.eyebrow && (
-          <div className="mb-12 md:mb-16 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold">
+          <div className="mb-8 md:mb-10 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold">
             {data.eyebrow}
           </div>
         )}
 
         {/* Stats grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 lg:gap-16">
           {data.stats?.map((stat, i) => (
             <StatBlock key={i} stat={stat} inView={inView} index={i} />
           ))}
         </div>
 
         {/* Editorial photo strip — humanizes the dashboard feel */}
-        <div className="mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
           <div className="lg:col-span-7 relative aspect-[4/3] lg:aspect-[16/10] overflow-hidden rounded-sm">
             <Image
               src="/photos-2026/bbq-expo-403.jpg"
@@ -251,6 +252,14 @@ export default function Manifesto({ blok }: { blok: ManifestoBlok }) {
               </p>
             </div>
           )}
+        </div>
+
+        {/* Slider défilant des marques partenaires */}
+        <div className="mt-12 md:mt-16">
+          <div className="mb-5 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold">
+            Les marques présentes
+          </div>
+          <BrandLogoMarquee fade="cream" />
         </div>
       </div>
     </section>

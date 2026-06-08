@@ -83,7 +83,7 @@ export default function WorldCount({ brands }: { brands: Brand[] }) {
   const sorted = Object.entries(countries).sort((a, b) => b[1] - a[1]);
 
   return (
-    <section className="relative w-full bg-ink-950 py-24 md:py-32 overflow-hidden" aria-label="World count">
+    <section className="relative w-full bg-ink-950 py-14 md:py-20 overflow-hidden" aria-label="World count">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-30">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-gold-500/15 via-transparent to-transparent blur-3xl" />
       </div>

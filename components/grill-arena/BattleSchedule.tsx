@@ -24,7 +24,7 @@ const UI: Record<
     days: [
       {
         label: "Vendredi",
-        date: "10 avril 2027",
+        date: "12 mars 2027",
         session: "Huitièmes de finale",
         time: "19:00 — 22:30",
         title: "Nuit des 16",
@@ -33,7 +33,7 @@ const UI: Record<
       },
       {
         label: "Samedi",
-        date: "11 avril 2027",
+        date: "13 mars 2027",
         session: "Quarts & demi-finales",
         time: "19:00 — 22:30",
         title: "Nuit des éliminations",
@@ -42,7 +42,7 @@ const UI: Record<
       },
       {
         label: "Dimanche",
-        date: "12 avril 2027",
+        date: "14 mars 2027",
         session: "Finale",
         time: "20:00 — 22:00",
         title: "Finale",
@@ -57,7 +57,7 @@ const UI: Record<
     days: [
       {
         label: "Friday",
-        date: "April 10, 2027",
+        date: "March 12, 2027",
         session: "Round of 16",
         time: "19:00 — 22:30",
         title: "Night of the 16",
@@ -66,7 +66,7 @@ const UI: Record<
       },
       {
         label: "Saturday",
-        date: "April 11, 2027",
+        date: "March 13, 2027",
         session: "Quarters & semis",
         time: "19:00 — 22:30",
         title: "Night of eliminations",
@@ -75,7 +75,7 @@ const UI: Record<
       },
       {
         label: "Sunday",
-        date: "April 12, 2027",
+        date: "March 14, 2027",
         session: "Final",
         time: "20:00 — 22:00",
         title: "Final",
@@ -88,45 +88,45 @@ const UI: Record<
     eyebrow: "Programa",
     title: "Tres noches. Tres arenas. Un podio.",
     days: [
-      { label: "Viernes", date: "10 de abril 2027", session: "Octavos de final", time: "19:00 — 22:30", title: "Noche de los 16", body: "Ocho duelos a eliminación directa. Ocho pitmasters sobreviven.", kind: "round" },
-      { label: "Sábado", date: "11 de abril 2027", session: "Cuartos & semifinales", time: "19:00 — 22:30", title: "Noche de las eliminaciones", body: "Cuatro cuartos, luego dos semifinales. Dos finalistas emergen.", kind: "round" },
-      { label: "Domingo", date: "12 de abril 2027", session: "Final", time: "20:00 — 22:00", title: "Final", body: "El duelo último. Solo uno queda. Trofeo, ceremonia, campeón 2027 coronado.", kind: "final" },
+      { label: "Viernes", date: "12 de marzo 2027", session: "Octavos de final", time: "19:00 — 22:30", title: "Noche de los 16", body: "Ocho duelos a eliminación directa. Ocho pitmasters sobreviven.", kind: "round" },
+      { label: "Sábado", date: "13 de marzo 2027", session: "Cuartos & semifinales", time: "19:00 — 22:30", title: "Noche de las eliminaciones", body: "Cuatro cuartos, luego dos semifinales. Dos finalistas emergen.", kind: "round" },
+      { label: "Domingo", date: "14 de marzo 2027", session: "Final", time: "20:00 — 22:00", title: "Final", body: "El duelo último. Solo uno queda. Trofeo, ceremonia, campeón 2027 coronado.", kind: "final" },
     ],
   },
   de: {
     eyebrow: "Programm",
     title: "Drei Abende. Drei Arenen. Ein Podium.",
     days: [
-      { label: "Freitag", date: "10. April 2027", session: "Achtelfinale", time: "19:00 — 22:30", title: "Nacht der 16", body: "Acht K.O.-Duelle. Acht Pitmaster überleben.", kind: "round" },
-      { label: "Samstag", date: "11. April 2027", session: "Viertel- & Halbfinale", time: "19:00 — 22:30", title: "Nacht der Eliminierungen", body: "Vier Viertelfinale, dann zwei Halbfinale. Zwei Finalisten bleiben.", kind: "round" },
-      { label: "Sonntag", date: "12. April 2027", session: "Finale", time: "20:00 — 22:00", title: "Finale", body: "Das ultimative Duell. Nur einer bleibt. Trophäe, Zeremonie, Champion 2027 gekrönt.", kind: "final" },
+      { label: "Freitag", date: "12. März 2027", session: "Achtelfinale", time: "19:00 — 22:30", title: "Nacht der 16", body: "Acht K.O.-Duelle. Acht Pitmaster überleben.", kind: "round" },
+      { label: "Samstag", date: "13. März 2027", session: "Viertel- & Halbfinale", time: "19:00 — 22:30", title: "Nacht der Eliminierungen", body: "Vier Viertelfinale, dann zwei Halbfinale. Zwei Finalisten bleiben.", kind: "round" },
+      { label: "Sonntag", date: "14. März 2027", session: "Finale", time: "20:00 — 22:00", title: "Finale", body: "Das ultimative Duell. Nur einer bleibt. Trophäe, Zeremonie, Champion 2027 gekrönt.", kind: "final" },
     ],
   },
   nl: {
     eyebrow: "Programma",
     title: "Drie avonden. Drie arena's. Eén podium.",
     days: [
-      { label: "Vrijdag", date: "10 april 2027", session: "Achtste finale", time: "19:00 — 22:30", title: "Nacht van de 16", body: "Acht knock-outduels. Acht pitmasters overleven.", kind: "round" },
-      { label: "Zaterdag", date: "11 april 2027", session: "Kwart- & halve finales", time: "19:00 — 22:30", title: "Nacht van de eliminaties", body: "Vier kwartfinales, dan twee halve finales. Twee finalisten blijven over.", kind: "round" },
-      { label: "Zondag", date: "12 april 2027", session: "Finale", time: "20:00 — 22:00", title: "Finale", body: "Het ultieme duel. Slechts één blijft. Trofee, ceremonie, kampioen 2027.", kind: "final" },
+      { label: "Vrijdag", date: "12 maart 2027", session: "Achtste finale", time: "19:00 — 22:30", title: "Nacht van de 16", body: "Acht knock-outduels. Acht pitmasters overleven.", kind: "round" },
+      { label: "Zaterdag", date: "13 maart 2027", session: "Kwart- & halve finales", time: "19:00 — 22:30", title: "Nacht van de eliminaties", body: "Vier kwartfinales, dan twee halve finales. Twee finalisten blijven over.", kind: "round" },
+      { label: "Zondag", date: "14 maart 2027", session: "Finale", time: "20:00 — 22:00", title: "Finale", body: "Het ultieme duel. Slechts één blijft. Trofee, ceremonie, kampioen 2027.", kind: "final" },
     ],
   },
   pt: {
     eyebrow: "Programa",
     title: "Três noites. Três arenas. Um pódio.",
     days: [
-      { label: "Sexta-feira", date: "10 de abril 2027", session: "Oitavos de final", time: "19:00 — 22:30", title: "Noite dos 16", body: "Oito duelos de eliminação direta. Oito pitmasters sobrevivem.", kind: "round" },
-      { label: "Sábado", date: "11 de abril 2027", session: "Quartos & meias-finais", time: "19:00 — 22:30", title: "Noite das eliminações", body: "Quatro quartos, depois duas meias-finais. Dois finalistas emergem.", kind: "round" },
-      { label: "Domingo", date: "12 de abril 2027", session: "Final", time: "20:00 — 22:00", title: "Final", body: "O duelo supremo. Apenas um fica. Troféu, cerimónia, campeão 2027 coroado.", kind: "final" },
+      { label: "Sexta-feira", date: "12 de março 2027", session: "Oitavos de final", time: "19:00 — 22:30", title: "Noite dos 16", body: "Oito duelos de eliminação direta. Oito pitmasters sobrevivem.", kind: "round" },
+      { label: "Sábado", date: "13 de março 2027", session: "Quartos & meias-finais", time: "19:00 — 22:30", title: "Noite das eliminações", body: "Quatro quartos, depois duas meias-finais. Dois finalistas emergem.", kind: "round" },
+      { label: "Domingo", date: "14 de março 2027", session: "Final", time: "20:00 — 22:00", title: "Final", body: "O duelo supremo. Apenas um fica. Troféu, cerimónia, campeão 2027 coroado.", kind: "final" },
     ],
   },
   it: {
     eyebrow: "Programma",
     title: "Tre serate. Tre arene. Un podio.",
     days: [
-      { label: "Venerdì", date: "10 aprile 2027", session: "Ottavi di finale", time: "19:00 — 22:30", title: "Notte dei 16", body: "Otto duelli a eliminazione diretta. Otto pitmaster sopravvivono.", kind: "round" },
-      { label: "Sabato", date: "11 aprile 2027", session: "Quarti & semifinali", time: "19:00 — 22:30", title: "Notte delle eliminazioni", body: "Quattro quarti, poi due semifinali. Due finalisti emergono.", kind: "round" },
-      { label: "Domenica", date: "12 aprile 2027", session: "Finale", time: "20:00 — 22:00", title: "Finale", body: "Il duello supremo. Ne resta uno. Trofeo, cerimonia, campione 2027 incoronato.", kind: "final" },
+      { label: "Venerdì", date: "12 marzo 2027", session: "Ottavi di finale", time: "19:00 — 22:30", title: "Notte dei 16", body: "Otto duelli a eliminazione diretta. Otto pitmaster sopravvivono.", kind: "round" },
+      { label: "Sabato", date: "13 marzo 2027", session: "Quarti & semifinali", time: "19:00 — 22:30", title: "Notte delle eliminazioni", body: "Quattro quarti, poi due semifinali. Due finalisti emergono.", kind: "round" },
+      { label: "Domenica", date: "14 marzo 2027", session: "Finale", time: "20:00 — 22:00", title: "Finale", body: "Il duello supremo. Ne resta uno. Trofeo, cerimonia, campione 2027 incoronato.", kind: "final" },
     ],
   },
 };
@@ -136,7 +136,7 @@ export default function BattleSchedule() {
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-ink-950 py-24 md:py-32 overflow-hidden" aria-label="Battle schedule">
+    <section className="relative w-full bg-ink-950 py-14 md:py-20 overflow-hidden" aria-label="Battle schedule">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-25">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-ember-600/15 via-transparent to-transparent blur-3xl" />
       </div>

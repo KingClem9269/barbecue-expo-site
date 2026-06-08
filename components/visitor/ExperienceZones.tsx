@@ -1,11 +1,29 @@
 "use client";
+import Image from "next/image";
 import { useLocale } from "next-intl";
-import { Flame, Utensils, GraduationCap, ShoppingBag, Trophy } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { Flame, Utensils, GraduationCap, ShoppingBag, Trophy, ArrowUpRight } from "lucide-react";
 
 /**
  * ExperienceZones — what you actually do on site.
- * B2C-focused. 5 zones of the expo presented with icon + short copy.
+ * B2C-focused. 5 zones of the expo presented with icon + short copy + background photo.
  */
+
+const ZONE_LINKS = [
+  "/grill-arena",
+  "/exposants",
+  "/program/masterclasses",
+  "/program/bbq-street-food",
+  "/programme",
+];
+
+const ZONE_IMAGES = [
+  "/photos-2026/zone-grill-arena-2026.jpg",
+  "/photos-2026/zone-exposants.jpg",
+  "/photos-2026/zone-masterclasses.jpg",
+  "/photos-2026/zone-street-food.jpg",
+  "/photos-2026/zone-cooking-shows.jpg",
+];
 
 const UI: Record<
   string,
@@ -27,8 +45,8 @@ const UI: Record<
         body: "Des pitmasters internationaux s'affrontent en battles live. Un champion couronné chaque soir.",
       },
       {
-        title: "Cooking Shows",
-        body: "Démonstrations sur grande scène. Techniques, gestes, recettes signature — par les meilleurs.",
+        title: "Zone Exposants",
+        body: "200+ marques internationales. Testez le matériel en conditions réelles. Achat direct possible.",
       },
       {
         title: "Masterclasses",
@@ -36,11 +54,11 @@ const UI: Record<
       },
       {
         title: "Street Food",
-        body: "14 restaurants de rue sélectionnés. La meilleure street food BBQ de Paris concentrée en un lieu.",
+        body: "16 restaurants de rue sélectionnés. La meilleure street food BBQ de Paris concentrée en un lieu.",
       },
       {
-        title: "Zone Exposants",
-        body: "200+ marques internationales. Testez le matériel en conditions réelles. Achat direct possible.",
+        title: "BBQ Libre-Service",
+        body: "Allumez votre propre feu. Des postes de cuisson en libre accès pour griller vos produits et tester le matériel sur place.",
       },
     ],
   },
@@ -55,8 +73,8 @@ const UI: Record<
         body: "International pitmasters face off in live battles. One champion crowned each night.",
       },
       {
-        title: "Cooking Shows",
-        body: "Main stage demonstrations. Techniques, moves, signature recipes — by the very best.",
+        title: "Exhibitor Zone",
+        body: "200+ international brands. Test the gear in real conditions. Direct purchase possible.",
       },
       {
         title: "Masterclasses",
@@ -64,11 +82,11 @@ const UI: Record<
       },
       {
         title: "Street Food",
-        body: "14 curated street food stands. The best BBQ street food in Paris, concentrated in one place.",
+        body: "16 curated street food stands. The best BBQ street food in Paris, concentrated in one place.",
       },
       {
-        title: "Exhibitor Zone",
-        body: "200+ international brands. Test the gear in real conditions. Direct purchase possible.",
+        title: "Self-Service BBQ",
+        body: "Fire up your own grill. Self-service cooking stations to grill your products and try the gear on site.",
       },
     ],
   },
@@ -79,10 +97,10 @@ const UI: Record<
       "Un recorrido pensado para los conocedores. Pruebe, aprenda, deguste, compita y salga transformado.",
     zones: [
       { title: "Grill Arena", body: "Pitmasters internacionales se enfrentan en battles en directo. Un campeón cada noche." },
-      { title: "Cooking Shows", body: "Demos en gran escena. Técnicas, gestos, recetas firma — por los mejores." },
-      { title: "Masterclasses", body: "12 sesiones de 20 plazas. Inmersión íntima con un pitmaster. Reserve temprano." },
-      { title: "Street Food", body: "14 puestos de comida callejera seleccionados. Lo mejor del BBQ street food en un solo lugar." },
       { title: "Zona Expositores", body: "200+ marcas internacionales. Pruebe el material en condiciones reales. Compra directa posible." },
+      { title: "Masterclasses", body: "12 sesiones de 20 plazas. Inmersión íntima con un pitmaster. Reserve temprano." },
+      { title: "Street Food", body: "16 puestos de comida callejera seleccionados. Lo mejor del BBQ street food en un solo lugar." },
+      { title: "BBQ Autoservicio", body: "Encienda su propio fuego. Puestos de cocción de libre acceso para asar sus productos y probar el material in situ." },
     ],
   },
   de: {
@@ -92,10 +110,10 @@ const UI: Record<
       "Eine Reise für Kenner. Testen, lernen, genießen, kämpfen — und verändert nach Hause gehen.",
     zones: [
       { title: "Grill Arena", body: "Internationale Pitmaster treten in Live-Battles gegeneinander an. Jeden Abend ein Champion." },
-      { title: "Cooking Shows", body: "Demos auf der großen Bühne. Techniken, Handgriffe, Signature-Rezepte — von den Besten." },
-      { title: "Masterclasses", body: "12 Sessions mit je 20 Plätzen. Intime Immersion mit einem Pitmaster. Früh buchen." },
-      { title: "Street Food", body: "14 ausgewählte Street-Food-Stände. Das beste BBQ-Street-Food in Paris, an einem Ort." },
       { title: "Aussteller-Zone", body: "200+ internationale Marken. Testen Sie die Ausrüstung unter realen Bedingungen." },
+      { title: "Masterclasses", body: "12 Sessions mit je 20 Plätzen. Intime Immersion mit einem Pitmaster. Früh buchen." },
+      { title: "Street Food", body: "16 ausgewählte Street-Food-Stände. Das beste BBQ-Street-Food in Paris, an einem Ort." },
+      { title: "Self-Service-BBQ", body: "Entfachen Sie Ihr eigenes Feuer. Frei zugängliche Grillstationen, um Ihre Produkte zu grillen und die Ausrüstung vor Ort zu testen." },
     ],
   },
   nl: {
@@ -105,10 +123,10 @@ const UI: Record<
       "Een parcours ontworpen voor kenners. Test, leer, proef, strijd — en ga veranderd naar huis.",
     zones: [
       { title: "Grill Arena", body: "Internationale pitmasters strijden live tegen elkaar. Elke avond een kampioen." },
-      { title: "Cooking Shows", body: "Demonstraties op het hoofdpodium. Technieken, gebaren, signature-recepten — van de besten." },
-      { title: "Masterclasses", body: "12 sessies met 20 plaatsen. Intieme onderdompeling met een pitmaster. Boek vroeg." },
-      { title: "Street Food", body: "14 geselecteerde street food-kraampjes. De beste BBQ-street-food van Parijs op één plek." },
       { title: "Exposantenzone", body: "200+ internationale merken. Test het materiaal onder echte omstandigheden. Directe aankoop mogelijk." },
+      { title: "Masterclasses", body: "12 sessies met 20 plaatsen. Intieme onderdompeling met een pitmaster. Boek vroeg." },
+      { title: "Street Food", body: "16 geselecteerde street food-kraampjes. De beste BBQ-street-food van Parijs op één plek." },
+      { title: "Zelfbedienings-BBQ", body: "Steek je eigen vuur aan. Vrij toegankelijke kookposten om je producten te grillen en het materiaal ter plaatse te testen." },
     ],
   },
   pt: {
@@ -118,10 +136,10 @@ const UI: Record<
       "Um percurso pensado para os conhecedores. Teste, aprenda, deguste, compita e saia transformado.",
     zones: [
       { title: "Grill Arena", body: "Pitmasters internacionais enfrentam-se em battles em direto. Um campeão cada noite." },
-      { title: "Cooking Shows", body: "Demos em grande palco. Técnicas, gestos, receitas assinatura — pelos melhores." },
-      { title: "Masterclasses", body: "12 sessões com 20 lugares cada. Imersão íntima com um pitmaster. Reserve cedo." },
-      { title: "Street Food", body: "14 bancas selecionadas. A melhor street food BBQ de Paris num só lugar." },
       { title: "Zona Expositores", body: "200+ marcas internacionais. Teste o material em condições reais. Compra direta possível." },
+      { title: "Masterclasses", body: "12 sessões com 20 lugares cada. Imersão íntima com um pitmaster. Reserve cedo." },
+      { title: "Street Food", body: "16 bancas selecionadas. A melhor street food BBQ de Paris num só lugar." },
+      { title: "BBQ Self-Service", body: "Acenda o seu próprio fogo. Postos de cozedura de livre acesso para grelhar os seus produtos e testar o material no local." },
     ],
   },
   it: {
@@ -131,22 +149,22 @@ const UI: Record<
       "Un percorso pensato per i conoscitori. Provate, imparate, degustate, sfidatevi — e uscite cambiati.",
     zones: [
       { title: "Grill Arena", body: "Pitmaster internazionali si sfidano in battle dal vivo. Un campione ogni sera." },
-      { title: "Cooking Shows", body: "Demo sul grande palco. Tecniche, gesti, ricette signature — dai migliori." },
-      { title: "Masterclasses", body: "12 sessioni da 20 posti. Immersione intima con un pitmaster. Prenotate presto." },
-      { title: "Street Food", body: "14 bancarelle selezionate. Il meglio del BBQ street food di Parigi in un solo posto." },
       { title: "Zona Espositori", body: "200+ marchi internazionali. Testate il materiale in condizioni reali. Acquisto diretto possibile." },
+      { title: "Masterclasses", body: "12 sessioni da 20 posti. Immersione intima con un pitmaster. Prenotate presto." },
+      { title: "Street Food", body: "16 bancarelle selezionate. Il meglio del BBQ street food di Parigi in un solo posto." },
+      { title: "BBQ Self-Service", body: "Accendi il tuo fuoco. Postazioni di cottura ad accesso libero per grigliare i tuoi prodotti e provare l'attrezzatura sul posto." },
     ],
   },
 };
 
-const ICONS = [Trophy, Flame, GraduationCap, Utensils, ShoppingBag];
+const ICONS = [Trophy, ShoppingBag, GraduationCap, Utensils, Flame];
 
 export default function ExperienceZones() {
   const locale = useLocale();
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-cream-50 py-24 md:py-32 lg:py-40" aria-label="Experience zones">
+    <section className="relative w-full bg-cream-50 py-14 md:py-20 lg:py-24" aria-label="Experience zones">
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8 md:mb-12">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
@@ -176,21 +194,42 @@ export default function ExperienceZones() {
             // First two cards span 3 cols on lg, last three span 2
             const span = i < 2 ? "lg:col-span-3" : "lg:col-span-2";
             return (
-              <div
+              <Link
                 key={i}
-                className={`${span} bg-ink-950 text-cream-50 rounded-sm p-6 md:p-8 lg:p-10 flex flex-col gap-4 hover:bg-char-900 transition-colors`}
+                href={ZONE_LINKS[i]}
+                className={`${span} group relative overflow-hidden text-cream-50 rounded-sm min-h-[280px] md:min-h-[320px] flex flex-col justify-end`}
               >
-                <Icon className="w-7 h-7 text-gold-500" strokeWidth={1.8} />
-                <h3
-                  className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold"
-                  style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-                >
-                  {z.title}
-                </h3>
-                <p className="text-cream-50/80 text-base leading-relaxed">
-                  {z.body}
-                </p>
-              </div>
+                {/* Background photo */}
+                <Image
+                  src={ZONE_IMAGES[i]}
+                  alt=""
+                  fill
+                  sizes={i < 2 ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 33vw"}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Gradient overlay for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-transparent" aria-hidden="true" />
+
+                {/* Content */}
+                <div className="relative p-6 md:p-8 lg:p-10 flex flex-col gap-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <Icon className="w-7 h-7 text-gold-500" strokeWidth={1.8} />
+                    <ArrowUpRight
+                      className="w-5 h-5 text-cream-50/40 group-hover:text-gold-500 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      strokeWidth={2}
+                    />
+                  </div>
+                  <h3
+                    className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold"
+                    style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+                  >
+                    {z.title}
+                  </h3>
+                  <p className="text-cream-50/85 text-base leading-relaxed">
+                    {z.body}
+                  </p>
+                </div>
+              </Link>
             );
           })}
         </div>

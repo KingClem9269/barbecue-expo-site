@@ -8,7 +8,7 @@
   "content": {
     "_uid": "8f4e7906-9ba6-4f21-a592-6c1b560f9a11",
     "city": "Paris, France",
-    "date": "10, 11 et 12 Avril 2026",
+    "date": "12, 13 et 14 Mars 2027",
     "email": "info@barbecue-expo.fr",
     "phone": "09 83 90 16 15",
     "address": "Rte de la Pyramide, 75012 Paris, France",
@@ -229,6 +229,13 @@
             "_uid": "dc753550-df9d-468d-a10a-97d08bbaca9a",
             "link": "/program/bbq-street-food",
             "label": "BBQ Street Food",
+            "submenu": [],
+            "component": "menu-item"
+          },
+          {
+            "_uid": "pitmasters-menu-item-fr",
+            "link": "/pitmasters",
+            "label": "Les pitmasters",
             "submenu": [],
             "component": "menu-item"
           }

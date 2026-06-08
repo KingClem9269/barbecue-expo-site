@@ -51,6 +51,7 @@ import SectionBreak from "@/components/homepage/SectionBreak";
 import GrillArenaTeaser from "@/components/homepage/GrillArenaTeaser";
 import AwardsTeaser from "@/components/homepage/AwardsTeaser";
 import PitmastersGrid from "@/components/homepage/PitmastersGrid";
+import ExperienceZones from "@/components/visitor/ExperienceZones";
 import FloorPlanTeaser from "@/components/homepage/FloorPlanTeaser";
 import PartnersStrip from "@/components/homepage/PartnersStrip";
 import LatestStories from "@/components/homepage/LatestStories";
@@ -116,6 +117,7 @@ registerComponents({
   "awards-teaser": AwardsTeaser,
   // Sprint 9
   "pitmasters-grid": PitmastersGrid,
+  "experience-zones": ExperienceZones,
   // Sprint 18 — homepage cleanup
   "floor-plan-teaser": FloorPlanTeaser,
   "partners-strip": PartnersStrip,

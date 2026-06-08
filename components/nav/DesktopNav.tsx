@@ -8,7 +8,7 @@ import { MobileNav } from "./MobileNav";
 import { NavLogo } from "./NavLogo";
 import { MobileTicketButton } from "./MobileTicketButton";
 import { DesktopTicketButton } from "./DesktopTicketButton";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { AudienceToggle } from "./AudienceToggle";
@@ -40,6 +40,7 @@ export function DesktopNav({
 }) {
   const locale = useLocale();
   const { audience } = useAudience();
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -68,6 +69,10 @@ export function DesktopNav({
     };
   }, []);
 
+  // La page « Présentation & catalogue exposant » possède sa propre barre de
+  // navigation (« EXPOSER ») : on masque donc le menu global du site dessus.
+  if (pathname?.startsWith("/presentation-exposants")) return null;
+
   return (
     <>
       <nav
@@ -93,7 +98,11 @@ export function DesktopNav({
                   <ProNavMenuItem key={item.key} item={item} />
                 ))
               : menuItems.map((item) => {
-                  const menuItem = item as MenuItemBlok;
+                  const raw = item as MenuItemBlok;
+                  // En mode Grand Public, on masque « Espace Pro & B2B » du sous-menu.
+                  const menuItem: MenuItemBlok = raw.submenu
+                    ? { ...raw, submenu: raw.submenu.filter((s) => !/b2b/i.test(s.label || "")) }
+                    : raw;
                   const hasSubmenu =
                     menuItem.submenu && menuItem.submenu.length > 0;
 

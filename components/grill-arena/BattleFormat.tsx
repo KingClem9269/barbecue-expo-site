@@ -1,6 +1,6 @@
 "use client";
 import { useLocale } from "next-intl";
-import { Clock, Beef, Users, Trophy } from "lucide-react";
+import { Clock, Package, Users, CalendarDays } from "lucide-react";
 
 const UI: Record<
   string,
@@ -12,99 +12,99 @@ const UI: Record<
   }
 > = {
   fr: {
-    eyebrow: "La mécanique",
-    title: "16 pitmasters. 4 manches. Un champion.",
+    eyebrow: "Le format",
+    title: "16 pitmasters pour des shows spectaculaires.",
     subtitle:
-      "Chaque battle oppose deux pitmasters pendant 90 minutes. Mêmes braises, même viande, même temps. Le jury note à l'aveugle sur goût, cuisson, originalité. Bracket à élimination directe.",
+      "Chaque session oppose des pitmasters internationaux pendant 60 minutes. Mystery box, jury d'experts, 16 sessions sur 3 jours. Du spectacle, du goût, de l'adrénaline.",
     rules: [
-      { title: "90 minutes", body: "Le temps imparti pour cuire, dresser, servir. Pas une seconde de plus." },
-      { title: "Viande imposée", body: "Une seule pièce, identique pour tous, révélée 60 secondes avant le top départ." },
-      { title: "Jury de 6 experts", body: "Chefs, pitmasters, critiques. Notation à l'aveugle sur 30 points." },
-      { title: "Bracket à 16", body: "Huit duels en huitièmes, puis quarts, demi-finales, finale. Trois jours, un seul champion." },
+      { title: "60 minutes", body: "Le temps imparti pour cuire, dresser, servir. Pas une seconde de plus." },
+      { title: "Mystery box", body: "Ingrédients surprise révélés au dernier moment. Créativité et maîtrise du feu à l'épreuve." },
+      { title: "Jury d'experts", body: "Chefs, pitmasters, critiques gastronomiques. Notation à l'aveugle sur goût, cuisson, originalité." },
+      { title: "16 sessions", body: "16 sessions réparties sur 3 jours. Du vendredi au dimanche, le feu ne s'éteint jamais." },
     ],
   },
   en: {
     eyebrow: "The format",
-    title: "16 pitmasters. 4 rounds. One champion.",
+    title: "16 pitmasters for spectacular shows.",
     subtitle:
-      "Each battle pairs two pitmasters for 90 minutes. Same embers, same meat, same time. The jury scores blind on taste, cook, originality. Single-elimination bracket.",
+      "Each session features international pitmasters for 60 minutes. Mystery box, expert jury, 16 sessions over 3 days. Spectacle, flavour, adrenaline.",
     rules: [
-      { title: "90 minutes", body: "The time to cook, plate, serve. Not a second more." },
-      { title: "Imposed cut", body: "One cut, identical for all, revealed 60 seconds before start." },
-      { title: "6-expert jury", body: "Chefs, pitmasters, critics. Blind scoring out of 30 points." },
-      { title: "16-bracket", body: "Eight round-of-16 duels, then quarters, semis, finals. Three days, one champion." },
+      { title: "60 minutes", body: "The time to cook, plate, serve. Not a second more." },
+      { title: "Mystery box", body: "Surprise ingredients revealed at the last moment. Creativity and fire mastery put to the test." },
+      { title: "Expert jury", body: "Chefs, pitmasters, food critics. Blind scoring on taste, cook, originality." },
+      { title: "16 sessions", body: "16 sessions spread over 3 days. From Friday to Sunday, the fire never goes out." },
     ],
   },
   es: {
-    eyebrow: "La mecánica",
-    title: "16 pitmasters. 4 rondas. Un campeón.",
+    eyebrow: "El formato",
+    title: "16 pitmasters para shows espectaculares.",
     subtitle:
-      "Cada battle enfrenta a dos pitmasters durante 90 minutos. Mismas brasas, misma carne, mismo tiempo. El jurado evalúa a ciegas sobre sabor, cocción, originalidad. Bracket de eliminación directa.",
+      "Cada sesión enfrenta a pitmasters internacionales durante 60 minutos. Mystery box, jurado de expertos, 16 sesiones en 3 días. Espectáculo, sabor, adrenalina.",
     rules: [
-      { title: "90 minutos", body: "El tiempo para cocinar, emplatar, servir. Ni un segundo más." },
-      { title: "Carne impuesta", body: "Una sola pieza, idéntica para todos, revelada 60 segundos antes del inicio." },
-      { title: "Jurado de 6 expertos", body: "Chefs, pitmasters, críticos. Puntuación a ciegas sobre 30 puntos." },
-      { title: "Bracket de 16", body: "Ocho duelos en octavos, luego cuartos, semifinales, final. Tres días, un campeón." },
+      { title: "60 minutos", body: "El tiempo para cocinar, emplatar, servir. Ni un segundo más." },
+      { title: "Mystery box", body: "Ingredientes sorpresa revelados en el último momento. Creatividad y dominio del fuego a prueba." },
+      { title: "Jurado de expertos", body: "Chefs, pitmasters, críticos. Puntuación a ciegas sobre sabor, cocción, originalidad." },
+      { title: "16 sesiones", body: "16 sesiones repartidas en 3 días. De viernes a domingo, el fuego nunca se apaga." },
     ],
   },
   de: {
-    eyebrow: "Die Mechanik",
-    title: "16 Pitmaster. 4 Runden. Ein Champion.",
+    eyebrow: "Das Format",
+    title: "16 Pitmaster für spektakuläre Shows.",
     subtitle:
-      "Jede Battle stellt zwei Pitmaster 90 Minuten lang gegenüber. Gleiche Glut, gleiches Fleisch, gleiche Zeit. Die Jury bewertet blind nach Geschmack, Garung, Originalität. K.O.-System.",
+      "Jede Session stellt internationale Pitmaster 60 Minuten lang gegenüber. Mystery Box, Experten-Jury, 16 Sessions an 3 Tagen. Spektakel, Geschmack, Adrenalin.",
     rules: [
-      { title: "90 Minuten", body: "Die Zeit zum Kochen, Anrichten, Servieren. Keine Sekunde mehr." },
-      { title: "Vorgegebenes Fleisch", body: "Ein Stück, identisch für alle, 60 Sekunden vor Start enthüllt." },
-      { title: "Jury aus 6 Experten", body: "Köche, Pitmaster, Kritiker. Blindbewertung über 30 Punkte." },
-      { title: "16er-Bracket", body: "Acht Achtelfinal-Duelle, dann Viertel-, Halbfinale, Finale. Drei Tage, ein Champion." },
+      { title: "60 Minuten", body: "Die Zeit zum Kochen, Anrichten, Servieren. Keine Sekunde mehr." },
+      { title: "Mystery Box", body: "Überraschungszutaten im letzten Moment enthüllt. Kreativität und Feuerbeherrschung auf dem Prüfstand." },
+      { title: "Experten-Jury", body: "Köche, Pitmaster, Kritiker. Blindbewertung nach Geschmack, Garung, Originalität." },
+      { title: "16 Sessions", body: "16 Sessions über 3 Tage verteilt. Von Freitag bis Sonntag, das Feuer erlischt nie." },
     ],
   },
   nl: {
-    eyebrow: "De mechaniek",
-    title: "16 pitmasters. 4 rondes. Eén kampioen.",
+    eyebrow: "Het formaat",
+    title: "16 pitmasters voor spectaculaire shows.",
     subtitle:
-      "Elke battle zet twee pitmasters 90 minuten tegenover elkaar. Dezelfde gloed, hetzelfde vlees, dezelfde tijd. De jury scoort blind op smaak, bereiding, originaliteit. Knock-outsysteem.",
+      "Elke sessie zet internationale pitmasters 60 minuten tegenover elkaar. Mystery box, expertjury, 16 sessies over 3 dagen. Spektakel, smaak, adrenaline.",
     rules: [
-      { title: "90 minuten", body: "De tijd om te koken, op te maken, te serveren. Geen seconde meer." },
-      { title: "Opgelegd stuk vlees", body: "Eén stuk, identiek voor iedereen, 60 seconden voor start onthuld." },
-      { title: "Jury van 6 experts", body: "Chefs, pitmasters, critici. Blinde scoring op 30 punten." },
-      { title: "16-bracket", body: "Acht achtste-finale-duels, dan kwart-, halve-, finale. Drie dagen, één kampioen." },
+      { title: "60 minuten", body: "De tijd om te koken, op te maken, te serveren. Geen seconde meer." },
+      { title: "Mystery box", body: "Verrassingsingrediënten op het laatste moment onthuld. Creativiteit en vuurbeheersing op de proef." },
+      { title: "Expertjury", body: "Chefs, pitmasters, critici. Blinde scoring op smaak, bereiding, originaliteit." },
+      { title: "16 sessies", body: "16 sessies verdeeld over 3 dagen. Van vrijdag tot zondag, het vuur gaat nooit uit." },
     ],
   },
   pt: {
-    eyebrow: "A mecânica",
-    title: "16 pitmasters. 4 rondas. Um campeão.",
+    eyebrow: "O formato",
+    title: "16 pitmasters para shows espetaculares.",
     subtitle:
-      "Cada battle opõe dois pitmasters durante 90 minutos. Mesmas brasas, mesma carne, mesmo tempo. O júri avalia às cegas em sabor, cozedura, originalidade. Eliminatória direta.",
+      "Cada sessão opõe pitmasters internacionais durante 60 minutos. Mystery box, júri de especialistas, 16 sessões em 3 dias. Espetáculo, sabor, adrenalina.",
     rules: [
-      { title: "90 minutos", body: "O tempo para cozinhar, emprata, servir. Nem um segundo a mais." },
-      { title: "Carne imposta", body: "Uma só peça, idêntica para todos, revelada 60 segundos antes do início." },
-      { title: "Júri de 6 especialistas", body: "Chefs, pitmasters, críticos. Avaliação às cegas sobre 30 pontos." },
-      { title: "Bracket de 16", body: "Oito duelos em oitavos, depois quartos, meias, final. Três dias, um campeão." },
+      { title: "60 minutos", body: "O tempo para cozinhar, empratar, servir. Nem um segundo a mais." },
+      { title: "Mystery box", body: "Ingredientes surpresa revelados no último momento. Criatividade e domínio do fogo à prova." },
+      { title: "Júri de especialistas", body: "Chefs, pitmasters, críticos. Avaliação às cegas em sabor, cozedura, originalidade." },
+      { title: "16 sessões", body: "16 sessões repartidas por 3 dias. De sexta a domingo, o fogo nunca se apaga." },
     ],
   },
   it: {
-    eyebrow: "La meccanica",
-    title: "16 pitmaster. 4 round. Un campione.",
+    eyebrow: "Il formato",
+    title: "16 pitmaster per show spettacolari.",
     subtitle:
-      "Ogni battle oppone due pitmaster per 90 minuti. Stesse braci, stessa carne, stesso tempo. La giuria valuta alla cieca su gusto, cottura, originalità. Eliminazione diretta.",
+      "Ogni sessione vede pitmaster internazionali sfidarsi per 60 minuti. Mystery box, giuria di esperti, 16 sessioni in 3 giorni. Spettacolo, gusto, adrenalina.",
     rules: [
-      { title: "90 minuti", body: "Il tempo per cucinare, impiattare, servire. Non un secondo di più." },
-      { title: "Carne imposta", body: "Un solo taglio, identico per tutti, rivelato 60 secondi prima del via." },
-      { title: "Giuria di 6 esperti", body: "Chef, pitmaster, critici. Valutazione alla cieca su 30 punti." },
-      { title: "Bracket a 16", body: "Otto duelli in ottavi, poi quarti, semifinali, finale. Tre giorni, un campione." },
+      { title: "60 minuti", body: "Il tempo per cucinare, impiattare, servire. Non un secondo di più." },
+      { title: "Mystery box", body: "Ingredienti a sorpresa rivelati all'ultimo momento. Creatività e padronanza del fuoco alla prova." },
+      { title: "Giuria di esperti", body: "Chef, pitmaster, critici. Valutazione alla cieca su gusto, cottura, originalità." },
+      { title: "16 sessioni", body: "16 sessioni distribuite su 3 giorni. Dal venerdì alla domenica, il fuoco non si spegne mai." },
     ],
   },
 };
 
-const ICONS = [Clock, Beef, Users, Trophy];
+const ICONS = [Clock, Package, Users, CalendarDays];
 
 export default function BattleFormat() {
   const locale = useLocale();
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-cream-50 py-24 md:py-32" aria-label="Battle format">
+    <section className="relative w-full bg-cream-50 py-14 md:py-20" aria-label="Battle format">
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8 md:mb-12">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />

@@ -1,0 +1,212 @@
+"use client";
+
+import { createContext, useContext } from "react";
+
+/**
+ * Traduction FR → EN du support « Présentation & catalogue exposant ».
+ * Mécanisme : dictionnaire indexé par la chaîne FR source. `t(fr)` renvoie la
+ * traduction EN si elle existe, sinon la chaîne FR (repli sûr — rien ne casse).
+ * Les prix (« 250 € HT / m² », nombres) ne sont pas traduits : on remplace
+ * juste « HT » → « excl. VAT » via une passe sur la valeur si besoin.
+ */
+
+export type Lang = "fr" | "en";
+
+export const EN: Record<string, string> = {
+  // ——— Nav (présentation) ———
+  "Barbecue Expo": "Barbecue Expo",
+  "Le Salon": "The Show",
+  "Visiteurs pros": "Trade visitors",
+  "Plan de com'": "Comms plan",
+  // ——— Nav (catalogue) ———
+  "Choisir son stand": "Choose your booth",
+  "Espace extérieur": "Outdoor space",
+  "Options de stand": "Booth options",
+  "Devenir partenaire": "Become a partner",
+  "Com' sur stand": "On-booth comms",
+  "Com' sur place": "On-site comms",
+  "Branding": "Branding",
+  "Com' digitale": "Digital comms",
+  "Sponsoring de zone": "Zone sponsoring",
+  "Barbecue Mag": "Barbecue Mag",
+
+  // ——— Hero / sticky nav ———
+  "Exposer": "Exhibit",
+  "Sommaire": "Contents",
+  "Exposer · Édition 2027": "Exhibit · 2027 edition",
+  "Présentation du salon & catalogue exposant.": "Show overview & exhibitor catalogue.",
+  "12 · 13 · 14 Mars 2027 — Parc Floral de Paris": "12 · 13 · 14 March 2027 — Parc Floral de Paris",
+
+  // ——— Section eyebrows / titles ———
+  "Partie 1": "Part 1",
+  "Partie 2": "Part 2",
+  "Partie 3": "Part 3",
+  "Partie 4": "Part 4",
+  "Barbecue Expo — histoire & écosystème": "Barbecue Expo — story & ecosystem",
+  "Le salon 2027": "The 2027 show",
+  "Les visiteurs": "The visitors",
+  "Le plan de communication": "The communication plan",
+  "Stand": "Booth",
+  "Options": "Options",
+  "Communication — en priorité": "Communication — top priority",
+  "Devenir Partenaire Barbecue Expo": "Become a Barbecue Expo Partner",
+  "Communication": "Communication",
+  "Communication sur stand — signalétique": "On-booth communication — signage",
+  "Communication sur place": "On-site communication",
+  "Options de branding": "Branding options",
+  "Communication digitale": "Digital communication",
+  "Communication print": "Print communication",
+  "Extérieur": "Outdoor",
+  "Choisir un espace extérieur": "Choose an outdoor space",
+  "Choisir les options de stand": "Choose your booth options",
+
+  // ——— Part A — présentation ———
+  "Catalogue exposant 2027": "2027 exhibitor catalogue",
+  "Les catégories de produits": "Product categories",
+  "Le plan du salon": "The show map",
+  "Voir la carte": "View the map",
+  "Les marques présentes": "Brands on site",
+  "Les professionnels que nous attirons": "The professionals we attract",
+  "Sélectionnez un type de professionnel pour voir les enseignes correspondantes.": "Select a type of professional to see the matching retailers.",
+  "Enseignes correspondantes": "Matching retailers",
+  "Provenance des visiteurs": "Where visitors come from",
+  "Lieu de l'événement :": "Event location:",
+  "Vidéos principales": "Featured videos",
+  "Ils en ont parlé": "As featured in",
+  "Voir le sujet": "Watch the feature",
+  "Diffusé": "Aired",
+  "L'affichage public massif": "Massive public advertising",
+  "Les réseaux sociaux & la newsletter": "Social media & newsletter",
+  "Exemples de posts": "Sample posts",
+
+  // ——— Product categories ———
+  "Barbecue": "Barbecue",
+  "Grills, smokers, kamados, braseros, fours, planchas…": "Grills, smokers, kamados, fire pits, ovens, griddles…",
+  "Accessoires & équipements": "Accessories & equipment",
+  "Ustensiles, thermomètres, housses, mobilier de cuisson…": "Utensils, thermometers, covers, cooking furniture…",
+  "Combustibles": "Fuels",
+  "Charbon, briquettes, pellets, bois de fumage, allumage.": "Charcoal, briquettes, pellets, smoking wood, firelighters.",
+  "Cuisines & aménagements d'extérieur": "Outdoor kitchens & living",
+  "Cuisines d'été, îlots, fours à pizza, mobilier outdoor.": "Summer kitchens, islands, pizza ovens, outdoor furniture.",
+  "Sauces, rubs & épices": "Sauces, rubs & spices",
+  "Marinades, mélanges, condiments, hot sauces.": "Marinades, blends, condiments, hot sauces.",
+  "Épicerie fine & alimentaire": "Fine food & groceries",
+  "Viandes premium, produits gourmets, ingrédients.": "Premium meats, gourmet products, ingredients.",
+  "Alcool & spiritueux": "Beer, wine & spirits",
+  "Bières, vins, spiritueux, accords BBQ.": "Beers, wines, spirits, BBQ pairings.",
+  "Restauration & traiteurs": "Catering & food service",
+  "Street food, traiteurs, food trucks.": "Street food, caterers, food trucks.",
+
+  // ——— Pro types ———
+  "Retailers & magasins spécialisés": "Retailers & specialty stores",
+  "Distribution barbecue, équipement de cuisson outdoor, accessoires, magasins de poêles et inserts.": "Barbecue distribution, outdoor cooking equipment, accessories, stove and insert stores.",
+  "Acheteurs GSA, GSB, GSS & jardinerie": "Buyers — supermarkets, DIY, specialty & garden centres",
+  "Grandes surfaces alimentaires, de bricolage, spécialisées ou jardin.": "Food, DIY, specialty and garden retail chains.",
+  "Distributeurs · Importateurs · Exportateurs": "Distributors · Importers · Exporters",
+  "Acteurs de la distribution et du commerce international du barbecue.": "Players in barbecue distribution and international trade.",
+  "Responsables CHR & hôtellerie-restauration": "Hospitality & food-service decision-makers",
+  "Hôtels, restaurants, traiteurs, groupes de loisirs, campings.": "Hotels, restaurants, caterers, leisure groups, campsites.",
+  "Professionnels de l'aménagement d'extérieur": "Outdoor design & landscaping professionals",
+  "Paysagistes, piscinistes, fabricants et installateurs de cuisines d'été, mobilier extérieur, équipements.": "Landscapers, pool builders, summer-kitchen makers and installers, outdoor furniture, equipment.",
+
+  // ——— Affichage stats ———
+  "affiches publiques": "public posters",
+  "contacts visuels": "visual impressions",
+  "de personnes touchées": "people reached",
+  // ——— Social ———
+  "abonnés spécialisés": "specialist followers",
+  "Professionnels et grand public spécialisés — réseaux sociaux + newsletter.": "Specialist professionals and enthusiasts — social media + newsletter.",
+  "Vidéos du salon": "Show videos",
+  "Vidéos Food": "Food videos",
+  "Vidéos Marques": "Brand videos",
+
+  // ——— Catalogue — stand ———
+  "Plan du salon 2027": "2027 show map",
+  "Molette ou +/− pour zoomer · glisser pour déplacer": "Scroll or +/− to zoom · drag to move",
+  "Je choisis la taille — surface nue": "I choose the size — bare floor space",
+  "Traçage au sol uniquement": "Floor marking only",
+  "Moquette non incluse": "Carpet not included",
+  "Présentation du plan de construction du stand aux organisateurs (obligatoire)": "Submission of the booth build plan to the organisers (mandatory)",
+  "Nombre de badges exposants (selon la surface du stand)": "Number of exhibitor badges (depending on booth size)",
+  "Tarif au m²": "Price per m²",
+  "Zone A": "Zone A",
+  "Zone B": "Zone B",
+  "Je choisis ma gamme de stand": "I choose my booth range",
+  "Option 1 — Stand sur mesure": "Option 1 — Custom booth",
+  "Option 2 — Gamme Argent": "Option 2 — Silver range",
+  "Option 3 — Gamme Or": "Option 3 — Gold range",
+  "Option 4 — Gamme Personnalisée": "Option 4 — Custom-print range",
+  "Créez votre stand sur mesure en sélectionnant vos options (voir « Options de stand » et « Communication »).": "Build your custom booth by selecting your options (see “Booth options” and “Communication”).",
+  "Cloisons mélaminées en bois de sapin": "Pine melamine partition walls",
+  "Votre enseigne": "Your fascia sign",
+  "Nombre de badges exposants (selon la surface)": "Number of exhibitor badges (depending on size)",
+  "Cloisons bois recouvertes de tissu": "Fabric-covered wooden partition walls",
+  "1 ou 2 angles inclus (selon surface)": "1 or 2 corners included (depending on size)",
+  "Impression personnalisée des cloisons": "Custom-printed partition walls",
+  "Une arche de stand personnalisable": "A customisable booth arch",
+  "Un comptoir d'accueil + un tabouret": "A reception counter + a stool",
+  "Éclairage spots haut de gamme (selon surface)": "Premium spotlight lighting (depending on size)",
+  "Coffret électrique 3 kW 12/24h": "3 kW electrical box 12/24h",
+  "Badges inclus (nombre selon surface)": "Badges included (number depending on size)",
+  "Moquette :": "Carpet:",
+  "Cloisons :": "Partition walls:",
+  "Couleur au choix — nuancier complet": "Any colour — full swatch range",
+  "Je peux ajouter un espace extérieur": "I can add an outdoor space",
+  "Un stand démo en plein air, idéal pour les cuissons live et les grosses installations.": "An open-air demo booth, ideal for live cooking and large setups.",
+
+  // ——— Stand options ———
+  "Angle de stand": "Booth corner",
+  "Maximisez votre visibilité en ouvrant votre stand sur plusieurs allées, voire à 360°.": "Maximise your visibility by opening your booth onto several aisles, or even 360°.",
+  "1 angle": "1 corner",
+  "2 angles": "2 corners",
+  "Stand en îlot": "Island booth",
+  "Réserve de stand (stands équipés)": "Booth storage (fitted booths)",
+  "Stockez votre matériel et votre stock pendant toute la durée du salon.": "Store your equipment and stock throughout the show.",
+  "Surface": "Size",
+  "Argent": "Silver",
+  "Or": "Gold",
+  "Réserve centrale (stand îlot)": "Central storage (island booth)",
+  "Réserve personnalisée au centre de votre stand.": "Custom storage room at the centre of your booth.",
+  "Électricité sur stand": "Booth electricity",
+  "Éclairage inclus pour toute réservation de coffret. Aucune réservation possible sur place.": "Lighting included with any electrical box. No on-site booking possible.",
+  "Coffret": "Box",
+  "kW supplémentaire": "Additional kW",
+  "Aménagement sur-mesure": "Custom fitting",
+  "Cloisons, éclairage, enseigne, moquette… créez votre environnement.": "Partitions, lighting, signage, carpet… build your environment.",
+  "Cloison Argent supplémentaire": "Additional Silver partition",
+  "Cloison Or supplémentaire": "Additional Gold partition",
+  "Barre de LED": "LED bar",
+  "Spot haut de gamme": "Premium spotlight",
+  "Enseigne (50 × 40 cm)": "Fascia sign (50 × 40 cm)",
+  "Moquette": "Carpet",
+  "Parking exposant": "Exhibitor parking",
+  "Réservé pour toute la durée de l'événement.": "Reserved for the whole event.",
+  "Voiture & Van": "Car & van",
+  "Camion": "Truck",
+  "Co-exposition": "Co-exhibiting",
+  "Mettez en avant une ou plusieurs marques sur votre stand.": "Showcase one or more brands on your booth.",
+  "1 co-exposant (dès 12 m²)": "1 co-exhibitor (from 12 m²)",
+  "2 co-exposants (dès 24 m²)": "2 co-exhibitors (from 24 m²)",
+  "Chariot élévateur (fenwick)": "Forklift",
+  "Pour le montage/démontage et le déplacement de vos marchandises.": "For setup/teardown and moving your goods.",
+  "Badges exposants supplémentaires": "Additional exhibitor badges",
+  "Au-delà du quota inclus selon la surface.": "Beyond the quota included with your booth size.",
+  "Mobilier": "Furniture",
+  "Voir le catalogue mobilier": "See the furniture catalogue",
+  "Tables, chaises, comptoirs, vitrines…": "Tables, chairs, counters, display cases…",
+  "Pack 50 invitations": "50-invitation pack",
+  "Sur demande": "On request",
+  "Invitations à offrir à vos clients et prospects.": "Invitations to offer your clients and prospects.",
+  "Sur devis": "On quotation",
+
+  // ——— Commun ———
+  "[À compléter]": "[To be completed]",
+  "[Photo à venir]": "[Photo coming soon]",
+  "Plein écran": "Full screen",
+  "Ouvrir": "Open",
+  "Feuilleter le magazine": "Flip through the magazine",
+};
+
+interface LangCtx { lang: Lang; t: (fr: string) => string; }
+export const LangContext = createContext<LangCtx>({ lang: "fr", t: (s) => s });
+export function useT() { return useContext(LangContext); }

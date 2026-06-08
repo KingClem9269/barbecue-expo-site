@@ -158,7 +158,7 @@ export default function AwardsTeaser({ blok }: { blok: AwardsBlok }) {
 
   return (
     <section
-      className="relative w-full bg-cream-100 py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full bg-cream-100 py-14 md:py-20 lg:py-24 overflow-hidden"
       aria-label="Barbecue Expo Awards"
     >
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
@@ -194,49 +194,32 @@ export default function AwardsTeaser({ blok }: { blok: AwardsBlok }) {
             </Link>
           </div>
 
-          {/* Right column — podium (medals) + categories */}
+          {/* Right column — medals + categories */}
           <div className="lg:col-span-5">
-            {/* Podium visual */}
-            <div className="flex items-end justify-center gap-3 md:gap-4 mb-8">
-              {/* Silver (left) */}
-              <div className="flex flex-col items-center">
-                <Medal
-                  className="w-10 h-10 md:w-12 md:h-12 text-slate-400 mb-2"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-                <div className="w-20 md:w-24 h-20 md:h-28 bg-gradient-to-t from-ink-900/10 to-slate-400/30 border border-slate-400/40 rounded-t-sm flex items-end justify-center pb-3">
-                  <span className="text-ink-900 text-xs md:text-sm font-bold uppercase tracking-widest">
-                    {medalLabels.silver}
+            {/* Three medals — horizontal, clean */}
+            <div className="flex gap-4 md:gap-5 mb-10">
+              {[
+                { label: medalLabels.gold, color: "bg-gold-500", textColor: "text-ink-950", size: "text-3xl md:text-4xl" },
+                { label: medalLabels.silver, color: "bg-ink-300", textColor: "text-ink-900", size: "text-2xl md:text-3xl" },
+                { label: medalLabels.bronze, color: "bg-ember-600", textColor: "text-cream-50", size: "text-2xl md:text-3xl" },
+              ].map((m) => (
+                <div
+                  key={m.label}
+                  className={`flex-1 ${m.color} rounded-sm py-6 md:py-8 flex flex-col items-center justify-center gap-2`}
+                >
+                  <Medal
+                    className={`w-8 h-8 md:w-10 md:h-10 ${m.textColor}`}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                  <span
+                    className={`${m.textColor} ${m.size} font-bold uppercase tracking-widest`}
+                    style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+                  >
+                    {m.label}
                   </span>
                 </div>
-              </div>
-              {/* Gold (center, taller) */}
-              <div className="flex flex-col items-center">
-                <Medal
-                  className="w-12 h-12 md:w-16 md:h-16 text-gold-500 mb-2"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-                <div className="w-24 md:w-28 h-32 md:h-40 bg-gradient-to-t from-gold-700/20 to-gold-500/40 border border-gold-500/60 rounded-t-sm flex items-end justify-center pb-3 shadow-[0_0_40px_-10px_rgba(244,173,60,0.5)]">
-                  <span className="text-ink-900 text-xs md:text-sm font-bold uppercase tracking-widest">
-                    {medalLabels.gold}
-                  </span>
-                </div>
-              </div>
-              {/* Bronze (right, shorter) */}
-              <div className="flex flex-col items-center">
-                <Medal
-                  className="w-10 h-10 md:w-12 md:h-12 text-ember-600 mb-2"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-                <div className="w-20 md:w-24 h-16 md:h-20 bg-gradient-to-t from-ink-900/10 to-ember-600/30 border border-ember-600/40 rounded-t-sm flex items-end justify-center pb-3">
-                  <span className="text-ink-900 text-xs md:text-sm font-bold uppercase tracking-widest">
-                    {medalLabels.bronze}
-                  </span>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Categories list */}
@@ -244,9 +227,12 @@ export default function AwardsTeaser({ blok }: { blok: AwardsBlok }) {
               {data.categories.slice(0, 5).map((cat, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-4 py-3 border-b border-ink-900/15 text-ink-900"
+                  className="flex items-center gap-4 py-4 border-b border-ink-900/15 text-ink-900"
                 >
-                  <span className="text-gold-600 text-xs font-semibold tabular-nums w-6">
+                  <span
+                    className="text-gold-600 text-xs font-bold tabular-nums w-6"
+                    style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-base md:text-lg font-medium">{cat}</span>

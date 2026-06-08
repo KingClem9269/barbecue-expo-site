@@ -21,7 +21,7 @@ type Day = {
 const FR_DAYS: Day[] = [
   {
     label: "Vendredi",
-    date: "10 avril 2027",
+    date: "12 mars 2027",
     slots: [
       { time: "10:30", title: "Yakitori fondamentaux", type: "masterclass", who: "Takumi Ishida", zone: "Espace Masterclass" },
       { time: "11:00", title: "BBQ à la française", type: "cooking-show", who: "Le Barbecue de Rafa", zone: "Main Stage" },
@@ -38,7 +38,7 @@ const FR_DAYS: Day[] = [
   },
   {
     label: "Samedi",
-    date: "11 avril 2027",
+    date: "13 mars 2027",
     slots: [
       { time: "10:00", title: "Brace siciliana", type: "cooking-show", who: "Isabella Rossi", zone: "Main Stage" },
       { time: "10:30", title: "Low & slow on kamado", type: "cooking-show", who: "Eric Gephart", zone: "Main Stage" },
@@ -57,7 +57,7 @@ const FR_DAYS: Day[] = [
   },
   {
     label: "Dimanche",
-    date: "12 avril 2027",
+    date: "14 mars 2027",
     slots: [
       { time: "10:30", title: "Saucisse artisanale", type: "masterclass", who: "Alex Mueller", zone: "Espace Masterclass" },
       { time: "11:30", title: "Souvlaki & feu de bois", type: "cooking-show", who: "Stefanos Koukas", zone: "Main Stage" },
@@ -110,7 +110,7 @@ export default async function ProgrammePage() {
         <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 pb-20 md:pb-28 flex flex-col justify-end min-h-[60dvh]">
           <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
             <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
-            Édition 2027 · 10–12 avril
+            Édition 2027 · 12–14 mars
           </div>
           <h1
             className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight font-bold max-w-5xl"
@@ -125,7 +125,7 @@ export default async function ProgrammePage() {
       </section>
 
       {/* Days timeline */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 space-y-20 md:space-y-28">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 space-y-20 md:space-y-28">
         {FR_DAYS.map((d) => (
           <div key={d.label}>
             <div className="flex items-baseline gap-4 mb-10 md:mb-14 border-b-2 border-gold-500 pb-6">
@@ -181,7 +181,7 @@ export default async function ProgrammePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-cream-100 py-20 md:py-28">
+      <section className="bg-cream-100 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row gap-4">
           <Link
             href="/billetterie/particulier"

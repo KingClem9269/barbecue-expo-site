@@ -9,6 +9,14 @@ import {
   HandshakeIcon,
   Store,
   Plane,
+  Globe,
+  Download,
+  CalendarCheck,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Youtube,
+  MapPin,
 } from "lucide-react";
 import type { Brand } from "@/lib/brands-shared";
 import type { CategoryKey, SubCategoryKey } from "@/lib/exhibitor-taxonomy";
@@ -57,6 +65,8 @@ export default function BrandsListing({
   const [onlyReseller, setOnlyReseller] = useState(false);
   const [onlyExports, setOnlyExports] = useState(false);
   const [onlyNew, setOnlyNew] = useState(false);
+  // Modal
+  const [selected, setSelected] = useState<Brand | null>(null);
 
   // Reset sub-category when top category changes
   useEffect(() => {
@@ -126,9 +136,9 @@ export default function BrandsListing({
 
   return (
     <div>
-      {/* Category tabs (horizontal scroll on mobile) */}
-      <div className="mb-6 -mx-6 md:mx-0">
-        <div className="flex gap-2 overflow-x-auto px-6 md:px-0 pb-2 snap-x snap-mandatory">
+      {/* Category tabs (wrap onto multiple lines — no horizontal scroll) */}
+      <div className="mb-6">
+        <div className="flex flex-wrap gap-2">
           <CategoryChip
             label={labels.allCategories}
             active={category === "all"}
@@ -147,8 +157,8 @@ export default function BrandsListing({
 
       {/* Sub-category pills (shown only when a category is selected and has subs) */}
       {currentCategoryConfig && currentCategoryConfig.sub.length > 0 && (
-        <div className="mb-6 -mx-6 md:mx-0">
-          <div className="flex gap-2 overflow-x-auto px-6 md:px-0 pb-2">
+        <div className="mb-6">
+          <div className="flex flex-wrap gap-2">
             <SubChip
               label={labels.allCategories}
               active={subCategory === "all"}
@@ -199,33 +209,7 @@ export default function BrandsListing({
         </select>
       </div>
 
-      {/* Transverse toggles */}
-      <div className="flex flex-wrap gap-2 mb-8 md:mb-10">
-        <TransverseToggle
-          icon={<Sparkles className="w-3.5 h-3.5" strokeWidth={2.5} />}
-          label={labels.newArrival}
-          active={onlyNew}
-          onToggle={() => setOnlyNew(!onlyNew)}
-        />
-        <TransverseToggle
-          icon={<HandshakeIcon className="w-3.5 h-3.5" strokeWidth={2} />}
-          label={labels.seekingDistributor}
-          active={onlyDistributor}
-          onToggle={() => setOnlyDistributor(!onlyDistributor)}
-        />
-        <TransverseToggle
-          icon={<Store className="w-3.5 h-3.5" strokeWidth={2} />}
-          label={labels.seekingReseller}
-          active={onlyReseller}
-          onToggle={() => setOnlyReseller(!onlyReseller)}
-        />
-        <TransverseToggle
-          icon={<Plane className="w-3.5 h-3.5" strokeWidth={2} />}
-          label={labels.exports}
-          active={onlyExports}
-          onToggle={() => setOnlyExports(!onlyExports)}
-        />
-      </div>
+      {/* Transverse toggles — hidden for now (flags not provided by the API) */}
 
       {/* Count + clear */}
       <div className="flex items-center justify-between gap-4 mb-8">
@@ -256,6 +240,7 @@ export default function BrandsListing({
               key={b.slug}
               brand={b}
               locale={locale}
+              onOpen={() => setSelected(b)}
               labels={{
                 newForExpo: labels.newForExpo,
                 seekingDistributor: labels.seekingDistributor,
@@ -267,6 +252,15 @@ export default function BrandsListing({
         </div>
       ) : (
         <div className="py-20 text-center text-ink-600">{labels.empty}</div>
+      )}
+
+      {/* Brand detail modal */}
+      {selected && (
+        <BrandModal
+          brand={selected}
+          locale={locale}
+          onClose={() => setSelected(null)}
+        />
       )}
     </div>
   );
@@ -320,41 +314,16 @@ function SubChip({
   );
 }
 
-function TransverseToggle({
-  icon,
-  label,
-  active,
-  onToggle,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  active: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onToggle}
-      aria-pressed={active}
-      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
-        active
-          ? "bg-ember-600 text-cream-50"
-          : "border border-ink-900/20 text-ink-600 hover:text-ink-900 hover:border-gold-500"
-      }`}
-    >
-      {icon}
-      {label}
-    </button>
-  );
-}
 
 function BrandCard({
   brand,
   locale,
+  onOpen,
   labels,
 }: {
   brand: Brand;
   locale: string;
+  onOpen: () => void;
   labels: {
     newForExpo: string;
     seekingDistributor: string;
@@ -362,25 +331,18 @@ function BrandCard({
     exports: string;
   };
 }) {
-  const href = brand.website && brand.website !== "#" ? brand.website : null;
-  const Wrapper = href ? "a" : "div";
-  const wrapperProps = href
-    ? { href, target: "_blank", rel: "noopener noreferrer" }
-    : {};
-
   // Logo resolution: explicit logo field OR /brands/logos/<slug>.svg convention
   const logoPath = brand.logo || `/brands/logos/${brand.slug}.svg`;
 
   const [logoOk, setLogoOk] = useState(true);
 
   return (
-    <Wrapper
-      {...(wrapperProps as Record<string, string>)}
-      className={`group relative block bg-cream-50 border border-ink-900/10 rounded-sm transition-all duration-300 ${
-        href
-          ? "hover:border-gold-500/50 hover:shadow-[0_0_0_1px_rgba(244,173,60,0.25)] cursor-pointer"
-          : ""
-      } ${brand.tier === "gold" ? "ring-1 ring-gold-500/20" : ""}`}
+    <button
+      type="button"
+      onClick={onOpen}
+      className={`group relative block w-full text-left bg-cream-50 border border-ink-900/10 rounded-sm transition-all duration-300 hover:border-gold-500/50 hover:shadow-[0_0_0_1px_rgba(244,173,60,0.25)] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
+        brand.tier === "gold" ? "ring-1 ring-gold-500/20" : ""
+      }`}
     >
       {/* Tier accent strip */}
       {brand.tier === "gold" && (
@@ -459,13 +421,269 @@ function BrandCard({
         </div>
       </div>
 
-      {href && (
-        <ExternalLink
-          className="absolute bottom-3 right-3 w-4 h-4 text-ink-400 opacity-0 group-hover:opacity-100 transition-opacity"
-          strokeWidth={2}
-        />
-      )}
-    </Wrapper>
+      <ExternalLink
+        className="absolute bottom-3 right-3 w-4 h-4 text-ink-400 opacity-0 group-hover:opacity-100 transition-opacity"
+        strokeWidth={2}
+      />
+    </button>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Brand detail modal — professional pop-up                          */
+/* ------------------------------------------------------------------ */
+
+const MODAL_LABELS: Record<
+  string,
+  {
+    visit: string;
+    catalog: string;
+    appointment: string;
+    about: string;
+    stand: string;
+    close: string;
+    newForExpo: string;
+    seekingDistributor: string;
+    seekingReseller: string;
+    exports: string;
+  }
+> = {
+  fr: { visit: "Site internet", catalog: "Télécharger le catalogue", appointment: "Prendre rendez-vous", about: "À propos", stand: "Stand", close: "Fermer", newForExpo: "Nouveau 2027", seekingDistributor: "Cherche distributeur", seekingReseller: "Cherche revendeur", exports: "Exporte" },
+  en: { visit: "Website", catalog: "Download catalog", appointment: "Book a meeting", about: "About", stand: "Booth", close: "Close", newForExpo: "New 2027", seekingDistributor: "Seeking distributor", seekingReseller: "Seeking reseller", exports: "Exports" },
+  es: { visit: "Sitio web", catalog: "Descargar catálogo", appointment: "Reservar una cita", about: "Acerca de", stand: "Stand", close: "Cerrar", newForExpo: "Nuevo 2027", seekingDistributor: "Busca distribuidor", seekingReseller: "Busca revendedor", exports: "Exporta" },
+  de: { visit: "Webseite", catalog: "Katalog herunterladen", appointment: "Termin vereinbaren", about: "Über uns", stand: "Stand", close: "Schließen", newForExpo: "Neu 2027", seekingDistributor: "Sucht Distributor", seekingReseller: "Sucht Wiederverkäufer", exports: "Exportiert" },
+  nl: { visit: "Website", catalog: "Catalogus downloaden", appointment: "Afspraak maken", about: "Over ons", stand: "Stand", close: "Sluiten", newForExpo: "Nieuw 2027", seekingDistributor: "Zoekt distributeur", seekingReseller: "Zoekt doorverkoper", exports: "Exporteert" },
+  pt: { visit: "Site", catalog: "Descarregar catálogo", appointment: "Marcar reunião", about: "Sobre", stand: "Stand", close: "Fechar", newForExpo: "Novo 2027", seekingDistributor: "Procura distribuidor", seekingReseller: "Procura revendedor", exports: "Exporta" },
+  it: { visit: "Sito web", catalog: "Scarica il catalogo", appointment: "Prenota un incontro", about: "Chi siamo", stand: "Stand", close: "Chiudi", newForExpo: "Nuovo 2027", seekingDistributor: "Cerca distributore", seekingReseller: "Cerca rivenditore", exports: "Esporta" },
+};
+
+function BrandModal({
+  brand,
+  locale,
+  onClose,
+}: {
+  brand: Brand;
+  locale: string;
+  onClose: () => void;
+}) {
+  const t = MODAL_LABELS[locale] || MODAL_LABELS.fr;
+  const logoPath = brand.logo || `/brands/logos/${brand.slug}.svg`;
+  const [logoOk, setLogoOk] = useState(true);
+  const website = brand.website && brand.website !== "#" ? brand.website : null;
+
+  // Close on Escape + lock scroll
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  const socials: { key: string; href?: string; Icon: typeof Instagram }[] = [
+    { key: "instagram", href: brand.social?.instagram, Icon: Instagram },
+    { key: "facebook", href: brand.social?.facebook, Icon: Facebook },
+    { key: "linkedin", href: brand.social?.linkedin, Icon: Linkedin },
+    { key: "youtube", href: brand.social?.youtube, Icon: Youtube },
+  ];
+  const activeSocials = socials.filter((s) => s.href);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label={brand.name}
+    >
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-ink-950/70 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Panel */}
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-cream-50 rounded-lg shadow-2xl">
+        {/* Close button */}
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={t.close}
+          className="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-ink-950/60 text-cream-50 hover:bg-ink-950 transition-colors backdrop-blur-sm"
+        >
+          <X className="w-5 h-5" strokeWidth={2.5} />
+        </button>
+
+        {/* Cover */}
+        <div className="relative h-44 md:h-56 bg-ink-900 overflow-hidden">
+          {brand.coverImage ? (
+            <Image
+              src={brand.coverImage}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-char-900 to-ink-950" aria-hidden="true" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-cream-50 via-transparent to-transparent" aria-hidden="true" />
+        </div>
+
+        {/* Logo + header */}
+        <div className="px-6 md:px-10 -mt-12 relative">
+          <div className="flex items-end gap-4">
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-lg bg-cream-50 border border-ink-900/10 shadow-lg flex items-center justify-center p-3 shrink-0">
+              {logoOk ? (
+                <Image
+                  src={logoPath}
+                  alt={`${brand.name} logo`}
+                  width={120}
+                  height={120}
+                  onError={() => setLogoOk(false)}
+                  className="max-h-full max-w-full object-contain"
+                  unoptimized
+                />
+              ) : (
+                <span
+                  className="text-ink-900 text-lg font-bold text-center leading-tight"
+                  style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+                >
+                  {brand.name}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <h2
+              className="text-ink-900 text-3xl md:text-4xl font-bold leading-none"
+              style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+            >
+              {brand.name}
+            </h2>
+          </div>
+
+          {/* Meta row */}
+          <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-ink-600">
+            <span className="inline-flex items-center gap-1.5">
+              <Image
+                src={`/flags/${brand.country}.svg`}
+                alt=""
+                width={16}
+                height={16}
+                className="w-4 h-4 rounded-full object-cover"
+              />
+              {getCountryName(brand.country, locale)}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="text-ink-300">·</span>
+              {getCategoryLabel(brand.category, locale)}
+            </span>
+            {brand.stand && (
+              <span className="inline-flex items-center gap-1.5 text-gold-700 font-semibold">
+                <MapPin className="w-3.5 h-3.5" strokeWidth={2} />
+                {t.stand} {brand.stand}
+              </span>
+            )}
+          </div>
+
+          {/* Flags / pills */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {brand.newForExpo && <ModalPill label={t.newForExpo} tone="ember" />}
+            {brand.seekingDistributor && <ModalPill label={t.seekingDistributor} tone="gold" />}
+            {brand.seekingReseller && <ModalPill label={t.seekingReseller} tone="gold" />}
+            {brand.exportsAbroad && <ModalPill label={t.exports} tone="gold" />}
+          </div>
+        </div>
+
+        {/* Description */}
+        {brand.description && (
+          <div className="px-6 md:px-10 mt-6">
+            <h3 className="text-xs uppercase tracking-widest font-semibold text-ink-500 mb-2">
+              {t.about}
+            </h3>
+            <p className="text-ink-700 text-base leading-relaxed">
+              {brand.description}
+            </p>
+          </div>
+        )}
+
+        {/* Socials */}
+        {activeSocials.length > 0 && (
+          <div className="px-6 md:px-10 mt-6 flex gap-2">
+            {activeSocials.map(({ key, href, Icon }) => (
+              <a
+                key={key}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={key}
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-ink-900/15 text-ink-700 hover:bg-ink-950 hover:text-cream-50 hover:border-ink-950 transition-colors"
+              >
+                <Icon className="w-4 h-4" strokeWidth={2} />
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* Actions */}
+        <div className="px-6 md:px-10 py-8 mt-4 flex flex-col sm:flex-row flex-wrap gap-3">
+          {brand.appointmentUrl && (
+            <a
+              href={brand.appointmentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2.5 bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 py-3.5 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors"
+            >
+              <CalendarCheck className="w-4 h-4" strokeWidth={2.5} />
+              {t.appointment}
+            </a>
+          )}
+          {brand.catalogUrl && (
+            <a
+              href={brand.catalogUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 border border-ink-900/25 hover:border-gold-500 text-ink-900 hover:text-gold-700 px-6 py-3.5 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors"
+            >
+              <Download className="w-4 h-4" strokeWidth={2.5} />
+              {t.catalog}
+            </a>
+          )}
+          {website && (
+            <a
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 border border-ink-900/25 hover:border-gold-500 text-ink-900 hover:text-gold-700 px-6 py-3.5 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors"
+            >
+              <Globe className="w-4 h-4" strokeWidth={2.5} />
+              {t.visit}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ModalPill({ label, tone }: { label: string; tone: "ember" | "gold" }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-sm ${
+        tone === "ember"
+          ? "bg-ember-600 text-cream-50"
+          : "bg-gold-100 text-gold-900"
+      }`}
+    >
+      {label}
+    </span>
   );
 }
 

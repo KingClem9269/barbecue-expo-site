@@ -33,50 +33,50 @@ const UI: Record<
     eyebrow: "Édition 2027",
     headline: "Les pitmasters",
     subtitle:
-      "20 pitmasters venus de 16 pays. Des compétiteurs mondiaux, des chefs techniciens, des ambassadeurs régionaux. Tous sur scène, en démonstration, en masterclass.",
-    cta: "Voir les 20 pitmasters",
+      "{count} pitmasters venus de {countries} pays. Des compétiteurs mondiaux, des chefs techniciens, des ambassadeurs régionaux. Tous sur scène, en démonstration, en masterclass.",
+    cta: "Voir les {count} pitmasters",
   },
   en: {
     eyebrow: "2027 edition",
     headline: "The pitmasters",
     subtitle:
-      "20 pitmasters from 16 countries. World competitors, technical chefs, regional ambassadors. All on stage, in demos, in masterclasses.",
-    cta: "See all 20 pitmasters",
+      "{count} pitmasters from {countries} countries. World competitors, technical chefs, regional ambassadors. All on stage, in demos, in masterclasses.",
+    cta: "See all {count} pitmasters",
   },
   es: {
     eyebrow: "Edición 2027",
     headline: "Los pitmasters",
     subtitle:
-      "20 pitmasters de 16 países. Competidores mundiales, chefs técnicos, embajadores regionales. Todos en escena, demos, masterclasses.",
-    cta: "Ver los 20 pitmasters",
+      "{count} pitmasters de {countries} países. Competidores mundiales, chefs técnicos, embajadores regionales. Todos en escena, demos, masterclasses.",
+    cta: "Ver los {count} pitmasters",
   },
   de: {
     eyebrow: "Ausgabe 2027",
     headline: "Die Pitmaster",
     subtitle:
-      "20 Pitmaster aus 16 Ländern. Weltmeister, technische Köche, regionale Botschafter. Alle auf der Bühne, in Demos, in Masterclasses.",
-    cta: "Alle 20 Pitmaster ansehen",
+      "{count} Pitmaster aus {countries} Ländern. Weltmeister, technische Köche, regionale Botschafter. Alle auf der Bühne, in Demos, in Masterclasses.",
+    cta: "Alle {count} Pitmaster ansehen",
   },
   nl: {
     eyebrow: "Editie 2027",
     headline: "De pitmasters",
     subtitle:
-      "20 pitmasters uit 16 landen. Wereldcompetitors, technische chefs, regionale ambassadeurs. Allen op het podium, in demo's, in masterclasses.",
-    cta: "Bekijk alle 20 pitmasters",
+      "{count} pitmasters uit {countries} landen. Wereldcompetitors, technische chefs, regionale ambassadeurs. Allen op het podium, in demo's, in masterclasses.",
+    cta: "Bekijk alle {count} pitmasters",
   },
   pt: {
     eyebrow: "Edição 2027",
     headline: "Os pitmasters",
     subtitle:
-      "20 pitmasters de 16 países. Competidores mundiais, chefs técnicos, embaixadores regionais. Todos em palco, em demos, em masterclasses.",
-    cta: "Ver todos os 20 pitmasters",
+      "{count} pitmasters de {countries} países. Competidores mundiais, chefs técnicos, embaixadores regionais. Todos em palco, em demos, em masterclasses.",
+    cta: "Ver todos os {count} pitmasters",
   },
   it: {
     eyebrow: "Edizione 2027",
     headline: "I pitmaster",
     subtitle:
-      "20 pitmaster da 16 paesi. Competitor mondiali, chef tecnici, ambasciatori regionali. Tutti sul palco, in demo, in masterclass.",
-    cta: "Vedi tutti i 20 pitmaster",
+      "{count} pitmaster da {countries} paesi. Competitor mondiali, chef tecnici, ambasciatori regionali. Tutti sul palco, in demo, in masterclass.",
+    cta: "Vedi tutti i {count} pitmaster",
   },
 };
 
@@ -85,13 +85,18 @@ export default function PitmastersGrid({ blok }: { blok: PitmastersGridBlok }) {
   const ui = UI[locale] || UI.fr;
   const pitmasters = pitmastersData as Pitmaster[];
   const displayed = pitmasters.slice(0, 8);
+  const count = String(pitmasters.length);
+  const countries = String(new Set(pitmasters.map((p) => p.country)).size);
+  const fill = (s: string) =>
+    s.replace(/\{count\}/g, count).replace(/\{countries\}/g, countries);
   const data = {
     headline: blok.headline || ui.headline,
-    subtitle: blok.subtitle || ui.subtitle,
+    subtitle: fill(blok.subtitle || ui.subtitle),
   };
+  const ctaLabel = fill(ui.cta);
 
   return (
-    <section className="relative w-full bg-cream-50 py-24 md:py-32 lg:py-40 overflow-hidden" aria-label="Pitmasters">
+    <section className="relative w-full bg-cream-50 py-14 md:py-20 lg:py-24 overflow-hidden" aria-label="Pitmasters">
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
@@ -175,7 +180,7 @@ export default function PitmastersGrid({ blok }: { blok: PitmastersGridBlok }) {
             href="/pitmasters"
             className="group inline-flex items-center gap-3 text-ink-900 hover:text-gold-700 text-sm md:text-base font-semibold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded"
           >
-            <span>{ui.cta}</span>
+            <span>{ctaLabel}</span>
             <span
               aria-hidden="true"
               className="inline-block w-10 h-px bg-gold-600 origin-left transition-transform duration-300 group-hover:scale-x-[1.6]"

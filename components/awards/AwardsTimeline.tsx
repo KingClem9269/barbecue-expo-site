@@ -30,12 +30,12 @@ const UI: Record<
         body: "Date limite de soumission des dossiers. Les pièces manquantes invalident l'inscription.",
       },
       {
-        date: "15 mars 2027",
+        date: "1er mars 2027",
         title: "Délibération du jury",
         body: "Évaluation à l'aveugle sur trois critères : innovation, qualité d'exécution, impact marché. Notes sur 100.",
       },
       {
-        date: "11 avril 2027",
+        date: "13 mars 2027",
         title: "Cérémonie & remise des prix",
         body: "Grande soirée de remise des awards au Parc Floral de Paris. Diffusion en direct sur les médias partenaires.",
       },
@@ -56,12 +56,12 @@ const UI: Record<
         body: "Submission deadline. Missing documents invalidate the entry.",
       },
       {
-        date: "March 15, 2027",
+        date: "March 1, 2027",
         title: "Jury deliberation",
         body: "Blind evaluation on three criteria: innovation, execution quality, market impact. Scores out of 100.",
       },
       {
-        date: "April 11, 2027",
+        date: "March 13, 2027",
         title: "Awards ceremony",
         body: "Grand awards ceremony at Parc Floral de Paris. Live coverage on partner media.",
       },
@@ -73,8 +73,8 @@ const UI: Record<
     steps: [
       { date: "15 de septiembre 2026", title: "Apertura de candidaturas", body: "Las marcas expositoras 2027 pueden presentar su dossier. Tasa: 250 € por categoría." },
       { date: "15 de febrero 2027", title: "Cierre de candidaturas", body: "Fecha límite de presentación. Documentos faltantes invalidan la inscripción." },
-      { date: "15 de marzo 2027", title: "Deliberación del jurado", body: "Evaluación a ciegas sobre tres criterios. Puntuaciones sobre 100." },
-      { date: "11 de abril 2027", title: "Ceremonia de premios", body: "Gran ceremonia en el Parc Floral de París. Transmisión en directo." },
+      { date: "1 de marzo 2027", title: "Deliberación del jurado", body: "Evaluación a ciegas sobre tres criterios. Puntuaciones sobre 100." },
+      { date: "13 de marzo 2027", title: "Ceremonia de premios", body: "Gran ceremonia en el Parc Floral de París. Transmisión en directo." },
     ],
   },
   de: {
@@ -83,8 +83,8 @@ const UI: Record<
     steps: [
       { date: "15. September 2026", title: "Bewerbungen öffnen", body: "Ausstellermarken 2027 können ihre Unterlagen einreichen. Gebühr: 250 € pro Kategorie." },
       { date: "15. Februar 2027", title: "Bewerbungen schließen", body: "Einreichungsfrist. Fehlende Dokumente führen zur Ungültigkeit." },
-      { date: "15. März 2027", title: "Jury-Beratung", body: "Blindbewertung nach drei Kriterien. Noten von 100." },
-      { date: "11. April 2027", title: "Preisverleihung", body: "Große Preisverleihung im Parc Floral de Paris. Live-Übertragung bei Partnermedien." },
+      { date: "1. März 2027", title: "Jury-Beratung", body: "Blindbewertung nach drei Kriterien. Noten von 100." },
+      { date: "13. März 2027", title: "Preisverleihung", body: "Große Preisverleihung im Parc Floral de Paris. Live-Übertragung bei Partnermedien." },
     ],
   },
   nl: {
@@ -93,8 +93,8 @@ const UI: Record<
     steps: [
       { date: "15 september 2026", title: "Inschrijving open", body: "Exposerende merken 2027 kunnen hun dossier indienen. Kosten: € 250 per categorie." },
       { date: "15 februari 2027", title: "Inschrijving gesloten", body: "Deadline voor inzending. Ontbrekende documenten maken de inschrijving ongeldig." },
-      { date: "15 maart 2027", title: "Jury-beraadslaging", body: "Blinde evaluatie op drie criteria. Scores op 100." },
-      { date: "11 april 2027", title: "Prijsuitreiking", body: "Grote avondceremonie in Parc Floral de Paris. Live bij mediapartners." },
+      { date: "1 maart 2027", title: "Jury-beraadslaging", body: "Blinde evaluatie op drie criteria. Scores op 100." },
+      { date: "13 maart 2027", title: "Prijsuitreiking", body: "Grote avondceremonie in Parc Floral de Paris. Live bij mediapartners." },
     ],
   },
   pt: {
@@ -103,8 +103,8 @@ const UI: Record<
     steps: [
       { date: "15 de setembro 2026", title: "Abertura de candidaturas", body: "Marcas expositoras 2027 podem submeter o dossier. Taxa: 250 € por categoria." },
       { date: "15 de fevereiro 2027", title: "Encerramento de candidaturas", body: "Prazo limite. Documentos em falta invalidam a inscrição." },
-      { date: "15 de março 2027", title: "Deliberação do júri", body: "Avaliação às cegas em três critérios. Notas em 100." },
-      { date: "11 de abril 2027", title: "Cerimónia de entrega", body: "Grande cerimónia no Parc Floral de Paris. Transmissão em direto." },
+      { date: "1 de março 2027", title: "Deliberação do júri", body: "Avaliação às cegas em três critérios. Notas em 100." },
+      { date: "13 de março 2027", title: "Cerimónia de entrega", body: "Grande cerimónia no Parc Floral de Paris. Transmissão em direto." },
     ],
   },
   it: {
@@ -113,8 +113,8 @@ const UI: Record<
     steps: [
       { date: "15 settembre 2026", title: "Apertura candidature", body: "I marchi espositori 2027 possono presentare il dossier. Tassa: 250 € per categoria." },
       { date: "15 febbraio 2027", title: "Chiusura candidature", body: "Scadenza. I documenti mancanti invalidano l'iscrizione." },
-      { date: "15 marzo 2027", title: "Deliberazione giuria", body: "Valutazione alla cieca su tre criteri. Voti su 100." },
-      { date: "11 aprile 2027", title: "Cerimonia di premiazione", body: "Grande serata al Parc Floral di Parigi. Diretta sui media partner." },
+      { date: "1 marzo 2027", title: "Deliberazione giuria", body: "Valutazione alla cieca su tre criteri. Voti su 100." },
+      { date: "13 marzo 2027", title: "Cerimonia di premiazione", body: "Grande serata al Parc Floral di Parigi. Diretta sui media partner." },
     ],
   },
 };
@@ -126,7 +126,7 @@ export default function AwardsTimeline() {
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-ink-950 py-24 md:py-32 overflow-hidden" aria-label="Awards timeline">
+    <section className="relative w-full bg-ink-950 py-14 md:py-20 overflow-hidden" aria-label="Awards timeline">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-25">
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-gradient-radial from-ember-600/20 via-transparent to-transparent blur-3xl" />
       </div>

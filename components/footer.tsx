@@ -30,7 +30,7 @@ export function Footer() {
           ))}
         </div>
         <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
-          <p>© 2026 BBQ Expo. Tous droits réservés.</p>
+          <p>© 2027 BBQ Expo. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

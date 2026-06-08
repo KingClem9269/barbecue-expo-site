@@ -32,7 +32,7 @@ export function AudienceToggle() {
       aria-label="Audience"
     >
       <Link
-        href="/visiter"
+        href="/"
         onClick={() => setAudience("b2c")}
         role="tab"
         aria-selected={audience === "b2c"}

@@ -13,11 +13,12 @@ const UI: Record<
     packsEyebrow: string;
     packsTitle: string;
     packsIntro: string;
-    packs: { name: string; surface: string; price: string; priceNote: string; included: string[]; popular?: boolean }[];
+    packs: { name: string; surface: string; price: string; originalPrice?: string; priceNote: string; included: string[]; popular?: boolean }[];
     configuratorEyebrow: string;
     configuratorTitle: string;
     configuratorBody: string;
     configuratorCta: string;
+    configuratorInline: string;
     contactEyebrow: string;
     contactTitle: string;
     contactBody: string;
@@ -39,8 +40,9 @@ const UI: Record<
       {
         name: "Pack Découverte",
         surface: "9 m² · 3×3",
-        price: "À partir de 3 200 €",
-        priceNote: "HT — Tarif early bird jusqu'au 31/01/2027",
+        price: "À partir de 2 475 €",
+        originalPrice: "2 750 €",
+        priceNote: "HT — Tarif early bird −10% jusqu'au 31/01/2027",
         included: [
           "Stand 9 m² aménagé",
           "Mobilier basique (1 table, 4 chaises)",
@@ -52,8 +54,9 @@ const UI: Record<
       {
         name: "Pack Affirmation",
         surface: "18 m² · 6×3",
-        price: "À partir de 5 800 €",
-        priceNote: "HT — Tarif early bird jusqu'au 31/01/2027",
+        price: "À partir de 4 950 €",
+        originalPrice: "5 500 €",
+        priceNote: "HT — Tarif early bird −10% jusqu'au 31/01/2027",
         included: [
           "Stand 18 m² aménagé",
           "Mobilier confort (banc dégustation, étagères)",
@@ -68,14 +71,15 @@ const UI: Record<
       {
         name: "Pack Signature",
         surface: "36 m² · 6×6",
-        price: "À partir de 11 500 €",
-        priceNote: "HT — Tarif early bird jusqu'au 31/01/2027",
+        price: "À partir de 19 260 €",
+        originalPrice: "21 400 €",
+        priceNote: "HT — Tarif early bird −10% jusqu'au 31/01/2027",
         included: [
           "Stand 36 m² personnalisable",
           "Mobilier premium + zone démonstration",
           "Électricité haute puissance + Wi-Fi",
           "8 pass exposants + 4 pass VIP invités",
-          "Logo en gros sur tous supports salon",
+          "Logo sur tous les supports du salon (Partenariat Silver)",
           "1 masterclass animée par votre équipe",
           "Mention dans 5 communiqués presse",
           "Inscription gratuite aux Awards",
@@ -88,6 +92,7 @@ const UI: Record<
     configuratorBody:
       "Pour un projet plus ambitieux : surface custom, design personnalisé, dispositifs presse renforcés. Notre équipe configure votre stand avec vous, en quelques clics.",
     configuratorCta: "Configurer mon stand",
+    configuratorInline: "Composez votre stand en ligne, choisissez votre emplacement et obtenez votre devis en quelques clics.",
     contactEyebrow: "Parlons-en",
     contactTitle: "Une question ? On vous rappelle.",
     contactBody:
@@ -107,15 +112,16 @@ const UI: Record<
     packsIntro:
       "Each pack includes the stand surface, basic setup, electricity, internet, exhibitor catalog, matchmaking access, and two exhibitor passes per 9 m².",
     packs: [
-      { name: "Discovery", surface: "9 m² · 3×3", price: "From €3,200", priceNote: "Excl. VAT — Early bird until 31/01/2027", included: ["9 m² fitted stand", "Basic furniture (1 table, 4 chairs)", "Electricity + Wi-Fi", "2 exhibitor passes", "Catalog + matchmaking"] },
-      { name: "Affirmation", surface: "18 m² · 6×3", price: "From €5,800", priceNote: "Excl. VAT — Early bird until 31/01/2027", included: ["18 m² fitted stand", "Comfort furniture (tasting bar, shelves)", "Reinforced electricity + Wi-Fi", "4 exhibitor passes", "Logo in pre-show comms", "Mention in 2 press releases", "Catalog + matchmaking"], popular: true },
-      { name: "Signature", surface: "36 m² · 6×6", price: "From €11,500", priceNote: "Excl. VAT — Early bird until 31/01/2027", included: ["36 m² custom stand", "Premium furniture + demo area", "High power electricity + Wi-Fi", "8 exhibitor passes + 4 VIP guest passes", "Large logo on all show materials", "1 masterclass hosted by your team", "Mention in 5 press releases", "Free Awards entry", "Catalog + VIP matchmaking"] },
+      { name: "Discovery", surface: "9 m² · 3×3", price: "From €2,475", originalPrice: "€2,750", priceNote: "Excl. VAT — Early bird −10% until 31/01/2027", included: ["9 m² fitted stand", "Basic furniture (1 table, 4 chairs)", "Electricity + Wi-Fi", "2 exhibitor passes", "Catalog + matchmaking"] },
+      { name: "Affirmation", surface: "18 m² · 6×3", price: "From €4,950", originalPrice: "€5,500", priceNote: "Excl. VAT — Early bird −10% until 31/01/2027", included: ["18 m² fitted stand", "Comfort furniture (tasting bar, shelves)", "Reinforced electricity + Wi-Fi", "4 exhibitor passes", "Logo in pre-show comms", "Mention in 2 press releases", "Catalog + matchmaking"], popular: true },
+      { name: "Signature", surface: "36 m² · 6×6", price: "From €19,260", originalPrice: "€21,400", priceNote: "Excl. VAT — Early bird −10% until 31/01/2027", included: ["36 m² custom stand", "Premium furniture + demo area", "High power electricity + Wi-Fi", "8 exhibitor passes + 4 VIP guest passes", "Logo on all show materials (Silver Partnership)", "1 masterclass hosted by your team", "Mention in 5 press releases", "Free Awards entry", "Catalog + VIP matchmaking"] },
     ],
     configuratorEyebrow: "Configurator",
     configuratorTitle: "Your custom stand.",
     configuratorBody:
       "For more ambitious projects: custom surface, bespoke design, reinforced press setup. Our team configures your stand with you, in a few clicks.",
     configuratorCta: "Configure my stand",
+    configuratorInline: "Build your stand online, choose your location and get your quote in a few clicks.",
     contactEyebrow: "Let's talk",
     contactTitle: "A question? We'll call you back.",
     contactBody:
@@ -186,7 +192,7 @@ export default async function DevenezExposantsPage() {
       </section>
 
       {/* Packs */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-20">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
           {ui.packsEyebrow}
@@ -228,11 +234,18 @@ export default async function DevenezExposantsPage() {
                 {p.name}
               </h3>
               <div className="mb-2">
-                <div
-                  className="text-ink-900 text-2xl md:text-3xl leading-none font-bold"
-                  style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-                >
-                  {p.price}
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <div
+                    className="text-ink-900 text-2xl md:text-3xl leading-none font-bold"
+                    style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+                  >
+                    {p.price}
+                  </div>
+                  {p.originalPrice && (
+                    <span className="text-ink-500 text-lg md:text-xl line-through decoration-gold-600/70 decoration-2">
+                      {p.originalPrice}
+                    </span>
+                  )}
                 </div>
                 <div className="text-ink-600 text-xs mt-1">{p.priceNote}</div>
               </div>
@@ -258,11 +271,38 @@ export default async function DevenezExposantsPage() {
           ))}
         </div>
 
+        {/* Inline configurator CTA */}
+        <div className="mt-10 md:mt-14 bg-ink-950 rounded-sm p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+          <div className="flex-1">
+            <h3
+              className="text-cream-50 text-2xl md:text-3xl leading-tight font-bold mb-2"
+              style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+            >
+              {ui.configuratorTitle}
+            </h3>
+            <p className="text-cream-50/80 text-sm md:text-base leading-relaxed max-w-2xl">
+              {ui.configuratorInline}
+            </p>
+          </div>
+          <a
+            href="https://expo.jpc-events.com/configure/barbecue-expo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-3 bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 sm:px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm whitespace-nowrap transition-colors shrink-0"
+          >
+            <span>{ui.configuratorCta}</span>
+            <ArrowUpRight
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              strokeWidth={2.5}
+            />
+          </a>
+        </div>
+
         <p className="mt-8 text-xs text-ink-600 italic max-w-3xl">{ui.pricesNote}</p>
       </section>
 
       {/* Configurator */}
-      <section className="bg-ink-950 py-24 md:py-32" aria-label="Configurateur">
+      <section className="bg-ink-950 py-14 md:py-20" aria-label="Configurateur">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-5 relative aspect-[4/3] rounded-sm overflow-hidden">
             <Image
@@ -288,7 +328,9 @@ export default async function DevenezExposantsPage() {
               {ui.configuratorBody}
             </p>
             <a
-              href="#"
+              href="https://expo.jpc-events.com/configure/barbecue-expo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-4 bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 sm:px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-sm sm:text-base transition-colors"
             >
               <span>{ui.configuratorCta}</span>
@@ -302,7 +344,7 @@ export default async function DevenezExposantsPage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-cream-100 py-24 md:py-32">
+      <section id="contact" className="bg-cream-100 py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
           <div className="flex items-center justify-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
             <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
@@ -326,7 +368,7 @@ export default async function DevenezExposantsPage() {
               <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" strokeWidth={2.5} />
             </a>
             <a
-              href="#"
+              href="#contact"
               className="group inline-flex items-center gap-4 border border-ink-900/30 hover:border-gold-500 text-ink-900 hover:text-gold-700 px-6 sm:px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-sm sm:text-base transition-colors"
             >
               <span>{ui.secondaryCta}</span>

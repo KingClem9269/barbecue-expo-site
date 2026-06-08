@@ -70,7 +70,7 @@
                       {
                         "_uid": "0e68e641-e406-410d-ae71-6e4198863ef5",
                         "color": "primary",
-                        "content": "Viernes 10 de abril",
+                        "content": "Viernes 12 de marzo",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -113,7 +113,7 @@
                       {
                         "_uid": "7106b98a-0a10-411c-a870-a6dfc7819128",
                         "color": "primary",
-                        "content": "Sábado 11 de abril",
+                        "content": "Sábado 13 de marzo",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -155,7 +155,7 @@
                       {
                         "_uid": "e7285a46-c141-45c8-a910-4366c493f251",
                         "color": "primary",
-                        "content": "Domingo 12 de abril",
+                        "content": "Domingo 14 de marzo",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -704,7 +704,7 @@
                             "_uid": "5f997e9b-5a75-4254-a5a7-97199fb9014d",
                             "bold": false,
                             "color": "primary",
-                            "content": "El salón se celebra en París del viernes 10 al domingo 12 de abril: Viernes: 9h30 – 19h Sábado: 9h30 – 19h Domingo: 9h30 – 18h",
+                            "content": "El salón se celebra en París del viernes 10 al domingo 14 de marzo: Viernes: 9h30 – 19h Sábado: 9h30 – 19h Domingo: 9h30 – 18h",
                             "component": "paragraph",
                             "textAlign": "start"
                           }

@@ -92,7 +92,7 @@ export default function MatchmakingHowItWorks() {
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-ink-950 py-24 md:py-32" aria-label="How matchmaking works">
+    <section className="relative w-full bg-ink-950 py-14 md:py-20" aria-label="How matchmaking works">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* Sticky photo on left */}
         <div className="lg:col-span-5 lg:sticky lg:top-24">

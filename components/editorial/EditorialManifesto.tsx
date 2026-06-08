@@ -81,7 +81,7 @@ export default function EditorialManifesto({
       </section>
 
       {/* Reasons — alternating photo / text */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 space-y-24 md:space-y-40">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-20 space-y-24 md:space-y-40">
         {reasons.map((r, i) => {
           const reverse = i % 2 === 1;
           return (
@@ -124,7 +124,7 @@ export default function EditorialManifesto({
 
       {/* Optional closing quote */}
       {closingQuote && (
-        <section className="bg-ink-950 py-24 md:py-32">
+        <section className="bg-ink-950 py-14 md:py-20">
           <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
             <span
               className="block text-gold-500 text-5xl md:text-7xl leading-none mb-6"
@@ -144,7 +144,7 @@ export default function EditorialManifesto({
       )}
 
       {/* CTA */}
-      <section className="bg-cream-100 py-20 md:py-28">
+      <section className="bg-cream-100 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row gap-4">
           <Link
             href={cta.href}

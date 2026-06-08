@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Quote } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import PressCoverage from "@/components/PressCoverage";
 
 const ALL_PHOTOS = [
   "bbq-expo-008.jpg", "bbq-expo-014.jpg", "bbq-expo-066.jpg", "bbq-expo-073.jpg",
@@ -36,7 +37,7 @@ const PRESS_QUOTES = [
   },
   {
     media: "Le Parisien",
-    quote: "Vingt-cinq mille visiteurs, deux cent cinquante marques. Le Parc Floral retrouve un grand rendez-vous gastronomique.",
+    quote: "Vingt-cinq mille visiteurs, plus de deux cents marques. Le Parc Floral retrouve un grand rendez-vous gastronomique.",
     edition: "Avril 2026",
   },
   {
@@ -97,7 +98,7 @@ export default function GalleryPressPage() {
       </section>
 
       {/* GALERIE — Masonry */}
-      <section className="max-w-[1600px] mx-auto px-4 md:px-8 py-20 md:py-28">
+      <section className="max-w-[1600px] mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="flex items-end justify-between gap-6 mb-10 md:mb-14 px-2 md:px-4">
           <div>
             <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-4">
@@ -131,7 +132,7 @@ export default function GalleryPressPage() {
       </section>
 
       {/* PRESSE — Quotes + partners */}
-      <section className="bg-ink-950 py-24 md:py-32">
+      <section className="bg-ink-950 py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
             <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
@@ -143,6 +144,11 @@ export default function GalleryPressPage() {
           >
             Soixante-cinq retombées presse en 2026.
           </h2>
+
+          {/* Retombées réelles — vidéos TV + logos médias (cliquables) */}
+          <div className="mb-20 md:mb-28">
+            <PressCoverage />
+          </div>
 
           {/* Quotes */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-14 md:gap-y-20 mb-20 md:mb-28">

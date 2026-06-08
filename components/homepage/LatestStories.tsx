@@ -78,7 +78,7 @@ export default function LatestStories() {
 
   return (
     <section
-      className="relative w-full bg-ink-950 py-24 md:py-32 overflow-hidden"
+      className="relative w-full bg-ink-950 py-14 md:py-20 overflow-hidden"
       aria-label="À la une"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-30">

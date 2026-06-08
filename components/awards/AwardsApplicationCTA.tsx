@@ -89,7 +89,7 @@ export default function AwardsApplicationCTA() {
   const ui = UI[locale] || UI.fr;
 
   return (
-    <section className="relative w-full bg-cream-100 py-24 md:py-32" aria-label="Awards application">
+    <section className="relative w-full bg-cream-100 py-14 md:py-20" aria-label="Awards application">
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />

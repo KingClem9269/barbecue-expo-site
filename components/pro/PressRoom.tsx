@@ -156,7 +156,7 @@ export default function PressRoom() {
       </div>
 
       {/* Body */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
         {/* Paragraph */}
         <div className="lg:col-span-7">
           <p className="text-cream-50/85 text-lg md:text-xl leading-relaxed">

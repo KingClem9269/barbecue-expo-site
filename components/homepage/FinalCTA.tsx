@@ -11,7 +11,7 @@ import { ArrowUpRight } from "lucide-react";
  * {
  *   "_uid": "...",
  *   "component": "final-cta",
- *   "eyebrow": "Avril 2026",
+ *   "eyebrow": "Mars 2027",
  *   "headline": "Rendez-vous...",
  *   "primary": { "label": "Réserver", "href": "/billetterie/particulier" },
  *   "secondary": { "label": "Espace Pro", "href": "/billetterie/pro-b2b" }
@@ -36,43 +36,43 @@ const DEFAULTS: Record<
   Required<Omit<FinalCTABlok, "_uid">>
 > = {
   fr: {
-    eyebrow: "10 · 11 · 12 Avril 2026 — Parc Floral, Paris",
+    eyebrow: "12 · 13 · 14 Mars 2027 — Parc Floral, Paris",
     headline: "Rejoignez le plus grand rassemblement BBQ d'Europe.",
     primary: { label: "Réserver ma place", href: "/billetterie/particulier" },
     secondary: { label: "Espace Pro & B2B", href: "/billetterie/pro-b2b" },
   },
   en: {
-    eyebrow: "April 10 · 11 · 12, 2026 — Parc Floral, Paris",
+    eyebrow: "March 12 · 13 · 14, 2027 — Parc Floral, Paris",
     headline: "Join Europe's largest BBQ gathering.",
     primary: { label: "Book my ticket", href: "/billetterie/particulier" },
     secondary: { label: "Pro & B2B area", href: "/billetterie/pro-b2b" },
   },
   es: {
-    eyebrow: "10 · 11 · 12 de Abril 2026 — Parc Floral, París",
+    eyebrow: "12 · 13 · 14 de Marzo 2027 — Parc Floral, París",
     headline: "Únase a la mayor reunión de BBQ de Europa.",
     primary: { label: "Reservar mi entrada", href: "/billetterie/particulier" },
     secondary: { label: "Área Pro & B2B", href: "/billetterie/pro-b2b" },
   },
   de: {
-    eyebrow: "10. · 11. · 12. April 2026 — Parc Floral, Paris",
+    eyebrow: "12. · 13. · 14. März 2027 — Parc Floral, Paris",
     headline: "Seien Sie Teil des größten BBQ-Treffens Europas.",
     primary: { label: "Ticket buchen", href: "/billetterie/particulier" },
     secondary: { label: "Pro & B2B-Bereich", href: "/billetterie/pro-b2b" },
   },
   nl: {
-    eyebrow: "10 · 11 · 12 April 2026 — Parc Floral, Parijs",
+    eyebrow: "12 · 13 · 14 Maart 2027 — Parc Floral, Parijs",
     headline: "Sluit u aan bij de grootste BBQ-bijeenkomst van Europa.",
     primary: { label: "Mijn ticket boeken", href: "/billetterie/particulier" },
     secondary: { label: "Pro & B2B-ruimte", href: "/billetterie/pro-b2b" },
   },
   pt: {
-    eyebrow: "10 · 11 · 12 de Abril de 2026 — Parc Floral, Paris",
+    eyebrow: "12 · 13 · 14 de Março de 2027 — Parc Floral, Paris",
     headline: "Junte-se ao maior encontro de BBQ da Europa.",
     primary: { label: "Reservar o meu bilhete", href: "/billetterie/particulier" },
     secondary: { label: "Área Pro & B2B", href: "/billetterie/pro-b2b" },
   },
   it: {
-    eyebrow: "10 · 11 · 12 Aprile 2026 — Parc Floral, Parigi",
+    eyebrow: "12 · 13 · 14 Marzo 2027 — Parc Floral, Parigi",
     headline: "Unitevi al più grande raduno BBQ d'Europa.",
     primary: { label: "Prenota il mio biglietto", href: "/billetterie/particulier" },
     secondary: { label: "Area Pro & B2B", href: "/billetterie/pro-b2b" },
@@ -91,7 +91,7 @@ export default function FinalCTA({ blok }: { blok: FinalCTABlok }) {
 
   return (
     <section
-      className="relative w-full bg-ink-950 py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full bg-ink-950 py-14 md:py-20 lg:py-24 overflow-hidden"
       aria-label="Call to action"
     >
       {/* Subtle radial ember glow in the background */}

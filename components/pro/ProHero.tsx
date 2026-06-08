@@ -96,9 +96,20 @@ const UI: Record<
   },
 };
 
+const DATE_LINE: Record<string, string> = {
+  fr: "12 · 13 · 14 Mars 2027",
+  en: "12 · 13 · 14 March 2027",
+  es: "12 · 13 · 14 Marzo 2027",
+  de: "12 · 13 · 14 März 2027",
+  nl: "12 · 13 · 14 Maart 2027",
+  pt: "12 · 13 · 14 Março 2027",
+  it: "12 · 13 · 14 Marzo 2027",
+};
+
 export default function ProHero() {
   const locale = useLocale();
   const ui = UI[locale] || UI.fr;
+  const dateLine = DATE_LINE[locale] || DATE_LINE.fr;
 
   return (
     <section
@@ -141,6 +152,22 @@ export default function ProHero() {
           <span className="block text-gold-500">{ui.line2_highlight}</span>
           <span className="block">{ui.line3}</span>
         </h1>
+
+        {/* Date + location — prominent */}
+        <div className="mt-8 md:mt-10 flex flex-col gap-2">
+          <div className="flex items-center gap-3 md:gap-4 text-cream-50">
+            <span className="inline-block w-8 md:w-12 h-px bg-gold-500" aria-hidden="true" />
+            <span
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase"
+              style={{ fontFamily: "SansPlomb-98, sans-serif" }}
+            >
+              {dateLine}
+            </span>
+          </div>
+          <div className="pl-11 md:pl-16 text-cream-50/85 text-base sm:text-lg md:text-xl tracking-widest uppercase font-medium">
+            Parc Floral de Paris
+          </div>
+        </div>
 
         {/* One prose paragraph — numbers in flowing text */}
         <p className="mt-10 md:mt-14 text-cream-50/90 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl font-light">

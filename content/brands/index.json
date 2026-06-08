@@ -1,32 +1,416 @@
 [
-  { "slug": "weber", "name": "Weber", "country": "us", "category": "barbecue", "subCategories": ["gas", "charcoal", "electric"], "tier": "gold", "newForExpo": false, "exportsAbroad": true, "website": "https://www.weber.com" },
-  { "slug": "traeger", "name": "Traeger", "country": "us", "category": "barbecue", "subCategories": ["pellet"], "tier": "gold", "newForExpo": true, "exportsAbroad": true, "seekingDistributor": true, "website": "https://www.traegergrills.com" },
-  { "slug": "kamado-joe", "name": "Kamado Joe", "country": "us", "category": "barbecue", "subCategories": ["kamado"], "tier": "gold", "newForExpo": false, "exportsAbroad": true, "website": "https://www.kamadojoe.com" },
-  { "slug": "big-green-egg", "name": "Big Green Egg", "country": "us", "category": "barbecue", "subCategories": ["kamado"], "tier": "gold", "newForExpo": false, "exportsAbroad": true, "website": "https://biggreenegg.com" },
-  { "slug": "napoleon", "name": "Napoleon", "country": "ca", "category": "barbecue", "subCategories": ["gas", "pro"], "tier": "silver", "newForExpo": false, "exportsAbroad": true, "website": "https://www.napoleon.com" },
-  { "slug": "broil-king", "name": "Broil King", "country": "ca", "category": "barbecue", "subCategories": ["gas"], "tier": "silver", "newForExpo": false, "exportsAbroad": true, "website": "https://www.broilking.com" },
-  { "slug": "char-broil", "name": "Char-Broil", "country": "us", "category": "barbecue", "subCategories": ["charcoal", "gas"], "tier": "silver", "newForExpo": false, "website": "https://www.charbroil.com" },
-  { "slug": "monolith", "name": "Monolith", "country": "de", "category": "barbecue", "subCategories": ["kamado"], "tier": "gold", "newForExpo": true, "seekingReseller": true, "website": "https://monolith-grills.de" },
-  { "slug": "ofyr", "name": "OFYR", "country": "nl", "category": "barbecue", "subCategories": ["brasero", "plancha"], "tier": "gold", "newForExpo": false, "exportsAbroad": true, "website": "https://www.ofyr.com" },
-  { "slug": "the-bastard", "name": "The Bastard", "country": "nl", "category": "barbecue", "subCategories": ["kamado"], "tier": "silver", "newForExpo": true, "seekingDistributor": true, "website": "https://thebastard.com" },
-  { "slug": "eno-france", "name": "ENO France", "country": "fr", "category": "barbecue", "subCategories": ["gas", "plancha"], "tier": "gold", "newForExpo": false, "website": "https://www.eno.fr" },
-  { "slug": "barbecook", "name": "Barbecook", "country": "be", "category": "barbecue", "subCategories": ["charcoal", "gas"], "tier": "silver", "newForExpo": false, "exportsAbroad": true, "website": "https://www.barbecook.com" },
-  { "slug": "oklahoma-joes", "name": "Oklahoma Joe's", "country": "us", "category": "barbecue", "subCategories": ["smoker"], "tier": "silver", "newForExpo": false, "website": "https://www.oklahomajoes.com" },
-  { "slug": "soler", "name": "SOLER", "country": "es", "category": "accessories", "subCategories": ["utensils", "grates"], "tier": "bronze", "newForExpo": true, "seekingReseller": true },
-  { "slug": "masterbuilt", "name": "Masterbuilt", "country": "us", "category": "barbecue", "subCategories": ["smoker", "electric"], "tier": "silver", "newForExpo": false, "website": "https://www.masterbuilt.com" },
-  { "slug": "campingaz", "name": "Campingaz", "country": "fr", "category": "barbecue", "subCategories": ["gas"], "tier": "silver", "newForExpo": false, "website": "https://www.campingaz.com" },
-  { "slug": "char-griller", "name": "Char-Griller", "country": "us", "category": "barbecue", "subCategories": ["charcoal", "smoker"], "tier": "bronze", "newForExpo": false, "website": "https://chargriller.com" },
-  { "slug": "le-marquier", "name": "Le Marquier", "country": "fr", "category": "barbecue", "subCategories": ["plancha", "brasero"], "tier": "bronze", "newForExpo": false },
-  { "slug": "grill-o-bois", "name": "Grill' o' Bois", "country": "fr", "category": "barbecue", "subCategories": ["wood-oven", "brasero"], "tier": "silver", "newForExpo": true },
-  { "slug": "kamado-chef", "name": "Kamado Chef", "country": "nl", "category": "barbecue", "subCategories": ["kamado"], "tier": "bronze", "newForExpo": false },
-  { "slug": "ember-charcoal", "name": "Ember Charcoal Co.", "country": "gb", "category": "fuels", "subCategories": ["charcoal", "briquettes"], "tier": "bronze", "newForExpo": true, "seekingDistributor": true },
-  { "slug": "heat-beads", "name": "Heat Beads", "country": "au", "category": "fuels", "subCategories": ["briquettes", "charcoal"], "tier": "bronze", "newForExpo": false, "exportsAbroad": true },
-  { "slug": "pitboss", "name": "Pit Boss", "country": "us", "category": "barbecue", "subCategories": ["pellet"], "tier": "silver", "newForExpo": false, "website": "https://pitboss-grills.com" },
-  { "slug": "rosle", "name": "Rösle", "country": "de", "category": "accessories", "subCategories": ["utensils", "grates"], "tier": "silver", "newForExpo": false, "website": "https://www.roesle.de" },
-  { "slug": "everdure", "name": "Everdure by Heston", "country": "au", "category": "barbecue", "subCategories": ["charcoal", "gas"], "tier": "silver", "newForExpo": true, "exportsAbroad": true, "website": "https://everdure.com" },
-  { "slug": "olivers-smoked", "name": "Oliver's Smoked Meats", "country": "fr", "category": "gourmet", "subCategories": [], "tier": "bronze", "newForExpo": true },
-  { "slug": "buffalo-bbq-sauce", "name": "Buffalo BBQ Sauce", "country": "us", "category": "sauces", "subCategories": ["bbq-sauces", "rubs"], "tier": "bronze", "newForExpo": false },
-  { "slug": "smokin-hot-rubs", "name": "Smokin' Hot Rubs", "country": "gb", "category": "sauces", "subCategories": ["rubs", "spices"], "tier": "bronze", "newForExpo": true, "seekingDistributor": true },
-  { "slug": "umami-wood", "name": "Umami Wood", "country": "jp", "category": "fuels", "subCategories": ["smoking-wood"], "tier": "bronze", "newForExpo": true, "seekingDistributor": true, "exportsAbroad": true },
-  { "slug": "kikkoman-grill", "name": "Kikkoman Grill", "country": "jp", "category": "sauces", "subCategories": ["bbq-sauces", "condiments"], "tier": "silver", "newForExpo": false, "exportsAbroad": true }
+  {
+    "slug": "weber",
+    "name": "Weber",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "gas",
+      "charcoal",
+      "electric"
+    ],
+    "tier": "gold",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://www.weber.com",
+    "coverImage": "/photos-2026/bbq-expo-066.jpg",
+    "stand": "A12",
+    "description": "Depuis 1952, Weber redéfinit l'art du barbecue. Du kettle iconique aux grills connectés, la marque accompagne des millions de passionnés à travers le monde avec des produits pensés pour durer et performer.",
+    "social": {
+      "instagram": "https://www.instagram.com/webergrills/",
+      "facebook": "https://www.facebook.com/weber",
+      "youtube": "https://www.youtube.com/weber"
+    },
+    "catalogUrl": "https://www.weber.com",
+    "appointmentUrl": "https://expo.jpc-events.com/configure/barbecue-expo"
+  },
+  {
+    "slug": "traeger",
+    "name": "Traeger",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "pellet"
+    ],
+    "tier": "gold",
+    "newForExpo": true,
+    "exportsAbroad": true,
+    "seekingDistributor": true,
+    "website": "https://www.traegergrills.com",
+    "coverImage": "/photos-2026/bbq-expo-105.jpg",
+    "stand": "B07",
+    "description": "Pionnier du barbecue à pellets depuis 1985, Traeger a transformé la cuisson au feu de bois en une expérience accessible et connectée. Saveur fumée authentique, contrôle précis de la température, et une communauté mondiale de passionnés.",
+    "social": {
+      "instagram": "https://www.instagram.com/traegergrills/",
+      "youtube": "https://www.youtube.com/traegergrills",
+      "tiktok": "https://www.tiktok.com/@traeger"
+    },
+    "catalogUrl": "https://www.traegergrills.com",
+    "appointmentUrl": "https://expo.jpc-events.com/configure/barbecue-expo"
+  },
+  {
+    "slug": "kamado-joe",
+    "name": "Kamado Joe",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "kamado"
+    ],
+    "tier": "gold",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://www.kamadojoe.com",
+    "coverImage": "/photos-2026/bbq-expo-403.jpg",
+    "stand": "C03",
+    "description": "Kamado Joe réinvente le barbecue céramique avec des innovations brevetées : système Divide & Conquer, charnière Air Lift, déflecteurs en deux pièces. La polyvalence d'un kamado, l'ingénierie en plus.",
+    "social": {
+      "instagram": "https://www.instagram.com/kamadojoe/",
+      "facebook": "https://www.facebook.com/kamadojoe"
+    },
+    "catalogUrl": "https://www.kamadojoe.com",
+    "appointmentUrl": "https://expo.jpc-events.com/configure/barbecue-expo"
+  },
+  {
+    "slug": "big-green-egg",
+    "name": "Big Green Egg",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "kamado"
+    ],
+    "tier": "gold",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://biggreenegg.com"
+  },
+  {
+    "slug": "napoleon",
+    "name": "Napoleon",
+    "country": "ca",
+    "category": "barbecue",
+    "subCategories": [
+      "gas",
+      "pro"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://www.napoleon.com"
+  },
+  {
+    "slug": "broil-king",
+    "name": "Broil King",
+    "country": "ca",
+    "category": "barbecue",
+    "subCategories": [
+      "gas"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://www.broilking.com"
+  },
+  {
+    "slug": "char-broil",
+    "name": "Char-Broil",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "charcoal",
+      "gas"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "website": "https://www.charbroil.com"
+  },
+  {
+    "slug": "monolith",
+    "name": "Monolith",
+    "country": "de",
+    "category": "barbecue",
+    "subCategories": [
+      "kamado"
+    ],
+    "tier": "gold",
+    "newForExpo": true,
+    "seekingReseller": true,
+    "website": "https://monolith-grills.de"
+  },
+  {
+    "slug": "ofyr",
+    "name": "OFYR",
+    "country": "nl",
+    "category": "barbecue",
+    "subCategories": [
+      "brasero",
+      "plancha"
+    ],
+    "tier": "gold",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://www.ofyr.com"
+  },
+  {
+    "slug": "the-bastard",
+    "name": "The Bastard",
+    "country": "nl",
+    "category": "barbecue",
+    "subCategories": [
+      "kamado"
+    ],
+    "tier": "silver",
+    "newForExpo": true,
+    "seekingDistributor": true,
+    "website": "https://thebastard.com"
+  },
+  {
+    "slug": "eno-france",
+    "name": "ENO France",
+    "country": "fr",
+    "category": "barbecue",
+    "subCategories": [
+      "gas",
+      "plancha"
+    ],
+    "tier": "gold",
+    "newForExpo": false,
+    "website": "https://www.eno.fr"
+  },
+  {
+    "slug": "barbecook",
+    "name": "Barbecook",
+    "country": "be",
+    "category": "barbecue",
+    "subCategories": [
+      "charcoal",
+      "gas"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "exportsAbroad": true,
+    "website": "https://www.barbecook.com"
+  },
+  {
+    "slug": "oklahoma-joes",
+    "name": "Oklahoma Joe's",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "smoker"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "website": "https://www.oklahomajoes.com"
+  },
+  {
+    "slug": "soler",
+    "name": "SOLER",
+    "country": "es",
+    "category": "accessories",
+    "subCategories": [
+      "utensils",
+      "grates"
+    ],
+    "tier": "bronze",
+    "newForExpo": true,
+    "seekingReseller": true
+  },
+  {
+    "slug": "masterbuilt",
+    "name": "Masterbuilt",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "smoker",
+      "electric"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "website": "https://www.masterbuilt.com"
+  },
+  {
+    "slug": "campingaz",
+    "name": "Campingaz",
+    "country": "fr",
+    "category": "barbecue",
+    "subCategories": [
+      "gas"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "website": "https://www.campingaz.com"
+  },
+  {
+    "slug": "char-griller",
+    "name": "Char-Griller",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "charcoal",
+      "smoker"
+    ],
+    "tier": "bronze",
+    "newForExpo": false,
+    "website": "https://chargriller.com"
+  },
+  {
+    "slug": "le-marquier",
+    "name": "Le Marquier",
+    "country": "fr",
+    "category": "barbecue",
+    "subCategories": [
+      "plancha",
+      "brasero"
+    ],
+    "tier": "bronze",
+    "newForExpo": false
+  },
+  {
+    "slug": "grill-o-bois",
+    "name": "Grill' o' Bois",
+    "country": "fr",
+    "category": "barbecue",
+    "subCategories": [
+      "wood-oven",
+      "brasero"
+    ],
+    "tier": "silver",
+    "newForExpo": true
+  },
+  {
+    "slug": "kamado-chef",
+    "name": "Kamado Chef",
+    "country": "nl",
+    "category": "barbecue",
+    "subCategories": [
+      "kamado"
+    ],
+    "tier": "bronze",
+    "newForExpo": false
+  },
+  {
+    "slug": "ember-charcoal",
+    "name": "Ember Charcoal Co.",
+    "country": "gb",
+    "category": "fuels",
+    "subCategories": [
+      "charcoal",
+      "briquettes"
+    ],
+    "tier": "bronze",
+    "newForExpo": true,
+    "seekingDistributor": true
+  },
+  {
+    "slug": "heat-beads",
+    "name": "Heat Beads",
+    "country": "au",
+    "category": "fuels",
+    "subCategories": [
+      "briquettes",
+      "charcoal"
+    ],
+    "tier": "bronze",
+    "newForExpo": false,
+    "exportsAbroad": true
+  },
+  {
+    "slug": "pitboss",
+    "name": "Pit Boss",
+    "country": "us",
+    "category": "barbecue",
+    "subCategories": [
+      "pellet"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "website": "https://pitboss-grills.com"
+  },
+  {
+    "slug": "rosle",
+    "name": "Rösle",
+    "country": "de",
+    "category": "accessories",
+    "subCategories": [
+      "utensils",
+      "grates"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "website": "https://www.roesle.de"
+  },
+  {
+    "slug": "everdure",
+    "name": "Everdure by Heston",
+    "country": "au",
+    "category": "barbecue",
+    "subCategories": [
+      "charcoal",
+      "gas"
+    ],
+    "tier": "silver",
+    "newForExpo": true,
+    "exportsAbroad": true,
+    "website": "https://everdure.com"
+  },
+  {
+    "slug": "olivers-smoked",
+    "name": "Oliver's Smoked Meats",
+    "country": "fr",
+    "category": "gourmet",
+    "subCategories": [],
+    "tier": "bronze",
+    "newForExpo": true
+  },
+  {
+    "slug": "buffalo-bbq-sauce",
+    "name": "Buffalo BBQ Sauce",
+    "country": "us",
+    "category": "sauces",
+    "subCategories": [
+      "bbq-sauces",
+      "rubs"
+    ],
+    "tier": "bronze",
+    "newForExpo": false
+  },
+  {
+    "slug": "smokin-hot-rubs",
+    "name": "Smokin' Hot Rubs",
+    "country": "gb",
+    "category": "sauces",
+    "subCategories": [
+      "rubs",
+      "spices"
+    ],
+    "tier": "bronze",
+    "newForExpo": true,
+    "seekingDistributor": true
+  },
+  {
+    "slug": "umami-wood",
+    "name": "Umami Wood",
+    "country": "jp",
+    "category": "fuels",
+    "subCategories": [
+      "smoking-wood"
+    ],
+    "tier": "bronze",
+    "newForExpo": true,
+    "seekingDistributor": true,
+    "exportsAbroad": true
+  },
+  {
+    "slug": "kikkoman-grill",
+    "name": "Kikkoman Grill",
+    "country": "jp",
+    "category": "sauces",
+    "subCategories": [
+      "bbq-sauces",
+      "condiments"
+    ],
+    "tier": "silver",
+    "newForExpo": false,
+    "exportsAbroad": true
+  }
 ]

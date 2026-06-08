@@ -426,3 +426,16 @@
     animation: none;
   }
 }
+
+/* Compacter les embeds Instagram (le script IG réinjecte ses styles !important,
+   on bat sa spécificité avec un sélecteur élément+classe). */
+blockquote.instagram-media {
+  max-width: 320px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+blockquote.instagram-media iframe {
+  max-width: 100% !important;
+  min-width: 0 !important;
+}

@@ -32,13 +32,14 @@ const STORAGE_KEY = "bbq-expo-audience";
 const PRO_PATHS = [
   "/pro",
   "/awards",
-  "/exposants",
   "/devenez-exposants",
   "/espace-pro-b2b",
   "/pourquoi-exposer",
   "/billetterie/pro-b2b",
   "/billetterie/presse",
-  "/gallery-press",
+  // Note : /exposants (Liste/Nos exposants) et /gallery-press (Galerie & Presse)
+  // ne forcent volontairement PLUS le passage en mode PRO — ils restent neutres
+  // et conservent le mode courant (Grand Public par défaut).
 ];
 
 // B2C-leaning paths
@@ -55,6 +56,8 @@ const B2C_PATHS = [
 function deriveFromPath(pathname: string): Audience | null {
   // Strip trailing slash, normalize
   const p = pathname.replace(/\/$/, "") || "/";
+  // Home is now the Grand Public (B2C) homepage.
+  if (p === "/") return "b2c";
   if (PRO_PATHS.some((prefix) => p === prefix || p.startsWith(prefix + "/"))) {
     return "pro";
   }

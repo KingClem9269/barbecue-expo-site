@@ -12,22 +12,25 @@ type Restaurateur = {
   cuisine: string;
   description: string;
   image: string;
+  // Force le continent d'affichage (sinon déduit du pays). Utile pour les
+  // cuisines de style américain portées par des restaurateurs FR.
+  continent?: "americas" | "asia" | "europe";
 };
 
 const RESTAURATEURS: Restaurateur[] = [
   { slug: "selva", name: "Selva", country: "ar", region: "Argentine", cuisine: "Asado patagonien", description: "Côtes longues, sel gros, feu de bois patient. La tradition gauchista intacte.", image: "/photos-2026/bbq-expo-073.jpg" },
   { slug: "h-o-m-steakhouse", name: "H.O.M. Steakhouse", country: "us", region: "Texas", cuisine: "Brisket low & slow", description: "Smoker offset, bois de pecan, 14 heures de patience pour une seule pièce. Le Texas, vraiment.", image: "/photos-2026/bbq-expo-184.jpg" },
-  { slug: "le-boukane", name: "Le Boukane", country: "fr", region: "Réunion", cuisine: "Carry péï", description: "Marinades créoles, viandes fumées au boucan. Le BBQ insulaire dans toute sa générosité.", image: "/photos-2026/bbq-expo-105.jpg" },
+  { slug: "le-boukane", name: "Le Boukane", country: "fr", region: "Réunion", cuisine: "Carry péï", description: "Marinades créoles, viandes fumées au boucan. Le BBQ insulaire dans toute sa générosité.", image: "/photos-2026/bbq-expo-105.jpg", continent: "americas" },
   { slug: "nicky-s-bbq", name: "Nicky's BBQ", country: "us", region: "Caroline du Sud", cuisine: "Pulled pork & vinegar sauce", description: "Le sandwich qui a fait l'histoire du BBQ américain. Vinaigre, piment, brioche.", image: "/photos-2026/bbq-expo-403.jpg" },
   { slug: "villa-marthe", name: "Villa Marthe", country: "fr", region: "Provence", cuisine: "Méditerranée au feu de bois", description: "Côtelettes d'agneau, légumes braisés, herbes du jardin. Le Sud français à la flamme.", image: "/photos-2026/bbq-expo-688.jpg" },
   { slug: "le-cochon-voyageur", name: "Le Cochon Voyageur", country: "fr", region: "Toulouse", cuisine: "Cochon entier", description: "Bête entière, broche lente, sauce de cuisson. Une seule recette, perfectionnée.", image: "/photos-2026/william-plin-jpc-110426-533a3756.jpg" },
   { slug: "atelier-du-brasero", name: "Atelier du Brasero", country: "fr", region: "Paris", cuisine: "Cuisson au brasero", description: "Cuisson sur feu vif sur OFYR. Légumes carbonisés, viande à la flamme directe. Showroom du brasero.", image: "/photos-2026/bbq-expo-073.jpg" },
   { slug: "chango", name: "Chango", country: "ar", region: "Buenos Aires", cuisine: "Empanadas & parrilla", description: "L'apéro porteño et l'asado des chefs. Une parenthèse argentine au cœur de Paris.", image: "/photos-2026/bbq-expo-403.jpg" },
-  { slug: "melt", name: "Melt", country: "fr", region: "Paris", cuisine: "Smoked meats USA", description: "Brisket, ribs, sandwich pulled. La référence parisienne du BBQ américain.", image: "/photos-2026/bbq-expo-184.jpg" },
+  { slug: "melt", name: "Melt", country: "fr", region: "Paris", cuisine: "Smoked meats USA", description: "Brisket, ribs, sandwich pulled. La référence parisienne du BBQ américain.", image: "/photos-2026/bbq-expo-184.jpg", continent: "americas" },
   { slug: "au-feu-le-saumon", name: "Au Feu Le Saumon", country: "fr", region: "Bretagne", cuisine: "Saumon fumé minute", description: "Saumon labellisé, fumage à la flamme, marinade aux herbes bretonnes. La mer dans le feu.", image: "/photos-2026/bbq-expo-720.jpg" },
   { slug: "a-feu-lent", name: "A Feu Lent", country: "fr", region: "Lyon", cuisine: "Charcuterie fumée", description: "Saucisses fumées, pancetta maison, jambon de pays. La pâte qu'on prend.", image: "/photos-2026/bbq-expo-688.jpg" },
-  { slug: "pny", name: "PNY", country: "fr", region: "Paris", cuisine: "Smashed burger", description: "Le burger de référence à Paris. Pain brioche, sauce maison, frites cuites au gras.", image: "/photos-2026/bbq-expo-105.jpg" },
-  { slug: "marche-noir", name: "Marché Noir", country: "fr", region: "Paris", cuisine: "Sandwich BBQ", description: "Sandwiches inspirés des Etats-Unis, viandes fumées, sauces maison.", image: "/photos-2026/bbq-expo-184.jpg" },
+  { slug: "pny", name: "PNY", country: "fr", region: "Paris", cuisine: "Smashed burger", description: "Le burger de référence à Paris. Pain brioche, sauce maison, frites cuites au gras.", image: "/photos-2026/bbq-expo-105.jpg", continent: "americas" },
+  { slug: "marche-noir", name: "Marché Noir", country: "fr", region: "Paris", cuisine: "Sandwich BBQ", description: "Sandwiches inspirés des Etats-Unis, viandes fumées, sauces maison.", image: "/photos-2026/bbq-expo-184.jpg", continent: "americas" },
   { slug: "soon-grill", name: "Soon Grill", country: "kr", region: "Séoul", cuisine: "Korean BBQ", description: "Bulgogi, galbi, samgyeopsal. La marinade soja-poire-sésame qui change tout.", image: "/photos-2026/bbq-expo-403.jpg" },
 ];
 
@@ -46,18 +49,27 @@ export async function generateMetadata({
   const { locale } = await params;
   return buildMetadata(locale, "/program/bbq-street-food", {
     title: "BBQ Street Food — Barbecue Expo 2027",
-    description: "14 restaurateurs sélectionnés. Le BBQ du monde entier, en un seul lieu, pendant trois jours.",
+    description: "16 restaurateurs sélectionnés. Le BBQ du monde entier, en un seul lieu, pendant trois jours.",
   });
 }
 
 export default async function StreetFoodPage() {
   await getLocale();
 
+  // Continent d'affichage : override explicite, sinon déduit du pays.
+  const continentOf = (r: Restaurateur): "americas" | "asia" | "europe" =>
+    r.continent ??
+    (["us", "ar"].includes(r.country)
+      ? "americas"
+      : ["kr", "jp"].includes(r.country)
+        ? "asia"
+        : "europe");
+
   // Group by region
   const byRegion = {
-    americas: RESTAURATEURS.filter((r) => ["us", "ar"].includes(r.country)),
-    asia: RESTAURATEURS.filter((r) => ["kr", "jp"].includes(r.country)),
-    europe: RESTAURATEURS.filter((r) => ["fr", "es", "it", "gb", "de"].includes(r.country)),
+    americas: RESTAURATEURS.filter((r) => continentOf(r) === "americas"),
+    asia: RESTAURATEURS.filter((r) => continentOf(r) === "asia"),
+    europe: RESTAURATEURS.filter((r) => continentOf(r) === "europe"),
   };
 
   return (
@@ -98,7 +110,7 @@ export default async function StreetFoodPage() {
         { key: "asia", title: "L'Asie", body: "Marinades complexes, cuissons rapides, côtés ciselés. Une autre philosophie du feu, qui se fait redécouvrir en Europe.", list: byRegion.asia },
         { key: "europe", title: "L'Europe", body: "Provence, Bretagne, Toulouse, Réunion, Lyon, Paris. Le BBQ français contemporain et ses voisins. Une scène qui a énormément évolué en cinq ans.", list: byRegion.europe },
       ].map((region) => (
-        <section key={region.key} className="py-20 md:py-28 first:pt-0">
+        <section key={region.key} className="py-12 md:py-16 first:pt-0">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-12">
               <h2
@@ -162,7 +174,7 @@ export default async function StreetFoodPage() {
       ))}
 
       {/* CTA */}
-      <section className="bg-cream-100 py-20 md:py-28">
+      <section className="bg-cream-100 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row gap-4">
           <Link
             href="/billetterie/particulier"

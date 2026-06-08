@@ -70,7 +70,7 @@
                       {
                         "_uid": "0e68e641-e406-410d-ae71-6e4198863ef5",
                         "color": "primary",
-                        "content": "Vrijdag 10 april",
+                        "content": "Vrijdag 12 maart",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -113,7 +113,7 @@
                       {
                         "_uid": "7106b98a-0a10-411c-a870-a6dfc7819128",
                         "color": "primary",
-                        "content": "Zaterdag 11 april",
+                        "content": "Zaterdag 13 maart",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -155,7 +155,7 @@
                       {
                         "_uid": "e7285a46-c141-45c8-a910-4366c493f251",
                         "color": "primary",
-                        "content": "Zondag 12 april",
+                        "content": "Zondag 14 maart",
                         "heading": "h3",
                         "component": "headline",
                         "textAlign": ""
@@ -704,7 +704,7 @@
                             "_uid": "5f997e9b-5a75-4254-a5a7-97199fb9014d",
                             "bold": false,
                             "color": "primary",
-                            "content": "De beurs vindt plaats in Parijs van vrijdag 10 tot en met zondag 12 april: Vrijdag: 9u30 - 19u Zaterdag: 9u30 - 19u Zondag: 9u30 - 18u",
+                            "content": "De beurs vindt plaats in Parijs van vrijdag 10 tot en met zondag 14 maart: Vrijdag: 9u30 - 19u Zaterdag: 9u30 - 19u Zondag: 9u30 - 18u",
                             "component": "paragraph",
                             "textAlign": "start"
                           }

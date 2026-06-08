@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { Flame, Users, Trophy } from "lucide-react";
@@ -109,9 +110,25 @@ export default function GrillArenaTeaser({ blok }: { blok: GrillArenaBlok }) {
 
   return (
     <section
-      className="relative w-full bg-ink-950 py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full bg-ink-950 py-14 md:py-20 lg:py-24 overflow-hidden"
       aria-label="Grill Arena"
     >
+      {/* Background photo — Live Fire Republic pitmaster in action */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <Image
+          src="/photos-2026/zone-grill-arena.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority={false}
+        />
+        {/* Lighter overlays — let the photo show, keep text legible on the left */}
+        <div className="absolute inset-0 bg-ink-950/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-950/95 via-ink-950/55 to-ink-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-transparent to-ink-950/30" />
+      </div>
+
       {/* Ember glow background - stronger than other sections, signaling "this is the show" */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-50">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-radial from-ember-600/25 via-gold-500/10 to-transparent blur-3xl" />

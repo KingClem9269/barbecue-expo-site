@@ -28,7 +28,7 @@ const UI: Record<
     eyebrow: "Édition 2027",
     title: "Les pitmasters",
     description:
-      "20 pitmasters internationaux. 25 nationalités représentées dans le public. 12 masterclasses. 3 jours d'apprentissage intense autour du feu.",
+      "15 pitmasters internationaux. 25 nationalités représentées dans le public. 12 masterclasses. 3 jours d'apprentissage intense autour du feu.",
     all: "Tous",
     country: "Pays",
     specialty: "Spécialité",
@@ -42,7 +42,7 @@ const UI: Record<
     eyebrow: "2027 edition",
     title: "The pitmasters",
     description:
-      "20 international pitmasters. 25 nationalities in the audience. 12 masterclasses. 3 days of intense fire-driven learning.",
+      "15 international pitmasters. 25 nationalities in the audience. 12 masterclasses. 3 days of intense fire-driven learning.",
     all: "All",
     country: "Country",
     specialty: "Specialty",
@@ -56,7 +56,7 @@ const UI: Record<
     eyebrow: "Edición 2027",
     title: "Los pitmasters",
     description:
-      "20 pitmasters internacionales. 25 nacionalidades representadas. 12 masterclasses. 3 días de aprendizaje intenso alrededor del fuego.",
+      "15 pitmasters internacionales. 25 nacionalidades representadas. 12 masterclasses. 3 días de aprendizaje intenso alrededor del fuego.",
     all: "Todos",
     country: "País",
     specialty: "Especialidad",
@@ -70,7 +70,7 @@ const UI: Record<
     eyebrow: "Ausgabe 2027",
     title: "Die Pitmaster",
     description:
-      "20 internationale Pitmaster. 25 vertretene Nationalitäten. 12 Masterclasses. 3 Tage intensives Lernen rund ums Feuer.",
+      "15 internationale Pitmaster. 25 vertretene Nationalitäten. 12 Masterclasses. 3 Tage intensives Lernen rund ums Feuer.",
     all: "Alle",
     country: "Land",
     specialty: "Spezialität",
@@ -84,7 +84,7 @@ const UI: Record<
     eyebrow: "Editie 2027",
     title: "De pitmasters",
     description:
-      "20 internationale pitmasters. 25 vertegenwoordigde nationaliteiten. 12 masterclasses. 3 dagen intensief leren rond het vuur.",
+      "15 internationale pitmasters. 25 vertegenwoordigde nationaliteiten. 12 masterclasses. 3 dagen intensief leren rond het vuur.",
     all: "Alle",
     country: "Land",
     specialty: "Specialiteit",
@@ -98,7 +98,7 @@ const UI: Record<
     eyebrow: "Edição 2027",
     title: "Os pitmasters",
     description:
-      "20 pitmasters internacionais. 25 nacionalidades representadas. 12 masterclasses. 3 dias de aprendizagem intensa à volta do fogo.",
+      "15 pitmasters internacionais. 25 nacionalidades representadas. 12 masterclasses. 3 dias de aprendizagem intensa à volta do fogo.",
     all: "Todos",
     country: "País",
     specialty: "Especialidade",
@@ -112,7 +112,7 @@ const UI: Record<
     eyebrow: "Edizione 2027",
     title: "I pitmaster",
     description:
-      "20 pitmaster internazionali. 25 nazionalità rappresentate. 12 masterclass. 3 giorni di apprendimento intenso attorno al fuoco.",
+      "15 pitmaster internazionali. 25 nazionalità rappresentate. 12 masterclass. 3 giorni di apprendimento intenso attorno al fuoco.",
     all: "Tutti",
     country: "Paese",
     specialty: "Specialità",
@@ -305,7 +305,7 @@ export default async function PitmastersPage({
       </section>
 
       {/* Listing */}
-      <section className="relative max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
+      <section className="relative max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16">
         <PitmastersList
           pitmasters={pitmasters}
           locale={locale}

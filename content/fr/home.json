@@ -44,15 +44,15 @@
         "component": "manifesto"
       },
       {
-        "_uid": "path-fork-1",
-        "component": "path-fork"
+        "_uid": "experience-zones-1",
+        "component": "experience-zones"
       },
       {
         "_uid": "grill-arena-teaser-1",
         "component": "grill-arena-teaser"
       },
       {
-        "_uid": "pitmasters-grid-1",
+        "_uid": "pitmasters-grid-home",
         "component": "pitmasters-grid"
       },
       {
@@ -66,10 +66,6 @@
       {
         "_uid": "latest-stories-1",
         "component": "latest-stories"
-      },
-      {
-        "_uid": "awards-teaser-1",
-        "component": "awards-teaser"
       },
       {
         "_uid": "final-cta-1",

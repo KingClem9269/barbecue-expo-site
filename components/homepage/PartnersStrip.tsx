@@ -43,51 +43,51 @@ const UI: Record<
 > = {
   fr: {
     eyebrow: "Avec nos partenaires",
-    title: "Vingt-et-une marques. Et beaucoup d'autres.",
+    title: "Toutes les marques clés.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — quelques-uns des partenaires qui nous accompagnent. Voir l'ensemble des deux cent cinquante exposants.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — quelques-uns des partenaires qui nous accompagnent. Voir l'ensemble des plus de deux cents exposants.",
     cta: "Voir tous les exposants",
   },
   en: {
     eyebrow: "With our partners",
-    title: "Twenty-one brands. And many more.",
+    title: "All the key brands.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — some of the partners standing with us. See all 250 exhibitors.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — some of the partners standing with us. See all 200+ exhibitors.",
     cta: "See all exhibitors",
   },
   es: {
     eyebrow: "Con nuestros socios",
-    title: "Veintiuna marcas. Y muchas más.",
+    title: "Todas las marcas clave.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — algunos de los socios que nos acompañan. Ver los 250 expositores.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — algunos de los socios que nos acompañan. Ver los 200+ expositores.",
     cta: "Ver todos los expositores",
   },
   de: {
     eyebrow: "Mit unseren Partnern",
-    title: "Einundzwanzig Marken. Und viele mehr.",
+    title: "Alle wichtigen Marken.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — einige unserer Partner. Alle 250 Aussteller ansehen.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — einige unserer Partner. Alle 200+ Aussteller ansehen.",
     cta: "Alle Aussteller ansehen",
   },
   nl: {
     eyebrow: "Met onze partners",
-    title: "Eenentwintig merken. En nog veel meer.",
+    title: "Alle belangrijke merken.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — enkele van onze partners. Bekijk alle 250 exposanten.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — enkele van onze partners. Bekijk alle 200+ exposanten.",
     cta: "Alle exposanten bekijken",
   },
   pt: {
     eyebrow: "Com os nossos parceiros",
-    title: "Vinte e uma marcas. E muitas mais.",
+    title: "Todas as marcas-chave.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — alguns dos parceiros que nos acompanham. Ver todos os 250 expositores.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — alguns dos parceiros que nos acompanham. Ver todos os 200+ expositores.",
     cta: "Ver todos os expositores",
   },
   it: {
     eyebrow: "Con i nostri partner",
-    title: "Ventuno marchi. E molti altri.",
+    title: "Tutti i marchi chiave.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — alcuni dei partner che ci accompagnano. Vedi tutti i 250 espositori.",
+      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — alcuni dei partner che ci accompagnano. Vedi tutti i 200+ espositori.",
     cta: "Vedi tutti gli espositori",
   },
 };
@@ -98,7 +98,7 @@ export default function PartnersStrip() {
 
   return (
     <section
-      className="relative w-full bg-cream-50 py-24 md:py-32"
+      className="relative w-full bg-cream-50 py-14 md:py-20"
       aria-label="Partenaires"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -131,7 +131,7 @@ export default function PartnersStrip() {
                 alt=""
                 width={140}
                 height={70}
-                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-darken"
                 unoptimized
               />
             </li>

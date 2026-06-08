@@ -7,6 +7,16 @@ import type { CategoryKey, SubCategoryKey } from "./exhibitor-taxonomy";
 
 export type BrandTier = "gold" | "silver" | "bronze";
 
+/** Social links — all optional, filled by the exhibitor on Bunny Hunter. */
+export type BrandSocial = {
+  instagram?: string;
+  facebook?: string;
+  linkedin?: string;
+  youtube?: string;
+  tiktok?: string;
+  x?: string;
+};
+
 export type Brand = {
   slug: string;
   name: string;
@@ -26,6 +36,20 @@ export type Brand = {
   website?: string;
   /** Path in /public/brands/logos/<slug>.svg (or .png). Fallback to name if missing. */
   logo?: string;
+
+  /* ---- Rich profile (filled by the exhibitor on Bunny Hunter) ---- */
+  /** Cover/banner image — /public/brands/covers/<slug>.jpg. */
+  coverImage?: string;
+  /** Brand description (single text, written by the exhibitor). */
+  description?: string;
+  /** Booth number on the floor plan. */
+  stand?: string;
+  /** Social media links. */
+  social?: BrandSocial;
+  /** Downloadable catalog (PDF) URL. */
+  catalogUrl?: string;
+  /** "Book a meeting" link (B2B matchmaking). */
+  appointmentUrl?: string;
 };
 
 /** Pretty label for the Tier (localized). */

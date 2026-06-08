@@ -199,8 +199,6 @@ export default async function PitmasterDetailPage({
                 className="w-4 h-4 rounded-full"
               />
               <span>{countryName}</span>
-              <span aria-hidden="true" className="inline-block w-6 h-px bg-gold-500" />
-              <span>{p.specialty}</span>
             </div>
 
             <h1
@@ -245,7 +243,7 @@ export default async function PitmasterDetailPage({
       </div>
 
       {/* Sessions */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16">
         <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
           <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
           {ui.sessions}
@@ -301,7 +299,7 @@ export default async function PitmasterDetailPage({
 
       {/* Related pitmasters */}
       {others.length > 0 && (
-        <section className="bg-cream-100 py-16 md:py-24">
+        <section className="bg-cream-100 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex items-center gap-3 text-ink-900 text-xs md:text-sm uppercase tracking-widest font-semibold mb-8">
               <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
@@ -336,7 +334,7 @@ export default async function PitmasterDetailPage({
                       {o.name}
                     </h3>
                     <p className="mt-1 text-xs uppercase tracking-widest text-cream-50/70">
-                      {getCountryName(o.country, locale)} · {o.specialty}
+                      {getCountryName(o.country, locale)}
                     </p>
                   </div>
                 </Link>

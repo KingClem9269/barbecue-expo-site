@@ -55,7 +55,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Professionnels",
       title: "Je viens faire du business",
       description:
-        "Rencontrez 80+ marques, dealers et distributeurs européens. Le rendez-vous annuel du secteur BBQ & outdoor cooking.",
+        "Rencontrez 250+ marques, dealers et distributeurs européens. Le rendez-vous annuel du secteur BBQ & outdoor cooking.",
       href: "/billetterie/pro-b2b",
       cta: "Accéder à l'espace Pro",
     },
@@ -73,7 +73,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Professionals",
       title: "I'm here for business",
       description:
-        "Meet 80+ European brands, dealers and distributors. The annual event for the BBQ & outdoor cooking industry.",
+        "Meet 250+ European brands, dealers and distributors. The annual event for the BBQ & outdoor cooking industry.",
       href: "/billetterie/pro-b2b",
       cta: "Access the Pro area",
     },
@@ -91,7 +91,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Profesionales",
       title: "Vengo por negocios",
       description:
-        "Conozca 80+ marcas, distribuidores europeos. La cita anual del sector BBQ & cocina exterior.",
+        "Conozca 250+ marcas, distribuidores europeos. La cita anual del sector BBQ & cocina exterior.",
       href: "/billetterie/pro-b2b",
       cta: "Acceder al área Pro",
     },
@@ -109,7 +109,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Fachleute",
       title: "Ich bin beruflich hier",
       description:
-        "Treffen Sie 80+ europäische Marken, Händler und Distributoren. Das jährliche Event der BBQ- und Outdoor-Cooking-Branche.",
+        "Treffen Sie 250+ europäische Marken, Händler und Distributoren. Das jährliche Event der BBQ- und Outdoor-Cooking-Branche.",
       href: "/billetterie/pro-b2b",
       cta: "Zum Pro-Bereich",
     },
@@ -127,7 +127,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Professionals",
       title: "Ik kom voor zaken",
       description:
-        "Ontmoet 80+ Europese merken, dealers en distributeurs. Het jaarlijkse evenement voor de BBQ- & outdoor-cooking-industrie.",
+        "Ontmoet 250+ Europese merken, dealers en distributeurs. Het jaarlijkse evenement voor de BBQ- & outdoor-cooking-industrie.",
       href: "/billetterie/pro-b2b",
       cta: "Naar de Pro-ruimte",
     },
@@ -145,7 +145,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Profissionais",
       title: "Venho a negócios",
       description:
-        "Conheça 80+ marcas europeias, distribuidores e dealers. O encontro anual do setor BBQ & cozinha ao ar livre.",
+        "Conheça 250+ marcas europeias, distribuidores e dealers. O encontro anual do setor BBQ & cozinha ao ar livre.",
       href: "/billetterie/pro-b2b",
       cta: "Aceder à área Pro",
     },
@@ -163,7 +163,7 @@ const DEFAULTS: Record<string, { b2c: Path; b2b: Path }> = {
       eyebrow: "Professionisti",
       title: "Vengo per affari",
       description:
-        "Incontra 80+ marchi europei, dealer e distributori. L'appuntamento annuale del settore BBQ & cucina outdoor.",
+        "Incontra 250+ marchi europei, dealer e distributori. L'appuntamento annuale del settore BBQ & cucina outdoor.",
       href: "/billetterie/pro-b2b",
       cta: "Accedi all'area Pro",
     },
