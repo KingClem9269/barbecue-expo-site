@@ -16,6 +16,9 @@ import { QuoteModal } from "./QuoteModal";
 
 const STORAGE_KEY = "bbq-estimator-v1";
 
+/** Frais de dossier obligatoires, ajoutés automatiquement à toute estimation. */
+export const DOSSIER_FEE = 180;
+
 /* ------------------------------------------------------------------ */
 /* Utilitaires prix                                                    */
 /* ------------------------------------------------------------------ */
@@ -253,6 +256,11 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
     if (p) lines.push({ id: "place", group: "Communication sur place", label: p.name, amount: p.price });
   }
 
+  // Frais de dossier — obligatoires, ajoutés automatiquement en dernier.
+  if (lines.length > 0) {
+    lines.push({ id: "frais-dossier", group: "Frais de dossier", label: "Frais de dossier", detail: "Obligatoire", amount: DOSSIER_FEE });
+  }
+
   return lines;
 }
 
@@ -427,9 +435,13 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
             <ul className="space-y-1.5">
               {lines.filter((l) => l.group === g).map((l) => (
                 <li key={l.id} className="flex items-start gap-2 text-sm">
-                  <button type="button" onClick={() => removeLine(l.id)} aria-label={`Retirer ${l.label}`} className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-ink-900/5 hover:bg-ink-900/15 text-ink-500 flex items-center justify-center">
-                    <XIcon className="w-3 h-3" />
-                  </button>
+                  {l.id === "frais-dossier" ? (
+                    <span className="shrink-0 mt-0.5 w-4 h-4" aria-hidden="true" />
+                  ) : (
+                    <button type="button" onClick={() => removeLine(l.id)} aria-label={`Retirer ${l.label}`} className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-ink-900/5 hover:bg-ink-900/15 text-ink-500 flex items-center justify-center">
+                      <XIcon className="w-3 h-3" />
+                    </button>
+                  )}
                   <span className="flex-1 min-w-0">
                     <span className="block text-ink-800 leading-tight">{l.label}</span>
                     {l.detail && <span className="block text-ink-400 text-xs">{l.detail}</span>}
