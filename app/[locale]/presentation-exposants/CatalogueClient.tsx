@@ -152,6 +152,8 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
 
   /* ---- type liste : case à cocher (forfait) ou stepper (au ml / m²) ---- */
   if (opt.type === "list" && opt.options) {
+    // Co-exposition = options distinctes → cases à cocher ; sinon → steppers de quantité.
+    const useCheckbox = /co-exposition/i.test(opt.name);
     return (
       <OptCard opt={opt}>
         <div className="space-y-1">
@@ -159,27 +161,27 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
             const u = unitOf(o.price);
             const amt = parsePrice(o.price);
             const id = oid(o.label);
-            if (u === "ml" || u === "m²") {
-              const qty = est.get(id)?.qty ?? 0;
+            if (useCheckbox) {
               return (
-                <div key={i} className="border-t border-ink-900/10 first:border-t-0 py-2">
-                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: o.label, detail: opt.name, amount: amt })}>
+                  <span className="flex-1 flex items-center justify-between gap-2">
                     <span className="text-ink-700 text-sm">{o.label}</span>
                     <Price>{o.price}</Price>
-                  </div>
-                  <Stepper value={qty} suffix={u} onChange={(n) => n > 0
-                    ? est.upsert({ id, group: OPT_GROUP, label: o.label, detail: `${n} ${u} × ${fmtEUR(amt ?? 0)}/${u}`, amount: (amt ?? 0) * n, qty: n })
-                    : est.remove(id)} />
-                </div>
+                  </span>
+                </CheckRow>
               );
             }
+            const qty = est.get(id)?.qty ?? 0;
             return (
-              <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: o.label, detail: opt.name, amount: amt })}>
-                <span className="flex-1 flex items-center justify-between gap-2">
+              <div key={i} className="border-t border-ink-900/10 first:border-t-0 py-2">
+                <div className="flex items-center justify-between gap-2 mb-1.5">
                   <span className="text-ink-700 text-sm">{o.label}</span>
                   <Price>{o.price}</Price>
-                </span>
-              </CheckRow>
+                </div>
+                <Stepper value={qty} suffix={u ?? undefined} onChange={(n) => n > 0
+                  ? est.upsert({ id, group: OPT_GROUP, label: o.label, detail: u ? `${n} ${u} × ${fmtEUR(amt ?? 0)}/${u}` : `${n} × ${o.price}`, amount: (amt ?? 0) * n, qty: n })
+                  : est.remove(id)} />
+              </div>
             );
           })}
         </div>
@@ -289,7 +291,7 @@ function PartnerSelectRow() {
 function PlaceChoose({ packKey }: { packKey: string }) {
   const est = useEstimator();
   const selected = est.placeKey === packKey;
-  return <div className="mt-5"><ChooseButton selected={selected} onClick={() => est.setPlaceKey(selected ? null : packKey)} /></div>;
+  return <div className="mt-auto pt-5"><ChooseButton selected={selected} onClick={() => est.setPlaceKey(selected ? null : packKey)} /></div>;
 }
 
 /** Case « ajouter » sur la vitrophanie (sur devis). */
@@ -458,18 +460,18 @@ function MagFormatRow({ format }: { format: { name: string; priceExpo: string; p
           {format.preview && <DispositifPreview src={format.preview} label={`Barbecue Mag — ${format.name}`} />}
         </span>
       </td>
-      <td className="py-3 text-right text-gold-500 font-semibold whitespace-nowrap">{format.priceExpo}</td>
-      <td className="py-3 text-right">
+      <td className="py-3 pr-6 text-right text-gold-500 font-semibold whitespace-nowrap">{format.priceExpo}</td>
+      <td className="py-3 pl-6 border-l border-cream-50/10">
         <CheckRow
           dark
           checked={est.has(pid)}
           onChange={() => {
             if (!fmtSelected) return; // publirédac uniquement si format choisi
-            est.toggle({ id: pid, group: "Barbecue Mag", label: `${format.name} — publirédactionnel`, amount: pubAmt });
+            est.toggle({ id: pid, group: "Barbecue Mag", label: `${format.name} — publirédac (2 pages)`, amount: pubAmt });
           }}
-          className={`justify-end ${!fmtSelected ? "opacity-40 pointer-events-none" : ""}`}
+          className={!fmtSelected ? "opacity-40 pointer-events-none" : ""}
         >
-          <span className="text-cream-50/60 whitespace-nowrap">{format.pricePubliredac}</span>
+          <span className="text-cream-50/70 whitespace-nowrap">{format.pricePubliredac}</span>
         </CheckRow>
       </td>
     </tr>
@@ -1564,7 +1566,7 @@ export default function CatalogueClient() {
       <Sec id="comm-place" eyebrow="Communication" title="Communication sur place" dark>
         <div className="grid sm:grid-cols-3 gap-6 mb-8">
           {COMM_PLACE_PACKS.map((p) => (
-            <div key={p.name} className={`rounded-sm p-6 border ${p.popular ? "border-gold-500/60 bg-gold-500/10" : "border-cream-50/15 bg-cream-50/[0.03]"}`}>
+            <div key={p.name} className={`rounded-sm p-6 border flex flex-col ${p.popular ? "border-gold-500/60 bg-gold-500/10" : "border-cream-50/15 bg-cream-50/[0.03]"}`}>
               <h3 className="text-cream-50 text-xl font-bold mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{p.name}</h3>
               <div className="text-gold-500 font-bold mb-4">{p.price}</div>
               <ul className="space-y-2">
@@ -1705,7 +1707,7 @@ export default function CatalogueClient() {
             <table className="w-full">
               <thead>
                 <tr className="text-cream-50/50 text-xs uppercase tracking-widest">
-                  <th className="text-left py-2">Format</th><th className="text-right py-2">Exposant</th><th className="text-right py-2">+ Publirédactionnel</th>
+                  <th className="text-left py-2">Format</th><th className="text-right py-2 pr-6">Exposant</th><th className="text-left py-2 pl-6">+ Publirédac (2 pages)</th>
                 </tr>
               </thead>
               <tbody>
