@@ -10,8 +10,10 @@
  * parsePrice(). Aucune valeur n'est dupliquée ici.
  */
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
-import { X as XIcon, Calculator, Minus, Plus, ChevronDown } from "lucide-react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { X as XIcon, Calculator, Minus, Plus, ChevronDown, RotateCcw } from "lucide-react";
+
+const STORAGE_KEY = "bbq-estimator-v1";
 
 /* ------------------------------------------------------------------ */
 /* Utilitaires prix                                                    */
@@ -73,6 +75,7 @@ type EstimatorState = {
   upsert: (item: Item) => void;
   remove: (id: string) => void;
   toggle: (item: Item) => void;
+  reset: () => void;
   /* UI */
   started: boolean;
 };
@@ -98,6 +101,34 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
   const [placeKey, setPlaceKey] = useState<string | null>(null);
   const [items, setItems] = useState<Record<string, Item>>({});
 
+  // Restaure la sélection depuis le localStorage au montage (après l'hydratation
+  // SSR, pour éviter tout décalage serveur/client).
+  const loaded = useRef(false);
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const s = JSON.parse(raw);
+        if (typeof s.sqm === "number") setSqm(s.sqm);
+        if (s.zone === "A" || s.zone === "B") setZone(s.zone);
+        if (s.rangeKey === null || typeof s.rangeKey === "string") setRangeKey(s.rangeKey);
+        if (typeof s.outdoorSqm === "number") setOutdoorSqm(s.outdoorSqm);
+        if (s.partnerKey === null || typeof s.partnerKey === "string") setPartnerKey(s.partnerKey);
+        if (s.placeKey === null || typeof s.placeKey === "string") setPlaceKey(s.placeKey);
+        if (s.items && typeof s.items === "object") setItems(s.items);
+      }
+    } catch { /* localStorage indisponible */ }
+    loaded.current = true;
+  }, []);
+
+  // Sauvegarde à chaque changement (une fois la restauration faite).
+  useEffect(() => {
+    if (!loaded.current) return;
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items }));
+    } catch { /* localStorage indisponible */ }
+  }, [sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items]);
+
   const value = useMemo<EstimatorState>(() => {
     const has = (id: string) => id in items;
     const get = (id: string) => items[id];
@@ -117,6 +148,11 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
         }
         return { ...p, [item.id]: item };
       });
+    const reset = () => {
+      setSqm(0); setZone("A"); setRangeKey(null); setOutdoorSqm(0);
+      setPartnerKey(null); setPlaceKey(null); setItems({});
+      try { localStorage.removeItem(STORAGE_KEY); } catch { /* noop */ }
+    };
     const started =
       sqm > 0 ||
       outdoorSqm > 0 ||
@@ -130,7 +166,7 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
       outdoorSqm, setOutdoorSqm,
       partnerKey, setPartnerKey,
       placeKey, setPlaceKey,
-      items, has, get, upsert, remove, toggle,
+      items, has, get, upsert, remove, toggle, reset,
       started,
     };
   }, [sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items]);
@@ -376,9 +412,14 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
         <span className="inline-flex items-center gap-2 text-cream-50 font-bold text-sm uppercase tracking-widest" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
           <Calculator className="w-4 h-4 text-gold-500" strokeWidth={2} /> Mon estimation
         </span>
-        <button type="button" onClick={() => setCollapsed(true)} aria-label="Réduire" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
-          <ChevronDown className="w-4 h-4" />
-        </button>
+        <div className="flex items-center gap-1">
+          <button type="button" onClick={() => s.reset()} aria-label="Réinitialiser ma sélection" title="Tout réinitialiser" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
+            <RotateCcw className="w-3.5 h-3.5" />
+          </button>
+          <button type="button" onClick={() => setCollapsed(true)} aria-label="Réduire" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
+            <ChevronDown className="w-4 h-4" />
+          </button>
+        </div>
       </div>
 
       {/* Lignes */}
