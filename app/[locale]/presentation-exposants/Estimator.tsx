@@ -19,6 +19,13 @@ const STORAGE_KEY = "bbq-estimator-v1";
 /** Frais de dossier obligatoires, ajoutés automatiquement à toute estimation. */
 export const DOSSIER_FEE = 180;
 
+/** Remise « early bird » : −10 % sur le total HT, valable jusqu'au 3 juillet 2026 inclus. */
+export const EARLY_BIRD_RATE = 0.10;
+const EARLY_BIRD_DEADLINE = new Date(2026, 6, 4); // 4 juillet 2026 00:00 → remise valable jusqu'au 3 inclus
+export function isEarlyBird(now: Date = new Date()): boolean {
+  return now < EARLY_BIRD_DEADLINE;
+}
+
 /* ------------------------------------------------------------------ */
 /* Utilitaires prix                                                    */
 /* ------------------------------------------------------------------ */
@@ -261,6 +268,20 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
     lines.push({ id: "frais-dossier", group: "Frais de dossier", label: "Frais de dossier", detail: "Obligatoire", amount: DOSSIER_FEE });
   }
 
+  // Remise early bird −10 % sur le total HT (jusqu'au 3 juillet) — ligne négative.
+  if (lines.length > 0 && isEarlyBird()) {
+    const base = lines.reduce((sum, l) => sum + (l.amount && l.amount > 0 ? l.amount : 0), 0);
+    if (base > 0) {
+      lines.push({
+        id: "early-bird",
+        group: "Remise",
+        label: "Remise early bird −10 %",
+        detail: "Jusqu'au 3 juillet",
+        amount: -Math.round(base * EARLY_BIRD_RATE),
+      });
+    }
+  }
+
   return lines;
 }
 
@@ -435,7 +456,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
             <ul className="space-y-1.5">
               {lines.filter((l) => l.group === g).map((l) => (
                 <li key={l.id} className="flex items-start gap-2 text-sm">
-                  {l.id === "frais-dossier" ? (
+                  {l.id === "frais-dossier" || l.id === "early-bird" ? (
                     <span className="shrink-0 mt-0.5 w-4 h-4" aria-hidden="true" />
                   ) : (
                     <button type="button" onClick={() => removeLine(l.id)} aria-label={`Retirer ${l.label}`} className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-ink-900/5 hover:bg-ink-900/15 text-ink-500 flex items-center justify-center">
@@ -446,7 +467,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
                     <span className="block text-ink-800 leading-tight">{l.label}</span>
                     {l.detail && <span className="block text-ink-400 text-xs">{l.detail}</span>}
                   </span>
-                  <span className="shrink-0 font-bold text-ink-900 tabular-nums" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
+                  <span className={`shrink-0 font-bold tabular-nums ${l.amount != null && l.amount < 0 ? "text-emerald-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
                     {l.amount == null ? "Sur devis" : l.amount === 0 ? "—" : fmtEUR(l.amount)}
                   </span>
                 </li>
