@@ -11,7 +11,7 @@
  */
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { X as XIcon, Calculator, Minus, Plus, ChevronDown, RotateCcw, FileText } from "lucide-react";
+import { X as XIcon, Calculator, Minus, Plus, ChevronDown, FileText } from "lucide-react";
 import { QuoteModal } from "./QuoteModal";
 
 const STORAGE_KEY = "bbq-estimator-v1";
@@ -414,14 +414,9 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
         <span className="inline-flex items-center gap-2 text-cream-50 font-bold text-sm uppercase tracking-widest" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
           <Calculator className="w-4 h-4 text-gold-500" strokeWidth={2} /> Mon estimation
         </span>
-        <div className="flex items-center gap-1">
-          <button type="button" onClick={() => s.reset()} aria-label="Réinitialiser ma sélection" title="Tout réinitialiser" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
-            <RotateCcw className="w-3.5 h-3.5" />
-          </button>
-          <button type="button" onClick={() => setCollapsed(true)} aria-label="Réduire" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
-            <ChevronDown className="w-4 h-4" />
-          </button>
-        </div>
+        <button type="button" onClick={() => setCollapsed(true)} aria-label="Réduire" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
+          <ChevronDown className="w-4 h-4" />
+        </button>
       </div>
 
       {/* Lignes */}
