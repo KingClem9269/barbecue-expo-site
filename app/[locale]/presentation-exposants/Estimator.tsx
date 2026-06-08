@@ -11,7 +11,8 @@
  */
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { X as XIcon, Calculator, Minus, Plus, ChevronDown, RotateCcw } from "lucide-react";
+import { X as XIcon, Calculator, Minus, Plus, ChevronDown, RotateCcw, FileText } from "lucide-react";
+import { QuoteModal } from "./QuoteModal";
 
 const STORAGE_KEY = "bbq-estimator-v1";
 
@@ -369,6 +370,7 @@ const GROUP_ORDER = ["Stand", "Options de stand", "Partenariat", "Communication"
 export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
   const s = useEstimator();
   const [collapsed, setCollapsed] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const lines = buildLines(s, cfg);
   const total = lines.reduce((sum, l) => sum + (l.amount ?? 0), 0);
   const hasQuote = lines.some((l) => l.amount == null);
@@ -458,10 +460,19 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
             {fmtEUR(total)}{hasQuote ? " +" : ""}
           </span>
         </div>
-        <p className="text-ink-400 text-[10px] leading-snug mt-1.5">
+        <button
+          type="button"
+          onClick={() => setQuoteOpen(true)}
+          className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-gold-500 text-ink-950 px-4 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gold-300 transition-colors"
+        >
+          <FileText className="w-4 h-4" strokeWidth={2.5} /> Recevoir le devis
+        </button>
+        <p className="text-ink-400 text-[10px] leading-snug mt-2">
           Estimation indicative HT{hasQuote ? ", hors éléments « sur devis »" : ""}. Hors taxes, hors mobilier. Devis ferme à la réservation.
         </p>
       </div>
+
+      <QuoteModal open={quoteOpen} onClose={() => setQuoteOpen(false)} lines={lines} total={total} hasQuote={hasQuote} />
     </div>
   );
 }
