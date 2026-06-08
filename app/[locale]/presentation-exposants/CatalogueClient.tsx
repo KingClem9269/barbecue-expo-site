@@ -266,6 +266,16 @@ function OutdoorSelector() {
   );
 }
 
+/** Bouton « Choisir ce pack » dans l'en-tête d'un tier (exclusif). */
+function PartnerHeaderChoose({ tierKey }: { tierKey: string }) {
+  const est = useEstimator();
+  return (
+    <div className="mt-3">
+      <ChooseButton selected={est.partnerKey === tierKey} labelIdle="Choisir ce pack" onClick={() => est.setPartnerKey(est.partnerKey === tierKey ? null : tierKey)} />
+    </div>
+  );
+}
+
 /** Ligne « Choisir ce pack » sous le tableau partenaires (exclusif). */
 function PartnerSelectRow() {
   const est = useEstimator();
@@ -1510,6 +1520,7 @@ export default function CatalogueClient() {
                   <th key={t.key} className={`p-4 text-center align-bottom ${t.highlight ? "bg-gold-500/10 rounded-t-sm" : ""}`}>
                     <div className={`text-xl font-bold ${t.highlight ? "text-gold-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t.name}</div>
                     <div className="text-ink-600 text-sm mt-1">{t.price}</div>
+                    <PartnerHeaderChoose tierKey={t.key} />
                   </th>
                 ))}
               </tr>
