@@ -13,6 +13,9 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { X as XIcon, Calculator, Minus, Plus, ChevronDown, FileText } from "lucide-react";
 import { QuoteModal } from "./QuoteModal";
+import { useT } from "./i18n";
+
+type TFn = (fr: string) => string;
 
 const STORAGE_KEY = "bbq-estimator-v1";
 
@@ -200,7 +203,7 @@ type BaseConfig = {
 };
 
 /** Construit la liste complète des lignes du devis (base + génériques). */
-export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
+export function buildLines(s: EstimatorState, cfg: BaseConfig, t: TFn = (x) => x): DerivedLine[] {
   const lines: DerivedLine[] = [];
 
   // Surface nue
@@ -209,7 +212,7 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
     lines.push({
       id: "surface",
       group: "Stand",
-      label: `Surface nue — Zone ${s.zone}`,
+      label: `${t("Surface nue")} — Zone ${s.zone}`,
       detail: `${s.sqm} m² × ${fmtEUR(u)}/m²`,
       amount: s.sqm * u,
     });
@@ -220,17 +223,17 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
     const r = cfg.ranges.find((x) => x.key === s.rangeKey);
     if (r) {
       if (r.surcharge == null) {
-        lines.push({ id: "range", group: "Stand", label: r.title, detail: "Sur devis", amount: null });
+        lines.push({ id: "range", group: "Stand", label: t(r.title), detail: t("Sur devis"), amount: null });
       } else if (s.sqm > 0) {
         lines.push({
           id: "range",
           group: "Stand",
-          label: r.title,
+          label: t(r.title),
           detail: `${s.sqm} m² × +${fmtEUR(r.surcharge)}/m²`,
           amount: s.sqm * r.surcharge,
         });
       } else {
-        lines.push({ id: "range", group: "Stand", label: r.title, detail: "Choisissez une surface", amount: 0 });
+        lines.push({ id: "range", group: "Stand", label: t(r.title), detail: t("Choisissez une surface"), amount: 0 });
       }
     }
   }
@@ -240,13 +243,13 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
     lines.push({
       id: "outdoor",
       group: "Stand",
-      label: "Espace extérieur",
+      label: t("Espace extérieur"),
       detail: `${s.outdoorSqm} m² × ${fmtEUR(cfg.outdoorPerSqm)}/m²`,
       amount: s.outdoorSqm * cfg.outdoorPerSqm,
     });
   }
 
-  // Lignes génériques (options, com', branding…)
+  // Lignes génériques (options, com', branding…) — déjà traduites à la sélection.
   for (const it of Object.values(s.items)) {
     lines.push({ id: it.id, group: it.group, label: it.label, detail: it.detail, amount: it.amount });
   }
@@ -254,18 +257,18 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
   // Partenariat
   if (s.partnerKey) {
     const p = cfg.partners.find((x) => x.key === s.partnerKey);
-    if (p) lines.push({ id: "partner", group: "Partenariat", label: `Partenaire ${p.name}`, amount: p.price });
+    if (p) lines.push({ id: "partner", group: "Partenariat", label: `${t("Partenaire")} ${p.name}`, amount: p.price });
   }
 
   // Pack com' sur place
   if (s.placeKey) {
     const p = cfg.placePacks.find((x) => x.key === s.placeKey);
-    if (p) lines.push({ id: "place", group: "Communication sur place", label: p.name, amount: p.price });
+    if (p) lines.push({ id: "place", group: "Communication sur place", label: t(p.name), amount: p.price });
   }
 
   // Frais de dossier — obligatoires, ajoutés automatiquement en dernier.
   if (lines.length > 0) {
-    lines.push({ id: "frais-dossier", group: "Frais de dossier", label: "Frais de dossier", detail: "Obligatoire", amount: DOSSIER_FEE });
+    lines.push({ id: "frais-dossier", group: "Frais de dossier", label: t("Frais de dossier"), detail: t("Obligatoire"), amount: DOSSIER_FEE });
   }
 
   // Remise early bird −10 % sur le total HT (jusqu'au 3 juillet) — ligne négative.
@@ -275,8 +278,8 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig): DerivedLine[] {
       lines.push({
         id: "early-bird",
         group: "Remise",
-        label: "Remise early bird −10 %",
-        detail: "Jusqu'au 3 juillet",
+        label: t("Remise early bird −10 %"),
+        detail: t("Jusqu'au 3 juillet"),
         amount: -Math.round(base * EARLY_BIRD_RATE),
       });
     }
@@ -374,6 +377,7 @@ export function ChooseButton({
 }: {
   selected: boolean; onClick: () => void; labelIdle?: string; labelOn?: string; className?: string;
 }) {
+  const { t } = useT();
   return (
     <button
       type="button"
@@ -385,7 +389,7 @@ export function ChooseButton({
           : "bg-gold-500 text-ink-950 hover:bg-gold-300"
       } ${className}`}
     >
-      {selected ? labelOn : labelIdle}
+      {selected ? t(labelOn) : t(labelIdle)}
     </button>
   );
 }
@@ -398,9 +402,10 @@ const GROUP_ORDER = ["Stand", "Options de stand", "Partenariat", "Communication"
 
 export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
   const s = useEstimator();
+  const { t } = useT();
   const [collapsed, setCollapsed] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
-  const lines = buildLines(s, cfg);
+  const lines = buildLines(s, cfg, t);
   const total = lines.reduce((sum, l) => sum + (l.amount ?? 0), 0);
   const hasQuote = lines.some((l) => l.amount == null);
 
@@ -429,7 +434,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
       >
         <Calculator className="w-5 h-5 text-gold-500" strokeWidth={2} />
         <span className="text-left leading-tight">
-          <span className="block text-[10px] uppercase tracking-widest text-cream-50/60">Mon estimation</span>
+          <span className="block text-[10px] uppercase tracking-widest text-cream-50/60">{t("Mon estimation")}</span>
           <span className="block font-bold text-gold-500" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{fmtEUR(total)}{hasQuote ? " +" : ""}</span>
         </span>
       </button>
@@ -441,9 +446,9 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
       {/* Header */}
       <div className="flex items-center justify-between gap-3 bg-ink-950 px-4 py-3 shrink-0">
         <span className="inline-flex items-center gap-2 text-cream-50 font-bold text-sm uppercase tracking-widest" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
-          <Calculator className="w-4 h-4 text-gold-500" strokeWidth={2} /> Mon estimation
+          <Calculator className="w-4 h-4 text-gold-500" strokeWidth={2} /> {t("Mon estimation")}
         </span>
-        <button type="button" onClick={() => setCollapsed(true)} aria-label="Réduire" className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
+        <button type="button" onClick={() => setCollapsed(true)} aria-label={t("Réduire")} className="w-7 h-7 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-cream-50/10 flex items-center justify-center">
           <ChevronDown className="w-4 h-4" />
         </button>
       </div>
@@ -452,14 +457,14 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
       <div className="flex-1 overflow-y-auto px-4 py-3">
         {groups.map((g) => (
           <div key={g} className="mb-3 last:mb-0">
-            <div className="text-gold-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">{g}</div>
+            <div className="text-gold-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">{t(g)}</div>
             <ul className="space-y-1.5">
               {lines.filter((l) => l.group === g).map((l) => (
                 <li key={l.id} className="flex items-start gap-2 text-sm">
                   {l.id === "frais-dossier" || l.id === "early-bird" ? (
                     <span className="shrink-0 mt-0.5 w-4 h-4" aria-hidden="true" />
                   ) : (
-                    <button type="button" onClick={() => removeLine(l.id)} aria-label={`Retirer ${l.label}`} className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-ink-900/5 hover:bg-ink-900/15 text-ink-500 flex items-center justify-center">
+                    <button type="button" onClick={() => removeLine(l.id)} aria-label={`${t("Retirer")} ${l.label}`} className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-ink-900/5 hover:bg-ink-900/15 text-ink-500 flex items-center justify-center">
                       <XIcon className="w-3 h-3" />
                     </button>
                   )}
@@ -468,7 +473,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
                     {l.detail && <span className="block text-ink-400 text-xs">{l.detail}</span>}
                   </span>
                   <span className={`shrink-0 font-bold tabular-nums ${l.amount != null && l.amount < 0 ? "text-emerald-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
-                    {l.amount == null ? "Sur devis" : l.amount === 0 ? "—" : fmtEUR(l.amount)}
+                    {l.amount == null ? t("Sur devis") : l.amount === 0 ? "—" : fmtEUR(l.amount)}
                   </span>
                 </li>
               ))}
@@ -476,14 +481,14 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
           </div>
         ))}
         {lines.length === 0 && (
-          <p className="text-ink-500 text-sm py-6 text-center">Commencez par choisir une surface de stand.</p>
+          <p className="text-ink-500 text-sm py-6 text-center">{t("Commencez par choisir une surface de stand.")}</p>
         )}
       </div>
 
       {/* Total */}
       <div className="shrink-0 border-t border-ink-900/10 px-4 py-3 bg-cream-100">
         <div className="flex items-center justify-between">
-          <span className="text-ink-600 text-xs uppercase tracking-widest">Total estimé</span>
+          <span className="text-ink-600 text-xs uppercase tracking-widest">{t("Total estimé")}</span>
           <span className="text-gold-700 text-xl font-bold tabular-nums" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
             {fmtEUR(total)}{hasQuote ? " +" : ""}
           </span>
@@ -493,10 +498,10 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
           onClick={() => setQuoteOpen(true)}
           className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-gold-500 text-ink-950 px-4 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gold-300 transition-colors"
         >
-          <FileText className="w-4 h-4" strokeWidth={2.5} /> Recevoir le devis
+          <FileText className="w-4 h-4" strokeWidth={2.5} /> {t("Recevoir le devis")}
         </button>
         <p className="text-ink-400 text-[10px] leading-snug mt-2">
-          Estimation indicative HT{hasQuote ? ", hors éléments « sur devis »" : ""}. Hors taxes, hors mobilier. Devis ferme à la réservation.
+          {t("Estimation indicative HT.")}{hasQuote ? ` ${t("Hors éléments « sur devis ».")}` : ""} {t("Hors taxes, hors mobilier. Devis ferme à la réservation.")}
         </p>
       </div>
 

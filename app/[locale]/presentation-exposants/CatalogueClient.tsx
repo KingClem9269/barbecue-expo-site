@@ -49,10 +49,11 @@ function unitOf(price?: string): "ml" | "m²" | "heure" | null {
 
 /** Coquille de carte d'option (titre + description + contenu). */
 function OptCard({ opt, children }: { opt: StandOption; children: React.ReactNode }) {
+  const { t } = useT();
   return (
     <div className="bg-cream-100 border border-ink-900/10 rounded-sm p-5 flex flex-col">
-      <h3 className="text-ink-900 font-bold leading-tight mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{opt.name}</h3>
-      {opt.desc && <p className="text-ink-600 text-sm mb-4">{opt.desc}</p>}
+      <h3 className="text-ink-900 font-bold leading-tight mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(opt.name)}</h3>
+      {opt.desc && <p className="text-ink-600 text-sm mb-4">{t(opt.desc)}</p>}
       <div className="mt-auto">{children}</div>
     </div>
   );
@@ -61,6 +62,7 @@ function OptCard({ opt, children }: { opt: StandOption; children: React.ReactNod
 /** Carte d'option de stand — interactive (cases à cocher / steppers selon le type). */
 function StandOptionCard({ opt }: { opt: StandOption }) {
   const est = useEstimator();
+  const { t } = useT();
   const oid = (suffix: string) => `opt:${opt.name}:${suffix}`;
 
   /* ---- type simple : cas particuliers ---- */
@@ -75,7 +77,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
       const id = oid("heures");
       const qty = est.get(id)?.qty ?? 0;
       const onChange = (n: number) => n > 0
-        ? est.upsert({ id, group: OPT_GROUP, label: "Chariot élévateur", detail: `${n} h × ${fmtEUR(unit)}/h`, amount: unit * n, qty: n })
+        ? est.upsert({ id, group: OPT_GROUP, label: t("Chariot élévateur"), detail: `${n} h × ${fmtEUR(unit)}/h`, amount: unit * n, qty: n })
         : est.remove(id);
       return <OptCard opt={opt}><StepperRow price={opt.price} value={qty} onChange={onChange} suffix="h" /></OptCard>;
     }
@@ -85,7 +87,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
       const id = oid("qty");
       const qty = est.get(id)?.qty ?? 0;
       const onChange = (n: number) => n > 0
-        ? est.upsert({ id, group: OPT_GROUP, label: "Badges exposants supp.", detail: `${n} × ${fmtEUR(unit)}`, amount: unit * n, qty: n })
+        ? est.upsert({ id, group: OPT_GROUP, label: t("Badges exposants supp."), detail: `${n} × ${fmtEUR(unit)}`, amount: unit * n, qty: n })
         : est.remove(id);
       return <OptCard opt={opt}><StepperRow price={opt.price} value={qty} onChange={onChange} suffix="badge(s)" /></OptCard>;
     }
@@ -95,7 +97,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
       const id = oid("packs");
       const qty = est.get(id)?.qty ?? 0;
       const onChange = (n: number) => n > 0
-        ? est.upsert({ id, group: OPT_GROUP, label: opt.name, detail: unit != null ? `${n} × ${fmtEUR(unit)}` : `${n} pack(s) — sur devis`, amount: unit != null ? unit * n : null, qty: n })
+        ? est.upsert({ id, group: OPT_GROUP, label: t(opt.name), detail: unit != null ? `${n} × ${fmtEUR(unit)}` : `${n} ${t("pack(s) — sur devis")}`, amount: unit != null ? unit * n : null, qty: n })
         : est.remove(id);
       return <OptCard opt={opt}><StepperRow price={opt.price} value={qty} onChange={onChange} suffix="pack(s)" /></OptCard>;
     }
@@ -104,9 +106,9 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
     const id = oid("x");
     return (
       <OptCard opt={opt}>
-        <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label: opt.name, amount: amt })} className="w-full">
+        <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label: t(opt.name), amount: amt })} className="w-full">
           <span className="flex-1 flex items-center justify-between gap-2">
-            <span className="text-ink-700 text-sm">Sélectionner</span>
+            <span className="text-ink-700 text-sm">{t("Sélectionner")}</span>
             <Price>{opt.price}</Price>
           </span>
         </CheckRow>
@@ -126,16 +128,16 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
             if (selectable.length === 0) return null;
             return (
               <div key={ri} className="border-t border-ink-900/10 first:border-t-0 py-2">
-                <div className="text-ink-700 text-sm font-medium mb-1">{row[0]}</div>
+                <div className="text-ink-700 text-sm font-medium mb-1">{t(row[0])}</div>
                 <div className="flex flex-wrap gap-x-5 gap-y-1.5">
                   {selectable.map(({ h, cell }) => {
                     const amt = parsePrice(cell);
                     const id = oid(`${row[0]}|${h}`);
-                    const label = multi ? `${opt.name} — ${row[0]} (${h})` : `${opt.name} — ${row[0]}`;
+                    const label = multi ? `${t(opt.name)} — ${t(row[0])} (${t(h)})` : `${t(opt.name)} — ${t(row[0])}`;
                     return (
                       <CheckRow key={h} checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label, amount: amt })}>
                         <span className="text-sm whitespace-nowrap">
-                          {multi && <span className="text-ink-500">{h} · </span>}
+                          {multi && <span className="text-ink-500">{t(h)} · </span>}
                           <span className="text-gold-700 font-bold">{cell}</span>
                         </span>
                       </CheckRow>
@@ -163,9 +165,9 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
             const id = oid(o.label);
             if (useCheckbox) {
               return (
-                <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: o.label, detail: opt.name, amount: amt })}>
+                <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: t(o.label), detail: t(opt.name), amount: amt })}>
                   <span className="flex-1 flex items-center justify-between gap-2">
-                    <span className="text-ink-700 text-sm">{o.label}</span>
+                    <span className="text-ink-700 text-sm">{t(o.label)}</span>
                     <Price>{o.price}</Price>
                   </span>
                 </CheckRow>
@@ -175,11 +177,11 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
             return (
               <div key={i} className="border-t border-ink-900/10 first:border-t-0 py-2">
                 <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="text-ink-700 text-sm">{o.label}</span>
+                  <span className="text-ink-700 text-sm">{t(o.label)}</span>
                   <Price>{o.price}</Price>
                 </div>
                 <Stepper value={qty} suffix={u ?? undefined} onChange={(n) => n > 0
-                  ? est.upsert({ id, group: OPT_GROUP, label: o.label, detail: u ? `${n} ${u} × ${fmtEUR(amt ?? 0)}/${u}` : `${n} × ${o.price}`, amount: (amt ?? 0) * n, qty: n })
+                  ? est.upsert({ id, group: OPT_GROUP, label: t(o.label), detail: u ? `${n} ${u} × ${fmtEUR(amt ?? 0)}/${u}` : `${n} × ${o.price}`, amount: (amt ?? 0) * n, qty: n })
                   : est.remove(id)} />
               </div>
             );
@@ -205,15 +207,16 @@ function StepperRow({ price, value, onChange, suffix }: { price?: string; value:
 /* ---- Étape 1 : sélecteur de surface nue (m² + zone A/B) ---- */
 function SurfaceSelector() {
   const est = useEstimator();
+  const { t } = useT();
   return (
     <div className="mt-8 bg-ink-950 rounded-sm p-6 md:p-8">
       <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10">
         <div>
-          <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">Surface souhaitée</div>
+          <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">{t("Surface souhaitée")}</div>
           <Stepper value={est.sqm} onChange={est.setSqm} min={0} max={2000} step={1} suffix="m²" className="bg-cream-50" />
         </div>
         <div>
-          <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">Zone</div>
+          <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">{t("Zone")}</div>
           <div className="inline-flex rounded-sm border border-cream-50/20 overflow-hidden">
             {(["A", "B"] as Zone[]).map((z) => (
               <button
@@ -230,7 +233,7 @@ function SurfaceSelector() {
           </div>
         </div>
         <p className="md:ml-auto text-cream-50/50 text-xs max-w-[16rem]">
-          Indiquez votre surface : l'estimation s'affiche automatiquement à droite.
+          {t("Indiquez votre surface : l'estimation s'affiche automatiquement à droite.")}
         </p>
       </div>
     </div>
@@ -240,12 +243,13 @@ function SurfaceSelector() {
 /** Bouton « Choisir cette option » sur une gamme de stand (exclusif). */
 function RangeChooseButton({ rangeKey }: { rangeKey: string }) {
   const est = useEstimator();
+  const { t } = useT();
   const selected = est.rangeKey === rangeKey;
   return (
     <div className="mt-4">
       <ChooseButton selected={selected} onClick={() => est.setRangeKey(selected ? null : rangeKey)} />
       {selected && est.sqm === 0 && (
-        <p className="text-gold-700 text-[11px] mt-1.5 text-center">Choisissez une surface ci-dessus pour le calcul.</p>
+        <p className="text-gold-700 text-[11px] mt-1.5 text-center">{t("Choisissez une surface ci-dessus pour le calcul.")}</p>
       )}
     </div>
   );
@@ -254,10 +258,11 @@ function RangeChooseButton({ rangeKey }: { rangeKey: string }) {
 /** Étape 3 : sélecteur de surface extérieure (m²). */
 function OutdoorSelector() {
   const est = useEstimator();
+  const { t } = useT();
   const unit = parsePrice(OUTDOOR.price) ?? 0;
   return (
     <div className="mt-5">
-      <div className="text-ink-500 text-xs uppercase tracking-widest mb-2">Surface extérieure</div>
+      <div className="text-ink-500 text-xs uppercase tracking-widest mb-2">{t("Surface extérieure")}</div>
       <Stepper value={est.outdoorSqm} onChange={est.setOutdoorSqm} min={0} max={2000} suffix="m²" />
       {est.outdoorSqm > 0 && (
         <div className="mt-2 text-ink-700 text-sm">≈ <span className="text-gold-700 font-bold">{fmtEUR(est.outdoorSqm * unit)}</span></div>
@@ -279,10 +284,11 @@ function PartnerHeaderChoose({ tierKey }: { tierKey: string }) {
 /** Ligne « Choisir ce pack » sous le tableau partenaires (exclusif). */
 function PartnerSelectRow() {
   const est = useEstimator();
+  const { t } = useT();
   return (
     <tr className="border-t-2 border-gold-500/30">
       <td className="p-4 align-bottom">
-        <span className="text-ink-500 text-xs uppercase tracking-widest">Je choisis</span>
+        <span className="text-ink-500 text-xs uppercase tracking-widest">{t("Je choisis")}</span>
       </td>
       {PARTNER_TIERS.map((tier) => (
         <td key={tier.key} className={`p-3 align-bottom ${tier.highlight ? "bg-gold-500/[0.08]" : ""}`}>
@@ -307,10 +313,11 @@ function PlaceChoose({ packKey }: { packKey: string }) {
 /** Case « ajouter » sur la vitrophanie (sur devis). */
 function VitrophanieCheck() {
   const est = useEstimator();
+  const { t } = useT();
   const id = "place:vitrophanie";
   return (
-    <CheckRow dark checked={est.has(id)} onChange={() => est.toggle({ id, group: "Communication sur place", label: VITROPHANIE.title, amount: parsePrice(VITROPHANIE.price) })}>
-      <span className="text-cream-50/80 text-sm">Ajouter à mon estimation</span>
+    <CheckRow dark checked={est.has(id)} onChange={() => est.toggle({ id, group: "Communication sur place", label: t(VITROPHANIE.title), amount: parsePrice(VITROPHANIE.price) })}>
+      <span className="text-cream-50/80 text-sm">{t("Ajouter à mon estimation")}</span>
     </CheckRow>
   );
 }
@@ -318,6 +325,7 @@ function VitrophanieCheck() {
 /** Communication sur stand — structure élinguée (case) + personnalisation cloisons (ml). */
 function CommStandControls() {
   const est = useEstimator();
+  const { t } = useT();
   // [0] = structure élinguée, [2] = personnalisation cloisons. [1] (panneau surélevé) retiré.
   const structure = COMM_STAND.items[0];
   const perso = COMM_STAND.items[2];
@@ -336,10 +344,10 @@ function CommStandControls() {
     <div className="divide-y divide-ink-900/10">
       {/* Structure élinguée — case à cocher */}
       <div className="py-4 first:pt-0">
-        <CheckRow checked={est.has("comm:structure")} onChange={() => est.toggle({ id: "comm:structure", group: "Communication", label: structure.name, detail: "À partir de", amount: structureAmt })} className="w-full">
+        <CheckRow checked={est.has("comm:structure")} onChange={() => est.toggle({ id: "comm:structure", group: "Communication", label: t(structure.name), detail: t("À partir de"), amount: structureAmt })} className="w-full">
           <span className="flex-1">
-            <span className="block text-ink-900 font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{structure.name}</span>
-            <span className="block text-ink-600 text-sm">{structure.desc}</span>
+            <span className="block text-ink-900 font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(structure.name)}</span>
+            <span className="block text-ink-600 text-sm">{t(structure.desc)}</span>
           </span>
           <span className="text-gold-700 font-bold text-sm shrink-0">{structure.price}</span>
         </CheckRow>
@@ -347,20 +355,20 @@ function CommStandControls() {
 
       {/* Personnalisation des cloisons — un sélecteur de ml par gamme */}
       <div className="py-4">
-        <h3 className="text-ink-900 font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{perso.name}</h3>
-        <p className="text-ink-600 text-sm mt-1 mb-3">{perso.desc}</p>
+        <h3 className="text-ink-900 font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(perso.name)}</h3>
+        <p className="text-ink-600 text-sm mt-1 mb-3">{t(perso.desc)}</p>
         <div className="space-y-3">
           {[
             { id: argentId, label: "Gamme argent", unit: argentMl },
             { id: orId, label: "Gamme or", unit: orMl },
           ].map((g) => (
             <div key={g.id} className="flex items-center justify-between gap-3">
-              <span className="text-ink-700 text-sm">{g.label} <span className="text-gold-700 font-semibold">({fmtEUR(g.unit)}/ml)</span></span>
+              <span className="text-ink-700 text-sm">{t(g.label)} <span className="text-gold-700 font-semibold">({fmtEUR(g.unit)}/ml)</span></span>
               <Stepper
                 value={g.id === argentId ? argentQty : orQty}
                 suffix="ml"
                 onChange={(n) => n > 0
-                  ? est.upsert({ id: g.id, group: "Communication", label: `Cloisons ${g.label.toLowerCase()}`, detail: `${n} ml × ${fmtEUR(g.unit)}/ml`, amount: g.unit * n, qty: n })
+                  ? est.upsert({ id: g.id, group: "Communication", label: `${t("Cloisons")} ${t(g.label).toLowerCase()}`, detail: `${n} ml × ${fmtEUR(g.unit)}/ml`, amount: g.unit * n, qty: n })
                   : est.remove(g.id)}
               />
             </div>
@@ -374,11 +382,12 @@ function CommStandControls() {
 /** Bouton de choix générique (case à cocher) pour une carte/option de communication. */
 function PickButton({ id, group, label, price, label2 }: { id: string; group: string; label: string; price?: string | null; label2?: string }) {
   const est = useEstimator();
+  const { t } = useT();
   return (
     <ChooseButton
       selected={est.has(id)}
       labelIdle={label2 ?? "Choisir cette option"}
-      onClick={() => est.toggle({ id, group, label, amount: parsePrice(price) })}
+      onClick={() => est.toggle({ id, group, label: t(label), amount: parsePrice(price) })}
     />
   );
 }
@@ -386,6 +395,7 @@ function PickButton({ id, group, label, price, label2 }: { id: string; group: st
 /** Branding — tote-bag / briquet : champ nombre (min 5000 pièces). */
 function BrandingQty({ name, price, photo, desc, min }: { name: string; price: string; photo: string; desc: string; min: number }) {
   const est = useEstimator();
+  const { t } = useT();
   const unit = parsePrice(price) ?? 0;
   const id = `branding:${name}`;
   const qty = est.get(id)?.qty ?? 0;
@@ -393,8 +403,8 @@ function BrandingQty({ name, price, photo, desc, min }: { name: string; price: s
     <div className="bg-cream-100 border border-ink-900/10 rounded-sm overflow-hidden flex flex-col">
       <PhotoBox ratio="aspect-square" label={photo} />
       <div className="p-4 flex flex-col flex-1">
-        <h3 className="text-ink-900 font-bold text-sm leading-tight mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{name}</h3>
-        <p className="text-ink-600 text-xs mb-2">{desc}</p>
+        <h3 className="text-ink-900 font-bold text-sm leading-tight mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(name)}</h3>
+        <p className="text-ink-600 text-xs mb-2">{t(desc)}</p>
         <Price>{price}</Price>
         <div className="mt-3">
           <Stepper
@@ -406,11 +416,11 @@ function BrandingQty({ name, price, photo, desc, min }: { name: string; price: s
             onChange={(n) => {
               const v = n > 0 && n < min ? min : n;
               return v > 0
-                ? est.upsert({ id, group: "Branding", label: name, detail: `${v.toLocaleString("fr-FR")} pcs × ${price}`, amount: unit * v, qty: v })
+                ? est.upsert({ id, group: "Branding", label: t(name), detail: `${v.toLocaleString("fr-FR")} pcs × ${price}`, amount: unit * v, qty: v })
                 : est.remove(id);
             }}
           />
-          <p className="text-ink-400 text-[10px] mt-1">Minimum {min.toLocaleString("fr-FR")} pièces.</p>
+          <p className="text-ink-400 text-[10px] mt-1">{t("Minimum")} {min.toLocaleString("fr-FR")} {t("pièces.")}</p>
         </div>
       </div>
     </div>
@@ -420,16 +430,17 @@ function BrandingQty({ name, price, photo, desc, min }: { name: string; price: s
 /** Branding — option à prix fixe (case à cocher). */
 function BrandingPick({ name, price, photo, desc }: { name: string; price: string; photo: string; desc: string }) {
   const est = useEstimator();
+  const { t } = useT();
   const id = `branding:${name}`;
   return (
     <div className="bg-cream-100 border border-ink-900/10 rounded-sm overflow-hidden flex flex-col">
       <PhotoBox ratio="aspect-square" label={photo} />
       <div className="p-4 flex flex-col flex-1">
-        <h3 className="text-ink-900 font-bold text-sm leading-tight mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{name}</h3>
-        <p className="text-ink-600 text-xs mb-2">{desc}</p>
+        <h3 className="text-ink-900 font-bold text-sm leading-tight mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(name)}</h3>
+        <p className="text-ink-600 text-xs mb-2">{t(desc)}</p>
         <Price>{price}</Price>
         <div className="mt-3 mt-auto pt-3">
-          <ChooseButton selected={est.has(id)} onClick={() => est.toggle({ id, group: "Branding", label: name, amount: parsePrice(price) })} />
+          <ChooseButton selected={est.has(id)} onClick={() => est.toggle({ id, group: "Branding", label: t(name), amount: parsePrice(price) })} />
         </div>
       </div>
     </div>
@@ -439,11 +450,12 @@ function BrandingPick({ name, price, photo, desc }: { name: string; price: strin
 /** Sponsoring — case à cocher par option de zone. */
 function SponsoringRow({ zone, name, price }: { zone: string; name: string; price: string }) {
   const est = useEstimator();
+  const { t } = useT();
   const id = `sponsoring:${zone}:${name}`;
   return (
     <li className="flex justify-between items-center gap-4 border-b border-ink-900/10 pb-2">
-      <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: "Sponsoring", label: `${zone} — ${name}`, amount: parsePrice(price) })}>
-        <span className="text-ink-700 text-sm">{name}</span>
+      <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: "Sponsoring", label: `${t(zone)} — ${t(name)}`, amount: parsePrice(price) })}>
+        <span className="text-ink-700 text-sm">{t(name)}</span>
       </CheckRow>
       <Price>{price}</Price>
     </li>
@@ -453,6 +465,7 @@ function SponsoringRow({ zone, name, price }: { zone: string; name: string; pric
 /** Barbecue Mag — case « format » + case « + publirédactionnel ». */
 function MagFormatRow({ format }: { format: { name: string; priceExpo: string; pricePubliredac: string; preview: string | null } }) {
   const est = useEstimator();
+  const { t } = useT();
   const fid = `mag:${format.name}`;
   const pid = `mag:${format.name}:pub`;
   const fmtSelected = est.has(fid);
@@ -463,9 +476,9 @@ function MagFormatRow({ format }: { format: { name: string; priceExpo: string; p
         <span className="inline-flex items-center gap-2">
           <CheckRow dark checked={fmtSelected} onChange={() => {
             if (fmtSelected) { est.remove(fid); est.remove(pid); }
-            else est.upsert({ id: fid, group: "Barbecue Mag", label: format.name, amount: parsePrice(format.priceExpo) });
+            else est.upsert({ id: fid, group: "Barbecue Mag", label: t(format.name), amount: parsePrice(format.priceExpo) });
           }}>
-            <span>{format.name}</span>
+            <span>{t(format.name)}</span>
           </CheckRow>
           {format.preview && <DispositifPreview src={format.preview} label={`Barbecue Mag — ${format.name}`} />}
         </span>
@@ -477,7 +490,7 @@ function MagFormatRow({ format }: { format: { name: string; priceExpo: string; p
           checked={est.has(pid)}
           onChange={() => {
             if (!fmtSelected) return; // publirédac uniquement si format choisi
-            est.toggle({ id: pid, group: "Barbecue Mag", label: `${format.name} — publirédac (2 pages)`, amount: pubAmt });
+            est.toggle({ id: pid, group: "Barbecue Mag", label: `${t(format.name)} — ${t("publirédac (2 pages)")}`, amount: pubAmt });
           }}
           className={!fmtSelected ? "opacity-40 pointer-events-none" : ""}
         >
@@ -657,6 +670,7 @@ function ProTypesSelector() {
 
 /* Plan interactif zoomable / déplaçable */
 function PlanViewer({ src }: { src: string }) {
+  const { t } = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -721,7 +735,7 @@ function PlanViewer({ src }: { src: string }) {
         <button type="button" aria-label="Réinitialiser" onClick={(e) => { e.stopPropagation(); reset(); }} className="px-3 h-9 rounded-full bg-ink-950/85 text-cream-50 flex items-center justify-center text-xs font-semibold hover:bg-ink-950 shadow-lg">Réinit.</button>
         <button type="button" aria-label="Zoomer" onClick={(e) => { e.stopPropagation(); zoom(0.5); }} className="w-9 h-9 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-xl font-bold hover:bg-gold-300 shadow-lg">+</button>
       </div>
-      <div className="absolute top-3 left-3 text-ink-600 text-[11px] bg-cream-50/80 backdrop-blur px-2.5 py-1 rounded-full pointer-events-none">Molette ou +/− pour zoomer · glisser pour déplacer</div>
+      <div className="absolute top-3 left-3 text-ink-600 text-[11px] bg-cream-50/80 backdrop-blur px-2.5 py-1 rounded-full pointer-events-none">{t("Molette ou +/− pour zoomer · glisser pour déplacer")}</div>
     </div>
   );
 }
@@ -996,17 +1010,24 @@ function Price({ children }: { children: React.ReactNode }) {
 /* ============================ sticky nav ============================ */
 
 function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+  const flags: { l: Lang; flag: string; label: string }[] = [
+    { l: "fr", flag: "fr", label: "Français" },
+    { l: "en", flag: "gb", label: "English" },
+  ];
   return (
-    <div className="flex items-center rounded-full border border-cream-50/20 overflow-hidden shrink-0 text-[11px] font-bold uppercase tracking-widest">
-      {(["fr", "en"] as Lang[]).map((l) => (
+    <div className="flex items-center gap-1.5 shrink-0">
+      {flags.map(({ l, flag, label }) => (
         <button
           key={l}
           type="button"
           onClick={() => setLang(l)}
           aria-pressed={lang === l}
-          className={`px-2.5 py-1.5 transition-colors ${lang === l ? "bg-gold-500 text-ink-950" : "text-cream-50/70 hover:text-cream-50"}`}
+          aria-label={label}
+          title={label}
+          className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${lang === l ? "border-gold-500 scale-105" : "border-cream-50/25 opacity-55 hover:opacity-100"}`}
         >
-          {l.toUpperCase()}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`/flags/${flag}.svg`} alt={label} className="w-full h-full object-cover" />
         </button>
       ))}
     </div>
@@ -1273,14 +1294,14 @@ export default function CatalogueClient() {
 
       <Sec id="communication" eyebrow="Partie 4" title="Le plan de communication" dark>
         {/* 4.1 — Pitmasters */}
-        <SubLabel>Les pitmasters internationaux</SubLabel>
+        <SubLabel>{t("Les pitmasters internationaux")}</SubLabel>
         <p className="text-cream-50/75 text-base md:text-lg max-w-2xl mb-8">
-          Des stars du barbecue venues du monde entier, présentes en 2026 et lors des éditions précédentes.
+          {t("Des stars du barbecue venues du monde entier, présentes en 2026 et lors des éditions précédentes.")}
         </p>
         <PitmastersCarousel />
 
         {/* 4.2 — Retombées médiatiques */}
-        <SubLabel className="mt-20">Les retombées médiatiques</SubLabel>
+        <SubLabel className="mt-20">{t("Les retombées médiatiques")}</SubLabel>
         <div className="flex flex-wrap gap-x-10 gap-y-3 mb-10">
           {[["500 M+", "contacts générés"], ["TV · Radio · Presse", "couverture nationale"]].map(([v, l]) => (
             <div key={l}>
@@ -1351,7 +1372,7 @@ export default function CatalogueClient() {
         </div>
 
         {/* 4.4 — Réseaux sociaux & newsletter */}
-        <SubLabel className="mt-20">Les réseaux sociaux & la newsletter</SubLabel>
+        <SubLabel className="mt-20">{t("Les réseaux sociaux & la newsletter")}</SubLabel>
         <div className="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-8 mb-8">
           <div>
             <span className="text-gold-500 text-5xl md:text-7xl font-bold leading-none" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{SOCIAL_REACH.headline}</span>
@@ -1390,13 +1411,13 @@ export default function CatalogueClient() {
       <Sec id="stand" eyebrow="Stand" title="Choisir son stand">
         {/* Plan interactif du salon */}
         <div className="mb-16">
-          <div className="text-ink-500 text-xs uppercase tracking-widest mb-4">Plan du salon 2027</div>
+          <div className="text-ink-500 text-xs uppercase tracking-widest mb-4">{t("Plan du salon 2027")}</div>
           <PlanViewer src="/plan/plan-2027.svg" />
         </div>
         {/* Étape 1 — surface nue */}
         <div className="mb-6 flex items-center gap-3">
           <span className="w-7 h-7 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-sm font-bold shrink-0">1</span>
-          <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Je choisis la taille — surface nue</h3>
+          <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Je choisis la taille — surface nue")}</h3>
         </div>
         <div className="grid md:grid-cols-12 gap-6 items-start">
           <div className="md:col-span-3">
@@ -1407,16 +1428,16 @@ export default function CatalogueClient() {
           <div className="md:col-span-5 bg-cream-100 border border-ink-900/10 rounded-sm p-6">
             <ul className="space-y-2.5">
               {STAND_SURFACE.includes.map((it) => (
-                <li key={it} className="flex items-start gap-2.5 text-ink-700"><Check className="w-4 h-4 text-gold-600 mt-1 shrink-0" strokeWidth={2.5} />{it}</li>
+                <li key={it} className="flex items-start gap-2.5 text-ink-700"><Check className="w-4 h-4 text-gold-600 mt-1 shrink-0" strokeWidth={2.5} />{t(it)}</li>
               ))}
             </ul>
           </div>
           <div className="md:col-span-4 bg-ink-950 rounded-sm p-6 flex flex-col justify-center">
-            <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-4">Tarif au m²</div>
+            <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-4">{t("Tarif au m²")}</div>
             <ul className="space-y-3">
               {STAND_SURFACE.zones.map((z) => (
                 <li key={z.zone} className="flex items-center justify-between border-b border-cream-50/10 pb-3">
-                  <span className="text-cream-50 font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{z.zone}</span>
+                  <span className="text-cream-50 font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(z.zone)}</span>
                   <span className="text-gold-500 font-bold">{z.price}</span>
                 </li>
               ))}
@@ -1430,7 +1451,7 @@ export default function CatalogueClient() {
         {/* Étape 2 — gamme */}
         <div className="mt-16 mb-6 flex items-center gap-3">
           <span className="w-7 h-7 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-sm font-bold shrink-0">2</span>
-          <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Je choisis ma gamme de stand</h3>
+          <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Je choisis ma gamme de stand")}</h3>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {STAND_RANGES.map((r) => (
@@ -1438,20 +1459,20 @@ export default function CatalogueClient() {
               <PhotoBox ratio="aspect-[16/9]" label={r.photo} />
               <div className="p-6">
                 <div className="flex items-start justify-between gap-3 mb-3">
-                  <h4 className="text-ink-900 text-lg font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{r.title}</h4>
+                  <h4 className="text-ink-900 text-lg font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(r.title)}</h4>
                   <Price>{r.price}</Price>
                 </div>
-                {r.desc && <p className="text-ink-600 text-sm mb-3">{r.desc}</p>}
+                {r.desc && <p className="text-ink-600 text-sm mb-3">{t(r.desc)}</p>}
                 {r.features.length > 0 && (
                   <ul className="space-y-1.5 mb-4">
                     {r.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-ink-700 text-sm"><Check className="w-3.5 h-3.5 text-gold-600 mt-0.5 shrink-0" strokeWidth={2.5} />{f}</li>
+                      <li key={f} className="flex items-start gap-2 text-ink-700 text-sm"><Check className="w-3.5 h-3.5 text-gold-600 mt-0.5 shrink-0" strokeWidth={2.5} />{t(f)}</li>
                     ))}
                   </ul>
                 )}
                 {r.moquette && (
                   <div className="flex items-center gap-3 border-t border-ink-900/10 pt-3">
-                    <span className="text-ink-500 text-xs uppercase tracking-widest">Moquette :</span>
+                    <span className="text-ink-500 text-xs uppercase tracking-widest">{t("Moquette :")}</span>
                     <div className="flex gap-2">
                       {r.moquette.map((c) => (
                         <span key={c.name} title={c.name} className="w-5 h-5 rounded-full border border-ink-900/20" style={{ backgroundColor: c.hex }} />
@@ -1461,7 +1482,7 @@ export default function CatalogueClient() {
                 )}
                 {r.cloisons && (
                   <div className="flex items-center gap-3 border-t border-ink-900/10 pt-3 mt-3">
-                    <span className="text-ink-500 text-xs uppercase tracking-widest whitespace-nowrap">Cloisons :</span>
+                    <span className="text-ink-500 text-xs uppercase tracking-widest whitespace-nowrap">{t("Cloisons :")}</span>
                     {Array.isArray(r.cloisons) ? (
                       <div className="flex gap-2">
                         {r.cloisons.map((c) => (
@@ -1489,14 +1510,14 @@ export default function CatalogueClient() {
         {/* Étape 3 — espace extérieur */}
         <div id="exterieur" className="scroll-mt-24 mt-16 mb-6 flex items-center gap-3">
           <span className="w-7 h-7 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-sm font-bold shrink-0">3</span>
-          <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Je peux ajouter un espace extérieur</h3>
+          <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Je peux ajouter un espace extérieur")}</h3>
         </div>
         <div className="grid md:grid-cols-12 gap-6 items-stretch">
           <div className="md:col-span-7 relative aspect-[16/9] rounded-sm overflow-hidden border border-ink-900/10">
             <Image src={OUTDOOR.photo} alt="Espace exposant extérieur" fill sizes="(max-width:768px) 100vw, 60vw" className="object-cover" />
           </div>
           <div className="md:col-span-5 bg-cream-100 border border-ink-900/10 rounded-sm p-6 flex flex-col justify-center">
-            <p className="text-ink-700 text-base md:text-lg mb-4">{OUTDOOR.desc}</p>
+            <p className="text-ink-700 text-base md:text-lg mb-4">{t(OUTDOOR.desc)}</p>
             <div className="text-gold-700 text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{OUTDOOR.price}</div>
             <OutdoorSelector />
           </div>
@@ -1581,7 +1602,7 @@ export default function CatalogueClient() {
         <div className="grid sm:grid-cols-3 gap-6 mb-8">
           {COMM_PLACE_PACKS.map((p) => (
             <div key={p.name} className={`rounded-sm p-6 border flex flex-col ${p.popular ? "border-gold-500/60 bg-gold-500/10" : "border-cream-50/15 bg-cream-50/[0.03]"}`}>
-              <h3 className="text-cream-50 text-xl font-bold mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{p.name}</h3>
+              <h3 className="text-cream-50 text-xl font-bold mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(p.name)}</h3>
               <div className="text-gold-500 font-bold mb-4">{p.price}</div>
               <ul className="space-y-2">
                 {p.includes.map((inc, j) => (
@@ -1594,8 +1615,8 @@ export default function CatalogueClient() {
         </div>
         <div className="bg-cream-50/[0.03] border border-cream-50/10 rounded-sm p-6 flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex-1">
-            <h3 className="text-cream-50 font-bold mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{VITROPHANIE.title}</h3>
-            <p className="text-cream-50/70 text-sm">{VITROPHANIE.desc}</p>
+            <h3 className="text-cream-50 font-bold mb-1" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(VITROPHANIE.title)}</h3>
+            <p className="text-cream-50/70 text-sm">{t(VITROPHANIE.desc)}</p>
           </div>
           <div className="flex flex-col items-start sm:items-end gap-2 shrink-0">
             <div className="text-gold-500 font-bold whitespace-nowrap">{VITROPHANIE.price}</div>
@@ -1622,7 +1643,7 @@ export default function CatalogueClient() {
           {COMM_DIGITAL.map((p) => (
             <div key={p.name} className={`relative rounded-sm p-6 border flex flex-col ${p.popular ? "border-gold-500/60 bg-gold-500/10" : "border-cream-50/15 bg-cream-50/[0.03]"}`}>
               {p.popular && <span className="absolute -top-3 left-6 bg-gold-500 text-ink-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Le plus visible</span>}
-              <h3 className="text-cream-50 text-xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{p.name}</h3>
+              <h3 className="text-cream-50 text-xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(p.name)}</h3>
               <div className="text-gold-500 font-bold mb-2">{p.price}</div>
               <p className="text-cream-50/70 text-sm mb-5">{p.desc}</p>
               <ul className="space-y-2.5 mb-5">
@@ -1642,7 +1663,7 @@ export default function CatalogueClient() {
           <div className="flex flex-col lg:flex-row lg:items-center gap-6 mb-6">
             <div className="lg:flex-1">
               <div className="flex items-center gap-3 flex-wrap">
-                <h3 className="text-cream-50 text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{COMM_DIGITAL_GLOBAL.name}</h3>
+                <h3 className="text-cream-50 text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(COMM_DIGITAL_GLOBAL.name)}</h3>
                 <span className="bg-gold-500 text-ink-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Les 3 packs réunis</span>
               </div>
               <p className="text-cream-50/70 text-sm mt-2 max-w-2xl">{COMM_DIGITAL_GLOBAL.desc}</p>
@@ -1679,7 +1700,7 @@ export default function CatalogueClient() {
                 <PhotoBox ratio="aspect-[4/3]" label={z.photo} />
               </div>
               <div className="md:col-span-2">
-                <h3 className="text-ink-900 text-2xl font-bold mb-4" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{z.zone}</h3>
+                <h3 className="text-ink-900 text-2xl font-bold mb-4" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(z.zone)}</h3>
                 <ul className="space-y-2">
                   {z.options.map((o) => (
                     <SponsoringRow key={o.name} zone={z.zone} name={o.name} price={o.price} />
@@ -1721,7 +1742,7 @@ export default function CatalogueClient() {
             <table className="w-full">
               <thead>
                 <tr className="text-cream-50/50 text-xs uppercase tracking-widest">
-                  <th className="text-left py-2">Format</th><th className="text-right py-2 pr-6">Exposant</th><th className="text-left py-2 pl-6">+ Publirédac (2 pages)</th>
+                  <th className="text-left py-2">{t("Format")}</th><th className="text-right py-2 pr-6">{t("Exposant")}</th><th className="text-left py-2 pl-6">{t("+ Publirédac (2 pages)")}</th>
                 </tr>
               </thead>
               <tbody>

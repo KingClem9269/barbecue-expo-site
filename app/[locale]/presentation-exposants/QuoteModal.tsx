@@ -11,6 +11,7 @@ import { createPortal } from "react-dom";
 import { X as XIcon, ChevronDown, Search, Check, Loader2, MailCheck, ExternalLink } from "lucide-react";
 import { getCountries, countryByIso } from "./countries";
 import { fmtEUR, type DerivedLine } from "./Estimator";
+import { useT } from "./i18n";
 
 type FormState = {
   firstName: string; lastName: string; email: string;
@@ -35,6 +36,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function CountryPicker({ value, onChange, mode, invalid }: {
   value: string; onChange: (iso: string) => void; mode: "country" | "dial"; invalid?: boolean;
 }) {
+  const { t } = useT();
   const countries = useMemo(() => getCountries(), []);
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
@@ -63,7 +65,7 @@ function CountryPicker({ value, onChange, mode, invalid }: {
       >
         {sel && <Flag iso={sel.iso} />}
         <span className="truncate flex-1 text-left">
-          {mode === "dial" ? (sel ? `+${sel.dial}` : "—") : (sel ? sel.name : "Sélectionner un pays")}
+          {mode === "dial" ? (sel ? `+${sel.dial}` : "—") : (sel ? sel.name : t("Sélectionner un pays"))}
         </span>
         <ChevronDown className="w-4 h-4 text-ink-400 shrink-0" />
       </button>
@@ -76,7 +78,7 @@ function CountryPicker({ value, onChange, mode, invalid }: {
               autoFocus
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Rechercher un pays…"
+              placeholder={t("Rechercher un pays…")}
               className="w-full py-2.5 bg-transparent text-sm text-ink-900 focus:outline-none"
             />
           </div>
@@ -95,7 +97,7 @@ function CountryPicker({ value, onChange, mode, invalid }: {
                 </button>
               </li>
             ))}
-            {filtered.length === 0 && <li className="px-3 py-3 text-sm text-ink-400">Aucun résultat</li>}
+            {filtered.length === 0 && <li className="px-3 py-3 text-sm text-ink-400">{t("Aucun résultat")}</li>}
           </ul>
         </div>
       )}
@@ -115,14 +117,15 @@ function Flag({ iso }: { iso: string }) {
 function Field({ label, required, error, children, className = "" }: {
   label: string; required?: boolean; error?: string; children: React.ReactNode; className?: string;
 }) {
+  const { t } = useT();
   return (
     <label className={`block ${className}`}>
       <span className="block text-ink-700 text-xs font-semibold mb-1">
-        {label} {required && <span className="text-red-500">*</span>}
-        {!required && <span className="text-ink-400 font-normal">(si applicable)</span>}
+        {t(label)} {required && <span className="text-red-500">*</span>}
+        {!required && <span className="text-ink-400 font-normal">{t("(si applicable)")}</span>}
       </span>
       {children}
-      {error && <span className="block text-red-500 text-[11px] mt-1">{error}</span>}
+      {error && <span className="block text-red-500 text-[11px] mt-1">{t(error)}</span>}
     </label>
   );
 }
@@ -143,6 +146,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [result, setResult] = useState<{ quoteNumber?: string; signingUrl?: string }>({});
   const [serverError, setServerError] = useState<string>("");
+  const { t } = useT();
 
   useEffect(() => {
     if (!open) return;
@@ -231,17 +235,17 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   };
 
   return createPortal(
-    <div className="fixed inset-0 z-[110] flex items-start md:items-center justify-center p-3 md:p-6 bg-ink-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-label="Recevoir le devis" onMouseDown={onClose}>
+    <div className="fixed inset-0 z-[110] flex items-start md:items-center justify-center p-3 md:p-6 bg-ink-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-label={t("Recevoir mon devis")} onMouseDown={onClose}>
       <div className="relative w-full max-w-2xl my-6 bg-cream-50 rounded-sm shadow-2xl" onMouseDown={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between gap-4 px-5 md:px-7 py-4 border-b border-ink-900/10 bg-ink-950 rounded-t-sm">
           <div>
-            <h2 className="text-cream-50 font-bold text-lg" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Recevoir mon devis</h2>
+            <h2 className="text-cream-50 font-bold text-lg" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Recevoir mon devis")}</h2>
             <p className="text-cream-50/60 text-xs mt-0.5">
-              Total estimé : <span className="text-gold-500 font-semibold">{fmtEUR(total)}{hasQuote ? " +" : ""}</span>
+              {t("Total estimé")} : <span className="text-gold-500 font-semibold">{fmtEUR(total)}{hasQuote ? " +" : ""}</span>
             </p>
           </div>
-          <button type="button" onClick={onClose} aria-label="Fermer" className="shrink-0 w-9 h-9 rounded-full bg-cream-50/10 hover:bg-cream-50/20 text-cream-50 flex items-center justify-center">
+          <button type="button" onClick={onClose} aria-label={t("Fermer")} className="shrink-0 w-9 h-9 rounded-full bg-cream-50/10 hover:bg-cream-50/20 text-cream-50 flex items-center justify-center">
             <XIcon className="w-5 h-5" />
           </button>
         </div>
@@ -251,17 +255,17 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
             <div className="w-14 h-14 rounded-full bg-gold-500/20 text-gold-600 flex items-center justify-center mx-auto mb-5">
               <MailCheck className="w-7 h-7" />
             </div>
-            <h3 className="text-ink-900 text-xl font-bold mb-2" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Devis envoyé !</h3>
+            <h3 className="text-ink-900 text-xl font-bold mb-2" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Devis envoyé !")}</h3>
             <p className="text-ink-600 text-sm max-w-md mx-auto">
-              Merci {form.firstName}. Votre devis{result.quoteNumber ? <> <span className="font-semibold text-ink-900">n° {result.quoteNumber}</span></> : ""} vient d&apos;être envoyé à <span className="font-semibold text-ink-900">{form.email}</span>. Vérifiez votre boîte de réception (et vos spams).
+              {t("Merci")} {form.firstName}. {t("Votre devis")}{result.quoteNumber ? <> <span className="font-semibold text-ink-900">n° {result.quoteNumber}</span></> : ""} {t("vient d'être envoyé à")} <span className="font-semibold text-ink-900">{form.email}</span>. {t("Vérifiez votre boîte de réception (et vos spams).")}
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               {result.signingUrl && (
                 <a href={result.signingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gold-500 text-ink-950 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gold-300">
-                  Voir &amp; signer mon devis <ExternalLink className="w-4 h-4" />
+                  {t("Voir & signer mon devis")} <ExternalLink className="w-4 h-4" />
                 </a>
               )}
-              <button type="button" onClick={onClose} className="inline-flex bg-ink-950 text-cream-50 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-ink-900">Fermer</button>
+              <button type="button" onClick={onClose} className="inline-flex bg-ink-950 text-cream-50 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-ink-900">{t("Fermer")}</button>
             </div>
           </div>
         ) : (
@@ -289,7 +293,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
               </Field>
 
               <Field label="Adresse" required error={errors.address1} className="sm:col-span-2">
-                <input value={form.address1} onChange={(e) => set("address1", e.target.value)} className={inputCls(!!errors.address1)} placeholder="N° et rue" />
+                <input value={form.address1} onChange={(e) => set("address1", e.target.value)} className={inputCls(!!errors.address1)} placeholder={t("N° et rue")} />
               </Field>
 
               <Field label="Code postal" required error={errors.postalCode}>
@@ -316,13 +320,13 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
 
             {status === "error" && (
               <p className="mt-4 text-red-600 text-sm bg-red-50 border border-red-200 rounded-sm px-3 py-2">
-                Une erreur est survenue lors de l’envoi. Merci de réessayer.{serverError ? ` (${serverError})` : ""}
+                {t("Une erreur est survenue lors de l’envoi. Merci de réessayer.")}{serverError ? ` (${serverError})` : ""}
               </p>
             )}
 
             <div className="mt-6 flex items-center justify-between gap-4">
               <p className="text-ink-400 text-[11px] leading-snug max-w-xs">
-                En envoyant ce formulaire, vous acceptez d’être recontacté par l’équipe Barbecue Expo au sujet de votre devis.
+                {t("En envoyant ce formulaire, vous acceptez d’être recontacté par l’équipe Barbecue Expo au sujet de votre devis.")}
               </p>
               <button
                 type="submit"
@@ -330,7 +334,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
                 className="shrink-0 inline-flex items-center gap-2 bg-gold-500 text-ink-950 px-6 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gold-300 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
               >
                 {status === "submitting" && <Loader2 className="w-4 h-4 animate-spin" />}
-                {status === "submitting" ? "Envoi…" : "Recevoir mon devis"}
+                {status === "submitting" ? t("Envoi…") : t("Recevoir mon devis")}
               </button>
             </div>
           </form>
