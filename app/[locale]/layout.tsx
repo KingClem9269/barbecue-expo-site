@@ -74,9 +74,9 @@ export default async function RootLayout({
           rel="stylesheet"
         />
 
-        {/* Brand icons */}
-        <link rel="icon" href="/logo_b_white.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logo_b_only.svg" />
+        {/* Favicons : les fichiers app/icon.png, app/apple-icon.png et
+            app/favicon.ico (monogramme « B ») sont injectés automatiquement
+            par Next. On garde seulement le mask-icon (onglet épinglé Safari). */}
         <link rel="mask-icon" href="/logo_b_only.svg" color="#F4AD3C" />
 
         {/* Theme color — drives mobile browser UI tinting */}
