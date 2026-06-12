@@ -2,6 +2,7 @@
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Check, Minus, Clock, Flame } from "lucide-react";
+import { openWeezevent } from "./WeezeventCTA";
 
 /**
  * TicketPricing — 5-tier pass matrix with early-bird urgency strip.
@@ -56,6 +57,7 @@ const UI: Record<
       priceFree: string;
       audOneDay: string; audThreeDays: string; audVip: string; audPro: string; audPress: string;
       cta: string;
+      ctaSoon: string;
       popular: string;
     };
   }
@@ -76,6 +78,7 @@ const UI: Record<
       audPro: "Distributeurs, acheteurs",
       audPress: "Médias, journalistes",
       cta: "Réserver",
+      ctaSoon: "Bientôt disponible",
       popular: "Le plus choisi",
     },
   },
@@ -95,6 +98,7 @@ const UI: Record<
       audPro: "Buyers, distributors",
       audPress: "Media, journalists",
       cta: "Book",
+      ctaSoon: "Coming soon",
       popular: "Most popular",
     },
   },
@@ -114,6 +118,7 @@ const UI: Record<
       audPro: "Compradores, distribuidores",
       audPress: "Medios, periodistas",
       cta: "Reservar",
+      ctaSoon: "Próximamente",
       popular: "Más elegido",
     },
   },
@@ -133,6 +138,7 @@ const UI: Record<
       audPro: "Einkäufer, Händler",
       audPress: "Medien, Journalisten",
       cta: "Buchen",
+      ctaSoon: "Bald verfügbar",
       popular: "Am beliebtesten",
     },
   },
@@ -151,6 +157,7 @@ const UI: Record<
       audPro: "Kopers, distributeurs",
       audPress: "Media, journalisten",
       cta: "Boeken",
+      ctaSoon: "Binnenkort",
       popular: "Meest gekozen",
     },
   },
@@ -169,6 +176,7 @@ const UI: Record<
       audPro: "Compradores, distribuidores",
       audPress: "Media, jornalistas",
       cta: "Reservar",
+      ctaSoon: "Em breve",
       popular: "Mais escolhido",
     },
   },
@@ -187,6 +195,7 @@ const UI: Record<
       audPro: "Acquirenti, distributori",
       audPress: "Media, giornalisti",
       cta: "Prenota",
+      ctaSoon: "Prossimamente",
       popular: "Più scelto",
     },
   },
@@ -357,16 +366,33 @@ export default function TicketPricing() {
               </ul>
 
               {/* CTA */}
-              <Link
-                href={t.href}
-                className={`inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-xs md:text-sm font-bold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
-                  t.highlight
-                    ? "bg-ink-950 text-cream-50 hover:bg-char-800"
-                    : "border border-ink-900/30 text-ink-900 hover:border-gold-500 hover:text-gold-700"
-                }`}
-              >
-                {ui.tiers.cta}
-              </Link>
+              {t.key === "pro" ? (
+                // Billetterie pro — à venir
+                <span className="inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-xs md:text-sm font-bold uppercase tracking-widest border border-ink-900/15 text-ink-400 cursor-default select-none">
+                  <Clock className="w-3.5 h-3.5" strokeWidth={2} />
+                  {ui.tiers.ctaSoon}
+                </span>
+              ) : t.key === "press" ? (
+                <Link
+                  href={t.href}
+                  className="inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-xs md:text-sm font-bold uppercase tracking-widest border border-ink-900/30 text-ink-900 hover:border-gold-500 hover:text-gold-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                >
+                  {ui.tiers.cta}
+                </Link>
+              ) : (
+                // Pass grand public → billetterie Weezevent (popup)
+                <button
+                  type="button"
+                  onClick={openWeezevent}
+                  className={`inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-xs md:text-sm font-bold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
+                    t.highlight
+                      ? "bg-ink-950 text-cream-50 hover:bg-char-800"
+                      : "border border-ink-900/30 text-ink-900 hover:border-gold-500 hover:text-gold-700"
+                  }`}
+                >
+                  {ui.tiers.cta}
+                </button>
+              )}
             </div>
           ))}
         </div>
