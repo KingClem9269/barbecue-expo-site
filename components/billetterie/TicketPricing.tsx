@@ -2,7 +2,7 @@
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Check, Minus, Clock, Flame } from "lucide-react";
-import { openWeezevent } from "./WeezeventCTA";
+import WeezeventCTA, { openWeezevent } from "./WeezeventCTA";
 
 /**
  * TicketPricing — 5-tier pass matrix with early-bird urgency strip.
@@ -395,6 +395,11 @@ export default function TicketPricing() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Widget billetterie Weezevent — sous les cartes pass */}
+        <div className="mt-10 md:mt-12 flex justify-center">
+          <WeezeventCTA />
         </div>
       </div>
     </section>

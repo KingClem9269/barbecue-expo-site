@@ -1,5 +1,4 @@
 import TicketPricing from "@/components/billetterie/TicketPricing";
-import WeezeventCTA from "@/components/billetterie/WeezeventCTA";
 import FinalCTA from "@/components/homepage/FinalCTA";
 import { buildMetadata } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
@@ -89,9 +88,6 @@ export default async function BilletteriePage() {
           <p className="mt-8 text-cream-50/85 text-lg md:text-xl max-w-3xl leading-relaxed">
             {ui.description}
           </p>
-          <div className="mt-10">
-            <WeezeventCTA />
-          </div>
         </div>
       </section>
 
