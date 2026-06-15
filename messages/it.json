@@ -24,7 +24,22 @@
     "error_message_required": "Il messaggio è obbligatorio.",
     "error_unable_to_send": "Impossibile inviare il messaggio. Per favore, riprova più tardi.",
     "error_unexpected": "Si è verificato un errore imprevisto. Per favore, riprova.",
-    "error_service_unconfigured": "Il modulo di contatto non è disponibile."
+    "error_service_unconfigured": "Il modulo di contatto non è disponibile.",
+    "firstname_placeholder": "Nome",
+    "lastname_placeholder": "Cognome",
+    "phone_placeholder": "Telefono",
+    "company_placeholder": "Azienda (se applicabile)",
+    "subject_label": "Oggetto della richiesta",
+    "subject_placeholder": "— Scegli un oggetto —",
+    "error_subject_required": "Si prega di scegliere un oggetto.",
+    "subjects": {
+      "stand": "Prenotare uno stand espositivo",
+      "sponsoring": "Proposta di sponsorizzazione",
+      "media": "Partnership media / influencer",
+      "presse": "Richiesta stampa / media kit",
+      "technique": "Domanda tecnica / logistica",
+      "autre": "Altro"
+    }
   },
   "masterClass": {
     "learnMore": "Scopri di più"

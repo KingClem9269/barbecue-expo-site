@@ -24,7 +24,22 @@
     "error_message_required": "Le message est requis.",
     "error_unable_to_send": "Impossible d'envoyer le message. Veuillez réessayer plus tard.",
     "error_unexpected": "Une erreur inattendue s'est produite. Veuillez réessayer.",
-    "error_service_unconfigured": "Le formulaire de contact n'est pas disponible."
+    "error_service_unconfigured": "Le formulaire de contact n'est pas disponible.",
+    "firstname_placeholder": "Prénom",
+    "lastname_placeholder": "Nom",
+    "phone_placeholder": "Téléphone",
+    "company_placeholder": "Société (si applicable)",
+    "subject_label": "Sujet de la demande",
+    "subject_placeholder": "— Choisis un sujet —",
+    "error_subject_required": "Veuillez choisir un sujet.",
+    "subjects": {
+      "stand": "Réserver un stand exposant",
+      "sponsoring": "Proposition de sponsoring",
+      "media": "Partenariat média / influenceur",
+      "presse": "Demande presse / media kit",
+      "technique": "Question technique / logistique",
+      "autre": "Autre"
+    }
   },
   "masterClass": {
     "learnMore": "En savoir plus"

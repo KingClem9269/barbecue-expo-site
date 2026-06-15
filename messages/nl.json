@@ -24,7 +24,22 @@
     "error_message_required": "Bericht is vereist.",
     "error_unable_to_send": "Kan bericht niet verzenden. Probeer het later opnieuw.",
     "error_unexpected": "Er is een onverwachte fout opgetreden. Probeer het opnieuw.",
-    "error_service_unconfigured": "Het contactformulier is niet beschikbaar."
+    "error_service_unconfigured": "Het contactformulier is niet beschikbaar.",
+    "firstname_placeholder": "Voornaam",
+    "lastname_placeholder": "Achternaam",
+    "phone_placeholder": "Telefoon",
+    "company_placeholder": "Bedrijf (indien van toepassing)",
+    "subject_label": "Onderwerp van de aanvraag",
+    "subject_placeholder": "— Kies een onderwerp —",
+    "error_subject_required": "Kies een onderwerp.",
+    "subjects": {
+      "stand": "Een standplaats reserveren",
+      "sponsoring": "Sponsoringvoorstel",
+      "media": "Media- / influencerpartnerschap",
+      "presse": "Persaanvraag / mediakit",
+      "technique": "Technische / logistieke vraag",
+      "autre": "Overig"
+    }
   },
   "masterClass": {
     "learnMore": "Meer informatie"

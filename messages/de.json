@@ -24,7 +24,22 @@
     "error_message_required": "Nachricht ist erforderlich.",
     "error_unable_to_send": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
     "error_unexpected": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
-    "error_service_unconfigured": "Das Kontaktformular ist nicht verfügbar."
+    "error_service_unconfigured": "Das Kontaktformular ist nicht verfügbar.",
+    "firstname_placeholder": "Vorname",
+    "lastname_placeholder": "Nachname",
+    "phone_placeholder": "Telefon",
+    "company_placeholder": "Firma (falls zutreffend)",
+    "subject_label": "Betreff der Anfrage",
+    "subject_placeholder": "— Thema auswählen —",
+    "error_subject_required": "Bitte wählen Sie ein Thema.",
+    "subjects": {
+      "stand": "Ausstellerstand buchen",
+      "sponsoring": "Sponsoring-Vorschlag",
+      "media": "Medien- / Influencer-Partnerschaft",
+      "presse": "Presseanfrage / Media-Kit",
+      "technique": "Technische / logistische Frage",
+      "autre": "Sonstiges"
+    }
   },
   "masterClass": {
     "learnMore": "Mehr erfahren"

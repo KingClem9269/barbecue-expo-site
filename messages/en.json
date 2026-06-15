@@ -24,7 +24,22 @@
     "error_message_required": "Message is required.",
     "error_unable_to_send": "Unable to send message. Please try again later.",
     "error_unexpected": "An unexpected error occurred. Please try again.",
-    "error_service_unconfigured": "Contact form is not available."
+    "error_service_unconfigured": "Contact form is not available.",
+    "firstname_placeholder": "First name",
+    "lastname_placeholder": "Last name",
+    "phone_placeholder": "Phone",
+    "company_placeholder": "Company (if applicable)",
+    "subject_label": "Request subject",
+    "subject_placeholder": "— Choose a subject —",
+    "error_subject_required": "Please choose a subject.",
+    "subjects": {
+      "stand": "Book an exhibitor stand",
+      "sponsoring": "Sponsorship proposal",
+      "media": "Media / influencer partnership",
+      "presse": "Press request / media kit",
+      "technique": "Technical / logistics question",
+      "autre": "Other"
+    }
   },
   "masterClass": {
     "learnMore": "Learn more"
