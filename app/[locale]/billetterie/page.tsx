@@ -1,4 +1,4 @@
-import TicketPricing from "@/components/billetterie/TicketPricing";
+import WeezeventEmbed from "@/components/billetterie/WeezeventEmbed";
 import FinalCTA from "@/components/homepage/FinalCTA";
 import { buildMetadata } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
@@ -91,7 +91,14 @@ export default async function BilletteriePage() {
         </div>
       </section>
 
-      <TicketPricing />
+      {/* Billetterie grand public — widget Weezevent en ligne.
+          (Les cartes pass « spéciales » seront ajoutées plus tard.) */}
+      <section className="w-full bg-cream-50 py-14 md:py-20" aria-label="Billetterie">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <WeezeventEmbed />
+        </div>
+      </section>
+
       <FinalCTA blok={{}} />
     </div>
   );
