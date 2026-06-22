@@ -50,17 +50,152 @@ export function slideText(o: { title: string; body?: string; highlight?: string[
 }
 
 /** Dernière slide — CTA + date + handle + site + logo. */
-export function slideCTA(o: { title: string; highlight?: string[]; sub?: string }): string {
+export function slideCTA(o: { title: string; highlight?: string[]; sub?: string; button?: string; url?: string }): string {
+  const button = o.button ?? SITE;
+  const url = o.url ?? SITE;
   return `
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-      <h2 class="display" style="font-size:112px;">${rich(o.title, o.highlight)}</h2>
+      <h2 class="display" style="font-size:108px;">${rich(o.title, o.highlight)}</h2>
       ${o.sub ? `<p class="grey" style="font-size:38px;margin-top:26px;max-width:840px;line-height:1.35;">${escapeHtml(o.sub)}</p>` : ""}
-      <div style="margin-top:56px;display:inline-flex;align-self:flex-start;background:${BRAND.gold};color:${BRAND.bg};font-family:${BRAND.display};font-weight:900;font-size:46px;padding:26px 46px;border-radius:10px;letter-spacing:.02em;">
-        ${SITE}
+      <div style="margin-top:56px;display:inline-flex;align-self:flex-start;background:${BRAND.gold};color:${BRAND.bg};font-family:${BRAND.display};font-weight:900;font-size:44px;padding:26px 46px;border-radius:10px;letter-spacing:.02em;">
+        ${escapeHtml(button)}
       </div>
       <div class="gold" style="font-family:${BRAND.display};font-weight:900;font-size:40px;margin-top:64px;">${EVENT_DATE}</div>
-      <div class="grey" style="font-size:34px;margin-top:12px;">${HANDLE} · ${SITE}</div>
+      <div class="grey" style="font-size:32px;margin-top:12px;">${HANDLE} · ${escapeHtml(url)}</div>
     </div>`;
+}
+
+/* ============================ blocs additionnels ============================ */
+
+/** Multi-stats : un titre + plusieurs chiffres (chiffres énormes, valeur en or). */
+export function statsBlock(o: { eyebrow?: string; title?: string; items: { value: string; label: string }[] }): string {
+  const n = o.items.length;
+  const vSize = n <= 2 ? 184 : n === 3 ? 150 : 124;
+  const lSize = n <= 2 ? 40 : 34;
+  const rows = o.items
+    .map(
+      (it) => `<div>
+        <div class="display gold" style="font-size:${vSize}px;line-height:.95;">${escapeHtml(it.value)}</div>
+        <div class="grey" style="font-size:${lSize}px;margin-top:6px;">${escapeHtml(it.label)}</div>
+      </div>`,
+    )
+    .join(`<div style="height:${n <= 2 ? 56 : 34}px;"></div>`);
+  return `
+    ${o.eyebrow ? `<div class="eyebrow">${escapeHtml(o.eyebrow)}</div>` : ""}
+    ${o.title ? `<h2 class="display" style="font-size:84px;margin-top:${o.eyebrow ? 28 : 0}px;">${rich(o.title)}</h2>` : ""}
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">${rows}</div>`;
+}
+
+/** Grand drapeau + % géant + pays. */
+export function flagStat(o: { flag: string; value: string; label: string }): string {
+  return `
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <img src="${o.flag}" style="width:200px;height:auto;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.5);" />
+      <div class="display gold" style="font-size:300px;line-height:.9;margin-top:36px;">${escapeHtml(o.value)}</div>
+      <div class="display" style="font-size:72px;">${escapeHtml(o.label)}</div>
+    </div>`;
+}
+
+/** Lignes drapeau + pays + %. */
+export function flagRows(o: { title?: string; rows: { flag: string; country: string; pct: string }[] }): string {
+  const rows = o.rows
+    .map(
+      (r) => `<div style="display:flex;align-items:center;gap:34px;padding:34px 0;border-top:2px solid rgba(255,255,255,.12);">
+        <img src="${r.flag}" style="width:120px;height:auto;border-radius:6px;" />
+        <div class="display" style="font-size:58px;flex:1;">${escapeHtml(r.country)}</div>
+        <div class="display gold" style="font-size:96px;">${escapeHtml(r.pct)}</div>
+      </div>`,
+    )
+    .join("");
+  return `
+    ${o.title ? `<h2 class="display" style="font-size:76px;margin-bottom:20px;">${rich(o.title)}</h2>` : ""}
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">${rows}</div>`;
+}
+
+/** Mur média : tuiles logos (sur blanc) et/ou noms en or (sur sombre). */
+export function mediaWall(o: { title: string; highlight?: string[]; items: ({ logo: string } | { name: string })[] }): string {
+  const cols = o.items.length <= 4 ? 2 : o.items.length <= 6 ? 2 : 3;
+  const cells = o.items
+    .map((it) =>
+      "logo" in it
+        ? `<div style="aspect-ratio:16/9;border-radius:14px;background:${BRAND.white};display:flex;align-items:center;justify-content:center;padding:26px;overflow:hidden;"><img src="${it.logo}" style="max-width:100%;max-height:100%;object-fit:contain;" /></div>`
+        : `<div style="aspect-ratio:16/9;border-radius:14px;background:#161616;border:2px solid rgba(244,173,60,.25);display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;"><span class="display gold" style="font-size:54px;line-height:.95;">${escapeHtml(it.name)}</span></div>`,
+    )
+    .join("");
+  return `
+    <h2 class="display" style="font-size:82px;margin-bottom:44px;">${rich(o.title, o.highlight)}</h2>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(${cols},1fr);gap:26px;align-content:center;">${cells}</div>`;
+}
+
+/** Légende d'un portrait plein cadre (bas de slide). */
+export function portraitCaption(o: { name: string; flag?: string; followers: string }): string {
+  return `
+    <div style="flex:1;"></div>
+    <div style="display:flex;align-items:flex-end;gap:24px;">
+      ${o.flag ? `<img src="${o.flag}" style="width:96px;height:auto;border-radius:6px;margin-bottom:16px;" />` : ""}
+      <div>
+        <div class="display" style="font-size:84px;line-height:.95;">${escapeHtml(o.name)}</div>
+        <div class="display gold" style="font-size:60px;margin-top:8px;">${escapeHtml(o.followers)}</div>
+      </div>
+    </div>`;
+}
+
+/** Deux portraits côte à côte (chacun nom + abonnés). */
+export function portraitDuo(o: { left: { img: string; name: string; flag?: string; followers: string }; right: { img: string; name: string; flag?: string; followers: string } }): string {
+  const half = (p: { img: string; name: string; flag?: string; followers: string }) => `
+    <div style="position:relative;flex:1;border-radius:18px;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:url('${p.img}');background-size:cover;background-position:center;"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.1) 55%);"></div>
+      <div style="position:absolute;left:28px;right:20px;bottom:28px;">
+        ${p.flag ? `<img src="${p.flag}" style="width:64px;height:auto;border-radius:4px;margin-bottom:10px;" />` : ""}
+        <div class="display" style="font-size:48px;line-height:.95;">${escapeHtml(p.name)}</div>
+        <div class="display gold" style="font-size:44px;margin-top:4px;">${escapeHtml(p.followers)}</div>
+      </div>
+    </div>`;
+  return `<div style="flex:1;display:flex;gap:24px;">${half(o.left)}${half(o.right)}</div>`;
+}
+
+/** Médailles stylisées (or/argent/bronze) + texte. */
+export function medals(o: { title?: string; sub?: string }): string {
+  const disc = (grad: string, ring: string, label: string) => `
+    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div style="width:200px;height:200px;border-radius:50%;background:${grad};border:6px solid ${ring};box-shadow:0 14px 40px rgba(0,0,0,.5),inset 0 4px 12px rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;">
+        <span class="display" style="font-size:78px;color:rgba(0,0,0,.55);">${label}</span>
+      </div>
+    </div>`;
+  return `
+    ${o.title ? `<h2 class="display" style="font-size:80px;margin-bottom:8px;">${rich(o.title)}</h2>` : ""}
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:48px;">
+      ${disc("radial-gradient(circle at 35% 30%,#FFE9A8,#F4AD3C 55%,#B9791A)", "#FFD773", "1")}
+      ${disc("radial-gradient(circle at 35% 30%,#F3F3F3,#C9C9C9 55%,#8A8A8A)", "#E4E4E4", "2")}
+      ${disc("radial-gradient(circle at 35% 30%,#E7B27E,#B5743C 55%,#7A4A1E)", "#D79A63", "3")}
+    </div>
+    ${o.sub ? `<div class="display" style="font-size:64px;text-align:center;">${rich(o.sub)}</div>` : ""}`;
+}
+
+/** Hero « VS » — Grill Arena. */
+export function vsHero(o: { title: string; subtitle: string; hook1: string; hook2: string }): string {
+  return `
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+      <div class="display" style="font-size:300px;line-height:.85;background:linear-gradient(90deg,#fff 0 49%,${BRAND.gold} 51% 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">VS</div>
+      <h1 class="display gold" style="font-size:104px;margin-top:8px;letter-spacing:.02em;">${escapeHtml(o.title)}</h1>
+      <div class="display" style="font-size:52px;margin-top:10px;">${escapeHtml(o.subtitle)}</div>
+    </div>
+    <div style="text-align:center;">
+      <div class="grey" style="font-size:36px;">${escapeHtml(o.hook1)}</div>
+      <div class="display gold" style="font-size:48px;margin-top:10px;">${escapeHtml(o.hook2)}</div>
+    </div>`;
+}
+
+/** Deux familles de produits (numéro or + titre + détail), sur fond photo. */
+export function categoryPair(o: { items: { num: string; title: string; sub?: string }[] }): string {
+  const cell = (it: { num: string; title: string; sub?: string }) => `
+    <div>
+      <div class="display gold" style="font-size:110px;line-height:.9;">${escapeHtml(it.num)}</div>
+      <div class="display" style="font-size:72px;margin-top:8px;">${escapeHtml(it.title)}</div>
+      ${it.sub ? `<div class="grey" style="font-size:34px;margin-top:10px;max-width:840px;line-height:1.3;">${escapeHtml(it.sub)}</div>` : ""}
+    </div>`;
+  return `<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:64px;">${o.items.map(cell).join("")}</div>`;
 }
 
 /** Bandeau logo (gros logo centré, ex. ouverture/fermeture). */

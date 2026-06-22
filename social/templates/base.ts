@@ -39,21 +39,30 @@ export function frame(opts: {
   index?: number; // n° de slide (1-based)
   total?: number;
   showPageNo?: boolean;
+  /** "flat" = voile 55% (déf) · "bottom" = dégradé bas (portraits) · "none" */
+  overlay?: "flat" | "bottom" | "none";
+  hideFooter?: boolean;
 }): string {
-  const { w, h, bg, content, index, total, showPageNo = true } = opts;
+  const { w, h, bg, content, index, total, showPageNo = true, overlay = "flat", hideFooter = false } = opts;
+  const overlayDiv =
+    overlay === "bottom"
+      ? `<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.05) 70%);"></div>`
+      : overlay === "none"
+        ? ""
+        : `<div class="overlay"></div>`;
   const bgLayer = bg
-    ? `<div class="bgphoto" style="background-image:url('${bg}')"></div><div class="overlay"></div><div class="vignette"></div>`
+    ? `<div class="bgphoto" style="background-image:url('${bg}')"></div>${overlayDiv}<div class="vignette"></div>`
     : `<div class="vignette"></div>`;
   const pageNo =
     showPageNo && index && total
       ? `<span class="pageno">${String(index).padStart(2, "0")} / ${String(total).padStart(2, "0")}</span>`
       : `<span></span>`;
+  const footer = hideFooter
+    ? ""
+    : `<div class="footer"><img src="${LOGO_JAUNE}" alt="Barbecue Expo" />${pageNo}</div>`;
   const inner = `
     ${bgLayer}
     <div class="safe">${content}</div>
-    <div class="footer">
-      <img src="${LOGO_JAUNE}" alt="Barbecue Expo" />
-      ${pageNo}
-    </div>`;
+    ${footer}`;
   return htmlDoc(w, h, inner);
 }
