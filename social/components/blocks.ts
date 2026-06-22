@@ -3,7 +3,7 @@
  * Chaque bloc applique les règles de compo : une idée par slide,
  * chiffres énormes, accent or sur les mots-clés.
  */
-import { BRAND, eventDate, HANDLE, SITE, LOGO_JAUNE, type Lang } from "../brand";
+import { BRAND, eventDate, SITE, LOGO_JAUNE, type Lang } from "../brand";
 
 /** Met en or les segments listés et convertit \n en <br>. */
 export function rich(text: string, highlight: string[] = []): string {
@@ -49,19 +49,17 @@ export function slideText(o: { title: string; body?: string; highlight?: string[
     </div>`;
 }
 
-/** Dernière slide — CTA + date + handle + site + logo. */
+/** Dernière slide — CTA : titre + bouton d'action (gros) + dates (grosses). */
 export function slideCTA(o: { title: string; highlight?: string[]; sub?: string; button?: string; url?: string; lang: Lang }): string {
   const button = o.button ?? SITE;
-  const url = o.url ?? SITE;
   return `
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
       <h2 class="display" style="font-size:108px;">${rich(o.title, o.highlight)}</h2>
       ${o.sub ? `<p class="grey" style="font-size:38px;margin-top:26px;max-width:840px;line-height:1.35;">${escapeHtml(o.sub)}</p>` : ""}
-      <div style="margin-top:56px;display:inline-flex;align-self:flex-start;background:${BRAND.gold};color:${BRAND.bg};font-family:${BRAND.display};font-weight:900;font-size:44px;padding:26px 46px;border-radius:10px;letter-spacing:.02em;">
+      <div style="margin-top:60px;display:inline-flex;align-self:flex-start;background:${BRAND.gold};color:${BRAND.bg};font-family:${BRAND.display};font-weight:900;font-size:58px;padding:30px 56px;border-radius:12px;letter-spacing:.02em;">
         ${escapeHtml(button)}
       </div>
-      <div class="gold" style="font-family:${BRAND.display};font-weight:900;font-size:40px;margin-top:64px;">${eventDate(o.lang)}</div>
-      <div class="grey" style="font-size:32px;margin-top:12px;">${HANDLE} · ${escapeHtml(url)}</div>
+      <div class="gold" style="font-family:${BRAND.display};font-weight:900;font-size:56px;margin-top:60px;line-height:1.05;">${eventDate(o.lang)}</div>
     </div>`;
 }
 
@@ -157,18 +155,14 @@ export function portraitDuo(o: { left: { img: string; name: string; flag?: strin
 
 /** Médailles stylisées (or/argent/bronze) + texte. */
 export function medals(o: { title?: string; sub?: string }): string {
-  const disc = (grad: string, ring: string, label: string) => `
-    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;">
-      <div style="width:200px;height:200px;border-radius:50%;background:${grad};border:6px solid ${ring};box-shadow:0 14px 40px rgba(0,0,0,.5),inset 0 4px 12px rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;">
-        <span class="display" style="font-size:78px;color:rgba(0,0,0,.55);">${label}</span>
-      </div>
-    </div>`;
+  const disc = (grad: string, ring: string) =>
+    `<div style="width:220px;height:220px;border-radius:50%;background:${grad};border:7px solid ${ring};box-shadow:0 16px 44px rgba(0,0,0,.55),inset 0 5px 16px rgba(255,255,255,.4),inset 0 -8px 20px rgba(0,0,0,.25);"></div>`;
   return `
     ${o.title ? `<h2 class="display" style="font-size:80px;margin-bottom:8px;">${rich(o.title)}</h2>` : ""}
-    <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:48px;">
-      ${disc("radial-gradient(circle at 35% 30%,#E9C778,#B4862B 58%,#7C5A18)", "#D8B25E", "1")}
-      ${disc("radial-gradient(circle at 35% 30%,#C7C7CA,#7D7D80 58%,#525255)", "#B5B5B8", "2")}
-      ${disc("radial-gradient(circle at 35% 30%,#CF9A80,#A86A52 58%,#724333)", "#C18A70", "3")}
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:56px;">
+      ${disc("radial-gradient(circle at 35% 30%,#F0D592,#B4862B 58%,#7C5A18)", "#D8B25E")}
+      ${disc("radial-gradient(circle at 35% 30%,#D6D6D9,#7D7D80 58%,#525255)", "#B5B5B8")}
+      ${disc("radial-gradient(circle at 35% 30%,#DBA887,#A86A52 58%,#724333)", "#C18A70")}
     </div>
     ${o.sub ? `<div class="display" style="font-size:64px;text-align:center;">${rich(o.sub)}</div>` : ""}`;
 }
@@ -207,22 +201,24 @@ export function logoBanner(o: { caption?: string } = {}): string {
     </div>`;
 }
 
+// Tuile logo — taille normalisée par la HAUTEUR (poids visuel homogène).
 function logoTile(l: { src: string; dark?: boolean }): string {
-  return `<div style="aspect-ratio:5/3;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;background:${l.dark ? "#161616" : BRAND.white};">
-    <img src="${l.src}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" /></div>`;
+  return `<div style="flex:0 0 calc((100% - 48px) / 3);aspect-ratio:5/3;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:30px 34px;overflow:hidden;background:${l.dark ? "#161616" : BRAND.white};">
+    <img src="${l.src}" alt="" style="max-width:82%;max-height:54%;object-fit:contain;" /></div>`;
 }
+const gridWrap = (cells: string) => `<div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;">${cells}</div>`;
 
 /** Grille de logos d'enseignes (+ option `faded` = logos qui s'effacent → scroll infini). */
 export function logoGrid(o: { title: string; highlight?: string[]; logos: { src: string; dark?: boolean }[]; faded?: string[] }): string {
   const cells = o.logos.map((l) => logoTile(l)).join("");
   const fadedCells = (o.faded ?? []).map((src) => logoTile({ src })).join("");
   const fadedRow = fadedCells
-    ? `<div style="margin-top:24px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);filter:grayscale(1) blur(1px);opacity:.5;"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">${fadedCells}</div></div>`
+    ? `<div style="margin-top:24px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 88%);mask-image:linear-gradient(to bottom,#000 0%,transparent 88%);filter:grayscale(1) blur(1px);opacity:.45;">${gridWrap(fadedCells)}</div>`
     : "";
   return `
     <h2 class="display" style="font-size:84px;margin-bottom:44px;">${rich(o.title, o.highlight)}</h2>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">${cells}</div>
+      ${gridWrap(cells)}
       ${fadedRow}
     </div>`;
 }
@@ -235,32 +231,28 @@ export function proMix(o: { title: string; highlight?: string[]; lines: string[]
   const cells = o.logos.map((src) => logoTile({ src })).join("");
   const fadedCells = (o.faded ?? []).map((src) => logoTile({ src })).join("");
   const fadedRow = fadedCells
-    ? `<div style="margin-top:22px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 92%);mask-image:linear-gradient(to bottom,#000 0%,transparent 92%);filter:grayscale(1) blur(1.5px);opacity:.45;"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">${fadedCells}</div></div>`
+    ? `<div style="margin-top:22px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);filter:grayscale(1) blur(1.5px);opacity:.4;">${gridWrap(fadedCells)}</div>`
     : "";
   return `
     <h2 class="display" style="font-size:80px;">${rich(o.title, o.highlight)}</h2>
     <div style="display:flex;flex-direction:column;gap:14px;margin:28px 0 36px;">${lineEls}</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">${cells}</div>
+    ${gridWrap(cells)}
     ${fadedRow}`;
 }
 
-/** Pastille Award (style PDF : carré ivoire, monogramme B, BEST <catégorie> · 2027). */
+/** Pastille Award (style PDF : carré ivoire, monogramme B, AWARD, BEST <catégorie>). */
 function awardBadge(category: string): string {
-  return `<div style="aspect-ratio:1/1;border-radius:18px;background:#F4EAD2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:22px;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,.45);">
-    <img src="${LOGO_JAUNE}" style="height:96px;width:auto;filter:saturate(1.05);" />
-    <div style="font-size:18px;letter-spacing:.22em;color:#9A7426;font-weight:800;text-transform:uppercase;">Barbecue Expo</div>
-    <div class="display" style="font-size:42px;color:#7A5E1E;letter-spacing:.02em;">AWARD</div>
-    <div style="display:flex;align-items:center;gap:10px;color:#B4862B;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.06em;">
-      <span>${escapeHtml(category)}</span><span>·</span><span>2027</span>
-    </div>
+  return `<div style="flex:0 0 calc((100% - 52px) / 3);aspect-ratio:1/1;border-radius:18px;background:#F4EAD2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,.45);">
+    <img src="${LOGO_JAUNE}" style="height:104px;width:auto;filter:saturate(1.05);" />
+    <div class="display" style="font-size:40px;color:#7A5E1E;letter-spacing:.04em;line-height:1;">AWARD</div>
+    <div style="color:#B4862B;font-weight:800;font-size:26px;text-transform:uppercase;letter-spacing:.05em;line-height:1.05;">${escapeHtml(category)}</div>
   </div>`;
 }
 
 /** Grille des pastilles Awards. */
 export function awardGrid(o: { title?: string; highlight?: string[]; items: { category: string }[] }): string {
   const cells = o.items.map((it) => awardBadge(it.category)).join("");
-  const cols = o.items.length <= 4 ? 2 : 3;
   return `
     ${o.title ? `<h2 class="display" style="font-size:78px;margin-bottom:44px;">${rich(o.title, o.highlight)}</h2>` : ""}
-    <div style="flex:1;display:grid;grid-template-columns:repeat(${cols},1fr);gap:26px;align-content:center;">${cells}</div>`;
+    <div style="flex:1;display:flex;flex-wrap:wrap;gap:26px;justify-content:center;align-content:center;">${cells}</div>`;
 }
