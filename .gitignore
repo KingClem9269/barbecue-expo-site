@@ -44,3 +44,5 @@ certificates
 
 # claude code
 .claude/
+# Assets sociaux générés (reproductibles via `npm run social`)
+public/exports/
