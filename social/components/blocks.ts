@@ -3,7 +3,7 @@
  * Chaque bloc applique les règles de compo : une idée par slide,
  * chiffres énormes, accent or sur les mots-clés.
  */
-import { BRAND, EVENT_DATE, HANDLE, SITE, LOGO_JAUNE } from "../brand";
+import { BRAND, eventDate, HANDLE, SITE, LOGO_JAUNE, type Lang } from "../brand";
 
 /** Met en or les segments listés et convertit \n en <br>. */
 export function rich(text: string, highlight: string[] = []): string {
@@ -50,7 +50,7 @@ export function slideText(o: { title: string; body?: string; highlight?: string[
 }
 
 /** Dernière slide — CTA + date + handle + site + logo. */
-export function slideCTA(o: { title: string; highlight?: string[]; sub?: string; button?: string; url?: string }): string {
+export function slideCTA(o: { title: string; highlight?: string[]; sub?: string; button?: string; url?: string; lang: Lang }): string {
   const button = o.button ?? SITE;
   const url = o.url ?? SITE;
   return `
@@ -60,7 +60,7 @@ export function slideCTA(o: { title: string; highlight?: string[]; sub?: string;
       <div style="margin-top:56px;display:inline-flex;align-self:flex-start;background:${BRAND.gold};color:${BRAND.bg};font-family:${BRAND.display};font-weight:900;font-size:44px;padding:26px 46px;border-radius:10px;letter-spacing:.02em;">
         ${escapeHtml(button)}
       </div>
-      <div class="gold" style="font-family:${BRAND.display};font-weight:900;font-size:40px;margin-top:64px;">${EVENT_DATE}</div>
+      <div class="gold" style="font-family:${BRAND.display};font-weight:900;font-size:40px;margin-top:64px;">${eventDate(o.lang)}</div>
       <div class="grey" style="font-size:32px;margin-top:12px;">${HANDLE} · ${escapeHtml(url)}</div>
     </div>`;
 }
@@ -166,9 +166,9 @@ export function medals(o: { title?: string; sub?: string }): string {
   return `
     ${o.title ? `<h2 class="display" style="font-size:80px;margin-bottom:8px;">${rich(o.title)}</h2>` : ""}
     <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:48px;">
-      ${disc("radial-gradient(circle at 35% 30%,#FFE9A8,#F4AD3C 55%,#B9791A)", "#FFD773", "1")}
-      ${disc("radial-gradient(circle at 35% 30%,#F3F3F3,#C9C9C9 55%,#8A8A8A)", "#E4E4E4", "2")}
-      ${disc("radial-gradient(circle at 35% 30%,#E7B27E,#B5743C 55%,#7A4A1E)", "#D79A63", "3")}
+      ${disc("radial-gradient(circle at 35% 30%,#E9C778,#B4862B 58%,#7C5A18)", "#D8B25E", "1")}
+      ${disc("radial-gradient(circle at 35% 30%,#C7C7CA,#7D7D80 58%,#525255)", "#B5B5B8", "2")}
+      ${disc("radial-gradient(circle at 35% 30%,#CF9A80,#A86A52 58%,#724333)", "#C18A70", "3")}
     </div>
     ${o.sub ? `<div class="display" style="font-size:64px;text-align:center;">${rich(o.sub)}</div>` : ""}`;
 }
@@ -207,15 +207,60 @@ export function logoBanner(o: { caption?: string } = {}): string {
     </div>`;
 }
 
-/** Grille de logos d'enseignes. */
-export function logoGrid(o: { title: string; highlight?: string[]; logos: { src: string; dark?: boolean }[] }): string {
-  const cells = o.logos
-    .map(
-      (l) => `<div style="aspect-ratio:5/3;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;background:${l.dark ? "#161616" : BRAND.white};">
-        <img src="${l.src}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" /></div>`,
-    )
-    .join("");
+function logoTile(l: { src: string; dark?: boolean }): string {
+  return `<div style="aspect-ratio:5/3;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;background:${l.dark ? "#161616" : BRAND.white};">
+    <img src="${l.src}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" /></div>`;
+}
+
+/** Grille de logos d'enseignes (+ option `faded` = logos qui s'effacent → scroll infini). */
+export function logoGrid(o: { title: string; highlight?: string[]; logos: { src: string; dark?: boolean }[]; faded?: string[] }): string {
+  const cells = o.logos.map((l) => logoTile(l)).join("");
+  const fadedCells = (o.faded ?? []).map((src) => logoTile({ src })).join("");
+  const fadedRow = fadedCells
+    ? `<div style="margin-top:24px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);filter:grayscale(1) blur(1px);opacity:.5;"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">${fadedCells}</div></div>`
+    : "";
   return `
-    <h2 class="display" style="font-size:88px;margin-bottom:48px;">${rich(o.title, o.highlight)}</h2>
-    <div style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-content:center;">${cells}</div>`;
+    <h2 class="display" style="font-size:84px;margin-bottom:44px;">${rich(o.title, o.highlight)}</h2>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">${cells}</div>
+      ${fadedRow}
+    </div>`;
+}
+
+/** « Et beaucoup d'autres pros » : titre + lignes catégories + logos + logos floutés. */
+export function proMix(o: { title: string; highlight?: string[]; lines: string[]; logos: string[]; faded?: string[] }): string {
+  const lineEls = o.lines
+    .map((l) => `<div class="display" style="font-size:46px;display:flex;align-items:center;gap:18px;"><span class="gold">·</span>${escapeHtml(l)}</div>`)
+    .join("");
+  const cells = o.logos.map((src) => logoTile({ src })).join("");
+  const fadedCells = (o.faded ?? []).map((src) => logoTile({ src })).join("");
+  const fadedRow = fadedCells
+    ? `<div style="margin-top:22px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 92%);mask-image:linear-gradient(to bottom,#000 0%,transparent 92%);filter:grayscale(1) blur(1.5px);opacity:.45;"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">${fadedCells}</div></div>`
+    : "";
+  return `
+    <h2 class="display" style="font-size:80px;">${rich(o.title, o.highlight)}</h2>
+    <div style="display:flex;flex-direction:column;gap:14px;margin:28px 0 36px;">${lineEls}</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">${cells}</div>
+    ${fadedRow}`;
+}
+
+/** Pastille Award (style PDF : carré ivoire, monogramme B, BEST <catégorie> · 2027). */
+function awardBadge(category: string): string {
+  return `<div style="aspect-ratio:1/1;border-radius:18px;background:#F4EAD2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:22px;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,.45);">
+    <img src="${LOGO_JAUNE}" style="height:96px;width:auto;filter:saturate(1.05);" />
+    <div style="font-size:18px;letter-spacing:.22em;color:#9A7426;font-weight:800;text-transform:uppercase;">Barbecue Expo</div>
+    <div class="display" style="font-size:42px;color:#7A5E1E;letter-spacing:.02em;">AWARD</div>
+    <div style="display:flex;align-items:center;gap:10px;color:#B4862B;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.06em;">
+      <span>${escapeHtml(category)}</span><span>·</span><span>2027</span>
+    </div>
+  </div>`;
+}
+
+/** Grille des pastilles Awards. */
+export function awardGrid(o: { title?: string; highlight?: string[]; items: { category: string }[] }): string {
+  const cells = o.items.map((it) => awardBadge(it.category)).join("");
+  const cols = o.items.length <= 4 ? 2 : 3;
+  return `
+    ${o.title ? `<h2 class="display" style="font-size:78px;margin-bottom:44px;">${rich(o.title, o.highlight)}</h2>` : ""}
+    <div style="flex:1;display:grid;grid-template-columns:repeat(${cols},1fr);gap:26px;align-content:center;">${cells}</div>`;
 }

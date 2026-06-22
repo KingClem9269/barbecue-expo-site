@@ -28,9 +28,25 @@ export const FORMATS = {
 export type Format = keyof typeof FORMATS;
 
 /* ---- Constantes éditoriales ---- */
-export const EVENT_DATE = "12 · 13 · 14 Mars 2027 — Parc Floral de Paris";
 export const HANDLE = "@barbecue_expo";
 export const SITE = "barbecue-expo.fr";
+export const EXPOSANT_URL = "barbecue-expo.fr/devenez-exposants";
+
+export type Lang = "fr" | "en";
+const EVENT_DATE_BY_LANG: Record<Lang, string> = {
+  fr: "12 · 13 · 14 Mars 2027 — Parc Floral de Paris",
+  en: "12 · 13 · 14 March 2027 — Parc Floral de Paris",
+};
+export const eventDate = (lang: Lang) => EVENT_DATE_BY_LANG[lang];
+export const EVENT_DATE = EVENT_DATE_BY_LANG.fr; // rétro-compat
+
+/* ---- Localisation : une valeur peut être FR/EN ---- */
+export type Loc = string | { fr: string; en: string };
+export type LocArr = string[] | { fr: string[]; en: string[] };
+export const L = (v: Loc | undefined, lang: Lang): string =>
+  v == null ? "" : typeof v === "string" ? v : v[lang];
+export const LA = (v: LocArr | undefined, lang: Lang): string[] =>
+  v == null ? [] : Array.isArray(v) ? v : v[lang];
 
 /* ---- Assets inlinés en base64 (rendu headless sans serveur) ---- */
 function b64(rel: string): string {

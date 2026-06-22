@@ -1,54 +1,51 @@
 /**
  * Templates : assemblent un cadre (base) + un bloc (composant) selon le type
- * de slide, et résolvent les chemins d'assets en data URIs.
+ * de slide, résolvent les chemins d'assets et la langue (FR/EN).
  */
 import { frame } from "./base";
-import { photo, asset } from "../brand";
+import { photo, asset, L, LA, type Lang } from "../brand";
 import {
   slideHook, giantStat, slideText, slideCTA, statsBlock,
-  flagStat, flagRows, logoGrid, mediaWall, portraitCaption, portraitDuo,
-  medals, vsHero, categoryPair,
+  flagStat, flagRows, logoGrid, mediaWall, proMix, awardGrid,
+  portraitCaption, portraitDuo, medals, vsHero, categoryPair,
 } from "../components/blocks";
 import type { Slide } from "../types";
 
 const flag = (iso: string) => asset(`flags/${iso}.svg`);
-/** photo de fond : nom simple → /photos-2026, chemin avec "/" → /public. */
 const resolveBg = (name?: string) => (!name ? undefined : name.includes("/") ? asset(name) : photo(name));
 
-export function renderSlide(slide: Slide, ctx: { w: number; h: number; index: number; total: number }): string {
-  const { w, h, index, total } = ctx;
-  const base = (content: string, opts: Partial<Parameters<typeof frame>[0]> = {}) =>
-    frame({ w, h, content, index, total, ...opts });
+export function renderSlide(slide: Slide, ctx: { w: number; h: number; lang: Lang }): string {
+  const { w, h, lang } = ctx;
+  const t = (v: Parameters<typeof L>[0]) => L(v, lang);
+  const ta = (v: Parameters<typeof LA>[0]) => LA(v, lang);
+  const base = (content: string, opts: Partial<Parameters<typeof frame>[0]> = {}) => frame({ w, h, content, ...opts });
   const bg = "photo" in slide ? resolveBg(slide.photo) : undefined;
 
   switch (slide.kind) {
     case "hook":
-      return base(slideHook(slide), { bg });
+      return base(slideHook({ eyebrow: t(slide.eyebrow), title: t(slide.title), highlight: ta(slide.highlight) }), { bg });
     case "stat":
-      return base(giantStat(slide), { bg });
+      return base(giantStat({ value: slide.value, unit: t(slide.unit), label: t(slide.label), sub: t(slide.sub) }), { bg });
     case "text":
-      return base(slideText(slide), { bg });
+      return base(slideText({ title: t(slide.title), body: t(slide.body), highlight: ta(slide.highlight) }), { bg });
     case "cta":
-      return base(slideCTA(slide), { bg });
+      return base(slideCTA({ title: t(slide.title), highlight: ta(slide.highlight), sub: t(slide.sub), button: t(slide.button) || undefined, url: slide.url, lang }), { bg });
     case "stats":
-      return base(statsBlock(slide), { bg });
+      return base(statsBlock({ eyebrow: t(slide.eyebrow), title: t(slide.title), items: slide.items.map((it) => ({ value: it.value, label: t(it.label) })) }), { bg });
     case "flagStat":
-      return base(flagStat({ flag: flag(slide.flag), value: slide.value, label: slide.label }), { bg });
+      return base(flagStat({ flag: flag(slide.flag), value: slide.value, label: t(slide.label) }), { bg });
     case "flagRows":
-      return base(flagRows({ title: slide.title, rows: slide.rows.map((r) => ({ ...r, flag: flag(r.flag) })) }), { bg });
+      return base(flagRows({ title: t(slide.title), rows: slide.rows.map((r) => ({ flag: flag(r.flag), country: t(r.country), pct: r.pct })) }), { bg });
     case "logos":
-      return base(logoGrid({ title: slide.title, highlight: slide.highlight, logos: slide.logos.map((l) => ({ src: asset(l.src), dark: l.dark })) }), { bg });
+      return base(logoGrid({ title: t(slide.title), highlight: ta(slide.highlight), logos: slide.logos.map((l) => ({ src: asset(l.src), dark: l.dark })), faded: slide.faded?.map((s) => asset(s)) }), { bg });
     case "mediaWall":
-      return base(
-        mediaWall({ title: slide.title, highlight: slide.highlight, items: slide.items.map((it) => ("logo" in it ? { logo: asset(it.logo) } : it)) }),
-        { bg },
-      );
+      return base(mediaWall({ title: t(slide.title), highlight: ta(slide.highlight), items: slide.items.map((it) => ("logo" in it ? { logo: asset(it.logo) } : it)) }), { bg });
+    case "proMix":
+      return base(proMix({ title: t(slide.title), highlight: ta(slide.highlight), lines: slide.lines.map((l) => t(l)), logos: slide.logos.map((s) => asset(s)), faded: slide.faded?.map((s) => asset(s)) }), { bg });
+    case "awards":
+      return base(awardGrid({ title: t(slide.title), highlight: ta(slide.highlight), items: slide.items.map((it) => ({ category: t(it.category) })) }), { bg });
     case "portrait":
-      return base(portraitCaption({ name: slide.name, flag: slide.flag ? flag(slide.flag) : undefined, followers: slide.followers }), {
-        bg: asset(slide.img),
-        overlay: "bottom",
-        hideFooter: true,
-      });
+      return base(portraitCaption({ name: slide.name, flag: slide.flag ? flag(slide.flag) : undefined, followers: t(slide.followers) }), { bg: asset(slide.img), overlay: "bottom", hideFooter: true });
     case "portraitDuo":
       return base(
         portraitDuo({
@@ -58,10 +55,10 @@ export function renderSlide(slide: Slide, ctx: { w: number; h: number; index: nu
         { overlay: "none", hideFooter: true },
       );
     case "medals":
-      return base(medals(slide), { bg });
+      return base(medals({ title: t(slide.title), sub: t(slide.sub) }), { bg });
     case "vs":
-      return base(vsHero(slide), { bg, overlay: "flat" });
+      return base(vsHero({ title: slide.title, subtitle: t(slide.subtitle), hook1: t(slide.hook1), hook2: t(slide.hook2) }), { bg, overlay: "flat" });
     case "categoryPair":
-      return base(categoryPair(slide), { bg });
+      return base(categoryPair({ items: slide.items.map((it) => ({ num: it.num, title: t(it.title), sub: t(it.sub) })) }), { bg });
   }
 }
