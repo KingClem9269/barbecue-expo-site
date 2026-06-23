@@ -9,7 +9,7 @@ import { getConfig } from "@/lib/content";
 import { DesktopNav } from "@/components/nav/DesktopNav";
 import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { ClientRegistryInit } from "@/lib/ClientRegistry";
 import EmberCursor from "@/components/signature/EmberCursor";
 import PageTransition from "@/components/signature/PageTransition";
@@ -52,8 +52,13 @@ export default async function RootLayout({
     <div>Not found</div>;
   }
 
+  // Google Tag Manager — actif uniquement si NEXT_PUBLIC_GTM_ID est défini
+  // (créer le conteneur GTM-XXXXXXX puis ajouter la variable d'env Vercel).
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
   return (
     <html lang={locale}>
+      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <head>
         {/* Preload the branded display font to prevent FOIT on first paint */}
         <link
@@ -118,6 +123,8 @@ export default async function RootLayout({
             </AudienceProvider>
           </NextIntlClientProvider>
         </body>
+      {/* GA4 chargé en direct. Quand GA4 sera configuré comme tag DANS GTM,
+          retirer cette ligne pour éviter le double comptage des pages vues. */}
       <GoogleAnalytics gaId="G-YTGWDLVH99" />
     </html>
   );
