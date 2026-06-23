@@ -1,0 +1,6 @@
+# Assets Instagram générés (~312 Mo, reproductibles via `npm run social`)
+public/exports/
+
+# Outillage de génération des assets — scripts locaux uniquement,
+# jamais importés par l'app Next, inutiles en production.
+social/
