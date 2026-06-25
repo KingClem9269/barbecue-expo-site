@@ -135,9 +135,10 @@ export default async function RootLayout({
             </AudienceProvider>
           </NextIntlClientProvider>
         </body>
-      {/* GA4 chargé en direct. Quand GA4 sera configuré comme tag DANS GTM,
-          retirer cette ligne pour éviter le double comptage des pages vues. */}
-      <GoogleAnalytics gaId="G-YTGWDLVH99" />
+      {/* GA4 chargé en direct — propriété « Barbecue - GA4 » (G-YBVVEXBHWM).
+          Quand GA4 sera configuré comme tag DANS GTM, retirer cette ligne
+          pour éviter le double comptage des pages vues. */}
+      <GoogleAnalytics gaId="G-YBVVEXBHWM" />
     </html>
   );
 }
