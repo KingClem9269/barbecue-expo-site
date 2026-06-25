@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { X as XIcon, ChevronDown, Search, Check, Loader2, MailCheck, ExternalLink } from "lucide-react";
 import { getCountries, countryByIso } from "./countries";
+import { sendGAEvent } from "@next/third-parties/google";
 import { fmtEUR, type DerivedLine } from "./Estimator";
 import { useT } from "./i18n";
 
@@ -228,6 +229,12 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
       }
       setResult({ quoteNumber: data.quoteNumber, signingUrl: data.signingUrl });
       setStatus("success");
+      // Conversion GA4 : devis exposant généré (créé dans le CRM)
+      sendGAEvent("event", "generate_lead", {
+        value: total,
+        currency: "EUR",
+        has_quote: hasQuote,
+      });
     } catch (err) {
       setStatus("error");
       setServerError(err instanceof Error ? err.message : "unexpected_error");

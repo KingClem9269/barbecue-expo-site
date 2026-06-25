@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { sendGAEvent } from "@next/third-parties/google";
 
 /** Billetterie grand public — widget Weezevent (Barbecue Expo Grand Public). */
 export const WEEZEVENT_GP_URL =
@@ -9,6 +10,8 @@ export const WEEZEVENT_GP_URL =
 /** Ouvre la billetterie Weezevent dans une fenêtre popup. */
 export function openWeezevent() {
   if (typeof window === "undefined") return;
+  // Conversion GA4 : clic billetterie (ouverture du widget Weezevent)
+  sendGAEvent("event", "ticket_click", { audience: "grand_public" });
   const w = window.open(
     WEEZEVENT_GP_URL,
     "Billetterie Weezevent",

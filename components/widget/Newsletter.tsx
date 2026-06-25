@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function Newsletter({}: {}) {
   const [email, setEmail] = useState("");
@@ -39,6 +40,8 @@ export default function Newsletter({}: {}) {
       }
 
       setStatus("success");
+      // Conversion GA4 : inscription newsletter réussie
+      sendGAEvent("event", "newsletter_signup", { method: "footer" });
       setEmail("");
     } catch {
       setStatus("error");

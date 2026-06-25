@@ -3,6 +3,7 @@
 import { ContactFormBlok } from "@/types/storyblok";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { sendGAEvent } from "@next/third-parties/google";
 
 // Stable subject slugs — sent to the CRM, labels are localised per locale.
 const SUBJECT_KEYS = [
@@ -70,6 +71,8 @@ export default function ContactForm({}: { blok?: ContactFormBlok }) {
       }
 
       setStatus("success");
+      // Conversion GA4 : formulaire de contact envoyé (subject = stand/sponsoring/…)
+      sendGAEvent("event", "contact_form_submit", { subject });
       setFirstName("");
       setLastName("");
       setEmail("");
