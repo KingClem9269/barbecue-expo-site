@@ -52,9 +52,9 @@ export default async function RootLayout({
     <div>Not found</div>;
   }
 
-  // Google Tag Manager — actif uniquement si NEXT_PUBLIC_GTM_ID est défini
-  // (créer le conteneur GTM-XXXXXXX puis ajouter la variable d'env Vercel).
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+  // Google Tag Manager — conteneur Barbecue Expo (GTM-5NCHQMXR).
+  // Surchargeable via NEXT_PUBLIC_GTM_ID (autre conteneur, ou "" pour désactiver).
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-5NCHQMXR";
 
   return (
     <html lang={locale}>
@@ -96,6 +96,18 @@ export default async function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          {/* GTM noscript (fallback JS désactivé) — le composant Next ne l'inclut pas */}
+          {gtmId ? (
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+                title="Google Tag Manager"
+              />
+            </noscript>
+          ) : null}
           <ClientRegistryInit />
           <NextIntlClientProvider locale={locale}>
             <AudienceProvider>
