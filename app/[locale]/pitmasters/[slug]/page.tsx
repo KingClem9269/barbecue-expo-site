@@ -10,6 +10,7 @@ import {
 } from "@/lib/pitmasters";
 import { buildMetadata } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
+import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 
 const UI: Record<
   string,
@@ -343,6 +344,16 @@ export default async function PitmasterDetailPage({
           </div>
         </section>
       )}
+
+      <section className="bg-cream-50 py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <EcosystemLinks
+            locale={locale}
+            items={["mag"]}
+            title={locale === "fr" ? "Pour aller plus loin" : "Read more"}
+          />
+        </div>
+      </section>
     </article>
   );
 }

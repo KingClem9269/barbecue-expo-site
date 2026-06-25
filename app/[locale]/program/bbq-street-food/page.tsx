@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
+import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 
 type Restaurateur = {
   slug: string;
@@ -54,7 +55,7 @@ export async function generateMetadata({
 }
 
 export default async function StreetFoodPage() {
-  await getLocale();
+  const locale = await getLocale();
 
   // Continent d'affichage : override explicite, sinon déduit du pays.
   const continentOf = (r: Restaurateur): "americas" | "asia" | "europe" =>
@@ -177,7 +178,7 @@ export default async function StreetFoodPage() {
       <section className="bg-cream-100 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row gap-4">
           <Link
-            href="/billetterie/particulier"
+            href="/billetterie"
             className="group inline-flex items-center gap-4 bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 sm:px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-sm sm:text-base transition-colors"
           >
             <span>Réserver ma place</span>
@@ -190,6 +191,12 @@ export default async function StreetFoodPage() {
             <span>Voir tout le programme</span>
             <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" strokeWidth={2} />
           </Link>
+        </div>
+      </section>
+
+      <section className="bg-cream-100 pb-12 md:pb-16">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <EcosystemLinks locale={locale} items={["fest", "mag"]} />
         </div>
       </section>
     </div>

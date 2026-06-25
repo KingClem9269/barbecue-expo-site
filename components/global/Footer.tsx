@@ -2,6 +2,7 @@ import { GlobalConfigBlok } from "@/types/storyblok";
 
 import FooterNav from "../nav/FooterNav";
 import { LocaleSwitcher } from "../nav/LocaleSwitcher";
+import EcosystemLinks from "../ecosystem/EcosystemLinks";
 
 const Footer = ({
   data,
@@ -14,6 +15,14 @@ const Footer = ({
     <footer className="w-full bg-primary text-white p-4 md:p-8 lg:p-16 xl:p-32">
       <div className="">
         <FooterNav footerMenu={data?.footer_menu || []} />
+        <div className="mt-10 max-w-md">
+          <EcosystemLinks
+            locale={locale}
+            items={["mag", "fest", "piment", "coupe"]}
+            tone="dark"
+            title={locale === "fr" ? "Notre écosystème" : "Our ecosystem"}
+          />
+        </div>
         <div className="mt-8 font-lg">
           <div>{data?.address}</div>
           <div>{data?.phone}</div>

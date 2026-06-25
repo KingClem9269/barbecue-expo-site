@@ -15,6 +15,8 @@ type Entry = { path: string; priority: number; changeFrequency: Freq };
 
 const MAIN_PATHS: Entry[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
+  // Agenda (page pilier — calendrier de l'écosystème)
+  { path: "/agenda", priority: 0.85, changeFrequency: "weekly" },
   // Billetterie
   { path: "/billetterie", priority: 0.95, changeFrequency: "weekly" },
   { path: "/billetterie/pro-b2b", priority: 0.7, changeFrequency: "monthly" },

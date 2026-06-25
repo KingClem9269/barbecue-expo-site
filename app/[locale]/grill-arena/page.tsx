@@ -5,6 +5,7 @@ import PitmastersGrid from "@/components/homepage/PitmastersGrid";
 import FinalCTA from "@/components/homepage/FinalCTA";
 import { buildMetadata } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
+import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 
 const DESC: Record<string, string> = {
   fr: "Grill Arena — le seul format battle live du BBQ. 16 pitmasters, 4 manches, 1 champion. Parc Floral de Paris, 12-14 mars 2027.",
@@ -37,6 +38,11 @@ export default async function GrillArenaPage() {
       <BattleFormat />
       <CookingShowProgram locale={locale} />
       <PitmastersGrid blok={{}} />
+      <section className="bg-cream-50 pb-12 md:pb-16">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <EcosystemLinks locale={locale} items={["coupe", "mag"]} />
+        </div>
+      </section>
       <FinalCTA blok={{}} />
     </div>
   );

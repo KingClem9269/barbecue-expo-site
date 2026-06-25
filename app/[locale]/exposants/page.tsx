@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 import ExposantsTabs from "./ExposantsTabs";
+import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 
 const UI: Record<
   string,
@@ -117,6 +118,13 @@ export default async function ExposantsPage({
         tab2027={ui.tab2027}
         message2027={ui.message2027}
       />
+
+      {/* Maillage : ces marques dans l'écosystème (tests Mag, partenaires Fest) */}
+      <section className="bg-cream-50 py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <EcosystemLinks locale={locale} items={["mag", "fest"]} />
+        </div>
+      </section>
 
       {/* CTA exhibitor */}
       <section className="bg-ink-950 py-12 md:py-16">

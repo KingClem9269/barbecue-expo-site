@@ -2,6 +2,7 @@ import WeezeventEmbed from "@/components/billetterie/WeezeventEmbed";
 import FinalCTA from "@/components/homepage/FinalCTA";
 import { buildMetadata } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
+import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 
 const UI: Record<
   string,
@@ -96,6 +97,12 @@ export default async function BilletteriePage() {
       <section className="w-full bg-cream-50 py-14 md:py-20" aria-label="Billetterie">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <WeezeventEmbed />
+        </div>
+      </section>
+
+      <section className="bg-cream-50 pb-14 md:pb-20">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <EcosystemLinks locale={locale} items={["fest", "piment"]} />
         </div>
       </section>
 
