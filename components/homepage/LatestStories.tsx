@@ -24,7 +24,7 @@ interface Story {
 const UI: Record<string, { eyebrow: string; title: string; cta: string; stories: Story[] }> = {
   fr: {
     eyebrow: "À lire avant de venir",
-    title: "Quatre histoires pour comprendre 2027.",
+    title: "Cinq histoires pour comprendre 2027.",
     cta: "Lire la suite",
     stories: [
       {
@@ -55,17 +55,25 @@ const UI: Record<string, { eyebrow: string; title: string; cta: string; stories:
         image: "/photos-2026/bbq-expo-720.jpg",
         href: "/program/masterclasses",
       },
+      {
+        kicker: "Partenaire officiel",
+        title: "Zip Feux, sponsor de la Grill Arena.",
+        excerpt: "Après trois éditions, la marque d'allume-feux à l'héritage irlandais devient partenaire officiel 2027 et sponsor de la Grill Arena. Histoire, gamme et engagements durables.",
+        image: "/partners/zip-feux/hero.jpg",
+        href: "/actualites/zip-feux-partenaire-officiel-2027",
+      },
     ],
   },
   en: {
     eyebrow: "Read before you come",
-    title: "Four stories to understand 2027.",
+    title: "Five stories to understand 2027.",
     cta: "Read more",
     stories: [
       { kicker: "New format", title: "Grill Arena, the only live BBQ battle in Europe.", excerpt: "Sixteen pitmasters, 90 minutes per duel, one champion crowned Sunday night. Neither Spoga Gafa nor BBQ Expo Italy has it. Here's how it works.", image: "/photos-2026/william-plin-jpc-110426-533a3756.jpg", href: "/grill-arena" },
       { kicker: "First edition", title: "The Awards that distinguish the best brands.", excerpt: "Gold, silver, bronze in five categories. International jury, blind evaluation, ceremony at Parc Floral. A medal becomes a year-long selling argument.", image: "/photos-2026/bbq-expo-105.jpg", href: "/awards" },
       { kicker: "Twenty portraits", title: "The 2027 pitmasters, one by one.", excerpt: "From Texas to Japan, Buenos Aires to Florence. Twenty international guests, twenty different ways of cooking with fire. Filter by country, specialty, day.", image: "/photos-2026/william-plin-jpc-110426-533a4856.jpg", href: "/pitmasters" },
       { kicker: "Twelve sessions", title: "Masterclasses that fill up in two weeks.", excerpt: "Twenty seats max per session. An international pitmaster shows you, corrects you, makes you taste. Brisket, kamado, asado, charcuterie, dry-aged… book fast.", image: "/photos-2026/bbq-expo-720.jpg", href: "/program/masterclasses" },
+      { kicker: "Official partner", title: "Zip Feux, Grill Arena sponsor.", excerpt: "After three editions, the Irish-heritage firelighter brand becomes a 2027 official partner and Grill Arena sponsor. Story, range and sustainability commitments.", image: "/partners/zip-feux/hero.jpg", href: "/actualites/zip-feux-partenaire-officiel-2027" },
     ],
   },
 };

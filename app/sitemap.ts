@@ -17,6 +17,8 @@ const MAIN_PATHS: Entry[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
   // Agenda (page pilier — calendrier de l'écosystème)
   { path: "/agenda", priority: 0.85, changeFrequency: "weekly" },
+  // Actualités
+  { path: "/actualites/zip-feux-partenaire-officiel-2027", priority: 0.7, changeFrequency: "monthly" },
   // Billetterie
   { path: "/billetterie", priority: 0.95, changeFrequency: "weekly" },
   { path: "/billetterie/pro-b2b", priority: 0.7, changeFrequency: "monthly" },
