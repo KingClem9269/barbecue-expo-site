@@ -81,8 +81,8 @@ export const PARTNERS: Partner[] = [
     category: { fr: "Viandes premium", en: "Premium meats" },
     tagline: { fr: "La viande d'exception, du pro au particulier", en: "Exceptional meat, from pro to home" },
     description: {
-      fr: "Grossiste en viande premium en ligne depuis plus de 20 ans, Ma Bonne Viande sélectionne des viandes d'exception — bœuf Black Angus, Wagyu, porc ibérique, races à viande — auprès des meilleurs fournisseurs français et internationaux. Fournisseur de restaurants étoilés, la maison ouvre désormais sa sélection aux particuliers.",
-      en: "An online premium-meat wholesaler for over 20 years, Ma Bonne Viande selects exceptional cuts — Black Angus, Wagyu, Iberian pork and specialist breeds — from the best French and international suppliers. A supplier to Michelin-starred restaurants, it now opens its selection to home cooks.",
+      fr: "Grossiste en viande premium en ligne depuis 2004, Ma Bonne Viande sélectionne des viandes d'exception — bœuf Black Angus, Wagyu, porc ibérique, races à viande — auprès des meilleurs fournisseurs français et internationaux. Fournisseur de restaurants étoilés, la maison ouvre désormais sa sélection aux particuliers.",
+      en: "An online premium-meat wholesaler since 2004, Ma Bonne Viande selects exceptional cuts — Black Angus, Wagyu, Iberian pork and specialist breeds — from the best French and international suppliers. A supplier to Michelin-starred restaurants, it now opens its selection to home cooks.",
     },
   },
   {
