@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/seo";
 import pitmasters from "@/content/pitmasters/index.json";
+import { PARTNERS } from "@/lib/partners";
 
 /**
  * Pages du site (sans préfixe de locale). Chaque page est émise pour chaque
@@ -27,6 +28,7 @@ const MAIN_PATHS: Entry[] = [
   { path: "/pourquoi-exposer", priority: 0.85, changeFrequency: "monthly" },
   { path: "/presentation-exposants", priority: 0.85, changeFrequency: "monthly" },
   { path: "/exposants", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/nos-partenaires", priority: 0.75, changeFrequency: "monthly" },
   { path: "/espace-pro-b2b", priority: 0.8, changeFrequency: "monthly" },
   { path: "/pro", priority: 0.8, changeFrequency: "monthly" },
   // Le salon / programme
@@ -71,6 +73,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...STREET_FOOD_SLUGS.map((s) => ({
       path: `/program/bbq-street-food/${s}`,
+      priority: 0.6,
+      changeFrequency: "monthly" as Freq,
+    })),
+    ...PARTNERS.map((p) => ({
+      path: `/nos-partenaires/${p.slug}`,
       priority: 0.6,
       changeFrequency: "monthly" as Freq,
     })),

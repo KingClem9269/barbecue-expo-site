@@ -165,6 +165,13 @@
             "label": "Galerij & Pers",
             "submenu": [],
             "component": "menu-item"
+          },
+          {
+            "_uid": "nos-partenaires-nl",
+            "link": "/nos-partenaires",
+            "label": "Onze Partners",
+            "submenu": [],
+            "component": "menu-item"
           }
         ],
         "component": "menu-item"

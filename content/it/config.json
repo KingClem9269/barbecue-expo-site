@@ -165,6 +165,13 @@
             "label": "Galleria e Stampa",
             "submenu": [],
             "component": "menu-item"
+          },
+          {
+            "_uid": "nos-partenaires-it",
+            "link": "/nos-partenaires",
+            "label": "I Nostri Partner",
+            "submenu": [],
+            "component": "menu-item"
           }
         ],
         "component": "menu-item"

@@ -165,6 +165,13 @@
             "label": "Gallery & Press",
             "submenu": [],
             "component": "menu-item"
+          },
+          {
+            "_uid": "nos-partenaires-en",
+            "link": "/nos-partenaires",
+            "label": "Our Partners",
+            "submenu": [],
+            "component": "menu-item"
           }
         ],
         "component": "menu-item"
