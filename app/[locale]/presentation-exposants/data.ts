@@ -467,7 +467,7 @@ export const STAND_OPTIONS: StandOption[] = [
       { label: "Barre de LED", price: "70 € HT" },
       { label: "Spot haut de gamme", price: "120 € HT" },
       { label: "Enseigne (50 × 40 cm)", price: "60 € HT" },
-      { label: "Moquette", price: "12,50 € HT / m²" },
+      { label: "Moquette", price: "15 € HT / m²" },
     ],
   },
   {
