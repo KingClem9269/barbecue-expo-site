@@ -462,7 +462,7 @@ export const STAND_OPTIONS: StandOption[] = [
     desc: "Cloisons, éclairage, enseigne, moquette… créez votre environnement.",
     type: "list",
     options: [
-      { label: "Cloison Argent supplémentaire", price: "40 € HT / ml" },
+      { label: "Cloison Argent supplémentaire", price: "50 € HT / ml" },
       { label: "Cloison Or supplémentaire", price: "120 € HT / ml" },
       { label: "Barre de LED", price: "70 € HT" },
       { label: "Spot haut de gamme", price: "120 € HT" },

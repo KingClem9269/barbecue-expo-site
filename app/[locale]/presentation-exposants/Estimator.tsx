@@ -43,9 +43,18 @@ export function parsePrice(s?: string | null): number | null {
   return parseFloat(m[0].replace(",", "."));
 }
 
-/** Formate un montant en euros HT, format français. 12000 → "12 000 € HT". */
+/**
+ * Formate un montant en euros HT, format français.
+ * Préserve jusqu'à 2 décimales sans arrondir (12,50 €/m² ne doit pas devenir 13 €),
+ * et nettoie le bruit flottant. 12000 → "12 000 € HT", 12.5 → "12,50 € HT".
+ */
 export function fmtEUR(n: number): string {
-  return `${Math.round(n).toLocaleString("fr-FR")} € HT`;
+  const rounded = Math.round(n * 100) / 100;
+  const hasCents = Math.abs(rounded % 1) > 0.0001;
+  return `${rounded.toLocaleString("fr-FR", {
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: 2,
+  })} € HT`;
 }
 
 /* ------------------------------------------------------------------ */
