@@ -1,13 +1,46 @@
-# Barbecue Expo 2026 — Design System (Master)
+# Barbecue Expo · Design System (Master) · v2 « Marqué au feu »
 
 > Source of truth pour le design system. Toute modification visuelle doit respecter ces règles.
 > Les pages spécifiques peuvent surcharger ces règles dans `design-system/pages/<page>.md`.
 
 ---
 
-## 1. Couleurs (Charte préservée + déclinaisons)
+## 0. Direction « Marqué au feu »
 
-### Tokens de marque (inchangés, rétro-compatibles)
+Le site est la suite des affiches du métro, de la signalétique du salon et du « B » dessiné en marques de grill. Quatre piliers : **l'affiche** (panneaux charbon, bande de date jaune, capitales), **la marque** (les vrais coups de pinceau du « B »), **le reportage** (vraies photos, jamais assombries, toujours légendées) et **la signalétique** (mêmes pictos et panneaux que sur place).
+
+Huit règles :
+
+1. Le jaune se pose en aplat. Jamais en dégradé, jamais en halo, jamais en texte sur fond clair (contraste 1,9:1).
+2. Les titres sont en capitales, comme sur l'affiche, avec un interlettrage normal. Jamais resserré, jamais en faux gras.
+3. Aucune photo n'est assombrie. Le texte va sur un aplat ou sous l'image.
+4. Chaque animation reproduit un geste de cuisson, et chaque section en a au plus un (voir `MOTION.md`).
+5. Un chiffre existe une fois, dans un seul fichier, et s'affiche partout pareil.
+6. On nomme : les gens, les heures, les stands, les photographes, les sources.
+7. Aucun pictogramme de bibliothèque dans le contenu. Lucide reste pour l'interface pure (menu, fermer, chevron, pause).
+8. Si la page pourrait être celle d'un autre salon, on la refait.
+
+Composants de référence : `components/marque/` (Affiche, BandeDate, Bouton, Etiquette, Ticket, Legende, Bandeau) et `components/geste/`. Banc d'essai : `/lab`.
+
+---
+
+## 1. Couleurs
+
+### Palette v2 (à utiliser pour tout nouveau travail)
+
+| Tailwind | Hex | Usage |
+|----------|-----|-------|
+| `bg-jaune` | `#F4AD3C` | Aplats : bande de date, blocs, boutons. Un quart à un tiers de la surface d'une page événement |
+| `bg-charbon` / `text-charbon` | `#0C0B0A` | Panneaux affiche, texte |
+| `bg-papier` | `#FBFAF6` | Fond de lecture, bandeau partenaires |
+| `text-fumee` | `#5C5850` | Texte secondaire, légendes (6,8:1 sur papier) |
+| `text-braise` | `#B8390F` | Encre de tampon, alertes, « complet » (moins de 2 % de la surface) |
+
+Jamais de texte jaune sur papier ou sur blanc : le jaune porte du charbon, ou se pose sur du charbon.
+
+### Échelles historiques (à migrer en phases 2 à 4, puis à supprimer)
+
+Tokens de marque d'origine :
 
 | Tailwind | Hex | Usage |
 |----------|-----|-------|
@@ -76,8 +109,10 @@ Utiliser pour tous les niveaux de gris/noir.
 
 | Rôle | Police | Source | Usage |
 |------|--------|--------|-------|
-| **Display** | `SansPlomb-98` | Local (`/public/SansPlomb-98.woff`) | H1, H2, H3, H4 — **police de marque** |
-| **Body** | `Inter Tight` | Google Fonts | Paragraphes, UI, formulaires |
+| **Display** | `SansPlomb-98` | Local (`/public/SansPlomb-98.woff`), classe `font-affiche` | Titres **en capitales**, étiquettes, boutons — **police de marque** |
+| **Body** | `Inter Tight` | Auto-hébergée par `next/font` (variable `--font-texte`) | Paragraphes, UI, formulaires |
+
+**SansPlomb** n'existe qu'en une graisse : le `@font-face` la déclare sur 100-900, donc `font-bold` n'épaissit plus artificiellement les lettres. Pas de `tracking-tight` (les espaces entre mots disparaissent) ; pas de `style={{ fontFamily }}` en ligne : utiliser `font-affiche`.
 
 **Règle** : pas d'ajout de nouvelle police sans validation. Ces deux voix suffisent.
 
@@ -151,21 +186,7 @@ Respecter les breakpoints Tailwind natifs :
 
 ## 6. Animations
 
-### Timings standardisés
-
-| Type | Durée | Easing |
-|------|-------|--------|
-| Hover état | 150-200ms | `ease-out` |
-| Clic / press | 100ms | `ease-in` |
-| Transition section | 600ms | `cubic-bezier(0.22, 1, 0.36, 1)` |
-| Transition page | 400ms | `ease-in-out` |
-
-### Règles d'or
-
-1. **1-2 animations simultanées max** par viewport
-2. **Respect `prefers-reduced-motion`** obligatoire
-3. **Animate uniquement `transform` et `opacity`** (performance)
-4. **Pas d'auto-play vidéo** sans contrôle utilisateur
+Tout est dans **`design-system/MOTION.md`** : principes, jetons (trois courbes : `ease-saisie`, `ease-tampon`, `ease-sortie`), les sept gestes et leurs versions « mouvement réduit ». Aucune animation n'entre dans une page sans être passée par `/lab`.
 
 ---
 
@@ -188,6 +209,17 @@ Respecter les breakpoints Tailwind natifs :
 - ❌ Icons emoji (utiliser Lucide SVG)
 - ❌ Fonts hardcodées dans les composants (utiliser variables CSS)
 - ❌ Hex codes en dur dans les composants (utiliser tokens)
+- ❌ Sur-titre en capitales espacées + filet doré au-dessus d'un titre → rien, ou une `<Etiquette>` qui porte une information
+- ❌ Titre-phrase avec point final et triade → titre court en capitales, factuel
+- ❌ Dégradé noir sur une photo → aplat + `<Legende>`
+- ❌ Icône de bibliothèque dans une carte → pictogramme maison, ou rien
+- ❌ Flèche ↗ qui glisse sur chaque lien → `.lien-marque` ; flèche réservée aux liens externes
+- ❌ Compteur qui défile → `<Tableau>` ou chiffre fixe
+- ❌ Carte arrondie avec bordure fine sur fond crème → bloc plein à angles vifs, ou `<Ticket>`
+- ❌ Bandeau de logos qui défile → `<Bandeau>` fixe, comme en pied d'affiche
+- ❌ Tiret cadratin dans les textes → point, virgule
+- ❌ Superlatif ou citation sans source → le fait, le nom, la date, le lien
+- ❌ App ou widget externe avec sa propre charte → composant natif
 
 ---
 
@@ -198,4 +230,4 @@ Ce fichier est la source de vérité. Toute modification du design system doit :
 2. Être appliquée dans `app/[locale]/globals.css`
 3. Être testée sur les 7 langues
 
-Dernière mise à jour : Sprint 1 — ajout des échelles Gold/Ink/Cream/Ember/Char, nettoyage des polices inutilisées.
+Dernière mise à jour : 29 septembre 2026, v2 « Marqué au feu » (phase 1) : palette v2, SansPlomb en capitales sans faux gras, Inter Tight via next/font, gestes motion (`MOTION.md`), composants `components/marque/` et `components/geste/`.

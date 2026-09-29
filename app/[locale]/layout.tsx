@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import "./globals.css";
 import { buildMetadata } from "@/lib/seo";
@@ -12,19 +12,19 @@ import Newsletter from "@/components/widget/Newsletter";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import SkipLink from "@/components/a11y/SkipLink";
 import { AudienceProvider } from "@/components/nav/AudienceContext";
+import FiltresMarque from "@/components/geste/FiltresMarque";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Police de texte, auto-hébergée par next/font (plus de CSS Google bloquant).
+// latin-ext pour « œ » et les langues du salon.
+const interTight = Inter_Tight({
+  variable: "--font-texte",
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export async function generateMetadata({
@@ -65,17 +65,6 @@ export default async function RootLayout({
           type="font/woff"
           crossOrigin="anonymous"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-
         {/* Favicons : les fichiers app/icon.png, app/apple-icon.png et
             app/favicon.ico (monogramme « B ») sont injectés automatiquement
             par Next. On garde seulement le mask-icon (onglet épinglé Safari). */}
@@ -90,9 +79,8 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="format-detection" content="telephone=no" />
       </head>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className={`${interTight.variable} antialiased`}>
+          <FiltresMarque />
           {/* GTM noscript (fallback JS désactivé) — le composant Next ne l'inclut pas */}
           {gtmId ? (
             <noscript>
