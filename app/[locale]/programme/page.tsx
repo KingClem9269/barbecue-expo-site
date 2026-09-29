@@ -113,7 +113,7 @@ export default async function ProgrammePage() {
             Édition 2027 · 12–14 mars
           </div>
           <h1
-            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight font-bold max-w-5xl"
+            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-bold max-w-5xl"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             Le programme.
@@ -130,7 +130,7 @@ export default async function ProgrammePage() {
           <div key={d.label}>
             <div className="flex items-baseline gap-4 mb-10 md:mb-14 border-b-2 border-gold-500 pb-6">
               <h2
-                className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-none tracking-tight font-bold"
+                className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-none font-bold"
                 style={{ fontFamily: "SansPlomb-98, sans-serif" }}
               >
                 {d.label}

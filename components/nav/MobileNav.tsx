@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MenuItemBlok } from "@/types/storyblok";
 import { X } from "lucide-react";
 import { MobileNavItem } from "./MobileNavItem";
@@ -34,6 +34,7 @@ export const MobileNav = ({
   className?: string;
 }) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
   const locale = useLocale();
   const { audience, setAudience } = useAudience();
   const audienceLabels = AUDIENCE_LABELS[locale] || AUDIENCE_LABELS.fr;
@@ -48,6 +49,15 @@ export const MobileNav = ({
         document.body.style.overflow = prev;
       };
     }
+  }, [isOpen]);
+
+  // Focus : sur le bouton fermer à l'ouverture, rendu à l'élément d'origine
+  // (le burger) à la fermeture.
+  useEffect(() => {
+    if (!isOpen) return;
+    const previous = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+    return () => previous?.focus?.();
   }, [isOpen]);
 
   // Close on Escape
@@ -80,6 +90,7 @@ export const MobileNav = ({
       role="dialog"
       aria-modal="true"
       aria-hidden={!isOpen}
+      inert={!isOpen}
     >
       {/* Immersive full-screen panel */}
       <div
@@ -106,6 +117,7 @@ export const MobileNav = ({
             <NavLogo color="white" className="w-32 h-10" />
           </Link>
           <button
+            ref={closeRef}
             type="button"
             onClick={onClose}
             aria-label="Close menu"

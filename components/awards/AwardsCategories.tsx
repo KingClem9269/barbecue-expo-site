@@ -103,7 +103,7 @@ export default function AwardsCategories() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-12 md:mb-16">
           <div className="lg:col-span-8">
             <h2
-              className="text-cream-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-bold"
+              className="text-cream-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               {ui.title}

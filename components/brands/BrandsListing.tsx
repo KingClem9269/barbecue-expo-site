@@ -377,7 +377,7 @@ function BrandCard({
         ) : (
           /* Fallback: big stylized name */
           <span
-            className="text-ink-900 text-2xl md:text-3xl font-bold text-center tracking-tight leading-tight"
+            className="text-ink-900 text-2xl md:text-3xl font-bold text-center leading-tight"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {brand.name}

@@ -46,7 +46,7 @@ export default async function PartnersPage() {
             {ui.eyebrow}
           </div>
           <h1
-            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight font-bold"
+            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl leading-[0.95] font-bold"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.title}

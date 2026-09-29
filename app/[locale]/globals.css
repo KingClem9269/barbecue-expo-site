@@ -4,7 +4,10 @@
 @font-face {
   font-family: "SansPlomb-98";
   src: url("/SansPlomb-98.woff") format("woff");
-  font-weight: normal;
+  /* Un seul fichier (graisse unique) déclaré sur toute la plage : un
+     font-bold ou un h1 à 900 utilisent le vrai dessin au lieu d'un faux gras
+     épaissi par le navigateur. */
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -350,60 +353,43 @@
   }
 }
 
-/* Sprint 4 — Page transition (smoke sweep) */
-@keyframes pt-cover {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+/* Bandeaux défilants — nom et durée passés en variables (style inline),
+   pour que la pause ci-dessous ne soit pas écrasée par un shorthand inline.
+   Pause au survol, au focus, hors écran ou via le bouton (WCAG 2.2.2) ;
+   arrêt complet en mouvement réduit. */
+.marquee-track {
+  animation-name: var(--marquee-name, scroll);
+  animation-duration: var(--marquee-duration, 60s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-@keyframes pt-reveal {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-@keyframes pt-line-cover {
-  0% {
-    transform: translateY(100vh);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes pt-line-reveal {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100vh);
-  }
-}
-.page-transition-cover {
-  animation: pt-cover 280ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-.page-transition-reveal {
-  animation: pt-reveal 280ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-.page-transition-line-cover {
-  top: 0;
-  animation: pt-line-cover 280ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-.page-transition-line-reveal {
-  top: 0;
-  animation: pt-line-reveal 280ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+[data-marquee]:hover .marquee-track,
+[data-marquee]:focus-within .marquee-track,
+[data-marquee][data-paused="true"] .marquee-track,
+[data-marquee][data-offscreen="true"] .marquee-track {
+  animation-play-state: paused;
 }
 @media (prefers-reduced-motion: reduce) {
-  .page-transition-cover,
-  .page-transition-reveal,
-  .page-transition-line-cover,
-  .page-transition-line-reveal {
-    animation: none !important;
-    opacity: 0 !important;
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Titre « hero » des pages CMS : légère montée à l'arrivée (ex-GSAP). */
+@keyframes headline-rise {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.headline-rise {
+  animation: headline-rise 1.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .headline-rise {
+    animation: none;
   }
 }
 

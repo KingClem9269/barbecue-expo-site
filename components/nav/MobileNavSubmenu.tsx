@@ -34,7 +34,7 @@ export const MobileNavSubmenu = ({
             {String(index + 1).padStart(2, "0")}
           </span>
           <span
-            className="text-3xl sm:text-4xl tracking-tight font-bold text-left"
+            className="text-3xl sm:text-4xl font-bold text-left"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {menuItem.label}
@@ -50,6 +50,7 @@ export const MobileNavSubmenu = ({
       </button>
       {menuItem.submenu && (
         <ul
+          inert={!isOpen}
           className={`overflow-hidden transition-all duration-300 ease-in-out ${
             isOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
           }`}

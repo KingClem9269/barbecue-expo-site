@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PortraitFallback from "@/components/pitmasters/PortraitFallback";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft, Calendar, MapPin, Instagram, Users } from "lucide-react";
@@ -171,7 +172,7 @@ export default async function PitmasterDetailPage({
           {/* Portrait */}
           <div className="md:col-span-5 lg:col-span-4">
             <div className="relative aspect-[3/4] overflow-hidden bg-char-800 rounded-sm">
-              {p.portrait && (
+              {p.portrait ? (
                 <Image
                   src={p.portrait}
                   alt={p.name}
@@ -180,6 +181,8 @@ export default async function PitmasterDetailPage({
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover object-center"
                 />
+              ) : (
+                <PortraitFallback />
               )}
               {/* Signature char frame */}
               <div
@@ -203,7 +206,7 @@ export default async function PitmasterDetailPage({
             </div>
 
             <h1
-              className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight font-bold"
+              className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               {p.name}
@@ -314,7 +317,7 @@ export default async function PitmasterDetailPage({
                   href={`/pitmasters/${o.slug}`}
                   className="group relative block aspect-[3/4] overflow-hidden bg-char-800 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
                 >
-                  {o.portrait && (
+                  {o.portrait ? (
                     <Image
                       src={o.portrait}
                       alt={o.name}
@@ -322,6 +325,8 @@ export default async function PitmasterDetailPage({
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
+                  ) : (
+                    <PortraitFallback />
                   )}
                   <div
                     className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent"

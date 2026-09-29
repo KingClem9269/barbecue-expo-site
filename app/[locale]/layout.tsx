@@ -10,9 +10,6 @@ import { DesktopNav } from "@/components/nav/DesktopNav";
 import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import { ClientRegistryInit } from "@/lib/ClientRegistry";
-import EmberCursor from "@/components/signature/EmberCursor";
-import PageTransition from "@/components/signature/PageTransition";
 import SkipLink from "@/components/a11y/SkipLink";
 import { AudienceProvider } from "@/components/nav/AudienceContext";
 
@@ -108,12 +105,9 @@ export default async function RootLayout({
               />
             </noscript>
           ) : null}
-          <ClientRegistryInit />
           <NextIntlClientProvider locale={locale}>
             <AudienceProvider>
             <SkipLink />
-            <EmberCursor />
-            <PageTransition />
             <main id="main" className="w-full relative">
               {siteSettings?.content?.header_menu && (
                 <DesktopNav

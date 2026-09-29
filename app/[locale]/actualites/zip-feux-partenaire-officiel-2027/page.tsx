@@ -183,7 +183,7 @@ export default async function ZipFeuxArticle() {
             {a.kicker}
           </div>
           <h1
-            className="text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[1.02] tracking-tight font-bold"
+            className="text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[1.02] font-bold"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {a.title}

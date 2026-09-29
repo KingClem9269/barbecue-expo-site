@@ -163,7 +163,7 @@ export default function GrillArenaTeaser({ blok }: { blok: GrillArenaBlok }) {
         {/* Massive "VS" treatment */}
         <div className="flex items-start gap-6 md:gap-12 mb-8 md:mb-12">
           <h2
-            className="text-cream-50 text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight font-bold flex-shrink"
+            className="text-cream-50 text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] font-bold flex-shrink"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {data.title}

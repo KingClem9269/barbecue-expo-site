@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import PortraitFallback from "@/components/pitmasters/PortraitFallback";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 import type { Pitmaster } from "@/lib/pitmasters-shared";
@@ -162,7 +163,7 @@ function PitmasterCard({
       href={`/pitmasters/${p.slug}`}
       className="group relative block aspect-[3/4] overflow-hidden bg-char-800 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
     >
-      {p.portrait && (
+      {p.portrait ? (
         <Image
           src={p.portrait}
           alt={p.name}
@@ -170,6 +171,8 @@ function PitmasterCard({
           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
+      ) : (
+        <PortraitFallback />
       )}
 
       {/* Gradient */}
@@ -191,7 +194,7 @@ function PitmasterCard({
           aria-hidden="true"
         />
         <h3
-          className="text-lg md:text-2xl leading-tight font-bold tracking-tight"
+          className="text-lg md:text-2xl leading-tight font-bold"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           {p.name}

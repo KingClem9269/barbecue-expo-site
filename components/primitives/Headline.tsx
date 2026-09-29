@@ -1,25 +1,7 @@
-"use client";
 import { HeadlineBlok } from "@/types/storyblok";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 
 export default function Headline({ blok }: { blok: HeadlineBlok }) {
-  gsap.registerPlugin(useGSAP); // register any plugins, including the useGSAP hook
-
-  const container = useRef<HTMLHeadingElement>(null);
   const textAlign = "text-" + (blok.textAlign || "start");
-  useGSAP(
-    () => {
-      gsap.to(container.current, {
-        duration: 1.5,
-        yPercent: -15,
-        ease: "power4",
-        stagger: 0.1,
-      });
-    },
-    { scope: container }
-  );
 
   if (blok.heading == "h1") {
     return (
@@ -69,10 +51,9 @@ export default function Headline({ blok }: { blok: HeadlineBlok }) {
   if (blok.heading == "hero") {
     return (
       <h1
-        ref={container}
         className={`text-${
           blok.color || "primary"
-        } text-6xl md:text-8xl lg:text-9xl ${textAlign} translate-y-[20px]`}
+        } text-6xl md:text-8xl lg:text-9xl ${textAlign} headline-rise`}
       >
         {blok.content}
       </h1>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import MarqueePause from "@/components/primitives/MarqueePause";
 
 /**
  * Two-row infinite logo marquee.
@@ -42,8 +43,7 @@ function LogoCard({ file }: { file: string }) {
         alt=""
         width={140}
         height={64}
-        unoptimized
-        className="max-h-full max-w-full object-contain mix-blend-darken"
+        className="w-auto h-auto max-h-full max-w-full object-contain mix-blend-darken"
       />
     </div>
   );
@@ -54,8 +54,8 @@ function Row({ files, animation, duration }: { files: string[]; animation: strin
   return (
     <div className="overflow-hidden">
       <div
-        className="flex w-max"
-        style={{ animation: `${animation} ${duration} linear infinite` }}
+        className="flex w-max marquee-track"
+        style={{ "--marquee-name": animation, "--marquee-duration": duration } as React.CSSProperties}
       >
         {tripled.map((f, i) => (
           <LogoCard key={`${f}-${i}`} file={f} />
@@ -70,15 +70,20 @@ export default function BrandLogoMarquee({ fade = "dark" }: { fade?: "dark" | "c
   const fadeR = fade === "cream" ? "from-cream-100" : "from-ink-950";
   const fadeL = fade === "cream" ? "from-cream-100" : "from-ink-950";
   return (
-    <div className="relative flex flex-col gap-3 md:gap-4">
-      {/* Row 1 — left → right */}
-      <Row files={LOGOS} animation="scroll-right" duration="55s" />
-      {/* Row 2 — right → left */}
-      <Row files={row2} animation="scroll" duration="65s" />
+    <div data-marquee className="flex flex-col gap-3">
+      <div className="relative flex flex-col gap-3 md:gap-4">
+        {/* Row 1 — left → right */}
+        <Row files={LOGOS} animation="scroll-right" duration="55s" />
+        {/* Row 2 — right → left */}
+        <Row files={row2} animation="scroll" duration="65s" />
 
-      {/* Edge fades — couleur selon le fond (sombre par défaut, crème sur fond clair) */}
-      <div className={`pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r ${fadeR} to-transparent`} aria-hidden="true" />
-      <div className={`pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l ${fadeL} to-transparent`} aria-hidden="true" />
+        {/* Edge fades — couleur selon le fond (sombre par défaut, crème sur fond clair) */}
+        <div className={`pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r ${fadeR} to-transparent`} aria-hidden="true" />
+        <div className={`pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l ${fadeL} to-transparent`} aria-hidden="true" />
+      </div>
+      <div className="flex justify-end">
+        <MarqueePause tone={fade === "cream" ? "dark" : "light"} />
+      </div>
     </div>
   );
 }

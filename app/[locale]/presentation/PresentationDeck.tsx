@@ -227,7 +227,7 @@ export default function PresentationDeck() {
             <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
             {t.edition}
           </div>
-          <h1 className="text-cream-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-bold max-w-4xl" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
+          <h1 className="text-cream-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-bold max-w-4xl" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
             {t.coverTitle}
           </h1>
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8">

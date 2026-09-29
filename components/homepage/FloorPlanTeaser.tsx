@@ -118,7 +118,7 @@ export default function FloorPlanTeaser() {
             {ui.eyebrow}
           </div>
           <h2
-            className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-8"
+            className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold mb-8"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.title}

@@ -171,7 +171,7 @@ export default function AwardsTeaser({ blok }: { blok: AwardsBlok }) {
             </div>
 
             <h2
-              className="text-ink-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight font-bold mb-8"
+              className="text-ink-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-bold mb-8"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               {data.title}

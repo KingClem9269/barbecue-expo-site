@@ -23,31 +23,52 @@ import { useEffect, useRef, useState } from "react";
 /*  Counter hook                                                       */
 /* ------------------------------------------------------------------ */
 function useCountUp(target: number, duration = 1800) {
-  const [count, setCount] = useState(0);
+  // Valeur finale par défaut : c'est ce que voient le rendu serveur, les
+  // navigateurs sans JavaScript et le mode « mouvement réduit ».
+  const [count, setCount] = useState(target);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || started.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let frame = 0;
+    let first = true;
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const start = performance.now();
-          const tick = (now: number) => {
-            const t = Math.min((now - start) / duration, 1);
-            const ease = 1 - Math.pow(1 - t, 3);
-            setCount(Math.round(ease * target));
-            if (t < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
+        // Premier relevé : déjà visible au chargement, on garde le chiffre tel
+        // quel plutôt que de le faire retomber à 0 sous les yeux du visiteur ;
+        // hors écran, on le met à 0 pour le décompte (changement invisible).
+        if (first) {
+          first = false;
+          if (entry.isIntersecting) {
+            obs.disconnect();
+            return;
+          }
+          setCount(0);
+          return;
         }
+        if (!entry.isIntersecting || started.current) return;
+        started.current = true;
+        obs.disconnect();
+        const start = performance.now();
+        const tick = (now: number) => {
+          const t = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - t, 3);
+          setCount(Math.round(ease * target));
+          if (t < 1) frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
       },
       { threshold: 0.3 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      cancelAnimationFrame(frame);
+    };
   }, [target, duration]);
 
   return { count, ref };
@@ -330,7 +351,7 @@ export default function PourquoiExposerContent({ locale }: { locale: string }) {
           </div>
 
           <h1
-            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] tracking-tight font-bold max-w-5xl"
+            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] font-bold max-w-5xl"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             <span className="block">{ui.heroTitle.line1}</span>
@@ -554,8 +575,7 @@ export default function PourquoiExposerContent({ locale }: { locale: string }) {
                   alt={logo.alt}
                   width={120}
                   height={60}
-                  className="max-h-full max-w-full object-contain"
-                  unoptimized
+                  className="w-auto h-auto max-h-full max-w-full object-contain"
                 />
               </div>
             ))}
@@ -581,8 +601,7 @@ export default function PourquoiExposerContent({ locale }: { locale: string }) {
                   alt=""
                   width={140}
                   height={70}
-                  className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  unoptimized
+                  className="w-auto h-auto max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </li>
             ))}

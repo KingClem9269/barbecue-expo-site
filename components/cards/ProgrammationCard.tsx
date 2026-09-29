@@ -45,7 +45,7 @@ const ProgrammationCard = ({ blok }: { blok: ProgrammationCardBlok }) => {
 
         {/* Title */}
         <h3
-          className="text-cream-50 text-xl md:text-2xl lg:text-3xl leading-tight font-bold tracking-tight"
+          className="text-cream-50 text-xl md:text-2xl lg:text-3xl leading-tight font-bold"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           {blok.title}

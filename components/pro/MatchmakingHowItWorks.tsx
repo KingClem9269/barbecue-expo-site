@@ -115,7 +115,7 @@ export default function MatchmakingHowItWorks() {
           </div>
 
           <h2
-            className="text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-12 md:mb-16"
+            className="text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold mb-12 md:mb-16"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.headline}

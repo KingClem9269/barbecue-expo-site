@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import MarqueePause from "@/components/primitives/MarqueePause";
 
 /** Single-row auto-scrolling photo gallery (event photos). */
 
@@ -20,16 +21,24 @@ const DEFAULT_PHOTOS = [
 export default function PhotoMarquee({ photos = DEFAULT_PHOTOS }: { photos?: string[] }) {
   const tripled = [...photos, ...photos, ...photos];
   return (
-    <div className="relative overflow-hidden">
-      <div className="flex w-max" style={{ animation: "scroll 70s linear infinite" }}>
-        {tripled.map((p, i) => (
-          <div key={i} className="w-72 md:w-[26rem] aspect-[3/2] mx-2 shrink-0 rounded-sm overflow-hidden bg-ink-900">
-            <Image src={p} alt="" width={416} height={277} className="w-full h-full object-cover" />
-          </div>
-        ))}
+    <div data-marquee className="flex flex-col gap-3">
+      <div className="relative overflow-hidden">
+        <div
+          className="flex w-max marquee-track"
+          style={{ "--marquee-name": "scroll", "--marquee-duration": "70s" } as React.CSSProperties}
+        >
+          {tripled.map((p, i) => (
+            <div key={i} className="w-72 md:w-[26rem] aspect-[3/2] mx-2 shrink-0 rounded-sm overflow-hidden bg-ink-900">
+              <Image src={p} alt="" width={416} height={277} className="w-full h-full object-cover" />
+            </div>
+          ))}
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-28 bg-gradient-to-r from-ink-950 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-28 bg-gradient-to-l from-ink-950 to-transparent" aria-hidden="true" />
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-28 bg-gradient-to-r from-ink-950 to-transparent" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-28 bg-gradient-to-l from-ink-950 to-transparent" aria-hidden="true" />
+      <div className="flex justify-end">
+        <MarqueePause tone="light" />
+      </div>
     </div>
   );
 }

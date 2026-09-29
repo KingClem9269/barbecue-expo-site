@@ -115,7 +115,7 @@ export default function FinalCTA({ blok }: { blok: FinalCTABlok }) {
 
         {/* Headline */}
         <h2
-          className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight font-bold max-w-5xl"
+          className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-bold max-w-5xl"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           {data.headline}

@@ -137,7 +137,7 @@ export default async function InfosPratiquesPage() {
             {ui.eyebrow}
           </div>
           <h1
-            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight font-bold max-w-5xl"
+            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-bold max-w-5xl"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.heroTitle}
@@ -184,7 +184,7 @@ export default async function InfosPratiquesPage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-12 md:mb-16">
             <h2
-              className="lg:col-span-7 text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold"
+              className="lg:col-span-7 text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               {ui.accessTitle}
@@ -228,7 +228,7 @@ export default async function InfosPratiquesPage() {
         </div>
         <div className="lg:col-span-7">
           <h2
-            className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-6"
+            className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold mb-6"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.hotelsTitle}
@@ -250,7 +250,7 @@ export default async function InfosPratiquesPage() {
       <section className="bg-cream-100 py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <h2
-            className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-12"
+            className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold mb-12"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.faqTitle}

@@ -293,7 +293,7 @@ export default async function PitmastersPage({
             {ui.eyebrow}
           </div>
           <h1
-            className="text-cream-50 text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] tracking-tight font-bold"
+            className="text-cream-50 text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] font-bold"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.title}

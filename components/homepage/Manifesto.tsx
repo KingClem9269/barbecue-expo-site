@@ -159,10 +159,12 @@ function StatBlock({
   stat,
   inView,
   index,
+  locale,
 }: {
   stat: Stat;
   inView: boolean;
   index: number;
+  locale: string;
 }) {
   const count = useCountUp(stat.value, {
     duration: 1800,
@@ -173,10 +175,12 @@ function StatBlock({
     <div className="flex flex-col gap-3 md:gap-4">
       <span className="inline-block w-12 h-px bg-gold-500" aria-hidden="true" />
       <span
-        className="text-ink-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight font-bold tabular-nums"
+        className="text-ink-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none font-bold tabular-nums"
         style={{ fontFamily: "SansPlomb-98, sans-serif" }}
       >
-        {count.toLocaleString()}
+        {/* Locale explicite : sans elle, serveur et navigateur formatent
+            différemment (25 800 / 25,800) et l'hydratation échoue. */}
+        {count.toLocaleString(locale)}
         {stat.suffix}
       </span>
       <span className="text-ink-600 text-sm md:text-base uppercase tracking-widest font-medium">
@@ -224,7 +228,7 @@ export default function Manifesto({ blok }: { blok: ManifestoBlok }) {
         {/* Stats grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 lg:gap-16">
           {data.stats?.map((stat, i) => (
-            <StatBlock key={i} stat={stat} inView={inView} index={i} />
+            <StatBlock key={i} stat={stat} inView={inView} index={i} locale={locale} />
           ))}
         </div>
 

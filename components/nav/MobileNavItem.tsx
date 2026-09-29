@@ -28,7 +28,7 @@ export const MobileNavItem = ({
             {String(index + 1).padStart(2, "0")}
           </span>
           <span
-            className="text-3xl sm:text-4xl tracking-tight font-bold"
+            className="text-3xl sm:text-4xl font-bold"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {menuItem.label}

@@ -78,7 +78,7 @@ const ChefCard = ({
 
         {/* Name */}
         <h3
-          className="text-2xl md:text-3xl leading-tight font-bold tracking-tight"
+          className="text-2xl md:text-3xl leading-tight font-bold"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           {blok.name}

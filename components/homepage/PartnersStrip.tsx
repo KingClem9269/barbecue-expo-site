@@ -109,7 +109,7 @@ export default function PartnersStrip() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-12 md:mb-16">
           <h2
-            className="lg:col-span-7 text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold"
+            className="lg:col-span-7 text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.title}
@@ -131,8 +131,7 @@ export default function PartnersStrip() {
                 alt=""
                 width={140}
                 height={70}
-                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-darken"
-                unoptimized
+                className="w-auto h-auto max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-darken"
               />
             </li>
           ))}

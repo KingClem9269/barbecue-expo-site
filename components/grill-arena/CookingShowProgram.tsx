@@ -44,7 +44,7 @@ export default function CookingShowProgram({ locale }: { locale: string }) {
           {ui.eyebrow}
         </div>
         <h2
-          className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-12"
+          className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold mb-12"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           {ui.title}

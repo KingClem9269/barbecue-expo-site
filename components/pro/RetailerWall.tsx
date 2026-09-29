@@ -140,7 +140,7 @@ export default function RetailerWall() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-12 md:mb-16">
           <div className="lg:col-span-7">
             <h2
-              className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold"
+              className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               {ui.headline}
@@ -198,7 +198,7 @@ function RetailerTile({ retailer }: { retailer: Retailer }) {
       }`}
     >
       <span
-        className={`text-ink-900 text-sm md:text-base font-bold text-center leading-tight tracking-tight ${
+        className={`text-ink-900 text-sm md:text-base font-bold text-center leading-tight ${
           !retailer.visible ? "blur-md opacity-60" : ""
         }`}
         style={{ fontFamily: "SansPlomb-98, sans-serif" }}

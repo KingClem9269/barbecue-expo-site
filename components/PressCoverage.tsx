@@ -38,7 +38,7 @@ export default function PressCoverage() {
         {MEDIA_FEATURED.map((m) => (
           <a key={m.show} href={m.url} target="_blank" rel="noopener noreferrer" className="group block rounded-sm overflow-hidden border-2 border-gold-500/60 hover:border-gold-500 transition-colors">
             <div className="relative aspect-video bg-ink-900 flex items-center justify-center overflow-hidden">
-              <Image src={m.thumb} alt={`${m.outlet} — ${m.show}`} fill unoptimized sizes="(max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <Image src={m.thumb} alt={`${m.outlet} — ${m.show}`} fill sizes="(max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <span className="absolute inset-0 bg-ink-950/30 group-hover:bg-ink-950/20 transition-colors" aria-hidden="true" />
               <span className="relative z-10 w-12 h-12 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Play className="w-5 h-5 ml-0.5" fill="currentColor" strokeWidth={0} />

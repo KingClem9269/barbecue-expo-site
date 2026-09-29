@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import PortraitFallback from "@/components/pitmasters/PortraitFallback";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { useLocale } from "next-intl";
@@ -106,7 +107,7 @@ export default function PitmastersGrid({ blok }: { blok: PitmastersGridBlok }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-12 md:mb-16 items-end">
           <div className="lg:col-span-8">
             <h2
-              className="text-ink-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight font-bold"
+              className="text-ink-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               {data.headline}
@@ -126,7 +127,7 @@ export default function PitmastersGrid({ blok }: { blok: PitmastersGridBlok }) {
               href={`/pitmasters/${p.slug}`}
               className="group relative block aspect-[3/4] overflow-hidden bg-char-800 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
             >
-              {p.portrait && (
+              {p.portrait ? (
                 <Image
                   src={p.portrait}
                   alt={p.name}
@@ -134,6 +135,8 @@ export default function PitmastersGrid({ blok }: { blok: PitmastersGridBlok }) {
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 />
+              ) : (
+                <PortraitFallback />
               )}
               <div
                 className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent transition-opacity duration-500 opacity-80 group-hover:opacity-95"
@@ -149,7 +152,7 @@ export default function PitmastersGrid({ blok }: { blok: PitmastersGridBlok }) {
                   aria-hidden="true"
                 />
                 <h3
-                  className="text-lg md:text-xl leading-tight font-bold tracking-tight"
+                  className="text-lg md:text-xl leading-tight font-bold"
                   style={{ fontFamily: "SansPlomb-98, sans-serif" }}
                 >
                   {p.name}

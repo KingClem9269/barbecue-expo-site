@@ -220,7 +220,7 @@ function PathCard({
         {/* Middle: title + description */}
         <div className="mt-12 md:mt-20">
           <h3
-            className={`${textMain} text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-bold`}
+            className={`${textMain} text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-bold`}
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {path.title}

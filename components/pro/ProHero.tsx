@@ -145,7 +145,7 @@ export default function ProHero() {
 
         {/* Massive editorial slogan */}
         <h1
-          className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] tracking-tight font-bold max-w-5xl"
+          className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] font-bold max-w-5xl"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           <span className="block">{ui.line1}</span>

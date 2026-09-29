@@ -81,7 +81,7 @@ export default function AwardsHero() {
 
         <div className="flex items-start gap-6 md:gap-10 mb-10">
           <h1
-            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] tracking-tight font-bold"
+            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.92] font-bold"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             {ui.title}

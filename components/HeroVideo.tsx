@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
-import gsap from "gsap";
 import YouTubeHeroBackground from "@/components/YouTubeHeroBackground";
-import { useGSAP } from "@gsap/react";
-import { useTranslations, useLocale } from "next-intl";
+import { useLocale } from "next-intl";
+import type { HeroVideoBlok } from "@/types/storyblok";
 
 // Slogans by locale (editorial, unforgettable — "Le feu. La braise. L'Europe.")
 const SLOGANS: Record<string, { line1: string; line2: string; line3: string }> = {
@@ -37,75 +35,14 @@ const DATE_LINE: Record<string, string> = {
   it: "12 · 13 · 14 Marzo 2027",
 };
 
-export function HeroVideo({ blok }: { blok: any }) {
-  gsap.registerPlugin(useGSAP);
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const headlineRef = useRef<HTMLDivElement>(null);
+export function HeroVideo({ blok }: { blok: HeroVideoBlok }) {
   const locale = useLocale();
   const slogan = SLOGANS[locale] || SLOGANS.fr;
   const scrollLabel = SCROLL_LABEL[locale] || SCROLL_LABEL.fr;
   const dateLine = DATE_LINE[locale] || DATE_LINE.fr;
 
-  useGSAP(
-    () => {
-      const container = containerRef.current;
-      if (!container) return;
-
-      // Respect prefers-reduced-motion
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      if (prefersReducedMotion) return;
-
-      // Ember particle trail on mousemove — SVG-based, no emoji
-      const handleMouseMove = (e: MouseEvent) => {
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        // Throttle: random skip some events to avoid flood
-        if (Math.random() > 0.35) return;
-
-        const ember = document.createElement("div");
-        ember.className = "ember-particle pointer-events-none absolute";
-        ember.style.left = `${x}px`;
-        ember.style.top = `${y}px`;
-        ember.style.width = `${gsap.utils.random(3, 7)}px`;
-        ember.style.height = ember.style.width;
-        ember.style.borderRadius = "50%";
-        ember.style.background = `radial-gradient(circle, #FCEBBE 0%, #F4AD3C 40%, #B8390F 80%, transparent 100%)`;
-        ember.style.boxShadow = `0 0 8px rgba(244, 173, 60, 0.8), 0 0 16px rgba(184, 57, 15, 0.4)`;
-        ember.style.transform = "translate(-50%, -50%)";
-        ember.style.zIndex = "20";
-        container.appendChild(ember);
-
-        const randomX = gsap.utils.random(-30, 30);
-        gsap.fromTo(
-          ember,
-          { opacity: 1, scale: 0.3 },
-          {
-            opacity: 0,
-            scale: gsap.utils.random(1.2, 1.8),
-            y: gsap.utils.random(-100, -160),
-            x: `+=${randomX}`,
-            duration: gsap.utils.random(1.0, 1.6),
-            ease: "power2.out",
-            onComplete: () => ember.remove(),
-          },
-        );
-      };
-
-      container.addEventListener("mousemove", handleMouseMove);
-      return () => container.removeEventListener("mousemove", handleMouseMove);
-    },
-    { scope: containerRef },
-  );
-
   return (
     <section
-      ref={containerRef}
       className="relative w-full h-[100dvh] min-h-[640px] overflow-hidden bg-ink-950"
       aria-label="Barbecue Expo 2027 hero"
     >
@@ -123,27 +60,24 @@ export function HeroVideo({ blok }: { blok: any }) {
         aria-hidden="true"
       />
 
-      {/* Optional brand mark (small, top-left or integrated) */}
+      {/* Monogramme « B » : en haut au centre sur mobile, en bas à gauche sur
+          desktop (en haut à gauche, il passait sous la barre de navigation). */}
       {blok.media?.filename && (
-        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10 md:left-8 md:translate-x-0">
+        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10 md:top-auto md:bottom-10 md:left-12 md:translate-x-0">
           <Image
             src={blok.media.filename}
             alt={blok.media.alt || "Barbecue Expo"}
             width={80}
-            height={80}
-            className="h-16 w-auto opacity-80"
-            priority
+            height={150}
+            className="h-16 md:h-24 w-auto"
           />
         </div>
       )}
 
       {/* Editorial slogan — oversize, 3 lines, staggered reveal */}
-      <div
-        ref={headlineRef}
-        className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center"
-      >
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         <h1
-          className="text-cream-50 leading-[0.95] tracking-tight select-none"
+          className="text-cream-50 leading-[0.95] select-none"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           <span className="slogan-line slogan-reveal block text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem]" style={{ animationDelay: "0.2s" }}>

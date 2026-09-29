@@ -86,7 +86,7 @@ export default function GalleryPressPage() {
             Galerie & Presse · Édition 2026
           </div>
           <h1
-            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight font-bold max-w-5xl"
+            className="text-cream-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-bold max-w-5xl"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             Ce qu'on a vécu en 2026.
@@ -106,7 +106,7 @@ export default function GalleryPressPage() {
               Galerie
             </div>
             <h2
-              className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold"
+              className="text-ink-900 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold"
               style={{ fontFamily: "SansPlomb-98, sans-serif" }}
             >
               Quarante-six images.
@@ -139,7 +139,7 @@ export default function GalleryPressPage() {
             Ils en parlent
           </div>
           <h2
-            className="text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight font-bold mb-16 md:mb-20 max-w-4xl"
+            className="text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[0.95] font-bold mb-16 md:mb-20 max-w-4xl"
             style={{ fontFamily: "SansPlomb-98, sans-serif" }}
           >
             Soixante-cinq retombées presse en 2026.
