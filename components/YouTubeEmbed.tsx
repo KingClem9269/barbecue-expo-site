@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
 import { Volume2, VolumeX } from "lucide-react";
 
 /**
@@ -25,10 +26,21 @@ interface YTPlayer {
 // Note : window.YT et onYouTubeIframeAPIReady sont déjà déclarés globalement
 // dans YouTubeHeroBackground.tsx — on ne les redéclare pas ici (sinon conflit TS).
 
+const UI: Record<string, { activer: string; couper: string; actif: string }> = {
+  fr: { activer: "Activer le son", couper: "Couper le son", actif: "Son activé" },
+  en: { activer: "Turn sound on", couper: "Mute", actif: "Sound on" },
+  es: { activer: "Activar el sonido", couper: "Silenciar", actif: "Sonido activado" },
+  de: { activer: "Ton einschalten", couper: "Ton ausschalten", actif: "Ton an" },
+  nl: { activer: "Geluid aan", couper: "Geluid uit", actif: "Geluid staat aan" },
+  pt: { activer: "Ativar o som", couper: "Desativar o som", actif: "Som ativado" },
+  it: { activer: "Attiva l'audio", couper: "Disattiva l'audio", actif: "Audio attivo" },
+};
+
 export default function YouTubeEmbed() {
   const targetRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<YTPlayer | null>(null);
   const [muted, setMuted] = useState(true);
+  const ui = UI[useLocale()] || UI.fr;
 
   const toggleSound = () => {
     const p = playerRef.current;
@@ -88,12 +100,12 @@ export default function YouTubeEmbed() {
       <button
         type="button"
         onClick={toggleSound}
-        aria-label={muted ? "Activer le son" : "Couper le son"}
-        title={muted ? "Activer le son" : "Couper le son"}
+        aria-label={muted ? ui.activer : ui.couper}
+        title={muted ? ui.activer : ui.couper}
         className="absolute bottom-3 right-3 z-10 inline-flex items-center gap-2 rounded-full bg-ink-950/70 hover:bg-ink-950/90 text-cream-50 px-3 py-2 backdrop-blur transition-colors"
       >
         {muted ? <VolumeX className="w-4 h-4" strokeWidth={2} /> : <Volume2 className="w-4 h-4 text-gold-500" strokeWidth={2} />}
-        <span className="text-xs font-semibold">{muted ? "Activer le son" : "Son activé"}</span>
+        <span className="text-xs font-semibold">{muted ? ui.activer : ui.actif}</span>
       </button>
     </div>
   );

@@ -536,7 +536,7 @@ export const PARTNER_FEATURE_GROUPS: {
     category: "Communication sur place",
     rows: [
       { label: "Priorité reportage presse et TV", platinium: "Absolue", gold: "Haute", silver: "Normal" },
-      { label: "Mise en avant de vos produits lors des démonstrations culinaires", platinium: true, gold: true, silver: true },
+      { label: "Mise en avant de vos produits lors des démonstrations culinaires", platinium: true, gold: true, silver: false },
       { label: "Logo sur les T-shirts des hôtes·ses d'accueil", platinium: true, gold: false, silver: false },
       { label: "Enseigne + pont lumineux de stand 360°", platinium: true, gold: false, silver: false },
       { label: "Sponsoring Cooking Show", platinium: true, gold: false, silver: false },

@@ -8,7 +8,7 @@ import { routing } from "@/i18n/routing";
 import { PARTNERS, getPartner, pText } from "@/lib/partners";
 import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 
-const T: Record<string, { back: string; official: string; ctaTitle: string; ctaText: string; ctaExpo: string; more: string }> = {
+const T: Record<string, { back: string; official: string; ctaTitle: string; ctaText: string; ctaExpo: string; more: string; partnerOf: string }> = {
   fr: {
     back: "Tous les partenaires",
     official: "Site officiel",
@@ -16,6 +16,7 @@ const T: Record<string, { back: string; official: string; ctaTitle: string; ctaT
     ctaText: "Les 12, 13 et 14 mars 2027 au Parc Floral de Paris.",
     ctaExpo: "Préparer ma visite",
     more: "Pour aller plus loin",
+    partnerOf: "Partenaire Barbecue Expo 2027",
   },
   en: {
     back: "All partners",
@@ -24,9 +25,54 @@ const T: Record<string, { back: string; official: string; ctaTitle: string; ctaT
     ctaText: "On 12, 13 and 14 March 2027 at Parc Floral de Paris.",
     ctaExpo: "Plan my visit",
     more: "Read more",
+    partnerOf: "Barbecue Expo 2027 partner",
+  },
+  es: {
+    back: "Todos los socios",
+    official: "Sitio oficial",
+    ctaTitle: "Encuéntrelos en Barbecue Expo 2027",
+    ctaText: "Los días 12, 13 y 14 de marzo de 2027 en el Parc Floral de París.",
+    ctaExpo: "Preparar mi visita",
+    more: "Para saber más",
+    partnerOf: "Socio de Barbecue Expo 2027",
+  },
+  de: {
+    back: "Alle Partner",
+    official: "Offizielle Website",
+    ctaTitle: "Treffen Sie sie auf der Barbecue Expo 2027",
+    ctaText: "Am 12., 13. und 14. März 2027 im Parc Floral de Paris.",
+    ctaExpo: "Meinen Besuch planen",
+    more: "Mehr erfahren",
+    partnerOf: "Partner der Barbecue Expo 2027",
+  },
+  nl: {
+    back: "Alle partners",
+    official: "Officiële website",
+    ctaTitle: "Ontmoet ze op Barbecue Expo 2027",
+    ctaText: "Op 12, 13 en 14 maart 2027 in het Parc Floral de Paris.",
+    ctaExpo: "Mijn bezoek voorbereiden",
+    more: "Meer lezen",
+    partnerOf: "Partner van Barbecue Expo 2027",
+  },
+  pt: {
+    back: "Todos os parceiros",
+    official: "Site oficial",
+    ctaTitle: "Encontre-os na Barbecue Expo 2027",
+    ctaText: "Nos dias 12, 13 e 14 de março de 2027 no Parc Floral de Paris.",
+    ctaExpo: "Preparar a minha visita",
+    more: "Para saber mais",
+    partnerOf: "Parceiro da Barbecue Expo 2027",
+  },
+  it: {
+    back: "Tutti i partner",
+    official: "Sito ufficiale",
+    ctaTitle: "Incontrateli a Barbecue Expo 2027",
+    ctaText: "Il 12, 13 e 14 marzo 2027 al Parc Floral de Paris.",
+    ctaExpo: "Preparare la mia visita",
+    more: "Per saperne di più",
+    partnerOf: "Partner di Barbecue Expo 2027",
   },
 };
-const ALIASES: Record<string, "fr" | "en"> = { es: "fr", de: "fr", nl: "fr", pt: "fr", it: "fr" };
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -39,7 +85,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const p = getPartner(slug);
   if (!p) return {};
   return buildMetadata(locale, `/nos-partenaires/${slug}`, {
-    title: `${p.name} — Partenaire Barbecue Expo 2027`,
+    title: `${p.name} — ${(T[locale] || T.fr).partnerOf}`,
     description: pText(p.tagline, locale),
   });
 }
@@ -49,7 +95,7 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
   const p = getPartner(slug);
   if (!p) notFound();
   const locale = await getLocale();
-  const t = T[locale] || T[ALIASES[locale] || "fr"];
+  const t = T[locale] || T.fr;
 
   return (
     <div className="bg-cream-50 min-h-screen">

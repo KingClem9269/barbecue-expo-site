@@ -15,49 +15,49 @@ const UI: Record<
     eyebrow: "Première édition · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "Pour la première fois en Europe, un jury international distingue les meilleures marques du secteur BBQ. Or, argent, bronze — trois médailles, cinq catégories, une seule référence.",
+      "Pour la première fois en Europe, un jury international distingue les meilleures marques du secteur BBQ. Or, argent, bronze — trois médailles, six catégories, une seule référence.",
     tagline: "La distinction qui fait de vous une marque à suivre.",
   },
   en: {
     eyebrow: "First edition · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "For the first time in Europe, an international jury distinguishes the best brands of the BBQ industry. Gold, silver, bronze — three medals, five categories, one reference.",
+      "For the first time in Europe, an international jury distinguishes the best brands of the BBQ industry. Gold, silver, bronze — three medals, six categories, one reference.",
     tagline: "The distinction that makes you a brand to follow.",
   },
   es: {
     eyebrow: "Primera edición · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "Por primera vez en Europa, un jurado internacional distingue a las mejores marcas del sector BBQ. Oro, plata, bronce — tres medallas, cinco categorías, una sola referencia.",
+      "Por primera vez en Europa, un jurado internacional distingue a las mejores marcas del sector BBQ. Oro, plata, bronce — tres medallas, seis categorías, una sola referencia.",
     tagline: "La distinción que lo convierte en una marca que seguir.",
   },
   de: {
     eyebrow: "Erste Ausgabe · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "Zum ersten Mal in Europa würdigt eine internationale Jury die besten Marken der BBQ-Branche. Gold, Silber, Bronze — drei Medaillen, fünf Kategorien, eine Referenz.",
+      "Zum ersten Mal in Europa würdigt eine internationale Jury die besten Marken der BBQ-Branche. Gold, Silber, Bronze — drei Medaillen, sechs Kategorien, eine Referenz.",
     tagline: "Die Auszeichnung, die Sie zur Marke macht, der man folgen sollte.",
   },
   nl: {
     eyebrow: "Eerste editie · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "Voor het eerst in Europa onderscheidt een internationale jury de beste merken van de BBQ-industrie. Goud, zilver, brons — drie medailles, vijf categorieën, één referentie.",
+      "Voor het eerst in Europa onderscheidt een internationale jury de beste merken van de BBQ-industrie. Goud, zilver, brons — drie medailles, zes categorieën, één referentie.",
     tagline: "De onderscheiding die u tot een merk maakt dat gevolgd moet worden.",
   },
   pt: {
     eyebrow: "Primeira edição · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "Pela primeira vez na Europa, um júri internacional distingue as melhores marcas do setor BBQ. Ouro, prata, bronze — três medalhas, cinco categorias, uma só referência.",
+      "Pela primeira vez na Europa, um júri internacional distingue as melhores marcas do setor BBQ. Ouro, prata, bronze — três medalhas, seis categorias, uma só referência.",
     tagline: "A distinção que faz de si uma marca a seguir.",
   },
   it: {
     eyebrow: "Prima edizione · 2027",
     title: "Barbecue Expo Awards",
     subtitle:
-      "Per la prima volta in Europa, una giuria internazionale distingue i migliori marchi del settore BBQ. Oro, argento, bronzo — tre medaglie, cinque categorie, un solo riferimento.",
+      "Per la prima volta in Europa, una giuria internazionale distingue i migliori marchi del settore BBQ. Oro, argento, bronzo — tre medaglie, sei categorie, un solo riferimento.",
     tagline: "La distinzione che fa di te un marchio da seguire.",
   },
 };

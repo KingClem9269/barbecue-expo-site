@@ -8,6 +8,8 @@ import {
   getPitmasterBySlug,
   getCountryName,
   getBio,
+  getSessionDay,
+  getSessionTitle,
 } from "@/lib/pitmasters";
 import { buildMetadata } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
@@ -119,7 +121,7 @@ export async function generateMetadata({
   if (!p) return buildMetadata(locale, `/pitmasters/${slug}`);
   const bio = getBio(p, locale);
   return buildMetadata(locale, `/pitmasters/${slug}`, {
-    title: `${p.name} — Pitmaster ${getCountryName(p.country, locale)} · Barbecue Expo 2026`,
+    title: `${p.name} — Pitmaster ${getCountryName(p.country, locale)} · Barbecue Expo 2027`,
     description: bio.substring(0, 160),
   });
 }
@@ -268,10 +270,10 @@ export default async function PitmasterDetailPage({
                   className="text-ink-900 text-2xl md:text-3xl leading-tight font-bold mb-4"
                   style={{ fontFamily: "SansPlomb-98, sans-serif" }}
                 >
-                  {s.title}
+                  {getSessionTitle(s, locale)}
                 </h3>
                 <div className="flex items-center gap-3 text-ink-600 text-sm font-medium">
-                  <span>{s.day}</span>
+                  <span>{getSessionDay(s.day, locale)}</span>
                   <span aria-hidden="true" className="w-1 h-1 rounded-full bg-gold-500" />
                   <span>{s.time}</span>
                 </div>
@@ -285,7 +287,7 @@ export default async function PitmasterDetailPage({
         {/* CTAs */}
         <div className="mt-14 md:mt-20 flex flex-col sm:flex-row gap-4">
           <Link
-            href="/billetterie/particulier"
+            href="/billetterie"
             className="group inline-flex items-center justify-between gap-6 bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors"
           >
             {ui.ctaBook}
@@ -355,7 +357,16 @@ export default async function PitmasterDetailPage({
           <EcosystemLinks
             locale={locale}
             items={["mag"]}
-            title={locale === "fr" ? "Pour aller plus loin" : "Read more"}
+            title={
+              ({
+                fr: "Pour aller plus loin",
+                es: "Para saber más",
+                de: "Weiterlesen",
+                nl: "Lees verder",
+                pt: "Saber mais",
+                it: "Per saperne di più",
+              } as Record<string, string>)[locale] || "Read more"
+            }
           />
         </div>
       </section>

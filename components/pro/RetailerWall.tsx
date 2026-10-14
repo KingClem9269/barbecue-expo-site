@@ -175,7 +175,7 @@ export default function RetailerWall() {
                 {ui.overlayLine2}
               </div>
               <Link
-                href="/devenez-exposants"
+                href="/presentation-exposants"
                 className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-300 text-ink-950 px-4 py-2.5 rounded-sm text-xs md:text-sm font-bold uppercase tracking-widest transition-colors"
               >
                 {ui.cta}

@@ -1,54 +1,81 @@
-import WeezeventEmbed from "@/components/billetterie/WeezeventEmbed";
-import FinalCTA from "@/components/homepage/FinalCTA";
-import { buildMetadata } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
-import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
+import PageBilletterie from "@/components/billetterie/pass/PageBilletterie";
+import { buildMetadata } from "@/lib/seo";
+import { SALON, libelleBilletterie } from "@/lib/salon";
+
+/**
+ * Billetterie grand public : un en-tête court, les trois pass en onglets
+ * (Individuel, Groupes, + Food) et le contenu du pass choisi juste en
+ * dessous, avec son module de vente (components/billetterie/pass). Les prix
+ * suivent le palier en cours (lib/billets.ts) : page régénérée toutes les heures.
+ */
+
+export const revalidate = 3600;
 
 const UI: Record<
   string,
-  { eyebrow: string; title: string; description: string }
+  {
+    ouverte: string;
+    proQuestion: string;
+    proLien: string;
+    metaAttente: string;
+  }
 > = {
   fr: {
-    eyebrow: "Édition 2027",
-    title: "Billetterie",
-    description:
-      "Cinq types de pass pour cinq profils de visiteurs. Early bird jusqu'au 31 décembre 2026 — jusqu'à 30 % d'économie.",
+    ouverte:
+      "Billetterie Barbecue Expo 2027 (12-14 mars, Parc Floral de Paris) : Pass Individuel, Pass Groupes (familles, groupes et CSE) et bientôt le Pass + Food. Early bird jusqu'au 31 décembre 2026.",
+    proQuestion: "Vous êtes professionnel ?",
+    proLien: "Billetterie pro",
+    metaAttente:
+      "Billetterie de Barbecue Expo 2027 (12-14 mars, Parc Floral de Paris) : ouverture prochaine. Inscrivez-vous pour être prévenu de l'ouverture.",
   },
   en: {
-    eyebrow: "2027 edition",
-    title: "Tickets",
-    description:
-      "Five pass types for five visitor profiles. Early bird until December 31, 2026 — save up to 30%.",
+    ouverte:
+      "Barbecue Expo 2027 tickets (March 12-14, Parc Floral de Paris): Individual Pass, Group Pass (families, groups and companies) and, coming soon, the Pass + Food. Early bird until December 31, 2026.",
+    proQuestion: "Trade visitor?",
+    proLien: "Pro tickets",
+    metaAttente:
+      "Barbecue Expo 2027 tickets (March 12-14, Parc Floral de Paris): on sale soon. Sign up to be notified when sales open.",
   },
   es: {
-    eyebrow: "Edición 2027",
-    title: "Entradas",
-    description:
-      "Cinco tipos de pase para cinco perfiles. Early bird hasta el 31 de diciembre de 2026 — ahorre hasta 30%.",
+    ouverte:
+      "Entradas de Barbecue Expo 2027 (12-14 de marzo, Parc Floral de París): Pase Individual, Pase Grupos (familias, grupos y empresas) y, próximamente, el Pase + Food. Early bird hasta el 31 de diciembre de 2026.",
+    proQuestion: "¿Es profesional?",
+    proLien: "Entradas Pro",
+    metaAttente:
+      "Entradas de Barbecue Expo 2027 (12-14 de marzo, Parc Floral de París): próxima apertura. Inscríbase para recibir el aviso.",
   },
   de: {
-    eyebrow: "Ausgabe 2027",
-    title: "Tickets",
-    description:
-      "Fünf Pass-Typen für fünf Profile. Early Bird bis 31. Dezember 2026 — bis zu 30% sparen.",
+    ouverte:
+      "Tickets für Barbecue Expo 2027 (12.–14. März, Parc Floral de Paris): Einzelpass, Gruppenpass (Familien, Gruppen und Firmen) und demnächst der Pass + Food. Early Bird bis 31. Dezember 2026.",
+    proQuestion: "Fachbesucher?",
+    proLien: "Pro-Tickets",
+    metaAttente:
+      "Tickets für Barbecue Expo 2027 (12.–14. März, Parc Floral de Paris): bald im Verkauf. Melden Sie sich an, um benachrichtigt zu werden.",
   },
   nl: {
-    eyebrow: "Editie 2027",
-    title: "Tickets",
-    description:
-      "Vijf passoorten voor vijf profielen. Early bird tot 31 december 2026 — tot 30% besparen.",
+    ouverte:
+      "Tickets voor Barbecue Expo 2027 (12-14 maart, Parc Floral de Paris): Individuele Pass, Groepspass (gezinnen, groepen en bedrijven) en binnenkort de Pass + Food. Early bird t/m 31 december 2026.",
+    proQuestion: "Professional?",
+    proLien: "Pro-tickets",
+    metaAttente:
+      "Tickets voor Barbecue Expo 2027 (12-14 maart, Parc Floral de Paris): binnenkort te koop. Schrijf u in om op de hoogte te blijven.",
   },
   pt: {
-    eyebrow: "Edição 2027",
-    title: "Bilhetes",
-    description:
-      "Cinco tipos de passe para cinco perfis. Early bird até 31 de dezembro de 2026 — poupe até 30%.",
+    ouverte:
+      "Bilhetes Barbecue Expo 2027 (12-14 de março, Parc Floral de Paris): Passe Individual, Passe Grupos (famílias, grupos e empresas) e, em breve, o Passe + Food. Early bird até 31 de dezembro de 2026.",
+    proQuestion: "É profissional?",
+    proLien: "Bilhetes Pro",
+    metaAttente:
+      "Bilhetes Barbecue Expo 2027 (12-14 de março, Parc Floral de Paris): abertura em breve. Inscreva-se para ser avisado.",
   },
   it: {
-    eyebrow: "Edizione 2027",
-    title: "Biglietti",
-    description:
-      "Cinque tipi di pass per cinque profili. Early bird fino al 31 dicembre 2026 — risparmia fino al 30%.",
+    ouverte:
+      "Biglietti Barbecue Expo 2027 (12-14 marzo, Parc Floral de Paris): Pass Individuale, Pass Gruppi (famiglie, gruppi e aziende) e, presto, il Pass + Food. Early bird fino al 31 dicembre 2026.",
+    proQuestion: "Sei un professionista?",
+    proLien: "Biglietti Pro",
+    metaAttente:
+      "Biglietti Barbecue Expo 2027 (12-14 marzo, Parc Floral de Paris): apertura a breve. Iscriviti per essere avvisato.",
   },
 };
 
@@ -60,53 +87,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const ui = UI[locale] || UI.fr;
   return buildMetadata(locale, "/billetterie", {
-    title: `${ui.title} — Barbecue Expo 2027`,
-    description: ui.description,
+    title: `${libelleBilletterie(locale)} — Barbecue Expo ${SALON.annee}`,
+    description: SALON.billetterieOuverte ? ui.ouverte : ui.metaAttente,
   });
 }
 
 export default async function BilletteriePage() {
   const locale = await getLocale();
-  const ui = UI[locale] || UI.fr;
-
-  return (
-    <div className="bg-cream-50">
-      <section className="relative bg-ink-950 pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-gold-500/15 via-transparent to-transparent blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold mb-6">
-            <span className="inline-block w-8 h-px bg-gold-500" aria-hidden="true" />
-            {ui.eyebrow}
-          </div>
-          <h1
-            className="text-cream-50 text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] font-bold"
-            style={{ fontFamily: "SansPlomb-98, sans-serif" }}
-          >
-            {ui.title}
-          </h1>
-          <p className="mt-8 text-cream-50/85 text-lg md:text-xl max-w-3xl leading-relaxed">
-            {ui.description}
-          </p>
-        </div>
-      </section>
-
-      {/* Billetterie grand public — widget Weezevent en ligne.
-          (Les cartes pass « spéciales » seront ajoutées plus tard.) */}
-      <section className="w-full bg-cream-50 py-14 md:py-20" aria-label="Billetterie">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <WeezeventEmbed />
-        </div>
-      </section>
-
-      <section className="bg-cream-50 pb-14 md:pb-20">
-        <div className="max-w-3xl mx-auto px-6 md:px-12">
-          <EcosystemLinks locale={locale} items={["fest", "piment"]} />
-        </div>
-      </section>
-
-      <FinalCTA blok={{}} />
-    </div>
-  );
+  return <PageBilletterie locale={locale} initial="individuel" />;
 }

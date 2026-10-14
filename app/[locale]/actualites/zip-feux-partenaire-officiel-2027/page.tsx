@@ -147,13 +147,316 @@ const ARTICLE: Record<string, Article> = {
     ctaExpo: "Become a partner / exhibitor",
     more: "Read more",
   },
+  es: {
+    kicker: "Socio oficial 2027",
+    title: "Zip Feux, socio oficial de Barbecue Expo y patrocinador de la Grill Arena",
+    lead: "Tras tres ediciones a nuestro lado, la marca de pastillas de encendido de herencia irlandesa da un paso más: se convierte en socio oficial de la feria y patrocinador de la Grill Arena, el corazón palpitante de la competición. Retrato de una empresa que domina el fuego desde hace casi un siglo.",
+    badge: "Socio oficial · Patrocinador de la Grill Arena",
+    sections: [
+      {
+        h: "Tres años de presencia, una alianza que se impone",
+        p: [
+          "Hay marcas que pasan y otras que se quedan. Desde hace tres años, Zip Feux forma parte del paisaje de Barbecue Expo: un stand fiel, un equipo apasionado y un producto que todo amante de la barbacoa conoce, aunque no siempre lo nombre — la pastilla de encendido, ese pequeño gesto que convierte un montón de carbón en brasas listas para cocinar.",
+          "En 2027, esa presencia se convierte en una verdadera alianza. Zip Feux se une al círculo de socios oficiales de la feria y pone su nombre en el evento más espectacular del Parc Floral: la Grill Arena, donde los mejores pitmasters se enfrentan en directo. Un símbolo evidente — porque antes de cada battle, antes de cada brasa, hay una chispa. Y esa chispa es precisamente el oficio de Zip.",
+        ],
+      },
+      {
+        h: "Más de 80 años dominando el fuego",
+        p: [
+          "Detrás de Zip Feux está Zip®, una marca que reivindica su herencia irlandesa, editada por Standard Brands dentro del grupo SHS. Su eslogan lo dice todo: «Zip®, en el fuego de la acción desde hace 80 años». Una longevidad poco común, nacida de un invento fundacional — la pastilla de encendido de queroseno — que inauguró una larga tradición de innovación y fiabilidad.",
+          "Desde su histórica planta de Castlebellingham, en Irlanda, la marca está presente hoy en numerosos mercados: Reino Unido, Irlanda, Francia, Bélgica, Canadá y Estados Unidos. Un actor internacional que ha conservado la exigencia de un fabricante apegado a su saber hacer, atento a sus responsabilidades en materia de salud y seguridad, medio ambiente y control de calidad.",
+        ],
+      },
+      {
+        h: "Una gama pensada para todos los fuegos",
+        p: ["Aunque Zip nació con la pastilla de encendido, hoy su gama cubre todo el ritual del fuego:"],
+        list: [
+          "Pastillas de encendido de queroseno — el original, garantía de un encendido rápido y fiable;",
+          "Pastillas de encendido naturales — la gama ecológica, que ya representa el 25 % de las ventas de la marca;",
+          "Carbón vegetal para barbacoa — para pasar de la chispa a la cocción;",
+          "Combustibles de invierno — para la chimenea, la estufa y el brasero.",
+        ],
+      },
+      {
+        h: "Un socio comprometido con un fuego más responsable",
+        p: [
+          "Es sin duda aquí donde Zip Feux más sorprende. Lejos de la imagen a veces contaminante de los productos de encendido, la marca lleva a cabo un programa de sostenibilidad a cinco años con resultados muy concretos:",
+        ],
+        list: [
+          "Energía: la planta de Castlebellingham funciona ya al 100 % con energía renovable (frente al 10 % antes de marzo de 2022);",
+          "Agua: 9,5 millones de litros ahorrados en cinco años, es decir, −50 % de consumo en la fabricación;",
+          "Residuos: cero vertedero, todo se valoriza energéticamente;",
+          "Envases: rediseñados en 2023 con materiales renovables (como la caña de azúcar), el equivalente a 1.430 árboles preservados. Productos con certificación FSC®.",
+        ],
+      },
+      {
+        h: "Patrocinador de la Grill Arena: en el corazón del fuego de la acción",
+        p: [
+          "Al asociarse con la Grill Arena, Zip Feux no elige una zona cualquiera de la feria. Es el gran escenario de la feria: dieciséis pitmasters, duelos en directo, un campeón coronado ante el público. Y todo empieza con un encendido. Difícil imaginar una asociación más natural entre una marca cuyo oficio es prender el fuego y un formato cuyo ADN es la intensidad de la llama viva.",
+          "Para visitantes y expositores, esta alianza envía una señal fuerte: Barbecue Expo 2027 se rodea de actores históricos, fiables y comprometidos que comparten una misma pasión — la del fuego bien dominado.",
+        ],
+      },
+    ],
+    productsCaption: "La gama Zip Feux: pastillas de encendido, carbón y combustibles.",
+    quote:
+      "Tras tres ediciones, convertirnos en socio oficial de Barbecue Expo y patrocinador de la Grill Arena era evidente. Es el evento que reúne a toda nuestra comunidad en torno a lo que hacemos desde hace 80 años: encender el fuego.",
+    quoteAuthor: "Laurene Parkin — Zip Feux",
+    ctaTitle: "Encuentre a Zip Feux en Barbecue Expo 2027",
+    ctaText:
+      "Le esperamos los días 12, 13 y 14 de marzo de 2027 en el Parc Floral de París para descubrir Zip Feux y asistir a los enfrentamientos de la Grill Arena que patrocinan.",
+    ctaArena: "Descubrir la Grill Arena",
+    ctaExpo: "Ser socio / expositor",
+    more: "Para saber más",
+  },
+  de: {
+    kicker: "Offizieller Partner 2027",
+    title: "Zip Feux, offizieller Partner der Barbecue Expo und Sponsor der Grill Arena",
+    lead: "Nach drei Ausgaben an unserer Seite geht die Anzündermarke mit irischen Wurzeln einen Schritt weiter: Sie wird offizieller Partner der Messe und Sponsor der Grill Arena, des pulsierenden Herzens des Wettbewerbs. Porträt eines Unternehmens, das das Feuer seit fast einem Jahrhundert beherrscht.",
+    badge: "Offizieller Partner · Sponsor der Grill Arena",
+    sections: [
+      {
+        h: "Drei Jahre Präsenz – eine Partnerschaft, die sich aufdrängt",
+        p: [
+          "Manche Marken kommen und gehen, andere bleiben. Seit drei Jahren gehört Zip Feux fest zur Barbecue Expo: ein treuer Stand, ein leidenschaftliches Team und ein Produkt, das jeder Grillfan kennt, auch wenn er es nicht immer beim Namen nennt – der Anzünder, dieser kleine Handgriff, der einen Haufen Holzkohle in garbereite Glut verwandelt.",
+          "2027 wird aus dieser Präsenz eine echte Allianz. Zip Feux tritt dem Kreis der offiziellen Partner der Messe bei und setzt seinen Namen auf das spektakulärste Event im Parc Floral: die Grill Arena, in der die besten Pitmasters live gegeneinander antreten. Ein klares Symbol – denn vor jedem Battle, vor jeder Glut steht ein Funke. Und genau dieser Funke ist Zips Handwerk.",
+        ],
+      },
+      {
+        h: "Über 80 Jahre Meisterschaft im Umgang mit Feuer",
+        p: [
+          "Hinter Zip Feux steht Zip®, eine Marke mit bewusst gepflegtem irischem Erbe, herausgegeben von Standard Brands innerhalb der SHS-Gruppe. Ihr Slogan sagt alles: „Zip®, seit 80 Jahren mitten im Feuer des Geschehens“. Eine seltene Beständigkeit, entstanden aus einer grundlegenden Erfindung – dem Kerosin-Anzünder –, die eine lange Tradition von Innovation und Zuverlässigkeit begründete.",
+          "Von ihrem historischen Standort in Castlebellingham in Irland aus ist die Marke heute auf zahlreichen Märkten präsent: Vereinigtes Königreich, Irland, Frankreich, Belgien, Kanada und USA. Ein internationaler Akteur, der sich den Anspruch eines Herstellers bewahrt hat, der seinem Know-how verbunden ist und seine Verantwortung in den Bereichen Gesundheit und Sicherheit, Umwelt und Qualitätskontrolle ernst nimmt.",
+        ],
+      },
+      {
+        h: "Ein Sortiment für jedes Feuer",
+        p: ["Auch wenn Zip mit dem Anzünder begann, deckt das Sortiment heute das gesamte Feuerritual ab:"],
+        list: [
+          "Kerosin-Anzünder – das Original, für schnelles und zuverlässiges Anzünden;",
+          "Natürliche Anzünder – die ökologische Linie, die bereits 25 % des Umsatzes der Marke ausmacht;",
+          "Grillholzkohle – vom Funken bis zum Garen;",
+          "Winterbrennstoffe – für Kamin, Ofen und Feuerschale.",
+        ],
+      },
+      {
+        h: "Ein engagierter Partner für ein verantwortungsvolleres Feuer",
+        p: [
+          "Hier überrascht Zip Feux wohl am meisten. Fernab vom mitunter umweltbelastenden Image von Anzündprodukten verfolgt die Marke ein fünfjähriges Nachhaltigkeitsprogramm mit sehr konkreten Ergebnissen:",
+        ],
+        list: [
+          "Energie: Der Standort Castlebellingham läuft inzwischen zu 100 % mit erneuerbarer Energie (gegenüber 10 % vor März 2022);",
+          "Wasser: 9,5 Millionen Liter in fünf Jahren eingespart, also −50 % Verbrauch in der Produktion;",
+          "Abfall: null Deponie, alles wird energetisch verwertet;",
+          "Verpackungen: 2023 mit erneuerbaren Materialien (wie Zuckerrohr) neu gestaltet, was 1.430 erhaltenen Bäumen entspricht. FSC®-zertifizierte Produkte.",
+        ],
+      },
+      {
+        h: "Sponsor der Grill Arena: mitten im Feuer des Geschehens",
+        p: [
+          "Mit der Grill Arena wählt Zip Feux nicht irgendeinen Bereich der Messe. Sie ist die große Bühne der Messe: sechzehn Pitmasters, Live-Duelle, ein vor Publikum gekürter Champion. Und alles beginnt mit dem Anzünden. Schwer vorstellbar, dass eine Marke, deren Handwerk das Entfachen des Feuers ist, besser zu einem Format passen könnte, dessen DNA die Intensität der offenen Flamme ist.",
+          "Für Besucher wie Aussteller sendet diese Partnerschaft ein starkes Signal: Die Barbecue Expo 2027 umgibt sich mit traditionsreichen, zuverlässigen und engagierten Akteuren, die eine gemeinsame Leidenschaft teilen – die für ein gut beherrschtes Feuer.",
+        ],
+      },
+    ],
+    productsCaption: "Das Zip-Feux-Sortiment: Anzünder, Holzkohle und Brennstoffe.",
+    quote:
+      "Nach drei Ausgaben war es selbstverständlich, offizieller Partner der Barbecue Expo und Sponsor der Grill Arena zu werden. Es ist das Event, das unsere gesamte Community um das versammelt, was wir seit 80 Jahren tun: das Feuer entfachen.",
+    quoteAuthor: "Laurene Parkin — Zip Feux",
+    ctaTitle: "Treffen Sie Zip Feux auf der Barbecue Expo 2027",
+    ctaText:
+      "Wir sehen uns am 12., 13. und 14. März 2027 im Parc Floral de Paris – entdecken Sie Zip Feux und erleben Sie die von ihnen gesponserten Duelle der Grill Arena.",
+    ctaArena: "Die Grill Arena entdecken",
+    ctaExpo: "Partner / Aussteller werden",
+    more: "Weiterlesen",
+  },
+  nl: {
+    kicker: "Officiële partner 2027",
+    title: "Zip Feux, officiële partner van Barbecue Expo en sponsor van de Grill Arena",
+    lead: "Na drie edities aan onze zijde zet het aanmaakmerk met Ierse roots een stap verder: het wordt officiële partner van de beurs en sponsor van de Grill Arena, het kloppende hart van de competitie. Portret van een bedrijf dat het vuur al bijna een eeuw beheerst.",
+    badge: "Officiële partner · Sponsor van de Grill Arena",
+    sections: [
+      {
+        h: "Drie jaar aanwezig, een partnerschap dat voor de hand lag",
+        p: [
+          "Sommige merken komen en gaan, andere blijven. Al drie jaar maakt Zip Feux deel uit van het landschap van Barbecue Expo: een trouwe stand, een gepassioneerd team en een product dat elke barbecueliefhebber kent, ook al noemt hij het niet altijd bij naam — de aanmaakblokjes, dat kleine gebaar dat een hoop houtskool verandert in gloeiende kolen, klaar om op te koken.",
+          "In 2027 wordt die aanwezigheid een echte alliantie. Zip Feux treedt toe tot de kring van officiële partners van de beurs en verbindt zijn naam aan het meest spectaculaire evenement van het Parc Floral: de Grill Arena, waar de beste pitmasters het live tegen elkaar opnemen. Een helder symbool — want vóór elke battle, vóór elke gloeiende kool, is er een vonk. En die vonk is precies het vak van Zip.",
+        ],
+      },
+      {
+        h: "Meer dan 80 jaar vuur beheersen",
+        p: [
+          "Achter Zip Feux schuilt Zip®, een merk dat trots is op zijn Ierse erfgoed, uitgegeven door Standard Brands binnen de SHS-groep. De slogan zegt alles: „Zip®, al 80 jaar in het vuur van de actie”. Een zeldzame levensduur, geboren uit een baanbrekende uitvinding — het aanmaakblokje op kerosine — die een lange traditie van innovatie en betrouwbaarheid inluidde.",
+          "Vanuit zijn historische vestiging in Castlebellingham, Ierland, is het merk vandaag actief op tal van markten: het Verenigd Koninkrijk, Ierland, Frankrijk, België, Canada en de Verenigde Staten. Een internationale speler die de veeleisendheid heeft behouden van een fabrikant die gehecht is aan zijn vakmanschap en aandacht heeft voor zijn verantwoordelijkheden op het gebied van gezondheid en veiligheid, milieu en kwaliteitscontrole.",
+        ],
+      },
+      {
+        h: "Een assortiment voor elk vuur",
+        p: ["Hoewel Zip begon met het aanmaakblokje, omvat het assortiment vandaag het volledige vuurritueel:"],
+        list: [
+          "Aanmaakblokjes op kerosine — het origineel, garantie voor snel en betrouwbaar aansteken;",
+          "Natuurlijke aanmaakblokjes — het ecologische assortiment, al goed voor 25 % van de verkoop van het merk;",
+          "Barbecuehoutskool — van vonk tot bereiding;",
+          "Winterbrandstoffen — voor open haard, kachel en vuurschaal.",
+        ],
+      },
+      {
+        h: "Een geëngageerde partner voor een verantwoordelijker vuur",
+        p: [
+          "Hier verrast Zip Feux waarschijnlijk het meest. Ver weg van het soms vervuilende imago van aanmaakproducten voert het merk een vijfjarig duurzaamheidsprogramma met zeer concrete resultaten:",
+        ],
+        list: [
+          "Energie: de vestiging in Castlebellingham draait nu voor 100 % op hernieuwbare energie (tegenover 10 % vóór maart 2022);",
+          "Water: 9,5 miljoen liter bespaard in vijf jaar, oftewel −50 % verbruik in de productie;",
+          "Afval: nul storten, alles wordt energetisch gevaloriseerd;",
+          "Verpakkingen: in 2023 herontworpen met hernieuwbare materialen (zoals suikerriet), het equivalent van 1.430 gespaarde bomen. FSC®-gecertificeerde producten.",
+        ],
+      },
+      {
+        h: "Sponsor van de Grill Arena: in het hart van het vuur van de actie",
+        p: [
+          "Door zich te verbinden aan de Grill Arena kiest Zip Feux niet zomaar een zone van de beurs. Het is het grote podium van de beurs: zestien pitmasters, live duels, een kampioen die voor het publiek wordt gekroond. En alles begint met het aansteken. Een natuurlijkere combinatie is nauwelijks denkbaar tussen een merk dat vuur doet ontbranden en een format waarvan het DNA de intensiteit van de open vlam is.",
+          "Voor bezoekers en exposanten zendt dit partnerschap een sterk signaal uit: Barbecue Expo 2027 omringt zich met gevestigde, betrouwbare en geëngageerde spelers die één passie delen — die voor goed beheerst vuur.",
+        ],
+      },
+    ],
+    productsCaption: "Het Zip Feux-assortiment: aanmaakblokjes, houtskool en brandstoffen.",
+    quote:
+      "Na drie edities was het vanzelfsprekend om officiële partner van Barbecue Expo en sponsor van de Grill Arena te worden. Het is het evenement dat onze hele community samenbrengt rond wat we al 80 jaar doen: het vuur aansteken.",
+    quoteAuthor: "Laurene Parkin — Zip Feux",
+    ctaTitle: "Ontmoet Zip Feux op Barbecue Expo 2027",
+    ctaText:
+      "Afspraak op 12, 13 en 14 maart 2027 in het Parc Floral de Paris om Zip Feux te ontdekken en de door hen gesponsorde duels van de Grill Arena bij te wonen.",
+    ctaArena: "Ontdek de Grill Arena",
+    ctaExpo: "Partner / exposant worden",
+    more: "Verder lezen",
+  },
+  pt: {
+    kicker: "Parceiro oficial 2027",
+    title: "Zip Feux, parceiro oficial da Barbecue Expo e patrocinador da Grill Arena",
+    lead: "Depois de três edições ao nosso lado, a marca de acendalhas de herança irlandesa dá um passo em frente: torna-se parceiro oficial da feira e patrocinador da Grill Arena, o coração pulsante da competição. Retrato de uma empresa que domina o fogo há quase um século.",
+    badge: "Parceiro oficial · Patrocinador da Grill Arena",
+    sections: [
+      {
+        h: "Três anos de presença, uma parceria que se impõe",
+        p: [
+          "Há marcas que passam e outras que ficam. Há três anos que a Zip Feux faz parte da paisagem da Barbecue Expo: um stand fiel, uma equipa apaixonada e um produto que qualquer amante de churrasco conhece, mesmo sem sempre o nomear — a acendalha, esse pequeno gesto que transforma um monte de carvão em brasas prontas para cozinhar.",
+          "Em 2027, essa presença torna-se uma verdadeira aliança. A Zip Feux junta-se ao círculo de parceiros oficiais da feira e associa o seu nome ao evento mais espetacular do Parc Floral: a Grill Arena, onde os melhores pitmasters se defrontam ao vivo. Um símbolo evidente — porque antes de cada battle, antes de cada brasa, há uma faísca. E essa faísca é precisamente o ofício da Zip.",
+        ],
+      },
+      {
+        h: "Mais de 80 anos a dominar o fogo",
+        p: [
+          "Por trás da Zip Feux está a Zip®, uma marca que assume a sua herança irlandesa, editada pela Standard Brands no seio do grupo SHS. O seu slogan diz tudo: «Zip®, no fogo da ação há 80 anos». Uma longevidade rara, nascida de uma invenção fundadora — a acendalha a querosene — que lançou uma longa tradição de inovação e fiabilidade.",
+          "A partir da sua histórica fábrica de Castlebellingham, na Irlanda, a marca está hoje presente em numerosos mercados: Reino Unido, Irlanda, França, Bélgica, Canadá e Estados Unidos. Um ator internacional que manteve a exigência de um fabricante ligado ao seu saber-fazer, atento às suas responsabilidades em matéria de saúde e segurança, ambiente e controlo de qualidade.",
+        ],
+      },
+      {
+        h: "Uma gama pensada para todos os fogos",
+        p: ["Embora a Zip tenha nascido com a acendalha, a sua gama cobre hoje todo o ritual do fogo:"],
+        list: [
+          "Acendalhas a querosene — o original, garantia de um acendimento rápido e fiável;",
+          "Acendalhas naturais — a gama ecológica, que já representa 25 % das vendas da marca;",
+          "Carvão vegetal para churrasco — para passar da faísca à confeção;",
+          "Combustíveis de inverno — para a lareira, o recuperador e o braseiro.",
+        ],
+      },
+      {
+        h: "Um parceiro empenhado num fogo mais responsável",
+        p: [
+          "É talvez aqui que a Zip Feux mais surpreende. Longe da imagem por vezes poluente dos produtos de acendimento, a marca conduz um programa de sustentabilidade a cinco anos com resultados muito concretos:",
+        ],
+        list: [
+          "Energia: a fábrica de Castlebellingham funciona agora a 100 % com energia renovável (contra 10 % antes de março de 2022);",
+          "Água: 9,5 milhões de litros poupados em cinco anos, ou seja, −50 % de consumo na produção;",
+          "Resíduos: zero aterro, tudo é valorizado energeticamente;",
+          "Embalagens: redesenhadas em 2023 com materiais renováveis (como a cana-de-açúcar), o equivalente a 1.430 árvores preservadas. Produtos com certificação FSC®.",
+        ],
+      },
+      {
+        h: "Patrocinador da Grill Arena: no coração do fogo da ação",
+        p: [
+          "Ao associar-se à Grill Arena, a Zip Feux não escolhe uma zona qualquer da feira. É o grande palco da feira: dezasseis pitmasters, duelos ao vivo, um campeão coroado perante o público. E tudo começa com um acendimento. Difícil imaginar uma associação mais natural entre uma marca cujo ofício é acender o fogo e um formato cujo ADN é a intensidade da chama viva.",
+          "Para visitantes e expositores, esta parceria envia um sinal forte: a Barbecue Expo 2027 rodeia-se de atores históricos, fiáveis e empenhados, que partilham uma mesma paixão — a do fogo bem dominado.",
+        ],
+      },
+    ],
+    productsCaption: "A gama Zip Feux: acendalhas, carvão e combustíveis.",
+    quote:
+      "Depois de três edições, tornarmo-nos parceiro oficial da Barbecue Expo e patrocinador da Grill Arena era uma evidência. É o evento que reúne toda a nossa comunidade em torno daquilo que fazemos há 80 anos: acender o fogo.",
+    quoteAuthor: "Laurene Parkin — Zip Feux",
+    ctaTitle: "Encontre a Zip Feux na Barbecue Expo 2027",
+    ctaText:
+      "Encontro marcado a 12, 13 e 14 de março de 2027 no Parc Floral de Paris para descobrir a Zip Feux e assistir aos confrontos da Grill Arena que patrocinam.",
+    ctaArena: "Descobrir a Grill Arena",
+    ctaExpo: "Tornar-se parceiro / expositor",
+    more: "Para saber mais",
+  },
+  it: {
+    kicker: "Partner ufficiale 2027",
+    title: "Zip Feux, partner ufficiale di Barbecue Expo e sponsor della Grill Arena",
+    lead: "Dopo tre edizioni al nostro fianco, il marchio di accendifuoco dalle radici irlandesi compie un salto: diventa partner ufficiale della fiera e sponsor della Grill Arena, il cuore pulsante della competizione. Ritratto di un'azienda che domina il fuoco da quasi un secolo.",
+    badge: "Partner ufficiale · Sponsor della Grill Arena",
+    sections: [
+      {
+        h: "Tre anni di presenza, una partnership che si impone",
+        p: [
+          "Ci sono marchi che passano e altri che restano. Da tre anni Zip Feux fa parte del panorama di Barbecue Expo: uno stand fedele, un team appassionato e un prodotto che ogni appassionato di barbecue conosce, anche senza sempre nominarlo — l'accendifuoco, quel piccolo gesto che trasforma un mucchio di carbone in brace pronta per cucinare.",
+          "Nel 2027 questa presenza diventa una vera alleanza. Zip Feux entra nella cerchia dei partner ufficiali della fiera e lega il suo nome all'evento più spettacolare del Parc Floral: la Grill Arena, dove i migliori pitmaster si sfidano dal vivo. Un simbolo chiarissimo — perché prima di ogni battle, prima di ogni brace, c'è una scintilla. E quella scintilla è esattamente il mestiere di Zip.",
+        ],
+      },
+      {
+        h: "Oltre 80 anni a domare il fuoco",
+        p: [
+          "Dietro Zip Feux c'è Zip®, un marchio che rivendica le proprie radici irlandesi, prodotto da Standard Brands all'interno del gruppo SHS. Il suo slogan dice tutto: «Zip®, nel fuoco dell'azione da 80 anni». Una longevità rara, nata da un'invenzione fondativa — l'accendifuoco al cherosene — che ha dato il via a una lunga tradizione di innovazione e affidabilità.",
+          "Dal suo storico stabilimento di Castlebellingham, in Irlanda, il marchio è oggi presente su numerosi mercati: Regno Unito, Irlanda, Francia, Belgio, Canada e Stati Uniti. Un player internazionale che ha conservato il rigore di un produttore legato al proprio know-how, attento alle proprie responsabilità in materia di salute e sicurezza, ambiente e controllo qualità.",
+        ],
+      },
+      {
+        h: "Una gamma pensata per ogni fuoco",
+        p: ["Se Zip è nata con l'accendifuoco, oggi la sua gamma copre l'intero rituale del fuoco:"],
+        list: [
+          "Accendifuoco al cherosene — l'originale, garanzia di un'accensione rapida e affidabile;",
+          "Accendifuoco naturali — la gamma ecologica, che rappresenta già il 25 % delle vendite del marchio;",
+          "Carbone di legna per barbecue — per passare dalla scintilla alla cottura;",
+          "Combustibili invernali — per il camino, la stufa e il braciere.",
+        ],
+      },
+      {
+        h: "Un partner impegnato per un fuoco più responsabile",
+        p: [
+          "È forse qui che Zip Feux sorprende di più. Lontano dall'immagine talvolta inquinante dei prodotti per l'accensione, il marchio porta avanti un programma di sostenibilità quinquennale con risultati molto concreti:",
+        ],
+        list: [
+          "Energia: lo stabilimento di Castlebellingham funziona ormai al 100 % con energia rinnovabile (contro il 10 % prima di marzo 2022);",
+          "Acqua: 9,5 milioni di litri risparmiati in cinque anni, ovvero −50 % di consumi nella produzione;",
+          "Rifiuti: zero discarica, tutto viene valorizzato energeticamente;",
+          "Imballaggi: ridisegnati nel 2023 con materiali rinnovabili (come la canna da zucchero), l'equivalente di 1.430 alberi preservati. Prodotti certificati FSC®.",
+        ],
+      },
+      {
+        h: "Sponsor della Grill Arena: nel cuore del fuoco dell'azione",
+        p: [
+          "Associandosi alla Grill Arena, Zip Feux non sceglie una zona qualsiasi della fiera. È il palcoscenico principale della fiera: sedici pitmaster, duelli dal vivo, un campione incoronato davanti al pubblico. E tutto inizia con un'accensione. Difficile immaginare un'associazione più naturale tra un marchio il cui mestiere è accendere il fuoco e un format il cui DNA è l'intensità della fiamma viva.",
+          "Per visitatori ed espositori, questa partnership lancia un segnale forte: Barbecue Expo 2027 si circonda di player storici, affidabili e impegnati, che condividono una stessa passione — quella del fuoco ben domato.",
+        ],
+      },
+    ],
+    productsCaption: "La gamma Zip Feux: accendifuoco, carbone e combustibili.",
+    quote:
+      "Dopo tre edizioni, diventare partner ufficiale di Barbecue Expo e sponsor della Grill Arena era naturale. È l'evento che riunisce tutta la nostra community attorno a ciò che facciamo da 80 anni: accendere il fuoco.",
+    quoteAuthor: "Laurene Parkin — Zip Feux",
+    ctaTitle: "Incontrate Zip Feux a Barbecue Expo 2027",
+    ctaText:
+      "Appuntamento il 12, 13 e 14 marzo 2027 al Parc Floral de Paris per scoprire Zip Feux e assistere alle sfide della Grill Arena che sponsorizzano.",
+    ctaArena: "Scopri la Grill Arena",
+    ctaExpo: "Diventa partner / espositore",
+    more: "Per approfondire",
+  },
 };
-
-const ALIASES: Record<string, "fr" | "en"> = { es: "fr", de: "fr", nl: "fr", pt: "fr", it: "fr" };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const a = ARTICLE[locale] || ARTICLE[ALIASES[locale] || "fr"];
+  const a = ARTICLE[locale] || ARTICLE.fr;
   return buildMetadata(locale, PATH, {
     title: `${a.title} — Barbecue Expo`,
     description: a.lead,
@@ -162,7 +465,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ZipFeuxArticle() {
   const locale = await getLocale();
-  const a = ARTICLE[locale] || ARTICLE[ALIASES[locale] || "fr"];
+  const a = ARTICLE[locale] || ARTICLE.fr;
 
   return (
     <article className="bg-cream-50">
@@ -279,7 +582,7 @@ export default async function ZipFeuxArticle() {
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
             </Link>
             <Link
-              href="/devenez-exposants"
+              href="/presentation-exposants"
               className="group inline-flex items-center justify-center gap-2 border border-cream-50/30 hover:border-gold-500 text-cream-50 hover:text-gold-500 px-6 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors"
             >
               {a.ctaExpo}

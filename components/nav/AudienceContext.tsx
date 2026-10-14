@@ -49,7 +49,7 @@ const B2C_PATHS = [
   "/grill-arena",
   "/programme",
   "/program",
-  "/billetterie/particulier",
+  "/billetterie",
   "/pourquoi-visiter",
 ];
 

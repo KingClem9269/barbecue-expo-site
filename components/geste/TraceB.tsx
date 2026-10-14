@@ -11,13 +11,20 @@ export default function TraceB({
   mode = "vue",
   className = "",
   titre = "Barbecue Expo",
+  debut = 0,
 }: {
   mode?: ModeGeste;
   className?: string;
   titre?: string;
+  /** délai avant le premier trait, en ms (ex. après la Saisie d'un titre) */
+  debut?: number;
 }) {
   return (
-    <Declencheur mode={mode} className={`trace-b ${className}`}>
+    <Declencheur
+      mode={mode}
+      className={`trace-b ${className}`}
+      style={{ "--trace-debut": `${debut}ms` } as CSSProperties}
+    >
       <svg viewBox={B_VIEWBOX} role="img" aria-label={titre} fill="currentColor" className="block w-full h-auto">
         {TRAITS_B.map((t, i) => (
           <path key={i} className="trait" d={t.d} style={{ "--i": i } as CSSProperties} />

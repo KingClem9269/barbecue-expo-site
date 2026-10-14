@@ -24,7 +24,6 @@ const MAIN_PATHS: Entry[] = [
   { path: "/billetterie", priority: 0.95, changeFrequency: "weekly" },
   { path: "/billetterie/pro-b2b", priority: 0.7, changeFrequency: "monthly" },
   // Exposer / pro
-  { path: "/devenez-exposants", priority: 0.9, changeFrequency: "monthly" },
   { path: "/pourquoi-exposer", priority: 0.85, changeFrequency: "monthly" },
   { path: "/presentation-exposants", priority: 0.85, changeFrequency: "monthly" },
   { path: "/exposants", priority: 0.85, changeFrequency: "weekly" },

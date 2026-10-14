@@ -12,7 +12,7 @@ export const NavMenuItem = ({
   const { href, isExternal } = getMenuItemLinkProps(menuItem);
 
   return (
-    <li className={`hidden lg:block ${className}`}>
+    <li className={`hidden xl:block ${className}`}>
       <MenuItemLink
         href={href}
         isExternal={isExternal}

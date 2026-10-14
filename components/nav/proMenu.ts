@@ -25,7 +25,7 @@ export const PRO_MENU: ProMenuItem[] = [
       pt: "Ser expositor",
       it: "Diventare espositore",
     },
-    href: "/devenez-exposants",
+    href: "/presentation-exposants",
   },
   {
     key: "exhibitors",

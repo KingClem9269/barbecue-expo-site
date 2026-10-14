@@ -4,7 +4,7 @@ import Image from "next/image";
 import PortraitFallback from "@/components/pitmasters/PortraitFallback";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
-import type { Pitmaster } from "@/lib/pitmasters-shared";
+import { getResetLabel, getSessionDay, type Pitmaster } from "@/lib/pitmasters-shared";
 
 export type PitmastersListProps = {
   pitmasters: Pitmaster[];
@@ -26,6 +26,7 @@ export type PitmastersListProps = {
 
 export default function PitmastersList({
   pitmasters,
+  locale,
   countryNames,
   labels,
   days,
@@ -79,7 +80,7 @@ export default function PitmastersList({
           onChange={setDay}
           options={[
             { value: "all", label: labels.all },
-            ...days.map((d) => ({ value: d, label: d })),
+            ...days.map((d) => ({ value: d, label: getSessionDay(d, locale) })),
           ]}
         />
         {(country !== "all" || day !== "all") && (
@@ -88,7 +89,7 @@ export default function PitmastersList({
             onClick={resetAll}
             className="text-xs md:text-sm uppercase tracking-widest font-semibold text-gold-700 hover:text-ink-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded px-2"
           >
-            Reset
+            {getResetLabel(locale)}
           </button>
         )}
       </div>

@@ -1,4 +1,5 @@
 "use client";
+import { CHIFFRES } from "@/lib/chiffres";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -46,7 +47,7 @@ const UI: Record<
       },
       {
         title: "Zone Exposants",
-        body: "200+ marques internationales. Testez le matériel en conditions réelles. Achat direct possible.",
+        body: `${CHIFFRES.marques2027} marques internationales. Testez le matériel en conditions réelles. Achat direct possible.`,
       },
       {
         title: "Masterclasses",
@@ -74,7 +75,7 @@ const UI: Record<
       },
       {
         title: "Exhibitor Zone",
-        body: "200+ international brands. Test the gear in real conditions. Direct purchase possible.",
+        body: `${CHIFFRES.marques2027} international brands. Test the gear in real conditions. Direct purchase possible.`,
       },
       {
         title: "Masterclasses",
@@ -97,7 +98,7 @@ const UI: Record<
       "Un recorrido pensado para los conocedores. Pruebe, aprenda, deguste, compita y salga transformado.",
     zones: [
       { title: "Grill Arena", body: "Pitmasters internacionales se enfrentan en battles en directo. Un campeón cada noche." },
-      { title: "Zona Expositores", body: "200+ marcas internacionales. Pruebe el material en condiciones reales. Compra directa posible." },
+      { title: "Zona Expositores", body: `${CHIFFRES.marques2027} marcas internacionales. Pruebe el material en condiciones reales. Compra directa posible.` },
       { title: "Masterclasses", body: "12 sesiones de 20 plazas. Inmersión íntima con un pitmaster. Reserve temprano." },
       { title: "Street Food", body: "16 puestos de comida callejera seleccionados. Lo mejor del BBQ street food en un solo lugar." },
       { title: "BBQ Autoservicio", body: "Encienda su propio fuego. Puestos de cocción de libre acceso para asar sus productos y probar el material in situ." },
@@ -110,7 +111,7 @@ const UI: Record<
       "Eine Reise für Kenner. Testen, lernen, genießen, kämpfen — und verändert nach Hause gehen.",
     zones: [
       { title: "Grill Arena", body: "Internationale Pitmaster treten in Live-Battles gegeneinander an. Jeden Abend ein Champion." },
-      { title: "Aussteller-Zone", body: "200+ internationale Marken. Testen Sie die Ausrüstung unter realen Bedingungen." },
+      { title: "Aussteller-Zone", body: `${CHIFFRES.marques2027} internationale Marken. Testen Sie die Ausrüstung unter realen Bedingungen.` },
       { title: "Masterclasses", body: "12 Sessions mit je 20 Plätzen. Intime Immersion mit einem Pitmaster. Früh buchen." },
       { title: "Street Food", body: "16 ausgewählte Street-Food-Stände. Das beste BBQ-Street-Food in Paris, an einem Ort." },
       { title: "Self-Service-BBQ", body: "Entfachen Sie Ihr eigenes Feuer. Frei zugängliche Grillstationen, um Ihre Produkte zu grillen und die Ausrüstung vor Ort zu testen." },
@@ -123,7 +124,7 @@ const UI: Record<
       "Een parcours ontworpen voor kenners. Test, leer, proef, strijd — en ga veranderd naar huis.",
     zones: [
       { title: "Grill Arena", body: "Internationale pitmasters strijden live tegen elkaar. Elke avond een kampioen." },
-      { title: "Exposantenzone", body: "200+ internationale merken. Test het materiaal onder echte omstandigheden. Directe aankoop mogelijk." },
+      { title: "Exposantenzone", body: `${CHIFFRES.marques2027} internationale merken. Test het materiaal onder echte omstandigheden. Directe aankoop mogelijk.` },
       { title: "Masterclasses", body: "12 sessies met 20 plaatsen. Intieme onderdompeling met een pitmaster. Boek vroeg." },
       { title: "Street Food", body: "16 geselecteerde street food-kraampjes. De beste BBQ-street-food van Parijs op één plek." },
       { title: "Zelfbedienings-BBQ", body: "Steek je eigen vuur aan. Vrij toegankelijke kookposten om je producten te grillen en het materiaal ter plaatse te testen." },
@@ -136,7 +137,7 @@ const UI: Record<
       "Um percurso pensado para os conhecedores. Teste, aprenda, deguste, compita e saia transformado.",
     zones: [
       { title: "Grill Arena", body: "Pitmasters internacionais enfrentam-se em battles em direto. Um campeão cada noite." },
-      { title: "Zona Expositores", body: "200+ marcas internacionais. Teste o material em condições reais. Compra direta possível." },
+      { title: "Zona Expositores", body: `${CHIFFRES.marques2027} marcas internacionais. Teste o material em condições reais. Compra direta possível.` },
       { title: "Masterclasses", body: "12 sessões com 20 lugares cada. Imersão íntima com um pitmaster. Reserve cedo." },
       { title: "Street Food", body: "16 bancas selecionadas. A melhor street food BBQ de Paris num só lugar." },
       { title: "BBQ Self-Service", body: "Acenda o seu próprio fogo. Postos de cozedura de livre acesso para grelhar os seus produtos e testar o material no local." },
@@ -149,7 +150,7 @@ const UI: Record<
       "Un percorso pensato per i conoscitori. Provate, imparate, degustate, sfidatevi — e uscite cambiati.",
     zones: [
       { title: "Grill Arena", body: "Pitmaster internazionali si sfidano in battle dal vivo. Un campione ogni sera." },
-      { title: "Zona Espositori", body: "200+ marchi internazionali. Testate il materiale in condizioni reali. Acquisto diretto possibile." },
+      { title: "Zona Espositori", body: `${CHIFFRES.marques2027} marchi internazionali. Testate il materiale in condizioni reali. Acquisto diretto possibile.` },
       { title: "Masterclasses", body: "12 sessioni da 20 posti. Immersione intima con un pitmaster. Prenotate presto." },
       { title: "Street Food", body: "16 bancarelle selezionate. Il meglio del BBQ street food di Parigi in un solo posto." },
       { title: "BBQ Self-Service", body: "Accendi il tuo fuoco. Postazioni di cottura ad accesso libero per grigliare i tuoi prodotti e provare l'attrezzatura sul posto." },

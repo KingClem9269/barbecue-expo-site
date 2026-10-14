@@ -3,18 +3,12 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { sendGAEvent } from "@next/third-parties/google";
+import { inscrireNewsletter } from "@/lib/newsletter";
 
 /**
- * Newsletter — POST direct vers la fonction Pylot (Supabase edge function).
- * La clé `apikey` est une clé PUBLIABLE (sb_publishable_…), conçue pour un
- * usage navigateur — à ne pas confondre avec la clé secrète du CRM (devis).
+ * Newsletter du pied de page (envoi : lib/newsletter.ts).
  * L'inscription a lieu sur la page → l'événement GA4 `newsletter_signup` est émis.
  */
-const PYLOT_FORM_URL =
-  "https://picdlgrtgaavqywehfil.supabase.co/functions/v1/form-submit";
-const PYLOT_FORM_ID = "0bff2fd4-671d-4f16-afe3-ab318eab3804";
-const PYLOT_PUBLISHABLE_KEY = "sb_publishable_UpBJ_VV92fea9pj4yPaBng_23H9dCNM";
-
 export default function Newsletter() {
   const t = useTranslations("newsletter");
   const [email, setEmail] = useState("");
@@ -31,27 +25,16 @@ export default function Newsletter() {
     setMessage("");
 
     try {
-      const res = await fetch(PYLOT_FORM_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: PYLOT_PUBLISHABLE_KEY,
-        },
-        body: JSON.stringify({
-          form_id: PYLOT_FORM_ID,
-          data: { email: email.trim(), edition: "barbecue_expo" },
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
+      const res = await inscrireNewsletter(email);
 
-      if (!res.ok || data?.error) {
+      if (!res.ok) {
         setStatus("error");
-        setMessage(data?.error || t("error_unexpected"));
+        setMessage(res.message || t("error_unexpected"));
         return;
       }
 
       setStatus("success");
-      setMessage(data?.message || t("success"));
+      setMessage(res.message || t("success"));
       // Conversion GA4 : inscription newsletter réussie
       sendGAEvent("event", "newsletter_signup", { method: "footer" });
       setEmail("");

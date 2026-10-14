@@ -14,6 +14,16 @@ const DESC: Record<string, string> = {
   it: "Piattaforma matchmaking Barbecue Expo 2027. Distributori, catene, e-commerce — prenota i tuoi incontri B2B prima della fiera.",
 };
 
+const META_TITLE: Record<string, string> = {
+  fr: "Espace Pro & B2B",
+  en: "Pro & B2B Area",
+  es: "Espacio Pro & B2B",
+  de: "Pro- & B2B-Bereich",
+  nl: "Pro- & B2B-ruimte",
+  pt: "Espaço Pro & B2B",
+  it: "Area Pro & B2B",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,7 +31,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata(locale, "/espace-pro-b2b", {
-    title: "Espace Pro & B2B — Barbecue Expo 2027",
+    title: `${META_TITLE[locale] || META_TITLE.fr} — Barbecue Expo 2027`,
     description: DESC[locale] || DESC.fr,
   });
 }

@@ -37,12 +37,12 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function CountryPicker({ value, onChange, mode, invalid }: {
   value: string; onChange: (iso: string) => void; mode: "country" | "dial"; invalid?: boolean;
 }) {
-  const { t } = useT();
-  const countries = useMemo(() => getCountries(), []);
+  const { t, lang } = useT();
+  const countries = useMemo(() => getCountries(lang), [lang]);
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const ref = useRef<HTMLDivElement>(null);
-  const sel = countryByIso(value);
+  const sel = countryByIso(value, lang);
 
   useEffect(() => {
     if (!open) return;
@@ -285,7 +285,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
                 <input value={form.lastName} onChange={(e) => set("lastName", e.target.value)} className={inputCls(!!errors.lastName)} />
               </Field>
               <Field label="Email" required error={errors.email} className="sm:col-span-2">
-                <input type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls(!!errors.email)} placeholder="vous@societe.com" />
+                <input type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls(!!errors.email)} placeholder={t("vous@societe.com")} />
               </Field>
 
               <Field label="Téléphone" required error={errors.phone} className="sm:col-span-2">

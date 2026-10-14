@@ -28,15 +28,57 @@ const UI: Record<string, { eyebrow: string; title: string; intro: string; intern
     external: "View the event",
     soon: "Soon",
   },
+  es: {
+    eyebrow: "Calendario del ecosistema",
+    title: "Los eventos de barbacoa\nen Francia",
+    intro: "Salones, festivales y competiciones: toda la agenda del fuego, del gran público a los profesionales. Temporada 2026-2027.",
+    internal: "Entradas e información",
+    external: "Ver el evento",
+    soon: "Próximamente",
+  },
+  de: {
+    eyebrow: "Kalender des Ökosystems",
+    title: "Barbecue-Events\nin Frankreich",
+    intro: "Messen, Festivals und Wettbewerbe: der komplette Feuer-Kalender, vom breiten Publikum bis zu den Profis. Saison 2026-2027.",
+    internal: "Tickets & Infos",
+    external: "Zum Event",
+    soon: "Demnächst",
+  },
+  nl: {
+    eyebrow: "Kalender van het ecosysteem",
+    title: "Barbecue-evenementen\nin Frankrijk",
+    intro: "Beurzen, festivals en wedstrijden: de volledige vuuragenda, van het grote publiek tot de professionals. Seizoen 2026-2027.",
+    internal: "Tickets & info",
+    external: "Bekijk het evenement",
+    soon: "Binnenkort",
+  },
+  pt: {
+    eyebrow: "Calendário do ecossistema",
+    title: "Os eventos de barbecue\nem França",
+    intro: "Salões, festivais e competições: toda a agenda do fogo, do grande público aos profissionais. Temporada 2026-2027.",
+    internal: "Bilheteira e informações",
+    external: "Ver o evento",
+    soon: "Em breve",
+  },
+  it: {
+    eyebrow: "Calendario dell'ecosistema",
+    title: "Gli eventi barbecue\nin Francia",
+    intro: "Fiere, festival e competizioni: tutta l'agenda del fuoco, dal grande pubblico ai professionisti. Stagione 2026-2027.",
+    internal: "Biglietti e info",
+    external: "Vedi l'evento",
+    soon: "Prossimamente",
+  },
 };
+
+type Tr = { fr: string; en: string; es?: string; de?: string; nl?: string; pt?: string; it?: string };
 
 type Ev = {
   key: string;
-  badge: { fr: string; en: string };
+  badge: Tr;
   name: string;
-  when: { fr: string; en: string };
+  when: Tr;
   where: string;
-  desc: { fr: string; en: string };
+  desc: Tr;
   href: string; // chemin interne ("/...") ou URL externe ("https://...")
   enabled?: boolean;
 };
@@ -44,66 +86,111 @@ type Ev = {
 const EVENTS: Ev[] = [
   {
     key: "fest-paris",
-    badge: { fr: "Festival", en: "Festival" },
+    badge: { fr: "Festival", en: "Festival", es: "Festival", de: "Festival", nl: "Festival", pt: "Festival", it: "Festival" },
     name: "Barbecue Fest — Paris",
-    when: { fr: "4-5 juillet 2026", en: "July 4-5, 2026" },
+    when: { fr: "4-5 juillet 2026", en: "July 4-5, 2026", es: "4-5 de julio de 2026", de: "4.-5. Juli 2026", nl: "4-5 juli 2026", pt: "4-5 de julho de 2026", it: "4-5 luglio 2026" },
     where: "Île des Impressionnistes, Chatou",
     desc: {
       fr: "Le festival grand public : street food au feu de bois, concerts live et chefs d'exception.",
       en: "The public festival: wood-fired street food, live concerts and top chefs.",
+      es: "El festival para el gran público: street food a la leña, conciertos en directo y chefs excepcionales.",
+      de: "Das Publikumsfestival: Street Food vom Holzfeuer, Live-Konzerte und herausragende Köche.",
+      nl: "Het publieksfestival: street food op houtvuur, liveconcerten en uitzonderlijke chefs.",
+      pt: "O festival para o grande público: street food em fogo de lenha, concertos ao vivo e chefs de exceção.",
+      it: "Il festival per il grande pubblico: street food a legna, concerti dal vivo e chef d'eccezione.",
     },
     href: "https://www.barbecue-fest.com/paris/",
   },
   {
     key: "fest-normandie",
-    badge: { fr: "Festival", en: "Festival" },
+    badge: { fr: "Festival", en: "Festival", es: "Festival", de: "Festival", nl: "Festival", pt: "Festival", it: "Festival" },
     name: "Barbecue Fest — Normandie",
-    when: { fr: "Édition de printemps", en: "Spring edition" },
+    when: { fr: "Édition de printemps", en: "Spring edition", es: "Edición de primavera", de: "Frühjahrsausgabe", nl: "Voorjaarseditie", pt: "Edição de primavera", it: "Edizione primaverile" },
     where: "Normandie",
     desc: {
       fr: "L'édition normande du festival Food + Music.",
       en: "The Normandy edition of the Food + Music festival.",
+      es: "La edición normanda del festival Food + Music.",
+      de: "Die normannische Ausgabe des Food + Music Festivals.",
+      nl: "De Normandische editie van het Food + Music-festival.",
+      pt: "A edição normanda do festival Food + Music.",
+      it: "L'edizione normanna del festival Food + Music.",
     },
     href: "https://www.barbecue-fest.com/normandie/",
   },
   {
     key: "piment",
-    badge: { fr: "Compétition", en: "Competition" },
+    badge: { fr: "Compétition", en: "Competition", es: "Competición", de: "Wettbewerb", nl: "Wedstrijd", pt: "Competição", it: "Competizione" },
     name: "Le Piment d'Or",
-    when: { fr: "Aux éditions du Barbecue Fest", en: "At the Barbecue Fest editions" },
+    when: { fr: "Aux éditions du Barbecue Fest", en: "At the Barbecue Fest editions", es: "En las ediciones del Barbecue Fest", de: "Bei den Ausgaben des Barbecue Fest", nl: "Tijdens de edities van Barbecue Fest", pt: "Nas edições do Barbecue Fest", it: "Alle edizioni del Barbecue Fest" },
     where: "Normandie & Paris",
     desc: {
       fr: "Le championnat de sauces piquantes : candidats, épreuves et récompenses.",
       en: "The hot-sauce championship: contestants, challenges and awards.",
+      es: "El campeonato de salsas picantes: candidatos, pruebas y premios.",
+      de: "Die Meisterschaft der scharfen Saucen: Teilnehmer, Prüfungen und Auszeichnungen.",
+      nl: "Het kampioenschap pikante sauzen: deelnemers, proeven en prijzen.",
+      pt: "O campeonato de molhos picantes: candidatos, provas e prémios.",
+      it: "Il campionato delle salse piccanti: concorrenti, prove e premi.",
     },
     href: "https://lepimentdor.com/championnat",
   },
   {
     key: "expo",
-    badge: { fr: "Salon pro & grand public", en: "Trade & public show" },
+    badge: { fr: "Salon pro & grand public", en: "Trade & public show", es: "Salón profesional y gran público", de: "Fach- & Publikumsmesse", nl: "Vak- & publieksbeurs", pt: "Salão profissional e grande público", it: "Fiera pro & grande pubblico" },
     name: "Barbecue Expo",
-    when: { fr: "12-13-14 mars 2027", en: "March 12-13-14, 2027" },
+    when: { fr: "12-13-14 mars 2027", en: "March 12-13-14, 2027", es: "12-13-14 de marzo de 2027", de: "12.-13.-14. März 2027", nl: "12-13-14 maart 2027", pt: "12-13-14 de março de 2027", it: "12-13-14 marzo 2027" },
     where: "Parc Floral de Paris",
     desc: {
       fr: "Le plus grand salon barbecue d'Europe : marques, exposants, innovations, Grill Arena et pitmasters.",
       en: "Europe's biggest BBQ show: brands, exhibitors, innovations, Grill Arena and pitmasters.",
+      es: "El mayor salón de barbacoa de Europa: marcas, expositores, innovaciones, Grill Arena y pitmasters.",
+      de: "Die größte Barbecue-Messe Europas: Marken, Aussteller, Innovationen, Grill Arena und Pitmaster.",
+      nl: "De grootste barbecuebeurs van Europa: merken, exposanten, innovaties, Grill Arena en pitmasters.",
+      pt: "O maior salão de barbecue da Europa: marcas, expositores, inovações, Grill Arena e pitmasters.",
+      it: "La più grande fiera del barbecue d'Europa: marchi, espositori, innovazioni, Grill Arena e pitmaster.",
     },
     href: "/billetterie",
   },
   {
     key: "coupe",
-    badge: { fr: "Compétition", en: "Competition" },
+    badge: { fr: "Compétition", en: "Competition", es: "Competición", de: "Wettbewerb", nl: "Wedstrijd", pt: "Competição", it: "Competizione" },
     name: "Coupe de France de Barbecue",
-    when: { fr: "Dates à venir", en: "Dates to come" },
+    when: { fr: "Dates à venir", en: "Dates to come", es: "Fechas próximamente", de: "Termine folgen", nl: "Data volgen", pt: "Datas a anunciar", it: "Date in arrivo" },
     where: "France",
     desc: {
       fr: "La compétition nationale de barbecue : équipes, épreuves et jurys.",
       en: "The national BBQ competition: teams, challenges and judges.",
+      es: "La competición nacional de barbacoa: equipos, pruebas y jurados.",
+      de: "Der nationale Barbecue-Wettbewerb: Teams, Prüfungen und Jurys.",
+      nl: "De nationale barbecuewedstrijd: teams, proeven en jury's.",
+      pt: "A competição nacional de barbecue: equipas, provas e júris.",
+      it: "La competizione nazionale di barbecue: squadre, prove e giurie.",
     },
     href: "https://www.coupe-de-france-barbecue.com",
     enabled: false, // site en cours de mise en ligne
   },
 ];
+
+const META_TITLE: Record<string, string> = {
+  fr: "Calendrier des événements barbecue 2026-2027",
+  en: "Barbecue events calendar 2026-2027",
+  es: "Calendario de eventos de barbacoa 2026-2027",
+  de: "Kalender der Barbecue-Events 2026-2027",
+  nl: "Kalender van barbecue-evenementen 2026-2027",
+  pt: "Calendário de eventos de barbecue 2026-2027",
+  it: "Calendario degli eventi barbecue 2026-2027",
+};
+
+const ECO_TITLE: Record<string, string> = {
+  fr: "Découvrir tout l'écosystème",
+  en: "Explore the whole ecosystem",
+  es: "Descubrir todo el ecosistema",
+  de: "Das ganze Ökosystem entdecken",
+  nl: "Ontdek het hele ecosysteem",
+  pt: "Descobrir todo o ecossistema",
+  it: "Scopri tutto l'ecosistema",
+};
 
 export async function generateMetadata({
   params,
@@ -113,7 +200,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const ui = UI[locale] || UI.en;
   return buildMetadata(locale, "/agenda", {
-    title: `${locale === "fr" ? "Calendrier des événements barbecue 2026-2027" : "Barbecue events calendar 2026-2027"} — Barbecue Expo`,
+    title: `${META_TITLE[locale] || META_TITLE.en} — Barbecue Expo`,
     description: ui.intro,
   });
 }
@@ -121,7 +208,7 @@ export async function generateMetadata({
 export default async function AgendaPage() {
   const locale = await getLocale();
   const ui = UI[locale] || UI.en;
-  const t = (v: { fr: string; en: string }) => (locale === "fr" ? v.fr : v.en);
+  const t = (v: Tr) => v[locale as keyof Tr] ?? v.en;
 
   return (
     <div className="bg-cream-50 min-h-screen">
@@ -216,7 +303,7 @@ export default async function AgendaPage() {
           <EcosystemLinks
             locale={locale}
             items={["mag", "fest", "piment", "coupe"]}
-            title={locale === "fr" ? "Découvrir tout l'écosystème" : "Explore the whole ecosystem"}
+            title={ECO_TITLE[locale] || ECO_TITLE.en}
           />
         </div>
       </section>

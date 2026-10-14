@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import topoRaw from "./world-110m.json";
+import { useT } from "./i18n";
 
 /* World choropleth — visitor provenance, coloured by share (gold scale),
    with "also present" countries in pale yellow and the rest in light grey. */
@@ -52,6 +53,7 @@ function fillFor(name: string): string {
 }
 
 export default function VisitorMap() {
+  const { t } = useT();
   const { paths, paris } = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fc: any = feature(topo, topo.objects.countries);
@@ -71,7 +73,7 @@ export default function VisitorMap() {
   }, []);
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Provenance des visiteurs">
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label={t("Provenance des visiteurs")}>
       {paths.map((p: { name: string; d: string }, i: number) => (
         <path key={i} d={p.d} fill={fillFor(p.name)} stroke="#BBB7AC" strokeWidth={0.5} strokeLinejoin="round" />
       ))}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo, Fragment } from "react";
 import Image from "next/image";
+import { CHIFFRES, nombre } from "@/lib/chiffres";
 import { Check, X as XIcon, Globe, MapPin, Play, Instagram, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Eye, BookOpen } from "lucide-react";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import BrandLogoMarquee from "@/components/BrandLogoMarquee";
@@ -18,7 +19,8 @@ import {
   SOCIAL_REACH, SOCIAL_ACCOUNTS, SOCIAL_POSTS,
 } from "./data";
 import InstagramEmbed from "@/components/InstagramEmbed";
-import { EN, LangContext, useT, type Lang } from "./i18n";
+import { LangContext, useT, translate, isLang, type Lang } from "./i18n";
+import { useLocale } from "next-intl";
 import {
   EstimatorProvider, EstimatorPanel, useEstimator, parsePrice, fmtEUR,
   Stepper, CheckRow, ChooseButton, type Zone,
@@ -69,7 +71,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
   if (opt.type === "simple") {
     // Mobilier — traité séparément, non chiffré ici
     if (/mobilier/i.test(opt.name)) {
-      return <OptCard opt={opt}><div className="text-ink-500 text-sm italic">{opt.price}</div></OptCard>;
+      return <OptCard opt={opt}><div className="text-ink-500 text-sm italic">{t(opt.price ?? "")}</div></OptCard>;
     }
     // Chariot élévateur — sélecteur d'heures
     if (/chariot/i.test(opt.name)) {
@@ -109,7 +111,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
         <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label: t(opt.name), amount: amt })} className="w-full">
           <span className="flex-1 flex items-center justify-between gap-2">
             <span className="text-ink-700 text-sm">{t("Sélectionner")}</span>
-            <Price>{opt.price}</Price>
+            <Price>{t(opt.price ?? "")}</Price>
           </span>
         </CheckRow>
       </OptCard>
@@ -168,7 +170,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
                 <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: t(o.label), detail: t(opt.name), amount: amt })}>
                   <span className="flex-1 flex items-center justify-between gap-2">
                     <span className="text-ink-700 text-sm">{t(o.label)}</span>
-                    <Price>{o.price}</Price>
+                    <Price>{t(o.price ?? "")}</Price>
                   </span>
                 </CheckRow>
               );
@@ -178,7 +180,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
               <div key={i} className="border-t border-ink-900/10 first:border-t-0 py-2">
                 <div className="flex items-center justify-between gap-2 mb-1.5">
                   <span className="text-ink-700 text-sm">{t(o.label)}</span>
-                  <Price>{o.price}</Price>
+                  <Price>{t(o.price ?? "")}</Price>
                 </div>
                 <Stepper value={qty} suffix={u ?? undefined} onChange={(n) => n > 0
                   ? est.upsert({ id, group: OPT_GROUP, label: t(o.label), detail: u ? `${n} ${u} × ${fmtEUR(amt ?? 0)}/${u}` : `${n} × ${o.price}`, amount: (amt ?? 0) * n, qty: n })
@@ -191,7 +193,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
     );
   }
 
-  return <OptCard opt={opt}><Price>{opt.price}</Price></OptCard>;
+  return <OptCard opt={opt}><Price>{t(opt.price ?? "")}</Price></OptCard>;
 }
 
 /** Ligne « tarif + stepper » pour les options simples quantifiables. */
@@ -294,7 +296,7 @@ function PartnerSelectRow() {
         <td key={tier.key} className={`p-3 align-bottom ${tier.highlight ? "bg-gold-500/[0.08]" : ""}`}>
           <div className="text-center mb-2">
             <div className={`font-bold ${tier.highlight ? "text-gold-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{tier.name}</div>
-            <div className="text-ink-600 text-xs">{tier.price}</div>
+            <div className="text-ink-600 text-xs">{t(tier.price)}</div>
           </div>
           <ChooseButton selected={est.partnerKey === tier.key} labelIdle="Choisir ce pack" onClick={() => est.setPartnerKey(est.partnerKey === tier.key ? null : tier.key)} />
         </td>
@@ -349,7 +351,7 @@ function CommStandControls() {
             <span className="block text-ink-900 font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(structure.name)}</span>
             <span className="block text-ink-600 text-sm">{t(structure.desc)}</span>
           </span>
-          <span className="text-gold-700 font-bold text-sm shrink-0">{structure.price}</span>
+          <span className="text-gold-700 font-bold text-sm shrink-0">{t(structure.price)}</span>
         </CheckRow>
       </div>
 
@@ -480,7 +482,7 @@ function MagFormatRow({ format }: { format: { name: string; priceExpo: string; p
           }}>
             <span>{t(format.name)}</span>
           </CheckRow>
-          {format.preview && <DispositifPreview src={format.preview} label={`Barbecue Mag — ${format.name}`} />}
+          {format.preview && <DispositifPreview src={format.preview} label={`Barbecue Mag — ${t(format.name)}`} />}
         </span>
       </td>
       <td className="py-3 pr-6 text-right text-gold-500 font-semibold whitespace-nowrap">{format.priceExpo}</td>
@@ -521,6 +523,7 @@ function MediaLogo({ name, logo }: { domain?: string; name: string; logo?: strin
 
 /* Carrousel de pitmasters (défilement horizontal) */
 function PitmastersCarousel() {
+  const { t } = useT();
   const chefs = (pitmastersData as { slug: string; name: string; portrait?: string; social?: { followers?: number } }[]);
   const fmt = (n?: number) => (n ? (n >= 1000 ? `${Math.round(n / 1000)}K` : String(n)) : null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -563,7 +566,7 @@ function PitmastersCarousel() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-transparent" aria-hidden="true" />
                 <div className="absolute bottom-0 inset-x-0 p-3">
                   <div className="text-cream-50 font-bold text-sm leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{c.name}</div>
-                  {fmt(c.social?.followers) && <div className="text-gold-500 text-xs font-semibold">{fmt(c.social?.followers)} abonnés</div>}
+                  {fmt(c.social?.followers) && <div className="text-gold-500 text-xs font-semibold">{fmt(c.social?.followers)} {t("abonnés")}</div>}
                 </div>
               </div>
             </div>
@@ -572,7 +575,7 @@ function PitmastersCarousel() {
       </div>
       <button
         type="button"
-        aria-label="Précédent"
+        aria-label={t("Précédent")}
         onClick={() => scrollBy(-1)}
         disabled={!canLeft}
         className={`hidden sm:flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-gold-500 text-ink-950 shadow-lg transition-opacity ${canLeft ? "opacity-100 hover:bg-gold-300" : "opacity-0 pointer-events-none"}`}
@@ -581,7 +584,7 @@ function PitmastersCarousel() {
       </button>
       <button
         type="button"
-        aria-label="Suivant"
+        aria-label={t("Suivant")}
         onClick={() => scrollBy(1)}
         disabled={!canRight}
         className={`hidden sm:flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-gold-500 text-ink-950 shadow-lg transition-opacity ${canRight ? "opacity-100 hover:bg-gold-300" : "opacity-0 pointer-events-none"}`}
@@ -724,16 +727,16 @@ function PlanViewer({ src }: { src: string }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
-        alt="Plan du salon Barbecue Expo 2027"
+        alt={t("Plan du salon Barbecue Expo 2027")}
         draggable={false}
         className="absolute inset-0 w-full h-full object-contain pointer-events-none"
         style={{ transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale})`, transformOrigin: "center center", transition: drag.current.on ? "none" : "transform 0.12s ease-out" }}
       />
       {/* Contrôles */}
       <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
-        <button type="button" aria-label="Dézoomer" onClick={(e) => { e.stopPropagation(); zoom(-0.5); }} className="w-9 h-9 rounded-full bg-ink-950/85 text-cream-50 flex items-center justify-center text-xl font-bold hover:bg-ink-950 shadow-lg">−</button>
-        <button type="button" aria-label="Réinitialiser" onClick={(e) => { e.stopPropagation(); reset(); }} className="px-3 h-9 rounded-full bg-ink-950/85 text-cream-50 flex items-center justify-center text-xs font-semibold hover:bg-ink-950 shadow-lg">Réinit.</button>
-        <button type="button" aria-label="Zoomer" onClick={(e) => { e.stopPropagation(); zoom(0.5); }} className="w-9 h-9 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-xl font-bold hover:bg-gold-300 shadow-lg">+</button>
+        <button type="button" aria-label={t("Dézoomer")} onClick={(e) => { e.stopPropagation(); zoom(-0.5); }} className="w-9 h-9 rounded-full bg-ink-950/85 text-cream-50 flex items-center justify-center text-xl font-bold hover:bg-ink-950 shadow-lg">−</button>
+        <button type="button" aria-label={t("Réinitialiser")} onClick={(e) => { e.stopPropagation(); reset(); }} className="px-3 h-9 rounded-full bg-ink-950/85 text-cream-50 flex items-center justify-center text-xs font-semibold hover:bg-ink-950 shadow-lg">{t("Réinit.")}</button>
+        <button type="button" aria-label={t("Zoomer")} onClick={(e) => { e.stopPropagation(); zoom(0.5); }} className="w-9 h-9 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-xl font-bold hover:bg-gold-300 shadow-lg">+</button>
       </div>
       <div className="absolute top-3 left-3 text-ink-600 text-[11px] bg-cream-50/80 backdrop-blur px-2.5 py-1 rounded-full pointer-events-none">{t("Molette ou +/− pour zoomer · glisser pour déplacer")}</div>
     </div>
@@ -802,6 +805,8 @@ function loadLeaflet(): Promise<unknown> {
 
 /* Bouton « Voir la carte » + popup carte d'accès (Parc Floral, aéroports, gares) */
 function VenueMapButton() {
+  const { t } = useT();
+  const tt = t;
   const [open, setOpen] = useState(false);
   const mapDivRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -837,8 +842,8 @@ function VenueMapButton() {
       const trainIcon = icon(32, trainSvg);
 
       const pts: { ll: [number, number]; ic: unknown; label: string }[] = [
-        { ll: [lat, lon], ic: bIcon, label: "Barbecue Expo — Hall de la Pinède" },
-        { ll: [48.7262, 2.3652], ic: planeIcon, label: "Aéroport Paris-Orly" },
+        { ll: [lat, lon], ic: bIcon, label: tt("Barbecue Expo — Hall de la Pinède") },
+        { ll: [48.7262, 2.3652], ic: planeIcon, label: tt("Aéroport Paris-Orly") },
         { ll: [49.0097, 2.5479], ic: planeIcon, label: "Paris-Charles de Gaulle (Roissy)" },
         { ll: [48.8443, 2.3743], ic: trainIcon, label: "Gare de Lyon" },
         { ll: [48.842, 2.3655], ic: trainIcon, label: "Gare d'Austerlitz" },
@@ -852,7 +857,7 @@ function VenueMapButton() {
       disposed = true;
       if (mapRef.current) { try { mapRef.current.remove(); } catch { /* noop */ } mapRef.current = null; }
     };
-  }, [open]);
+  }, [open, tt]);
 
   return (
     <>
@@ -861,7 +866,7 @@ function VenueMapButton() {
         onClick={() => setOpen(true)}
         className="inline-flex items-center gap-2 bg-gold-500 text-ink-950 px-4 py-2 rounded-full text-sm font-bold hover:bg-gold-300 transition-colors"
       >
-        <MapPin className="w-4 h-4" strokeWidth={2.5} /> Voir la carte
+        <MapPin className="w-4 h-4" strokeWidth={2.5} /> {t("Voir la carte")}
       </button>
 
       {open && (
@@ -870,24 +875,24 @@ function VenueMapButton() {
           onClick={() => setOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label="Carte d'accès au salon"
+          aria-label={t("Carte d'accès au salon")}
         >
           <div className="relative w-full max-w-3xl bg-cream-50 rounded-sm overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-start justify-between gap-4 p-4 border-b border-ink-900/10">
               <div>
-                <div className="text-ink-900 font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>Espace événementiel — Hall de la Pinède</div>
+                <div className="text-ink-900 font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Espace événementiel — Hall de la Pinède")}</div>
                 <div className="text-ink-600 text-sm">Parc Floral de Paris · Bois de Vincennes</div>
               </div>
-              <button type="button" onClick={() => setOpen(false)} aria-label="Fermer" className="shrink-0 w-9 h-9 rounded-full bg-ink-900/5 hover:bg-ink-900/10 text-ink-900 flex items-center justify-center text-lg">✕</button>
+              <button type="button" onClick={() => setOpen(false)} aria-label={t("Fermer")} className="shrink-0 w-9 h-9 rounded-full bg-ink-900/5 hover:bg-ink-900/10 text-ink-900 flex items-center justify-center text-lg">✕</button>
             </div>
             <div ref={mapDivRef} className="w-full h-[60vh] max-h-[480px] bg-ink-900/5" style={{ zIndex: 0 }} />
             <div className="flex items-center justify-between gap-3 p-3">
               <span className="text-ink-500 text-xs inline-flex items-center gap-3">
-                <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full bg-gold-500" /> Salon</span>
+                <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full bg-gold-500" /> {t("Salon")}</span>
                 <span>✈︎ Orly · Roissy</span>
                 <span>🚆 Gare de Lyon · Austerlitz</span>
               </span>
-              <a href={`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`} target="_blank" rel="noopener noreferrer" className="text-gold-700 text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1">Plein écran <ExternalLink className="w-3 h-3" /></a>
+              <a href={`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`} target="_blank" rel="noopener noreferrer" className="text-gold-700 text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1">{t("Plein écran")} <ExternalLink className="w-3 h-3" /></a>
             </div>
           </div>
         </div>
@@ -898,6 +903,7 @@ function VenueMapButton() {
 
 /* Œil de prévisualisation d'un dispositif (lightbox image) */
 function DispositifPreview({ src, label }: { src: string; label: string }) {
+  const { t } = useT();
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (!open) return;
@@ -911,8 +917,8 @@ function DispositifPreview({ src, label }: { src: string; label: string }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label={`Voir le dispositif : ${label}`}
-        title="Voir le dispositif"
+        aria-label={`${t("Voir le dispositif")} : ${label}`}
+        title={t("Voir le dispositif")}
         className="inline-flex items-center justify-center w-6 h-6 rounded-full text-gold-600 hover:text-ink-950 hover:bg-gold-500 transition-colors align-middle"
       >
         <Eye className="w-4 h-4" strokeWidth={2} />
@@ -920,7 +926,7 @@ function DispositifPreview({ src, label }: { src: string; label: string }) {
       {open && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink-950/85 backdrop-blur-sm" onClick={() => setOpen(false)} role="dialog" aria-modal="true" aria-label={label}>
           <div className="relative w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <button type="button" onClick={() => setOpen(false)} aria-label="Fermer" className="absolute -top-10 right-0 w-9 h-9 rounded-full bg-cream-50/10 hover:bg-cream-50/20 text-cream-50 flex items-center justify-center text-lg">✕</button>
+            <button type="button" onClick={() => setOpen(false)} aria-label={t("Fermer")} className="absolute -top-10 right-0 w-9 h-9 rounded-full bg-cream-50/10 hover:bg-cream-50/20 text-cream-50 flex items-center justify-center text-lg">✕</button>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={src} alt={label} className="w-full h-auto rounded-sm shadow-2xl" />
             <p className="text-cream-50/80 text-sm mt-3 text-center">{label}</p>
@@ -933,6 +939,7 @@ function DispositifPreview({ src, label }: { src: string; label: string }) {
 
 /* Bouton « Feuilleter le magazine » + visionneuse PDF plein écran */
 function MagFlipButton({ src, title }: { src: string; title: string }) {
+  const { t } = useT();
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (!open) return;
@@ -948,7 +955,7 @@ function MagFlipButton({ src, title }: { src: string; title: string }) {
         onClick={() => setOpen(true)}
         className="inline-flex items-center gap-2 bg-gold-500 text-ink-950 px-5 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gold-300 transition-colors"
       >
-        <BookOpen className="w-4 h-4" strokeWidth={2.5} /> Feuilleter le magazine
+        <BookOpen className="w-4 h-4" strokeWidth={2.5} /> {t("Feuilleter le magazine")}
       </button>
       {open && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink-950/85 backdrop-blur-sm" onClick={() => setOpen(false)} role="dialog" aria-modal="true" aria-label={title}>
@@ -956,8 +963,8 @@ function MagFlipButton({ src, title }: { src: string; title: string }) {
             <div className="flex items-center justify-between gap-4 p-3 border-b border-ink-900/10 shrink-0">
               <span className="text-ink-900 font-bold text-sm" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{title}</span>
               <div className="flex items-center gap-2">
-                <a href={src} target="_blank" rel="noopener noreferrer" className="text-gold-700 text-xs font-semibold inline-flex items-center gap-1">Ouvrir <ExternalLink className="w-3 h-3" /></a>
-                <button type="button" onClick={() => setOpen(false)} aria-label="Fermer" className="w-8 h-8 rounded-full bg-ink-900/5 hover:bg-ink-900/10 text-ink-900 flex items-center justify-center">✕</button>
+                <a href={src} target="_blank" rel="noopener noreferrer" className="text-gold-700 text-xs font-semibold inline-flex items-center gap-1">{t("Ouvrir")} <ExternalLink className="w-3 h-3" /></a>
+                <button type="button" onClick={() => setOpen(false)} aria-label={t("Fermer")} className="w-8 h-8 rounded-full bg-ink-900/5 hover:bg-ink-900/10 text-ink-900 flex items-center justify-center">✕</button>
               </div>
             </div>
             <iframe src={`${src}#view=FitH`} title={title} className="flex-1 w-full border-0" />
@@ -1010,11 +1017,20 @@ function Price({ children }: { children: React.ReactNode }) {
 
 /* ============================ sticky nav ============================ */
 
-function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
-  const flags: { l: Lang; flag: string; label: string }[] = [
-    { l: "fr", flag: "fr", label: "Français" },
-    { l: "en", flag: "gb", label: "English" },
-  ];
+const LANG_META: Record<Lang, { flag: string; label: string }> = {
+  fr: { flag: "fr", label: "Français" },
+  en: { flag: "gb", label: "English" },
+  es: { flag: "es", label: "Español" },
+  de: { flag: "de", label: "Deutsch" },
+  nl: { flag: "nl", label: "Nederlands" },
+  pt: { flag: "pt", label: "Português" },
+  it: { flag: "it", label: "Italiano" },
+};
+
+function LangToggle({ lang, setLang, siteLang }: { lang: Lang; setLang: (l: Lang) => void; siteLang: Lang }) {
+  // FR (langue source) + langue du site (ou EN si le site est en FR)
+  const other: Lang = siteLang === "fr" ? "en" : siteLang;
+  const flags = (["fr", other] as Lang[]).map((l) => ({ l, ...LANG_META[l] }));
   return (
     <div className="flex items-center gap-1.5 shrink-0">
       {flags.map(({ l, flag, label }) => (
@@ -1035,7 +1051,7 @@ function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
   );
 }
 
-function StickyNav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+function StickyNav({ lang, setLang, siteLang }: { lang: Lang; setLang: (l: Lang) => void; siteLang: Lang }) {
   const { t } = useT();
   const navItems = [
     { id: "expo", label: "Présentation" },
@@ -1058,7 +1074,7 @@ function StickyNav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }
           <a href="#partenaires" className="hidden md:inline-flex bg-gold-500 text-ink-950 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap">
             {t("Devenir partenaire")}
           </a>
-          <LangToggle lang={lang} setLang={setLang} />
+          <LangToggle lang={lang} setLang={setLang} siteLang={siteLang} />
         </div>
       </div>
     </div>
@@ -1094,13 +1110,16 @@ const ESTIMATOR_CFG = {
 };
 
 export default function CatalogueClient() {
-  const [lang, setLang] = useState<Lang>("fr");
-  const t = useMemo(() => (fr: string) => (lang === "en" ? (EN[fr] ?? fr) : fr), [lang]);
+  const locale = useLocale();
+  const siteLang: Lang = isLang(locale) ? locale : "fr";
+  const [lang, setLang] = useState<Lang>(siteLang);
+  useEffect(() => { setLang(siteLang); }, [siteLang]);
+  const t = useMemo(() => (fr: string) => translate(lang, fr), [lang]);
   return (
     <LangContext.Provider value={{ lang, t }}>
     <EstimatorProvider>
     <article className="bg-cream-50">
-      <StickyNav lang={lang} setLang={setLang} />
+      <StickyNav lang={lang} setLang={setLang} siteLang={siteLang} />
       <EstimatorPanel cfg={ESTIMATOR_CFG} />
 
       {/* ───────────── HERO ───────────── */}
@@ -1159,9 +1178,9 @@ export default function CatalogueClient() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14 md:mb-20">
           {[
-            ["30 000", "visiteurs attendus"],
-            ["250", "marques internationales"],
-            ["20", "pays représentés"],
+            [nombre(CHIFFRES.visiteursAttendus2027, lang), "visiteurs attendus"],
+            [nombre(CHIFFRES.marques2027, lang), "marques internationales"],
+            [nombre(CHIFFRES.pays2027, lang), "pays représentés"],
             ["20 000 m²", "indoor & outdoor"],
           ].map(([v, l]) => (
             <div key={l}>
@@ -1203,7 +1222,7 @@ export default function CatalogueClient() {
             <div className="relative aspect-square w-full">
               <Image
                 src="/content/images/27866dc7c3_planbbq_hd.png"
-                alt="Plan du salon Barbecue Expo 2027"
+                alt={t("Plan du salon Barbecue Expo 2027")}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
@@ -1233,7 +1252,7 @@ export default function CatalogueClient() {
           <div className="lg:col-span-8">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-3 text-ink-700 text-sm md:text-base font-semibold mb-4">
               <MapPin className="w-5 h-5 text-gold-600" strokeWidth={2} />
-              {t("Lieu de l'événement :")} <span className="italic font-normal">Parc Floral de Paris</span>
+              {t("Lieu de l'événement :")} <span className="italic font-normal">{t("Parc Floral de Paris")}</span>
               <VenueMapButton />
             </div>
             <div className="rounded-sm bg-white border border-ink-900/10 p-3 md:p-4 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)]">
@@ -1348,7 +1367,7 @@ export default function CatalogueClient() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {AFFICHAGE.photos.map((p, i) => (
             <div key={i} className="relative aspect-[4/3] rounded-sm overflow-hidden bg-ink-900">
-              <Image src={p.src} alt={`Affichage public Barbecue Expo ${i + 1}`} fill sizes="(max-width:768px) 50vw, 20vw" className="object-cover" style={{ objectPosition: p.pos ?? "center" }} />
+              <Image src={p.src} alt={`${t("Affichage public Barbecue Expo")} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 20vw" className="object-cover" style={{ objectPosition: p.pos ?? "center" }} />
             </div>
           ))}
         </div>
@@ -1369,7 +1388,7 @@ export default function CatalogueClient() {
             const has = a.url && a.url !== "[À compléter]";
             const inner = (
               <span className="inline-flex items-center gap-2 border border-cream-50/15 rounded-full px-4 py-2 text-cream-50/90 text-sm hover:border-gold-500/50 transition-colors">
-                <Instagram className="w-4 h-4 text-gold-500" strokeWidth={1.5} />{a.brand}
+                <Instagram className="w-4 h-4 text-gold-500" strokeWidth={1.5} />{t(a.brand)}
               </span>
             );
             return has ? <a key={a.brand} href={a.url} target="_blank" rel="noopener noreferrer">{inner}</a> : <span key={a.brand}>{inner}</span>;
@@ -1420,7 +1439,7 @@ export default function CatalogueClient() {
               {STAND_SURFACE.zones.map((z) => (
                 <li key={z.zone} className="flex items-center justify-between border-b border-cream-50/10 pb-3">
                   <span className="text-cream-50 font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(z.zone)}</span>
-                  <span className="text-gold-500 font-bold">{z.price}</span>
+                  <span className="text-gold-500 font-bold">{t(z.price)}</span>
                 </li>
               ))}
             </ul>
@@ -1442,7 +1461,7 @@ export default function CatalogueClient() {
               <div className="p-6">
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <h4 className="text-ink-900 text-lg font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(r.title)}</h4>
-                  <Price>{r.price}</Price>
+                  <Price>{t(r.price)}</Price>
                 </div>
                 {r.desc && <p className="text-ink-600 text-sm mb-3">{t(r.desc)}</p>}
                 {r.features.length > 0 && (
@@ -1457,7 +1476,7 @@ export default function CatalogueClient() {
                     <span className="text-ink-500 text-xs uppercase tracking-widest">{t("Moquette :")}</span>
                     <div className="flex gap-2">
                       {r.moquette.map((c) => (
-                        <span key={c.name} title={c.name} className="w-5 h-5 rounded-full border border-ink-900/20" style={{ backgroundColor: c.hex }} />
+                        <span key={c.name} title={t(c.name)} className="w-5 h-5 rounded-full border border-ink-900/20" style={{ backgroundColor: c.hex }} />
                       ))}
                     </div>
                   </div>
@@ -1468,17 +1487,17 @@ export default function CatalogueClient() {
                     {Array.isArray(r.cloisons) ? (
                       <div className="flex gap-2">
                         {r.cloisons.map((c) => (
-                          <span key={c.name} title={c.name} className="w-5 h-5 rounded-full border border-ink-900/20" style={{ backgroundColor: c.hex }} />
+                          <span key={c.name} title={t(c.name)} className="w-5 h-5 rounded-full border border-ink-900/20" style={{ backgroundColor: c.hex }} />
                         ))}
                       </div>
                     ) : (
                       <div className="flex-1">
                         <div
                           className="h-5 w-full rounded-full border border-ink-900/20"
-                          title="Couleur des cloisons personnalisable (nuancier complet)"
+                          title={t("Couleur des cloisons personnalisable (nuancier complet)")}
                           style={{ background: "linear-gradient(90deg, #000 0%, #fff 8%, #e11d48 22%, #f97316 36%, #facc15 50%, #22c55e 64%, #06b6d4 78%, #6366f1 90%, #a21caf 100%)" }}
                         />
-                        <span className="block text-ink-400 text-[10px] mt-1">Couleur au choix — nuancier complet</span>
+                        <span className="block text-ink-400 text-[10px] mt-1">{t("Couleur au choix — nuancier complet")}</span>
                       </div>
                     )}
                   </div>
@@ -1496,11 +1515,11 @@ export default function CatalogueClient() {
         </div>
         <div className="grid md:grid-cols-12 gap-6 items-stretch">
           <div className="md:col-span-7 relative aspect-[16/9] rounded-sm overflow-hidden border border-ink-900/10">
-            <Image src={OUTDOOR.photo} alt="Espace exposant extérieur" fill sizes="(max-width:768px) 100vw, 60vw" className="object-cover" />
+            <Image src={OUTDOOR.photo} alt={t("Espace exposant extérieur")} fill sizes="(max-width:768px) 100vw, 60vw" className="object-cover" />
           </div>
           <div className="md:col-span-5 bg-cream-100 border border-ink-900/10 rounded-sm p-6 flex flex-col justify-center">
             <p className="text-ink-700 text-base md:text-lg mb-4">{t(OUTDOOR.desc)}</p>
-            <div className="text-gold-700 text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{OUTDOOR.price}</div>
+            <div className="text-gold-700 text-3xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(OUTDOOR.price)}</div>
             <OutdoorSelector />
           </div>
         </div>
@@ -1525,7 +1544,7 @@ export default function CatalogueClient() {
                 {PARTNER_TIERS.map((tier) => (
                   <th key={tier.key} className={`p-4 text-center align-bottom ${tier.highlight ? "bg-gold-500/10 rounded-t-sm" : ""}`}>
                     <div className={`text-xl font-bold ${tier.highlight ? "text-gold-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(tier.name)}</div>
-                    <div className="text-ink-600 text-sm mt-1">{tier.price}</div>
+                    <div className="text-ink-600 text-sm mt-1">{t(tier.price)}</div>
                     <PartnerHeaderChoose tierKey={tier.key} />
                   </th>
                 ))}
@@ -1572,7 +1591,7 @@ export default function CatalogueClient() {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Photo stand à gauche */}
           <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-ink-900/10">
-            <Image src={COMM_STAND.photo} alt="Exemple de stand personnalisé avec signalétique en hauteur" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
+            <Image src={COMM_STAND.photo} alt={t("Exemple de stand personnalisé avec signalétique en hauteur")} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
           </div>
           {/* Contrôles interactifs à droite */}
           <CommStandControls />
@@ -1742,7 +1761,7 @@ export default function CatalogueClient() {
       <section className="bg-ink-950 py-20 text-center border-t border-cream-50/10">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-cream-50 text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("En 2027, toutes les flammes mènent à Paris.")}</h2>
-          <a href="/devenez-exposants" className="group inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-300 text-ink-950 px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors">
+          <a href="#stand" className="group inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-300 text-ink-950 px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors">
             {t("Réserver mon stand")} <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" strokeWidth={2.5} />
           </a>
         </div>

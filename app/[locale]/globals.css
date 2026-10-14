@@ -457,7 +457,9 @@ blockquote.instagram-media iframe {
 }
 .lien-marque:hover::after,
 .lien-marque:focus-visible::after,
-.lien-marque[aria-current="page"]::after {
+.lien-marque[aria-current="page"]::after,
+a:hover .lien-marque::after,
+a:focus-visible .lien-marque::after {
   clip-path: inset(0 0 0 0);
 }
 
@@ -467,13 +469,23 @@ blockquote.instagram-media iframe {
 }
 .trace-b[data-geste="joue"] .trait {
   animation: trace-trait 420ms var(--ease-saisie) both;
-  animation-delay: calc(var(--i) * 70ms);
+  animation-delay: calc(var(--trace-debut, 0ms) + var(--i) * 70ms);
 }
 .trace-b[data-geste="pret"] .eclats {
   opacity: 0;
 }
 .trace-b[data-geste="joue"] .eclats {
-  animation: trace-eclats 300ms ease-out 980ms both;
+  animation: trace-eclats 300ms ease-out both;
+  animation-delay: calc(var(--trace-debut, 0ms) + 980ms);
+}
+
+/* Puces tracées : les traits d'une liste se peignent l'un après l'autre. */
+.puces-tracees[data-geste="pret"] .trait-marque {
+  clip-path: inset(0 100% 0 0);
+}
+.puces-tracees[data-geste="joue"] .trait-marque {
+  animation: trace-trait 420ms var(--ease-saisie) both;
+  animation-delay: calc(var(--i, 0) * var(--decalage) * 2);
 }
 @keyframes trace-trait {
   from {
@@ -509,7 +521,7 @@ blockquote.instagram-media iframe {
   opacity: 0;
 }
 .tampon[data-geste="joue"] {
-  animation: tampon var(--duree-geste) var(--ease-tampon) both;
+  animation: tampon var(--duree-geste) var(--ease-tampon) var(--tampon-debut, 0ms) both;
 }
 @keyframes tampon {
   0% {
@@ -644,6 +656,20 @@ blockquote.instagram-media iframe {
   pointer-events: none;
 }
 
+/* Fiches-liens (grille pitmasters) : retournement au survol et au focus
+   clavier, seulement sur les écrans à pointeur ; au tactile, le recto
+   suffit et le tap ouvre la fiche. */
+@media (hover: hover) {
+  .fiche-lien:hover .fiche-recto,
+  .fiche-lien:focus-visible .fiche-recto {
+    transform: rotateY(-180deg);
+  }
+  .fiche-lien:hover .fiche-verso,
+  .fiche-lien:focus-visible .fiche-verso {
+    transform: rotateY(0);
+  }
+}
+
 /* Billets : encoches et perforation. */
 .ticket {
   -webkit-mask:
@@ -652,6 +678,16 @@ blockquote.instagram-media iframe {
   mask:
     radial-gradient(circle 12px at var(--perfo, 72%) 0, transparent 97%, #000) top / 100% 51% no-repeat,
     radial-gradient(circle 12px at var(--perfo, 72%) 100%, transparent 97%, #000) bottom / 100% 51% no-repeat;
+}
+
+/* Billet debout (cartes de pass) : encoches sur les côtés, au-dessus du talon. */
+.ticket-debout {
+  -webkit-mask:
+    radial-gradient(circle var(--encoche, 12px) at 0 calc(100% - var(--talon, 7.5rem)), transparent 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--encoche, 12px) at 100% calc(100% - var(--talon, 7.5rem)), transparent 97%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle var(--encoche, 12px) at 0 calc(100% - var(--talon, 7.5rem)), transparent 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--encoche, 12px) at 100% calc(100% - var(--talon, 7.5rem)), transparent 97%, #000) right / 51% 100% no-repeat;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -664,12 +700,20 @@ blockquote.instagram-media iframe {
     mask-image: none;
   }
   .trace-b .trait,
+  .puces-tracees .trait-marque,
   .lien-marque::after {
     clip-path: none;
     transition: none;
   }
-  .lien-marque:not(:hover):not(:focus-visible):not([aria-current="page"])::after {
+  .lien-marque::after {
     opacity: 0;
+  }
+  .lien-marque:hover::after,
+  .lien-marque:focus-visible::after,
+  .lien-marque[aria-current="page"]::after,
+  a:hover .lien-marque::after,
+  a:focus-visible .lien-marque::after {
+    opacity: 1;
   }
   .trace-b .eclats,
   .tampon[data-geste] {
@@ -684,6 +728,14 @@ blockquote.instagram-media iframe {
     opacity: 0;
   }
   .fiche[data-retournee="true"] .fiche-verso {
+    opacity: 1;
+  }
+  .fiche-lien:hover .fiche-recto,
+  .fiche-lien:focus-visible .fiche-recto {
+    opacity: 0;
+  }
+  .fiche-lien:hover .fiche-verso,
+  .fiche-lien:focus-visible .fiche-verso {
     opacity: 1;
   }
 }

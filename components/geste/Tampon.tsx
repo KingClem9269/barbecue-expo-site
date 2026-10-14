@@ -11,11 +11,14 @@ export default function Tampon({
   children,
   angle = -8,
   mode = "vue",
+  debut = 0,
   className = "",
 }: {
   children: ReactNode;
   angle?: number;
   mode?: ModeGeste;
+  /** retard en ms, pour poser le tampon après un autre geste */
+  debut?: number;
   className?: string;
 }) {
   return (
@@ -23,7 +26,7 @@ export default function Tampon({
       as="span"
       mode={mode}
       className={`tampon ${className}`}
-      style={{ "--tampon-angle": `${angle}deg` } as CSSProperties}
+      style={{ "--tampon-angle": `${angle}deg`, "--tampon-debut": `${debut}ms` } as CSSProperties}
     >
       {children}
     </Declencheur>

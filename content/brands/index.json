@@ -71,19 +71,6 @@
     "appointmentUrl": "https://expo.jpc-events.com/configure/barbecue-expo"
   },
   {
-    "slug": "big-green-egg",
-    "name": "Big Green Egg",
-    "country": "us",
-    "category": "barbecue",
-    "subCategories": [
-      "kamado"
-    ],
-    "tier": "gold",
-    "newForExpo": false,
-    "exportsAbroad": true,
-    "website": "https://biggreenegg.com"
-  },
-  {
     "slug": "napoleon",
     "name": "Napoleon",
     "country": "ca",

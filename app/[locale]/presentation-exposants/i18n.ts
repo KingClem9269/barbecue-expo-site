@@ -3,14 +3,25 @@
 import { createContext, useContext } from "react";
 
 /**
- * Traduction FR → EN du support « Présentation & catalogue exposant ».
- * Mécanisme : dictionnaire indexé par la chaîne FR source. `t(fr)` renvoie la
- * traduction EN si elle existe, sinon la chaîne FR (repli sûr — rien ne casse).
+ * Traductions du support « Présentation & catalogue exposant ».
+ * Mécanisme : dictionnaires indexés par la chaîne FR source (EN ici, ES/DE/NL/PT/IT
+ * dans i18n.<lang>.ts). `t(fr)` renvoie la traduction de la langue active si elle
+ * existe, sinon la chaîne FR (repli sûr — rien ne casse).
  * Les prix (« 250 € HT / m² », nombres) ne sont pas traduits : on remplace
  * juste « HT » → « excl. VAT » via une passe sur la valeur si besoin.
  */
 
-export type Lang = "fr" | "en";
+import { ES } from "./i18n.es";
+import { DE } from "./i18n.de";
+import { NL } from "./i18n.nl";
+import { PT } from "./i18n.pt";
+import { IT } from "./i18n.it";
+
+export type Lang = "fr" | "en" | "es" | "de" | "nl" | "pt" | "it";
+export const LANGS: readonly Lang[] = ["fr", "en", "es", "de", "nl", "pt", "it"];
+export function isLang(x: string): x is Lang {
+  return (LANGS as readonly string[]).includes(x);
+}
 
 export const EN: Record<string, string> = {
   // ——— Nav (présentation) ———
@@ -466,7 +477,56 @@ export const EN: Record<string, string> = {
   // ——— CTA ———
   "En 2027, toutes les flammes mènent à Paris.": "In 2027, all flames lead to Paris.",
   "Réserver mon stand": "Book my booth",
+
+  // ——— Compléments (textes en dur, accessibilité, données) ———
+  "Coupe de France de Barbecue": "French Barbecue Cup",
+  "À partir de 1 500 € HT": "From €1,500 excl. VAT",
+  "Sur les portes vitrées du hall donnant sur les esplanades extérieures. Touchez les visiteurs dès leur arrivée.": "On the hall’s glass doors opening onto the outdoor esplanades. Reach visitors the moment they arrive.",
+  "Bannière 2 mois sur le site": "2-month banner on the website",
+  "Panneau surélevé au-dessus des cloisons": "Raised panel above the walls",
+  "Forex 3 × 1,5 m (selon les stands).": "Forex 3 × 1.5 m (depending on the booth).",
+  "Or : 275 € HT/ml · Argent : 200 € HT/ml": "Gold: €275 excl. VAT/lm · Silver: €200 excl. VAT/lm",
+  "Noir": "Black",
+  "Orange": "Orange",
+  "Rouge": "Red",
+  "Vert foncé": "Dark green",
+  "abonnés": "followers",
+  "Précédent": "Previous",
+  "Suivant": "Next",
+  "Plan du salon Barbecue Expo 2027": "Barbecue Expo 2027 floor plan",
+  "Dézoomer": "Zoom out",
+  "Réinitialiser": "Reset",
+  "Réinit.": "Reset",
+  "Zoomer": "Zoom in",
+  "Carte d'accès au salon": "Map to the show",
+  "Salon": "Show",
+  "Voir le dispositif": "View the setup",
+  "Couleur des cloisons personnalisable (nuancier complet)": "Customisable wall colour (full colour chart)",
+  "Espace exposant extérieur": "Outdoor exhibitor space",
+  "Exemple de stand personnalisé avec signalétique en hauteur": "Example of a custom booth with overhead signage",
+  "Aéroport Paris-Orly": "Paris-Orly Airport",
+  "Espace événementiel — Hall de la Pinède": "Event venue — Hall de la Pinède",
+  "Affichage public Barbecue Expo": "Barbecue Expo outdoor advertising",
+  "Diminuer": "Decrease",
+  "Augmenter": "Increase",
+  "h": "h",
+  "heures": "hours",
+  "badge(s)": "badge(s)",
+  "pack(s)": "pack(s)",
+  "ml": "lm",
+  "pcs": "pcs",
+  "vous@societe.com": "you@company.com",
 };
+
+export const DICTS: Record<Exclude<Lang, "fr">, Record<string, string>> = {
+  en: EN, es: ES, de: DE, nl: NL, pt: PT, it: IT,
+};
+
+/** Traduit une chaîne FR source dans la langue demandée (repli FR). */
+export function translate(lang: Lang, fr: string): string {
+  if (lang === "fr") return fr;
+  return DICTS[lang][fr] ?? fr;
+}
 
 interface LangCtx { lang: Lang; t: (fr: string) => string; }
 export const LangContext = createContext<LangCtx>({ lang: "fr", t: (s) => s });

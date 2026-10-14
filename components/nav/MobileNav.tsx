@@ -16,7 +16,7 @@ const AUDIENCE_LABELS: Record<string, { b2c: string; pro: string }> = {
   fr: { b2c: "Grand Public", pro: "Pro" },
   en: { b2c: "Public", pro: "Pro" },
   es: { b2c: "Gran Público", pro: "Pro" },
-  de: { b2c: "Allgemein", pro: "Pro" },
+  de: { b2c: "Publikum", pro: "Pro" },
   nl: { b2c: "Publiek", pro: "Pro" },
   pt: { b2c: "Público", pro: "Pro" },
   it: { b2c: "Pubblico", pro: "Pro" },
@@ -84,7 +84,7 @@ export const MobileNav = ({
 
   return (
     <div
-      className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${
+      className={`fixed inset-0 z-50 xl:hidden transition-opacity duration-300 ${
         isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       } ${className || ""}`}
       role="dialog"
@@ -111,7 +111,7 @@ export const MobileNav = ({
           <Link
             href="/"
             onClick={onClose}
-            aria-label="Barbecue Expo 2026 — Homepage"
+            aria-label="Barbecue Expo 2027 — Homepage"
             className="focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded"
           >
             <NavLogo color="white" className="w-32 h-10" />

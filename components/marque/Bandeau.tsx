@@ -13,7 +13,7 @@ export default function Bandeau({
 }) {
   return (
     <div
-      className={`bg-white border-t border-charbon/10 px-5 md:px-8 py-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 ${className}`}
+      className={`bg-white border-t border-charbon/10 px-5 md:px-8 py-4 grid grid-cols-3 items-center justify-items-center gap-x-6 gap-y-4 md:flex md:flex-wrap md:justify-between md:gap-x-8 ${className}`}
     >
       {logos.map((logo) => (
         <Image

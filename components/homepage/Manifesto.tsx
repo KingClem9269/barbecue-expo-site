@@ -1,4 +1,5 @@
 "use client";
+import { CHIFFRES } from "@/lib/chiffres";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useLocale } from "next-intl";
@@ -42,9 +43,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   fr: {
     eyebrow: "Édition 2026 — les chiffres",
     stats: [
-      { value: 25800, suffix: "", label: "Visiteurs en 2026" },
-      { value: 200, suffix: "+", label: "Marques internationales" },
-      { value: 16, suffix: "", label: "Nationalités représentées" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Visiteurs en 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "Marques internationales en 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Pays représentés en 2027" },
     ],
     punchline:
       "Le seul salon européen où les prescripteurs BBQ et les marques internationales se rencontrent pendant trois jours.",
@@ -52,9 +53,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   en: {
     eyebrow: "2026 edition — key figures",
     stats: [
-      { value: 25800, suffix: "", label: "Visitors in 2026" },
-      { value: 200, suffix: "+", label: "International brands" },
-      { value: 16, suffix: "", label: "Nationalities represented" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Visitors in 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "International brands in 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Countries represented in 2027" },
     ],
     punchline:
       "The only European show where BBQ tastemakers and international brands meet for three days.",
@@ -62,9 +63,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   es: {
     eyebrow: "Edición 2026 — las cifras",
     stats: [
-      { value: 25800, suffix: "", label: "Visitantes en 2026" },
-      { value: 200, suffix: "+", label: "Marcas internacionales" },
-      { value: 16, suffix: "", label: "Nacionalidades representadas" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Visitantes en 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "Marcas internacionales en 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Países representados en 2027" },
     ],
     punchline:
       "La única feria europea donde los prescriptores BBQ y las marcas internacionales se encuentran durante tres días.",
@@ -72,9 +73,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   de: {
     eyebrow: "Ausgabe 2026 — die Zahlen",
     stats: [
-      { value: 25800, suffix: "", label: "Besucher 2026" },
-      { value: 200, suffix: "+", label: "Internationale Marken" },
-      { value: 16, suffix: "", label: "Vertretene Nationalitäten" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Besucher 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "Internationale Marken 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Vertretene Länder 2027" },
     ],
     punchline:
       "Die einzige europäische Messe, auf der BBQ-Trendsetter und internationale Marken drei Tage lang zusammentreffen.",
@@ -82,9 +83,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   nl: {
     eyebrow: "Editie 2026 — de cijfers",
     stats: [
-      { value: 25800, suffix: "", label: "Bezoekers in 2026" },
-      { value: 200, suffix: "+", label: "Internationale merken" },
-      { value: 16, suffix: "", label: "Vertegenwoordigde nationaliteiten" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Bezoekers in 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "Internationale merken in 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Vertegenwoordigde landen in 2027" },
     ],
     punchline:
       "De enige Europese beurs waar BBQ-toonaangevers en internationale merken elkaar drie dagen lang ontmoeten.",
@@ -92,9 +93,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   pt: {
     eyebrow: "Edição 2026 — os números",
     stats: [
-      { value: 25800, suffix: "", label: "Visitantes em 2026" },
-      { value: 200, suffix: "+", label: "Marcas internacionais" },
-      { value: 16, suffix: "", label: "Nacionalidades representadas" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Visitantes em 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "Marcas internacionais em 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Países representados em 2027" },
     ],
     punchline:
       "A única feira europeia onde os prescritores BBQ e as marcas internacionais se encontram durante três dias.",
@@ -102,9 +103,9 @@ const DEFAULTS: Record<string, ManifestoBlok> = {
   it: {
     eyebrow: "Edizione 2026 — i numeri",
     stats: [
-      { value: 25800, suffix: "", label: "Visitatori nel 2026" },
-      { value: 200, suffix: "+", label: "Marchi internazionali" },
-      { value: 16, suffix: "", label: "Nazionalità rappresentate" },
+      { value: CHIFFRES.visiteurs2026, suffix: "", label: "Visitatori nel 2026" },
+      { value: CHIFFRES.marques2027, suffix: "", label: "Marchi internazionali nel 2027" },
+      { value: CHIFFRES.pays2027, suffix: "", label: "Paesi rappresentati nel 2027" },
     ],
     punchline:
       "L'unica fiera europea dove i prescrittori BBQ e i marchi internazionali si incontrano per tre giorni.",

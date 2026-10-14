@@ -109,7 +109,7 @@ export default function AwardsApplicationCTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <Link
-            href="/devenez-exposants"
+            href="/presentation-exposants"
             className="group inline-flex items-center gap-4 bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 sm:px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-sm sm:text-base transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
           >
             <span>{ui.primary}</span>

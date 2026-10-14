@@ -197,7 +197,7 @@
           },
           {
             "_uid": "8d04953b-338e-4d15-aca7-2dccf48520d1",
-            "link": "/devenez-exposants",
+            "link": "/presentation-exposants",
             "label": "Become exhibitors",
             "submenu": [],
             "component": "menu-item"
@@ -322,10 +322,10 @@
         "component": "menu-item"
       }
     ],
-    "tickets_slug": "/billetterie/particulier",
+    "tickets_slug": "/billetterie",
     "link_location": "https://www.parcfloraldeparis.com/fr",
     "tickets_b2b_slug": "/billetterie/pro-b2b",
-    "tickets_b2c_slug": "/billetterie/particulier",
+    "tickets_b2c_slug": "/billetterie",
     "tickets_b2b_label": "Pro Tickets",
     "tickets_b2c_label": "Ticketing",
     "tickets_press_slug": "/billetterie/presse",

@@ -28,11 +28,13 @@ export function MobileTicketButton({
     setIsExpanded(!isExpanded);
   };
 
+  // Le conteneur couvre toute la largeur en bas de l'écran : il laisse passer
+  // les touchers, seuls les boutons les captent.
   const buttonClassName =
-    "flex md:hidden p-2 px-4 w-fit font-bold border border-white/10 bg-black/40 backdrop-blur-md lg:border-white text-white rounded-full lg:rounded-none items-center gap-1";
+    "pointer-events-auto flex md:hidden p-2 px-4 w-fit font-bold border border-white/10 bg-black/40 backdrop-blur-md lg:border-white text-white rounded-full lg:rounded-none items-center gap-1";
 
   return (
-    <div className="fixed bottom-0 w-full z-50 flex flex-col justify-center items-center pb-4 gap-2">
+    <div className="pointer-events-none fixed bottom-0 w-full z-50 flex flex-col justify-center items-center pb-4 gap-2">
       {isExpanded && (
         <>
           <Link

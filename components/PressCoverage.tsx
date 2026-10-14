@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import { Play, ExternalLink } from "lucide-react";
 import { MEDIA_FEATURED, MEDIA_MENTIONS } from "@/app/[locale]/presentation-exposants/data";
 
@@ -29,11 +30,22 @@ function MediaLogo({ name, logo }: { name: string; logo?: string | null }) {
   );
 }
 
+const LIBELLES: Record<string, { videos: string; parle: string; voir: string; diffuse: string }> = {
+  fr: { videos: "Vidéos principales", parle: "Ils en ont parlé", voir: "Voir le sujet", diffuse: "Diffusé" },
+  en: { videos: "Featured videos", parle: "They talked about us", voir: "See the story", diffuse: "Aired" },
+  es: { videos: "Vídeos destacados", parle: "Hablaron de nosotros", voir: "Ver el reportaje", diffuse: "Emitido" },
+  de: { videos: "Wichtigste Videos", parle: "Sie haben über uns berichtet", voir: "Zum Beitrag", diffuse: "Ausgestrahlt" },
+  nl: { videos: "Belangrijkste video's", parle: "Zij spraken over ons", voir: "Bekijk het item", diffuse: "Uitgezonden" },
+  pt: { videos: "Vídeos em destaque", parle: "Falaram de nós", voir: "Ver a reportagem", diffuse: "Transmitido" },
+  it: { videos: "Video principali", parle: "Hanno parlato di noi", voir: "Vedi il servizio", diffuse: "Trasmesso" },
+};
+
 export default function PressCoverage() {
+  const l = LIBELLES[useLocale()] || LIBELLES.fr;
   return (
     <div>
       {/* Vidéos principales — encadrées */}
-      <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-4">Vidéos principales</div>
+      <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-4">{l.videos}</div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
         {MEDIA_FEATURED.map((m) => (
           <a key={m.show} href={m.url} target="_blank" rel="noopener noreferrer" className="group block rounded-sm overflow-hidden border-2 border-gold-500/60 hover:border-gold-500 transition-colors">
@@ -53,7 +65,7 @@ export default function PressCoverage() {
       </div>
 
       {/* Toutes les retombées */}
-      <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-4">Ils en ont parlé</div>
+      <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-4">{l.parle}</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         {MEDIA_MENTIONS.map((m, i) => {
           const inner = (
@@ -62,8 +74,8 @@ export default function PressCoverage() {
                 <MediaLogo name={m.name} logo={m.logo} />
               </div>
               {m.url
-                ? <span className="text-gold-500 text-xs font-semibold flex items-center gap-1">Voir le sujet<ExternalLink className="w-3 h-3" /></span>
-                : <span className="text-cream-50/40 text-xs font-medium">Diffusé</span>}
+                ? <span className="text-gold-500 text-xs font-semibold flex items-center gap-1">{l.voir}<ExternalLink className="w-3 h-3" /></span>
+                : <span className="text-cream-50/40 text-xs font-medium">{l.diffuse}</span>}
             </div>
           );
           return m.url ? (

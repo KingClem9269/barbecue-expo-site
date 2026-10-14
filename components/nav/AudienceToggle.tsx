@@ -14,7 +14,7 @@ const LABELS: Record<string, { b2c: string; pro: string }> = {
   fr: { b2c: "Grand Public", pro: "Pro" },
   en: { b2c: "Public", pro: "Pro" },
   es: { b2c: "Gran Público", pro: "Pro" },
-  de: { b2c: "Allgemeines Publikum", pro: "Pro" },
+  de: { b2c: "Publikum", pro: "Pro" },
   nl: { b2c: "Publiek", pro: "Pro" },
   pt: { b2c: "Grande Público", pro: "Pro" },
   it: { b2c: "Grande Pubblico", pro: "Pro" },
@@ -27,7 +27,7 @@ export function AudienceToggle() {
 
   return (
     <div
-      className="hidden lg:flex items-center gap-1 bg-white/5 border border-white/15 rounded-full p-1 text-[11px] uppercase tracking-widest font-semibold backdrop-blur-md"
+      className="hidden xl:flex items-center gap-1 bg-white/5 border border-white/15 rounded-full p-1 text-[11px] uppercase tracking-widest font-semibold backdrop-blur-md"
       role="tablist"
       aria-label="Audience"
     >

@@ -76,10 +76,10 @@ export function DesktopNav({
   return (
     <>
       <nav
-        className={`px-4 py-4 fixed top-0 left-0 z-50 lg:border-b lg:border-white/10 flex justify-between w-screen transition-colors duration-150 ${
+        className={`px-4 py-4 fixed top-0 left-0 z-50 md:border-b md:border-white/10 flex items-center justify-between gap-3 w-screen transition-colors duration-150 ${
           isScrolled
-            ? "lg:bg-black/60 lg:backdrop-blur-lg"
-            : "lg:bg-black/20 lg:backdrop-blur-xs"
+            ? "md:bg-black/60 md:backdrop-blur-lg"
+            : "md:bg-black/20 md:backdrop-blur-xs"
         }`}
       >
         <BurgerMenuButton
@@ -87,12 +87,15 @@ export function DesktopNav({
           onClick={toggleMobileMenu}
         />
         <div className="flex items-center justify-between w-full">
-          <li className="hidden lg:block list-none shrink-0">
-            <Link href="/" aria-label="Barbecue Expo 2026 — Homepage">
+          {/* Logo et billetterie dès 768 px ; le menu complet seulement à
+              partir de 1280 px (en dessous, il passait sur deux lignes) :
+              entre les deux, le menu reste dans le burger. */}
+          <li className="hidden md:block list-none shrink-0">
+            <Link href="/" aria-label="Barbecue Expo 2027 — Homepage">
               <NavLogo color="white" className="w-42 h-12" />
             </Link>
           </li>
-          <ul className="hidden lg:flex flex-wrap items-center justify-center gap-2 list-none m-0 p-0 text-white font-bold flex-1">
+          <ul className="hidden xl:flex flex-nowrap items-center justify-center gap-1 list-none m-0 p-0 text-white font-bold flex-1 whitespace-nowrap">
             {audience === "pro"
               ? PRO_MENU.map((item) => (
                   <ProNavMenuItem key={item.key} item={item} />
@@ -115,7 +118,7 @@ export function DesktopNav({
                   return <NavMenuItem key={item._uid} menuItem={menuItem} />;
                 })}
           </ul>
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden md:flex items-center gap-3 shrink-0">
             <AudienceToggle />
             <LocaleSwitcher currentLocale={locale} />
             {audience === "pro" ? (
@@ -135,6 +138,8 @@ export function DesktopNav({
           </div>
         </div>
       </nav>
+      {/* Billetterie : on y est déjà ; les pages de pass ont leur bouton « Prendre mes billets ». */}
+      {!/^\/billetterie(\/(individuel|groupes|food))?$/.test(pathname ?? "") && (
       <MobileTicketButton
         tickets={tickets}
         tickets_slug={tickets_slug}
@@ -145,6 +150,7 @@ export function DesktopNav({
         tickets_press_label={tickets_press_label}
         tickets_press_slug={tickets_press_slug}
       />
+      )}
 
       <MobileNav
         isOpen={isMobileMenuOpen}

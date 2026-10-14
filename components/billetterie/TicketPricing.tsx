@@ -212,7 +212,7 @@ export default function TicketPricing() {
       price: "15 €",
       priceEarly: "10 €",
       audience: ui.tiers.audOneDay,
-      href: "/billetterie/particulier",
+      href: "/billetterie",
       features: [true, false, false, false, false, false, false, false, false],
     },
     {
@@ -221,7 +221,7 @@ export default function TicketPricing() {
       price: "35 €",
       priceEarly: "25 €",
       audience: ui.tiers.audThreeDays,
-      href: "/billetterie/particulier",
+      href: "/billetterie",
       highlight: true,
       features: [true, true, true, false, false, false, false, false, false],
     },
@@ -231,7 +231,7 @@ export default function TicketPricing() {
       price: "95 €",
       priceEarly: "65 €",
       audience: ui.tiers.audVip,
-      href: "/billetterie/particulier",
+      href: "/billetterie",
       features: [true, true, true, true, true, true, true, false, false],
     },
     {

@@ -36,13 +36,13 @@ export const COUNTRY_DIAL: Record<string, string> = {
 
 export type Country = { iso: string; dial: string; name: string };
 
-// Construit la liste localisée FR, triée alphabétiquement.
-let _cache: Country[] | null = null;
-export function getCountries(): Country[] {
-  if (_cache) return _cache;
+// Construit la liste localisée (FR par défaut), triée alphabétiquement.
+const _cache: Record<string, Country[]> = {};
+export function getCountries(locale = "fr"): Country[] {
+  if (_cache[locale]) return _cache[locale];
   let display: Intl.DisplayNames | null = null;
   try {
-    display = new Intl.DisplayNames(["fr"], { type: "region" });
+    display = new Intl.DisplayNames([locale], { type: "region" });
   } catch {
     display = null;
   }
@@ -51,11 +51,11 @@ export function getCountries(): Country[] {
     dial,
     name: display?.of(iso.toUpperCase()) ?? iso.toUpperCase(),
   }));
-  list.sort((a, b) => a.name.localeCompare(b.name, "fr"));
-  _cache = list;
+  list.sort((a, b) => a.name.localeCompare(b.name, locale));
+  _cache[locale] = list;
   return list;
 }
 
-export function countryByIso(iso: string): Country | undefined {
-  return getCountries().find((c) => c.iso === iso);
+export function countryByIso(iso: string, locale = "fr"): Country | undefined {
+  return getCountries(locale).find((c) => c.iso === iso);
 }

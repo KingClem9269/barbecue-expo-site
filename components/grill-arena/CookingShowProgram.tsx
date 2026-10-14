@@ -57,8 +57,8 @@ export default function CookingShowProgram({ locale }: { locale: string }) {
           style={{ border: "none", borderRadius: "12px" }}
           title={
             locale === "en"
-              ? "Cooking Shows Schedule - Barbecue Expo 2026"
-              : "Programme Cooking Shows - Barbecue Expo 2026"
+              ? "Cooking Shows Schedule - Barbecue Expo 2027"
+              : "Programme Cooking Shows - Barbecue Expo 2027"
           }
         />
       </div>

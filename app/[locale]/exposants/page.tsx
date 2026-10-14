@@ -130,7 +130,7 @@ export default async function ExposantsPage({
       <section className="bg-ink-950 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <Link
-            href="/devenez-exposants"
+            href="/presentation-exposants"
             className="group inline-flex items-center gap-4 text-cream-50 hover:text-gold-500 text-lg md:text-xl font-bold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded"
           >
             <span>{ui.ctaStand}</span>

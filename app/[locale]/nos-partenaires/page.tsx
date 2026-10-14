@@ -17,12 +17,41 @@ const UI: Record<string, { eyebrow: string; title: string; intro: string }> = {
     intro:
       "Brands, media and exceptional houses that share our passion for fire. Together, they give the 2027 show its full scale.",
   },
+  es: {
+    eyebrow: "Nuestros socios",
+    title: "Ellos hacen Barbecue Expo",
+    intro:
+      "Marcas, medios y casas de excepción que comparten nuestra pasión por el fuego. Juntos, dan al salón 2027 toda su dimensión.",
+  },
+  de: {
+    eyebrow: "Unsere Partner",
+    title: "Sie machen die Barbecue Expo",
+    intro:
+      "Marken, Medien und außergewöhnliche Häuser, die unsere Leidenschaft für das Feuer teilen. Gemeinsam verleihen sie der Messe 2027 ihre volle Größe.",
+  },
+  nl: {
+    eyebrow: "Onze partners",
+    title: "Zij maken Barbecue Expo",
+    intro:
+      "Merken, media en uitzonderlijke huizen die onze passie voor vuur delen. Samen geven ze de beurs van 2027 haar volle omvang.",
+  },
+  pt: {
+    eyebrow: "Os nossos parceiros",
+    title: "Eles fazem a Barbecue Expo",
+    intro:
+      "Marcas, meios de comunicação e casas de exceção que partilham a nossa paixão pelo fogo. Juntos, dão ao salão de 2027 toda a sua dimensão.",
+  },
+  it: {
+    eyebrow: "I nostri partner",
+    title: "Loro fanno Barbecue Expo",
+    intro:
+      "Marchi, media e maison d'eccezione che condividono la nostra passione per il fuoco. Insieme, danno al salone 2027 tutta la sua dimensione.",
+  },
 };
-const ALIASES: Record<string, "fr" | "en"> = { es: "fr", de: "fr", nl: "fr", pt: "fr", it: "fr" };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const ui = UI[locale] || UI[ALIASES[locale] || "fr"];
+  const ui = UI[locale] || UI.fr;
   return buildMetadata(locale, "/nos-partenaires", {
     title: `${ui.eyebrow} — Barbecue Expo 2027`,
     description: ui.intro,
@@ -31,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function PartnersPage() {
   const locale = await getLocale();
-  const ui = UI[locale] || UI[ALIASES[locale] || "fr"];
+  const ui = UI[locale] || UI.fr;
 
   return (
     <div className="bg-cream-50 min-h-screen">

@@ -10,6 +10,7 @@ export default function BandeDate({
   mois,
   annee,
   lieu,
+  marque,
   children,
 }: {
   /** ex. « 12·13·14 » */
@@ -18,6 +19,8 @@ export default function BandeDate({
   annee: string;
   /** une ligne par entrée, ex. ["Parc Floral", "de Paris"] */
   lieu: string[];
+  /** monogramme à la place du « B » fixe, ex. <TraceB> */
+  marque?: ReactNode;
   /** en pied de bande, ex. le bouton Billetterie */
   children?: ReactNode;
 }) {
@@ -38,7 +41,9 @@ export default function BandeDate({
           </span>
         ))}
       </p>
-      <Image src="/b-mark-noir.png" alt="" width={96} height={120} className="mt-auto w-14 md:w-16 h-auto" />
+      {marque ?? (
+        <Image src="/b-mark-noir.png" alt="" width={96} height={120} className="mt-auto w-14 md:w-16 h-auto" />
+      )}
       {children}
     </>
   );

@@ -1,4 +1,5 @@
 "use client";
+import { CHIFFRES } from "@/lib/chiffres";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
@@ -45,49 +46,49 @@ const UI: Record<
     eyebrow: "Avec nos partenaires",
     title: "Toutes les marques clés.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — quelques-uns des partenaires qui nous accompagnent. Voir l'ensemble des plus de deux cents exposants.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — quelques-uns des partenaires qui nous accompagnent. En 2027 : ${CHIFFRES.marques2027} marques internationales, ${CHIFFRES.pays2027} pays représentés.`,
     cta: "Voir tous les exposants",
   },
   en: {
     eyebrow: "With our partners",
     title: "All the key brands.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — some of the partners standing with us. See all 200+ exhibitors.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — some of the partners standing with us. In 2027: ${CHIFFRES.marques2027} international brands, ${CHIFFRES.pays2027} countries represented.`,
     cta: "See all exhibitors",
   },
   es: {
     eyebrow: "Con nuestros socios",
     title: "Todas las marcas clave.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — algunos de los socios que nos acompañan. Ver los 200+ expositores.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — algunos de los socios que nos acompañan. En 2027: ${CHIFFRES.marques2027} marcas internacionales, ${CHIFFRES.pays2027} países representados.`,
     cta: "Ver todos los expositores",
   },
   de: {
     eyebrow: "Mit unseren Partnern",
     title: "Alle wichtigen Marken.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — einige unserer Partner. Alle 200+ Aussteller ansehen.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — einige unserer Partner. 2027: ${CHIFFRES.marques2027} internationale Marken, ${CHIFFRES.pays2027} vertretene Länder.`,
     cta: "Alle Aussteller ansehen",
   },
   nl: {
     eyebrow: "Met onze partners",
     title: "Alle belangrijke merken.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — enkele van onze partners. Bekijk alle 200+ exposanten.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — enkele van onze partners. In 2027: ${CHIFFRES.marques2027} internationale merken, ${CHIFFRES.pays2027} vertegenwoordigde landen.`,
     cta: "Alle exposanten bekijken",
   },
   pt: {
     eyebrow: "Com os nossos parceiros",
     title: "Todas as marcas-chave.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — alguns dos parceiros que nos acompanham. Ver todos os 200+ expositores.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — alguns dos parceiros que nos acompanham. Em 2027: ${CHIFFRES.marques2027} marcas internacionais, ${CHIFFRES.pays2027} países representados.`,
     cta: "Ver todos os expositores",
   },
   it: {
     eyebrow: "Con i nostri partner",
     title: "Tutti i marchi chiave.",
     subtitle:
-      "Weber, Traeger, Kamado Joe, OFYR, Big Green Egg, Napoleon, Monolith, Char-Broil — alcuni dei partner che ci accompagnano. Vedi tutti i 200+ espositori.",
+      `Weber, Traeger, Kamado Joe, OFYR, Napoleon, Monolith, Char-Broil — alcuni dei partner che ci accompagnano. Nel 2027: ${CHIFFRES.marques2027} marchi internazionali, ${CHIFFRES.pays2027} paesi rappresentati.`,
     cta: "Vedi tutti gli espositori",
   },
 };

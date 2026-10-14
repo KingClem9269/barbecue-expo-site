@@ -307,12 +307,13 @@ export function Stepper({
 }: {
   value: number; onChange: (n: number) => void; min?: number; max?: number; step?: number; suffix?: string; className?: string;
 }) {
+  const { t } = useT();
   const clamp = (n: number) => Math.min(max, Math.max(min, n));
   return (
     <div className={`inline-flex items-center rounded-sm border border-ink-900/20 bg-cream-50 ${className}`}>
       <button
         type="button"
-        aria-label="Diminuer"
+        aria-label={t("Diminuer")}
         onClick={() => onChange(clamp(value - step))}
         className="w-9 h-9 flex items-center justify-center text-ink-700 hover:bg-ink-900/5 disabled:opacity-30"
         disabled={value <= min}
@@ -328,10 +329,10 @@ export function Stepper({
         className="w-14 text-center bg-transparent text-ink-900 font-bold text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
         style={{ fontFamily: "SansPlomb-98, sans-serif" }}
       />
-      {suffix && <span className="pr-2 text-ink-500 text-xs">{suffix}</span>}
+      {suffix && <span className="pr-2 text-ink-500 text-xs">{t(suffix)}</span>}
       <button
         type="button"
-        aria-label="Augmenter"
+        aria-label={t("Augmenter")}
         onClick={() => onChange(clamp(value + step))}
         className="w-9 h-9 flex items-center justify-center text-ink-700 hover:bg-ink-900/5 disabled:opacity-30"
         disabled={value >= max}

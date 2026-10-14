@@ -8,6 +8,13 @@ export type PitmasterSession = {
   time: string;
   type: "Masterclass" | "Cooking Show" | "Grill Arena";
   title: string;
+  title_fr?: string;
+  title_en?: string;
+  title_es?: string;
+  title_de?: string;
+  title_nl?: string;
+  title_pt?: string;
+  title_it?: string;
 };
 
 export type PitmasterSocial = {
@@ -26,6 +33,11 @@ export type Pitmaster = {
   stand?: string;
   bio_fr: string;
   bio_en: string;
+  bio_es?: string;
+  bio_de?: string;
+  bio_nl?: string;
+  bio_pt?: string;
+  bio_it?: string;
   sessions?: PitmasterSession[];
   social?: PitmasterSocial;
   portrait?: string;
@@ -35,6 +47,32 @@ export type Pitmaster = {
 export function getBio(p: Pitmaster, locale: string): string {
   const localized = (p as unknown as Record<string, string>)[`bio_${locale}`];
   return localized || p.bio_en || p.bio_fr || "";
+}
+
+/** Session days are stored in French in the JSON ("Vendredi"…); these are display labels only. */
+const SESSION_DAYS: Record<string, Record<string, string>> = {
+  Vendredi: { fr: "Vendredi", en: "Friday", es: "Viernes", de: "Freitag", nl: "Vrijdag", pt: "Sexta-feira", it: "Venerdì" },
+  Samedi: { fr: "Samedi", en: "Saturday", es: "Sábado", de: "Samstag", nl: "Zaterdag", pt: "Sábado", it: "Sabato" },
+  Dimanche: { fr: "Dimanche", en: "Sunday", es: "Domingo", de: "Sonntag", nl: "Zondag", pt: "Domingo", it: "Domenica" },
+};
+
+/** Localized label for a session day key (data key stays unchanged for filtering). */
+export function getSessionDay(day: string, locale: string): string {
+  return SESSION_DAYS[day]?.[locale] || SESSION_DAYS[day]?.en || day;
+}
+
+/** Localized session title, falling back to EN then the raw title. */
+export function getSessionTitle(s: PitmasterSession, locale: string): string {
+  const localized = (s as unknown as Record<string, string | undefined>)[`title_${locale}`];
+  return localized || s.title_en || s.title;
+}
+
+const RESET_LABELS: Record<string, string> = {
+  fr: "Réinitialiser", en: "Reset", es: "Restablecer", de: "Zurücksetzen", nl: "Wissen", pt: "Repor", it: "Azzera",
+};
+
+export function getResetLabel(locale: string): string {
+  return RESET_LABELS[locale] || RESET_LABELS.en;
 }
 
 const COUNTRY_NAMES: Record<string, Record<string, string>> = {

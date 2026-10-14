@@ -23,6 +23,36 @@ const SPONSOR: Record<string, { eyebrow: string; title: string; text: string; ct
     text: "Official partner of Barbecue Expo 2027 — 80 years in the heat of the action.",
     cta: "Read the article",
   },
+  es: {
+    eyebrow: "Patrocinador oficial",
+    title: "Zip Feux, patrocinador de la Grill Arena",
+    text: "Socio oficial de Barbecue Expo 2027 — 80 años en el fuego de la acción.",
+    cta: "Leer el artículo",
+  },
+  de: {
+    eyebrow: "Offizieller Sponsor",
+    title: "Zip Feux, Sponsor der Grill Arena",
+    text: "Offizieller Partner der Barbecue Expo 2027 — seit 80 Jahren mitten im Feuer.",
+    cta: "Artikel lesen",
+  },
+  nl: {
+    eyebrow: "Officiële sponsor",
+    title: "Zip Feux, sponsor van de Grill Arena",
+    text: "Officiële partner van Barbecue Expo 2027 — al 80 jaar midden in het vuur.",
+    cta: "Lees het artikel",
+  },
+  pt: {
+    eyebrow: "Patrocinador oficial",
+    title: "Zip Feux, patrocinador da Grill Arena",
+    text: "Parceiro oficial da Barbecue Expo 2027 — há 80 anos no calor da ação.",
+    cta: "Ler o artigo",
+  },
+  it: {
+    eyebrow: "Sponsor ufficiale",
+    title: "Zip Feux, sponsor della Grill Arena",
+    text: "Partner ufficiale di Barbecue Expo 2027 — da 80 anni nel fuoco dell'azione.",
+    cta: "Leggi l'articolo",
+  },
 };
 
 const DESC: Record<string, string> = {

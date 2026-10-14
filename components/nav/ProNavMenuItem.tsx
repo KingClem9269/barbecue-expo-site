@@ -7,7 +7,7 @@ import { getProMenuLabel } from "./proMenu";
 export function ProNavMenuItem({ item }: { item: ProMenuItem }) {
   const locale = useLocale();
   return (
-    <li className="hidden lg:block">
+    <li className="hidden xl:block">
       <Link
         href={item.href}
         className="nav-item relative inline-flex items-center justify-center px-4 py-2 text-sm tracking-wide transition-colors duration-200 hover:text-gold-500 focus:outline-none focus-visible:text-gold-500"

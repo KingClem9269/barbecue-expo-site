@@ -26,16 +26,26 @@ export default function Bouton({
   variante = "jaune",
   className = "",
   type = "button",
+  disabled = false,
 }: {
   children: ReactNode;
-  /** lien interne (localisé) ou externe avec `externe` */
+  /** lien interne (localisé), ancre de la page (#…) ou externe avec `externe` */
   href?: string;
   externe?: boolean;
   variante?: VarianteBouton;
   className?: string;
   type?: "button" | "submit";
+  /** boutons seulement (formulaire en cours d'envoi) */
+  disabled?: boolean;
 }) {
   const classes = cn(BASE, VARIANTES[variante], className);
+  if (href?.startsWith("#")) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
   if (href && externe) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
@@ -51,7 +61,7 @@ export default function Bouton({
     );
   }
   return (
-    <button type={type} className={classes}>
+    <button type={type} disabled={disabled} className={cn(classes, "disabled:opacity-60 disabled:cursor-wait")}>
       {children}
     </button>
   );
