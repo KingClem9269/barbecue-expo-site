@@ -642,7 +642,6 @@ export const COMM_DIGITAL = [
       "Encart newsletter",
       "2 posts réseaux sociaux",
       "8 stories",
-      "1 jeu concours",
     ],
   },
   {
@@ -667,7 +666,7 @@ export const COMM_DIGITAL_GLOBAL = {
   desc: "Le dispositif complet : avant, pendant et après le salon, réunis pour une présence sans interruption.",
   phases: [
     { title: "Avant", items: ["Bannière 2 mois (pages annexes)", "Encart newsletter", "2 posts RS", "4 stories", "1 jeu concours"] },
-    { title: "Pendant", items: ["Bannière 3 jours au-dessus de la billetterie", "Encart newsletter", "2 posts RS", "8 stories", "1 jeu concours"] },
+    { title: "Pendant", items: ["Bannière 3 jours au-dessus de la billetterie", "Encart newsletter", "2 posts RS", "8 stories"] },
     { title: "Après", items: ["Bannière 2 mois sur le site", "Encart newsletter", "2 posts RS", "4 stories", "1 jeu concours"] },
   ],
 };
