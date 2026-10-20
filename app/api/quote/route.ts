@@ -28,6 +28,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const contact: Contact = body?.contact ?? {};
     const estimate = body?.estimate ?? {};
+    // Langue du visiteur en deux lettres (fr, en, it…) ; Fred choisit la
+    // langue du devis. Pas de conversion ici : on transmet la vraie langue.
+    const lang = String(body?.lang ?? "fr").slice(0, 2).toLowerCase();
+    const dryRun = body?.dryRun === true;
 
     // Champs obligatoires côté CRM : firstName, lastName, email.
     if (!contact.firstName?.trim() || !contact.lastName?.trim() || !contact.email?.trim()) {
@@ -43,7 +47,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
       },
-      body: JSON.stringify({ contact, estimate }),
+      body: JSON.stringify({ lang, event: "barbecue-expo", contact, estimate, ...(dryRun ? { dryRun: true } : {}) }),
     });
 
     const data = await res.json().catch(() => ({}));
@@ -65,6 +69,7 @@ export async function POST(request: NextRequest) {
       total: data.total,
       currency: data.currency,
       emailSent: data.emailSent,
+      language: data.language,
     });
   } catch (error) {
     console.error("[quote] erreur:", error);

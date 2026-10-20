@@ -147,7 +147,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [result, setResult] = useState<{ quoteNumber?: string; signingUrl?: string }>({});
   const [serverError, setServerError] = useState<string>("");
-  const { t } = useT();
+  const { t, lang } = useT();
 
   useEffect(() => {
     if (!open) return;
@@ -195,6 +195,10 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
     const dial = countryByIso(form.phoneIso)?.dial ?? "";
     const country = countryByIso(form.countryIso);
     const payload = {
+      // Langue affichée au moment de la demande (Fred : fr → devis français,
+      // autre → anglais). Les libellés des lignes sont déjà dans cette langue.
+      lang: lang,
+      event: "barbecue-expo",
       contact: {
         firstName: form.firstName.trim(),
         lastName: form.lastName.trim(),
