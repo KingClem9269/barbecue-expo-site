@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
-import { useCookiesAcceptes } from "@/components/consentement/Consentement";
 import { Pause, Play } from "lucide-react";
 
 /**
@@ -78,10 +77,7 @@ export default function YouTubeHeroBackground({ poster }: { poster?: string }) {
 
   // Dépend de l'écran et des préférences : faux côté serveur et à
   // l'hydratation (poster seul), puis suivi en direct côté client.
-  // YouTube dépose des cookies à la lecture : la vidéo attend l'accord du
-  // bandeau cookies ; sinon l'image fixe reste seule.
-  const cookiesAcceptes = useCookiesAcceptes();
-  const active = useSyncExternalStore(subscribe, videoAllowed, () => false) && cookiesAcceptes;
+  const active = useSyncExternalStore(subscribe, videoAllowed, () => false);
 
   useEffect(() => {
     if (!active) return;

@@ -61,7 +61,7 @@ function abonner(cb: () => void) {
 }
 const instantane = () => `${lireChoix() ?? choixVisite ?? ""}|${rouvert ? 1 : 0}`;
 
-/** Vrai si le visiteur a accepté les cookies (vidéos YouTube, mesure). */
+/** Vrai si le visiteur a accepté les cookies de mesure. */
 export function useCookiesAcceptes() {
   const etat = useSyncExternalStore(abonner, instantane, () => "?|0");
   return etat.startsWith("accepte|");
@@ -78,13 +78,13 @@ const EN_SAVOIR_PLUS: Record<string, string> = {
 };
 
 const TEXTES: Record<string, { texte: string; accepter: string; refuser: string }> = {
-  fr: { texte: "Avec votre accord, nous utilisons des cookies de mesure d'audience (Google Analytics) et la vidéo YouTube de l'accueil en dépose aussi.", accepter: "Accepter", refuser: "Refuser" },
-  en: { texte: "With your consent, we use audience measurement cookies (Google Analytics); the YouTube video on the home page also sets cookies.", accepter: "Accept", refuser: "Decline" },
-  es: { texte: "Con su consentimiento, usamos cookies de medición de audiencia (Google Analytics); el vídeo de YouTube de la portada también deposita cookies.", accepter: "Aceptar", refuser: "Rechazar" },
-  de: { texte: "Mit Ihrer Zustimmung verwenden wir Cookies zur Reichweitenmessung (Google Analytics); auch das YouTube-Video der Startseite setzt Cookies.", accepter: "Akzeptieren", refuser: "Ablehnen" },
-  nl: { texte: "Met uw toestemming gebruiken we cookies voor bezoekersmeting (Google Analytics); ook de YouTube-video op de homepage plaatst cookies.", accepter: "Accepteren", refuser: "Weigeren" },
-  pt: { texte: "Com o seu consentimento, usamos cookies de medição de audiência (Google Analytics); o vídeo do YouTube da página inicial também coloca cookies.", accepter: "Aceitar", refuser: "Recusar" },
-  it: { texte: "Con il tuo consenso usiamo cookie di misurazione dell'audience (Google Analytics); anche il video YouTube della home deposita cookie.", accepter: "Accetta", refuser: "Rifiuta" },
+  fr: { texte: "Avec votre accord, nous utilisons des cookies de mesure d'audience (Google Analytics) pour améliorer le site.", accepter: "Accepter", refuser: "Refuser" },
+  en: { texte: "With your consent, we use audience measurement cookies (Google Analytics) to improve the site.", accepter: "Accept", refuser: "Decline" },
+  es: { texte: "Con su consentimiento, usamos cookies de medición de audiencia (Google Analytics) para mejorar el sitio.", accepter: "Aceptar", refuser: "Rechazar" },
+  de: { texte: "Mit Ihrer Zustimmung verwenden wir Cookies zur Reichweitenmessung (Google Analytics), um die Website zu verbessern.", accepter: "Akzeptieren", refuser: "Ablehnen" },
+  nl: { texte: "Met uw toestemming gebruiken we cookies voor bezoekersmeting (Google Analytics) om de site te verbeteren.", accepter: "Accepteren", refuser: "Weigeren" },
+  pt: { texte: "Com o seu consentimento, usamos cookies de medição de audiência (Google Analytics) para melhorar o site.", accepter: "Aceitar", refuser: "Recusar" },
+  it: { texte: "Con il tuo consenso usiamo cookie di misurazione dell'audience (Google Analytics) per migliorare il sito.", accepter: "Accetta", refuser: "Rifiuta" },
 };
 
 export default function Consentement() {

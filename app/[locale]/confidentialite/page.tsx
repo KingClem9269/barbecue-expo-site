@@ -38,7 +38,7 @@ const FR: Contenu = {
     {
       titre: "Qui est responsable de vos données",
       paragraphes: [
-        `JPC Events, organisateur de Barbecue Expo — Route de la Pyramide, 75012 Paris, France. Contact : ${CONTACT} · 09 83 90 16 15.`,
+        `JPC EVENTS, SAS au capital de 63 080 €, RCS Nanterre 825 256 902, organisatrice de Barbecue Expo — Route de la Pyramide, 75012 Paris, France. Contact : ${CONTACT} · 09 83 90 16 15.`,
       ],
     },
     {
@@ -54,7 +54,7 @@ const FR: Contenu = {
     {
       titre: "Qui y a accès",
       paragraphes: [
-        "Les équipes de JPC Events et nos prestataires techniques, uniquement pour les besoins du service : Pylot (CRM, envoi des e-mails), Vercel (hébergement du site), Weezevent (billetterie), Google (mesure d'audience, seulement avec votre accord) et YouTube (vidéos). Certains de ces prestataires peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types ou cadre de protection des données UE–États-Unis). Vos données ne sont jamais vendues.",
+        "Les équipes de JPC EVENTS et, uniquement pour les besoins du service : Brevo (envoi des e-mails), Google (mesure d'audience, seulement avec votre accord) et YouTube (vidéos). Google et YouTube peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types ou cadre de protection des données UE–États-Unis). Vos données ne sont jamais vendues.",
       ],
     },
     {
@@ -66,11 +66,11 @@ const FR: Contenu = {
   ],
   cookiesTitre: "Les cookies",
   cookiesIntro:
-    "Les cookies de mesure d'audience et ceux de YouTube ne sont déposés qu'avec votre accord, donné dans le bandeau. Sans accord, la vidéo de l'accueil est remplacée par une image et les autres vidéos ne se lancent que si vous cliquez dessus. Le site garde aussi quelques réglages dans votre navigateur, nécessaires à son fonctionnement.",
+    "Les cookies de mesure d'audience ne sont déposés qu'avec votre accord, donné dans le bandeau. Les vidéos du site sont diffusées par YouTube en mode « confidentialité renforcée » et se lancent automatiquement : YouTube dépose alors ses propres cookies. Le site garde aussi quelques réglages dans votre navigateur, nécessaires à son fonctionnement.",
   entetes: ["Nom", "Déposé par", "À quoi il sert", "Durée", "Accord"],
   cookies: [
     { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Mesurer l'audience du site (pages vues, sources de visite)", duree: "13 mois", accord: "Oui" },
-    { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Lire les vidéos intégrées", duree: "Session à 6 mois", accord: "Oui" },
+    { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Lire les vidéos intégrées (lecture automatique)", duree: "Session à 6 mois", accord: "Non" },
     { nom: "bbq-expo:cookies", qui: "barbecue-expo.fr (stockage local)", but: "Retenir votre choix sur les cookies", duree: "6 mois", accord: "Non (nécessaire)" },
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Retenir la langue du site", duree: "Session", accord: "Non (nécessaire)" },
     { nom: "bbq-expo-audience", qui: "barbecue-expo.fr (stockage local)", but: "Retenir le parcours choisi (grand public ou pro)", duree: "Jusqu'à effacement", accord: "Non (nécessaire)" },
@@ -95,7 +95,7 @@ const EN: Contenu = {
     {
       titre: "Who is responsible for your data",
       paragraphes: [
-        `JPC Events, organiser of Barbecue Expo — Route de la Pyramide, 75012 Paris, France. Contact: ${CONTACT} · +33 9 83 90 16 15.`,
+        `JPC EVENTS, a French SAS with a share capital of €63,080, registered in Nanterre under no. 825 256 902, organiser of Barbecue Expo — Route de la Pyramide, 75012 Paris, France. Contact: ${CONTACT} · +33 9 83 90 16 15.`,
       ],
     },
     {
@@ -111,7 +111,7 @@ const EN: Contenu = {
     {
       titre: "Who has access",
       paragraphes: [
-        "JPC Events staff and our technical providers, only as needed for the service: Pylot (CRM, email sending), Vercel (website hosting), Weezevent (ticketing), Google (audience measurement, only with your consent) and YouTube (videos). Some providers may process data outside the European Union, under the safeguards set by the GDPR (standard contractual clauses or the EU–US Data Privacy Framework). Your data is never sold.",
+        "JPC EVENTS staff and, only as needed for the service: Brevo (email sending), Google (audience measurement, only with your consent) and YouTube (videos). Google and YouTube may process data outside the European Union, under the safeguards set by the GDPR (standard contractual clauses or the EU–US Data Privacy Framework). Your data is never sold.",
       ],
     },
     {
@@ -123,11 +123,11 @@ const EN: Contenu = {
   ],
   cookiesTitre: "Cookies",
   cookiesIntro:
-    "Audience measurement and YouTube cookies are only set with your consent, given in the banner. Without consent, the home page video is replaced by an image and other videos only start if you click on them. The site also keeps a few settings in your browser that it needs to work.",
+    "Audience measurement cookies are only set with your consent, given in the banner. The site's videos are served by YouTube in privacy-enhanced mode and start automatically: YouTube then sets its own cookies. The site also keeps a few settings in your browser that it needs to work.",
   entetes: ["Name", "Set by", "Purpose", "Duration", "Consent"],
   cookies: [
     { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Measure site audience (page views, traffic sources)", duree: "13 months", accord: "Yes" },
-    { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Play embedded videos", duree: "Session to 6 months", accord: "Yes" },
+    { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Play embedded videos (autoplay)", duree: "Session to 6 months", accord: "No" },
     { nom: "bbq-expo:cookies", qui: "barbecue-expo.fr (local storage)", but: "Remember your cookie choice", duree: "6 months", accord: "No (necessary)" },
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Remember the site language", duree: "Session", accord: "No (necessary)" },
     { nom: "bbq-expo-audience", qui: "barbecue-expo.fr (local storage)", but: "Remember the chosen journey (public or trade)", duree: "Until cleared", accord: "No (necessary)" },
