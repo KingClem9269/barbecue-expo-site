@@ -23,7 +23,7 @@ import InstagramEmbed from "@/components/InstagramEmbed";
 import { LangContext, useT, translate, isLang, type Lang } from "./i18n";
 import { useLocale } from "next-intl";
 import {
-  EstimatorProvider, EstimatorPanel, useEstimator, parsePrice, fmtEUR,
+  EstimatorProvider, EstimatorPanel, useEstimator, parsePrice, fmtEUR, tx, txMin, eur,
   Stepper, CheckRow, ChooseButton, type Zone,
 } from "./Estimator";
 
@@ -80,7 +80,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
       const id = oid("heures");
       const qty = est.get(id)?.qty ?? 0;
       const onChange = (n: number) => n > 0
-        ? est.upsert({ id, group: OPT_GROUP, label: t("Chariot élévateur"), detail: `${n} h × ${fmtEUR(unit)}/h`, amount: unit * n, qty: n })
+        ? est.upsert({ id, group: OPT_GROUP, label: tx("Chariot élévateur"), detail: `${n} h × ${eur(unit)}/h`, amount: unit * n, qty: n })
         : est.remove(id);
       return <OptCard opt={opt}><StepperRow price={opt.price} value={qty} onChange={onChange} suffix="h" /></OptCard>;
     }
@@ -90,7 +90,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
       const id = oid("qty");
       const qty = est.get(id)?.qty ?? 0;
       const onChange = (n: number) => n > 0
-        ? est.upsert({ id, group: OPT_GROUP, label: t("Badges exposants supp."), detail: `${n} × ${fmtEUR(unit)}`, amount: unit * n, qty: n })
+        ? est.upsert({ id, group: OPT_GROUP, label: tx("Badges exposants supp."), detail: `${n} × ${eur(unit)}`, amount: unit * n, qty: n })
         : est.remove(id);
       return <OptCard opt={opt}><StepperRow price={opt.price} value={qty} onChange={onChange} suffix="badge(s)" /></OptCard>;
     }
@@ -100,7 +100,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
       const id = oid("packs");
       const qty = est.get(id)?.qty ?? 0;
       const onChange = (n: number) => n > 0
-        ? est.upsert({ id, group: OPT_GROUP, label: t(opt.name), detail: unit != null ? `${n} × ${fmtEUR(unit)}` : `${n} ${t("pack(s) — sur devis")}`, amount: unit != null ? unit * n : null, qty: n })
+        ? est.upsert({ id, group: OPT_GROUP, label: tx(opt.name), detail: unit != null ? `${n} × ${eur(unit)}` : `${n} ${tx("pack(s) — sur devis")}`, amount: unit != null ? unit * n : null, qty: n })
         : est.remove(id);
       return <OptCard opt={opt}><StepperRow price={opt.price} value={qty} onChange={onChange} suffix="pack(s)" /></OptCard>;
     }
@@ -109,7 +109,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
     const id = oid("x");
     return (
       <OptCard opt={opt}>
-        <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label: t(opt.name), amount: amt })} className="w-full">
+        <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label: tx(opt.name), amount: amt })} className="w-full">
           <span className="flex-1 flex items-center justify-between gap-2">
             <span className="text-ink-700 text-sm">{t("Sélectionner")}</span>
             <Price>{t(opt.price ?? "")}</Price>
@@ -136,7 +136,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
                   {selectable.map(({ h, cell }) => {
                     const amt = parsePrice(cell);
                     const id = oid(`${row[0]}|${h}`);
-                    const label = multi ? `${t(opt.name)} — ${t(row[0])} (${t(h)})` : `${t(opt.name)} — ${t(row[0])}`;
+                    const label = multi ? `${tx(opt.name)} — ${tx(row[0])} (${tx(h)})` : `${tx(opt.name)} — ${tx(row[0])}`;
                     return (
                       <CheckRow key={h} checked={est.has(id)} onChange={() => est.toggle({ id, group: OPT_GROUP, label, amount: amt })}>
                         <span className="text-sm whitespace-nowrap">
@@ -168,7 +168,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
             const id = oid(o.label);
             if (useCheckbox) {
               return (
-                <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: t(o.label), detail: t(opt.name), amount: amt })}>
+                <CheckRow key={i} checked={est.has(id)} className="w-full border-t border-ink-900/10 first:border-t-0 py-2" onChange={() => est.toggle({ id, group: OPT_GROUP, label: tx(o.label), detail: tx(opt.name), amount: amt })}>
                   <span className="flex-1 flex items-center justify-between gap-2">
                     <span className="text-ink-700 text-sm">{t(o.label)}</span>
                     <Price>{t(o.price ?? "")}</Price>
@@ -184,7 +184,7 @@ function StandOptionCard({ opt }: { opt: StandOption }) {
                   <Price>{t(o.price ?? "")}</Price>
                 </div>
                 <Stepper value={qty} suffix={u ?? undefined} onChange={(n) => n > 0
-                  ? est.upsert({ id, group: OPT_GROUP, label: t(o.label), detail: u ? `${n} ${u} × ${fmtEUR(amt ?? 0)}/${u}` : `${n} × ${o.price}`, amount: (amt ?? 0) * n, qty: n })
+                  ? est.upsert({ id, group: OPT_GROUP, label: tx(o.label), detail: u ? `${n} ${u} × ${eur(amt ?? 0)}/${u}` : `${n} × ${o.price}`, amount: (amt ?? 0) * n, qty: n })
                   : est.remove(id)} />
               </div>
             );
@@ -261,14 +261,14 @@ function RangeChooseButton({ rangeKey }: { rangeKey: string }) {
 /** Étape 3 : sélecteur de surface extérieure (m²). */
 function OutdoorSelector() {
   const est = useEstimator();
-  const { t } = useT();
+  const { t, lang } = useT();
   const unit = parsePrice(OUTDOOR.price) ?? 0;
   return (
     <div className="mt-5">
       <div className="text-ink-500 text-xs uppercase tracking-widest mb-2">{t("Surface extérieure")}</div>
       <Stepper value={est.outdoorSqm} onChange={est.setOutdoorSqm} min={0} max={2000} suffix="m²" />
       {est.outdoorSqm > 0 && (
-        <div className="mt-2 text-ink-700 text-sm">≈ <span className="text-gold-700 font-bold">{fmtEUR(est.outdoorSqm * unit)}</span></div>
+        <div className="mt-2 text-ink-700 text-sm">≈ <span className="text-gold-700 font-bold">{fmtEUR(est.outdoorSqm * unit, lang)}</span></div>
       )}
     </div>
   );
@@ -319,7 +319,7 @@ function VitrophanieCheck() {
   const { t } = useT();
   const id = "place:vitrophanie";
   return (
-    <CheckRow dark checked={est.has(id)} onChange={() => est.toggle({ id, group: "Communication sur place", label: t(VITROPHANIE.title), amount: parsePrice(VITROPHANIE.price) })}>
+    <CheckRow dark checked={est.has(id)} onChange={() => est.toggle({ id, group: "Communication sur place", label: tx(VITROPHANIE.title), amount: parsePrice(VITROPHANIE.price) })}>
       <span className="text-cream-50/80 text-sm">{t("Ajouter à mon estimation")}</span>
     </CheckRow>
   );
@@ -328,7 +328,7 @@ function VitrophanieCheck() {
 /** Communication sur stand — structure élinguée (case) + personnalisation cloisons (ml). */
 function CommStandControls() {
   const est = useEstimator();
-  const { t } = useT();
+  const { t, lang } = useT();
   // [0] = structure élinguée, [2] = personnalisation cloisons. [1] (panneau surélevé) retiré.
   const structure = COMM_STAND.items[0];
   const perso = COMM_STAND.items[2];
@@ -347,7 +347,7 @@ function CommStandControls() {
     <div className="divide-y divide-ink-900/10">
       {/* Structure élinguée — case à cocher */}
       <div className="py-4 first:pt-0">
-        <CheckRow checked={est.has("comm:structure")} onChange={() => est.toggle({ id: "comm:structure", group: "Communication", label: t(structure.name), detail: t("À partir de"), amount: structureAmt })} className="w-full">
+        <CheckRow checked={est.has("comm:structure")} onChange={() => est.toggle({ id: "comm:structure", group: "Communication", label: tx(structure.name), detail: tx("À partir de"), amount: structureAmt })} className="w-full">
           <span className="flex-1">
             <span className="block text-ink-900 font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t(structure.name)}</span>
             <span className="block text-ink-600 text-sm">{t(structure.desc)}</span>
@@ -366,12 +366,12 @@ function CommStandControls() {
             { id: orId, label: "Gamme or", unit: orMl },
           ].map((g) => (
             <div key={g.id} className="flex items-center justify-between gap-3">
-              <span className="text-ink-700 text-sm">{t(g.label)} <span className="text-gold-700 font-semibold">({fmtEUR(g.unit)}/ml)</span></span>
+              <span className="text-ink-700 text-sm">{t(g.label)} <span className="text-gold-700 font-semibold">({fmtEUR(g.unit, lang)}/ml)</span></span>
               <Stepper
                 value={g.id === argentId ? argentQty : orQty}
                 suffix="ml"
                 onChange={(n) => n > 0
-                  ? est.upsert({ id: g.id, group: "Communication", label: `${t("Cloisons")} ${t(g.label).toLowerCase()}`, detail: `${n} ml × ${fmtEUR(g.unit)}/ml`, amount: g.unit * n, qty: n })
+                  ? est.upsert({ id: g.id, group: "Communication", label: `${tx("Cloisons")} ${txMin(g.label)}`, detail: `${n} ml × ${eur(g.unit)}/ml`, amount: g.unit * n, qty: n })
                   : est.remove(g.id)}
               />
             </div>
@@ -385,12 +385,11 @@ function CommStandControls() {
 /** Bouton de choix générique (case à cocher) pour une carte/option de communication. */
 function PickButton({ id, group, label, price, label2 }: { id: string; group: string; label: string; price?: string | null; label2?: string }) {
   const est = useEstimator();
-  const { t } = useT();
   return (
     <ChooseButton
       selected={est.has(id)}
       labelIdle={label2 ?? "Choisir cette option"}
-      onClick={() => est.toggle({ id, group, label: t(label), amount: parsePrice(price) })}
+      onClick={() => est.toggle({ id, group, label: tx(label), amount: parsePrice(price) })}
     />
   );
 }
@@ -419,7 +418,7 @@ function BrandingQty({ name, price, photo, desc, min }: { name: string; price: s
             onChange={(n) => {
               const v = n > 0 && n < min ? min : n;
               return v > 0
-                ? est.upsert({ id, group: "Branding", label: t(name), detail: `${v.toLocaleString("fr-FR")} pcs × ${price}`, amount: unit * v, qty: v })
+                ? est.upsert({ id, group: "Branding", label: tx(name), detail: `${v.toLocaleString("fr-FR")} pcs × ${price}`, amount: unit * v, qty: v })
                 : est.remove(id);
             }}
           />
@@ -443,7 +442,7 @@ function BrandingPick({ name, price, photo, desc }: { name: string; price: strin
         <p className="text-ink-600 text-xs mb-2">{t(desc)}</p>
         <Price>{price}</Price>
         <div className="mt-3 mt-auto pt-3">
-          <ChooseButton selected={est.has(id)} onClick={() => est.toggle({ id, group: "Branding", label: t(name), amount: parsePrice(price) })} />
+          <ChooseButton selected={est.has(id)} onClick={() => est.toggle({ id, group: "Branding", label: tx(name), amount: parsePrice(price) })} />
         </div>
       </div>
     </div>
@@ -457,7 +456,7 @@ function SponsoringRow({ zone, name, price }: { zone: string; name: string; pric
   const id = `sponsoring:${zone}:${name}`;
   return (
     <li className="flex justify-between items-center gap-4 border-b border-ink-900/10 pb-2">
-      <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: "Sponsoring", label: `${t(zone)} — ${t(name)}`, amount: parsePrice(price) })}>
+      <CheckRow checked={est.has(id)} onChange={() => est.toggle({ id, group: "Sponsoring", label: `${tx(zone)} — ${tx(name)}`, amount: parsePrice(price) })}>
         <span className="text-ink-700 text-sm">{t(name)}</span>
       </CheckRow>
       <Price>{price}</Price>
@@ -479,7 +478,7 @@ function MagFormatRow({ format }: { format: { name: string; priceExpo: string; p
         <span className="inline-flex items-center gap-2">
           <CheckRow dark checked={fmtSelected} onChange={() => {
             if (fmtSelected) { est.remove(fid); est.remove(pid); }
-            else est.upsert({ id: fid, group: "Barbecue Mag", label: t(format.name), amount: parsePrice(format.priceExpo) });
+            else est.upsert({ id: fid, group: "Barbecue Mag", label: tx(format.name), amount: parsePrice(format.priceExpo) });
           }}>
             <span>{t(format.name)}</span>
           </CheckRow>
@@ -493,7 +492,7 @@ function MagFormatRow({ format }: { format: { name: string; priceExpo: string; p
           checked={est.has(pid)}
           onChange={() => {
             if (!fmtSelected) return; // publirédac uniquement si format choisi
-            est.toggle({ id: pid, group: "Barbecue Mag", label: `${t(format.name)} — ${t("publirédac (2 pages)")}`, amount: pubAmt });
+            est.toggle({ id: pid, group: "Barbecue Mag", label: `${tx(format.name)} — ${tx("publirédac (2 pages)")}`, amount: pubAmt });
           }}
           className={!fmtSelected ? "opacity-40 pointer-events-none" : ""}
         >

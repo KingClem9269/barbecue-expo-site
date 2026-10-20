@@ -253,7 +253,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
           <div>
             <h2 className="text-cream-50 font-bold text-lg" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Recevoir mon devis")}</h2>
             <p className="text-cream-50/60 text-xs mt-0.5">
-              {t("Total estimé")} : <span className="text-gold-500 font-semibold">{fmtEUR(total)}{hasQuote ? " +" : ""}</span>
+              {t("Total estimé")} : <span className="text-gold-500 font-semibold">{fmtEUR(total, lang)}{hasQuote ? " +" : ""}</span>
             </p>
           </div>
           <button type="button" onClick={onClose} aria-label={t("Fermer")} className="shrink-0 w-9 h-9 rounded-full bg-cream-50/10 hover:bg-cream-50/20 text-cream-50 flex items-center justify-center">

@@ -44,17 +44,38 @@ export function parsePrice(s?: string | null): number | null {
 }
 
 /**
- * Formate un montant en euros HT, format français.
- * Préserve jusqu'à 2 décimales sans arrondir (12,50 €/m² ne doit pas devenir 13 €),
- * et nettoie le bruit flottant. 12000 → "12 000 € HT", 12.5 → "12,50 € HT".
+ * Formate un montant hors taxes. Préserve jusqu'à 2 décimales sans arrondir
+ * (12,50 €/m² ne doit pas devenir 13 €) et nettoie le bruit flottant.
+ * Français : 12000 → "12 000 € HT" ; autres langues : "12,000 € ex-tax"
+ * (le devis Fred est en anglais pour toute langue autre que le français).
  */
-export function fmtEUR(n: number): string {
+export function fmtEUR(n: number, lang = "fr"): string {
   const rounded = Math.round(n * 100) / 100;
   const hasCents = Math.abs(rounded % 1) > 0.0001;
-  return `${rounded.toLocaleString("fr-FR", {
+  const fr = lang === "fr";
+  return `${rounded.toLocaleString(fr ? "fr-FR" : lang === "en" ? "en-GB" : lang, {
     minimumFractionDigits: hasCents ? 2 : 0,
     maximumFractionDigits: 2,
-  })} € HT`;
+  })} € ${fr ? "HT" : "ex-tax"}`;
+}
+
+/**
+ * Libellés des options choisies, gardés en « source » dans l'estimation
+ * (et le stockage local) puis traduits à l'affichage : l'estimation et le
+ * devis suivent la langue affichée, même après un changement de langue.
+ *   tx("Chariot élévateur")  texte français à traduire
+ *   txMin("Argent")          idem, en minuscules
+ *   eur(12.5)                montant formaté dans la langue
+ */
+export const tx = (fr: string) => `⟦${fr}⟧`;
+export const txMin = (fr: string) => `⟦${fr}|min⟧`;
+export const eur = (n: number) => `⟪${n}⟫`;
+
+export function localiser(s: string | undefined, t: TFn, lang: string): string | undefined {
+  if (!s) return s;
+  return s
+    .replace(/⟦([^⟧|]*)(\|min)?⟧/g, (_, fr: string, min?: string) => (min ? t(fr).toLowerCase() : t(fr)))
+    .replace(/⟪(-?[\d.]+)⟫/g, (_, n: string) => fmtEUR(Number(n), lang));
 }
 
 /* ------------------------------------------------------------------ */
@@ -212,7 +233,7 @@ type BaseConfig = {
 };
 
 /** Construit la liste complète des lignes du devis (base + génériques). */
-export function buildLines(s: EstimatorState, cfg: BaseConfig, t: TFn = (x) => x): DerivedLine[] {
+export function buildLines(s: EstimatorState, cfg: BaseConfig, t: TFn = (x) => x, lang = "fr"): DerivedLine[] {
   const lines: DerivedLine[] = [];
 
   // Surface nue
@@ -222,7 +243,7 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig, t: TFn = (x) => x
       id: "surface",
       group: "Stand",
       label: `${t("Surface nue")} — Zone ${s.zone}`,
-      detail: `${s.sqm} m² × ${fmtEUR(u)}/m²`,
+      detail: `${s.sqm} m² × ${fmtEUR(u, lang)}/m²`,
       amount: s.sqm * u,
     });
   }
@@ -238,7 +259,7 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig, t: TFn = (x) => x
           id: "range",
           group: "Stand",
           label: t(r.title),
-          detail: `${s.sqm} m² × +${fmtEUR(r.surcharge)}/m²`,
+          detail: `${s.sqm} m² × +${fmtEUR(r.surcharge, lang)}/m²`,
           amount: s.sqm * r.surcharge,
         });
       } else {
@@ -253,14 +274,14 @@ export function buildLines(s: EstimatorState, cfg: BaseConfig, t: TFn = (x) => x
       id: "outdoor",
       group: "Stand",
       label: t("Espace extérieur"),
-      detail: `${s.outdoorSqm} m² × ${fmtEUR(cfg.outdoorPerSqm)}/m²`,
+      detail: `${s.outdoorSqm} m² × ${fmtEUR(cfg.outdoorPerSqm, lang)}/m²`,
       amount: s.outdoorSqm * cfg.outdoorPerSqm,
     });
   }
 
-  // Lignes génériques (options, com', branding…) — déjà traduites à la sélection.
+  // Lignes génériques (options, com', branding…) — traduites ici (voir tx / eur).
   for (const it of Object.values(s.items)) {
-    lines.push({ id: it.id, group: it.group, label: it.label, detail: it.detail, amount: it.amount });
+    lines.push({ id: it.id, group: it.group, label: localiser(it.label, t, lang) ?? "", detail: localiser(it.detail, t, lang), amount: it.amount });
   }
 
   // Partenariat
@@ -412,10 +433,10 @@ const GROUP_ORDER = ["Stand", "Options de stand", "Partenariat", "Communication"
 
 export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
   const s = useEstimator();
-  const { t } = useT();
+  const { t, lang } = useT();
   const [collapsed, setCollapsed] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
-  const lines = buildLines(s, cfg, t);
+  const lines = buildLines(s, cfg, t, lang);
   const total = lines.reduce((sum, l) => sum + (l.amount ?? 0), 0);
   const hasQuote = lines.some((l) => l.amount == null);
 
@@ -445,7 +466,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
         <Calculator className="w-5 h-5 text-gold-500" strokeWidth={2} />
         <span className="text-left leading-tight">
           <span className="block text-[10px] uppercase tracking-widest text-cream-50/60">{t("Mon estimation")}</span>
-          <span className="block font-bold text-gold-500" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{fmtEUR(total)}{hasQuote ? " +" : ""}</span>
+          <span className="block font-bold text-gold-500" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{fmtEUR(total, lang)}{hasQuote ? " +" : ""}</span>
         </span>
       </button>
     );
@@ -483,7 +504,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
                     {l.detail && <span className="block text-ink-400 text-xs">{l.detail}</span>}
                   </span>
                   <span className={`shrink-0 font-bold tabular-nums ${l.amount != null && l.amount < 0 ? "text-emerald-600" : "text-ink-900"}`} style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
-                    {l.amount == null ? t("Sur devis") : l.amount === 0 ? "—" : fmtEUR(l.amount)}
+                    {l.amount == null ? t("Sur devis") : l.amount === 0 ? "—" : fmtEUR(l.amount, lang)}
                   </span>
                 </li>
               ))}
@@ -500,7 +521,7 @@ export function EstimatorPanel({ cfg }: { cfg: BaseConfig }) {
         <div className="flex items-center justify-between">
           <span className="text-ink-600 text-xs uppercase tracking-widest">{t("Total estimé")}</span>
           <span className="text-gold-700 text-xl font-bold tabular-nums" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>
-            {fmtEUR(total)}{hasQuote ? " +" : ""}
+            {fmtEUR(total, lang)}{hasQuote ? " +" : ""}
           </span>
         </div>
         <button
