@@ -3,6 +3,11 @@ import Image from "next/image";
 import YouTubeHeroBackground from "@/components/YouTubeHeroBackground";
 import { useLocale } from "next-intl";
 import type { HeroVideoBlok } from "@/types/storyblok";
+import { Link } from "@/i18n/navigation";
+import { PRO_MENU } from "@/components/nav/proMenu";
+
+// Libellé « Devenir exposant » : le même que dans le menu Pro, dans chaque langue.
+const DEVENIR_EXPOSANT = PRO_MENU.find((i) => i.key === "becomeExhibitor")!;
 
 // Slogans by locale (editorial, unforgettable — "Le feu. La braise. L'Europe.")
 const SLOGANS: Record<string, { line1: string; line2: string; line3: string }> = {
@@ -103,6 +108,12 @@ export function HeroVideo({ blok }: { blok: HeroVideoBlok }) {
           <div className="text-cream-50/85 text-base sm:text-lg md:text-xl tracking-widest uppercase font-medium">
             Parc Floral de Paris
           </div>
+          <Link
+            href={DEVENIR_EXPOSANT.href}
+            className="mt-4 md:mt-6 inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-bold uppercase tracking-widest border-2 border-gold-500 bg-gold-500 text-ink-950 hover:bg-gold-300 hover:border-gold-300 transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+          >
+            {DEVENIR_EXPOSANT.labels[locale] || DEVENIR_EXPOSANT.labels.fr}
+          </Link>
         </div>
       </div>
 
