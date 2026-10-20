@@ -9,6 +9,7 @@ import BrandLogoMarquee from "@/components/BrandLogoMarquee";
 import PhotoMarquee from "@/components/PhotoMarquee";
 import ExperienceZones from "@/components/visitor/ExperienceZones";
 import VisitorMap from "./VisitorMap";
+import PorteEmail from "./PorteEmail";
 import pitmastersData from "@/content/pitmasters/index.json";
 import {
   STAND_SURFACE, STAND_RANGES, OUTDOOR, STAND_OPTIONS, type StandOption,
@@ -1114,6 +1115,12 @@ export default function CatalogueClient() {
   const siteLang: Lang = isLang(locale) ? locale : "fr";
   const [lang, setLang] = useState<Lang>(siteLang);
   useEffect(() => { setLang(siteLang); }, [siteLang]);
+  // <html lang> suit la langue affichée par le catalogue (lecteurs d'écran,
+  // demande d'e-mail) ; rendu à la langue du site en quittant la page.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    return () => { document.documentElement.lang = locale; };
+  }, [lang, locale]);
   const t = useMemo(() => (fr: string) => translate(lang, fr), [lang]);
   return (
     <LangContext.Provider value={{ lang, t }}>
@@ -1121,6 +1128,7 @@ export default function CatalogueClient() {
     <article className="bg-cream-50">
       <StickyNav lang={lang} setLang={setLang} siteLang={siteLang} />
       <EstimatorPanel cfg={ESTIMATOR_CFG} />
+      <PorteEmail />
 
       {/* ───────────── HERO ───────────── */}
       <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-ink-950">
