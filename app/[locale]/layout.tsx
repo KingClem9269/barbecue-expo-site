@@ -9,7 +9,7 @@ import { getConfig } from "@/lib/content";
 import { DesktopNav } from "@/components/nav/DesktopNav";
 import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import Consentement from "@/components/consentement/Consentement";
 import SkipLink from "@/components/a11y/SkipLink";
 import { AudienceProvider } from "@/components/nav/AudienceContext";
 import FiltresMarque from "@/components/geste/FiltresMarque";
@@ -49,13 +49,8 @@ export default async function RootLayout({
     <div>Not found</div>;
   }
 
-  // Google Tag Manager — conteneur Barbecue Expo (GTM-5NCHQMXR).
-  // Surchargeable via NEXT_PUBLIC_GTM_ID (autre conteneur, ou "" pour désactiver).
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-5NCHQMXR";
-
   return (
     <html lang={locale}>
-      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <head>
         {/* Preload the branded display font to prevent FOIT on first paint */}
         <link
@@ -81,18 +76,6 @@ export default async function RootLayout({
       </head>
         <body className={`${interTight.variable} antialiased`}>
           <FiltresMarque />
-          {/* GTM noscript (fallback JS désactivé) — le composant Next ne l'inclut pas */}
-          {gtmId ? (
-            <noscript>
-              <iframe
-                src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-                height="0"
-                width="0"
-                style={{ display: "none", visibility: "hidden" }}
-                title="Google Tag Manager"
-              />
-            </noscript>
-          ) : null}
           <NextIntlClientProvider locale={locale}>
             <AudienceProvider>
             <SkipLink />
@@ -114,13 +97,12 @@ export default async function RootLayout({
             </main>
             <Newsletter />
             <Footer data={siteSettings?.content} locale={locale} />
+            {/* Bandeau cookies : GTM (GTM-5NCHQMXR) et GA4 (G-YBVVEXBHWM) ne
+                se chargent qu'après « Accepter ». */}
+            <Consentement />
             </AudienceProvider>
           </NextIntlClientProvider>
         </body>
-      {/* GA4 chargé en direct — propriété « Barbecue - GA4 » (G-YBVVEXBHWM).
-          Quand GA4 sera configuré comme tag DANS GTM, retirer cette ligne
-          pour éviter le double comptage des pages vues. */}
-      <GoogleAnalytics gaId="G-YBVVEXBHWM" />
     </html>
   );
 }

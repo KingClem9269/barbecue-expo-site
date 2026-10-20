@@ -22,6 +22,7 @@ const MAIN_PATHS: Entry[] = [
   { path: "/actualites/zip-feux-partenaire-officiel-2027", priority: 0.7, changeFrequency: "monthly" },
   // Billetterie
   { path: "/billetterie", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/confidentialite", priority: 0.2, changeFrequency: "monthly" },
   { path: "/billetterie/pro-b2b", priority: 0.7, changeFrequency: "monthly" },
   // Exposer / pro
   { path: "/pourquoi-exposer", priority: 0.85, changeFrequency: "monthly" },

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
+import { useCookiesAcceptes } from "@/components/consentement/Consentement";
 import { Pause, Play } from "lucide-react";
 
 /**
@@ -77,7 +78,10 @@ export default function YouTubeHeroBackground({ poster }: { poster?: string }) {
 
   // Dépend de l'écran et des préférences : faux côté serveur et à
   // l'hydratation (poster seul), puis suivi en direct côté client.
-  const active = useSyncExternalStore(subscribe, videoAllowed, () => false);
+  // YouTube dépose des cookies à la lecture : la vidéo attend l'accord du
+  // bandeau cookies ; sinon l'image fixe reste seule.
+  const cookiesAcceptes = useCookiesAcceptes();
+  const active = useSyncExternalStore(subscribe, videoAllowed, () => false) && cookiesAcceptes;
 
   useEffect(() => {
     if (!active) return;
@@ -86,6 +90,8 @@ export default function YouTubeHeroBackground({ poster }: { poster?: string }) {
     const createPlayer = () => {
       if (cancelled || !targetRef.current || !window.YT?.Player) return;
       playerRef.current = new window.YT.Player(targetRef.current, {
+        // Mode « sans cookies » de YouTube (pas de cookie avant lecture active)
+        host: "https://www.youtube-nocookie.com",
         videoId: VIDEO_ID,
         width: "100%",
         height: "100%",

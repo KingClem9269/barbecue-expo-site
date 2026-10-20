@@ -3,6 +3,7 @@ import { GlobalConfigBlok } from "@/types/storyblok";
 import FooterNav from "../nav/FooterNav";
 import { LocaleSwitcher } from "../nav/LocaleSwitcher";
 import EcosystemLinks from "../ecosystem/EcosystemLinks";
+import BoutonCookies from "@/components/consentement/BoutonCookies";
 
 const Footer = ({
   data,
@@ -33,6 +34,9 @@ const Footer = ({
         </div>
         <div className="border-t border-white pt-8 text-center text-secondary text-sm mt-4">
           <p>© 2026 BBQ Expo - JPC Events - Site: Studio Stéphane</p>
+          <p className="mt-2">
+            <BoutonCookies />
+          </p>
         </div>
       </div>
     </footer>

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
-import { Volume2, VolumeX } from "lucide-react";
+import { Play, Volume2, VolumeX } from "lucide-react";
+import { useCookiesAcceptes } from "@/components/consentement/Consentement";
 
 /**
  * Contained YouTube player — muted, autoplay, looped on the 0→LOOP_END
@@ -26,14 +27,14 @@ interface YTPlayer {
 // Note : window.YT et onYouTubeIframeAPIReady sont déjà déclarés globalement
 // dans YouTubeHeroBackground.tsx — on ne les redéclare pas ici (sinon conflit TS).
 
-const UI: Record<string, { activer: string; couper: string; actif: string }> = {
-  fr: { activer: "Activer le son", couper: "Couper le son", actif: "Son activé" },
-  en: { activer: "Turn sound on", couper: "Mute", actif: "Sound on" },
-  es: { activer: "Activar el sonido", couper: "Silenciar", actif: "Sonido activado" },
-  de: { activer: "Ton einschalten", couper: "Ton ausschalten", actif: "Ton an" },
-  nl: { activer: "Geluid aan", couper: "Geluid uit", actif: "Geluid staat aan" },
-  pt: { activer: "Ativar o som", couper: "Desativar o som", actif: "Som ativado" },
-  it: { activer: "Attiva l'audio", couper: "Disattiva l'audio", actif: "Audio attivo" },
+const UI: Record<string, { activer: string; couper: string; actif: string; lire: string; avis: string }> = {
+  fr: { activer: "Activer le son", couper: "Couper le son", actif: "Son activé", lire: "Lire la vidéo", avis: "YouTube dépose des cookies à la lecture." },
+  en: { activer: "Turn sound on", couper: "Mute", actif: "Sound on", lire: "Play the video", avis: "YouTube sets cookies when playing." },
+  es: { activer: "Activar el sonido", couper: "Silenciar", actif: "Sonido activado", lire: "Ver el vídeo", avis: "YouTube deposita cookies al reproducir." },
+  de: { activer: "Ton einschalten", couper: "Ton ausschalten", actif: "Ton an", lire: "Video abspielen", avis: "YouTube setzt beim Abspielen Cookies." },
+  nl: { activer: "Geluid aan", couper: "Geluid uit", actif: "Geluid staat aan", lire: "Video afspelen", avis: "YouTube plaatst cookies bij het afspelen." },
+  pt: { activer: "Ativar o som", couper: "Desativar o som", actif: "Som ativado", lire: "Ver o vídeo", avis: "O YouTube coloca cookies ao reproduzir." },
+  it: { activer: "Attiva l'audio", couper: "Disattiva l'audio", actif: "Audio attivo", lire: "Guarda il video", avis: "YouTube deposita cookie durante la riproduzione." },
 };
 
 export default function YouTubeEmbed() {
@@ -41,6 +42,11 @@ export default function YouTubeEmbed() {
   const playerRef = useRef<YTPlayer | null>(null);
   const [muted, setMuted] = useState(true);
   const ui = UI[useLocale()] || UI.fr;
+  // Lecture seulement après l'accord du bandeau cookies, ou un clic sur
+  // « Lire la vidéo » (accord pour cette vidéo-là).
+  const cookiesAcceptes = useCookiesAcceptes();
+  const [clic, setClic] = useState(false);
+  const actif = cookiesAcceptes || clic;
 
   const toggleSound = () => {
     const p = playerRef.current;
@@ -52,10 +58,13 @@ export default function YouTubeEmbed() {
   };
 
   useEffect(() => {
+    if (!actif) return;
     let cancelled = false;
     const create = () => {
       if (cancelled || !targetRef.current || !window.YT?.Player) return;
       playerRef.current = new window.YT.Player(targetRef.current, {
+        // Mode « sans cookies » de YouTube (pas de cookie avant lecture active)
+        host: "https://www.youtube-nocookie.com",
         videoId: VIDEO_ID,
         width: "100%",
         height: "100%",
@@ -92,7 +101,22 @@ export default function YouTubeEmbed() {
       window.clearInterval(iv);
       try { playerRef.current?.destroy(); } catch { /* noop */ }
     };
-  }, []);
+  }, [actif]);
+
+  if (!actif) {
+    return (
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-ink-950 text-cream-50 px-6 text-center">
+        <button
+          type="button"
+          onClick={() => setClic(true)}
+          className="inline-flex items-center gap-2 rounded-full bg-gold-500 hover:bg-gold-300 text-ink-950 px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+        >
+          <Play className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" /> {ui.lire}
+        </button>
+        <p className="text-xs text-cream-50/60">{ui.avis}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="absolute inset-0">
