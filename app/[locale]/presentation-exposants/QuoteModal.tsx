@@ -246,7 +246,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   };
 
   return createPortal(
-    <div className="fixed inset-0 z-[110] flex items-start md:items-center justify-center p-3 md:p-6 bg-ink-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-label={t("Recevoir mon devis")} onMouseDown={onClose}>
+    <div className="fixed inset-0 z-[110] flex items-start md:items-center justify-center p-3 md:p-6 bg-ink-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-label={t("Recevoir mon devis")} data-quote-modal="" onMouseDown={onClose}>
       <div className="relative w-full max-w-2xl my-6 bg-cream-50 rounded-sm shadow-2xl" onMouseDown={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between gap-4 px-5 md:px-7 py-4 border-b border-ink-900/10 bg-ink-950 rounded-t-sm">

@@ -54,7 +54,7 @@ const FR: Contenu = {
     {
       titre: "Qui y a accès",
       paragraphes: [
-        "Les équipes de JPC EVENTS et, uniquement pour les besoins du service : Brevo (envoi des e-mails), Google (mesure d'audience, seulement avec votre accord) et YouTube (vidéos). Google et YouTube peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types ou cadre de protection des données UE–États-Unis). Vos données ne sont jamais vendues.",
+        "Les équipes de JPC EVENTS et, uniquement pour les besoins du service : Brevo (envoi des e-mails), Google (mesure d'audience et publicité, seulement avec votre accord) et YouTube (vidéos). Google et YouTube peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types ou cadre de protection des données UE–États-Unis). Vos données ne sont jamais vendues.",
       ],
     },
     {
@@ -66,10 +66,11 @@ const FR: Contenu = {
   ],
   cookiesTitre: "Les cookies",
   cookiesIntro:
-    "Les cookies de mesure d'audience ne sont déposés qu'avec votre accord, donné dans le bandeau. Les vidéos du site sont diffusées par YouTube en mode « confidentialité renforcée » et se lancent automatiquement : YouTube dépose alors ses propres cookies. Le site garde aussi quelques réglages dans votre navigateur, nécessaires à son fonctionnement.",
+    "Les cookies de mesure d'audience et les cookies publicitaires ne sont déposés qu'avec votre accord, donné séparément pour chacune de ces deux finalités dans le bandeau. Sans accord, Google Tag Manager reçoit un signal de refus et les balises publicitaires ne déposent aucun cookie. Les vidéos du site sont diffusées par YouTube en mode « confidentialité renforcée » et se lancent automatiquement : YouTube dépose alors ses propres cookies. Le site garde aussi quelques réglages dans votre navigateur, nécessaires à son fonctionnement.",
   entetes: ["Nom", "Déposé par", "À quoi il sert", "Durée", "Accord"],
   cookies: [
-    { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Mesurer l'audience du site (pages vues, sources de visite)", duree: "13 mois", accord: "Oui" },
+    { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Mesurer l'audience du site (pages vues, sources de visite)", duree: "13 mois", accord: "Oui (mesure)" },
+    { nom: "_gcl_au, _gcl_aw, IDE…", qui: "Google Ads", but: "Mesurer l'efficacité de nos campagnes et adapter les annonces à vos centres d'intérêt", duree: "90 jours à 13 mois", accord: "Oui (publicité)" },
     { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Lire les vidéos intégrées (lecture automatique)", duree: "Session à 6 mois", accord: "Non" },
     { nom: "bbq-expo:cookies", qui: "barbecue-expo.fr (stockage local)", but: "Retenir votre choix sur les cookies", duree: "6 mois", accord: "Non (nécessaire)" },
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Retenir la langue du site", duree: "Session", accord: "Non (nécessaire)" },
@@ -111,7 +112,7 @@ const EN: Contenu = {
     {
       titre: "Who has access",
       paragraphes: [
-        "JPC EVENTS staff and, only as needed for the service: Brevo (email sending), Google (audience measurement, only with your consent) and YouTube (videos). Google and YouTube may process data outside the European Union, under the safeguards set by the GDPR (standard contractual clauses or the EU–US Data Privacy Framework). Your data is never sold.",
+        "JPC EVENTS staff and, only as needed for the service: Brevo (email sending), Google (audience measurement and advertising, only with your consent) and YouTube (videos). Google and YouTube may process data outside the European Union, under the safeguards set by the GDPR (standard contractual clauses or the EU–US Data Privacy Framework). Your data is never sold.",
       ],
     },
     {
@@ -123,10 +124,11 @@ const EN: Contenu = {
   ],
   cookiesTitre: "Cookies",
   cookiesIntro:
-    "Audience measurement cookies are only set with your consent, given in the banner. The site's videos are served by YouTube in privacy-enhanced mode and start automatically: YouTube then sets its own cookies. The site also keeps a few settings in your browser that it needs to work.",
+    "Audience measurement and advertising cookies are only set with your consent, given separately for each of these two purposes in the banner. Without consent, Google Tag Manager receives a refusal signal and advertising tags set no cookies. The site's videos are served by YouTube in privacy-enhanced mode and start automatically: YouTube then sets its own cookies. The site also keeps a few settings in your browser that it needs to work.",
   entetes: ["Name", "Set by", "Purpose", "Duration", "Consent"],
   cookies: [
-    { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Measure site audience (page views, traffic sources)", duree: "13 months", accord: "Yes" },
+    { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Measure site audience (page views, traffic sources)", duree: "13 months", accord: "Yes (measurement)" },
+    { nom: "_gcl_au, _gcl_aw, IDE…", qui: "Google Ads", but: "Measure our campaigns' effectiveness and tailor ads to your interests", duree: "90 days to 13 months", accord: "Yes (advertising)" },
     { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Play embedded videos (autoplay)", duree: "Session to 6 months", accord: "No" },
     { nom: "bbq-expo:cookies", qui: "barbecue-expo.fr (local storage)", but: "Remember your cookie choice", duree: "6 months", accord: "No (necessary)" },
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Remember the site language", duree: "Session", accord: "No (necessary)" },
