@@ -11,7 +11,8 @@ import { createPortal } from "react-dom";
 import { X as XIcon, ChevronDown, Search, Check, Loader2, MailCheck, ExternalLink } from "lucide-react";
 import { getCountries, countryByIso } from "./countries";
 import { sendGAEvent } from "@next/third-parties/google";
-import { fmtEUR, type DerivedLine } from "./Estimator";
+import { fmtEUR, useEstimator, type DerivedLine } from "./Estimator";
+import { pousser, identifiantUnique } from "./mesure";
 import { useT } from "./i18n";
 
 type FormState = {
@@ -148,6 +149,7 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   const [result, setResult] = useState<{ quoteNumber?: string; signingUrl?: string }>({});
   const [serverError, setServerError] = useState<string>("");
   const { t, lang } = useT();
+  const est = useEstimator();
 
   useEffect(() => {
     if (!open) return;
@@ -233,6 +235,18 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
       }
       setResult({ quoteNumber: data.quoteNumber, signingUrl: data.signingUrl });
       setStatus("success");
+      // Mesure : conversion devis, au retour réussi de Fred. event_id = numéro
+      // de devis créé par Fred (unique, stable : sert à dédoublonner).
+      pousser({
+        event: "devis_submitted",
+        event_id: data.quoteNumber ? String(data.quoteNumber) : identifiantUnique(),
+        value: Math.round(total * 100) / 100,
+        currency: "EUR",
+        surface_m2: est.sqm,
+        zone: est.zone,
+        gamme: est.rangeKey ?? "surface_nue",
+        pays: form.countryIso.toUpperCase(),
+      });
       // Conversion GA4 : devis exposant généré (créé dans le CRM)
       sendGAEvent("event", "generate_lead", {
         value: total,

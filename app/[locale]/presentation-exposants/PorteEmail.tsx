@@ -2,12 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useAudience } from "@/components/nav/AudienceContext";
+import { pousser, identifiantUnique } from "./mesure";
 
 /**
  * Demande d'e-mail de /presentation-exposants (et de cette page seulement).
  *
- * Après 15 s de lecture, un voile flou couvre la page et bloque le défilement ;
- * une carte sans bouton de fermeture demande l'e-mail. Le champ et le bouton
+ * Déclenchement (le premier qui arrive) :
+ *   A. lecture engagée : 50 % de la page atteints (bas de l'écran) ET au
+ *      moins 20 s sur la page — la plus tardive des deux conditions ;
+ *   B. intention de sortie : curseur qui sort par le haut de la fenêtre
+ *      (ordinateur), ou défilement rapide vers le haut (mobile).
+ * Un voile flou couvre alors la page et bloque le défilement ; une carte sans
+ * fermeture (ni croix, ni clic à côté, ni Échap) demande l'e-mail. Le champ et le bouton
  * sont un formulaire du CRM (Pylot) affiché en iframe. L'iframe prévient la
  * page par postMessage :
  *   { type: "pylot-form:height", slug, height }  → hauteur de l'iframe
@@ -21,7 +28,11 @@ import { createPortal } from "react-dom";
 const ORIGINE = "https://app.pylot-ai.com";
 const SLUG = "barbecue-expo-presentation-exposant";
 const CLE = "bbq-expo:presentation-exposants:email";
-const DELAI = 15_000;
+const DELAI_MIN = 20_000; // règle A : présence minimale
+const PROFONDEUR = 0.5; // règle A : moitié de la page
+// règle B (mobile) : remontée d'au moins 250 px à plus de 1,5 px/ms
+const REMONTEE_PX = 250;
+const REMONTEE_VITESSE = 1.5;
 
 const TEXTES: Record<string, { surtitre: string; titre: string; texte: string }> = {
   fr: {
@@ -74,20 +85,79 @@ function dejaDebloque() {
 }
 
 export default function PorteEmail() {
+  const { audience } = useAudience();
   const [ouverte, setOuverte] = useState(false);
   const [langue, setLangue] = useState("fr");
   const [hauteur, setHauteur] = useState(260);
   const titreRef = useRef<HTMLHeadingElement>(null);
 
-  // Minuterie de 15 s, sauf si la page a déjà été débloquée.
+  // Règles A et B, sauf si la page a déjà été débloquée sur ce navigateur.
   useEffect(() => {
     if (dejaDebloque()) return;
-    const id = window.setTimeout(() => {
+    const debut = Date.now();
+    let fait = false;
+    let moitieAtteinte = false;
+    let attente: number | undefined;
+
+    const ouvrir = () => {
+      if (fait) return;
+      fait = true;
+      nettoyer();
       setLangue(langueDuDocument());
       setOuverte(true);
-    }, DELAI);
-    return () => window.clearTimeout(id);
+    };
+
+    // A. 50 % de la page ET 20 s de présence
+    const verifierA = () => {
+      if (moitieAtteinte) return;
+      const doc = document.documentElement;
+      if ((window.scrollY + window.innerHeight) / doc.scrollHeight < PROFONDEUR) return;
+      moitieAtteinte = true;
+      attente = window.setTimeout(ouvrir, Math.max(0, DELAI_MIN - (Date.now() - debut)));
+    };
+
+    // B. sortie par le haut (ordinateur)
+    const surSortie = (e: MouseEvent) => {
+      if (!e.relatedTarget && e.clientY <= 0) ouvrir();
+    };
+
+    // B. défilement rapide vers le haut (mobile)
+    let dernierY = window.scrollY;
+    let dernierT = performance.now();
+    let cumul = 0;
+    const surDefilement = () => {
+      const y = window.scrollY;
+      const t = performance.now();
+      const dy = dernierY - y; // > 0 : vers le haut
+      const dt = Math.max(1, t - dernierT);
+      if (dy > 0 && dy / dt > REMONTEE_VITESSE) {
+        cumul += dy;
+        if (cumul >= REMONTEE_PX && window.matchMedia("(pointer: coarse)").matches) ouvrir();
+      } else {
+        cumul = 0;
+      }
+      dernierY = y;
+      dernierT = t;
+      verifierA();
+    };
+
+    function nettoyer() {
+      window.removeEventListener("scroll", surDefilement);
+      document.removeEventListener("mouseout", surSortie);
+      if (attente !== undefined) window.clearTimeout(attente);
+    }
+
+    window.addEventListener("scroll", surDefilement, { passive: true });
+    document.addEventListener("mouseout", surSortie);
+    verifierA(); // page plus courte que l'écran, ou arrivée en milieu de page
+    return nettoyer;
   }, []);
+
+  // Mesure : le mur s'affiche (dénominateur du taux de franchissement).
+  useEffect(() => {
+    if (ouverte) pousser({ event: "email_gate_shown", audience });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ouverte]);
 
   // Langue suivie en direct : un changement de <html lang> réinitialise l'iframe.
   useEffect(() => {
@@ -127,8 +197,8 @@ export default function PorteEmail() {
       if (d.type === "pylot-form:height" && typeof d.height === "number" && d.height > 0) {
         setHauteur(Math.ceil(d.height));
       } else if (d.type === "pylot-form:submitted" && fermeture === undefined) {
-        const w = window as Window & { dataLayer?: unknown[] };
-        if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: "presentation_exposant_email" });
+        // Le formulaire n'envoie « submitted » qu'après la réponse réussie du CRM.
+        pousser({ event: "email_gate_submitted", event_id: identifiantUnique(), audience });
         try {
           window.localStorage.setItem(CLE, "1");
         } catch {
@@ -142,7 +212,7 @@ export default function PorteEmail() {
       window.removeEventListener("message", surMessage);
       if (fermeture !== undefined) window.clearTimeout(fermeture);
     };
-  }, [ouverte]);
+  }, [ouverte, audience]);
 
   if (!ouverte) return null;
 
@@ -158,6 +228,7 @@ export default function PorteEmail() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="porte-email-titre"
+        data-email-gate=""
         className="w-full max-w-[500px] bg-charbon text-papier border border-white/15 p-6 md:p-8 shadow-2xl"
       >
         <p className="text-xs uppercase tracking-[0.08em] text-jaune">{t.surtitre}</p>

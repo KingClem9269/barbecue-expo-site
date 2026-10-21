@@ -14,6 +14,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState, type R
 import { X as XIcon, Calculator, Minus, Plus, ChevronDown, FileText } from "lucide-react";
 import { QuoteModal } from "./QuoteModal";
 import { useT } from "./i18n";
+import { pousser, premiereFoisDansLaVisite } from "./mesure";
 
 type TFn = (fr: string) => string;
 
@@ -204,9 +205,17 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
       partnerKey !== null ||
       placeKey !== null ||
       Object.keys(items).length > 0;
+    // Mesure : premier changement de surface, de zone ou de gamme par le
+    // visiteur (pas la reprise de l'estimation enregistrée), une fois par visite.
+    const utilise = () => {
+      if (premiereFoisDansLaVisite("bbq-expo:simulateur-utilise")) pousser({ event: "simulateur_utilise" });
+    };
     return {
-      sqm, zone, setSqm, setZone,
-      rangeKey, setRangeKey,
+      sqm, zone,
+      setSqm: (n: number) => { utilise(); setSqm(n); },
+      setZone: (z: Zone) => { utilise(); setZone(z); },
+      rangeKey,
+      setRangeKey: (k: string | null) => { utilise(); setRangeKey(k); },
       outdoorSqm, setOutdoorSqm,
       partnerKey, setPartnerKey,
       placeKey, setPlaceKey,
