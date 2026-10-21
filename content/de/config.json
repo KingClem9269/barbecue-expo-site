@@ -40,13 +40,6 @@
             "label": "Datenschutzrichtlinie",
             "submenu": [],
             "component": "menu-item"
-          },
-          {
-            "_uid": "230ec9f3-aba3-4698-a1bb-987a2dd81ed2",
-            "link": "",
-            "label": "AGB",
-            "submenu": [],
-            "component": "menu-item"
           }
         ],
         "component": "menu-item"
