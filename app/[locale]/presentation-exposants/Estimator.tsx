@@ -205,8 +205,10 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
       partnerKey !== null ||
       placeKey !== null ||
       Object.keys(items).length > 0;
-    // Mesure : premier changement de surface, de zone ou de gamme par le
-    // visiteur (pas la reprise de l'estimation enregistrée), une fois par visite.
+    // Mesure : première interaction du visiteur avec le configurateur
+    // (surface, zone, gamme, extérieur, partenariat, communication, options),
+    // une fois par visite. Ces fonctions ne sont appelées que par les clics et
+    // saisies du visiteur, jamais par la reprise de l'estimation enregistrée.
     const utilise = () => {
       if (premiereFoisDansLaVisite("bbq-expo:simulateur-utilise")) pousser({ event: "simulateur_utilise" });
     };
@@ -216,10 +218,17 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
       setZone: (z: Zone) => { utilise(); setZone(z); },
       rangeKey,
       setRangeKey: (k: string | null) => { utilise(); setRangeKey(k); },
-      outdoorSqm, setOutdoorSqm,
-      partnerKey, setPartnerKey,
-      placeKey, setPlaceKey,
-      items, has, get, upsert, remove, toggle, reset,
+      outdoorSqm,
+      setOutdoorSqm: (n: number) => { utilise(); setOutdoorSqm(n); },
+      partnerKey,
+      setPartnerKey: (k: string | null) => { utilise(); setPartnerKey(k); },
+      placeKey,
+      setPlaceKey: (k: string | null) => { utilise(); setPlaceKey(k); },
+      items, has, get,
+      upsert: (item: Item) => { utilise(); upsert(item); },
+      remove: (id: string) => { utilise(); remove(id); },
+      toggle: (item: Item) => { utilise(); toggle(item); },
+      reset,
       started,
     };
   }, [sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items]);
