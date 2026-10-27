@@ -253,8 +253,6 @@ export const NL: Record<string, string> = {
   "Ville": "Plaats",
   "État / Province": "Staat / Provincie",
   "Pays": "Land",
-  "SIRET": "Bedrijfsnummer (SIRET)",
-  "Numéro de TVA": "Btw-nummer",
   "N° et rue": "Nr. en straat",
   "Sélectionner un pays": "Selecteer een land",
   "Rechercher un pays…": "Zoek een land…",

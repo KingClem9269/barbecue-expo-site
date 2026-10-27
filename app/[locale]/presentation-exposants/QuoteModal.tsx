@@ -21,13 +21,11 @@ type FormState = {
   phoneIso: string; phone: string;
   company: string; address1: string; postalCode: string; city: string;
   state: string; countryIso: string;
-  siret: string; vat: string;
 };
 
 const EMPTY: FormState = {
   firstName: "", lastName: "", email: "", phoneIso: "fr", phone: "",
   company: "", address1: "", postalCode: "", city: "", state: "", countryIso: "fr",
-  siret: "", vat: "",
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -215,8 +213,6 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
         state: form.state.trim() || undefined,
         country: country?.name,
         countryIso: form.countryIso,
-        siret: form.siret.trim() || undefined,
-        vat: form.vat.trim() || undefined,
       },
       estimate: {
         total,
@@ -337,13 +333,6 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
               </Field>
               <Field label="Pays" required error={errors.countryIso}>
                 <CountryPicker mode="country" value={form.countryIso} onChange={(iso) => set("countryIso", iso)} invalid={!!errors.countryIso} />
-              </Field>
-
-              <Field label="SIRET">
-                <input value={form.siret} onChange={(e) => set("siret", e.target.value)} className={inputCls()} />
-              </Field>
-              <Field label="Numéro de TVA">
-                <input value={form.vat} onChange={(e) => set("vat", e.target.value)} className={inputCls()} placeholder="FR…" />
               </Field>
             </div>
 

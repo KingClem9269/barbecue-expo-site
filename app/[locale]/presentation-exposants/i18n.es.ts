@@ -253,8 +253,6 @@ export const ES: Record<string, string> = {
   "Ville": "Ciudad",
   "État / Province": "Provincia / Región",
   "Pays": "País",
-  "SIRET": "N.º de identificación de empresa (SIRET)",
-  "Numéro de TVA": "Número de IVA",
   "N° et rue": "N.º y calle",
   "Sélectionner un pays": "Seleccione un país",
   "Rechercher un pays…": "Buscar un país…",

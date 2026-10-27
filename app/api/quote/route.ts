@@ -14,7 +14,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 type Contact = {
   firstName?: string; lastName?: string; email?: string; phone?: string;
   company?: string; address1?: string; postalCode?: string; city?: string;
-  state?: string; country?: string; countryIso?: string; siret?: string; vat?: string;
+  state?: string; country?: string; countryIso?: string;
 };
 
 export async function POST(request: NextRequest) {
