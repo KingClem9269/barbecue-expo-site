@@ -13,6 +13,7 @@ import { getCountries, countryByIso } from "./countries";
 import { sendGAEvent } from "@next/third-parties/google";
 import { fmtEUR, useEstimator, type DerivedLine } from "./Estimator";
 import { pousser, identifiantUnique } from "./mesure";
+import { lireProvenance } from "@/lib/provenance";
 import { useT } from "./i18n";
 
 type FormState = {
@@ -222,6 +223,9 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
         hasQuote,
         lines: lines.map((l) => ({ label: l.label, detail: l.detail, amount: l.amount })),
       },
+      // D'où vient le visiteur (publicité, lien suivi…) : Fred filtre les
+      // demandes venues des campagnes.
+      provenance: lireProvenance(),
     };
     try {
       const res = await fetch("/api/quote", {

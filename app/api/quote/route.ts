@@ -47,7 +47,13 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
       },
-      body: JSON.stringify({ lang, event: "barbecue-expo", contact, estimate, ...(dryRun ? { dryRun: true } : {}) }),
+      body: JSON.stringify({
+        lang, event: "barbecue-expo", contact, estimate,
+        // Provenance du visiteur (UTM, identifiants de clic, site d'origine) :
+        // Fred en déduit l'origine de la demande (publicité Meta, LinkedIn…).
+        provenance: body?.provenance && typeof body.provenance === "object" ? body.provenance : null,
+        ...(dryRun ? { dryRun: true } : {}),
+      }),
     });
 
     const data = await res.json().catch(() => ({}));

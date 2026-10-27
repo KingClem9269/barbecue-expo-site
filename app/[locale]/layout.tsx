@@ -10,6 +10,7 @@ import { DesktopNav } from "@/components/nav/DesktopNav";
 import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
 import Consentement, { GTM_ID, SCRIPT_CONSENTEMENT_DEFAUT } from "@/components/consentement/Consentement";
+import Provenance from "@/components/global/Provenance";
 import { GoogleTagManager } from "@next/third-parties/google";
 import SkipLink from "@/components/a11y/SkipLink";
 import { AudienceProvider } from "@/components/nav/AudienceContext";
@@ -105,6 +106,8 @@ export default async function RootLayout({
             {/* Bandeau cookies (mesure / publicité) ; GA4 direct seulement
                 avec l'accord « mesure ». */}
             <Consentement />
+            {/* Provenance du visiteur, jointe à une demande de devis. */}
+            <Provenance />
             </AudienceProvider>
           </NextIntlClientProvider>
         </body>
