@@ -1,0 +1,456 @@
+[
+  {
+    "slug": "1337-flavor",
+    "name": "1337 Flavor",
+    "tier": "bronze"
+  },
+  {
+    "slug": "andre-bazin",
+    "name": "André Bazin",
+    "category": "gourmet",
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/andre-bazin.png",
+    "description": "André Bazin est le spécialiste des produits de charcuterie à destination des Industriels, des Grossistes- Distributeurs et de la Grande Distribution.\nSociété familiale, basée exclusivement en France, la Société emploie plus de 430 personnes pour fabriquer plus de 27 000 Tonnes de produits de Salaisons, de Charcuteries et de Viandes cuites par an.\nForte de la diversité de ses savoir-faire Produits: Salaisons, Charcuterie, Saucisserie, Viandes Cuites, la Société fournit plus de 500 Clients spécialistes de lʼalimentaire, de la Multinationale à la PME locale.Ancrée dans son terroir, la Société est également le Spécialiste des produits de tradition Charcutière Franc-Comtoise.",
+    "website": "https://andre-bazin.fr/gms/",
+    "social": {
+      "linkedin": "https://fr.linkedin.com/company/societeandrebazin"
+    }
+  },
+  {
+    "slug": "atelier-des-mirandes",
+    "name": "Atelier des Mirandes",
+    "category": "accessories",
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/atelier-des-mirandes.jpg",
+    "coverImage": "/exposants-2027/photos/atelier-des-mirandes.jpg",
+    "description": "Fabrication de produits dédiés à l’art de la table depuis 1988 avec du bois de haute qualité sciée depuis plus cinquante ans"
+  },
+  {
+    "slug": "badigeon",
+    "name": "Badigeon",
+    "tier": "bronze"
+  },
+  {
+    "slug": "barbecook",
+    "name": "Barbecook",
+    "company": "LivWise (Barbecook)",
+    "category": "barbecue",
+    "subCategories": [
+      "gas",
+      "charcoal",
+      "pellet",
+      "electric",
+      "kamado",
+      "smoker",
+      "brasero",
+      "utensils",
+      "grates",
+      "thermometers",
+      "covers",
+      "care",
+      "briquettes",
+      "firelighters",
+      "outdoor-kitchens",
+      "design"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/barbecook.jpg",
+    "coverImage": "/exposants-2027/photos/barbecook.jpg",
+    "description": "Depuis 1985, Barbecook réinvente l’art de la grillade en alliant innovation, design et convivialité. Marque belge passionnée par le feu, nous créons des produits intuitifs et accessibles pour rendre chaque moment autour du barbecue encore plus agréable.\nDu barbecue au charbon de bois, au gaz ou électrique à la plancha, en passant par les fumoirs, les braseros et les accessoires, notre gamme répond à toutes les envies de cuisson en plein air.\nAvec Barbecook, chaque occasion devient une invitation à se retrouver, partager et profiter pleinement des bons moments.",
+    "website": "https://www.barbecook.be/fr/pages/about-barbecook",
+    "social": {
+      "instagram": "https://www.instagram.com/barbecook_fr"
+    }
+  },
+  {
+    "slug": "barbecue-mag",
+    "name": "Barbecue Mag",
+    "category": "barbecue",
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/barbecue-mag.png",
+    "coverImage": "/exposants-2027/photos/barbecue-mag.jpg",
+    "description": "Barbecue Mag est le média dédié à l’univers du barbecue, de la cuisson au feu et de l’art de vivre outdoor. Il décrypte les tendances, met en avant les marques, les chefs, les recettes, les équipements et les événements, tout en fédérant une communauté de passionnés, professionnels et amateurs autour d’une même culture : celle du goût, du feu et du partage.",
+    "website": "https://barbecue-mag.com",
+    "social": {
+      "instagram": "https://www.instagram.com/barbecue_mag/"
+    }
+  },
+  {
+    "slug": "belle-gnole-par-coquetelers",
+    "name": "Belle Gnôle par Côquetelers",
+    "tier": "bronze"
+  },
+  {
+    "slug": "biogrill",
+    "name": "Biogrill",
+    "company": "Omedec",
+    "tier": "bronze"
+  },
+  {
+    "slug": "blackstone",
+    "name": "Blackstone",
+    "company": "Weber",
+    "tier": "bronze"
+  },
+  {
+    "slug": "boucheries-cosse",
+    "name": "Boucheries Cosse",
+    "category": "gourmet",
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/boucheries-cosse.jpg",
+    "coverImage": "/exposants-2027/photos/boucheries-cosse.jpg",
+    "description": "La Maison Cosse est une enseigne de boucherie artisanale parisienne fondée en 2008. Présente dans quatre boutiques (11ᵉ, 15ᵉ, 16ᵉ et 17ᵉ arrondissements), elle s'appuie sur une passion du goût et un savoir-faire d'excellence.\nL'entreprise privilégie la sélection rigoureuse de viandes de haute qualité, le respect des filières d'élevage et le travail sur mesure en boutique. Alliant tradition, conseil personnalisé et ancrage de quartier, la Maison Cosse place l'exigence artisanale et l'humain au cœur de ses engagements au quotidien.",
+    "website": "https://boucheries-cosse.fr/",
+    "social": {
+      "instagram": "https://www.instagram.com/boucheries.cosse",
+      "facebook": "https://facebook.com/BoucheriesCosse"
+    }
+  },
+  {
+    "slug": "bradley-smoker",
+    "name": "Bradley Smoker",
+    "company": "Bradley Smoker /Grakka Limited",
+    "tier": "bronze"
+  },
+  {
+    "slug": "breizhero",
+    "name": "Breizhéro",
+    "tier": "bronze"
+  },
+  {
+    "slug": "bull-outdoor-products",
+    "name": "Bull Outdoor Products",
+    "company": "Bull BBQ",
+    "category": "barbecue",
+    "subCategories": [
+      "gas",
+      "charcoal",
+      "plancha",
+      "kamado",
+      "wood-oven",
+      "pizza",
+      "pro",
+      "outdoor-kitchens",
+      "sinks"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/bull-outdoor-products.png",
+    "description": "Bull Outdoor Products is committed to designing and delivering high-performance, luxury outdoor kitchen products built for unmatched durability.\nAt Bull, we are driven by a commitment to craftsmanship and durability in everything we build, from our outdoor BBQ kitchens to the premium stainless-steel grills and components that bring them to life. Bull Grills are trusted around the world, thanks to their unmatched performance, rugged construction, and timeless design.\nEvery Bull gas grill is built to last, featuring heavy-gauge stainless steel construction, solid stainless steel cooking grates, seamless dual-lined hoods, and individual friction-based Piezo igniters, components selected for reliability, not shortcuts.",
+    "website": "https://bullbbq.eu",
+    "social": {
+      "instagram": "https://www.instagram.com/bullbbqeu",
+      "facebook": "https://www.facebook.com/bullbbq.eu/"
+    }
+  },
+  {
+    "slug": "chercheurs-d-or-vert",
+    "name": "Chercheurs d'or vert",
+    "tier": "bronze"
+  },
+  {
+    "slug": "coeo-design",
+    "name": "Coeo Design",
+    "tier": "bronze"
+  },
+  {
+    "slug": "delvache",
+    "name": "Delvache",
+    "tier": "bronze"
+  },
+  {
+    "slug": "drip-ez-bbq",
+    "name": "Drip Ez BBQ",
+    "tier": "bronze"
+  },
+  {
+    "slug": "el-atuel",
+    "name": "El Atuel",
+    "tier": "bronze"
+  },
+  {
+    "slug": "eno",
+    "name": "ENO",
+    "category": "barbecue",
+    "subCategories": [
+      "plancha",
+      "utensils",
+      "grates",
+      "covers",
+      "care",
+      "outdoor-kitchens",
+      "modules"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/eno.jpg",
+    "coverImage": "/exposants-2027/photos/eno.jpg",
+    "description": "ENO est une entreprise française centenaire spécialisée dans les appareils de cuisson pour les bateaux et les jardins. Elle conçoit et fabrique dans ses ateliers de Niort des planchas en fonte émaillée de haute qualité ainsi que des cuisines d'extérieures. L'entreprise est labellisée Entreprise du Patrimoine du Vivant par l'état et ses produits sont labellisés Origine France Garantie et Longtime (conçus pour durer). l'ADN d'ENO porte sur des produits durables, réparables et performants avec un design soigné pour de beaux moments de convivialité à partager en famille ou entres ami(e)s.",
+    "website": "https://www.plancha-eno.com",
+    "social": {
+      "instagram": "https://www.instagram.com/planchaeno/",
+      "facebook": "https://www.facebook.com/laplanchaeno/?locale=fr_FR",
+      "linkedin": "https://ca.linkedin.com/company/la-plancha-eno?trk=public_post_feed-actor-name",
+      "youtube": "https://www.youtube.com/user/PLANCHAENO/videos"
+    },
+    "catalogUrl": "https://drive.google.com/file/d/1F3Q4qfmt7GT5Ne8tbR6_tWKfgZ_ecygh/view"
+  },
+  {
+    "slug": "epices-et-tous",
+    "name": "Epices et Tous",
+    "tier": "bronze"
+  },
+  {
+    "slug": "favex",
+    "name": "Favex",
+    "tier": "bronze"
+  },
+  {
+    "slug": "fyron-group-b-v",
+    "name": "Fyron Group B.V.",
+    "tier": "bronze"
+  },
+  {
+    "slug": "globaltic",
+    "name": "Globaltic",
+    "tier": "bronze"
+  },
+  {
+    "slug": "happyvore",
+    "name": "Happyvore",
+    "tier": "bronze"
+  },
+  {
+    "slug": "horl-1993-gmbh",
+    "name": "Horl 1993 GmbH",
+    "category": "accessories",
+    "subCategories": [
+      "utensils",
+      "care"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/horl-1993-gmbh.jpg",
+    "coverImage": "/exposants-2027/photos/horl-1993-gmbh.jpg",
+    "description": "Animés par notre esprit pionnier, nous créons chez HORL® des produits qui procurent de la joie tout au long de la vie. Parfaitement pensés, fabriqués avec précision et toujours à vos côtés.",
+    "website": "https://www.horl.com/fr-FR/entreprise",
+    "social": {
+      "instagram": "https://www.instagram.com/horl1993",
+      "linkedin": "https://www.linkedin.com/company/horl-1993/"
+    }
+  },
+  {
+    "slug": "kamado-sumo",
+    "name": "Kamado Sumo",
+    "tier": "bronze"
+  },
+  {
+    "slug": "kevas",
+    "name": "Kevas",
+    "tier": "bronze"
+  },
+  {
+    "slug": "kreyol-gourmet",
+    "name": "Kréyol Gourmet",
+    "tier": "bronze"
+  },
+  {
+    "slug": "la-forestiere-du-nord-gill-o-bois",
+    "name": "La Forestière du Nord (Gill O'Bois)",
+    "tier": "bronze"
+  },
+  {
+    "slug": "la-forge-de-xav",
+    "name": "La Forge De Xav",
+    "tier": "bronze"
+  },
+  {
+    "slug": "la-mundial-barcelona",
+    "name": "LA MUNDIAL BARCELONA",
+    "tier": "bronze"
+  },
+  {
+    "slug": "la-pimenterie",
+    "name": "La pimenterie",
+    "tier": "bronze"
+  },
+  {
+    "slug": "le-cuisinier-francais",
+    "name": "Le Cuisinier Français",
+    "category": "outdoor-kitchen",
+    "subCategories": [
+      "outdoor-kitchens"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/le-cuisinier-francais.png",
+    "coverImage": "/exposants-2027/photos/le-cuisinier-francais.jpg",
+    "description": "Né en 2023 de la rencontre entre Étienne Rozès, chef aventurier, et Patrice, artisan coutelier, Le Cuisinier Français défend une cuisine libre, nomade et exigeante.\nLeur création emblématique, l’Esperluète, premier véritable couteau de cuisine pliant, a été récompensée au Concours Lépine.\n100 % conçue en France, la marque privilégie les circuits courts, les savoir-faire artisanaux et la transmission, avec 99 % de sa production réalisée dans un rayon de 200 km.\nSoutenue par des milliers de passionnés, chefs, aventuriers et clients-actionnaires, elle développe une gamme de couteaux durables et innovants, portée par des valeurs d’authenticité, de partage et de liberté.",
+    "catalogUrl": "https://drive.google.com/file/d/1cAOLTzudicMtKNDzO8Z1pKGZhUNCf62h/view"
+  },
+  {
+    "slug": "le-panier-catalan",
+    "name": "LE PANIER CATALAN",
+    "tier": "bronze"
+  },
+  {
+    "slug": "maison-boteh",
+    "name": "Maison Boteh",
+    "tier": "bronze"
+  },
+  {
+    "slug": "maison-la-fumee",
+    "name": "Maison La Fumée",
+    "tier": "bronze"
+  },
+  {
+    "slug": "moddern-barbecue-co",
+    "name": "Moddern (Barbecue & Co)",
+    "tier": "bronze"
+  },
+  {
+    "slug": "neisa-cafes-art-et-saveurs",
+    "name": "NEISA CAFES ART ET SAVEURS",
+    "tier": "bronze"
+  },
+  {
+    "slug": "newellco",
+    "name": "Newellco",
+    "tier": "bronze"
+  },
+  {
+    "slug": "norpax-bv",
+    "name": "Norpax bv",
+    "tier": "bronze"
+  },
+  {
+    "slug": "outdoorchef",
+    "name": "Outdoorchef",
+    "tier": "bronze"
+  },
+  {
+    "slug": "papa-planche",
+    "name": "PAPA PLANCHE",
+    "tier": "bronze"
+  },
+  {
+    "slug": "piment-du-soleil",
+    "name": "Piment du soleil",
+    "tier": "bronze"
+  },
+  {
+    "slug": "prime-liner-by-bull",
+    "name": "Prime Liner by Bull",
+    "company": "Bull BBQ",
+    "category": "barbecue",
+    "subCategories": [
+      "gas",
+      "plancha"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/prime-liner-by-bull.png",
+    "description": "Prime Liner by Bull is a premium gas barbecue range that combines Bull's outdoor cooking expertise with contemporary German-inspired design and performance-focused engineering. It is positioned towards customers looking for a stylish, high-performance freestanding barbecue that can serve as the centrepiece of a modern outdoor entertaining area.\nThe range has a distinctive design inspired by off-road vehicles, with clean lines, substantial cooking grates and a choice of stainless-steel or matte-finish styling. Its selling points include rapid heat-up, powerful burners, infrared searing and integrated lighting.",
+    "website": "https://primeliner.eu/"
+  },
+  {
+    "slug": "purachahot",
+    "name": "Purachahot",
+    "tier": "bronze"
+  },
+  {
+    "slug": "raviday",
+    "name": "Raviday",
+    "tier": "bronze"
+  },
+  {
+    "slug": "sauces-piquantes-ca",
+    "name": "Sauces Piquantes.ca",
+    "tier": "bronze"
+  },
+  {
+    "slug": "sinfigest",
+    "name": "SINFIGEST",
+    "tier": "bronze"
+  },
+  {
+    "slug": "smok-king",
+    "name": "Smok King",
+    "tier": "bronze"
+  },
+  {
+    "slug": "soler-group",
+    "name": "SOLER Group",
+    "category": "fuels",
+    "subCategories": [
+      "charcoal",
+      "briquettes",
+      "eco"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/soler-group.png",
+    "coverImage": "/exposants-2027/photos/soler-group.jpg",
+    "description": "SOLER est une entreprise familiale française fondée en 1993. En 2021, l’entreprise a lancé sa première gamme de Charbon de bois Français de qualité gastronomique® proposant 5 références dont les Briquettes en forme de cœur et du Charbon de bois avec des très gros morceaux. Responsables et authentiques, les produits séduisent les passionnés de barbecue. Tous les produits sont issus de bois d’éclaircie gérés durablement. En plus d’être fabriqués en France, les produits sont certifiés Origine France Garantie, PEFC et Bois de France. Le savoir-faire unique de SOLER permet de produire de l’électricité verte pour l’équivalent de 15 000 foyers.",
+    "website": "https://www.soler.green/",
+    "social": {
+      "instagram": "https://www.instagram.com/soler.green/",
+      "facebook": "https://www.facebook.com/soler.green/?locale=fr_FR",
+      "linkedin": "https://www.linkedin.com/company/soler-green/"
+    }
+  },
+  {
+    "slug": "spice-france",
+    "name": "Spice France",
+    "tier": "bronze"
+  },
+  {
+    "slug": "steak-and-beer",
+    "name": "STEAK AND BEER",
+    "company": "SNB FRANCE",
+    "category": "barbecue",
+    "subCategories": [
+      "charcoal",
+      "utensils",
+      "grates",
+      "covers"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/steak-and-beer.png",
+    "description": "Steak and Beer propose une nouvelle façon de cuisiner au charbon, inspirée d’un mode de cuisson très populaire en Colombie. Nos barils génèrent jusqu’à 90 % de fumée en moins qu’un barbecue traditionnel, tout en permettant de préparer plusieurs aliments simultanément et de varier les cuissons grâce à leurs accessoires. Robustes, polyvalents et simples à utiliser, ils s’adressent aux particuliers comme aux professionnels. Leur conception permet également de cuisiner de belles quantités tout en consommant moins de charbon. Steak and Beer France distribue aujourd’hui cette gamme de barils et d’accessoires en France et en Europe.",
+    "website": "https://steakandbeer.fr/",
+    "social": {
+      "instagram": "https://www.instagram.com/barbecue_steakandbeer",
+      "tiktok": "https://tiktok.com/@barbecue_steakandbeer"
+    }
+  },
+  {
+    "slug": "taille-de-pierre-17-eric-gault",
+    "name": "Taille de Pierre 17 - Eric Gault",
+    "tier": "bronze"
+  },
+  {
+    "slug": "traditional-world-foods",
+    "name": "Traditional World Foods",
+    "tier": "bronze"
+  },
+  {
+    "slug": "vessils",
+    "name": "VESSILS®",
+    "company": "Vessils LLC",
+    "tier": "bronze"
+  },
+  {
+    "slug": "zip",
+    "name": "Zip",
+    "company": "ZIP FIRES",
+    "category": "fuels",
+    "subCategories": [
+      "charcoal",
+      "briquettes",
+      "firelighters",
+      "eco"
+    ],
+    "tier": "bronze",
+    "logo": "/exposants-2027/logos/zip.png",
+    "description": "ZIP France est la marque de référence des allume-feux, reconnue pour sa fiabilité, sa simplicité d'utilisation et ses performances d'allumage. Présente depuis de nombreuses années dans les foyers français, ZIP accompagne les consommateurs dans l'allumage de leurs barbecues, cheminées, poêles à bois et feux d'extérieur. Grâce à une gamme complète de solutions adaptées aux différents besoins et aux attentes croissantes en matière de naturalité, ZIP combine praticité, efficacité et innovation pour offrir un démarrage rapide et maîtrisé du feu, en toute confiance",
+    "website": "https://zipfeux.com/",
+    "social": {
+      "instagram": "https://www.instagram.com/zip_fires_eu"
+    }
+  }
+]

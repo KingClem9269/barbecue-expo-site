@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "generate:types": "tsx scripts/generate-storyblok-types.ts",
+    "exposants": "tsx scripts/import-exposants-drive.ts",
     "social": "tsx social/build.ts"
   },
   "dependencies": {

@@ -68,14 +68,15 @@ export default function BrandsListing({
   // Modal
   const [selected, setSelected] = useState<Brand | null>(null);
 
-  // Reset sub-category when top category changes
-  useEffect(() => {
+  // Changing the top category resets the sub-category.
+  const pickCategory = (key: CategoryKey | "all") => {
+    setCategory(key);
     setSubCategory("all");
-  }, [category]);
+  };
 
   const countries = useMemo(
     () =>
-      Array.from(new Set(brands.map((b) => b.country))).sort((a, b) =>
+      Array.from(new Set(brands.flatMap((b) => (b.country ? [b.country] : [])))).sort((a, b) =>
         getCountryName(a, locale).localeCompare(getCountryName(b, locale)),
       ),
     [brands, locale],
@@ -86,6 +87,11 @@ export default function BrandsListing({
     [category],
   );
 
+  // Categories are filled in by exhibitors: the filter only appears once most
+  // of them have done it, otherwise it would hide most of the list.
+  const showCategories =
+    brands.filter((b) => b.category).length >= brands.length * 0.8;
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return brands.filter((b) => {
@@ -94,7 +100,7 @@ export default function BrandsListing({
         if (!b.subCategories?.includes(subCategory)) return false;
       }
       if (country !== "all" && b.country !== country) return false;
-      if (q && !b.name.toLowerCase().includes(q)) return false;
+      if (q && !`${b.name} ${b.company ?? ""}`.toLowerCase().includes(q)) return false;
       if (onlyDistributor && !b.seekingDistributor) return false;
       if (onlyReseller && !b.seekingReseller) return false;
       if (onlyExports && !b.exportsAbroad) return false;
@@ -137,26 +143,30 @@ export default function BrandsListing({
   return (
     <div>
       {/* Category tabs (wrap onto multiple lines — no horizontal scroll) */}
-      <div className="mb-6">
-        <div className="flex flex-wrap gap-2">
-          <CategoryChip
-            label={labels.allCategories}
-            active={category === "all"}
-            onClick={() => setCategory("all")}
-          />
-          {TAXONOMY.map((c) => (
+      {showCategories && (
+        <div className="mb-6">
+          <div className="flex flex-wrap gap-2">
             <CategoryChip
-              key={c.key}
-              label={getCategoryLabel(c.key, locale)}
-              active={category === c.key}
-              onClick={() => setCategory(c.key)}
+              label={labels.allCategories}
+              active={category === "all"}
+              onClick={() => pickCategory("all")}
             />
-          ))}
+            {TAXONOMY.map((c) => (
+              <CategoryChip
+                key={c.key}
+                label={getCategoryLabel(c.key, locale)}
+                active={category === c.key}
+                onClick={() => pickCategory(c.key)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Sub-category pills (shown only when a category is selected and has subs) */}
-      {currentCategoryConfig && currentCategoryConfig.sub.length > 0 && (
+      {currentCategoryConfig &&
+        currentCategoryConfig.sub.length > 0 &&
+        brands.some((b) => b.subCategories?.length) && (
         <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             <SubChip
@@ -193,20 +203,22 @@ export default function BrandsListing({
           />
         </label>
 
-        {/* Country select */}
-        <select
-          value={country}
-          onChange={(e) => setCountry(e.target.value)}
-          aria-label={labels.country}
-          className="appearance-none bg-cream-50 border border-ink-900/20 rounded-sm px-3 py-2.5 text-sm text-ink-900 font-medium focus:outline-none focus-visible:border-gold-500 focus-visible:ring-2 focus-visible:ring-gold-500/30 cursor-pointer min-w-[160px]"
-        >
-          <option value="all">{labels.allCountries}</option>
-          {countries.map((c) => (
-            <option key={c} value={c}>
-              {getCountryName(c, locale)}
-            </option>
-          ))}
-        </select>
+        {/* Country select (only when the list spans several countries) */}
+        {countries.length > 1 && (
+          <select
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            aria-label={labels.country}
+            className="appearance-none bg-cream-50 border border-ink-900/20 rounded-sm px-3 py-2.5 text-sm text-ink-900 font-medium focus:outline-none focus-visible:border-gold-500 focus-visible:ring-2 focus-visible:ring-gold-500/30 cursor-pointer min-w-[160px]"
+          >
+            <option value="all">{labels.allCountries}</option>
+            {countries.map((c) => (
+              <option key={c} value={c}>
+                {getCountryName(c, locale)}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
       {/* Transverse toggles — hidden for now (flags not provided by the API) */}
@@ -331,18 +343,26 @@ function BrandCard({
     exports: string;
   };
 }) {
-  // Logo resolution: explicit logo field OR /brands/logos/<slug>.svg convention
-  const logoPath = brand.logo || `/brands/logos/${brand.slug}.svg`;
-
-  const [logoOk, setLogoOk] = useState(true);
+  // No logo → the name is drawn in its place.
+  const [logoOk, setLogoOk] = useState(Boolean(brand.logo));
+  // Name-only exhibitors have nothing more to show: no pop-up.
+  const hasDetails = Boolean(
+    brand.description ||
+      brand.website ||
+      brand.catalogUrl ||
+      brand.appointmentUrl ||
+      Object.values(brand.social ?? {}).some(Boolean),
+  );
+  const Tag = hasDetails ? "button" : "div";
 
   return (
-    <button
-      type="button"
-      onClick={onOpen}
-      className={`group relative block w-full text-left bg-cream-50 border border-ink-900/10 rounded-sm transition-all duration-300 hover:border-gold-500/50 hover:shadow-[0_0_0_1px_rgba(244,173,60,0.25)] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
-        brand.tier === "gold" ? "ring-1 ring-gold-500/20" : ""
-      }`}
+    <Tag
+      {...(hasDetails ? { type: "button" as const, onClick: onOpen } : {})}
+      className={`group relative block w-full text-left bg-cream-50 border border-ink-900/10 rounded-sm transition-all duration-300 ${
+        hasDetails
+          ? "hover:border-gold-500/50 hover:shadow-[0_0_0_1px_rgba(244,173,60,0.25)] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+          : ""
+      } ${brand.tier === "gold" ? "ring-1 ring-gold-500/20" : ""}`}
     >
       {/* Tier accent strip */}
       {brand.tier === "gold" && (
@@ -364,9 +384,9 @@ function BrandCard({
 
       {/* Logo area (square, centered) */}
       <div className="aspect-[5/3] flex items-center justify-center p-6 border-b border-ink-900/5">
-        {logoOk ? (
+        {logoOk && brand.logo ? (
           <Image
-            src={logoPath}
+            src={brand.logo}
             alt={`${brand.name} logo`}
             width={180}
             height={72}
@@ -387,25 +407,32 @@ function BrandCard({
 
       {/* Info */}
       <div className="p-4 md:p-5">
-        <div className="flex items-center gap-2 mb-3">
-          <Image
-            src={`/flags/${brand.country}.svg`}
-            alt=""
-            width={14}
-            height={14}
-            className="w-3.5 h-3.5 rounded-full object-cover"
-          />
-          <span className="text-xs text-ink-600 uppercase tracking-widest truncate">
-            {getCountryName(brand.country, locale)}
-          </span>
-        </div>
+        {brand.country && (
+          <div className="flex items-center gap-2 mb-3">
+            <Image
+              src={`/flags/${brand.country}.svg`}
+              alt=""
+              width={14}
+              height={14}
+              className="w-3.5 h-3.5 rounded-full object-cover"
+            />
+            <span className="text-xs text-ink-600 uppercase tracking-widest truncate">
+              {getCountryName(brand.country, locale)}
+            </span>
+          </div>
+        )}
 
         <h3
-          className="text-ink-900 text-base md:text-lg leading-tight font-bold mb-2 truncate"
+          className="text-ink-900 text-base md:text-lg leading-tight font-bold truncate"
           style={{ fontFamily: "SansPlomb-98, sans-serif" }}
         >
           {brand.name}
         </h3>
+        {brand.company && (
+          <p className="mt-1 text-xs text-ink-600 uppercase tracking-widest truncate">
+            {brand.company}
+          </p>
+        )}
 
         {/* Transverse pills inline */}
         <div className="flex flex-wrap gap-1.5 mt-2">
@@ -421,11 +448,13 @@ function BrandCard({
         </div>
       </div>
 
-      <ExternalLink
-        className="absolute bottom-3 right-3 w-4 h-4 text-ink-400 opacity-0 group-hover:opacity-100 transition-opacity"
-        strokeWidth={2}
-      />
-    </button>
+      {hasDetails && (
+        <ExternalLink
+          className="absolute bottom-3 right-3 w-4 h-4 text-ink-400 opacity-0 group-hover:opacity-100 transition-opacity"
+          strokeWidth={2}
+        />
+      )}
+    </Tag>
   );
 }
 
@@ -467,8 +496,7 @@ function BrandModal({
   onClose: () => void;
 }) {
   const t = MODAL_LABELS[locale] || MODAL_LABELS.fr;
-  const logoPath = brand.logo || `/brands/logos/${brand.slug}.svg`;
-  const [logoOk, setLogoOk] = useState(true);
+  const [logoOk, setLogoOk] = useState(Boolean(brand.logo));
   const website = brand.website && brand.website !== "#" ? brand.website : null;
 
   // Close on Escape + lock scroll
@@ -539,9 +567,9 @@ function BrandModal({
         <div className="px-6 md:px-10 -mt-12 relative">
           <div className="flex items-end gap-4">
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-lg bg-cream-50 border border-ink-900/10 shadow-lg flex items-center justify-center p-3 shrink-0">
-              {logoOk ? (
+              {logoOk && brand.logo ? (
                 <Image
-                  src={logoPath}
+                  src={brand.logo}
                   alt={`${brand.name} logo`}
                   width={120}
                   height={120}
@@ -571,20 +599,25 @@ function BrandModal({
 
           {/* Meta row */}
           <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-ink-600">
-            <span className="inline-flex items-center gap-1.5">
-              <Image
-                src={`/flags/${brand.country}.svg`}
-                alt=""
-                width={16}
-                height={16}
-                className="w-4 h-4 rounded-full object-cover"
-              />
-              {getCountryName(brand.country, locale)}
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="text-ink-300">·</span>
-              {getCategoryLabel(brand.category, locale)}
-            </span>
+            {brand.company && <span>{brand.company}</span>}
+            {brand.country && (
+              <span className="inline-flex items-center gap-1.5">
+                <Image
+                  src={`/flags/${brand.country}.svg`}
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="w-4 h-4 rounded-full object-cover"
+                />
+                {getCountryName(brand.country, locale)}
+              </span>
+            )}
+            {brand.category && (
+              <span className="inline-flex items-center gap-1.5">
+                {(brand.company || brand.country) && <span className="text-ink-300">·</span>}
+                {getCategoryLabel(brand.category, locale)}
+              </span>
+            )}
             {brand.stand && (
               <span className="inline-flex items-center gap-1.5 text-gold-700 font-semibold">
                 <MapPin className="w-3.5 h-3.5" strokeWidth={2} />

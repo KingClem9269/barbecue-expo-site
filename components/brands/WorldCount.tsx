@@ -78,7 +78,7 @@ export default function WorldCount({ brands }: { brands: Brand[] }) {
   // Aggregate by country
   const countries: Record<string, number> = {};
   for (const b of brands) {
-    countries[b.country] = (countries[b.country] || 0) + 1;
+    if (b.country) countries[b.country] = (countries[b.country] || 0) + 1;
   }
   const sorted = Object.entries(countries).sort((a, b) => b[1] - a[1]);
 

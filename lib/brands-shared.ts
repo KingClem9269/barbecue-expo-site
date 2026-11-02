@@ -20,10 +20,12 @@ export type BrandSocial = {
 export type Brand = {
   slug: string;
   name: string;
-  /** ISO 3166-1 alpha-2, lowercase. */
-  country: string;
-  /** Top-level category key (from TAXONOMY). */
-  category: CategoryKey;
+  /** Exhibiting company, when its name differs from the brand's. */
+  company?: string;
+  /** ISO 3166-1 alpha-2, lowercase (not in the exhibitor sheets). */
+  country?: string;
+  /** Top-level category key (from TAXONOMY), when the exhibitor gave one. */
+  category?: CategoryKey;
   /** Optional sub-category keys — a brand can belong to several. */
   subCategories?: SubCategoryKey[];
   tier: BrandTier;
