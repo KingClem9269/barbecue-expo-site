@@ -14,6 +14,7 @@
  * Lancement (macOS : utilise unzip et sips) :  npm run exposants
  */
 import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -35,6 +36,14 @@ const EXCLUS = [/^test\b/i, /^hoho$/i, /^jpc$/i, /^social pay$/i];
 const REMPLACEMENTS: Record<string, [exposant: string, marque: string]> = {
   "Barbecue mag/Barbecue Mag": ["Barbecue mag", "Smoked Mag"],
 };
+
+/**
+ * Catégories fixées à la main, par nom de fiche, prioritaires sur la fiche :
+ * pour les exposants qui n'en ont pas choisi dans le portail. {} = aucune.
+ */
+const CATEGORIES_FIXEES: Record<string, Brand["categories"]> = JSON.parse(
+  readFileSync(path.join(process.cwd(), "content/brands/categories-2027.json"), "utf8"),
+);
 
 const IMAGE = /\.(png|jpe?g|webp)$/i;
 
@@ -125,22 +134,20 @@ async function lireFiche(docx: Buffer): Promise<Fiche> {
   return fiche;
 }
 
-/** « Marques de barbecues » Gaz, Charbon » → catégorie + sous-catégories. */
-function categories(lignes: string[]): { category?: CategoryKey; subCategories?: SubCategoryKey[] } {
-  let category: CategoryKey | undefined;
-  const subCategories: SubCategoryKey[] = [];
+/** « Marques de barbecues » Gaz, Charbon » → { barbecue: ["gas", "charcoal"] }. */
+function categories(lignes: string[]): Brand["categories"] {
+  const out: Partial<Record<CategoryKey, SubCategoryKey[]>> = {};
   const cle = (s: string) => s.trim().toLowerCase().replace(/’/g, "'");
   for (const ligne of lignes) {
     const [parent, subs = ""] = ligne.split("»");
     const cat = TAXONOMY.find((c) => cle(c.labels.fr) === cle(parent));
     if (!cat) continue;
-    category ??= cat.key;
-    for (const s of subs.split(",").map(cle)) {
-      const sub = cat.sub.find((x) => cle(x.labels.fr) === s);
-      if (sub && !subCategories.includes(sub.key)) subCategories.push(sub.key);
-    }
+    out[cat.key] = subs
+      .split(",")
+      .map((s) => cat.sub.find((x) => cle(x.labels.fr) === cle(s))?.key)
+      .filter((k): k is SubCategoryKey => Boolean(k));
   }
-  return { category, subCategories: subCategories.length ? subCategories : undefined };
+  return Object.keys(out).length ? out : undefined;
 }
 
 /* ------------------------------------------------------------------ */
@@ -237,7 +244,7 @@ async function marque(
     slug,
     name,
     company: slugify(exposant) === slug ? undefined : exposant,
-    ...categories(fiche.categories),
+    categories: categories(fiche.categories),
     tier: "bronze",
     logo: logo && (await image(logo, "logos", slug)),
     coverImage: photo && (await image(photo, "photos", slug)),
@@ -283,13 +290,20 @@ async function main() {
   const liste: Brand[] = [...parExposant.values()].flatMap(({ nom, brands }) =>
     brands.length ? brands : [{ slug: slugify(nom), name: nom, tier: "bronze" as const }],
   );
+  for (const b of liste) {
+    const fixees = CATEGORIES_FIXEES[b.name];
+    if (fixees) b.categories = Object.keys(fixees).length ? fixees : undefined;
+  }
   liste.sort((a, b) => a.name.localeCompare(b.name, "fr", { sensitivity: "base" }));
 
   await fs.writeFile(SORTIE_JSON, JSON.stringify(liste, null, 2) + "\n");
   console.log(
     `\n${parExposant.size} exposants, ${liste.length} fiches (${liste.filter((b) => b.logo).length} avec logo, ` +
-      `${liste.filter((b) => b.description).length} avec description).`,
+      `${liste.filter((b) => b.description).length} avec description, ` +
+      `${liste.filter((b) => b.categories).length} avec catégorie).`,
   );
+  const sansCategorie = liste.filter((b) => !b.categories).map((b) => b.name);
+  if (sansCategorie.length) console.log(`Sans catégorie : ${sansCategorie.join(", ")}`);
   console.log(`Dossiers ignorés : ${ignores.join(", ") || "aucun"}`);
 }
 

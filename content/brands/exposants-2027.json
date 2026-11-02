@@ -2,12 +2,21 @@
   {
     "slug": "1337-flavor",
     "name": "1337 Flavor",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "bbq-sauces",
+        "condiments",
+        "rubs"
+      ]
+    }
   },
   {
     "slug": "andre-bazin",
     "name": "André Bazin",
-    "category": "gourmet",
+    "categories": {
+      "gourmet": []
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/andre-bazin.png",
     "description": "André Bazin est le spécialiste des produits de charcuterie à destination des Industriels, des Grossistes- Distributeurs et de la Grande Distribution.\nSociété familiale, basée exclusivement en France, la Société emploie plus de 430 personnes pour fabriquer plus de 27 000 Tonnes de produits de Salaisons, de Charcuteries et de Viandes cuites par an.\nForte de la diversité de ses savoir-faire Produits: Salaisons, Charcuterie, Saucisserie, Viandes Cuites, la Société fournit plus de 500 Clients spécialistes de lʼalimentaire, de la Multinationale à la PME locale.Ancrée dans son terroir, la Société est également le Spécialiste des produits de tradition Charcutière Franc-Comtoise.",
@@ -19,7 +28,9 @@
   {
     "slug": "atelier-des-mirandes",
     "name": "Atelier des Mirandes",
-    "category": "accessories",
+    "categories": {
+      "accessories": []
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/atelier-des-mirandes.jpg",
     "coverImage": "/exposants-2027/photos/atelier-des-mirandes.jpg",
@@ -28,31 +39,45 @@
   {
     "slug": "badigeon",
     "name": "Badigeon",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "bbq-sauces",
+        "condiments"
+      ]
+    }
   },
   {
     "slug": "barbecook",
     "name": "Barbecook",
     "company": "LivWise (Barbecook)",
-    "category": "barbecue",
-    "subCategories": [
-      "gas",
-      "charcoal",
-      "pellet",
-      "electric",
-      "kamado",
-      "smoker",
-      "brasero",
-      "utensils",
-      "grates",
-      "thermometers",
-      "covers",
-      "care",
-      "briquettes",
-      "firelighters",
-      "outdoor-kitchens",
-      "design"
-    ],
+    "categories": {
+      "barbecue": [
+        "gas",
+        "charcoal",
+        "pellet",
+        "electric",
+        "kamado",
+        "smoker",
+        "brasero"
+      ],
+      "accessories": [
+        "utensils",
+        "grates",
+        "thermometers",
+        "covers",
+        "care"
+      ],
+      "fuels": [
+        "charcoal",
+        "briquettes",
+        "firelighters"
+      ],
+      "outdoor-kitchen": [
+        "outdoor-kitchens",
+        "design"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/barbecook.jpg",
     "coverImage": "/exposants-2027/photos/barbecook.jpg",
@@ -65,7 +90,6 @@
   {
     "slug": "barbecue-mag",
     "name": "Barbecue Mag",
-    "category": "barbecue",
     "tier": "bronze",
     "logo": "/exposants-2027/logos/barbecue-mag.png",
     "coverImage": "/exposants-2027/photos/barbecue-mag.jpg",
@@ -78,24 +102,40 @@
   {
     "slug": "belle-gnole-par-coquetelers",
     "name": "Belle Gnôle par Côquetelers",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "alcohol": []
+    }
   },
   {
     "slug": "biogrill",
     "name": "Biogrill",
     "company": "Omedec",
+    "categories": {
+      "barbecue": [
+        "charcoal"
+      ]
+    },
     "tier": "bronze"
   },
   {
     "slug": "blackstone",
     "name": "Blackstone",
     "company": "Weber",
+    "categories": {
+      "barbecue": [
+        "plancha",
+        "gas"
+      ]
+    },
     "tier": "bronze"
   },
   {
     "slug": "boucheries-cosse",
     "name": "Boucheries Cosse",
-    "category": "gourmet",
+    "categories": {
+      "gourmet": []
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/boucheries-cosse.jpg",
     "coverImage": "/exposants-2027/photos/boucheries-cosse.jpg",
@@ -110,29 +150,46 @@
     "slug": "bradley-smoker",
     "name": "Bradley Smoker",
     "company": "Bradley Smoker /Grakka Limited",
+    "categories": {
+      "barbecue": [
+        "smoker",
+        "electric"
+      ],
+      "fuels": [
+        "smoking-wood"
+      ]
+    },
     "tier": "bronze"
   },
   {
     "slug": "breizhero",
     "name": "Breizhéro",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "brasero"
+      ]
+    }
   },
   {
     "slug": "bull-outdoor-products",
     "name": "Bull Outdoor Products",
     "company": "Bull BBQ",
-    "category": "barbecue",
-    "subCategories": [
-      "gas",
-      "charcoal",
-      "plancha",
-      "kamado",
-      "wood-oven",
-      "pizza",
-      "pro",
-      "outdoor-kitchens",
-      "sinks"
-    ],
+    "categories": {
+      "barbecue": [
+        "gas",
+        "charcoal",
+        "plancha",
+        "kamado",
+        "wood-oven",
+        "pizza",
+        "pro"
+      ],
+      "outdoor-kitchen": [
+        "outdoor-kitchens",
+        "sinks"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/bull-outdoor-products.png",
     "description": "Bull Outdoor Products is committed to designing and delivering high-performance, luxury outdoor kitchen products built for unmatched durability.\nAt Bull, we are driven by a commitment to craftsmanship and durability in everything we build, from our outdoor BBQ kitchens to the premium stainless-steel grills and components that bring them to life. Bull Grills are trusted around the world, thanks to their unmatched performance, rugged construction, and timeless design.\nEvery Bull gas grill is built to last, featuring heavy-gauge stainless steel construction, solid stainless steel cooking grates, seamless dual-lined hoods, and individual friction-based Piezo igniters, components selected for reliability, not shortcuts.",
@@ -145,41 +202,88 @@
   {
     "slug": "chercheurs-d-or-vert",
     "name": "Chercheurs d'or vert",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "oils",
+        "condiments"
+      ],
+      "gourmet": []
+    }
   },
   {
     "slug": "coeo-design",
     "name": "Coeo Design",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "kamado",
+        "brasero",
+        "plancha",
+        "gas"
+      ],
+      "outdoor-kitchen": [
+        "outdoor-kitchens",
+        "modules",
+        "sinks"
+      ],
+      "accessories": [
+        "utensils",
+        "covers",
+        "furniture"
+      ]
+    }
   },
   {
     "slug": "delvache",
     "name": "Delvache",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "accessories": [
+        "utensils"
+      ]
+    }
   },
   {
     "slug": "drip-ez-bbq",
     "name": "Drip Ez BBQ",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "accessories": [
+        "utensils"
+      ]
+    }
   },
   {
     "slug": "el-atuel",
     "name": "El Atuel",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "condiments",
+        "spices"
+      ],
+      "gourmet": []
+    }
   },
   {
     "slug": "eno",
     "name": "ENO",
-    "category": "barbecue",
-    "subCategories": [
-      "plancha",
-      "utensils",
-      "grates",
-      "covers",
-      "care",
-      "outdoor-kitchens",
-      "modules"
-    ],
+    "categories": {
+      "barbecue": [
+        "plancha"
+      ],
+      "accessories": [
+        "utensils",
+        "grates",
+        "covers",
+        "care"
+      ],
+      "outdoor-kitchen": [
+        "outdoor-kitchens",
+        "modules"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/eno.jpg",
     "coverImage": "/exposants-2027/photos/eno.jpg",
@@ -196,36 +300,67 @@
   {
     "slug": "epices-et-tous",
     "name": "Epices et Tous",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "spices"
+      ],
+      "gourmet": []
+    }
   },
   {
     "slug": "favex",
     "name": "Favex",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "gas",
+        "electric",
+        "charcoal",
+        "plancha"
+      ]
+    }
   },
   {
     "slug": "fyron-group-b-v",
     "name": "Fyron Group B.V.",
+    "categories": {
+      "barbecue": [
+        "kamado",
+        "plancha",
+        "brasero"
+      ]
+    },
     "tier": "bronze"
   },
   {
     "slug": "globaltic",
     "name": "Globaltic",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "fuels": [
+        "charcoal",
+        "briquettes"
+      ]
+    }
   },
   {
     "slug": "happyvore",
     "name": "Happyvore",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "gourmet": []
+    }
   },
   {
     "slug": "horl-1993-gmbh",
     "name": "Horl 1993 GmbH",
-    "category": "accessories",
-    "subCategories": [
-      "utensils",
-      "care"
-    ],
+    "categories": {
+      "accessories": [
+        "utensils",
+        "care"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/horl-1993-gmbh.jpg",
     "coverImage": "/exposants-2027/photos/horl-1993-gmbh.jpg",
@@ -239,45 +374,80 @@
   {
     "slug": "kamado-sumo",
     "name": "Kamado Sumo",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "kamado"
+      ]
+    }
   },
   {
     "slug": "kevas",
     "name": "Kevas",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "alcohol": []
+    }
   },
   {
     "slug": "kreyol-gourmet",
     "name": "Kréyol Gourmet",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "rubs",
+        "spices",
+        "condiments"
+      ]
+    }
   },
   {
     "slug": "la-forestiere-du-nord-gill-o-bois",
     "name": "La Forestière du Nord (Gill O'Bois)",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "fuels": [
+        "charcoal",
+        "firelighters"
+      ]
+    }
   },
   {
     "slug": "la-forge-de-xav",
     "name": "La Forge De Xav",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "accessories": [
+        "utensils"
+      ]
+    }
   },
   {
     "slug": "la-mundial-barcelona",
     "name": "LA MUNDIAL BARCELONA",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "alcohol": []
+    }
   },
   {
     "slug": "la-pimenterie",
     "name": "La pimenterie",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "condiments"
+      ]
+    }
   },
   {
     "slug": "le-cuisinier-francais",
     "name": "Le Cuisinier Français",
-    "category": "outdoor-kitchen",
-    "subCategories": [
-      "outdoor-kitchens"
-    ],
+    "categories": {
+      "outdoor-kitchen": [
+        "outdoor-kitchens"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/le-cuisinier-francais.png",
     "coverImage": "/exposants-2027/photos/le-cuisinier-francais.jpg",
@@ -287,62 +457,128 @@
   {
     "slug": "le-panier-catalan",
     "name": "LE PANIER CATALAN",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "gourmet": []
+    }
   },
   {
     "slug": "maison-boteh",
     "name": "Maison Boteh",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "condiments",
+        "spices"
+      ],
+      "gourmet": []
+    }
   },
   {
     "slug": "maison-la-fumee",
     "name": "Maison La Fumée",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "alcohol": [],
+      "sauces": [
+        "oils",
+        "spices"
+      ]
+    }
   },
   {
     "slug": "moddern-barbecue-co",
     "name": "Moddern (Barbecue & Co)",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "kamado",
+        "charcoal"
+      ],
+      "fuels": [
+        "charcoal",
+        "briquettes"
+      ]
+    }
   },
   {
     "slug": "neisa-cafes-art-et-saveurs",
     "name": "NEISA CAFES ART ET SAVEURS",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "gourmet": []
+    }
   },
   {
     "slug": "newellco",
     "name": "Newellco",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "gas",
+        "plancha"
+      ],
+      "fuels": [
+        "gas"
+      ]
+    }
   },
   {
     "slug": "norpax-bv",
     "name": "Norpax bv",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "accessories": [
+        "utensils"
+      ]
+    }
   },
   {
     "slug": "outdoorchef",
     "name": "Outdoorchef",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "gas",
+        "charcoal",
+        "electric"
+      ],
+      "outdoor-kitchen": [
+        "outdoor-kitchens"
+      ],
+      "accessories": []
+    }
   },
   {
     "slug": "papa-planche",
     "name": "PAPA PLANCHE",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "accessories": [
+        "utensils"
+      ]
+    }
   },
   {
     "slug": "piment-du-soleil",
     "name": "Piment du soleil",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "condiments"
+      ]
+    }
   },
   {
     "slug": "prime-liner-by-bull",
     "name": "Prime Liner by Bull",
     "company": "Bull BBQ",
-    "category": "barbecue",
-    "subCategories": [
-      "gas",
-      "plancha"
-    ],
+    "categories": {
+      "barbecue": [
+        "gas",
+        "plancha"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/prime-liner-by-bull.png",
     "description": "Prime Liner by Bull is a premium gas barbecue range that combines Bull's outdoor cooking expertise with contemporary German-inspired design and performance-focused engineering. It is positioned towards customers looking for a stylish, high-performance freestanding barbecue that can serve as the centrepiece of a modern outdoor entertaining area.\nThe range has a distinctive design inspired by off-road vehicles, with clean lines, substantial cooking grates and a choice of stainless-steel or matte-finish styling. Its selling points include rapid heat-up, powerful burners, infrared searing and integrated lighting.",
@@ -351,37 +587,78 @@
   {
     "slug": "purachahot",
     "name": "Purachahot",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "condiments"
+      ]
+    }
   },
   {
     "slug": "raviday",
     "name": "Raviday",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "gas",
+        "charcoal",
+        "plancha",
+        "brasero",
+        "pellet",
+        "electric",
+        "kamado",
+        "smoker",
+        "pizza"
+      ],
+      "outdoor-kitchen": [
+        "outdoor-kitchens"
+      ],
+      "accessories": []
+    }
   },
   {
     "slug": "sauces-piquantes-ca",
     "name": "Sauces Piquantes.ca",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "condiments",
+        "bbq-sauces",
+        "rubs"
+      ]
+    }
   },
   {
     "slug": "sinfigest",
     "name": "SINFIGEST",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "barbecue": [
+        "charcoal"
+      ]
+    }
   },
   {
     "slug": "smok-king",
     "name": "Smok King",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "fuels": [
+        "smoking-wood",
+        "pellets"
+      ]
+    }
   },
   {
     "slug": "soler-group",
     "name": "SOLER Group",
-    "category": "fuels",
-    "subCategories": [
-      "charcoal",
-      "briquettes",
-      "eco"
-    ],
+    "categories": {
+      "fuels": [
+        "charcoal",
+        "briquettes",
+        "eco"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/soler-group.png",
     "coverImage": "/exposants-2027/photos/soler-group.jpg",
@@ -396,19 +673,29 @@
   {
     "slug": "spice-france",
     "name": "Spice France",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "rubs",
+        "spices",
+        "condiments"
+      ]
+    }
   },
   {
     "slug": "steak-and-beer",
     "name": "STEAK AND BEER",
     "company": "SNB FRANCE",
-    "category": "barbecue",
-    "subCategories": [
-      "charcoal",
-      "utensils",
-      "grates",
-      "covers"
-    ],
+    "categories": {
+      "barbecue": [
+        "charcoal"
+      ],
+      "accessories": [
+        "utensils",
+        "grates",
+        "covers"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/steak-and-beer.png",
     "description": "Steak and Beer propose une nouvelle façon de cuisiner au charbon, inspirée d’un mode de cuisson très populaire en Colombie. Nos barils génèrent jusqu’à 90 % de fumée en moins qu’un barbecue traditionnel, tout en permettant de préparer plusieurs aliments simultanément et de varier les cuissons grâce à leurs accessoires. Robustes, polyvalents et simples à utiliser, ils s’adressent aux particuliers comme aux professionnels. Leur conception permet également de cuisiner de belles quantités tout en consommant moins de charbon. Steak and Beer France distribue aujourd’hui cette gamme de barils et d’accessoires en France et en Europe.",
@@ -421,30 +708,49 @@
   {
     "slug": "taille-de-pierre-17-eric-gault",
     "name": "Taille de Pierre 17 - Eric Gault",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "outdoor-kitchen": [
+        "outdoor-kitchens",
+        "design"
+      ]
+    }
   },
   {
     "slug": "traditional-world-foods",
     "name": "Traditional World Foods",
-    "tier": "bronze"
+    "tier": "bronze",
+    "categories": {
+      "sauces": [
+        "bbq-sauces",
+        "condiments"
+      ],
+      "gourmet": []
+    }
   },
   {
     "slug": "vessils",
     "name": "VESSILS®",
     "company": "Vessils LLC",
+    "categories": {
+      "barbecue": [
+        "kamado"
+      ]
+    },
     "tier": "bronze"
   },
   {
     "slug": "zip",
     "name": "Zip",
     "company": "ZIP FIRES",
-    "category": "fuels",
-    "subCategories": [
-      "charcoal",
-      "briquettes",
-      "firelighters",
-      "eco"
-    ],
+    "categories": {
+      "fuels": [
+        "charcoal",
+        "briquettes",
+        "firelighters",
+        "eco"
+      ]
+    },
     "tier": "bronze",
     "logo": "/exposants-2027/logos/zip.png",
     "description": "ZIP France est la marque de référence des allume-feux, reconnue pour sa fiabilité, sa simplicité d'utilisation et ses performances d'allumage. Présente depuis de nombreuses années dans les foyers français, ZIP accompagne les consommateurs dans l'allumage de leurs barbecues, cheminées, poêles à bois et feux d'extérieur. Grâce à une gamme complète de solutions adaptées aux différents besoins et aux attentes croissantes en matière de naturalité, ZIP combine praticité, efficacité et innovation pour offrir un démarrage rapide et maîtrisé du feu, en toute confiance",

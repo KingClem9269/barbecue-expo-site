@@ -1,0 +1,280 @@
+{
+  "1337 Flavor": {
+    "sauces": [
+      "bbq-sauces",
+      "condiments",
+      "rubs"
+    ]
+  },
+  "Badigeon": {
+    "sauces": [
+      "bbq-sauces",
+      "condiments"
+    ]
+  },
+  "Barbecue Mag": {},
+  "Belle Gnôle par Côquetelers": {
+    "alcohol": []
+  },
+  "Biogrill": {
+    "barbecue": [
+      "charcoal"
+    ]
+  },
+  "Blackstone": {
+    "barbecue": [
+      "plancha",
+      "gas"
+    ]
+  },
+  "Bradley Smoker": {
+    "barbecue": [
+      "smoker",
+      "electric"
+    ],
+    "fuels": [
+      "smoking-wood"
+    ]
+  },
+  "Breizhéro": {
+    "barbecue": [
+      "brasero"
+    ]
+  },
+  "Chercheurs d'or vert": {
+    "sauces": [
+      "oils",
+      "condiments"
+    ],
+    "gourmet": []
+  },
+  "Coeo Design": {
+    "barbecue": [
+      "kamado",
+      "brasero",
+      "plancha",
+      "gas"
+    ],
+    "outdoor-kitchen": [
+      "outdoor-kitchens",
+      "modules",
+      "sinks"
+    ],
+    "accessories": [
+      "utensils",
+      "covers",
+      "furniture"
+    ]
+  },
+  "Delvache": {
+    "accessories": [
+      "utensils"
+    ]
+  },
+  "Drip Ez BBQ": {
+    "accessories": [
+      "utensils"
+    ]
+  },
+  "El Atuel": {
+    "sauces": [
+      "condiments",
+      "spices"
+    ],
+    "gourmet": []
+  },
+  "Epices et Tous": {
+    "sauces": [
+      "spices"
+    ],
+    "gourmet": []
+  },
+  "Favex": {
+    "barbecue": [
+      "gas",
+      "electric",
+      "charcoal",
+      "plancha"
+    ]
+  },
+  "Fyron Group B.V.": {
+    "barbecue": [
+      "kamado",
+      "plancha",
+      "brasero"
+    ]
+  },
+  "Globaltic": {
+    "fuels": [
+      "charcoal",
+      "briquettes"
+    ]
+  },
+  "Happyvore": {
+    "gourmet": []
+  },
+  "Kamado Sumo": {
+    "barbecue": [
+      "kamado"
+    ]
+  },
+  "Kevas": {
+    "alcohol": []
+  },
+  "Kréyol Gourmet": {
+    "sauces": [
+      "rubs",
+      "spices",
+      "condiments"
+    ]
+  },
+  "La Forestière du Nord (Gill O'Bois)": {
+    "fuels": [
+      "charcoal",
+      "firelighters"
+    ]
+  },
+  "La Forge De Xav": {
+    "accessories": [
+      "utensils"
+    ]
+  },
+  "LA MUNDIAL BARCELONA": {
+    "alcohol": []
+  },
+  "La pimenterie": {
+    "sauces": [
+      "condiments"
+    ]
+  },
+  "LE PANIER CATALAN": {
+    "gourmet": []
+  },
+  "Maison Boteh": {
+    "sauces": [
+      "condiments",
+      "spices"
+    ],
+    "gourmet": []
+  },
+  "Maison La Fumée": {
+    "alcohol": [],
+    "sauces": [
+      "oils",
+      "spices"
+    ]
+  },
+  "Moddern (Barbecue & Co)": {
+    "barbecue": [
+      "kamado",
+      "charcoal"
+    ],
+    "fuels": [
+      "charcoal",
+      "briquettes"
+    ]
+  },
+  "NEISA CAFES ART ET SAVEURS": {
+    "gourmet": []
+  },
+  "Newellco": {
+    "barbecue": [
+      "gas",
+      "plancha"
+    ],
+    "fuels": [
+      "gas"
+    ]
+  },
+  "Norpax bv": {
+    "accessories": [
+      "utensils"
+    ]
+  },
+  "Outdoorchef": {
+    "barbecue": [
+      "gas",
+      "charcoal",
+      "electric"
+    ],
+    "outdoor-kitchen": [
+      "outdoor-kitchens"
+    ],
+    "accessories": []
+  },
+  "PAPA PLANCHE": {
+    "accessories": [
+      "utensils"
+    ]
+  },
+  "Piment du soleil": {
+    "sauces": [
+      "condiments"
+    ]
+  },
+  "Purachahot": {
+    "sauces": [
+      "condiments"
+    ]
+  },
+  "Raviday": {
+    "barbecue": [
+      "gas",
+      "charcoal",
+      "plancha",
+      "brasero",
+      "pellet",
+      "electric",
+      "kamado",
+      "smoker",
+      "pizza"
+    ],
+    "outdoor-kitchen": [
+      "outdoor-kitchens"
+    ],
+    "accessories": []
+  },
+  "Sauces Piquantes.ca": {
+    "sauces": [
+      "condiments",
+      "bbq-sauces",
+      "rubs"
+    ]
+  },
+  "SINFIGEST": {
+    "barbecue": [
+      "charcoal"
+    ]
+  },
+  "Smok King": {
+    "fuels": [
+      "smoking-wood",
+      "pellets"
+    ]
+  },
+  "Spice France": {
+    "sauces": [
+      "rubs",
+      "spices",
+      "condiments"
+    ]
+  },
+  "Taille de Pierre 17 - Eric Gault": {
+    "outdoor-kitchen": [
+      "outdoor-kitchens",
+      "design"
+    ]
+  },
+  "Traditional World Foods": {
+    "sauces": [
+      "bbq-sauces",
+      "condiments"
+    ],
+    "gourmet": []
+  },
+  "VESSILS®": {
+    "barbecue": [
+      "kamado"
+    ]
+  }
+}

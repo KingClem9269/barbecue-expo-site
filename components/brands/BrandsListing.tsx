@@ -82,22 +82,25 @@ export default function BrandsListing({
     [brands, locale],
   );
 
-  const currentCategoryConfig = useMemo(
-    () => TAXONOMY.find((c) => c.key === category),
-    [category],
+  // Only the categories / sub-categories at least one brand belongs to.
+  const usedCategories = useMemo(
+    () =>
+      TAXONOMY.map((c) => ({
+        ...c,
+        count: brands.filter((b) => b.categories?.[c.key]).length,
+        sub: c.sub.filter((s) => brands.some((b) => b.categories?.[c.key]?.includes(s.key))),
+      })).filter((c) => c.count > 0),
+    [brands],
   );
-
-  // Categories are filled in by exhibitors: the filter only appears once most
-  // of them have done it, otherwise it would hide most of the list.
-  const showCategories =
-    brands.filter((b) => b.category).length >= brands.length * 0.8;
+  const currentCategoryConfig = usedCategories.find((c) => c.key === category);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return brands.filter((b) => {
-      if (category !== "all" && b.category !== category) return false;
-      if (subCategory !== "all") {
-        if (!b.subCategories?.includes(subCategory)) return false;
+      if (category !== "all") {
+        const subs = b.categories?.[category];
+        if (!subs) return false;
+        if (subCategory !== "all" && !subs.includes(subCategory)) return false;
       }
       if (country !== "all" && b.country !== country) return false;
       if (q && !`${b.name} ${b.company ?? ""}`.toLowerCase().includes(q)) return false;
@@ -143,18 +146,20 @@ export default function BrandsListing({
   return (
     <div>
       {/* Category tabs (wrap onto multiple lines — no horizontal scroll) */}
-      {showCategories && (
+      {usedCategories.length > 0 && (
         <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             <CategoryChip
               label={labels.allCategories}
+              count={brands.length}
               active={category === "all"}
               onClick={() => pickCategory("all")}
             />
-            {TAXONOMY.map((c) => (
+            {usedCategories.map((c) => (
               <CategoryChip
                 key={c.key}
                 label={getCategoryLabel(c.key, locale)}
+                count={c.count}
                 active={category === c.key}
                 onClick={() => pickCategory(c.key)}
               />
@@ -164,9 +169,7 @@ export default function BrandsListing({
       )}
 
       {/* Sub-category pills (shown only when a category is selected and has subs) */}
-      {currentCategoryConfig &&
-        currentCategoryConfig.sub.length > 0 &&
-        brands.some((b) => b.subCategories?.length) && (
+      {currentCategoryConfig && currentCategoryConfig.sub.length > 0 && (
         <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             <SubChip
@@ -280,10 +283,12 @@ export default function BrandsListing({
 
 function CategoryChip({
   label,
+  count,
   active,
   onClick,
 }: {
   label: string;
+  count: number;
   active: boolean;
   onClick: () => void;
 }) {
@@ -291,6 +296,7 @@ function CategoryChip({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={`snap-start shrink-0 px-4 py-2.5 rounded-sm text-xs md:text-sm uppercase tracking-widest font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
         active
           ? "bg-ink-950 text-cream-50"
@@ -298,6 +304,7 @@ function CategoryChip({
       }`}
     >
       {label}
+      <span className="ml-2 tabular-nums opacity-60">{count}</span>
     </button>
   );
 }
@@ -315,6 +322,7 @@ function SubChip({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
         active
           ? "bg-gold-500 text-ink-950"
@@ -612,10 +620,12 @@ function BrandModal({
                 {getCountryName(brand.country, locale)}
               </span>
             )}
-            {brand.category && (
+            {brand.categories && (
               <span className="inline-flex items-center gap-1.5">
                 {(brand.company || brand.country) && <span className="text-ink-300">·</span>}
-                {getCategoryLabel(brand.category, locale)}
+                {(Object.keys(brand.categories) as CategoryKey[])
+                  .map((key) => getCategoryLabel(key, locale))
+                  .join(" · ")}
               </span>
             )}
             {brand.stand && (

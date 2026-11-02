@@ -24,10 +24,12 @@ export type Brand = {
   company?: string;
   /** ISO 3166-1 alpha-2, lowercase (not in the exhibitor sheets). */
   country?: string;
-  /** Top-level category key (from TAXONOMY), when the exhibitor gave one. */
-  category?: CategoryKey;
-  /** Optional sub-category keys — a brand can belong to several. */
-  subCategories?: SubCategoryKey[];
+  /**
+   * Categories (TAXONOMY keys), main one first, each with its sub-categories:
+   * { barbecue: ["gas", "charcoal"], fuels: ["briquettes"] }. Sub-category keys
+   * repeat across categories ("charcoal"), hence one list per category.
+   */
+  categories?: Partial<Record<CategoryKey, SubCategoryKey[]>>;
   tier: BrandTier;
   /** Marketing flags. */
   newForExpo?: boolean;
