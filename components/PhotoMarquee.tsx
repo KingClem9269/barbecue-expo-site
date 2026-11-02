@@ -7,16 +7,52 @@ import MarqueePause from "@/components/primitives/MarqueePause";
 
 const DEFAULT_PHOTOS = [
   "/photos-2026/bbq-expo-066.jpg",
+  "/photos-editions/533a7509.jpg",
   "/photos-2026/bbq-expo-105.jpg",
+  "/photos-2026/bbq-expo-154.jpg",
+  "/photos-editions/j7i3281.jpg",
   "/photos-2026/bbq-expo-184.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-114.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a7138.jpg",
   "/photos-2026/bbq-expo-403.jpg",
+  "/photos-editions/img-7929.jpg",
+  "/photos-2026/bbq-expo-789.jpg",
   "/photos-2026/bbq-expo-720.jpg",
+  "/photos-editions/j7i1640.jpg",
   "/photos-2026/william-plin-jpc-110426-533a4088.jpg",
+  "/photos-2026/bbq-expo-645.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-053.jpg",
   "/photos-2026/william-plin-jpc-120426-533a6497.jpg",
+  "/photos-2026/bbq-expo-765.jpg",
+  "/photos-editions/j7i2225.jpg",
   "/photos-2026/bbq-expo-293.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a3838.jpg",
+  "/photos-editions/j7i1963.jpg",
   "/photos-2026/bbq-expo-477.jpg",
+  "/photos-2026/bbq-expo-563.jpg",
+  "/photos-editions/img-8188.jpg",
   "/photos-2026/bbq-expo-737.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a7828.jpg",
+  "/photos-editions/j7i1575.jpg",
+  "/photos-2026/bbq-expo-073.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4065.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-130.jpg",
+  "/photos-2026/bbq-expo-615.jpg",
+  "/photos-editions/j7i1328.jpg",
+  "/photos-2026/bbq-expo-155.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a7139.jpg",
+  "/photos-editions/img-7808.jpg",
+  "/photos-2026/bbq-expo-404.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-021.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4426.jpg",
+  "/photos-editions/j7i1281.jpg",
+  "/photos-2026/bbq-expo-740.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-046.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4931.jpg",
 ];
+
+/** Seconds per photo: the band keeps the same speed whatever its length. */
+const SECONDS_PER_PHOTO = 7;
 
 export default function PhotoMarquee({ photos = DEFAULT_PHOTOS }: { photos?: string[] }) {
   const tripled = [...photos, ...photos, ...photos];
@@ -25,7 +61,7 @@ export default function PhotoMarquee({ photos = DEFAULT_PHOTOS }: { photos?: str
       <div className="relative overflow-hidden">
         <div
           className="flex w-max marquee-track"
-          style={{ "--marquee-name": "scroll", "--marquee-duration": "70s" } as React.CSSProperties}
+          style={{ "--marquee-name": "scroll", "--marquee-duration": `${photos.length * SECONDS_PER_PHOTO}s` } as React.CSSProperties}
         >
           {tripled.map((p, i) => (
             <div key={i} className="w-72 md:w-[26rem] aspect-[3/2] mx-2 shrink-0 rounded-sm overflow-hidden bg-ink-900">

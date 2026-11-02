@@ -3,26 +3,48 @@ import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Quote } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import PressCoverage from "@/components/PressCoverage";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { getLocale } from "next-intl/server";
 
+/** Photos des éditions (2026 et précédentes), dans l'ordre de la mosaïque. */
 const ALL_PHOTOS = [
-  "bbq-expo-008.jpg", "bbq-expo-014.jpg", "bbq-expo-066.jpg", "bbq-expo-073.jpg",
-  "bbq-expo-078.jpg", "bbq-expo-105.jpg", "bbq-expo-107.jpg", "bbq-expo-129.jpg",
-  "bbq-expo-155.jpg", "bbq-expo-171.jpg", "bbq-expo-184.jpg", "bbq-expo-268.jpg",
-  "bbq-expo-293.jpg", "bbq-expo-302.jpg", "bbq-expo-403.jpg", "bbq-expo-404.jpg",
-  "bbq-expo-441.jpg", "bbq-expo-477.jpg", "bbq-expo-688.jpg", "bbq-expo-689.jpg",
-  "bbq-expo-690.jpg", "bbq-expo-720.jpg", "bbq-expo-737.jpg", "bbq-expo-740.jpg",
-  "william-plin-jpc-110426-533a2850.jpg", "william-plin-jpc-110426-533a3101.jpg",
-  "william-plin-jpc-110426-533a3756.jpg", "william-plin-jpc-110426-533a4088.jpg",
-  "william-plin-jpc-110426-533a4134.jpg", "william-plin-jpc-110426-533a4353.jpg",
-  "william-plin-jpc-110426-533a4426.jpg", "william-plin-jpc-110426-533a4660.jpg",
-  "william-plin-jpc-110426-533a4856.jpg", "william-plin-jpc-110426-533a4869.jpg",
-  "william-plin-jpc-110426-533a4931.jpg", "william-plin-jpc-110426-533a4969.jpg",
-  "william-plin-jpc-110426-533a5984.jpg", "william-plin-jpc-110426-533a6023.jpg",
-  "william-plin-jpc-110426-533a6029.jpg", "william-plin-jpc-120426-533a6296.jpg",
-  "william-plin-jpc-120426-533a6497.jpg", "william-plin-jpc-120426-533a6691.jpg",
-  "william-plin-jpc-120426-533a6712.jpg", "william-plin-jpc-120426-533a6971.jpg",
-  "william-plin-jpc-120426-533a8137.jpg", "william-plin-jpc-120426-533a8581.jpg",
+  "/photos-2026/bbq-expo-008.jpg", "/photos-2026/bbq-expo-014.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a7828.jpg", "/photos-2026/bbq-expo-066.jpg",
+  "/photos-2026/bbq-expo-073.jpg", "/photos-editions/533a7509.jpg",
+  "/photos-2026/bbq-expo-078.jpg", "/photos-2026/bbq-expo-105.jpg",
+  "/photos-2026/bbq-expo-154.jpg", "/photos-2026/bbq-expo-107.jpg",
+  "/photos-2026/bbq-expo-129.jpg", "/photos-editions/j7i3281.jpg",
+  "/photos-2026/bbq-expo-155.jpg", "/photos-2026/bbq-expo-171.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-114.jpg", "/photos-2026/bbq-expo-184.jpg",
+  "/photos-2026/bbq-expo-268.jpg", "/photos-2026/william-plin-jpc-120426-533a7138.jpg",
+  "/photos-2026/bbq-expo-293.jpg", "/photos-2026/bbq-expo-302.jpg",
+  "/photos-editions/img-7929.jpg", "/photos-2026/bbq-expo-403.jpg",
+  "/photos-2026/bbq-expo-404.jpg", "/photos-2026/bbq-expo-789.jpg",
+  "/photos-2026/bbq-expo-441.jpg", "/photos-2026/bbq-expo-477.jpg",
+  "/photos-editions/j7i1640.jpg", "/photos-2026/bbq-expo-688.jpg",
+  "/photos-2026/bbq-expo-689.jpg", "/photos-2026/bbq-expo-645.jpg",
+  "/photos-2026/bbq-expo-690.jpg", "/photos-2026/bbq-expo-720.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-053.jpg", "/photos-2026/bbq-expo-737.jpg",
+  "/photos-2026/bbq-expo-740.jpg", "/photos-2026/bbq-expo-765.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a2850.jpg", "/photos-2026/william-plin-jpc-110426-533a3101.jpg",
+  "/photos-editions/j7i2225.jpg", "/photos-2026/william-plin-jpc-110426-533a3756.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4088.jpg", "/photos-2026/william-plin-jpc-110426-533a3838.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4134.jpg", "/photos-2026/william-plin-jpc-110426-533a4353.jpg",
+  "/photos-editions/j7i1963.jpg", "/photos-2026/william-plin-jpc-110426-533a4426.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4660.jpg", "/photos-2026/bbq-expo-563.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4856.jpg", "/photos-2026/william-plin-jpc-110426-533a4869.jpg",
+  "/photos-editions/img-8188.jpg", "/photos-2026/william-plin-jpc-110426-533a4931.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4969.jpg", "/photos-editions/j7i1575.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a5984.jpg", "/photos-2026/william-plin-jpc-110426-533a6023.jpg",
+  "/photos-2026/william-plin-jpc-110426-533a4065.jpg", "/photos-2026/william-plin-jpc-110426-533a6029.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a6296.jpg", "/photos-editions/bbqexpo-mars24-ninacoriton-130.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a6497.jpg", "/photos-2026/william-plin-jpc-120426-533a6691.jpg",
+  "/photos-2026/bbq-expo-615.jpg", "/photos-2026/william-plin-jpc-120426-533a6712.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a6971.jpg", "/photos-editions/j7i1328.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a8137.jpg", "/photos-2026/william-plin-jpc-120426-533a8581.jpg",
+  "/photos-2026/william-plin-jpc-120426-533a7139.jpg", "/photos-editions/img-7808.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-021.jpg", "/photos-editions/j7i1281.jpg",
+  "/photos-editions/bbqexpo-mars24-ninacoriton-046.jpg",
 ];
 
 // Citations de presse réelles : à conserver mot pour mot dans leur langue d'origine (ne pas traduire).
@@ -61,9 +83,9 @@ const FR = {
   eyebrow: "Galerie & Presse · Édition 2026",
   heroTitle: "Ce qu'on a vécu en 2026.",
   heroParagraph:
-    "Quarante-six photos sélectionnées par notre photographe officiel. Plus de soixante-cinq retombées presse. Voici la trace écrite et visuelle de la première édition.",
+    "Soixante-treize photos du salon et sa vidéo. Plus de soixante-cinq retombées presse. Voici la trace écrite et visuelle de la première édition.",
   galleryEyebrow: "Galerie",
-  galleryTitle: "Quarante-six images.",
+  galleryTitle: "Soixante-treize images.",
   photoAlt: "Édition 2026",
   pressEyebrow: "Ils en parlent",
   pressTitle: "Soixante-cinq retombées presse en 2026.",
@@ -78,9 +100,9 @@ const EN: typeof FR = {
   eyebrow: "Gallery & Press · 2026 edition",
   heroTitle: "What we lived through in 2026.",
   heroParagraph:
-    "Forty-six photos selected by our official photographer. More than sixty-five press mentions. Here is the written and visual record of the first edition.",
+    "Seventy-three photos of the show, and its video. More than sixty-five press mentions. Here is the written and visual record of the first edition.",
   galleryEyebrow: "Gallery",
-  galleryTitle: "Forty-six images.",
+  galleryTitle: "Seventy-three images.",
   photoAlt: "2026 edition",
   pressEyebrow: "In the press",
   pressTitle: "Sixty-five press mentions in 2026.",
@@ -95,9 +117,9 @@ const ES: typeof FR = {
   eyebrow: "Galería y prensa · Edición 2026",
   heroTitle: "Lo que vivimos en 2026.",
   heroParagraph:
-    "Cuarenta y seis fotos seleccionadas por nuestro fotógrafo oficial. Más de sesenta y cinco apariciones en prensa. Este es el testimonio escrito y visual de la primera edición.",
+    "Setenta y tres fotos del salón y su vídeo. Más de sesenta y cinco apariciones en prensa. Este es el testimonio escrito y visual de la primera edición.",
   galleryEyebrow: "Galería",
-  galleryTitle: "Cuarenta y seis imágenes.",
+  galleryTitle: "Setenta y tres imágenes.",
   photoAlt: "Edición 2026",
   pressEyebrow: "Hablan de nosotros",
   pressTitle: "Sesenta y cinco apariciones en prensa en 2026.",
@@ -112,9 +134,9 @@ const DE: typeof FR = {
   eyebrow: "Galerie & Presse · Ausgabe 2026",
   heroTitle: "Was wir 2026 erlebt haben.",
   heroParagraph:
-    "Sechsundvierzig Fotos, ausgewählt von unserem offiziellen Fotografen. Über fünfundsechzig Presseberichte. Hier ist die schriftliche und visuelle Spur der ersten Ausgabe.",
+    "Dreiundsiebzig Fotos der Messe und ihr Video. Über fünfundsechzig Presseberichte. Hier ist die schriftliche und visuelle Spur der ersten Ausgabe.",
   galleryEyebrow: "Galerie",
-  galleryTitle: "Sechsundvierzig Bilder.",
+  galleryTitle: "Dreiundsiebzig Bilder.",
   photoAlt: "Ausgabe 2026",
   pressEyebrow: "Sie berichten darüber",
   pressTitle: "Fünfundsechzig Presseberichte im Jahr 2026.",
@@ -129,9 +151,9 @@ const NL: typeof FR = {
   eyebrow: "Galerij & pers · Editie 2026",
   heroTitle: "Wat we in 2026 hebben beleefd.",
   heroParagraph:
-    "Zesenveertig foto's geselecteerd door onze officiële fotograaf. Meer dan vijfenzestig persvermeldingen. Dit is het geschreven en visuele verslag van de eerste editie.",
+    "Drieënzeventig foto's van de beurs en de video. Meer dan vijfenzestig persvermeldingen. Dit is het geschreven en visuele verslag van de eerste editie.",
   galleryEyebrow: "Galerij",
-  galleryTitle: "Zesenveertig beelden.",
+  galleryTitle: "Drieënzeventig beelden.",
   photoAlt: "Editie 2026",
   pressEyebrow: "Zij spreken erover",
   pressTitle: "Vijfenzestig persvermeldingen in 2026.",
@@ -146,9 +168,9 @@ const PT: typeof FR = {
   eyebrow: "Galeria e imprensa · Edição 2026",
   heroTitle: "O que vivemos em 2026.",
   heroParagraph:
-    "Quarenta e seis fotos selecionadas pelo nosso fotógrafo oficial. Mais de sessenta e cinco referências na imprensa. Eis o registo escrito e visual da primeira edição.",
+    "Setenta e três fotos do salão e o seu vídeo. Mais de sessenta e cinco referências na imprensa. Eis o registo escrito e visual da primeira edição.",
   galleryEyebrow: "Galeria",
-  galleryTitle: "Quarenta e seis imagens.",
+  galleryTitle: "Setenta e três imagens.",
   photoAlt: "Edição 2026",
   pressEyebrow: "Falam de nós",
   pressTitle: "Sessenta e cinco referências na imprensa em 2026.",
@@ -163,9 +185,9 @@ const IT: typeof FR = {
   eyebrow: "Galleria & Stampa · Edizione 2026",
   heroTitle: "Quello che abbiamo vissuto nel 2026.",
   heroParagraph:
-    "Quarantasei foto selezionate dal nostro fotografo ufficiale. Oltre sessantacinque uscite stampa. Ecco la traccia scritta e visiva della prima edizione.",
+    "Settantatré foto del salone e il suo video. Oltre sessantacinque uscite stampa. Ecco la traccia scritta e visiva della prima edizione.",
   galleryEyebrow: "Galleria",
-  galleryTitle: "Quarantasei immagini.",
+  galleryTitle: "Settantatré immagini.",
   photoAlt: "Edizione 2026",
   pressEyebrow: "Parlano di noi",
   pressTitle: "Sessantacinque uscite stampa nel 2026.",
@@ -251,10 +273,13 @@ export default async function GalleryPressPage() {
 
         {/* CSS columns for masonry effect */}
         <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-3 md:gap-4 [&>*]:mb-3 md:[&>*]:mb-4 [&>*]:break-inside-avoid">
-          {ALL_PHOTOS.map((file, i) => (
-            <div key={file} className="relative overflow-hidden bg-char-800 rounded-sm">
+          <div className="relative aspect-video overflow-hidden bg-ink-950 rounded-sm">
+            <YouTubeEmbed />
+          </div>
+          {ALL_PHOTOS.map((src, i) => (
+            <div key={src} className="relative overflow-hidden bg-char-800 rounded-sm">
               <Image
-                src={`/photos-2026/${file}`}
+                src={src}
                 alt={`${ui.photoAlt} — ${i + 1}`}
                 width={1200}
                 height={800}

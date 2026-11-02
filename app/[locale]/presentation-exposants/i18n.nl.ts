@@ -308,6 +308,7 @@ export const NL: Record<string, string> = {
   "pays représentés": "vertegenwoordigde landen",
   "indoor & outdoor": "indoor & outdoor",
   "En images": "In beeld",
+  "Voir toute la galerie": "Bekijk de hele galerij",
   "France (77 %)": "Frankrijk (77%)",
   "Benelux (9,6 %)": "Benelux (9,6%)",
   "Allemagne (4 %)": "Duitsland (4%)",

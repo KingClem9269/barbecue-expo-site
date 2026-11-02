@@ -308,6 +308,7 @@ export const PT: Record<string, string> = {
   "pays représentés": "países representados",
   "indoor & outdoor": "indoor & outdoor",
   "En images": "Em imagens",
+  "Voir toute la galerie": "Ver a galeria completa",
   "France (77 %)": "França (77 %)",
   "Benelux (9,6 %)": "Benelux (9,6 %)",
   "Allemagne (4 %)": "Alemanha (4 %)",

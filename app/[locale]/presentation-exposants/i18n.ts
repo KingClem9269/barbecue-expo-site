@@ -364,6 +364,7 @@ export const EN: Record<string, string> = {
   "pays représentés": "countries represented",
   "indoor & outdoor": "indoor & outdoor",
   "En images": "In pictures",
+  "Voir toute la galerie": "View the full gallery",
   // Partie 3 — carte / provenance
   "France (77 %)": "France (77%)",
   "Benelux (9,6 %)": "Benelux (9.6%)",

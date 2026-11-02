@@ -20,6 +20,7 @@ import {
   SOCIAL_REACH, SOCIAL_ACCOUNTS, SOCIAL_POSTS,
 } from "./data";
 import InstagramEmbed from "@/components/InstagramEmbed";
+import { Link } from "@/i18n/navigation";
 import { LangContext, useT, translate, isLang, type Lang } from "./i18n";
 import { useLocale } from "next-intl";
 import {
@@ -1198,7 +1199,19 @@ export default function CatalogueClient() {
         </div>
         {/* Galerie photo — slider défilant */}
         <div className="mb-14 md:mb-20">
-          <div className="text-cream-50/70 text-xs uppercase tracking-widest mb-5">{t("En images")}</div>
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+            <div className="text-cream-50/70 text-xs uppercase tracking-widest">{t("En images")}</div>
+            {/* Nouvel onglet : le prospect garde la présentation ouverte */}
+            <Link
+              href="/gallery-press"
+              target="_blank"
+              rel="noopener"
+              className="group inline-flex items-center gap-2 border border-gold-500/60 hover:border-gold-500 hover:bg-gold-500 text-gold-500 hover:text-ink-950 px-4 py-2 rounded-sm text-xs font-bold uppercase tracking-widest transition-colors"
+            >
+              {t("Voir toute la galerie")}
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
+            </Link>
+          </div>
           <div className="-mx-6 md:-mx-12">
             <PhotoMarquee />
           </div>
