@@ -20,7 +20,7 @@ import {
   SOCIAL_REACH, SOCIAL_ACCOUNTS, SOCIAL_POSTS,
 } from "./data";
 import InstagramEmbed from "@/components/InstagramEmbed";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { LangContext, useT, translate, isLang, type Lang } from "./i18n";
 import { useLocale } from "next-intl";
 import {
@@ -1028,9 +1028,9 @@ const LANG_META: Record<Lang, { flag: string; label: string }> = {
   it: { flag: "it", label: "Italiano" },
 };
 
-function LangToggle({ lang, setLang, siteLang }: { lang: Lang; setLang: (l: Lang) => void; siteLang: Lang }) {
-  // FR (langue source) + langue du site (ou EN si le site est en FR)
-  const other: Lang = siteLang === "fr" ? "en" : siteLang;
+function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+  // FR (langue source) + langue de la page (ou EN si elle est en FR)
+  const other: Lang = lang === "fr" ? "en" : lang;
   const flags = (["fr", other] as Lang[]).map((l) => ({ l, ...LANG_META[l] }));
   return (
     <div className="flex items-center gap-1.5 shrink-0">
@@ -1052,7 +1052,7 @@ function LangToggle({ lang, setLang, siteLang }: { lang: Lang; setLang: (l: Lang
   );
 }
 
-function StickyNav({ lang, setLang, siteLang }: { lang: Lang; setLang: (l: Lang) => void; siteLang: Lang }) {
+function StickyNav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   const { t } = useT();
   const navItems = [
     { id: "expo", label: "Présentation" },
@@ -1075,7 +1075,7 @@ function StickyNav({ lang, setLang, siteLang }: { lang: Lang; setLang: (l: Lang)
           <a href="#partenaires" className="hidden md:inline-flex bg-gold-500 text-ink-950 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap">
             {t("Devenir partenaire")}
           </a>
-          <LangToggle lang={lang} setLang={setLang} siteLang={siteLang} />
+          <LangToggle lang={lang} setLang={setLang} />
         </div>
       </div>
     </div>
@@ -1112,21 +1112,19 @@ const ESTIMATOR_CFG = {
 
 export default function CatalogueClient() {
   const locale = useLocale();
-  const siteLang: Lang = isLang(locale) ? locale : "fr";
-  const [lang, setLang] = useState<Lang>(siteLang);
-  useEffect(() => { setLang(siteLang); }, [siteLang]);
-  // <html lang> suit la langue affichée par le catalogue (lecteurs d'écran,
-  // demande d'e-mail) ; rendu à la langue du site en quittant la page.
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    return () => { document.documentElement.lang = locale; };
-  }, [lang, locale]);
+  // La langue du catalogue est celle de l'URL : les drapeaux changent d'URL
+  // (/en/presentation-exposants…) pour que toute la page suive, menu, pied de
+  // page et lecteur vidéo compris. Devis et e-mail sont gardés en localStorage.
+  const lang: Lang = isLang(locale) ? locale : "fr";
+  const router = useRouter();
+  const pathname = usePathname();
+  const setLang = (l: Lang) => router.replace(pathname, { locale: l, scroll: false });
   const t = useMemo(() => (fr: string) => translate(lang, fr), [lang]);
   return (
     <LangContext.Provider value={{ lang, t }}>
     <EstimatorProvider>
     <article className="bg-cream-50">
-      <StickyNav lang={lang} setLang={setLang} siteLang={siteLang} />
+      <StickyNav lang={lang} setLang={setLang} />
       <EstimatorPanel cfg={ESTIMATOR_CFG} />
       <PorteEmail />
 
