@@ -2,7 +2,7 @@ import { CHIFFRES, nombre } from "@/lib/chiffres";
 
 /**
  * Les textes de présentation du salon sur /billetterie (sous la mosaïque) :
- * accroche, description, chiffres et programme, par langue. Le français fait
+ * accroche, description, chiffres, programme et questions, par langue. Le français fait
  * foi ; une langue absente reprend le français (voir `salon(locale)`). Les
  * textes des pass et du module de vente sont dans contenu.ts.
  */
@@ -42,6 +42,8 @@ export type TextesSalon = {
   texte: string[];
   chiffres: { interieur: string; exterieur: string; marques: string; visiteurs: string };
   programme: Record<IdProgramme, { titre: string; texte: string }>;
+  /** « Bon à savoir » : questions pratiques et billets */
+  questions: { q: string; r: string }[];
   ui: {
     galerie: string;
     photo: string;
@@ -52,6 +54,8 @@ export type TextesSalon = {
     video: string;
     film: string;
     lancer: string;
+    /** bouton de l'en-tête, qui descend jusqu'au film */
+    voirVideo: string;
     programme: string;
   };
 };
@@ -106,6 +110,36 @@ function fr(): TextesSalon {
         texte: "Venues du monde entier : barbecues, kamados, fumoirs, planchas, couteaux, accessoires. Comparez, demandez conseil et repartez avec votre coup de cœur.",
       },
     },
+    questions: [
+      {
+        q: "Quels sont les jours et horaires ?",
+        r: "Le salon est ouvert le vendredi 12 et le samedi 13 mars de 9h30 à 19h, et le dimanche 14 mars de 9h30 à 18h, au Parc Floral de Paris.",
+      },
+      {
+        q: "Comment venir ?",
+        r: "En métro : ligne 1, station Château de Vincennes (terminus). En RER : ligne A, station Vincennes.",
+      },
+      {
+        q: "Le salon est-il ouvert à tous, même le vendredi ?",
+        r: "Oui, les trois jours sont ouverts à tous, débutants comme passionnés. Le billet Vendredi Pro & Passionnés est au même tarif pour les professionnels et les particuliers.",
+      },
+      {
+        q: "Mes enfants paient-ils ?",
+        r: "Les moins de 12 ans entrent gratuitement avec un adulte payant (4 enfants maximum par adulte), le samedi ou le dimanche : ajoutez leur billet gratuit à votre commande. De 12 à 17 ans, le billet Jeune est à 10 €.",
+      },
+      {
+        q: "Peut-on manger sur place ?",
+        r: "Oui : la restauration du salon fait le tour du monde des braises, du BBQ fumé texan au barbecue coréen, argentin ou brésilien. Et sur les stands, les exposants vous font déguster leurs produits.",
+      },
+      {
+        q: "Peut-on acheter sur place ?",
+        r: "Oui, la plupart des exposants vendent leur matériel directement sur le salon.",
+      },
+      {
+        q: "Je viens en famille ou en groupe, comment faire ?",
+        r: "Le Pass Famille fait entrer 2 adultes et 2 jeunes de 12 à 17 ans ; il est en vente en ligne jusqu'à 7 jours avant le salon, jamais sur place. Pour les CSE, associations et entreprises, le billet Groupe & CSE est proposé dès 20 places.",
+      },
+    ],
     ui: {
       galerie: "Galerie",
       photo: "Barbecue Expo en images",
@@ -115,6 +149,7 @@ function fr(): TextesSalon {
       suivante: "Suivante",
       video: "Vidéo du salon",
       film: "Le film officiel",
+      voirVideo: "Voir la vidéo de l'événement",
       lancer: "Lancer la vidéo",
       programme: "Au programme",
     },
@@ -163,6 +198,36 @@ function en(): TextesSalon {
         texte: "From all over the world: barbecues, kamados, smokers, planchas, knives, accessories. Compare, get advice and take home your favourite.",
       },
     },
+    questions: [
+      {
+        q: "What are the dates and opening hours?",
+        r: "The show is open on Friday 12 and Saturday 13 March from 9:30 AM to 7 PM, and on Sunday 14 March from 9:30 AM to 6 PM, at the Parc Floral de Paris.",
+      },
+      {
+        q: "How do I get there?",
+        r: "By metro: line 1, Château de Vincennes station (end of the line). By RER: line A, Vincennes station.",
+      },
+      {
+        q: "Is the show open to everyone, even on Friday?",
+        r: "Yes, all three days are open to everyone, beginners and enthusiasts alike. The Friday Pro & Enthusiasts ticket is the same price for professionals and the public.",
+      },
+      {
+        q: "Do my children need to pay?",
+        r: "Children under 12 get in free with a paying adult (up to 4 children per adult) on Saturday or Sunday: just add their free ticket to your order. Ages 12 to 17 need a Youth ticket, at €10.",
+      },
+      {
+        q: "Can I eat on site?",
+        r: "Yes: the show's food takes you on a world tour of the grill, from Texas smoked BBQ to Korean, Argentine and Brazilian barbecue. And on the stands, exhibitors let you taste their products.",
+      },
+      {
+        q: "Can I buy on site?",
+        r: "Yes, most exhibitors sell their gear directly at the show.",
+      },
+      {
+        q: "Coming as a family or a group?",
+        r: "The Family Pass admits 2 adults and 2 young people aged 12 to 17; it's on sale online until 7 days before the show, never at the door. For companies, associations and works councils, the Group & Corporate ticket is available from 20 tickets.",
+      },
+    ],
     ui: {
       galerie: "Gallery",
       photo: "Barbecue Expo in pictures",
@@ -172,6 +237,7 @@ function en(): TextesSalon {
       suivante: "Next",
       video: "Show video",
       film: "The official film",
+      voirVideo: "Watch the event video",
       lancer: "Play the video",
       programme: "What's on",
     },
@@ -220,6 +286,36 @@ function es(): TextesSalon {
         texte: "Llegadas de todo el mundo: barbacoas, kamados, ahumadores, planchas, cuchillos, accesorios. Compare, pida consejo y llévese su favorito.",
       },
     },
+    questions: [
+      {
+        q: "¿Cuáles son los días y horarios?",
+        r: "El salón abre el viernes 12 y el sábado 13 de marzo de 9:30 a 19:00, y el domingo 14 de marzo de 9:30 a 18:00, en el Parc Floral de París.",
+      },
+      {
+        q: "¿Cómo llegar?",
+        r: "En metro: línea 1, estación Château de Vincennes (final de línea). En RER: línea A, estación Vincennes.",
+      },
+      {
+        q: "¿El salón está abierto a todos, incluso el viernes?",
+        r: "Sí, los tres días están abiertos a todos, principiantes y apasionados. La entrada Viernes Pro & Apasionados tiene el mismo precio para profesionales y particulares.",
+      },
+      {
+        q: "¿Pagan mis hijos?",
+        r: "Los menores de 12 años entran gratis con un adulto que pague entrada (máximo 4 niños por adulto), el sábado o el domingo: añada su entrada gratuita a su pedido. De 12 a 17 años, la entrada Joven cuesta 10 €.",
+      },
+      {
+        q: "¿Se puede comer en el salón?",
+        r: "Sí: la restauración del salón da la vuelta al mundo de las brasas, del BBQ ahumado texano a la barbacoa coreana, argentina o brasileña. Y en los stands, los expositores le dan a probar sus productos.",
+      },
+      {
+        q: "¿Se puede comprar en el salón?",
+        r: "Sí, la mayoría de los expositores venden su material directamente en el salón.",
+      },
+      {
+        q: "¿Viene en familia o en grupo?",
+        r: "El Pase Familia da acceso a 2 adultos y 2 jóvenes de 12 a 17 años; se vende en línea hasta 7 días antes del salón, nunca en taquilla. Para empresas, asociaciones y comités de empresa, la entrada Grupo y empresa está disponible a partir de 20 entradas.",
+      },
+    ],
     ui: {
       galerie: "Galería",
       photo: "Barbecue Expo en imágenes",
@@ -229,6 +325,7 @@ function es(): TextesSalon {
       suivante: "Siguiente",
       video: "Vídeo del salón",
       film: "El vídeo oficial",
+      voirVideo: "Ver el vídeo del evento",
       lancer: "Reproducir el vídeo",
       programme: "Programa",
     },
@@ -277,6 +374,36 @@ function de(): TextesSalon {
         texte: "Aus aller Welt: Grills, Kamados, Smoker, Planchas, Messer, Zubehör. Vergleichen Sie, lassen Sie sich beraten und nehmen Sie Ihr Lieblingsstück mit.",
       },
     },
+    questions: [
+      {
+        q: "Wann ist die Messe geöffnet?",
+        r: "Die Messe ist am Freitag, 12., und Samstag, 13. März, von 9:30 bis 19:00 Uhr geöffnet und am Sonntag, 14. März, von 9:30 bis 18:00 Uhr – im Parc Floral de Paris.",
+      },
+      {
+        q: "Wie komme ich hin?",
+        r: "Mit der Metro: Linie 1, Station Château de Vincennes (Endstation). Mit dem RER: Linie A, Station Vincennes.",
+      },
+      {
+        q: "Ist die Messe für alle offen, auch am Freitag?",
+        r: "Ja, alle drei Tage sind für alle offen, für Einsteiger wie für Fans. Das Ticket Freitag Pro & Fans kostet für Fachbesucher und Privatpersonen gleich viel.",
+      },
+      {
+        q: "Zahlen meine Kinder Eintritt?",
+        r: "Kinder unter 12 Jahren haben am Samstag oder Sonntag in Begleitung eines zahlenden Erwachsenen freien Eintritt (maximal 4 Kinder pro Erwachsenem): Fügen Sie ihr kostenloses Ticket Ihrer Bestellung hinzu. Für 12- bis 17-Jährige kostet das Jugendticket 10 €.",
+      },
+      {
+        q: "Kann man vor Ort essen?",
+        r: "Ja: Die Gastronomie der Messe ist eine Weltreise der Glut, vom Texas Smoked BBQ bis zum koreanischen, argentinischen oder brasilianischen Barbecue. Und an den Ständen lassen Sie die Aussteller ihre Produkte probieren.",
+      },
+      {
+        q: "Kann man vor Ort kaufen?",
+        r: "Ja, die meisten Aussteller verkaufen ihre Ausrüstung direkt auf der Messe.",
+      },
+      {
+        q: "Mit der Familie oder als Gruppe?",
+        r: "Der Familienpass gilt für 2 Erwachsene und 2 Jugendliche von 12 bis 17 Jahren; er ist bis 7 Tage vor der Messe online erhältlich, nie vor Ort. Für Firmen, Vereine und Betriebsräte gibt es das Ticket Gruppen & Firmen ab 20 Tickets.",
+      },
+    ],
     ui: {
       galerie: "Galerie",
       photo: "Barbecue Expo in Bildern",
@@ -286,6 +413,7 @@ function de(): TextesSalon {
       suivante: "Weiter",
       video: "Messevideo",
       film: "Der offizielle Film",
+      voirVideo: "Video der Messe ansehen",
       lancer: "Video abspielen",
       programme: "Programm",
     },
@@ -334,6 +462,36 @@ function nl(): TextesSalon {
         texte: "Uit de hele wereld: barbecues, kamado's, smokers, plancha's, messen, accessoires. Vergelijk, vraag advies en neem uw favoriet mee naar huis.",
       },
     },
+    questions: [
+      {
+        q: "Wat zijn de data en openingstijden?",
+        r: "De beurs is open op vrijdag 12 en zaterdag 13 maart van 9.30 tot 19.00 uur, en op zondag 14 maart van 9.30 tot 18.00 uur, in het Parc Floral de Paris.",
+      },
+      {
+        q: "Hoe kom ik er?",
+        r: "Met de metro: lijn 1, station Château de Vincennes (eindpunt). Met de RER: lijn A, station Vincennes.",
+      },
+      {
+        q: "Is de beurs voor iedereen open, ook op vrijdag?",
+        r: "Ja, alle drie de dagen zijn voor iedereen open, voor beginners en liefhebbers. Het ticket Vrijdag Pro & Liefhebbers kost voor professionals en particulieren hetzelfde.",
+      },
+      {
+        q: "Betalen mijn kinderen?",
+        r: "Kinderen onder 12 jaar mogen op zaterdag of zondag gratis naar binnen met een betalende volwassene (maximaal 4 kinderen per volwassene): voeg hun gratis ticket toe aan uw bestelling. Van 12 tot 17 jaar kost het Jongerenticket € 10.",
+      },
+      {
+        q: "Kan ik ter plaatse eten?",
+        r: "Ja: de horeca van de beurs neemt u mee op wereldreis langs de gloeiende kolen, van Texaanse smoked BBQ tot Koreaanse, Argentijnse of Braziliaanse barbecue. En op de stands laten de exposanten u hun producten proeven.",
+      },
+      {
+        q: "Kan ik ter plaatse kopen?",
+        r: "Ja, de meeste exposanten verkopen hun materiaal rechtstreeks op de beurs.",
+      },
+      {
+        q: "Komt u met het gezin of met een groep?",
+        r: "De Gezinspass geeft toegang aan 2 volwassenen en 2 jongeren van 12 tot 17 jaar; hij is online te koop tot 7 dagen voor de beurs, nooit ter plaatse. Voor bedrijven, verenigingen en ondernemingsraden is het ticket Groep & bedrijf beschikbaar vanaf 20 tickets.",
+      },
+    ],
     ui: {
       galerie: "Galerij",
       photo: "Barbecue Expo in beeld",
@@ -343,6 +501,7 @@ function nl(): TextesSalon {
       suivante: "Volgende",
       video: "Video van de beurs",
       film: "De officiële film",
+      voirVideo: "Bekijk de video van het evenement",
       lancer: "Video afspelen",
       programme: "Programma",
     },
@@ -391,6 +550,36 @@ function pt(): TextesSalon {
         texte: "De todo o mundo: barbecues, kamados, fumadores, planchas, facas, acessórios. Compare, peça conselho e leve para casa o seu favorito.",
       },
     },
+    questions: [
+      {
+        q: "Quais são os dias e horários?",
+        r: "O salão está aberto na sexta-feira 12 e no sábado 13 de março, das 9h30 às 19h, e no domingo 14 de março, das 9h30 às 18h, no Parc Floral de Paris.",
+      },
+      {
+        q: "Como chegar?",
+        r: "De metro: linha 1, estação Château de Vincennes (fim da linha). De RER: linha A, estação Vincennes.",
+      },
+      {
+        q: "O salão está aberto a todos, mesmo na sexta-feira?",
+        r: "Sim, os três dias estão abertos a todos, principiantes e apaixonados. O bilhete Sexta Pro & Apaixonados tem o mesmo preço para profissionais e particulares.",
+      },
+      {
+        q: "Os meus filhos pagam?",
+        r: "Os menores de 12 anos entram gratuitamente com um adulto pagante (máximo 4 crianças por adulto), no sábado ou no domingo: adicione o bilhete gratuito deles à sua encomenda. Dos 12 aos 17 anos, o bilhete Jovem custa 10 €.",
+      },
+      {
+        q: "Pode-se comer no local?",
+        r: "Sim: a restauração do salão dá a volta ao mundo das brasas, do BBQ fumado texano ao barbecue coreano, argentino ou brasileiro. E nos stands, os expositores dão-lhe a provar os seus produtos.",
+      },
+      {
+        q: "Pode-se comprar no local?",
+        r: "Sim, a maioria dos expositores vende o seu material diretamente no salão.",
+      },
+      {
+        q: "Vem em família ou em grupo?",
+        r: "O Passe Família dá entrada a 2 adultos e 2 jovens dos 12 aos 17 anos; está à venda online até 7 dias antes do salão, nunca no local. Para empresas, associações e comissões de trabalhadores, o bilhete Grupo e empresa está disponível a partir de 20 bilhetes.",
+      },
+    ],
     ui: {
       galerie: "Galeria",
       photo: "Barbecue Expo em imagens",
@@ -400,6 +589,7 @@ function pt(): TextesSalon {
       suivante: "Seguinte",
       video: "Vídeo do salão",
       film: "O filme oficial",
+      voirVideo: "Ver o vídeo do evento",
       lancer: "Ver o vídeo",
       programme: "Programa",
     },
@@ -448,6 +638,36 @@ function it(): TextesSalon {
         texte: "Da tutto il mondo: barbecue, kamado, affumicatori, plancha, coltelli, accessori. Confronta, chiedi consiglio e porta a casa il tuo preferito.",
       },
     },
+    questions: [
+      {
+        q: "Quali sono i giorni e gli orari?",
+        r: "Il salone è aperto venerdì 12 e sabato 13 marzo dalle 9:30 alle 19:00, e domenica 14 marzo dalle 9:30 alle 18:00, al Parc Floral de Paris.",
+      },
+      {
+        q: "Come arrivare?",
+        r: "In metro: linea 1, stazione Château de Vincennes (capolinea). In RER: linea A, stazione Vincennes.",
+      },
+      {
+        q: "Il salone è aperto a tutti, anche il venerdì?",
+        r: "Sì, tutti e tre i giorni sono aperti a tutti, principianti e appassionati. Il biglietto Venerdì Pro & Appassionati ha lo stesso prezzo per professionisti e privati.",
+      },
+      {
+        q: "I miei figli pagano?",
+        r: "I bambini sotto i 12 anni entrano gratis con un adulto pagante (massimo 4 bambini per adulto), il sabato o la domenica: aggiungi il loro biglietto gratuito all'ordine. Dai 12 ai 17 anni, il biglietto Giovani costa 10 €.",
+      },
+      {
+        q: "Si può mangiare sul posto?",
+        r: "Sì: la ristorazione del salone fa il giro del mondo delle braci, dal BBQ affumicato texano al barbecue coreano, argentino o brasiliano. E sugli stand gli espositori ti fanno assaggiare i loro prodotti.",
+      },
+      {
+        q: "Si può acquistare sul posto?",
+        r: "Sì, la maggior parte degli espositori vende la propria attrezzatura direttamente al salone.",
+      },
+      {
+        q: "Vieni in famiglia o in gruppo?",
+        r: "Il Pass Famiglia fa entrare 2 adulti e 2 ragazzi dai 12 ai 17 anni; è in vendita online fino a 7 giorni prima del salone, mai sul posto. Per aziende, associazioni e CRAL, il biglietto Gruppi & CRAL è disponibile a partire da 20 biglietti.",
+      },
+    ],
     ui: {
       galerie: "Galleria",
       photo: "Barbecue Expo in immagini",
@@ -457,6 +677,7 @@ function it(): TextesSalon {
       suivante: "Successiva",
       video: "Video del salone",
       film: "Il film ufficiale",
+      voirVideo: "Guarda il video dell'evento",
       lancer: "Guarda il video",
       programme: "In programma",
     },

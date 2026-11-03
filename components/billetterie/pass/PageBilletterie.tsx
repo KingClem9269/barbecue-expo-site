@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { Play } from "lucide-react";
 import EcosystemLinks from "@/components/ecosystem/EcosystemLinks";
 import Saisie from "@/components/geste/Saisie";
+import Bouton from "@/components/marque/Bouton";
 import Etiquette from "@/components/marque/Etiquette";
 import { Link } from "@/i18n/navigation";
 import { ORDRE_PASS, PALIERS, PASS, palierCourant, prix, prixMini, type IdPass } from "@/lib/billets";
@@ -20,8 +22,8 @@ const VENTE = SALON.billetterieOuverte || process.env.NEXT_PUBLIC_APERCU_BILLETT
 /**
  * La billetterie grand public, commune à /billetterie et /billetterie/<pass>,
  * construite comme une page d'événement : la mosaïque de photos en tête, puis
- * la présentation du salon (description, chiffres, film, programme, questions)
- * à gauche et le module de vente collant à droite. Sur mobile, le module vient
+ * la présentation du salon (titre, accroche, chiffres, description, programme,
+ * film, questions) à gauche et le module de vente collant à droite. Sur mobile, le module vient
  * juste après la description et un bouton collé en bas de l'écran y mène.
  */
 export default function PageBilletterie({ locale, initial }: { locale: string; initial: IdPass }) {
@@ -40,7 +42,6 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
 
   // La mosaïque d'abord, puis le reste de la galerie du site dans la visionneuse.
   const photos = [...PHOTOS_MOSAIQUE, ...PHOTOS_GALERIE.filter((p) => !PHOTOS_MOSAIQUE.includes(p))];
-  const questions = [...t.pass.individuel.questions, ...t.pass.groupes.questions];
 
   const chiffres: [string, string][] = [
     [`${nombre(CHIFFRES.surfaceInterieure2027, locale)} m²`, s.chiffres.interieur],
@@ -70,7 +71,7 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-8 md:pt-12 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_25rem] gap-x-14 gap-y-12">
-        {/* Présentation : titre, description, chiffres */}
+        {/* Présentation : titre, accroche, chiffres, description */}
         <div className="flex flex-col gap-8 min-w-0 lg:col-start-1">
           <header className="flex flex-col gap-4">
             <p className="text-xs md:text-sm uppercase tracking-[0.08em] text-fumee">
@@ -91,23 +92,14 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
                   <span className="text-sm md:text-base text-charbon/80">{t.ui.jusquau(finPalier)}</span>
                 </>
               )}
-              <span className="text-charbon/30" aria-hidden>
-                ·
-              </span>
-              <Link href="/billetterie/pro-b2b" className="lien-marque text-sm md:text-base font-semibold text-charbon/80 hover:text-charbon">
-                {t.ui.proLien}
-              </Link>
+              <Bouton href="#film-officiel" className="text-base md:text-lg px-3.5 pt-2 pb-1.5">
+                <Play className="h-4 w-4 -translate-y-px" fill="currentColor" strokeWidth={0} />
+                {s.ui.voirVideo}
+              </Bouton>
             </div>
           </header>
 
-          <div className="flex flex-col gap-5 max-w-2xl">
-            <p className="text-xl md:text-2xl leading-snug">{s.accroche}</p>
-            {s.texte.map((paragraphe, i) => (
-              <p key={i} className="text-lg leading-relaxed text-charbon/85">
-                {paragraphe}
-              </p>
-            ))}
-          </div>
+          <p className="max-w-2xl text-xl md:text-2xl leading-snug">{s.accroche}</p>
 
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-charbon/15 border border-charbon/15">
             {chiffres.map(([valeur, libelle]) => (
@@ -117,6 +109,14 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
               </li>
             ))}
           </ul>
+
+          <div className="flex flex-col gap-5 max-w-2xl">
+            {s.texte.map((paragraphe, i) => (
+              <p key={i} className="text-lg leading-relaxed text-charbon/85">
+                {paragraphe}
+              </p>
+            ))}
+          </div>
         </div>
 
         {/* Module de vente : colonne collante sur ordinateur, après la description sur mobile */}
@@ -126,13 +126,8 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
           </div>
         </aside>
 
-        {/* Film, programme, questions */}
+        {/* Programme, film, questions */}
         <div className="flex flex-col gap-14 md:gap-16 min-w-0 lg:col-start-1 lg:pt-2">
-          <section className="flex flex-col gap-5">
-            <h2 className="font-affiche font-normal uppercase text-4xl md:text-5xl leading-[0.9]">{s.ui.film}</h2>
-            <VideoOfficielle poster="/photos-2026/zone-grill-arena.jpg" titre={s.ui.film} lancer={s.ui.lancer} />
-          </section>
-
           <section className="flex flex-col gap-6">
             <h2 className="font-affiche font-normal uppercase text-4xl md:text-5xl leading-[0.9]">{s.ui.programme}</h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-9">
@@ -156,10 +151,16 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
             </ul>
           </section>
 
+          {/* Cible du bouton « Voir la vidéo » de l'en-tête (marge = navigation fixe) */}
+          <section id="film-officiel" className="flex flex-col gap-5 scroll-mt-28">
+            <h2 className="font-affiche font-normal uppercase text-4xl md:text-5xl leading-[0.9]">{s.ui.film}</h2>
+            <VideoOfficielle poster="/photos-2026/zone-grill-arena.jpg" titre={s.ui.film} lancer={s.ui.lancer} />
+          </section>
+
           <section className="flex flex-col gap-4 max-w-2xl">
             <h2 className="font-affiche font-normal uppercase text-4xl md:text-5xl leading-[0.9]">{t.ui.questions}</h2>
             <div className="border-t-2 border-charbon">
-              {questions.map((item) => (
+              {s.questions.map((item) => (
                 <details key={item.q} className="group border-b border-charbon/15 py-4">
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-semibold text-lg">
                     {item.q}

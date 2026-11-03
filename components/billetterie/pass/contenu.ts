@@ -15,8 +15,6 @@ export type TextesPass = {
   liste: string[];
   /** accroche, pour la description du lien direct /billetterie/<pass> */
   accroche: string;
-  /** questions fréquentes propres au pass */
-  questions: { q: string; r: string }[];
 };
 
 export type Textes = {
@@ -52,47 +50,18 @@ const FR: Textes = {
       pourQui: "Seul, à deux, entre amis : un billet par personne.",
       liste: ["Vendredi Pro & Passionnés", "Samedi ou dimanche", "Week-end", "Jeune 12-17 ans", "Moins de 12 ans"],
       accroche: "Trois jours au cœur du feu, au Parc Floral de Paris.",
-      questions: [
-        {
-          q: "Le vendredi est-il réservé aux professionnels ?",
-          r: "Non : le billet Vendredi Pro & Passionnés est ouvert à tous, au même tarif pour les pros et les particuliers. C'est la journée des conférences, des masterclasses et des sessions pro de la Grill Arena.",
-        },
-        {
-          q: "Mes enfants paient-ils ?",
-          r: "Les moins de 12 ans entrent gratuitement avec un adulte payant (4 enfants maximum par adulte), le samedi ou le dimanche : ajoutez leur billet gratuit à votre commande. De 12 à 17 ans, le billet Jeune est à 10 €.",
-        },
-        {
-          q: "Le billet Samedi ou dimanche est-il daté ?",
-          r: "Vous choisissez votre journée, samedi 13 ou dimanche 14 mars. Pour les deux jours, le Pass Week-end revient moins cher.",
-        },
-      ],
     },
     groupes: {
       nom: "Pass Groupes",
       pourQui: "Familles, groupes et CSE : un tarif pensé pour venir nombreux.",
       liste: ["Pass Famille 2 adultes + 2 jeunes", "Groupe & CSE dès 20 places", "Moins de 12 ans"],
       accroche: "Le barbecue, ça se partage. Le salon aussi.",
-      questions: [
-        {
-          q: "J'ai trois enfants, comment faire ?",
-          r: "Prenez un Pass Famille et ajoutez le billet qui correspond au troisième : gratuit s'il a moins de 12 ans, billet Jeune s'il a entre 12 et 17 ans.",
-        },
-        {
-          q: "Jusqu'à quand acheter le Pass Famille ?",
-          r: "Le Pass Famille est en vente en ligne jusqu'à 7 jours avant le salon. Il n'est jamais vendu sur place.",
-        },
-        {
-          q: "Comment fonctionne le billet Groupe & CSE ?",
-          r: "Dès 20 billets par commande. Le nom et le prénom de chaque participant sont demandés à la commande : préparez votre liste. Une journée au choix, samedi ou dimanche.",
-        },
-      ],
     },
     food: {
       nom: "Pass + Food",
       pourQui: "L'entrée et la street food du salon, réunies dans un seul pass.",
       liste: ["Formule en préparation"],
       accroche: "Venez le ventre vide.",
-      questions: [],
     },
   },
   tarifs: {
@@ -146,47 +115,18 @@ const EN: Textes = {
       pourQui: "Solo, as a couple or with friends: one ticket per person.",
       liste: ["Friday Pro & Enthusiasts", "Saturday or Sunday", "Weekend", "Youth 12-17", "Under 12"],
       accroche: "Three days by the fire, at the Parc Floral de Paris.",
-      questions: [
-        {
-          q: "Is Friday reserved for professionals?",
-          r: "No: the Friday Pro & Enthusiasts ticket is open to everyone, at the same price for trade and public alike. It's the day for talks, masterclasses and pro sessions at the Grill Arena.",
-        },
-        {
-          q: "Do my children need to pay?",
-          r: "Children under 12 get in free with a paying adult (up to 4 children per adult) on Saturday or Sunday: just add their free ticket to your order. Ages 12 to 17 need a Youth ticket, at €10.",
-        },
-        {
-          q: "Is the Saturday or Sunday ticket for a set date?",
-          r: "You choose your day: Saturday 13 or Sunday 14 March. For both days, the Weekend Pass works out cheaper.",
-        },
-      ],
     },
     groupes: {
       nom: "Group Pass",
       pourQui: "Families, groups and companies: pricing made for coming together.",
       liste: ["Family Pass 2 adults + 2 youths", "Group & Corporate from 20 tickets", "Under 12"],
       accroche: "Barbecue is made for sharing. So is the show.",
-      questions: [
-        {
-          q: "I have three children. What should I do?",
-          r: "Get a Family Pass and add the right ticket for the third child: free if under 12, a Youth ticket if aged 12 to 17.",
-        },
-        {
-          q: "How late can I buy the Family Pass?",
-          r: "The Family Pass is on sale online until 7 days before the show. It is never sold on site.",
-        },
-        {
-          q: "How does the Group & Corporate ticket work?",
-          r: "From 20 tickets per order. The first and last name of each attendee is requested when ordering, so have your list ready. One day of your choice, Saturday or Sunday.",
-        },
-      ],
     },
     food: {
       nom: "Pass + Food",
       pourQui: "Entry and the show's street food, together in one pass.",
       liste: ["In the works"],
       accroche: "Come hungry.",
-      questions: [],
     },
   },
   tarifs: {
@@ -240,47 +180,18 @@ const ES: Textes = {
       pourQui: "Solo, en pareja o con amigos: una entrada por persona.",
       liste: ["Viernes Pro & Apasionados", "Sábado o domingo", "Fin de semana", "Joven 12-17 años", "Menores de 12 años"],
       accroche: "Tres días junto al fuego, en el Parc Floral de París.",
-      questions: [
-        {
-          q: "¿El viernes está reservado a los profesionales?",
-          r: "No: la entrada Viernes Pro & Apasionados está abierta a todos, con la misma tarifa para profesionales y particulares. Es el día de las conferencias, las masterclasses y las sesiones pro de la Grill Arena.",
-        },
-        {
-          q: "¿Pagan mis hijos?",
-          r: "Los menores de 12 años entran gratis con un adulto que pague entrada (máximo 4 niños por adulto), el sábado o el domingo: añada su entrada gratuita a su pedido. De 12 a 17 años, la entrada Joven cuesta 10 €.",
-        },
-        {
-          q: "¿La entrada Sábado o domingo tiene fecha fija?",
-          r: "Usted elige el día: sábado 13 o domingo 14 de marzo. Para los dos días, el Pase Fin de semana sale más barato.",
-        },
-      ],
     },
     groupes: {
       nom: "Pase Grupos",
       pourQui: "Familias, grupos y empresas: una tarifa pensada para venir en grupo.",
       liste: ["Pase Familia 2 adultos + 2 jóvenes", "Grupo y empresa desde 20 entradas", "Menores de 12 años"],
       accroche: "La barbacoa se comparte. La feria también.",
-      questions: [
-        {
-          q: "Tengo tres hijos, ¿cómo lo hago?",
-          r: "Compre un Pase Familia y añada la entrada que corresponda al tercero: gratuita si tiene menos de 12 años, entrada Joven si tiene entre 12 y 17 años.",
-        },
-        {
-          q: "¿Hasta cuándo se puede comprar el Pase Familia?",
-          r: "El Pase Familia está a la venta en línea hasta 7 días antes de la feria. Nunca se vende en taquilla.",
-        },
-        {
-          q: "¿Cómo funciona la entrada Grupo y empresa?",
-          r: "A partir de 20 entradas por pedido. Al hacer el pedido se pide el nombre y apellido de cada participante: prepare su lista. Un día a elegir, sábado o domingo.",
-        },
-      ],
     },
     food: {
       nom: "Pase + Food",
       pourQui: "La entrada y la street food de la feria, reunidas en un solo pase.",
       liste: ["Fórmula en preparación"],
       accroche: "Venga con hambre.",
-      questions: [],
     },
   },
   tarifs: {
@@ -334,47 +245,18 @@ const DE: Textes = {
       pourQui: "Allein, zu zweit oder mit Freunden: ein Ticket pro Person.",
       liste: ["Freitag Pro & Fans", "Samstag oder Sonntag", "Wochenende", "Jugend 12–17 Jahre", "Unter 12 Jahren"],
       accroche: "Drei Tage mitten im Feuer, im Parc Floral de Paris.",
-      questions: [
-        {
-          q: "Ist der Freitag Fachbesuchern vorbehalten?",
-          r: "Nein: Das Ticket Freitag Pro & Fans steht allen offen, zum gleichen Preis für Profis und Privatbesucher. Es ist der Tag der Vorträge, Masterclasses und Pro-Sessions in der Grill Arena.",
-        },
-        {
-          q: "Zahlen meine Kinder Eintritt?",
-          r: "Kinder unter 12 Jahren haben am Samstag oder Sonntag in Begleitung eines zahlenden Erwachsenen freien Eintritt (maximal 4 Kinder pro Erwachsenem): Fügen Sie ihr kostenloses Ticket Ihrer Bestellung hinzu. Für 12- bis 17-Jährige kostet das Jugendticket 10 €.",
-        },
-        {
-          q: "Gilt das Ticket Samstag oder Sonntag für ein festes Datum?",
-          r: "Sie wählen Ihren Tag: Samstag, 13., oder Sonntag, 14. März. Für beide Tage ist der Wochenendpass günstiger.",
-        },
-      ],
     },
     groupes: {
       nom: "Gruppenpass",
       pourQui: "Familien, Gruppen und Firmen: ein Tarif für alle, die gemeinsam kommen.",
       liste: ["Familienpass 2 Erwachsene + 2 Jugendliche", "Gruppen & Firmen ab 20 Tickets", "Unter 12 Jahren"],
       accroche: "Grillen verbindet. Die Messe auch.",
-      questions: [
-        {
-          q: "Ich habe drei Kinder – wie gehe ich vor?",
-          r: "Nehmen Sie einen Familienpass und fügen Sie das passende Ticket für das dritte Kind hinzu: kostenlos unter 12 Jahren, ein Jugendticket zwischen 12 und 17 Jahren.",
-        },
-        {
-          q: "Bis wann kann ich den Familienpass kaufen?",
-          r: "Der Familienpass ist bis 7 Tage vor der Messe online erhältlich. Vor Ort wird er nie verkauft.",
-        },
-        {
-          q: "Wie funktioniert das Ticket Gruppen & Firmen?",
-          r: "Ab 20 Tickets pro Bestellung. Bei der Bestellung werden Vor- und Nachname jedes Teilnehmers abgefragt: Halten Sie Ihre Liste bereit. Ein Tag nach Wahl, Samstag oder Sonntag.",
-        },
-      ],
     },
     food: {
       nom: "Pass + Food",
       pourQui: "Eintritt und Street Food der Messe in einem einzigen Pass.",
       liste: ["Angebot in Vorbereitung"],
       accroche: "Kommen Sie hungrig.",
-      questions: [],
     },
   },
   tarifs: {
@@ -428,47 +310,18 @@ const NL: Textes = {
       pourQui: "Alleen, met z'n tweeën of met vrienden: één ticket per persoon.",
       liste: ["Vrijdag Pro & Liefhebbers", "Zaterdag of zondag", "Weekend", "Jongeren 12-17 jaar", "Onder 12 jaar"],
       accroche: "Drie dagen in het hart van het vuur, in het Parc Floral de Paris.",
-      questions: [
-        {
-          q: "Is de vrijdag alleen voor professionals?",
-          r: "Nee: het ticket Vrijdag Pro & Liefhebbers is voor iedereen, tegen hetzelfde tarief voor professionals en particulieren. Het is de dag van de lezingen, masterclasses en pro-sessies in de Grill Arena.",
-        },
-        {
-          q: "Betalen mijn kinderen?",
-          r: "Kinderen onder 12 jaar mogen op zaterdag of zondag gratis naar binnen met een betalende volwassene (maximaal 4 kinderen per volwassene): voeg hun gratis ticket toe aan uw bestelling. Van 12 tot 17 jaar kost het Jongerenticket € 10.",
-        },
-        {
-          q: "Geldt het ticket Zaterdag of zondag voor een vaste datum?",
-          r: "U kiest zelf uw dag: zaterdag 13 of zondag 14 maart. Voor beide dagen is de Weekendpass voordeliger.",
-        },
-      ],
     },
     groupes: {
       nom: "Groepspass",
       pourQui: "Gezinnen, groepen en bedrijven: een tarief om met velen te komen.",
       liste: ["Gezinspass 2 volwassenen + 2 jongeren", "Groep & bedrijf vanaf 20 plaatsen", "Onder 12 jaar"],
       accroche: "Barbecue is om te delen. De beurs ook.",
-      questions: [
-        {
-          q: "Ik heb drie kinderen, hoe doe ik dat?",
-          r: "Neem een Gezinspass en voeg het juiste ticket toe voor het derde kind: gratis onder 12 jaar, een Jongerenticket tussen 12 en 17 jaar.",
-        },
-        {
-          q: "Tot wanneer kan ik de Gezinspass kopen?",
-          r: "De Gezinspass is online te koop tot 7 dagen voor de beurs. Hij wordt nooit ter plaatse verkocht.",
-        },
-        {
-          q: "Hoe werkt het ticket Groep & bedrijf?",
-          r: "Vanaf 20 tickets per bestelling. Bij de bestelling worden de voor- en achternaam van elke deelnemer gevraagd: houd uw lijst klaar. Eén dag naar keuze, zaterdag of zondag.",
-        },
-      ],
     },
     food: {
       nom: "Pass + Food",
       pourQui: "Toegang en de street food van de beurs, samen in één pass.",
       liste: ["Formule in voorbereiding"],
       accroche: "Kom met een lege maag.",
-      questions: [],
     },
   },
   tarifs: {
@@ -522,47 +375,18 @@ const PT: Textes = {
       pourQui: "Sozinho, a dois ou entre amigos: um bilhete por pessoa.",
       liste: ["Sexta Pro & Apaixonados", "Sábado ou domingo", "Fim de semana", "Jovem 12-17 anos", "Menores de 12 anos"],
       accroche: "Três dias no coração do fogo, no Parc Floral de Paris.",
-      questions: [
-        {
-          q: "A sexta-feira é reservada aos profissionais?",
-          r: "Não: o bilhete Sexta Pro & Apaixonados está aberto a todos, ao mesmo preço para profissionais e particulares. É o dia das conferências, das masterclasses e das sessões pro da Grill Arena.",
-        },
-        {
-          q: "Os meus filhos pagam?",
-          r: "Os menores de 12 anos entram gratuitamente com um adulto pagante (máximo 4 crianças por adulto), no sábado ou no domingo: adicione o bilhete gratuito deles à sua encomenda. Dos 12 aos 17 anos, o bilhete Jovem custa 10 €.",
-        },
-        {
-          q: "O bilhete Sábado ou domingo tem data marcada?",
-          r: "Escolhe o seu dia: sábado 13 ou domingo 14 de março. Para os dois dias, o Passe Fim de semana fica mais barato.",
-        },
-      ],
     },
     groupes: {
       nom: "Passe Grupos",
       pourQui: "Famílias, grupos e empresas: uma tarifa pensada para vir em grupo.",
       liste: ["Passe Família 2 adultos + 2 jovens", "Grupo e empresa a partir de 20 lugares", "Menores de 12 anos"],
       accroche: "O barbecue é para partilhar. O salão também.",
-      questions: [
-        {
-          q: "Tenho três filhos, como faço?",
-          r: "Compre um Passe Família e adicione o bilhete que corresponde ao terceiro: gratuito se tiver menos de 12 anos, bilhete Jovem se tiver entre 12 e 17 anos.",
-        },
-        {
-          q: "Até quando posso comprar o Passe Família?",
-          r: "O Passe Família está à venda online até 7 dias antes do salão. Nunca é vendido no local.",
-        },
-        {
-          q: "Como funciona o bilhete Grupo e empresa?",
-          r: "A partir de 20 bilhetes por encomenda. Na encomenda, são pedidos o nome e o apelido de cada participante: prepare a sua lista. Um dia à escolha, sábado ou domingo.",
-        },
-      ],
     },
     food: {
       nom: "Passe + Food",
       pourQui: "A entrada e a street food do salão, reunidas num só passe.",
       liste: ["Fórmula em preparação"],
       accroche: "Venha de estômago vazio.",
-      questions: [],
     },
   },
   tarifs: {
@@ -616,47 +440,18 @@ const IT: Textes = {
       pourQui: "Da solo, in coppia o con gli amici: un biglietto a persona.",
       liste: ["Venerdì Pro & Appassionati", "Sabato o domenica", "Weekend", "Giovani 12-17 anni", "Under 12"],
       accroche: "Tre giorni nel cuore del fuoco, al Parc Floral de Paris.",
-      questions: [
-        {
-          q: "Il venerdì è riservato ai professionisti?",
-          r: "No: il biglietto Venerdì Pro & Appassionati è aperto a tutti, alla stessa tariffa per professionisti e privati. È la giornata delle conferenze, delle masterclass e delle sessioni pro della Grill Arena.",
-        },
-        {
-          q: "I miei figli pagano?",
-          r: "I bambini sotto i 12 anni entrano gratis con un adulto pagante (massimo 4 bambini per adulto), il sabato o la domenica: aggiungi il loro biglietto gratuito all'ordine. Dai 12 ai 17 anni, il biglietto Giovani costa 10 €.",
-        },
-        {
-          q: "Il biglietto Sabato o domenica ha una data fissa?",
-          r: "Scegli tu il giorno: sabato 13 o domenica 14 marzo. Per entrambi i giorni, il Pass Weekend conviene di più.",
-        },
-      ],
     },
     groupes: {
       nom: "Pass Gruppi",
       pourQui: "Famiglie, gruppi e aziende: una tariffa pensata per venire in tanti.",
       liste: ["Pass Famiglia 2 adulti + 2 ragazzi", "Gruppi & CRAL da 20 posti", "Under 12"],
       accroche: "Il barbecue si condivide. Anche il salone.",
-      questions: [
-        {
-          q: "Ho tre figli, come faccio?",
-          r: "Prendi un Pass Famiglia e aggiungi il biglietto adatto al terzo: gratuito se ha meno di 12 anni, biglietto Giovani se ha tra 12 e 17 anni.",
-        },
-        {
-          q: "Fino a quando posso acquistare il Pass Famiglia?",
-          r: "Il Pass Famiglia è in vendita online fino a 7 giorni prima del salone. Non è mai venduto in loco.",
-        },
-        {
-          q: "Come funziona il biglietto Gruppi & CRAL?",
-          r: "Da 20 biglietti per ordine. Al momento dell'ordine vengono chiesti nome e cognome di ogni partecipante: prepara la tua lista. Un giorno a scelta, sabato o domenica.",
-        },
-      ],
     },
     food: {
       nom: "Pass + Food",
       pourQui: "L'ingresso e lo street food del salone, riuniti in un solo pass.",
       liste: ["Formula in arrivo"],
       accroche: "Vieni a stomaco vuoto.",
-      questions: [],
     },
   },
   tarifs: {
