@@ -5,47 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 import PressCoverage from "@/components/PressCoverage";
 import GalleryMosaic from "@/components/GalleryMosaic";
 import { getLocale } from "next-intl/server";
-
-/** Photos des éditions (2026 et précédentes), dans l'ordre de la mosaïque. */
-const ALL_PHOTOS = [
-  "/photos-2026/bbq-expo-008.jpg", "/photos-2026/bbq-expo-014.jpg",
-  "/photos-2026/william-plin-jpc-120426-533a7828.jpg", "/photos-2026/bbq-expo-066.jpg",
-  "/photos-2026/bbq-expo-073.jpg", "/photos-editions/533a7509.jpg",
-  "/photos-2026/bbq-expo-078.jpg", "/photos-2026/bbq-expo-105.jpg",
-  "/photos-2026/bbq-expo-154.jpg", "/photos-2026/bbq-expo-107.jpg",
-  "/photos-2026/bbq-expo-129.jpg", "/photos-editions/j7i3281.jpg",
-  "/photos-2026/bbq-expo-155.jpg", "/photos-2026/bbq-expo-171.jpg",
-  "/photos-editions/bbqexpo-mars24-ninacoriton-114.jpg", "/photos-2026/bbq-expo-184.jpg",
-  "/photos-2026/bbq-expo-268.jpg", "/photos-2026/william-plin-jpc-120426-533a7138.jpg",
-  "/photos-2026/bbq-expo-293.jpg", "/photos-2026/bbq-expo-302.jpg",
-  "/photos-editions/img-7929.jpg", "/photos-2026/bbq-expo-403.jpg",
-  "/photos-2026/bbq-expo-404.jpg", "/photos-2026/bbq-expo-789.jpg",
-  "/photos-2026/bbq-expo-441.jpg", "/photos-2026/bbq-expo-477.jpg",
-  "/photos-editions/j7i1640.jpg", "/photos-2026/bbq-expo-688.jpg",
-  "/photos-2026/bbq-expo-689.jpg", "/photos-2026/bbq-expo-645.jpg",
-  "/photos-2026/bbq-expo-690.jpg", "/photos-2026/bbq-expo-720.jpg",
-  "/photos-editions/bbqexpo-mars24-ninacoriton-053.jpg", "/photos-2026/bbq-expo-737.jpg",
-  "/photos-2026/bbq-expo-740.jpg", "/photos-2026/bbq-expo-765.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a2850.jpg", "/photos-2026/william-plin-jpc-110426-533a3101.jpg",
-  "/photos-editions/j7i2225.jpg", "/photos-2026/william-plin-jpc-110426-533a3756.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a4088.jpg", "/photos-2026/william-plin-jpc-110426-533a3838.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a4134.jpg", "/photos-2026/william-plin-jpc-110426-533a4353.jpg",
-  "/photos-editions/j7i1963.jpg", "/photos-2026/william-plin-jpc-110426-533a4426.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a4660.jpg", "/photos-2026/bbq-expo-563.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a4856.jpg", "/photos-2026/william-plin-jpc-110426-533a4869.jpg",
-  "/photos-editions/img-8188.jpg", "/photos-2026/william-plin-jpc-110426-533a4931.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a4969.jpg", "/photos-editions/j7i1575.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a5984.jpg", "/photos-2026/william-plin-jpc-110426-533a6023.jpg",
-  "/photos-2026/william-plin-jpc-110426-533a4065.jpg", "/photos-2026/william-plin-jpc-110426-533a6029.jpg",
-  "/photos-2026/william-plin-jpc-120426-533a6296.jpg", "/photos-editions/bbqexpo-mars24-ninacoriton-130.jpg",
-  "/photos-2026/william-plin-jpc-120426-533a6497.jpg", "/photos-2026/william-plin-jpc-120426-533a6691.jpg",
-  "/photos-2026/bbq-expo-615.jpg", "/photos-2026/william-plin-jpc-120426-533a6712.jpg",
-  "/photos-2026/william-plin-jpc-120426-533a6971.jpg", "/photos-editions/j7i1328.jpg",
-  "/photos-2026/william-plin-jpc-120426-533a8137.jpg", "/photos-2026/william-plin-jpc-120426-533a8581.jpg",
-  "/photos-2026/william-plin-jpc-120426-533a7139.jpg", "/photos-editions/img-7808.jpg",
-  "/photos-editions/bbqexpo-mars24-ninacoriton-021.jpg", "/photos-editions/j7i1281.jpg",
-  "/photos-editions/bbqexpo-mars24-ninacoriton-046.jpg",
-];
+import { PHOTOS_GALERIE } from "@/lib/galerie";
 
 // Citations de presse réelles : à conserver mot pour mot dans leur langue d'origine (ne pas traduire).
 const PRESS_QUOTES = [
@@ -307,7 +267,7 @@ export default async function GalleryPressPage() {
         </div>
 
         <GalleryMosaic
-          photos={ALL_PHOTOS}
+          photos={PHOTOS_GALERIE}
           labels={{
             photoAlt: ui.photoAlt,
             video: ui.video,

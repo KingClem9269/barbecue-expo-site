@@ -1,24 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Sur mobile et tablette, le module de vente est en bas de la page du pass :
- * un seul bouton « Prendre mes billets », collé en bas de l'écran, y mène
- * directement. Il s'efface quand le module est à l'écran.
+ * Sur mobile et tablette, un seul bouton « Prendre mes billets », collé en bas
+ * de l'écran, mène au module de vente. Il s'efface quand le module est à
+ * l'écran, et sa flèche remonte une fois le module dépassé.
  */
 export default function BarreMobile({ libelle, detail }: { libelle: string; detail?: string }) {
   const [visible, setVisible] = useState(true);
+  const [auDessus, setAuDessus] = useState(false);
 
   useEffect(() => {
     const cible = document.getElementById("billets");
     if (!cible) return;
-    const obs = new IntersectionObserver(([e]) => setVisible(!e.isIntersecting), { threshold: 0.05 });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        setVisible(!e.isIntersecting);
+        setAuDessus(!e.isIntersecting && e.boundingClientRect.top < 0);
+      },
+      { threshold: 0.05 },
+    );
     obs.observe(cible);
     return () => obs.disconnect();
   }, []);
+
+  const Fleche = auDessus ? ArrowUp : ArrowDown;
 
   return (
     <div
@@ -34,7 +43,7 @@ export default function BarreMobile({ libelle, detail }: { libelle: string; deta
         <span>{libelle}</span>
         <span className="flex items-center gap-2">
           {detail && <span className="font-sans normal-case text-sm font-semibold">{detail}</span>}
-          <ArrowDown className="h-5 w-5" strokeWidth={2.5} />
+          <Fleche className="h-5 w-5" strokeWidth={2.5} />
         </span>
       </a>
     </div>

@@ -15,6 +15,9 @@ export const CHIFFRES = {
   marques2027: 250,
   /** Pays représentés à l'édition 2027 */
   pays2027: 20,
+  /** Surfaces du salon 2027, en m² */
+  surfaceInterieure2027: 10000,
+  surfaceExterieure2027: 10000,
 } as const;
 
 /** 26 000 (fr), 26,000 (en), 26.000 (de)… selon la langue. */

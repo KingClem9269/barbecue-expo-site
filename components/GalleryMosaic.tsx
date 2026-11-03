@@ -20,7 +20,8 @@ export type GalleryLabels = {
   next: string;
 };
 
-type Item = { type: "video" } | { type: "photo"; src: string; alt: string };
+/** Élément de la visionneuse : la vidéo du salon ou une photo. */
+export type Item = { type: "video" } | { type: "photo"; src: string; alt: string };
 
 export default function GalleryMosaic({ photos, labels }: { photos: string[]; labels: GalleryLabels }) {
   const items: Item[] = [
@@ -90,7 +91,8 @@ export default function GalleryMosaic({ photos, labels }: { photos: string[]; la
   );
 }
 
-function Lightbox({
+/** Visionneuse plein écran, reprise par la mosaïque de /billetterie. */
+export function Lightbox({
   items,
   index,
   setIndex,
