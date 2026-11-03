@@ -33,7 +33,7 @@ export const PHOTOS_MOSAIQUE = [
   "/photos-2026/bbq-expo-477.jpg",
   "/photos-2026/william-plin-jpc-120426-533a8137.jpg",
   "/photos-editions/j7i2225.jpg",
-  "/photos-editions/j7i1281.jpg",
+  "/photos-2026/bbq-expo-066.jpg",
 ];
 
 export type TextesSalon = {
