@@ -11,7 +11,7 @@ import { Volume2, VolumeX } from "lucide-react";
  * of its container, so use a 16:9 box to avoid letterboxing.
  */
 
-const VIDEO_ID = "jUSlNznQ-Io";
+export const VIDEO_ID = "jUSlNznQ-Io";
 const LOOP_END = 44;
 
 interface YTPlayer {

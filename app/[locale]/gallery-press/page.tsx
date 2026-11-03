@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Quote } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import PressCoverage from "@/components/PressCoverage";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
+import GalleryMosaic from "@/components/GalleryMosaic";
 import { getLocale } from "next-intl/server";
 
 /** Photos des éditions (2026 et précédentes), dans l'ordre de la mosaïque. */
@@ -87,6 +87,11 @@ const FR = {
   galleryEyebrow: "Galerie",
   galleryTitle: "Soixante-treize images.",
   photoAlt: "Édition 2026",
+  video: "Vidéo du salon",
+  open: "Agrandir",
+  close: "Fermer",
+  prev: "Précédente",
+  next: "Suivante",
   pressEyebrow: "Ils en parlent",
   pressTitle: "Soixante-cinq retombées presse en 2026.",
   editions: { apr: "Avril 2026", may: "Mai 2026" },
@@ -104,6 +109,11 @@ const EN: typeof FR = {
   galleryEyebrow: "Gallery",
   galleryTitle: "Seventy-three images.",
   photoAlt: "2026 edition",
+  video: "Show video",
+  open: "Enlarge",
+  close: "Close",
+  prev: "Previous",
+  next: "Next",
   pressEyebrow: "In the press",
   pressTitle: "Sixty-five press mentions in 2026.",
   editions: { apr: "April 2026", may: "May 2026" },
@@ -121,6 +131,11 @@ const ES: typeof FR = {
   galleryEyebrow: "Galería",
   galleryTitle: "Setenta y tres imágenes.",
   photoAlt: "Edición 2026",
+  video: "Vídeo del salón",
+  open: "Ampliar",
+  close: "Cerrar",
+  prev: "Anterior",
+  next: "Siguiente",
   pressEyebrow: "Hablan de nosotros",
   pressTitle: "Sesenta y cinco apariciones en prensa en 2026.",
   editions: { apr: "Abril 2026", may: "Mayo 2026" },
@@ -138,6 +153,11 @@ const DE: typeof FR = {
   galleryEyebrow: "Galerie",
   galleryTitle: "Dreiundsiebzig Bilder.",
   photoAlt: "Ausgabe 2026",
+  video: "Video der Messe",
+  open: "Vergrößern",
+  close: "Schließen",
+  prev: "Zurück",
+  next: "Weiter",
   pressEyebrow: "Sie berichten darüber",
   pressTitle: "Fünfundsechzig Presseberichte im Jahr 2026.",
   editions: { apr: "April 2026", may: "Mai 2026" },
@@ -155,6 +175,11 @@ const NL: typeof FR = {
   galleryEyebrow: "Galerij",
   galleryTitle: "Drieënzeventig beelden.",
   photoAlt: "Editie 2026",
+  video: "Video van de beurs",
+  open: "Vergroten",
+  close: "Sluiten",
+  prev: "Vorige",
+  next: "Volgende",
   pressEyebrow: "Zij spreken erover",
   pressTitle: "Vijfenzestig persvermeldingen in 2026.",
   editions: { apr: "April 2026", may: "Mei 2026" },
@@ -172,6 +197,11 @@ const PT: typeof FR = {
   galleryEyebrow: "Galeria",
   galleryTitle: "Setenta e três imagens.",
   photoAlt: "Edição 2026",
+  video: "Vídeo do salão",
+  open: "Ampliar",
+  close: "Fechar",
+  prev: "Anterior",
+  next: "Seguinte",
   pressEyebrow: "Falam de nós",
   pressTitle: "Sessenta e cinco referências na imprensa em 2026.",
   editions: { apr: "Abril 2026", may: "Maio 2026" },
@@ -189,6 +219,11 @@ const IT: typeof FR = {
   galleryEyebrow: "Galleria",
   galleryTitle: "Settantatré immagini.",
   photoAlt: "Edizione 2026",
+  video: "Video del salone",
+  open: "Ingrandisci",
+  close: "Chiudi",
+  prev: "Precedente",
+  next: "Successiva",
   pressEyebrow: "Parlano di noi",
   pressTitle: "Sessantacinque uscite stampa nel 2026.",
   editions: { apr: "Aprile 2026", may: "Maggio 2026" },
@@ -271,24 +306,17 @@ export default async function GalleryPressPage() {
           </div>
         </div>
 
-        {/* CSS columns for masonry effect */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-3 md:gap-4 [&>*]:mb-3 md:[&>*]:mb-4 [&>*]:break-inside-avoid">
-          <div className="relative aspect-video overflow-hidden bg-ink-950 rounded-sm">
-            <YouTubeEmbed />
-          </div>
-          {ALL_PHOTOS.map((src, i) => (
-            <div key={src} className="relative overflow-hidden bg-char-800 rounded-sm">
-              <Image
-                src={src}
-                alt={`${ui.photoAlt} — ${i + 1}`}
-                width={1200}
-                height={800}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="w-full h-auto"
-              />
-            </div>
-          ))}
-        </div>
+        <GalleryMosaic
+          photos={ALL_PHOTOS}
+          labels={{
+            photoAlt: ui.photoAlt,
+            video: ui.video,
+            open: ui.open,
+            close: ui.close,
+            prev: ui.prev,
+            next: ui.next,
+          }}
+        />
       </section>
 
       {/* PRESSE — Quotes + partners */}
