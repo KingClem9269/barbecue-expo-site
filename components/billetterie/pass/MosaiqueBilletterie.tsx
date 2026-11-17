@@ -35,7 +35,7 @@ export default function MosaiqueBilletterie({
 
   return (
     <>
-      <div className="relative grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 gap-2 md:gap-3 sm:h-[clamp(19rem,40vw,31rem)]">
+      <div className="relative grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 gap-2 md:gap-3 sm:h-[clamp(14rem,26vw,20rem)]">
         {items.slice(0, 5).map((item, i) =>
           item.type === "photo" ? (
             <button
@@ -45,7 +45,7 @@ export default function MosaiqueBilletterie({
               aria-label={`${labels.open} — ${item.alt}`}
               className={cn(
                 "group relative overflow-hidden rounded-sm bg-char-800 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-jaune",
-                i === 0 ? "aspect-[4/3] sm:aspect-auto sm:col-span-2 sm:row-span-2" : "hidden sm:block",
+                i === 0 ? "aspect-[2/1] sm:aspect-auto sm:col-span-2 sm:row-span-2" : "hidden sm:block",
               )}
             >
               <Image

@@ -54,7 +54,7 @@ export default function PageBilletterie({ locale, initial }: { locale: string; i
     <div className="bg-papier text-charbon">
       {/* pt = hauteur de la navigation fixe */}
       <section className="bg-charbon pt-[76px] md:pt-[82px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-3 md:pt-8 pb-6 md:pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-3 md:pt-5 pb-5 md:pb-6">
           <MosaiqueBilletterie
             photos={photos}
             labels={{
