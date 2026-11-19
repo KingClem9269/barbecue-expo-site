@@ -2,14 +2,15 @@
 
 import { useState, useEffect, useRef, useMemo, Fragment } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { CHIFFRES, nombre } from "@/lib/chiffres";
 import { Check, X as XIcon, Globe, MapPin, Play, Instagram, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Eye, BookOpen } from "lucide-react";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import BrandLogoMarquee from "@/components/BrandLogoMarquee";
 import PhotoMarquee from "@/components/PhotoMarquee";
 import ExperienceZones from "@/components/visitor/ExperienceZones";
-import VisitorMap from "./VisitorMap";
 import PorteEmail from "./PorteEmail";
+import { pousser } from "./mesure";
 import pitmastersData from "@/content/pitmasters/index.json";
 import {
   STAND_SURFACE, STAND_RANGES, OUTDOOR, STAND_OPTIONS, type StandOption,
@@ -27,6 +28,33 @@ import {
   EstimatorProvider, EstimatorPanel, useEstimator, parsePrice, fmtEUR, tx, txMin, eur,
   Stepper, CheckRow, ChooseButton, type Zone,
 } from "./Estimator";
+
+const VisitorMap = dynamic(() => import("./VisitorMap"), { ssr: false });
+
+/**
+ * Ne monte son contenu (vidéo, bandeaux de photos ou de logos, carte) qu'à
+ * l'approche de l'écran. La classe réserve la hauteur pour que rien ne bouge.
+ */
+function AuVoisinage({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [proche, setProche] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setProche(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return <div ref={ref} className={className}>{proche ? children : null}</div>;
+}
 
 /* Sous-titre dans une section sombre */
 function SubLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -511,7 +539,7 @@ function MediaLogo({ name, logo }: { domain?: string; name: string; logo?: strin
   if (logo && !err) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={logo} alt={name} onError={() => setErr(true)} className="max-h-[80%] max-w-[85%] object-contain" />
+      <img src={logo} alt={name} loading="lazy" decoding="async" onError={() => setErr(true)} className="max-h-[80%] max-w-[85%] object-contain" />
     );
   }
   return (
@@ -655,15 +683,15 @@ function ProTypesSelector() {
           const on = b.cat === active;
           return b.cover ? (
             <div key={b.src} className={`relative aspect-[5/3] rounded-sm overflow-hidden bg-ink-900 border transition-all ${on ? "border-gold-500 ring-2 ring-gold-500" : "border-ink-900/10"}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={b.src} alt={b.name} className="absolute inset-0 w-full h-full object-cover" />
+              <Image src={b.src} alt={b.name} fill sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 17vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" aria-hidden="true" />
               <span className="absolute bottom-1.5 left-2 right-2 text-cream-50 text-xs font-bold leading-tight" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{b.name}</span>
             </div>
           ) : (
             <div key={b.src} className={`aspect-[5/3] rounded-sm border flex items-center justify-center p-2 overflow-hidden transition-all ${b.dark ? "bg-ink-900 border-ink-900" : "bg-white border-ink-900/10"} ${on ? "ring-2 ring-gold-500 border-gold-500" : ""}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={b.src} alt={b.name} className="max-h-full max-w-full object-contain" />
+              <div className="relative w-full h-full">
+                <Image src={b.src} alt={b.name} fill sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 17vw" className="object-contain" />
+              </div>
             </div>
           );
         })}
@@ -730,6 +758,8 @@ function PlanViewer({ src }: { src: string }) {
         src={src}
         alt={t("Plan du salon Barbecue Expo 2027")}
         draggable={false}
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-contain pointer-events-none"
         style={{ transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale})`, transformOrigin: "center center", transition: drag.current.on ? "none" : "transform 0.12s ease-out" }}
       />
@@ -1120,6 +1150,11 @@ export default function CatalogueClient() {
   const pathname = usePathname();
   const setLang = (l: Lang) => router.replace(pathname, { locale: l, scroll: false });
   const t = useMemo(() => (fr: string) => translate(lang, fr), [lang]);
+  // Voir SCRIPT_HAUT_DE_PAGE (page.tsx) : ne s'applique qu'à cette page.
+  useEffect(() => {
+    history.scrollRestoration = "manual";
+    return () => { history.scrollRestoration = "auto"; };
+  }, []);
   return (
     <LangContext.Provider value={{ lang, t }}>
     <EstimatorProvider>
@@ -1130,7 +1165,7 @@ export default function CatalogueClient() {
 
       {/* ───────────── HERO ───────────── */}
       <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-ink-950">
-        <Image src="/photos-2026/bbq-expo-066.jpg" alt="" fill priority sizes="100vw" className="object-cover opacity-70" />
+        <Image src="/photos-2026/bbq-expo-066.jpg" alt="" fill priority fetchPriority="high" sizes="100vw" className="object-cover opacity-70" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-ink-950/30" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto w-full px-6 md:px-12 pb-16">
           <div className="flex items-center gap-3 text-gold-500 text-xs md:text-sm uppercase tracking-widest font-semibold mb-6">
@@ -1140,6 +1175,14 @@ export default function CatalogueClient() {
             {t("Présentation du salon & catalogue exposant.")}
           </h1>
           <p className="mt-6 text-cream-50/80 text-lg max-w-2xl">{t("12 · 13 · 14 Mars 2027 — Parc Floral de Paris")}</p>
+          <a
+            href="#configurateur"
+            onClick={() => pousser({ event: "hero_cta_click" })}
+            className="group mt-6 inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-gold-500 hover:bg-gold-300 text-ink-950 px-6 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-colors"
+          >
+            {t("Voir les tarifs et configurer mon stand")}
+            <ArrowUpRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" strokeWidth={2.5} />
+          </a>
         </div>
       </section>
 
@@ -1173,7 +1216,9 @@ export default function CatalogueClient() {
 
           {/* Vidéo (même que le hero du site, en boucle, muette) */}
           <div className="relative aspect-video w-full rounded-sm overflow-hidden bg-ink-950 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.5)]">
-            <YouTubeEmbed />
+            <AuVoisinage className="absolute inset-0">
+              <YouTubeEmbed />
+            </AuVoisinage>
           </div>
         </div>
       </Sec>
@@ -1211,7 +1256,9 @@ export default function CatalogueClient() {
             </Link>
           </div>
           <div className="-mx-6 md:-mx-12">
-            <PhotoMarquee />
+            <AuVoisinage className="min-h-[244px] md:min-h-[329px]">
+              <PhotoMarquee />
+            </AuVoisinage>
           </div>
         </div>
 
@@ -1237,7 +1284,7 @@ export default function CatalogueClient() {
               <span className="text-cream-50/70 text-xs uppercase tracking-widest">{t("Le plan du salon")}</span>
               <VenueMapButton />
             </div>
-            <div className="relative aspect-square w-full">
+            <AuVoisinage className="relative aspect-square w-full">
               <Image
                 src="/content/images/27866dc7c3_planbbq_hd.png"
                 alt={t("Plan du salon Barbecue Expo 2027")}
@@ -1245,7 +1292,7 @@ export default function CatalogueClient() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
               />
-            </div>
+            </AuVoisinage>
           </div>
         </div>
       </Sec>
@@ -1261,7 +1308,9 @@ export default function CatalogueClient() {
             {t("Les marques présentes")}
           </div>
         </div>
-        <BrandLogoMarquee />
+        <AuVoisinage className="min-h-[220px] md:min-h-[256px]">
+          <BrandLogoMarquee />
+        </AuVoisinage>
       </div>
 
       <Sec id="visiteurs" eyebrow="Partie 3" title="Les visiteurs">
@@ -1274,7 +1323,9 @@ export default function CatalogueClient() {
               <VenueMapButton />
             </div>
             <div className="rounded-sm bg-white border border-ink-900/10 p-3 md:p-4 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)]">
-              <VisitorMap />
+              <AuVoisinage className="aspect-[980/520]">
+                <VisitorMap />
+              </AuVoisinage>
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2 mt-4">
               {MAP_LEGEND.map((l) => (
@@ -1434,7 +1485,7 @@ export default function CatalogueClient() {
           <PlanViewer src="/plan/plan-2027.svg" />
         </div>
         {/* Étape 1 — surface nue */}
-        <div className="mb-6 flex items-center gap-3">
+        <div id="configurateur" className="scroll-mt-20 mb-6 flex items-center gap-3">
           <span className="w-7 h-7 rounded-full bg-gold-500 text-ink-950 flex items-center justify-center text-sm font-bold shrink-0">1</span>
           <h3 className="text-ink-900 text-xl md:text-2xl font-bold" style={{ fontFamily: "SansPlomb-98, sans-serif" }}>{t("Je choisis la taille — surface nue")}</h3>
         </div>
@@ -1734,7 +1785,7 @@ export default function CatalogueClient() {
       {/* 10. Barbecue Mag */}
       <Sec id="barbecue-mag" eyebrow="Communication print" title={BARBECUE_MAG.title} dark>
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
+          <div className="min-w-0">
             <p className="text-cream-50/80 mb-6">{t(BARBECUE_MAG.desc)}</p>
             <div className="grid grid-cols-3 gap-6 mb-8">
               {BARBECUE_MAG.stats.map((s, i) => (
@@ -1747,8 +1798,7 @@ export default function CatalogueClient() {
             <div className="grid grid-cols-2 gap-4">
               {BARBECUE_MAG.photos.map((src, i) => (
                 <div key={i} className="relative aspect-[3/4] rounded-sm overflow-hidden bg-ink-900">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={src} alt={`Barbecue Mag ${i + 1}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                  <Image src={src} alt={`Barbecue Mag ${i + 1}`} fill sizes="(max-width:1024px) 50vw, 25vw" className="object-cover" />
                 </div>
               ))}
             </div>
@@ -1756,7 +1806,7 @@ export default function CatalogueClient() {
               <MagFlipButton src="/mag/barbecue-mag-n6.pdf" title="Barbecue Mag N°6 — BBQ Revolution" />
             </div>
           </div>
-          <div>
+          <div className="min-w-0 overflow-x-auto">
             <div className="text-cream-50/60 text-xs uppercase tracking-widest mb-3">{t("Tarifs encarts")}</div>
             <table className="w-full">
               <thead>

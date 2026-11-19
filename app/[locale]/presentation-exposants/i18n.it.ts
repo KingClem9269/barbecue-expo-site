@@ -23,6 +23,7 @@ export const IT: Record<string, string> = {
   "Catalogue exposant": "Catalogo espositori",
   "Sommaire": "Indice",
   "Exposer · Édition 2027": "Esporre · Edizione 2027",
+  "Voir les tarifs et configurer mon stand": "Vedi le tariffe e configura il mio stand",
   "Présentation du salon & catalogue exposant.": "Presentazione del salone e catalogo espositori.",
   "12 · 13 · 14 Mars 2027 — Parc Floral de Paris": "12 · 13 · 14 marzo 2027 — Parc Floral de Paris",
   "Partie 1": "Parte 1",

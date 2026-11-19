@@ -9,9 +9,8 @@ import { getConfig } from "@/lib/content";
 import { DesktopNav } from "@/components/nav/DesktopNav";
 import Footer from "@/components/global/Footer";
 import Newsletter from "@/components/widget/Newsletter";
-import Consentement, { GTM_ID, SCRIPT_CONSENTEMENT_DEFAUT } from "@/components/consentement/Consentement";
+import Consentement, { SCRIPT_CONSENTEMENT_DEFAUT } from "@/components/consentement/Consentement";
 import Provenance from "@/components/global/Provenance";
-import { GoogleTagManager } from "@next/third-parties/google";
 import SkipLink from "@/components/a11y/SkipLink";
 import { AudienceProvider } from "@/components/nav/AudienceContext";
 import FiltresMarque from "@/components/geste/FiltresMarque";
@@ -27,6 +26,9 @@ const interTight = Inter_Tight({
   subsets: ["latin", "latin-ext"],
   style: ["normal", "italic"],
   display: "swap",
+  // Quatre fichiers (270 Ko) en priorité haute retardaient l'image principale
+  // sur mobile : le navigateur ne charge plus que ceux dont la page a besoin.
+  preload: false,
 });
 
 export async function generateMetadata({
@@ -54,7 +56,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Consent Mode v2 : tout à « denied » avant GTM, puis le choix déjà fait. */}
+        {/* Consent Mode v2 : tout à « denied », le choix déjà fait, puis chargement de GTM. */}
         <script dangerouslySetInnerHTML={{ __html: SCRIPT_CONSENTEMENT_DEFAUT }} />
         {/* Preload the branded display font to prevent FOIT on first paint */}
         <link
@@ -78,8 +80,6 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="format-detection" content="telephone=no" />
       </head>
-      {/* GTM sur toutes les pages : ses balises suivent les signaux de consentement. */}
-      {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
         <body className={`${interTight.variable} antialiased`}>
           <FiltresMarque />
           <NextIntlClientProvider locale={locale}>

@@ -21,6 +21,9 @@ import { pousser, identifiantUnique } from "./mesure";
  *   { type: "pylot-form:submitted", slug }       → 1 s plus tard, la page se
  *     débloque et le déblocage est mémorisé (localStorage) : plus jamais
  *     de demande sur ce navigateur.
+ * Le mur ne dépend pas du bandeau cookies : il s'affiche quel que soit le choix.
+ * Le bandeau reste au-dessus du voile, utilisable (non inerte), et le mur lui
+ * laisse sa place en bas de l'écran (--cookie-banner-h, voir Consentement.tsx).
  * Langue du formulaire : français si <html lang> est le français, anglais
  * sinon ; suivie en direct (le catalogue change de langue sans recharger).
  */
@@ -175,14 +178,16 @@ export default function PorteEmail() {
     html.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     const inertes = [...document.body.children].filter(
-      (el) => !el.hasAttribute("data-porte-email") && !el.hasAttribute("inert"),
+      (el) => !el.hasAttribute("data-porte-email") && !el.hasAttribute("data-cookie-banner") && !el.hasAttribute("inert"),
     );
     inertes.forEach((el) => el.setAttribute("inert", ""));
+    html.setAttribute("data-porte-email", "");
     titreRef.current?.focus();
     return () => {
       html.style.overflow = avant.html;
       document.body.style.overflow = avant.body;
       inertes.forEach((el) => el.removeAttribute("inert"));
+      html.removeAttribute("data-porte-email");
     };
   }, [ouverte]);
 
@@ -222,14 +227,15 @@ export default function PorteEmail() {
   return createPortal(
     <div
       data-porte-email=""
-      className="fixed inset-0 z-[300] flex items-center justify-center p-4 bg-charbon/40 backdrop-blur-md overflow-y-auto"
+      className="fixed inset-0 z-[300] flex p-4 bg-charbon/40 backdrop-blur-md overflow-y-auto"
+      style={{ paddingBottom: "calc(1rem + var(--cookie-banner-h, 0px))" }}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="porte-email-titre"
         data-email-gate=""
-        className="w-full max-w-[500px] bg-charbon text-papier border border-white/15 p-6 md:p-8 shadow-2xl"
+        className="m-auto w-full max-w-[500px] bg-charbon text-papier border border-white/15 p-6 md:p-8 shadow-2xl"
       >
         <p className="text-xs uppercase tracking-[0.08em] text-jaune">{t.surtitre}</p>
         <h2

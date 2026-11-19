@@ -31,7 +31,7 @@ const CONTACT = "info@barbecue-expo.fr";
 const FR: Contenu = {
   meta: "Politique de confidentialité et cookies — Barbecue Expo",
   titre: "Confidentialité & cookies",
-  maj: "Mise à jour : 20 octobre 2026",
+  maj: "Mise à jour : 19 novembre 2026",
   intro:
     "Cette page explique quelles données personnelles le site barbecue-expo.fr recueille, pourquoi, combien de temps elles sont gardées et comment exercer vos droits.",
   blocs: [
@@ -54,7 +54,7 @@ const FR: Contenu = {
     {
       titre: "Qui y a accès",
       paragraphes: [
-        "Les équipes de JPC EVENTS et, uniquement pour les besoins du service : Brevo (envoi des e-mails), Google (mesure d'audience et publicité, seulement avec votre accord) et YouTube (vidéos). Google et YouTube peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types ou cadre de protection des données UE–États-Unis). Vos données ne sont jamais vendues.",
+        "Les équipes de JPC EVENTS et, uniquement pour les besoins du service : Brevo (envoi des e-mails), Google Analytics (mesure d'audience, seulement avec votre accord), Google Ads, Meta et LinkedIn (mesure de nos publicités, seulement avec votre accord) et YouTube (vidéos). Google, YouTube, Meta et LinkedIn peuvent traiter des données hors de l'Union européenne, avec les garanties prévues par le RGPD (clauses contractuelles types ou cadre de protection des données UE–États-Unis). Vos données ne sont jamais vendues.",
       ],
     },
     {
@@ -70,7 +70,9 @@ const FR: Contenu = {
   entetes: ["Nom", "Déposé par", "À quoi il sert", "Durée", "Accord"],
   cookies: [
     { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Mesurer l'audience du site (pages vues, sources de visite)", duree: "13 mois", accord: "Oui (mesure)" },
-    { nom: "_gcl_au, _gcl_aw, IDE…", qui: "Google Ads", but: "Mesurer l'efficacité de nos campagnes et adapter les annonces à vos centres d'intérêt", duree: "90 jours à 13 mois", accord: "Oui (publicité)" },
+    { nom: "_fbp, _fbc", qui: "Meta (Facebook, Instagram)", but: "Savoir quelles publicités nous ont permis de vous faire connaître le salon", duree: "3 mois", accord: "Oui (publicité)" },
+    { nom: "_gcl_au, _gcl_aw, IDE…", qui: "Google Ads", but: "Savoir quelles annonces vous ont fait connaître le salon", duree: "90 jours à 13 mois", accord: "Oui (publicité)" },
+    { nom: "li_gc, li_fat_id, lidc, bcookie…", qui: "LinkedIn", but: "Savoir quelles publicités nous ont permis de vous faire connaître le salon", duree: "1 jour à 1 an", accord: "Oui (publicité)" },
     { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Lire les vidéos intégrées (lecture automatique)", duree: "Session à 6 mois", accord: "Non" },
     { nom: "bbq-expo:cookies", qui: "barbecue-expo.fr (stockage local)", but: "Retenir votre choix sur les cookies", duree: "6 mois", accord: "Non (nécessaire)" },
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Retenir la langue du site", duree: "Session", accord: "Non (nécessaire)" },
@@ -89,7 +91,7 @@ const FR: Contenu = {
 const EN: Contenu = {
   meta: "Privacy & cookie policy — Barbecue Expo",
   titre: "Privacy & cookies",
-  maj: "Updated: 20 October 2026",
+  maj: "Updated: 19 November 2026",
   intro:
     "This page explains what personal data barbecue-expo.fr collects, why, how long it is kept and how to exercise your rights.",
   blocs: [
@@ -112,7 +114,7 @@ const EN: Contenu = {
     {
       titre: "Who has access",
       paragraphes: [
-        "JPC EVENTS staff and, only as needed for the service: Brevo (email sending), Google (audience measurement and advertising, only with your consent) and YouTube (videos). Google and YouTube may process data outside the European Union, under the safeguards set by the GDPR (standard contractual clauses or the EU–US Data Privacy Framework). Your data is never sold.",
+        "JPC EVENTS staff and, only as needed for the service: Brevo (email sending), Google Analytics (audience measurement, only with your consent), Google Ads, Meta and LinkedIn (measuring our ads, only with your consent) and YouTube (videos). Google, YouTube, Meta and LinkedIn may process data outside the European Union, under the safeguards set by the GDPR (standard contractual clauses or the EU–US Data Privacy Framework). Your data is never sold.",
       ],
     },
     {
@@ -128,7 +130,9 @@ const EN: Contenu = {
   entetes: ["Name", "Set by", "Purpose", "Duration", "Consent"],
   cookies: [
     { nom: "_ga, _ga_*", qui: "Google Analytics", but: "Measure site audience (page views, traffic sources)", duree: "13 months", accord: "Yes (measurement)" },
-    { nom: "_gcl_au, _gcl_aw, IDE…", qui: "Google Ads", but: "Measure our campaigns' effectiveness and tailor ads to your interests", duree: "90 days to 13 months", accord: "Yes (advertising)" },
+    { nom: "_fbp, _fbc", qui: "Meta (Facebook, Instagram)", but: "See which ads helped you discover the show", duree: "3 months", accord: "Yes (advertising)" },
+    { nom: "_gcl_au, _gcl_aw, IDE…", qui: "Google Ads", but: "See which ads helped you discover the show", duree: "90 days to 13 months", accord: "Yes (advertising)" },
+    { nom: "li_gc, li_fat_id, lidc, bcookie…", qui: "LinkedIn", but: "See which ads helped you discover the show", duree: "1 day to 1 year", accord: "Yes (advertising)" },
     { nom: "YSC, VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA…", qui: "YouTube (Google)", but: "Play embedded videos (autoplay)", duree: "Session to 6 months", accord: "No" },
     { nom: "bbq-expo:cookies", qui: "barbecue-expo.fr (local storage)", but: "Remember your cookie choice", duree: "6 months", accord: "No (necessary)" },
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Remember the site language", duree: "Session", accord: "No (necessary)" },
