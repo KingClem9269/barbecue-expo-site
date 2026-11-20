@@ -482,7 +482,10 @@ export default function ConfigurateurStand() {
                   )}
 
                   {(devis === "formulaire" || devis === "envoi") && (
-                    <form onSubmit={envoyerDevis} noValidate className="flex flex-col gap-2.5">
+                    /* data-quote-modal : GTM surveille l'apparition de cet attribut à
+                       l'écran pour envoyer InitiateCheckout à Meta (déclencheur de
+                       visibilité créé pour l'ancienne modale de devis). */
+                    <form onSubmit={envoyerDevis} noValidate className="flex flex-col gap-2.5" data-quote-modal="">
                       <Champ id="devis-societe" label={t("Société")} erreur={erreurs.company && t(erreurs.company)}>
                         <input id="devis-societe" autoComplete="organization" value={coordonnees.company} onChange={(e) => saisir("company", e.target.value)} className={`${CHAMP} ${erreurs.company ? "border-[#6b1500] border-2" : "border-ink-950"}`} />
                       </Champ>
