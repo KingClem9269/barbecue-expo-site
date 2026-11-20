@@ -1,18 +1,18 @@
 "use client";
 
 /**
- * Modale « Recevoir le devis » — formulaire de coordonnées + envoi.
- * L'envoi POST /api/quote (stub pour l'instant) créera plus tard la fiche
- * contact + transaction + devis dans le CRM.
+ * Modale « Recevoir le devis » du catalogue des commerciaux (/pres-exposants) :
+ * formulaire de coordonnées complet + envoi par POST /api/quote, qui crée la
+ * fiche contact, la transaction et le devis dans le CRM. Aucun événement de
+ * mesure ici : la conversion « devis » des campagnes est poussée par
+ * ConfigurateurStand.tsx. Le sélecteur de pays sert aussi à ce dernier.
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { X as XIcon, ChevronDown, Search, Check, Loader2, MailCheck, ExternalLink } from "lucide-react";
 import { getCountries, countryByIso } from "./countries";
-import { sendGAEvent } from "@next/third-parties/google";
-import { fmtEUR, useEstimator, type DerivedLine } from "./Estimator";
-import { pousser, identifiantUnique } from "./mesure";
+import { fmtEUR, type DerivedLine } from "./Estimator";
 import { lireProvenance } from "@/lib/provenance";
 import { useT } from "./i18n";
 
@@ -34,7 +34,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 /* Sélecteur de pays (recherchable) — modes "country" et "dial"        */
 /* ------------------------------------------------------------------ */
 
-function CountryPicker({ value, onChange, mode, invalid }: {
+export function CountryPicker({ value, onChange, mode, invalid }: {
   value: string; onChange: (iso: string) => void; mode: "country" | "dial"; invalid?: boolean;
 }) {
   const { t, lang } = useT();
@@ -148,7 +148,6 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
   const [result, setResult] = useState<{ quoteNumber?: string; signingUrl?: string }>({});
   const [serverError, setServerError] = useState<string>("");
   const { t, lang } = useT();
-  const est = useEstimator();
 
   useEffect(() => {
     if (!open) return;
@@ -235,24 +234,6 @@ export function QuoteModal({ open, onClose, lines, total, hasQuote }: {
       }
       setResult({ quoteNumber: data.quoteNumber, signingUrl: data.signingUrl });
       setStatus("success");
-      // Mesure : conversion devis, au retour réussi de Fred. event_id = numéro
-      // de devis créé par Fred (unique, stable : sert à dédoublonner).
-      pousser({
-        event: "devis_submitted",
-        event_id: data.quoteNumber ? String(data.quoteNumber) : identifiantUnique(),
-        value: Math.round(total * 100) / 100,
-        currency: "EUR",
-        surface_m2: est.sqm,
-        zone: est.zone,
-        gamme: est.rangeKey ?? "surface_nue",
-        pays: form.countryIso.toUpperCase(),
-      });
-      // Conversion GA4 : devis exposant généré (créé dans le CRM)
-      sendGAEvent("event", "generate_lead", {
-        value: total,
-        currency: "EUR",
-        has_quote: hasQuote,
-      });
     } catch (err) {
       setStatus("error");
       setServerError(err instanceof Error ? err.message : "unexpected_error");

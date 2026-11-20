@@ -70,8 +70,9 @@ export function DesktopNav({
   }, []);
 
   // La page « Présentation & catalogue exposant » possède sa propre barre de
-  // navigation (« EXPOSER ») : on masque donc le menu global du site dessus.
-  if (pathname?.startsWith("/presentation-exposants")) return null;
+  // navigation (« EXPOSER ») : on masque donc le menu global du site dessus,
+  // comme sur sa copie pour les commerciaux (/pres-exposants).
+  if (pathname?.startsWith("/presentation-exposants") || pathname?.startsWith("/pres-exposants")) return null;
 
   return (
     <>

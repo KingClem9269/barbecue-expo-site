@@ -31,7 +31,7 @@ const CONTACT = "info@barbecue-expo.fr";
 const FR: Contenu = {
   meta: "Politique de confidentialité et cookies — Barbecue Expo",
   titre: "Confidentialité & cookies",
-  maj: "Mise à jour : 19 novembre 2026",
+  maj: "Mise à jour : 20 novembre 2026",
   intro:
     "Cette page explique quelles données personnelles le site barbecue-expo.fr recueille, pourquoi, combien de temps elles sont gardées et comment exercer vos droits.",
   blocs: [
@@ -47,7 +47,7 @@ const FR: Contenu = {
         "Newsletter et alerte d'ouverture de la billetterie : votre adresse e-mail (base légale : votre consentement, retirable à tout moment par le lien de désinscription).",
         "Formulaire de contact : nom, prénom, e-mail, téléphone, société et message (base légale : notre intérêt légitime à répondre à votre demande).",
         "Demande de devis exposant : identité, coordonnées, adresse, société, SIRET et numéro de TVA (base légale : mesures précontractuelles prises à votre demande).",
-        "Présentation exposant : l'adresse e-mail demandée pour lire la présentation (base légale : votre consentement).",
+        "Présentation exposant : l'adresse e-mail demandée pour afficher les tarifs et composer votre stand (base légale : votre consentement).",
         "Billetterie : l'achat de billets se fait sur le module Weezevent, qui applique sa propre politique de confidentialité.",
       ],
     },
@@ -78,7 +78,7 @@ const FR: Contenu = {
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Retenir la langue du site", duree: "Session", accord: "Non (nécessaire)" },
     { nom: "bbq-expo-audience", qui: "barbecue-expo.fr (stockage local)", but: "Retenir le parcours choisi (grand public ou pro)", duree: "Jusqu'à effacement", accord: "Non (nécessaire)" },
     { nom: "bbq-expo:presentation-exposants:email", qui: "barbecue-expo.fr (stockage local)", but: "Ne pas redemander votre e-mail sur la présentation exposant", duree: "Jusqu'à effacement", accord: "Non (nécessaire)" },
-    { nom: "bbq-estimator-v1", qui: "barbecue-expo.fr (stockage local)", but: "Garder votre estimation de stand en cours", duree: "Jusqu'à effacement", accord: "Non (nécessaire)" },
+    { nom: "bbq-estimator-v1, bbq-stand-v1", qui: "barbecue-expo.fr (stockage local)", but: "Garder votre estimation de stand en cours", duree: "Jusqu'à effacement", accord: "Non (nécessaire)" },
   ],
   gerer: "Vous pouvez changer d'avis à tout moment :",
   droitsTitre: "Vos droits",
@@ -91,7 +91,7 @@ const FR: Contenu = {
 const EN: Contenu = {
   meta: "Privacy & cookie policy — Barbecue Expo",
   titre: "Privacy & cookies",
-  maj: "Updated: 19 November 2026",
+  maj: "Updated: 20 November 2026",
   intro:
     "This page explains what personal data barbecue-expo.fr collects, why, how long it is kept and how to exercise your rights.",
   blocs: [
@@ -107,7 +107,7 @@ const EN: Contenu = {
         "Newsletter and ticketing launch alert: your email address (legal basis: your consent, which you can withdraw at any time through the unsubscribe link).",
         "Contact form: first and last name, email, phone, company and message (legal basis: our legitimate interest in answering your request).",
         "Exhibitor quote request: identity, contact details, address, company, company registration and VAT numbers (legal basis: pre-contractual steps taken at your request).",
-        "Exhibitor presentation: the email address requested to read the presentation (legal basis: your consent).",
+        "Exhibitor presentation: the email address requested to show the prices and build your booth (legal basis: your consent).",
         "Ticketing: tickets are bought through the Weezevent module, which applies its own privacy policy.",
       ],
     },
@@ -138,7 +138,7 @@ const EN: Contenu = {
     { nom: "NEXT_LOCALE", qui: "barbecue-expo.fr", but: "Remember the site language", duree: "Session", accord: "No (necessary)" },
     { nom: "bbq-expo-audience", qui: "barbecue-expo.fr (local storage)", but: "Remember the chosen journey (public or trade)", duree: "Until cleared", accord: "No (necessary)" },
     { nom: "bbq-expo:presentation-exposants:email", qui: "barbecue-expo.fr (local storage)", but: "Avoid asking for your email again on the exhibitor presentation", duree: "Until cleared", accord: "No (necessary)" },
-    { nom: "bbq-estimator-v1", qui: "barbecue-expo.fr (local storage)", but: "Keep your current booth estimate", duree: "Until cleared", accord: "No (necessary)" },
+    { nom: "bbq-estimator-v1, bbq-stand-v1", qui: "barbecue-expo.fr (local storage)", but: "Keep your current booth estimate", duree: "Until cleared", accord: "No (necessary)" },
   ],
   gerer: "You can change your mind at any time:",
   droitsTitre: "Your rights",

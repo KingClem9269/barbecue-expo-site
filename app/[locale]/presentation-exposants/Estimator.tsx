@@ -14,7 +14,8 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState, type R
 import { X as XIcon, Calculator, Minus, Plus, ChevronDown, FileText } from "lucide-react";
 import { QuoteModal } from "./QuoteModal";
 import { useT } from "./i18n";
-import { pousser, premiereFoisDansLaVisite } from "./mesure";
+import { pousser, premiereFoisDansLaVisite } from "@/lib/mesure";
+import { useMesuree } from "./variante";
 
 type TFn = (fr: string) => string;
 
@@ -137,10 +138,21 @@ export function useEstimator(): EstimatorState {
 /* Provider                                                            */
 /* ------------------------------------------------------------------ */
 
-export function EstimatorProvider({ children }: { children: ReactNode }) {
-  const [sqm, setSqm] = useState(0);
-  const [zone, setZone] = useState<Zone>("A");
-  const [rangeKey, setRangeKey] = useState<string | null>(null);
+/**
+ * `storageKey` : où l'estimation est gardée dans le navigateur. Le catalogue
+ * des commerciaux et le configurateur de la page des campagnes ont chacun la
+ * leur, pour ne pas mélanger leurs sélections (le second n'affiche pas les
+ * options du premier). `initial` : la sélection proposée d'entrée.
+ */
+export function EstimatorProvider({ children, storageKey = STORAGE_KEY, initial }: {
+  children: ReactNode;
+  storageKey?: string;
+  initial?: { sqm: number; zone: Zone; rangeKey: string | null };
+}) {
+  const mesuree = useMesuree();
+  const [sqm, setSqm] = useState(initial?.sqm ?? 0);
+  const [zone, setZone] = useState<Zone>(initial?.zone ?? "A");
+  const [rangeKey, setRangeKey] = useState<string | null>(initial?.rangeKey ?? null);
   const [outdoorSqm, setOutdoorSqm] = useState(0);
   const [partnerKey, setPartnerKey] = useState<string | null>(null);
   const [placeKey, setPlaceKey] = useState<string | null>(null);
@@ -151,7 +163,7 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
   const loaded = useRef(false);
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = localStorage.getItem(storageKey);
       if (raw) {
         const s = JSON.parse(raw);
         if (typeof s.sqm === "number") setSqm(s.sqm);
@@ -164,15 +176,15 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
       }
     } catch { /* localStorage indisponible */ }
     loaded.current = true;
-  }, []);
+  }, [storageKey]);
 
   // Sauvegarde à chaque changement (une fois la restauration faite).
   useEffect(() => {
     if (!loaded.current) return;
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items }));
+      localStorage.setItem(storageKey, JSON.stringify({ sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items }));
     } catch { /* localStorage indisponible */ }
-  }, [sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items]);
+  }, [storageKey, sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items]);
 
   const value = useMemo<EstimatorState>(() => {
     const has = (id: string) => id in items;
@@ -196,7 +208,7 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
     const reset = () => {
       setSqm(0); setZone("A"); setRangeKey(null); setOutdoorSqm(0);
       setPartnerKey(null); setPlaceKey(null); setItems({});
-      try { localStorage.removeItem(STORAGE_KEY); } catch { /* noop */ }
+      try { localStorage.removeItem(storageKey); } catch { /* noop */ }
     };
     const started =
       sqm > 0 ||
@@ -210,7 +222,7 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
     // une fois par visite. Ces fonctions ne sont appelées que par les clics et
     // saisies du visiteur, jamais par la reprise de l'estimation enregistrée.
     const utilise = () => {
-      if (premiereFoisDansLaVisite("bbq-expo:simulateur-utilise")) pousser({ event: "simulateur_utilise" });
+      if (mesuree && premiereFoisDansLaVisite("bbq-expo:simulateur-utilise")) pousser({ event: "simulateur_utilise" });
     };
     return {
       sqm, zone,
@@ -231,7 +243,7 @@ export function EstimatorProvider({ children }: { children: ReactNode }) {
       reset,
       started,
     };
-  }, [sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items]);
+  }, [storageKey, sqm, zone, rangeKey, outdoorSqm, partnerKey, placeKey, items, mesuree]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

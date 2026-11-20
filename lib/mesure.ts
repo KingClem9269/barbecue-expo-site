@@ -1,6 +1,8 @@
 /**
- * Événements de mesure de /presentation-exposants, poussés dans le dataLayer
- * (lus par GTM-5NCHQMXR). Voir PorteEmail.tsx, Estimator.tsx, QuoteModal.tsx.
+ * Événements de mesure poussés dans le dataLayer et lus par GTM
+ * (GTM-5NCHQMXR). Sert à la page des campagnes /presentation-exposants :
+ * voir ConfigurateurStand.tsx, PageCampagnes.tsx et Estimator.tsx, et la liste
+ * des événements dans dossiers/refonte-page-exposants/evenements-pierre.md.
  */
 
 export function pousser(evenement: Record<string, unknown>) {
