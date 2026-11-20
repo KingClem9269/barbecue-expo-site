@@ -24,6 +24,17 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // Adresses de la page autorisées dans page_url (avec ou sans préfixe de langue).
 const PAGE_RE = /^(\/[a-z]{2})?\/presentation-exposants$/;
 
+/**
+ * Le CRM (fonctions Supabase de Fred) a sa base à Paris. Deux réglages pour ne
+ * pas traverser l'Atlantique à chaque requête qu'il fait à sa base :
+ *  - cette route tourne à Paris (cdg1) au lieu de la région Vercel par défaut
+ *    (Washington, iad1) ;
+ *  - l'en-tête x-region demande à Supabase d'exécuter la fonction à Paris,
+ *    où que tourne l'appelant.
+ */
+export const preferredRegion = "cdg1";
+const CRM_REGION = "eu-west-3";
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -38,7 +49,7 @@ export async function POST(request: NextRequest) {
     const debut = Date.now();
     const res = await fetch(CRM_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "x-region": CRM_REGION },
       body: JSON.stringify({ form_id: FORM_ID, data: { email }, lang, page_url: `${SITE_URL}${page}` }),
     });
     const data = await res.json().catch(() => ({}));
@@ -48,7 +59,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: false, errorCode: "crm_error" }, { status: 502 });
     }
     // crmMs : durée de l'appel au CRM vue d'ici, pour suivre les temps de réponse.
-    return NextResponse.json({ ok: true, team: data.team === true, crmMs: Date.now() - debut });
+    return NextResponse.json({
+      ok: true,
+      team: data.team === true,
+      crmMs: Date.now() - debut,
+      crmRegion: res.headers.get("x-sb-edge-region"),
+    });
   } catch (error) {
     console.error("[exposants-email] erreur:", error);
     return NextResponse.json({ ok: false, errorCode: "unexpected_error" }, { status: 500 });

@@ -11,6 +11,17 @@ import { NextRequest, NextResponse } from "next/server";
 const CRM_ENDPOINT = "https://picdlgrtgaavqywehfil.supabase.co/functions/v1/quote-requests";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * Le CRM (fonctions Supabase de Fred) a sa base à Paris. Deux réglages pour ne
+ * pas traverser l'Atlantique à chaque requête qu'il fait à sa base :
+ *  - cette route tourne à Paris (cdg1) au lieu de la région Vercel par défaut
+ *    (Washington, iad1) ;
+ *  - l'en-tête x-region demande à Supabase d'exécuter la fonction à Paris,
+ *    où que tourne l'appelant.
+ */
+export const preferredRegion = "cdg1";
+const CRM_REGION = "eu-west-3";
+
 type Contact = {
   firstName?: string; lastName?: string; email?: string; phone?: string;
   company?: string; address1?: string; postalCode?: string; city?: string;
@@ -47,6 +58,7 @@ export async function POST(request: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
+        "x-region": CRM_REGION,
       },
       body: JSON.stringify({
         lang, event: "barbecue-expo", contact, estimate,
@@ -70,8 +82,9 @@ export async function POST(request: NextRequest) {
     // Succès : on remonte le n° de devis et le lien de signature au front.
     // Depuis le 21 novembre 2026, Fred répond dès que le devis est créé :
     // l'e-mail part ensuite (emailSent vaut null, emailQueued vaut true).
-    // timings (prepare, create, total, en ms) et crmMs (durée de l'appel vue
-    // d'ici) servent à suivre les temps de réponse.
+    // timings (prepare, create, total, en ms), crmMs (durée de l'appel vue
+    // d'ici) et crmRegion (région où Supabase a exécuté la fonction) servent à
+    // suivre les temps de réponse.
     return NextResponse.json({
       ok: true,
       success: true,
@@ -84,6 +97,7 @@ export async function POST(request: NextRequest) {
       language: data.language,
       timings: data.timings,
       crmMs: Date.now() - debut,
+      crmRegion: res.headers.get("x-sb-edge-region"),
     });
   } catch (error) {
     console.error("[quote] erreur:", error);
