@@ -35,6 +35,7 @@ export async function POST(request: NextRequest) {
     const lang = String(body?.lang ?? "fr").slice(0, 2).toLowerCase() === "fr" ? "fr" : "en";
     const page = typeof body?.page === "string" && PAGE_RE.test(body.page) ? body.page : "/presentation-exposants";
 
+    const debut = Date.now();
     const res = await fetch(CRM_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -46,7 +47,8 @@ export async function POST(request: NextRequest) {
       console.error("[exposants-email] erreur CRM:", res.status, data?.error ?? data?.message ?? data);
       return NextResponse.json({ ok: false, errorCode: "crm_error" }, { status: 502 });
     }
-    return NextResponse.json({ ok: true, team: data.team === true });
+    // crmMs : durée de l'appel au CRM vue d'ici, pour suivre les temps de réponse.
+    return NextResponse.json({ ok: true, team: data.team === true, crmMs: Date.now() - debut });
   } catch (error) {
     console.error("[exposants-email] erreur:", error);
     return NextResponse.json({ ok: false, errorCode: "unexpected_error" }, { status: 500 });

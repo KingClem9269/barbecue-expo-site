@@ -41,6 +41,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: false, errorCode: "invalid_email" }, { status: 400 });
     }
 
+    const debut = Date.now();
     const res = await fetch(CRM_ENDPOINT, {
       method: "POST",
       headers: {
@@ -67,6 +68,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Succès : on remonte le n° de devis et le lien de signature au front.
+    // Depuis le 21 novembre 2026, Fred répond dès que le devis est créé :
+    // l'e-mail part ensuite (emailSent vaut null, emailQueued vaut true).
+    // timings (prepare, create, total, en ms) et crmMs (durée de l'appel vue
+    // d'ici) servent à suivre les temps de réponse.
     return NextResponse.json({
       ok: true,
       success: true,
@@ -75,7 +80,10 @@ export async function POST(request: NextRequest) {
       total: data.total,
       currency: data.currency,
       emailSent: data.emailSent,
+      emailQueued: data.emailQueued,
       language: data.language,
+      timings: data.timings,
+      crmMs: Date.now() - debut,
     });
   } catch (error) {
     console.error("[quote] erreur:", error);
