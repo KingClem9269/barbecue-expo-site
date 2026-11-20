@@ -4,8 +4,9 @@
  * « Composez votre stand » : la première partie de la page des campagnes
  * (/presentation-exposants), d'après la maquette de Pierre.
  *
- *   1. Le visiteur laisse son e-mail. Il part au CRM (POST /api/exposants-email)
- *      et le configurateur se déplie sur place, sans changer de page. Le
+ *   1. Le visiteur laisse son e-mail. Le configurateur se déplie aussitôt sur
+ *      place, sans changer de page, pendant que l'e-mail part au CRM en
+ *      arrière-plan (POST /api/exposants-email). Le
  *      déblocage est mémorisé (localStorage) : on ne redemande plus l'e-mail
  *      sur ce navigateur.
  *   2. Il choisit sa zone, sa surface et son aménagement : le prix s'affiche
@@ -117,7 +118,6 @@ export default function ConfigurateurStand() {
   const ouvert = dejaDebloque || debloqueIci;
   const [email, setEmail] = useState("");
   const [emailInvalide, setEmailInvalide] = useState(false);
-  const [envoiEmail, setEnvoiEmail] = useState(false);
   const champEmail = useRef<HTMLInputElement>(null);
   const carteEmail = useRef<HTMLDivElement>(null);
   const titreEtape1 = useRef<HTMLHeadingElement>(null);
@@ -140,33 +140,30 @@ export default function ConfigurateurStand() {
     if (debloqueIci) titreEtape1.current?.focus({ preventScroll: true });
   }, [debloqueIci]);
 
-  const envoyerEmail = async (ev: React.FormEvent) => {
+  // Le configurateur s'ouvre tout de suite : l'envoi au CRM prend plusieurs
+  // secondes (7,6 s mesurées en production) et le visiteur n'a pas à l'attendre.
+  // L'e-mail part en arrière-plan ; s'il échoue, il repartira avec le devis.
+  const envoyerEmail = (ev: React.FormEvent) => {
     ev.preventDefault();
-    if (envoiEmail) return;
     const adresse = email.trim().toLowerCase();
     if (!EMAIL_RE.test(adresse)) { setEmailInvalide(true); champEmail.current?.focus(); return; }
-    setEnvoiEmail(true);
-    let enregistre = false;
-    let equipe = false;
-    try {
-      const res = await fetch("/api/exposants-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: adresse, lang, page: window.location.pathname }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.status === 400) { setEmailInvalide(true); setEnvoiEmail(false); champEmail.current?.focus(); return; }
-      enregistre = res.ok && data?.ok === true;
-      equipe = data?.team === true;
-    } catch {
-      /* CRM injoignable : on ne bloque pas le visiteur, son e-mail repartira avec le devis */
-    }
-    // Mesure : e-mail enregistré par le CRM. Les adresses de l'équipe ne comptent pas.
-    if (enregistre && !equipe && mesuree) pousser({ event: "email_gate_submitted", event_id: identifiantUnique(), audience });
     try { window.localStorage.setItem(CLE_EMAIL, "1"); } catch { /* stockage indisponible : la page s'ouvre quand même */ }
     setEmail(adresse);
-    setEnvoiEmail(false);
     setDebloqueIci(true);
+    fetch("/api/exposants-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: adresse, lang, page: window.location.pathname }),
+      keepalive: true, // l'envoi va au bout même si le visiteur quitte la page
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        // Mesure : e-mail enregistré par le CRM. Les adresses de l'équipe ne comptent pas.
+        if (res.ok && data?.ok === true && data?.team !== true && mesuree) {
+          pousser({ event: "email_gate_submitted", event_id: identifiantUnique(), audience });
+        }
+      })
+      .catch(() => { /* CRM injoignable : rien à faire, le visiteur est déjà passé */ });
   };
 
   /* ───────── 2. Le stand ───────── */
@@ -352,12 +349,10 @@ export default function ConfigurateurStand() {
                 {emailInvalide && <p id="stand-email-erreur" role="alert" className="text-sm text-braise font-semibold">{t("Indiquez une adresse e-mail valide.")}</p>}
                 <button
                   type="submit"
-                  disabled={envoiEmail}
-                  className="min-h-13 inline-flex items-center justify-center gap-2 rounded-md bg-ink-950 text-gold-500 font-extrabold text-base md:text-lg px-5 hover:bg-black disabled:opacity-70 transition-colors"
+                  className="min-h-13 inline-flex items-center justify-center gap-2 rounded-md bg-ink-950 text-gold-500 font-extrabold text-base md:text-lg px-5 hover:bg-black transition-colors"
                 >
-                  {envoiEmail ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : null}
                   {t("Voir le plan et les tarifs")}
-                  {!envoiEmail && <ArrowRight className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />}
+                  <ArrowRight className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
                 </button>
                 <p className="text-xs leading-relaxed">
                   {t("On ne vous le demandera qu'une fois. Vos coordonnées servent uniquement à vous informer sur l'exposition à Barbecue Expo. Aucune revente.")}{" "}
@@ -532,6 +527,7 @@ export default function ConfigurateurStand() {
                         {devis === "envoi" && <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />}
                         {devis === "envoi" ? t("Envoi…") : t("Envoyer ma demande de devis")}
                       </button>
+                      {devis === "envoi" && <p role="status" className="text-xs">{t("Votre devis est en cours de création : cela prend quelques secondes.")}</p>}
                     </form>
                   )}
 

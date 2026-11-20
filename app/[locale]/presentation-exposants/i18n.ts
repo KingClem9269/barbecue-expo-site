@@ -590,6 +590,7 @@ export const EN: Record<string, string> = {
   "Plan du salon : zone A au centre du hall, zone B en bordure, esplanades extérieures": "Show map: zone A in the centre of the hall, zone B along the edge, outdoor esplanades",
   "Restauration": "Food court",
   "Entrée": "Entrance",
+  "Votre devis est en cours de création : cela prend quelques secondes.": "Your quote is being created: this takes a few seconds.",
   "Modifier mon stand et demander un autre devis": "Change my booth and request another quote",
 };
 

@@ -519,5 +519,6 @@ export const NL: Record<string, string> = {
   "Plan du salon : zone A au centre du hall, zone B en bordure, esplanades extérieures": "Beursplan: zone A in het midden van de hal, zone B aan de rand, buitenpleinen",
   "Restauration": "Horeca",
   "Entrée": "Ingang",
+  "Votre devis est en cours de création : cela prend quelques secondes.": "Uw offerte wordt aangemaakt: dit duurt enkele seconden.",
   "Modifier mon stand et demander un autre devis": "Mijn stand wijzigen en een andere offerte aanvragen",
 };

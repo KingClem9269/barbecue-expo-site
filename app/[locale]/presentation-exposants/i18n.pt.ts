@@ -519,5 +519,6 @@ export const PT: Record<string, string> = {
   "Plan du salon : zone A au centre du hall, zone B en bordure, esplanades extérieures": "Planta da feira: zona A no centro do pavilhão, zona B na periferia, esplanadas exteriores",
   "Restauration": "Restauração",
   "Entrée": "Entrada",
+  "Votre devis est en cours de création : cela prend quelques secondes.": "O seu orçamento está a ser criado: demora alguns segundos.",
   "Modifier mon stand et demander un autre devis": "Alterar o meu stand e pedir outro orçamento",
 };
